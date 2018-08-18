@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2010 rel. 3 sp1 (http://www.altova.com) by InTraffic B.V. (ACC ICT) -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Copyright: -->
+<!--     Dit document is eigendom van Platform BISON onder de Stichting Connekt -->
+<!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl, -->
+<!--     zie http://creativecommons.org/licences/by-nd/3.0/nl -->
+<!-- Dit XSD is onderdeel van het TMI9 NeTEx Nederlands profiel -->
+<!-- Versie:  v9.0.0.0 (draft) (26-04-2017) -->
+<!-- Historie: -->
+<!--   v9.0.0.0: initiele versie -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<xsd:schema xmlns:netex="http://www.netex.org.uk/netex" xmlns="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" id="NewDataSet">
+	<xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="gml-pos.xsd"/>
+	<xsd:complexType name="name">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" use="required" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" use="required" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="ref">
+		<xsd:attribute name="ref" type="xsd:string" use="required" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="refVersion">
+		<xsd:attribute name="version" type="xsd:string" use="required" form="unqualified"/>
+		<xsd:attribute name="ref" type="xsd:string" use="required" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="refClass">
+		<xsd:attribute name="nameOfRefClass" type="xsd:string" use="required" form="unqualified"/>
+		<xsd:attribute name="ref" type="xsd:string" use="required" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="location">
+		<xsd:sequence>
+			<xsd:element ref="gml:pos"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="modification">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="new">
+				<xsd:annotation>
+					<xsd:documentation>This is a definition of a new entity.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="delete">
+				<xsd:annotation>
+					<xsd:documentation>This is a deletion of an existing entity.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="revise">
+				<xsd:annotation>
+					<xsd:documentation>This is a revision to an existing entity. All values are replaced.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="delta"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Colour">
+		<xsd:restriction base="xsd:hexBinary">
+			<xsd:maxLength value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="projections">
+		<xsd:sequence>
+			<xsd:element name="PointProjectionRef" type="refClass" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="pointOnRoute">
+		<xsd:sequence>
+			<xsd:choice>
+				<xsd:element name="ActivationPointRef" type="ref" minOccurs="0"/>
+				<xsd:element name="RoutePointRef" type="ref" minOccurs="0"/>
+			</xsd:choice>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="order" type="xsd:nonNegativeInteger" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="route">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="LineRef" type="refVersion" minOccurs="0"/>
+			<xsd:element name="pointsInSequence" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="PointOnRoute" type="pointOnRoute" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="routePoint">
+		<xsd:sequence>
+			<xsd:element name="Location" type="location"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="keyList">
+		<xsd:sequence>
+			<xsd:element name="KeyValue" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Key" type="xsd:string"/>
+						<xsd:element name="Value" type="xsd:string"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="activationPoint">
+		<xsd:sequence>
+			<xsd:element name="keyList" type="keyList" minOccurs="0"/>
+			<xsd:element name="Location" type="location" minOccurs="0"/>
+			<xsd:element name="PrivateCode" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="scheduledStopPoint">
+		<xsd:sequence>
+			<xsd:element name="keyList" type="keyList"/>
+			<xsd:element name="Name" type="xsd:string"/>
+			<xsd:element name="projections" type="projections"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="dataSource">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ShortName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string"/>
+			<xsd:element name="Email" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="availabilityCondition">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="FromDate" type="xsd:dateTime"/>
+			<xsd:element name="ToDate" type="xsd:dateTime"/>
+			<xsd:element name="ValidDayBits">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:pattern value="[0-1]+"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="serviceJourney">
+		<xsd:sequence>
+			<xsd:element name="validityConditions">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="AvailabilityConditionRef" type="ref" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="keyList" type="keyList" minOccurs="0"/>
+			<xsd:element name="TypeOfProductCategoryRef" type="ref"/>
+			<xsd:element name="Monitored" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="DepartureTime" type="xsd:string"/>
+			<xsd:element name="DepartureDayOffset" type="xsd:integer" default="0"/>
+			<xsd:element name="JourneyPatternRef" type="refClass"/>
+			<xsd:element name="TimeDemandTypeRef" type="refVersion"/>
+			<xsd:element name="BlockRef" type="refVersion" minOccurs="0"/>
+			<xsd:element name="OperatorRef" type="ref" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="dataSourceRef" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="responsibilitySet">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="noticeAssignment">
+		<xsd:sequence>
+			<xsd:element name="NoticeRef" type="ref"/>
+			<xsd:element name="NoticedObjectRef" type="ref"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+		<xsd:attribute name="order" type="xsd:nonNegativeInteger" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="frameDefaults">
+		<xsd:sequence>
+			<xsd:element name="DefaultDataSourceRef" type="ref" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="version">
+		<xsd:sequence>
+			<xsd:element name="StartDate" type="xsd:dateTime"/>
+			<xsd:element name="EndDate" type="xsd:dateTime"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="VersionType" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:annotation>
+						<xsd:documentation>Allowed values for Types of VERSION.</xsd:documentation>
+					</xsd:annotation>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="point"/>
+						<xsd:enumeration value="baseline"/>
+						<xsd:enumeration value="delta"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="DerivedFromVersionRef" type="refVersion" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="versions">
+		<xsd:sequence>
+			<xsd:element name="Version" type="version" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="line">
+		<xsd:sequence>
+			<xsd:element name="keyList" type="keyList" minOccurs="0"/>
+			<xsd:element name="Name" type="xsd:string"/>
+			<xsd:element name="TransportMode" type="xsd:string"/>
+			<xsd:element name="PublicCode" type="xsd:string"/>
+			<xsd:element name="AuthorityRef" type="ref" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Monitored" type="xsd:boolean"/>
+			<xsd:element name="Presentation" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Colour" type="Colour" minOccurs="0"/>
+						<xsd:element name="TextColour" type="Colour" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="AccessibilityAssessment">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="MobilityImpairedAccess" type="xsd:boolean" minOccurs="0"/>
+						<xsd:element name="Comment" minOccurs="0"/>
+					</xsd:sequence>
+					<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+					<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+					<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="block">
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="blocks">
+		<xsd:sequence>
+			<xsd:element name="Block" type="block" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="vehicleScheduleFrame">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="blocks" type="blocks"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="timetableFrame">
+		<xsd:sequence>
+			<xsd:element name="Monitored" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="contentValidityConditions">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="AvailabilityCondition" type="availabilityCondition" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="OperatorView">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="OperatorRef" type="ref"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="vehicleJourneys">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ServiceJourney" type="serviceJourney" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="stopPointInJourneyPattern">
+		<xsd:sequence>
+			<xsd:element name="ScheduledStopPointRef" type="ref"/>
+			<xsd:element name="OnwardTimingLinkRef" type="ref" minOccurs="0"/>
+			<xsd:element name="IsWaitPoint" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="ForAlighting" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="ForBoarding" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="DestinationDisplayRef" type="ref" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+		<xsd:attribute name="order" type="xsd:nonNegativeInteger" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="timingPointInJourneyPattern">
+		<xsd:sequence>
+			<xsd:element name="TimingPointRef" type="ref"/>
+			<xsd:element name="OnwardTimingLinkRef" type="ref" minOccurs="0"/>
+			<xsd:element name="IsWaitPoint" type="xsd:boolean" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+		<xsd:attribute name="order" type="xsd:nonNegativeInteger" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="serviceJourneyPattern">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="RouteRef" type="ref"/>
+			<xsd:element name="DestinationDisplayRef" type="ref" minOccurs="0"/>
+			<xsd:element name="pointsInSequence">
+				<xsd:complexType>
+					<xsd:choice minOccurs="2" maxOccurs="unbounded">
+						<xsd:element name="StopPointInJourneyPattern" type="stopPointInJourneyPattern" minOccurs="0"/>
+						<xsd:element name="TimingPointInJourneyPattern" type="timingPointInJourneyPattern" minOccurs="0"/>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="timingLink">
+		<xsd:sequence>
+			<xsd:element name="Distance" type="xsd:nonNegativeInteger"/>
+			<xsd:element name="FromPointRef" type="ref"/>
+			<xsd:element name="ToPointRef" type="ref"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+		<xsd:attribute name="responsibilitySetRef" type="xsd:string" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="journeyRunTime">
+		<xsd:sequence>
+			<xsd:element name="TimingLinkRef" type="refVersion"/>
+			<xsd:element name="RunTime" type="xsd:duration"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="journeyWaitTime">
+		<xsd:sequence>
+			<xsd:choice>
+				<xsd:element name="ScheduledStopPointRef" type="refVersion"/>
+				<xsd:element name="TimingPointRef" type="refVersion"/>
+			</xsd:choice>
+			<xsd:element name="WaitTime" type="xsd:duration"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="timeDemandType">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="runTimes">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="JourneyRunTime" type="journeyRunTime" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="waitTimes" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="JourneyWaitTime" type="journeyWaitTime" minOccurs="0" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="timingPoint">
+		<xsd:sequence>
+			<xsd:element name="keyList" type="keyList" minOccurs="0"/>
+			<xsd:element name="Name" type="xsd:string"/>
+			<xsd:element name="projections" type="projections"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="notice">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Text" type="xsd:string"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="destinationDisplay">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string"/>
+			<xsd:element name="ShortName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="vias" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Via" minOccurs="0" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="Name" type="xsd:string"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="optional" default="new" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="resourceFrame">
+		<xsd:sequence>
+			<xsd:element name="dataSources">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="DataSource" type="dataSource" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="responsibilitySets">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ResponsibilitySet" type="responsibilitySet" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="typesOfValue">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="TypeOfProductCategory" type="name" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="organisations">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Operator" type="name" maxOccurs="unbounded"/>
+						<xsd:element name="Authority" type="name" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="serviceFrame">
+		<xsd:sequence>
+			<xsd:element name="routePoints" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="RoutePoint" type="routePoint" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="routes" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Route" type="route" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="lines" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Line" type="line" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="destinationDisplays" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="DestinationDisplay" type="destinationDisplay" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="scheduledStopPoints" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ScheduledStopPoint" type="scheduledStopPoint" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="timingPoints" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="TimingPoint" type="timingPoint" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="timingLinks" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="TimingLink" type="timingLink" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="journeyPatterns" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ServiceJourneyPattern" type="serviceJourneyPattern" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="timeDemandTypes" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="TimeDemandType" type="timeDemandType" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="notices" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Notice" type="notice" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="noticeAssignments" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="NoticeAssignment" type="noticeAssignment" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="infrastructureFrame">
+		<xsd:sequence>
+			<xsd:element name="activationPoints" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ActivationPoint" type="activationPoint" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="frames">
+		<xsd:sequence>
+			<xsd:element name="ResourceFrame" type="resourceFrame" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="InfrastructureFrame" type="infrastructureFrame" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="ServiceFrame" type="serviceFrame" minOccurs="0" maxOccurs="unbounded">
+				<xsd:key name="ActivationPointId">
+					<xsd:selector xpath=".//netex:activationPoints/netex:ActivationPoint"/>
+					<xsd:field xpath="@id"/>
+				</xsd:key>
+				<xsd:keyref name="PointOnRoute-ActivationPointRef" refer="ActivationPointId">
+					<xsd:selector xpath=".//netex:routes/netex:Route/netex:pointsInSequence/netex:PointOnRoute/netex:ActivationPointRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
+				<xsd:key name="RoutePointId">
+					<xsd:selector xpath=".//netex:routePoints/netex:RoutePoint"/>
+					<xsd:field xpath="@id"/>
+				</xsd:key>
+				<xsd:keyref name="PointOnRoute-RoutePointRef" refer="RoutePointId">
+					<xsd:selector xpath=".//netex:routes/netex:Route/netex:pointsInSequence/netex:PointOnRoute/netex:RoutePointRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
+				<xsd:key name="NoticeId">
+					<xsd:selector xpath=".//netex:Notice"/>
+					<xsd:field xpath="@id"/>
+				</xsd:key>
+				<xsd:keyref name="NoticeRef" refer="NoticeId">
+					<xsd:selector xpath=".//netex:NoticeRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
+				<xsd:key name="ScheduledStopPointId">
+					<xsd:selector xpath=".//netex:ScheduledStopPoint"/>
+					<xsd:field xpath="@id"/>
+				</xsd:key>
+				<xsd:keyref name="FromPointRef" refer="ScheduledStopPointId">
+					<xsd:selector xpath=".//netex:FromPointRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
+				<xsd:keyref name="ToPointRef" refer="ScheduledStopPointId">
+					<xsd:selector xpath=".//netex:ToPointRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
+				<xsd:keyref name="ScheduledStopPointRef" refer="ScheduledStopPointId">
+					<xsd:selector xpath=".//netex:ScheduledStopPointRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
+				<xsd:key name="TimingLinkId">
+					<xsd:selector xpath=".//netex:TimingLink"/>
+					<xsd:field xpath="@id"/>
+				</xsd:key>
+				<xsd:keyref name="OnwardTimingLinkRef" refer="TimingLinkId">
+					<xsd:selector xpath=".//netex:OnwardTimingLinkRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
+				<xsd:keyref name="TimingLinkRef" refer="TimingLinkId">
+					<xsd:selector xpath=".//netex:TimingLinkRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
+				<xsd:key name="TimingPointId">
+					<xsd:selector xpath=".//netex:TimingPoint"/>
+					<xsd:field xpath="@id"/>
+				</xsd:key>
+				<xsd:keyref name="TimingPointRef" refer="TimingPointId">
+					<xsd:selector xpath=".//netex:TimingPointRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
+			</xsd:element>
+			<xsd:element name="TimetableFrame" type="timetableFrame" minOccurs="0" maxOccurs="unbounded">
+				<xsd:key name="AvailabilityConditionId">
+					<xsd:selector xpath=".//netex:AvailabilityCondition"/>
+					<xsd:field xpath="@id"/>
+				</xsd:key>
+				<xsd:keyref name="AvailabilityConditionRef" refer="AvailabilityConditionId">
+					<xsd:selector xpath=".//netex:AvailabilityConditionRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
+			</xsd:element>
+			<xsd:element name="VehicleScheduleFrame" type="vehicleScheduleFrame" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="compositeFrame">
+		<xsd:sequence>
+			<xsd:element name="FrameDefaults" type="frameDefaults" minOccurs="0"/>
+			<xsd:element name="versions" type="versions"/>
+			<xsd:element name="frames" type="frames" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:string" use="required" form="unqualified"/>
+		<xsd:attribute name="id" type="xsd:string" use="required" form="unqualified"/>
+		<xsd:attribute name="modification" type="modification" use="required" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="dataObjects">
+		<xsd:sequence>
+			<xsd:element name="CompositeFrame" type="compositeFrame" minOccurs="0" maxOccurs="unbounded">
+				<xsd:key name="VersionId">
+					<xsd:selector xpath=".//netex:Version"/>
+					<xsd:field xpath="@id"/>
+				</xsd:key>
+				<xsd:keyref name="Version-DerivedFromVersionRef" refer="VersionId">
+					<xsd:selector xpath=".//netex:DerivedFromVersionRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
+				<xsd:key name="DataSourceId">
+					<xsd:selector xpath=".//netex:DataSource"/>
+					<xsd:field xpath="@id"/>
+				</xsd:key>
+				<xsd:keyref name="DefaultDataSourceRef" refer="DataSourceId">
+					<xsd:selector xpath=".//netex:DefaultDataSourceRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
+				<xsd:keyref name="ServiceJourney-DataSourceRef" refer="DataSourceId">
+					<xsd:selector xpath=".//netex:ServiceJourney"/>
+					<xsd:field xpath="@dataSourceRef"/>
+				</xsd:keyref>
+				<xsd:key name="LineId">
+					<xsd:selector xpath=".//netex:Line"/>
+					<xsd:field xpath="@id"/>
+				</xsd:key>
+				<xsd:keyref name="LineRef" refer="LineId">
+					<xsd:selector xpath=".//netex:LineRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
+				<xsd:key name="AuthorityId">
+					<xsd:selector xpath=".//netex:Authority"/>
+					<xsd:field xpath="@id"/>
+				</xsd:key>
+				<xsd:keyref name="AuthorityRef" refer="AuthorityId">
+					<xsd:selector xpath=".//netex:AuthorityRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
+				<xsd:key name="OperatorId">
+					<xsd:selector xpath=".//netex:Operator"/>
+					<xsd:field xpath="@id"/>
+				</xsd:key>
+				<xsd:keyref name="OperatorRef" refer="OperatorId">
+					<xsd:selector xpath=".//netex:OperatorRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
+				<xsd:key name="TypeOfProductCategoryId">
+					<xsd:selector xpath=".//netex:TypeOfProductCategory"/>
+					<xsd:field xpath="@id"/>
+				</xsd:key>
+				<xsd:keyref name="TypeOfProductCategoryRef" refer="TypeOfProductCategoryId">
+					<xsd:selector xpath=".//netex:TypeOfProductCategoryRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
+				<xsd:key name="DestinationDisplayId">
+					<xsd:selector xpath=".//netex:DestinationDisplay"/>
+					<xsd:field xpath="@id"/>
+				</xsd:key>
+				<xsd:keyref name="DestinationDisplayRef" refer="DestinationDisplayId">
+					<xsd:selector xpath=".//netex:DestinationDisplayRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
+				<xsd:key name="TimeDemandTypeId">
+					<xsd:selector xpath=".//netex:TimeDemandType"/>
+					<xsd:field xpath="@id"/>
+				</xsd:key>
+				<xsd:keyref name="TimeDemandTypeRef" refer="TimeDemandTypeId">
+					<xsd:selector xpath=".//netex:TimeDemandTypeRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
+				<xsd:key name="BlockId">
+					<xsd:selector xpath=".//netex:Block"/>
+					<xsd:field xpath="@id"/>
+				</xsd:key>
+				<xsd:keyref name="BlockRef" refer="BlockId">
+					<xsd:selector xpath=".//netex:BlockRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
+				<xsd:key name="ServiceJourneyPatternId">
+					<xsd:selector xpath=".//netex:ServiceJourneyPattern"/>
+					<xsd:field xpath="@id"/>
+				</xsd:key>
+				<xsd:keyref name="JourneyPatternRef" refer="ServiceJourneyPatternId">
+					<xsd:selector xpath=".//netex:JourneyPatternRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
+				<xsd:key name="ResponsibilitySetId">
+					<xsd:selector xpath=".//netex:ResponsibilitySet"/>
+					<xsd:field xpath="@id"/>
+				</xsd:key>
+				<xsd:keyref name="TimingLink-ResponsibilitySetRef" refer="ResponsibilitySetId">
+					<xsd:selector xpath=".//netex:TimingLink"/>
+					<xsd:field xpath="@responsibilitySetRef"/>
+				</xsd:keyref>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="PublicationDelivery">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="PublicationTimestamp" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="ParticipantRef" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="dataObjects" type="dataObjects" minOccurs="0"/>
+			</xsd:sequence>
+			<xsd:attribute name="version" type="xsd:string" form="unqualified"/>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
