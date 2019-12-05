@@ -585,6 +585,7 @@
 					<xsd:element name="Name" type="xsd:string"/>
 					<xsd:element name="ShortName" type="xsd:string"/>
 				</xsd:sequence>
+				<xsd:attribute name="version" type="xsd:string" use="optional" fixed="any" form="unqualified"/>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
