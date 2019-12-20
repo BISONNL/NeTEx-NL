@@ -817,7 +817,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="passengerStopAssignment">
 		<xsd:complexContent>
-			<xsd:extension base="modifiedObject_">
+			<xsd:extension base="orderedObject_">
 				<xsd:sequence>
 					<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
 					<xsd:element name="ScheduledStopPointRef" type="refVersion"/>
