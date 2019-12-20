@@ -1239,7 +1239,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="dayTypeAssignment">
 		<xsd:complexContent>
-			<xsd:extension base="modifiedObject_">
+			<xsd:extension base="orderedObject_">
 				<xsd:sequence>
 					<xsd:element name="Date" type="xsd:date"/>
 					<xsd:element name="DayTypeRef" type="refVersion"/>
