@@ -1654,12 +1654,12 @@
 					<xsd:selector xpath=".//netex:ScheduledStopPoint"/>
 					<xsd:field xpath="@id"/>
 				</xsd:key>
-				<xsd:keyref name="FromPointRef" refer="ScheduledStopPointId">
-					<xsd:selector xpath=".//netex:FromPointRef"/>
-					<xsd:field xpath="@ref"/>
-				</xsd:keyref>
-				<xsd:keyref name="ToPointRef" refer="ScheduledStopPointId">
-					<xsd:selector xpath=".//netex:ToPointRef"/>
+				<xsd:key name="TimingPointId">
+					<xsd:selector xpath=".//netex:TimingPoint | .//netex:ScheduledStopPoint"/>
+					<xsd:field xpath="@id"/>
+				</xsd:key>
+				<xsd:keyref name="TimingPointRef" refer="TimingPointId">
+					<xsd:selector xpath=".//netex:TimingPointRef | .//netex:TimingLink/netex:FromPointRef | .//netex:TimingLink/netex:ToPointRef"/>
 					<xsd:field xpath="@ref"/>
 				</xsd:keyref>
 				<xsd:keyref name="ScheduledStopPointRef" refer="ScheduledStopPointId">
@@ -1676,14 +1676,6 @@
 				</xsd:keyref>
 				<xsd:keyref name="TimingLinkRef" refer="TimingLinkId">
 					<xsd:selector xpath=".//netex:TimingLinkRef"/>
-					<xsd:field xpath="@ref"/>
-				</xsd:keyref>
-				<xsd:key name="TimingPointId">
-					<xsd:selector xpath=".//netex:TimingPoint"/>
-					<xsd:field xpath="@id"/>
-				</xsd:key>
-				<xsd:keyref name="TimingPointRef" refer="TimingPointId">
-					<xsd:selector xpath=".//netex:TimingPointRef"/>
 					<xsd:field xpath="@ref"/>
 				</xsd:keyref>
 				<xsd:key name="StopAreaId">
