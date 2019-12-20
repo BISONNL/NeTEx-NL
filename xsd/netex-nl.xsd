@@ -1678,6 +1678,10 @@
 					<xsd:selector xpath=".//netex:TimingLinkRef"/>
 					<xsd:field xpath="@ref"/>
 				</xsd:keyref>
+				<xsd:keyref name="RoutePointRef" refer="RoutePointId">
+					<xsd:selector xpath=".//netex:RoutePointRef | .//netex:RouteLink/netex:FromPointRef | .//netex:RouteLink/netex:ToPointRef"/>
+					<xsd:field xpath="@ref"/>
+				</xsd:keyref>
 				<xsd:key name="StopAreaId">
 					<xsd:selector xpath=".//netex:StopArea"/>
 					<xsd:field xpath="@id"/>
