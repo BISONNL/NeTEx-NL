@@ -730,6 +730,7 @@
 					<xsd:element name="ToPointRef" type="refVersion"/>
 					<xsd:element name="OperationalContextRef" type="refVersion" minOccurs="0"/>
 				</xsd:sequence>
+				<xsd:attribute name="responsibilitySetRef" type="xsd:string" form="unqualified"/>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
