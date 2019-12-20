@@ -73,11 +73,13 @@
 			<xsd:documentation>Een element uit een voorgedefinieerde lijst heeft alleen een uniek 'id', geen 'version'</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="id" type="xsd:string" use="required" form="unqualified"/>
+		<xsd:attribute name="version" type="xsd:string" use="optional" fixed="any" form="unqualified"/>
 	</xsd:complexType>
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- REFERENTIES                                                                                           -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<xsd:complexType name="ref">
+		<xsd:attribute name="version" type="xsd:string" use="optional" fixed="any" form="unqualified"/>
 		<xsd:attribute name="ref" type="xsd:string" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="refVersion">
@@ -86,6 +88,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="refClass">
 		<xsd:attribute name="nameOfRefClass" type="xsd:string" use="required" form="unqualified"/>
+		<xsd:attribute name="version" type="xsd:string" use="optional" fixed="any" form="unqualified"/>
 		<xsd:attribute name="ref" type="xsd:string" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="refClassVersion">
@@ -94,6 +97,7 @@
 		<xsd:attribute name="ref" type="xsd:string" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="refType">
+		<xsd:attribute name="version" type="xsd:string" use="optional" fixed="any" form="unqualified"/>
 		<xsd:attribute name="ref" type="xsd:string" use="required" form="unqualified"/>
 		<xsd:attribute name="type" type="xsd:string" use="required" form="unqualified"/>
 	</xsd:complexType>
@@ -585,7 +589,6 @@
 					<xsd:element name="Name" type="xsd:string"/>
 					<xsd:element name="ShortName" type="xsd:string"/>
 				</xsd:sequence>
-				<xsd:attribute name="version" type="xsd:string" use="optional" fixed="any" form="unqualified"/>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
