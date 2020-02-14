@@ -1820,5 +1820,26 @@
 			</xsd:sequence>
 			<xsd:attribute name="version" type="xsd:string" use="required" fixed="9.1.0" form="unqualified"/>
 		</xsd:complexType>
+		<!-- =====Branding============================== -->
+		<!-- =====Branding unique========================== -->
+		<xsd:unique name="Branding_UniqueBy_Id_Version">
+			<xsd:annotation>
+				<xsd:documentation>Every [Branding Id + Version] must be unique within document.</xsd:documentation>
+			</xsd:annotation>
+			<xsd:selector xpath=".//netex:Branding"/>
+			<xsd:field xpath="@id"/>
+			<xsd:field xpath="@version"/>
+		</xsd:unique>
+		<!-- =====Branding Key ========================== -->
+		<xsd:keyref name="Branding_AnyKeyRef" refer="netex:Branding_AnyVersionedKey">
+			<xsd:selector xpath=".//netex:BrandingRef | .//netex:DefaultBrandingRef"/>
+			<xsd:field xpath="@ref"/>
+			<xsd:field xpath="@version"/>
+		</xsd:keyref>
+		<xsd:key name="Branding_AnyVersionedKey">
+			<xsd:selector xpath=".//netex:Branding"/>
+			<xsd:field xpath="@id"/>
+			<xsd:field xpath="@version"/>
+		</xsd:key>
 	</xsd:element>
 </xsd:schema>
