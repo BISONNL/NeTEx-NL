@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<!-- Copyright: -->
-<!--     Dit document is eigendom van Platform BISON onder de Stichting Connekt -->
-<!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl, -->
-<!--     zie http://creativecommons.org/licences/by-nd/3.0/nl -->
-<!-- Dit XSD is onderdeel van het TMI9 NeTEx Nederlands profiel -->
-<!-- Versie:  v9.1.0 -->
-<!-- Historie: -->
-<!--   v9.0.0 (26-04-2017): initiele versie -->
-<!--   v9.1.0 (april 2019) -->
-<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Copyright:                                                                      -->
+<!--     Dit document is eigendom van Platform BISON onder Samenwerkingsverband DOVA -->
+<!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl,      -->
+<!--     zie http://creativecommons.org/licences/by-nd/3.0/nl                        -->
+<!-- Dit XSD is onderdeel van het TMI9 NeTEx Nederlands profiel                      -->
+<!--                                                                                 -->
+<!-- Versie:  9.1.0a                                                                 -->
+<!--                                                                                 -->
+<!-- Historie:                                                                       -->
+<!--   v9.0.0  (april 2017)   initiele versie                                        -->
+<!--   v9.1.0  (april 2019)   diverse aanpassingen                                   -->
+<!--   v9.1.0a (januari 2020) copyright aangepast                                    -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.1.0" id="netex-bison-xsd">
 	<xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="gml-bison.xsd"/>
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<!-- ABSTRACTE TYPEN                                                                                  -->
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- ABSTRACTE TYPEN                                                                         -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<xsd:complexType name="identifiedObject_" abstract="true">
 		<xsd:annotation>
 			<xsd:documentation>Ieder object heeft een uniek 'id' conform de afspraken in het Nederlands NeTEx Profiel document</xsd:documentation>
@@ -74,9 +77,9 @@
 		</xsd:annotation>
 		<xsd:attribute name="id" type="xsd:string" use="required" form="unqualified"/>
 	</xsd:complexType>
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<!-- REFERENTIES                                                                                           -->
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- REFERENTIES                                                                                 -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<xsd:complexType name="ref">
 		<xsd:attribute name="ref" type="xsd:string" use="required" form="unqualified"/>
 	</xsd:complexType>
@@ -97,9 +100,9 @@
 		<xsd:attribute name="ref" type="xsd:string" use="required" form="unqualified"/>
 		<xsd:attribute name="type" type="xsd:string" use="required" form="unqualified"/>
 	</xsd:complexType>
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<!-- BASIS TYPEN                                                                                              -->
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- BASIS TYPEN                                                                                 -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<xsd:complexType name="location">
 		<xsd:sequence>
 			<xsd:element ref="gml:pos"/>
@@ -146,9 +149,9 @@
 			<xsd:maxLength value="6"/>
 		</xsd:restriction>
 	</xsd:simpleType>
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<!-- UITBREIDINGEN VAN DE NETEX STANDAARD                                       -->
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- UITBREIDINGEN VAN DE NETEX STANDAARD                                                      -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<xsd:complexType name="extensionPrivateCode">
 		<xsd:sequence>
 			<xsd:element name="PrivateCode" type="privateCode"/>
@@ -167,9 +170,9 @@
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<!-- ENUMERATIES                                                                                           -->
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- ENUMERATIES                                                                               -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<xsd:simpleType name="modification">
 		<xsd:restriction base="xsd:NMTOKEN">
 			<xsd:enumeration value="new"/>
@@ -500,9 +503,9 @@
 			<xsd:enumeration value="delta"/>
 		</xsd:restriction>
 	</xsd:simpleType>
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<!-- ELEMENTEN (ONDERSTEUNEND)                                                          -->
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- ELEMENTEN (ONDERSTEUNEND)                                                                 -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<xsd:complexType name="frameDefaults">
 		<xsd:sequence>
 			<xsd:element name="DefaultDataSourceRef" type="refVersion"/>
@@ -565,9 +568,9 @@
 			<xsd:element name="Version" type="version" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<!-- ELEMENTEN (INHOUDELIJK)                                                                    -->
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- ELEMENTEN (INHOUDELIJK)                                                                   -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<xsd:complexType name="administrativeZone">
 		<xsd:complexContent>
 			<xsd:extension base="predefinedObject_">
@@ -1340,9 +1343,9 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<!-- FRAMES                                                                                           -->
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- FRAMES                                                                                    -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- RESOURCE FRAME -->
 	<xsd:complexType name="resourceFrame">
 		<xsd:complexContent>
@@ -1807,9 +1810,9 @@
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<!-- GEGEVENSLEVERING-->
-	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- GEGEVENSLEVERING                                                                        -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<xsd:element name="PublicationDelivery">
 		<xsd:complexType>
 			<xsd:sequence>
