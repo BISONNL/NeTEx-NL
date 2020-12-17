@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Copyright:                                                                      -->
+<!--     Dit document is eigendom van Platform BISON onder Samenwerkingsverband DOVA -->
+<!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl,      -->
+<!--     zie http://creativecommons.org/licences/by-nd/3.0/nl                        -->
+<!-- Dit bestand is onderdeel van het TMI9 Nederlands NeTEx profiel                  -->
+<!-- Historie:                                                                       -->
+<!--   v9.2.0  (nov.2020) initiele versie (afgesplitst van netex-nl.xsd)             -->
+<!--   v9.2.0a (dec.2020) naamgeving hulpstructuren dichter bij NeTEx origineel      -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.0" id="netex-nl-enums">
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- AFHANKELIJKHEDEN                                                                -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<xsd:include schemaLocation="netex-nl-basic.xsd"/>
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- ENUMERATIES (UIT NETEX)                                                         -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<xsd:simpleType name="SanitaryFacilityEnumeration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="none"/>
+			<xsd:enumeration value="toilet"/>
+			<xsd:enumeration value="wheelChairAccessToilet"/>
+			<xsd:enumeration value="shower"/>
+			<xsd:enumeration value="washingAndChangeFacilities"/>
+			<xsd:enumeration value="babyChange"/>
+			<xsd:enumeration value="wheelchairBabyChange"/>
+			<xsd:enumeration value="shoeShiner"/>
+			<xsd:enumeration value="other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TicketingServiceFacilityEnumeration">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="purchase"/>
+			<xsd:enumeration value="collection"/>
+			<xsd:enumeration value="cardTopUp"/>
+			<xsd:enumeration value="reservations"/>
+			<xsd:enumeration value="exchange"/>
+			<xsd:enumeration value="refund"/>
+			<xsd:enumeration value="renewal"/>
+			<xsd:enumeration value="excessFares"/>
+			<xsd:enumeration value="other"/>
+			<xsd:enumeration value="all"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PassengerCommsFacilityEnumeration">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="unknown"/>
+			<xsd:enumeration value="freeWifi"/>
+			<xsd:enumeration value="publicWifi"/>
+			<xsd:enumeration value="powerSupplySockets"/>
+			<xsd:enumeration value="telephone"/>
+			<xsd:enumeration value="audioEntertainment"/>
+			<xsd:enumeration value="videoEntertainment"/>
+			<xsd:enumeration value="businessServices"/>
+			<xsd:enumeration value="internet"/>
+			<xsd:enumeration value="postOffice"/>
+			<xsd:enumeration value="postBox"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TypeOfFuelEnumeration">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="petrol"/>
+			<xsd:enumeration value="diesel"/>
+			<xsd:enumeration value="naturalGas"/>
+			<xsd:enumeration value="biodiesel"/>
+			<xsd:enumeration value="electricity"/>
+			<xsd:enumeration value="other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TransportmodeEnum">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="bus"/>
+			<xsd:enumeration value="tram"/>
+			<xsd:enumeration value="rail"/>
+			<xsd:enumeration value="metro"/>
+			<xsd:enumeration value="water"/>
+			<xsd:enumeration value="all"/>
+			<xsd:enumeration value="unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="PtSubmodeChoice">
+		<xsd:choice>
+			<xsd:element name="BusSubmode" type="BusSubmodeEnumeration" default="unknown"/>
+			<xsd:element name="CoachSubmode" type="CoachSubmodeEnumeration"/>
+			<xsd:element name="MetroSubmode" type="MetroSubmodeEnumeration" default="unknown"/>
+			<xsd:element name="TramSubmode" type="TramSubmodeEnumeration" default="unknown"/>
+			<xsd:element name="RailSubmode" type="RailSubmodeEnumeration" default="unknown"/>
+			<xsd:element name="WaterSubmode" type="WaterSubmodeEnumeration" default="unknown"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:simpleType name="BusSubmodeEnumeration">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="unknown"/>
+			<xsd:enumeration value="undefined"/>
+			<xsd:enumeration value="localBus"/>
+			<xsd:enumeration value="regionalBus"/>
+			<xsd:enumeration value="expressBus"/>
+			<xsd:enumeration value="nightBus"/>
+			<xsd:enumeration value="postBus"/>
+			<xsd:enumeration value="specialNeedsBus"/>
+			<xsd:enumeration value="mobilityBus"/>
+			<xsd:enumeration value="mobilityBusForRegisteredDisabled"/>
+			<xsd:enumeration value="sightseeingBus"/>
+			<xsd:enumeration value="shuttleBus"/>
+			<xsd:enumeration value="highFrequencyBus"/>
+			<xsd:enumeration value="dedicatedLaneBus"/>
+			<xsd:enumeration value="schoolBus"/>
+			<xsd:enumeration value="schoolAndPublicServiceBus"/>
+			<xsd:enumeration value="railReplacementBus"/>
+			<xsd:enumeration value="demandAndResponseBus"/>
+			<xsd:enumeration value="airportLinkBus"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="CoachSubmodeEnumeration">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="unknown"/>
+			<xsd:enumeration value="undefined"/>
+			<xsd:enumeration value="internationalCoach"/>
+			<xsd:enumeration value="nationalCoach"/>
+			<xsd:enumeration value="shuttleCoach"/>
+			<xsd:enumeration value="regionalCoach"/>
+			<xsd:enumeration value="specialCoach"/>
+			<xsd:enumeration value="schoolCoach"/>
+			<xsd:enumeration value="sightseeingCoach"/>
+			<xsd:enumeration value="touristCoach"/>
+			<xsd:enumeration value="commuterCoach"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="MetroSubmodeEnumeration">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="unknown"/>
+			<xsd:enumeration value="undefined"/>
+			<xsd:enumeration value="metro"/>
+			<xsd:enumeration value="tube"/>
+			<xsd:enumeration value="urbanRailway"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TramSubmodeEnumeration">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="unknown"/>
+			<xsd:enumeration value="undefined"/>
+			<xsd:enumeration value="cityTram"/>
+			<xsd:enumeration value="localTram"/>
+			<xsd:enumeration value="regionalTram"/>
+			<xsd:enumeration value="sightseeingTram"/>
+			<xsd:enumeration value="shuttleTram"/>
+			<xsd:enumeration value="trainTram"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="WaterSubmodeEnumeration">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="unknown"/>
+			<xsd:enumeration value="undefined"/>
+			<xsd:enumeration value="internationalCarFerry"/>
+			<xsd:enumeration value="nationalCarFerry"/>
+			<xsd:enumeration value="regionalCarFerry"/>
+			<xsd:enumeration value="localCarFerry"/>
+			<xsd:enumeration value="internationalPassengerFerry"/>
+			<xsd:enumeration value="nationalPassengerFerry"/>
+			<xsd:enumeration value="regionalPassengerFerry"/>
+			<xsd:enumeration value="localPassengerFerry"/>
+			<xsd:enumeration value="postBoat"/>
+			<xsd:enumeration value="trainFerry"/>
+			<xsd:enumeration value="roadFerryLink"/>
+			<xsd:enumeration value="airportBoatLink"/>
+			<xsd:enumeration value="highSpeedVehicleService"/>
+			<xsd:enumeration value="highSpeedPassengerService"/>
+			<xsd:enumeration value="sightseeingService"/>
+			<xsd:enumeration value="schoolBoat"/>
+			<xsd:enumeration value="cableFerry"/>
+			<xsd:enumeration value="riverBus"/>
+			<xsd:enumeration value="scheduledFerry"/>
+			<xsd:enumeration value="shuttleFerryService"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="RailSubmodeEnumeration">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="unknown"/>
+			<xsd:enumeration value="local"/>
+			<xsd:enumeration value="highSpeedRail"/>
+			<xsd:enumeration value="suburbanRailway"/>
+			<xsd:enumeration value="regionalRail"/>
+			<xsd:enumeration value="interregionalRail"/>
+			<xsd:enumeration value="longDistance"/>
+			<xsd:enumeration value="international"/>
+			<xsd:enumeration value="sleeperRailService"/>
+			<xsd:enumeration value="nightRail"/>
+			<xsd:enumeration value="carTransportRailService"/>
+			<xsd:enumeration value="touristRailway"/>
+			<xsd:enumeration value="airportLinkRail"/>
+			<xsd:enumeration value="railShuttle"/>
+			<xsd:enumeration value="replacementRailService"/>
+			<xsd:enumeration value="specialTrain"/>
+			<xsd:enumeration value="crossCountryRail"/>
+			<xsd:enumeration value="rackAndPinionRailway"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DirectionTypeEnumeration">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="inbound"/>
+			<xsd:enumeration value="outbound"/>
+			<xsd:enumeration value="clockwise"/>
+			<xsd:enumeration value="anticlockwise"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DeadRunTypeEnumeration">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="garageRunOut"/>
+			<xsd:enumeration value="garageRunIn"/>
+			<xsd:enumeration value="turningManoeuvre"/>
+			<xsd:enumeration value="other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DynamicAdvertisementEnumeration">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="always"/>
+			<xsd:enumeration value="never"/>
+			<xsd:enumeration value="onlyIfOrdered"/>
+			<xsd:enumeration value="onlyIfSignedOn"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="StakeholderRoleTypeEnumeration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Planning"/>
+			<xsd:enumeration value="Operation"/>
+			<xsd:enumeration value="Control"/>
+			<xsd:enumeration value="Reservation"/>
+			<xsd:enumeration value="EntityLegalOwnership"/>
+			<xsd:enumeration value="FareManagement"/>
+			<xsd:enumeration value="SecurityManagement"/>
+			<xsd:enumeration value="DataRegistrar"/>
+			<xsd:enumeration value="Other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="StakeholderRoleTypeListOfEnumerations">
+		<xsd:list itemType="StakeholderRoleTypeEnumeration"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="DayOfWeekEnumeration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Monday"/>
+			<xsd:enumeration value="Tuesday"/>
+			<xsd:enumeration value="Wednesday"/>
+			<xsd:enumeration value="Thursday"/>
+			<xsd:enumeration value="Friday"/>
+			<xsd:enumeration value="Saturday"/>
+			<xsd:enumeration value="Sunday"/>
+			<xsd:enumeration value="Everyday"/>
+			<xsd:enumeration value="Weekdays"/>
+			<xsd:enumeration value="Weekend"/>
+			<xsd:enumeration value="none"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DaysOfWeekListOfEnumerations">
+		<xsd:list itemType="DayOfWeekEnumeration"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="HolidayTypeEnumeration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="AnyDay"/>
+			<xsd:enumeration value="WorkingDay"/>
+			<xsd:enumeration value="SchoolDay"/>
+			<xsd:enumeration value="NotHoliday"/>
+			<xsd:enumeration value="NotWorkingDay"/>
+			<xsd:enumeration value="NotSchoolDay"/>
+			<xsd:enumeration value="AnyHoliday"/>
+			<xsd:enumeration value="LocalHoliday"/>
+			<xsd:enumeration value="RegionalHoliday"/>
+			<xsd:enumeration value="NationalHoliday"/>
+			<xsd:enumeration value="HolidayDisplacementDay"/>
+			<xsd:enumeration value="EveOfHoliday"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="HolidayTypesListOfEnumerations">
+		<xsd:list itemType="HolidayTypeEnumeration"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="SeasonEnumeration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Spring"/>
+			<xsd:enumeration value="Summer"/>
+			<xsd:enumeration value="Autumn"/>
+			<xsd:enumeration value="Winter"/>
+			<xsd:enumeration value="Perennially"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SeasonsListOfEnumerations">
+		<xsd:list itemType="SeasonEnumeration"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="DayEventEnumeration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="anyDay"/>
+			<xsd:enumeration value="normalDay"/>
+			<xsd:enumeration value="marketDay"/>
+			<xsd:enumeration value="matchDay"/>
+			<xsd:enumeration value="eventDay"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TideEnumeration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="HighTide"/>
+			<xsd:enumeration value="LowTide"/>
+			<xsd:enumeration value="NeapTide"/>
+			<xsd:enumeration value="AllTides"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TidesListOfEnumerations">
+		<xsd:list itemType="TideEnumeration"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CrowdingEnumeration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="veryQuiet"/>
+			<xsd:enumeration value="quiet"/>
+			<xsd:enumeration value="normal"/>
+			<xsd:enumeration value="busy"/>
+			<xsd:enumeration value="veryBusy"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="WeeksOfMonthListOfEnumerations">
+		<xsd:list itemType="WeekOfMonthEnumeration"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="WeekOfMonthEnumeration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+			<xsd:enumeration value="5"/>
+			<xsd:enumeration value="EveryWeek"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LimitationStatusEnumeration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="true"/>
+			<xsd:enumeration value="false"/>
+			<xsd:enumeration value="unknown"/>
+			<xsd:enumeration value="partial"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="VersionTypeEnumeration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="point"/>
+			<xsd:enumeration value="baseline"/>
+			<xsd:enumeration value="other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="GroupOfLinesTypeEnumeration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="marketing"/>
+			<xsd:enumeration value="administrative"/>
+			<xsd:enumeration value="scheduling"/>
+			<xsd:enumeration value="control"/>
+			<xsd:enumeration value="tariff"/>
+			<xsd:enumeration value="other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="DeliveryVariantTypeEnumeration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="any"/>
+			<xsd:enumeration value="printed"/>
+			<xsd:enumeration value="textToSpeech"/>
+			<xsd:enumeration value="recordedAnnouncement"/>
+			<xsd:enumeration value="web"/>
+			<xsd:enumeration value="mobile"/>
+			<xsd:enumeration value="other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="StatusEnumeration">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="active"/>
+			<xsd:enumeration value="inactive"/>
+			<xsd:enumeration value="other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ModificationEnumeration">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="new"/>
+			<xsd:enumeration value="delete"/>
+			<xsd:enumeration value="revise"/>
+			<xsd:enumeration value="unchanged"/>
+			<xsd:enumeration value="delta"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- ENUMERATIES (DOOR BISON GEDEFINIEERD)                                           -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<xsd:simpleType name="BisonTypeOfCompositeFrame">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_BASELINE"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_DELTA"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_CODESPACES"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_BISON_ENUMS"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_DOVA_LISTS"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BisonTypeOfProfileFrame">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_RESOURCE"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_INFRA"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_SERVICE"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_TIMETABLE"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_CALENDAR"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_VEHICLE"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BisonTypeOfGeneralFrame">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_AuthorityList"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_TariffZoneList"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_NetworkList"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_TypeOfEquipmentValues"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_TypeOfActivationValues"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_TypeOfServiceValues"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_TechnicalEnumerations"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- VALUE SETS (DOOR BISON GEDEFINIEERD)                                            -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<xsd:complexType name="typeOfService">
+		<xsd:complexContent>
+			<xsd:extension base="TypeOfValueVersionStructure"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="typeOfActivation">
+		<xsd:complexContent>
+			<xsd:extension base="TypeOfValueVersionStructure"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="typeOfEquipment">
+		<xsd:complexContent>
+			<xsd:extension base="TypeOfValueVersionStructure"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="typeOfOrganisation">
+		<xsd:complexContent>
+			<xsd:extension base="TypeOfValueVersionStructure"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="typeOfResponsibilityRole">
+		<xsd:complexContent>
+			<xsd:extension base="TypeOfValueVersionStructure"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="displayTextLength">
+		<xsd:complexContent>
+			<xsd:extension base="TypeOfValueVersionStructure"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="typeOfFrame">
+		<xsd:complexContent>
+			<xsd:extension base="TypeOfValueVersionStructure-with-version"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

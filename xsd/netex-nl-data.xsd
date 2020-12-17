@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Copyright:                                                                      -->
+<!--     Dit document is eigendom van Platform BISON onder Samenwerkingsverband DOVA -->
+<!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl,      -->
+<!--     zie http://creativecommons.org/licences/by-nd/3.0/nl                        -->
+<!-- Dit bestand is onderdeel van het TMI9 Nederlands NeTEx profiel                  -->
+<!-- Historie:                                                                       -->
+<!--   v9.2.0  (nov.2020) initiele versie (afgesplitst van netex-nl.xsd)             -->
+<!--   v9.2.0a (dec.2020) naamgeving hulpstructuren dichter bij NeTEx origineel      -->
+<!--                      VehicleType aangepast aan nieuwste NeTEx v2.1              -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.0" id="netex-nl-data">
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- AFHANKELIJKHEDEN                                                                -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="gml-bison.xsd"/>
+	<xsd:include schemaLocation="netex-nl-basic.xsd"/>
+	<xsd:include schemaLocation="netex-nl-enums.xsd"/>
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- ELEMENTEN (ONDERSTEUNEND)                                                       -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<xsd:complexType name="transportAdministrativeZone">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure-with-status">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="ShortName" type="MultilingualString"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="responsibilitySet">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="roles">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="ResponsibilityRoleAssignment" type="responsibilityRoleAssignment" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="responsibilityRoleAssignment">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="StakeholderRoleType" type="StakeholderRoleTypeListOfEnumerations" minOccurs="0"/>
+					<xsd:element name="TypeOfResponsibilityRoleRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="ResponsibleOrganisationRef" type="VersionOfObjectRefStructure-with-class" minOccurs="0"/>
+					<xsd:element name="ResponsibleAreaRef" type="VersionOfObjectRefStructure-with-class" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- ELEMENTEN (INHOUDELIJK)                                                         -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<xsd:complexType name="codespace">
+		<xsd:complexContent>
+			<xsd:extension base="SimpleObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Xmlns" type="ObjectIdType"/>
+					<xsd:element name="XmlnsUrl" type="xsd:anyURI" minOccurs="0"/>
+					<xsd:element name="Description" type="xsd:string"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="version">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure-with-version">
+				<xsd:annotation>
+					<xsd:documentation>Identificatie van de levering. 
+Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attribuut 'version' van het CompositeFrame.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:sequence>
+					<xsd:element name="StartDate" type="xsd:dateTime"/>
+					<xsd:element name="EndDate" type="xsd:dateTime"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="VersionType" type="VersionTypeEnumeration"/>
+					<xsd:element name="DerivedFromVersionRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="tariffZone">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure-with-status">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="ShortName" type="MultilingualString"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="network">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure-with-status">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="ShortName" type="MultilingualString"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="TransportMode" type="TransportmodeEnum" minOccurs="0"/>
+					<xsd:element name="GroupOfLinesType" type="GroupOfLinesTypeEnumeration"/>
+					<xsd:element name="AuthorityRef" type="VersionOfObjectRefStructure"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="authority">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure-with-status">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="ShortName" type="MultilingualString"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="operator">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="ShortName" type="MultilingualString"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="CustomerServiceContactDetails" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Email" type="EmailAddressType" minOccurs="0"/>
+								<xsd:element name="Phone" type="PhoneType" minOccurs="0"/>
+								<xsd:element name="Url" type="websiteURI" minOccurs="0"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="organisation">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="ShortName" type="MultilingualString"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="typesOfOrganisation">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="TypeOfOrganisationRef" type="VersionOfObjectRefStructure"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="branding">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="Image" type="imageURI" minOccurs="0"/>
+					<xsd:element name="Url" type="websiteURI" minOccurs="0"/>
+					<xsd:element name="Presentation" type="PresentationStructure" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="typeOfProductCategory">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="Image" type="imageURI" minOccurs="0"/>
+					<xsd:element name="Url" type="websiteURI" minOccurs="0"/>
+					<xsd:element name="Presentation" type="PresentationStructure" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="projections">
+		<xsd:sequence>
+			<xsd:element name="PointProjection" type="pointProjection"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="pointProjection">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="ProjectToPointRef" type="VersionOfObjectRefStructure-with-class"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="pointOnRoute">
+		<xsd:complexContent>
+			<xsd:extension base="OrderedVersionOfObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="RoutePointRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="OnwardRouteLinkRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="route">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="LineRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="DirectionType" type="DirectionTypeEnumeration" minOccurs="0"/>
+					<xsd:element name="pointsInSequence" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="PointOnRoute" type="pointOnRoute" minOccurs="2" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="routePoint">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Location" type="LocationStructure"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="routeLink">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Distance" type="xsd:decimal" minOccurs="0"/>
+					<xsd:element ref="gml:LineString"/>
+					<xsd:element name="passingThrough" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="PointOnLink" type="pointOnLink" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="FromPointRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="ToPointRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="OperationalContextRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+				</xsd:sequence>
+				<xsd:attribute name="responsibilitySetRef" type="ObjectIdType" use="optional" form="unqualified"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="pointOnLink">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="DistanceFromStart" type="xsd:decimal"/>
+					<xsd:element name="ActivationPointRef" type="VersionOfObjectRefStructure"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="activationPoint">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Location" type="LocationStructure" minOccurs="0"/>
+					<xsd:element name="PrivateCode" type="PrivateCodeStructure">
+						<xsd:annotation>
+							<xsd:documentation>Hier altijd type="KarAddress" gebruiken</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="TypeOfActivationRef" type="VersionOfObjectRefStructure"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="timingPoint">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:annotation>
+					<xsd:documentation>De keyList bevat de UserStopCode</xsd:documentation>
+				</xsd:annotation>
+				<xsd:sequence>
+					<xsd:element name="keyList" type="KeyListStructure"/>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="Location" type="LocationStructure"/>
+					<xsd:element name="projections" type="projections"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="scheduledStopPoint">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="Location" type="LocationStructure"/>
+					<xsd:element name="projections" type="projections"/>
+					<xsd:element name="stopAreas" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="StopAreaRef" type="VersionOfObjectRefStructure"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="tariffZones" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="TariffZoneRef" type="VersionOfObjectRefStructure" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="PrivateCode" type="PrivateCodeStructure">
+						<xsd:annotation>
+							<xsd:documentation>Hier altijd type="UserStopCode" gebruiken</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="ForAlighting" type="xsd:boolean" default="true"/>
+					<xsd:element name="ForBoarding" type="xsd:boolean" default="true"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="stopArea">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Hier altijd type="UserStopAreaCode" gebruiken</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="PublicCode" type="xsd:normalizedString" minOccurs="0"/>
+					<xsd:element name="TopographicPlaceView" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Name" type="MultilingualString"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="passengerStopAssignment">
+		<xsd:complexContent>
+			<xsd:extension base="OrderedVersionOfObjectStructure-fixed">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="ScheduledStopPointRef" type="VersionOfObjectRefStructure"/>
+					<xsd:choice>
+						<xsd:element name="StopPlaceRef" type="VersionOfObjectRefStructure"/>
+						<xsd:element name="QuayRef" type="VersionOfObjectRefStructure"/>
+					</xsd:choice>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="dataSource">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="ShortName" type="MultilingualString"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="Email" type="EmailAddressType" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="availabilityCondition">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="FromDate" type="xsd:dateTime"/>
+					<xsd:element name="ToDate" type="xsd:dateTime"/>
+					<xsd:element name="ValidDayBits">
+						<xsd:annotation>
+							<xsd:documentation>De ValidDayBits worden van links (FromDate) naar rechts (ToDate, inclusief) gelezen.</xsd:documentation>
+						</xsd:annotation>
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:normalizedString">
+								<xsd:pattern value="[0-1]+"/>
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="journeyValidityConditions">
+		<xsd:sequence>
+			<xsd:element name="AvailabilityConditionRef" type="VersionOfObjectRefStructure" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="journeyDayTypes">
+		<xsd:sequence>
+			<xsd:element name="DayTypeRef" type="VersionOfObjectRefStructure" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="serviceJourney">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:annotation>
+					<xsd:documentation>keyList geeft aan of de rit wordt uitgevoerd in hetzelfde domein (DataOwnerIsOperator). Mogelijke waarden: true (default), false.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:sequence>
+					<xsd:element name="keyList" type="KeyListStructure" minOccurs="0"/>
+					<xsd:element name="validityConditions" type="journeyValidityConditions" minOccurs="0"/>
+					<xsd:element name="PrivateCode" type="PrivateCodeStructure">
+						<xsd:annotation>
+							<xsd:documentation>Hier altijd type="JourneyNumber" gebruiken</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Monitored" type="xsd:boolean" minOccurs="0"/>
+					<xsd:element name="DepartureTime" type="xsd:time"/>
+					<xsd:element name="DepartureDayOffset" type="xsd:integer" default="0" minOccurs="0"/>
+					<xsd:element name="dayTypes" type="journeyDayTypes" minOccurs="0"/>
+					<xsd:element name="ServiceJourneyPatternRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="TimeDemandTypeRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="VehicleTypeRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="OperatorRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="Print" type="xsd:boolean" default="true" minOccurs="0"/>
+					<xsd:element name="Dynamic" type="DynamicAdvertisementEnumeration" default="always" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="deadRun">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="validityConditions" type="journeyValidityConditions"/>
+					<xsd:element name="PrivateCode" type="PrivateCodeStructure">
+						<xsd:annotation>
+							<xsd:documentation>Hier altijd type="JourneyNumber" gebruiken</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Monitored" type="xsd:boolean" minOccurs="0"/>
+					<xsd:element name="DepartureTime" type="xsd:time"/>
+					<xsd:element name="DepartureDayOffset" type="xsd:integer" default="0" minOccurs="0"/>
+					<xsd:element name="dayTypes" type="journeyDayTypes" minOccurs="0"/>
+					<xsd:element name="DeadRunJourneyPatternRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="TimeDemandTypeRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="VehicleTypeRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="DeadRunType" type="DeadRunTypeEnumeration" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="serviceJourneyInterchange">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="StaySeated" type="xsd:boolean" minOccurs="0"/>
+					<xsd:element name="Guaranteed" type="xsd:boolean" minOccurs="0"/>
+					<xsd:element name="FromPointRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="ToPointRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="FromJourneyRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="ToJourneyRef" type="VersionOfObjectRefStructure"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="notice">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="Text" type="MultilingualString"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="noticeAssignment">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="NoticeRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="NoticedObjectRef" type="VersionOfObjectRefStructure-with-class"/>
+				</xsd:sequence>
+				<xsd:attribute name="order" type="xsd:nonNegativeInteger" use="required" form="unqualified"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="accessibilityAssessment">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="MobilityImpairedAccess" type="LimitationStatusEnumeration" minOccurs="0"/>
+					<xsd:element name="Comment" type="MultilingualString" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="line">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="BrandingRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="TransportMode" type="TransportmodeEnum"/>
+					<xsd:element name="TransportSubmode" type="PtSubmodeChoice" minOccurs="0"/>
+					<xsd:element name="PublicCode" type="xsd:normalizedString"/>
+					<xsd:element name="PrivateCode" type="PrivateCodeStructure">
+						<xsd:annotation>
+							<xsd:documentation>Hier altijd type="LinePlanningNumber" gebruiken</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="ExternalLineRef" type="ExternalObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="AuthorityRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="TypeOfProductCategoryRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="TypeOfServiceRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="Monitored" type="xsd:boolean"/>
+					<xsd:element name="Presentation" type="PresentationStructure" minOccurs="0"/>
+					<xsd:element name="AccessibilityAssessment" type="accessibilityAssessment"/>
+				</xsd:sequence>
+				<xsd:attribute name="responsibilitySetRef" type="ObjectIdType" use="required" form="unqualified"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="groupOfLines">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="ShortName" type="MultilingualString"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="members">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="LineRef" type="VersionOfObjectRefStructure" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="TransportMode" type="TransportmodeEnum" minOccurs="0"/>
+					<xsd:element name="GroupOfLinesType" type="GroupOfLinesTypeEnumeration" fixed="scheduling"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="block">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="PrivateCode" type="PrivateCodeStructure">
+						<xsd:annotation>
+							<xsd:documentation>Hier altijd type="Omloopnummer" gebruiken</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="PreparationDuration" type="xsd:duration" minOccurs="0"/>
+					<xsd:element name="StartTime" type="xsd:time" minOccurs="0"/>
+					<xsd:element name="StartTimeDayOffset" type="xsd:integer" default="0" minOccurs="0"/>
+					<xsd:element name="FinishingDuration" type="xsd:duration" minOccurs="0"/>
+					<xsd:element name="EndTime" type="xsd:time" minOccurs="0"/>
+					<xsd:element name="EndTimeDayOffset" type="xsd:integer" default="0" minOccurs="0"/>
+					<xsd:element name="dayTypes" type="journeyDayTypes" minOccurs="0"/>
+					<!-- <xsd:element name="VehicleServicePartRef" type="VersionOfObjectRefStructure" minOccurs="0"/> -->
+					<xsd:element name="VehicleTypeRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="StartPointRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="EndPointRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="journeys" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence maxOccurs="unbounded">
+								<xsd:choice>
+									<xsd:element name="DeadRunRef" type="VersionOfObjectRefStructure"/>
+									<xsd:element name="ServiceJourneyRef" type="VersionOfObjectRefStructure"/>
+								</xsd:choice>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="stopPointInJourneyPattern">
+		<xsd:complexContent>
+			<xsd:extension base="OrderedVersionOfObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="ScheduledStopPointRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="OnwardTimingLinkRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="IsWaitPoint" type="xsd:boolean" default="false" minOccurs="0"/>
+					<xsd:element name="ForAlighting" type="xsd:boolean" default="true" minOccurs="0"/>
+					<xsd:element name="ForBoarding" type="xsd:boolean" default="true" minOccurs="0"/>
+					<xsd:element name="DestinationDisplayRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="timingPointInJourneyPattern">
+		<xsd:complexContent>
+			<xsd:extension base="OrderedVersionOfObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="TimingPointRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="OnwardTimingLinkRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="IsWaitPoint" type="xsd:boolean" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="serviceJourneyPattern">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="RouteRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="DirectionType" type="DirectionTypeEnumeration" minOccurs="0"/>
+					<xsd:element name="DestinationDisplayRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="pointsInSequence">
+						<xsd:complexType>
+							<xsd:choice minOccurs="2" maxOccurs="unbounded">
+								<xsd:element name="StopPointInJourneyPattern" type="stopPointInJourneyPattern"/>
+								<xsd:element name="TimingPointInJourneyPattern" type="timingPointInJourneyPattern"/>
+							</xsd:choice>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="deadRunJourneyPattern">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="pointsInSequence">
+						<xsd:complexType>
+							<xsd:choice minOccurs="2" maxOccurs="unbounded">
+								<xsd:element name="StopPointInJourneyPattern" type="stopPointInJourneyPattern"/>
+								<xsd:element name="TimingPointInJourneyPattern" type="timingPointInJourneyPattern"/>
+							</xsd:choice>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="timingLink">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Distance" type="xsd:decimal"/>
+					<xsd:element name="FromPointRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="ToPointRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="OperationalContextRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="journeyRunTime">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="TimingLinkRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="RunTime" type="xsd:duration"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="journeyWaitTime">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:choice>
+						<xsd:element name="ScheduledStopPointRef" type="VersionOfObjectRefStructure"/>
+						<xsd:element name="TimingPointRef" type="VersionOfObjectRefStructure"/>
+					</xsd:choice>
+					<xsd:element name="WaitTime" type="xsd:duration"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="journeyLayover">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Layover" type="xsd:duration"/>
+					<xsd:choice>
+						<xsd:element name="ScheduledStopPointRef" type="VersionOfObjectRefStructure"/>
+						<xsd:element name="TimingPointRef" type="VersionOfObjectRefStructure"/>
+					</xsd:choice>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="timeDemandType">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="runTimes">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="JourneyRunTime" type="journeyRunTime" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="waitTimes" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="JourneyWaitTime" type="journeyWaitTime" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="layovers" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="JourneyLayover" type="journeyLayover" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="operationalContext">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="VehicleMode" type="TransportmodeEnum"/>
+					<xsd:element name="TransportSubmode" type="PtSubmodeChoice" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="destinationDisplay">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="SideText" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="FrontText" type="MultilingualString"/>
+					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Hier altijd type="DestinationCode" gebruiken</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Presentation" type="PresentationStructure" minOccurs="0"/>
+					<xsd:element name="vias" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Via" type="via" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="variants">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="DestinationDisplayVariant" type="destinationDisplayVariant" minOccurs="4" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="destinationDisplayVariant">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Extensions" type="extensionMaxLength">
+						<xsd:annotation>
+							<xsd:documentation>De maximale tekstlengte (MaxLength) van de variant m.b.v. de BISON standaardenumeratie (DisplayTextLength)</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="DestinationDisplayVariantMediaType" type="DeliveryVariantTypeEnumeration"/>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="vias" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Via" type="via" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="via">
+		<xsd:sequence>
+			<xsd:element name="Extensions" type="extensionViaOrder" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>De volgorde van de Via's</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Name" type="MultilingualString"/>
+<!--
+			<xsd:element name="ViaType" type="ViaTypeEnumeration" minOccurs="0" default="name">
+				<xsd:annotation>
+					<xsd:documentation>Mogelijke waarden: name, stopPoint, other</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+-->
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="propertyOfDay">
+		<xsd:sequence>
+			<xsd:element name="DaysOfWeek" type="DaysOfWeekListOfEnumerations" default="Everyday" minOccurs="0"/>
+			<xsd:element name="WeeksOfMonth" type="WeeksOfMonthListOfEnumerations" default="EveryWeek" minOccurs="0"/>
+			<xsd:element name="DayOfYear" type="xsd:gMonthDay" minOccurs="0"/>
+			<xsd:element name="HolidayTypes" type="HolidayTypesListOfEnumerations" default="AnyDay" minOccurs="0"/>
+			<xsd:element name="Seasons" type="SeasonsListOfEnumerations" default="Perennially" minOccurs="0"/>
+			<xsd:element name="Tides" type="TidesListOfEnumerations" default="AllTides" minOccurs="0"/>
+			<xsd:element name="DayEvent" type="DayEventEnumeration" minOccurs="0"/>
+			<xsd:element name="Crowding" type="CrowdingEnumeration" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="dayType">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="properties">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="PropertyOfDay" type="propertyOfDay" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="dayTypeAssignment">
+		<xsd:complexContent>
+			<xsd:extension base="OrderedVersionOfObjectStructure-fixed">
+				<xsd:sequence>
+					<xsd:element name="Date" type="xsd:date"/>
+					<xsd:element name="DayTypeRef" type="VersionOfObjectRefStructure"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="vehicle">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="BrandingRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="RegistrationNumber" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="OperationalNumber" type="xsd:string"/>
+					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Hier altijd type="VehicleNumber" gebruiken</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="OperatorRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="VehicleTypeRef" type="VersionOfObjectRefStructure"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="vehicleType">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Hier altijd type="VoertuigTypeCode" gebruiken</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="TypeOfFuel" type="TypeOfFuelEnumeration" minOccurs="0"/>
+					<xsd:element name="PassengerCapacity" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="SeatingCapacity" type="xsd:nonNegativeInteger" minOccurs="0"/>
+								<xsd:element name="StandingCapacity" type="xsd:nonNegativeInteger" minOccurs="0"/>
+								<xsd:element name="SpecialPlaceCapacity" type="xsd:nonNegativeInteger" minOccurs="0"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="LowFloor" type="xsd:boolean" minOccurs="0"/>
+					<xsd:element name="HasLiftOrRamp" type="xsd:boolean" minOccurs="0"/>
+					<xsd:element name="HasHoist" type="xsd:boolean" minOccurs="0"/>
+					<xsd:element name="BoardingHeight" type="LengthType" minOccurs="0"/>
+					<xsd:element name="GapToPlatform" type="LengthType" minOccurs="0"/>
+					<xsd:element name="Length" type="LengthType"/>
+					<xsd:element name="Width" type="LengthType" minOccurs="0"/>
+					<xsd:element name="Height" type="LengthType" minOccurs="0"/>
+					<xsd:element name="Weight" type="WeightType" minOccurs="0"/>
+					<xsd:element name="facilities" type="facilities" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="facilities">
+		<xsd:sequence>
+			<xsd:element name="ServiceFacilitySet" type="serviceFacilitySet" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="serviceFacilitySet">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="otherFacilities" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="TypeOfEquipmentRef" type="VersionOfObjectRefStructure"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="PassengerCommsFacilityList" minOccurs="0">
+						<xsd:simpleType>
+							<xsd:list itemType="PassengerCommsFacilityEnumeration"/>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="SanitaryFacilityList" minOccurs="0">
+						<xsd:simpleType>
+							<xsd:list itemType="SanitaryFacilityEnumeration"/>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="TicketingServiceFacilityList" minOccurs="0">
+						<xsd:simpleType>
+							<xsd:list itemType="TicketingServiceFacilityEnumeration"/>
+						</xsd:simpleType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

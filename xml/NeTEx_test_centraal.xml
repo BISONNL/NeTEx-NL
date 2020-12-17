@@ -1,0 +1,1139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Copyright:                                                                        -->
+<!--     Dit document is eigendom van Platform BISON onder Samenwerkingsverband DOVA   -->
+<!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl,        -->
+<!--     zie http://creativecommons.org/licences/by-nd/3.0/nl                          -->
+<!--                                                                                   -->
+<!-- Versie:  v20201116                                                                -->
+<!--                                                                                   -->
+<!-- Historie:                                                                         -->
+<!--   v20201116  (nov.2020)     concept (klad)versie                                  -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex D:\github\NeTEx-CEN\NeTEx\xsd\NeTEx_publication-NoConstraint.xsd" version="ntx:1.1">
+	<PublicationTimestamp>2020-11-16T18:00:00Z</PublicationTimestamp>
+	<ParticipantRef>BISON</ParticipantRef>
+	<Description>Export van de (door BISON en DOVA) voorgedefinieerde gegevens t.b.v. het NL NeTEx Profiel.</Description>
+	<dataObjects>
+		<!-- COMPOSITE FRAME MET DE DOMEINEN -->
+		<CompositeFrame id="BISON:CompositeFrame:PredefinedCodespaces" version="20201116">
+			<Description>Export van de door BISON vastgestelde domeinen.</Description>
+			<TypeOfFrameRef ref="BISON:TypeOfFrame:NL_CODESPACES" version="9.2.0"/>
+			<codespaces>
+				<Codespace id="BISON:Codespace:EPSG">
+					<Xmlns>EPSG</Xmlns>
+					<XmlnsUrl>http://epsg.org</XmlnsUrl>
+					<Description>EPSG Geodetic Parameter Dataset</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:BISON">
+					<Xmlns>BISON</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/BISON</XmlnsUrl>
+					<Description>BISON standaard enumeraties</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:DOVA">
+					<Xmlns>DOVA</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/DOVA</XmlnsUrl>
+					<Description>Standaardlijsten bijgehouden door DOVA</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:CHB">
+					<Xmlns>CHB</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/CHB</XmlnsUrl>
+					<Description>Centraal HalteBestand</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:ARR">
+					<Xmlns>ARR</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/ARR</XmlnsUrl>
+					<Description>Arriva Personenvervoer Nederland</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:VTN">
+					<Xmlns>VTN</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/VTN</XmlnsUrl>
+					<Description>Veolia Transport Nederland</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:CXX">
+					<Xmlns>CXX</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/CXX</XmlnsUrl>
+					<Description>Connexxion, Hermes, (inclusief GVU, Novio, Stadsvervoer NL)</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:GVB">
+					<Xmlns>GVB</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/GVB</XmlnsUrl>
+					<Description>GVB Amsterdam</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:HTM">
+					<Xmlns>HTM</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/HTM</XmlnsUrl>
+					<Description>Haagse Tramweg Maatschappij</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:RET">
+					<Xmlns>RET</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/RET</XmlnsUrl>
+					<Description>RET N.V. (Rotterdam)</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:NS">
+					<Xmlns>NS</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/NS</XmlnsUrl>
+					<Description>Nederlandse Spoorwegen</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:SYNTUS">
+					<Xmlns>SYNTUS</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/SYNTUS</XmlnsUrl>
+					<Description>Syntus (nu: Keolis Nederland)</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:KEOLIS">
+					<Xmlns>KEOLIS</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/KEOLIS</XmlnsUrl>
+					<Description>Keolis Nederland</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:QBUZZ">
+					<Xmlns>QBUZZ</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/QBUZZ</XmlnsUrl>
+					<Description>Qbuzz</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:EBS">
+					<Xmlns>EBS</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/EBS</XmlnsUrl>
+					<Description>Egged Bus Systems</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:HTMBUZZ">
+					<Xmlns>HTMBUZZ</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/HTMBUZZ</XmlnsUrl>
+					<Description>Haags Stadsbusnetwerk</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:DELIJN">
+					<Xmlns>DELIJN</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/DELIJN</XmlnsUrl>
+					<Description>De Lijn (Vlaanderen)</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:TEC">
+					<Xmlns>TEC</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/TEC</XmlnsUrl>
+					<Description>TEC Bus (Wallonië)</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:MIVB">
+					<Xmlns>MIVB</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/MIVB</XmlnsUrl>
+					<Description>MIVB (Brussel)</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:DOEKSEN">
+					<Xmlns>DOEKSEN</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/DOEKSEN</XmlnsUrl>
+					<Description>Rederij Doeksen</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:WPD">
+					<Xmlns>WPD</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/WPD</XmlnsUrl>
+					<Description>Wagenborg Passagiers Diensten</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:TESO">
+					<Xmlns>TESO</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/TESO</XmlnsUrl>
+					<Description>Texels Eigen Stoomboot Onderneming</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:WSF">
+					<Xmlns>WSF</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/WSF</XmlnsUrl>
+					<Description>Westerschelde Ferry</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:TCR">
+					<Xmlns>TCR</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/TCR</XmlnsUrl>
+					<Description>Taxi Centrale Renesse</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:FLIXBUS">
+					<Xmlns>FLIXBUS</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/FLIXBUS</XmlnsUrl>
+					<Description>FlixBus, MeinFernBus</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:OUIBUS">
+					<Xmlns>OUIBUS</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/OUIBUS</XmlnsUrl>
+					<Description>Ouibus</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:EUROLINES">
+					<Xmlns>EUROLINES</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/EUROLINES</XmlnsUrl>
+					<Description>EuroLines</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:HTZ">
+					<Xmlns>HTZ</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/HTZ</XmlnsUrl>
+					<Description>Haltetaxi Zeeland</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:WTR">
+					<Xmlns>WTR</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/WTR</XmlnsUrl>
+					<Description>Watertaxi Rotterdam</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:SA">
+					<Xmlns>SA</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/SA</XmlnsUrl>
+					<Description>Stadsdienst Assen</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:SH">
+					<Xmlns>SH</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/SH</XmlnsUrl>
+					<Description>Stadsdienst Hoogeveen</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:SM">
+					<Xmlns>SM</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/SM</XmlnsUrl>
+					<Description>Stadsdienst Meppel</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:NIAG">
+					<Xmlns>NIAG</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/NIAG</XmlnsUrl>
+					<Description>Niederrheinische Verkehrsbetriebe Aktiengesellschaft</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:DRECHTSTED">
+					<Xmlns>DRECHTSTED</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/DRECHTSTED</XmlnsUrl>
+					<Description>Drechtsteden (integrator)</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:GOVI">
+					<Xmlns>GOVI</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/GOVI</XmlnsUrl>
+					<Description>Grenzeloze OV Informatie (integrator, nu: DOVA)</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:RIG">
+					<Xmlns>RIG</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/RIG</XmlnsUrl>
+					<Description>Reis Informatie Groep (integrator)</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:SABIMOS">
+					<Xmlns>SABIMOS</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/SABIMOS</XmlnsUrl>
+					<Description>Satellite Based Information and Management Operating System (integrator)</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:PRORAIL">
+					<Xmlns>PRORAIL</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/PRORAIL</XmlnsUrl>
+					<Description>ProRail (integrator)</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:OPENOV">
+					<Xmlns>OPENOV</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/OPENOV</XmlnsUrl>
+					<Description>Stiching OpenGeo, openOV (integrator)</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:AVV">
+					<Xmlns>AVV</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/AVV</XmlnsUrl>
+					<Description>Aachener Verkehrsverbund (integrator)</Description>
+				</Codespace>
+				<Codespace id="BISON:Codespace:VRR">
+					<Xmlns>VRR</Xmlns>
+					<XmlnsUrl>http://bison.dova.nu/ns/VRR</XmlnsUrl>
+					<Description>Verkehrsverbund Rhein-Ruhr (integrator)</Description>
+				</Codespace>
+				<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --> 
+				<!-- Vooralsnog niet opgenomen in deze lijst: wegbeheerders, RWS diensten, overheidslagen  -->
+				<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --> 
+			</codespaces>
+			<FrameDefaults>
+				<DefaultCodespaceRef ref="BISON:Codespace:BISON"/>
+			</FrameDefaults>
+		</CompositeFrame>
+		<!-- COMPOSITE FRAME MET ALLE BISON ENUMERATIES -->
+		<CompositeFrame id="BISON:CompositeFrame:PredefinedEnumerations" version="20201116">
+			<Description>Export van de door BISON vastgestelde enumeraties.</Description>
+			<TypeOfFrameRef ref="BISON:TypeOfFrame:NL_BISON_ENUMS" version="9.2.0"/>
+			<FrameDefaults>
+				<DefaultCodespaceRef ref="BISON:Codespace:BISON"/>
+			</FrameDefaults>
+			<frames>
+				<GeneralFrame id="BISON:GeneralFrame:Predefined_TypeOfEquipment" version="20201116">
+					<Description>BISON enumeratie met voorgedefinieerde soorten apparatuur m.b.t. toegankelijkheid. Deze enumeratie wordt bijgehouden door BISON. De gehele ValueSet kan desgewenst (ongewijzigd!) worden overgenomen in een gegevenslevering conform het NL dienstregeling Profiel.</Description>
+					<TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TypeOfEquipmentValues" version="9.2.0"/>
+					<members>
+						<ValueSet id="BISON:ValueSet:TypeOfEquipment" version="20201116">
+							<values>
+								<TypeOfEquipment id="BISON:TypeOfEquipment:automaticRamp">
+									<Name>automaticRamp</Name>
+									<Description>Elektrische oprijplaat</Description>
+								</TypeOfEquipment>
+								<TypeOfEquipment id="BISON:TypeOfEquipment:manualRamp">
+									<Name>manualRamp</Name>
+									<Description>Handbediende oprijplaat</Description>
+								</TypeOfEquipment>
+								<TypeOfEquipment id="BISON:TypeOfEquipment:slidingStep">
+									<Name>slidingStep</Name>
+									<Description>Opstaptrede</Description>
+								</TypeOfEquipment>
+								<TypeOfEquipment id="BISON:TypeOfEquipment:wheelchairLift">
+									<Name>wheelchairLift</Name>
+									<Description>Rolstoellift</Description>
+								</TypeOfEquipment>
+								<!-- WELLICHT NOG AANVULLEN -->
+							</values>
+						</ValueSet>
+					</members>
+				</GeneralFrame>
+				<GeneralFrame id="BISON:GeneralFrame:Predefined_TypeOfActivation" version="20201116">
+					<Description>BISON enumeratie met voorgedefinieerde KAR meldpunt typen. Deze enumeratie wordt bijgehouden door BISON. De gehele ValueSet kan desgewenst (ongewijzigd!) worden overgenomen in een gegevenslevering conform het NL dienstregeling Profiel.</Description>
+					<TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TypeOfActivationValues" version="9.2.0"/>
+					<members>
+						<ValueSet id="BISON:ValueSet:TypeOfActivation" version="20201116">
+							<values>
+								<TypeOfActivation id="BISON:TypeOfActivation:PreAnnouncement">
+									<Name>PreAnnouncement</Name>
+									<Description>Vooraanmelding</Description>
+								</TypeOfActivation>
+								<TypeOfActivation id="BISON:TypeOfActivation:Announcement">
+									<Name>Announcement</Name>
+									<Description>Aanmelding</Description>
+								</TypeOfActivation>
+								<TypeOfActivation id="BISON:TypeOfActivation:HaltLine">
+									<Name>HaltLine</Name>
+									<Description>Stopstreep</Description>
+								</TypeOfActivation>
+								<TypeOfActivation id="BISON:TypeOfActivation:LeaveMessage">
+									<Name>LeaveMessage</Name>
+									<Description>Uitmelding</Description>
+								</TypeOfActivation>
+							</values>
+						</ValueSet>
+					</members>
+				</GeneralFrame>
+				<GeneralFrame id="BISON:GeneralFrame:Predefined_TypeOfService" version="20201116">
+					<Description>BISON enumeratie met voorgedefinieerde formules (lijnkenmerken). Deze enumeratie wordt bijgehouden door BISON. De gehele ValueSet kan desgewenst (ongewijzigd!) worden overgenomen in een gegevenslevering conform het NL dienstregeling Profiel.</Description>
+					<TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TypeOfServiceValues" version="9.2.0"/>
+					<members>
+						<ValueSet id="BISON:ValueSet:TypeOfService" version="20201116">
+							<values>
+								<TypeOfService id="BISON:TypeOfService:Standaard">
+									<Name>Standaard</Name>
+									<Description>Standaard vervoer</Description>
+								</TypeOfService>
+								<TypeOfService id="BISON:TypeOfService:Flex">
+									<Name>Flex</Name>
+									<Description>Flexibel vervoer</Description>
+								</TypeOfService>
+								<!-- NOG VERDER AAN TE VULLEN -->
+							</values>
+						</ValueSet>
+					</members>
+				</GeneralFrame>
+				<GeneralFrame id="BISON:GeneralFrame:Predefined_Technical" version="20201116">
+					<Description>BISON enumeratie met voorgedefinieerde technische enumeraties. Deze enumeraties worden bijgehouden door BISON. Een gehele ValueSet kan desgewenst (ongewijzigd!) worden overgenomen in een gegevenslevering conform het NL dienstregeling Profiel.</Description>
+					<TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.2.0"/>
+					<members>
+						<ValueSet id="BISON:ValueSet:DisplayTextLength" version="20201116">
+							<values>
+								<TypeOfEntity id="BISON:DisplayTextLength:16">
+									<Name>Size 16</Name>
+									<Description>Maximale tekstlengte is 16 karakters</Description>
+								</TypeOfEntity>
+								<TypeOfEntity id="BISON:DisplayTextLength:19">
+									<Name>Size 19</Name>
+									<Description>Maximale tekstlengte is 19 karakters</Description>
+								</TypeOfEntity>
+								<TypeOfEntity id="BISON:DisplayTextLength:21">
+									<Name>Size 21</Name>
+									<Description>Maximale tekstlengte is 21 karakters</Description>
+								</TypeOfEntity>
+								<TypeOfEntity id="BISON:DisplayTextLength:24">
+									<Name>Size 24</Name>
+									<Description>Maximale tekstlengte is 24 karakters</Description>
+								</TypeOfEntity>
+							</values>
+						</ValueSet>
+						<ValueSet id="BISON:ValueSet:TypeOfOrganisation" version="20201116">
+							<values>
+								<TypeOfOrganisation id="BISON:TypeOfOrganisation:Financer">
+									<Name>Financer</Name>
+									<Description>Financier van het OV</Description>
+								</TypeOfOrganisation>
+								<TypeOfOrganisation id="BISON:TypeOfResponsibilityRole:Other">
+									<Name>Other</Name>
+									<Description>Een ander type organisatie</Description>
+								</TypeOfOrganisation>
+							</values>
+						</ValueSet>
+						<ValueSet id="BISON:ValueSet:TypeOfResponsibilityRole" version="20201116">
+							<values>
+								<TypeOfResponsibilityRole id="BISON:TypeOfResponsibilityRole:financing">
+									<Name>Financing</Name>
+									<Description>Financieren van het OV</Description>
+								</TypeOfResponsibilityRole>
+<!--
+								<TypeOfResponsibilityRole id="BISON:TypeOfResponsibilityRole:partition">
+									<Name>Partition</Name>
+									<Description>Partitie van de gegevenslevering</Description>
+								</TypeOfResponsibilityRole>
+								<TypeOfResponsibilityRole id="BISON:TypeOfResponsibilityRole:network">
+									<Name>Network</Name>
+									<Description>OV-concessie</Description>
+								</TypeOfResponsibilityRole>
+-->
+								<TypeOfResponsibilityRole id="BISON:TypeOfResponsibilityRole:other">
+									<Name>Other</Name>
+									<Description>Een andere rol/verantwoordelijkheid</Description>
+								</TypeOfResponsibilityRole>
+							</values>
+						</ValueSet>
+						<ValueSet id="BISON:ValueSet:TypeOfFrame" version="20201116">
+							<values>
+								<!-- NL dienstregeling Profiel -->
+								<TypeOfFrame id="BISON:TypeOfFrame:NL_TT_BASELINE" version="9.2.0">
+									<Name>Baseline composite frame</Name>
+									<Description>Composite frame met een 'baseline' (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="BISON:TypeOfFrame:NL_TT_DELTA" version="9.2.0">
+									<Name>Delta composite frame</Name>
+									<Description>Composite frame met een 'delta' (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="BISON:TypeOfFrame:NL_TT_RESOURCE" version="9.2.0">
+									<Name>Resource frame</Name>
+									<Description>Resource frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="BISON:TypeOfFrame:NL_TT_INFRA" version="9.2.0">
+									<Name>Infrastructure frame</Name>
+									<Description>Infrastructure frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="BISON:TypeOfFrame:NL_TT_SERVICE" version="9.2.0">
+									<Name>Service frame</Name>
+									<Description>Service frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="BISON:TypeOfFrame:NL_TT_TIMETABLE" version="9.2.0">
+									<Name>Timetable frame</Name>
+									<Description>Timetable frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="BISON:TypeOfFrame:NL_TT_CALENDAR" version="9.2.0">
+									<Name>ServiceCalendar frame</Name>
+									<Description>ServiceCalendar frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="BISON:TypeOfFrame:NL_TT_VEHICLE" version="9.2.0">
+									<Name>VehicleSchedule frame</Name>
+									<Description>VehicleSchedule frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<!-- NL centraal Profiel       -->
+								<TypeOfFrame id="BISON:TypeOfFrame:NL_CODESPACES" version="9.2.0">
+									<Name>Codespace composite frame</Name>
+									<Description>Composite frame met de domeinen (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="BISON:TypeOfFrame:NL_BISON_ENUMS" version="9.2.0">
+									<Name>BISON composite frame</Name>
+									<Description>Composite frame met de BISON standaardenumeraties (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="BISON:TypeOfFrame:NL_TypeOfEquipmentValues" version="9.2.0">
+									<Name>TypeOfEquipment frame</Name>
+									<Description>Frame met de TypeOfEquipment standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="BISON:TypeOfFrame:NL_TypeOfActivationValues" version="9.2.0">
+									<Name>TypeOfActivation frame</Name>
+									<Description>Frame met de TypeOfActivation standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="BISON:TypeOfFrame:NL_TypeOfServiceValues" version="9.2.0">
+									<Name>TypeOfService frame</Name>
+									<Description>Frame met de TypeOfService standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.2.0">
+									<Name>TechnicalValues frame</Name>
+									<Description>Frame met de technische standaardenumeraties (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="BISON:TypeOfFrame:NL_DOVA_LISTS" version="9.2.0">
+									<Name>DOVA composite frame</Name>
+									<Description>Composite frame met de DOVA lijsten (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="BISON:TypeOfFrame:NL_TariffZoneList" version="9.2.0">
+									<Name>TariffZones frame</Name>
+									<Description>Frame met de DOVA lijst van OV-zones (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="BISON:TypeOfFrame:NL_AuthorityList" version="9.2.0">
+									<Name>Authorities frame</Name>
+									<Description>Frame met de DOVA lijst van concessieverleners (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="BISON:TypeOfFrame:NL_NetworkList" version="9.2.0">
+									<Name>Networks frame</Name>
+									<Description>Frame met de DOVA lijst van concessies (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<!-- NL halte Profiel          -->
+								<TypeOfFrame id="BISON:TypeOfFrame:CHB" version="9.2.0">
+									<Name>CHB frame</Name>
+									<Description>Composite frame met de CHB export (NL halte Profiel)</Description>
+								</TypeOfFrame>
+							</values>
+						</ValueSet>
+					</members>
+				</GeneralFrame>
+			</frames>
+		</CompositeFrame>
+
+		<!-- COMPOSITE FRAME MET ALLE DOVA LIJSTEN -->
+		<CompositeFrame id="DOVA:CompositeFrame:PredefinedLists" version="20201116">
+			<Description>Export van de door DOVA 'centraal' bijgehouden lijsten.</Description>
+			<TypeOfFrameRef ref="BISON:TypeOfFrame:NL_DOVA_LISTS" version="9.2.0"/>
+			<FrameDefaults>
+				<DefaultCodespaceRef ref="BISON:Codespace:DOVA"/>
+			</FrameDefaults>
+			<frames>
+				<GeneralFrame id="DOVA:GeneralFrame:OvZones" version="20201116">
+					<Description>Lijst met voorgedefinieerde identificaties van OV-zones. Deze lijst wordt bijgehouden door DOVA. De gebruikte lijstelementen (TariffZone) kunnen (ongewijzigd!) worden overgenomen in een gegevenslevering conform het NL dienstregeling Profiel.</Description>
+					<TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TariffZoneList" version="9.2.0"/>
+					<members>
+						<TariffZone id="DOVA:TariffZone:1000">
+							<Name>zone 1000</Name>
+							<ShortName>1000</ShortName>
+							<Description>Groningen</Description>
+						</TariffZone>
+						<TariffZone id="DOVA:TariffZone:1010">
+							<Name>zone 1010</Name>
+							<ShortName>1010</ShortName>
+						</TariffZone>
+						<!-- enzovoort -->
+						<TariffZone id="DOVA:TariffZone:7985">
+							<Name>zone 7985</Name>
+							<ShortName>7985</ShortName>
+						</TariffZone>
+						<TariffZone id="DOVA:TariffZone:7993">
+							<Name>zone 7993</Name>
+							<ShortName>7993</ShortName>
+						</TariffZone>
+					</members>
+				</GeneralFrame>
+				<GeneralFrame id="DOVA:GeneralFrame:ConcessieVerleners" version="20201116">
+					<Description>Lijst met voorgedefinieerde identificaties van concessieverleners. Deze lijst wordt bijgehouden door DOVA. De gebruikte lijstelementen (Authority) kunnen (ongewijzigd!) worden overgenomen in een gegevenslevering conform het NL dienstregeling Profiel.</Description>
+					<TypeOfFrameRef ref="BISON:TypeOfFrame:NL_AuthorityList" version="9.2.0"/>
+					<members>
+						<Authority id="DOVA:Authority:ALM">
+							<Name>Almere</Name>
+							<ShortName>ALM</ShortName>
+							<Description>Gemeente Almere</Description>
+						</Authority>
+						<Authority id="DOVA:Authority:FLV">
+							<Name>Flevoland</Name>
+							<ShortName>FLV</ShortName>
+							<Description>Provincie Flevoland</Description>
+						</Authority>
+						<Authority id="DOVA:Authority:FR">
+							<Name>Friesland</Name>
+							<ShortName>FR</ShortName>
+							<Description>Provincie Friesland</Description>
+						</Authority>
+						<Authority id="DOVA:Authority:GLD">
+							<Name>Gelderland</Name>
+							<ShortName>GLD</ShortName>
+							<Description>Provincie Gelderland</Description>
+						</Authority>
+						<Authority id="DOVA:Authority:GLDOVS">
+							<Name>Gelderland &amp; Overijssel</Name>
+							<ShortName>GLDOVS</ShortName>
+							<Description>Provincies Gelderland en Overijssel</Description>
+						</Authority>
+						<Authority id="DOVA:Authority:LLS">
+							<Name>Lelystad</Name>
+							<ShortName>LLS</ShortName>
+							<Description>Gemeente Lelystad</Description>
+						</Authority>
+						<Authority id="DOVA:Authority:LMB">
+							<Name>Limburg</Name>
+							<ShortName>LMB</ShortName>
+							<Description>Provincie Limburg</Description>
+						</Authority>
+						<Authority id="DOVA:Authority:MRDH">
+							<Name>Metropoolregio Rotterdam Den Haag</Name>
+							<ShortName>MRDH</ShortName>
+							<Description>Metropoolregio Rotterdam Den Haag</Description>
+						</Authority>
+						<Authority id="DOVA:Authority:OVFLV">
+							<Name>Overijssel &amp; Flevoland</Name>
+							<ShortName>OVFLV</ShortName>
+							<Description>Provincies Overijssel en Flevoland</Description>
+						</Authority>
+						<Authority id="DOVA:Authority:OVGD">
+							<Name>OV-bureau Groningen Drenthe</Name>
+							<ShortName>OVGD</ShortName>
+							<Description>OV-bureau Groningen Drenthe</Description>
+						</Authority>
+						<Authority id="DOVA:Authority:OVOOST">
+							<Name>OV-Oost</Name>
+							<ShortName>OVOOST</ShortName>
+							<Description>Provincies Gelderland, Flevoland en Overijssel</Description>
+						</Authority>
+						<Authority id="DOVA:Authority:OVS">
+							<Name>Overijssel</Name>
+							<ShortName>OVS</ShortName>
+							<Description>Provincie Overijssel</Description>
+						</Authority>
+						<Authority id="DOVA:Authority:PNB">
+							<Name>Noord Brabant</Name>
+							<ShortName>PNB</ShortName>
+							<Description>Provincie Noord Brabant</Description>
+						</Authority>
+						<Authority id="DOVA:Authority:PNH">
+							<Name>Noord Holland</Name>
+							<ShortName>PNH</ShortName>
+							<Description>Provincie Noord Holland</Description>
+						</Authority>
+						<Authority id="DOVA:Authority:PUT">
+							<Name>Utrecht</Name>
+							<ShortName>PUT</ShortName>
+							<Description>Provincie Utrecht</Description>
+						</Authority>
+						<Authority id="DOVA:Authority:PZH">
+							<Name>Zuid Holland</Name>
+							<ShortName>PZH</ShortName>
+							<Description>Provincie Zuid Holland</Description>
+						</Authority>
+						<Authority id="DOVA:Authority:VRA">
+							<Name>Vervoerregio Amsterdam</Name>
+							<ShortName>VRA</ShortName>
+							<Description>Vervoerregio Amsterdam</Description>
+						</Authority>
+						<Authority id="DOVA:Authority:ZLD">
+							<Name>Zeeland</Name>
+							<ShortName>ZLD</ShortName>
+							<Description>Provincie Zeeland</Description>
+						</Authority>
+					</members>
+				</GeneralFrame>
+				<GeneralFrame id="DOVA:GeneralFrame:Concessies" version="20201116">
+					<Description>Lijst met voorgedefinieerde identificaties van concessies. Deze lijst wordt bijgehouden door DOVA. De gebruikte lijstelementen (Network) kunnen (ongewijzigd!) worden overgenomen in een gegevenslevering conform het NL dienstregeling Profiel.</Description>
+					<TypeOfFrameRef ref="BISON:TypeOfFrame:NL_NetworkList" version="9.2.0"/>
+					<members>
+						<Network id="DOVA:Network:ACH-RIV">
+							<Name>Achterhoek Rivierenland</Name>
+							<ShortName>ACH-RIV</ShortName>
+							<Description>Achterhoek - Rivierenland</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:GLD"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:ACH-RIV">
+							<Name>Achterhoek Rivierenland</Name>
+							<ShortName>ACH-RIV</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:ALM">
+							<Name>Busvervoer Almere</Name>
+							<ShortName>ALM</ShortName>
+							<Description>Busvervoer Almere</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:ALM"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:ALM">
+							<Name>Busvervoer Almere</Name>
+							<ShortName>ALM</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:AML">
+							<Name>Amstelland - Meerlanden</Name>
+							<ShortName>AML</ShortName>
+							<Description>Amstelland - Meerlanden</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:VRA"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:AML">
+							<Name>Amstelland - Meerlanden</Name>
+							<ShortName>AML</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:ASL">
+							<Name>Airport Shuttle Lelystad</Name>
+							<ShortName>ASL</ShortName>
+							<Description>Airport Shuttle Lelystad</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:FLV"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:ASL">
+							<Name>Airport Shuttle Lelystad</Name>
+							<ShortName>ASL</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:BD">
+							<Name>Berkel-Dinkel</Name>
+							<ShortName>BD</ShortName>
+							<Description>Berkel-Dinkel</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:GLDOVS"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:BD">
+							<Name>Berkel-Dinkel</Name>
+							<ShortName>BD</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:BO">
+							<Name>Oost-Brabant</Name>
+							<ShortName>BO</ShortName>
+							<Description>Oost-Brabant</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:PNB"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:BO">
+							<Name>Oost-Brabant</Name>
+							<ShortName>BO</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:BW">
+							<Name>West-Brabant</Name>
+							<ShortName>BW</ShortName>
+							<Description>West-Brabant</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:PNB"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:BW">
+							<Name>West-Brabant</Name>
+							<ShortName>BW</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:DAV" status="inactive">
+							<Name>Drechtsteden, Alblasserwaard, Vijfheerenlanden</Name>
+							<ShortName>DAV</ShortName>
+							<Description>Drechtsteden, Alblasserwaard, Vijfheerenlanden</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:PZH"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:DAV">
+							<Name>Drechtsteden, Alblasserwaard, Vijfheerenlanden</Name>
+							<ShortName>DAV</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:DMG">
+							<Name>Drechtsteden - Molenlanden - Gorinchem</Name>
+							<ShortName>DMG</ShortName>
+							<Description>Drechtsteden, Alblasserwaard</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:PZH"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:DMG">
+							<Name>Drechtsteden - Molenlanden - Gorinchem</Name>
+							<ShortName>DMG</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:FFHM" status="inactive">
+							<Name>Fast Ferry Hoek van Holland-Maasvlakte</Name>
+							<ShortName>FFHM</ShortName>
+							<Description>Fast Ferry Hoek van Holland-Maasvlakte</Description>
+							<TransportMode>water</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:MRDH"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:FFHM">
+							<Name>Fast Ferry Hoek van Holland-Maasvlakte</Name>
+							<ShortName>FFHM</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:FFVB" status="inactive">
+							<Name>Fast Ferry Vlissingen-Breskens</Name>
+							<ShortName>FFVB</ShortName>
+							<Description>Fast Ferry Vlissingen-Breskens</Description>
+							<TransportMode>water</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:ZLD"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:FFVB">
+							<Name>Fast Ferry Vlissingen-Breskens</Name>
+							<ShortName>FFVB</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:GD">
+							<Name>Groningen - Drenthe</Name>
+							<ShortName>GD</ShortName>
+							<Description>Groningen - Drenthe</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:OVGD"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:GD">
+							<Name>Groningen - Drenthe</Name>
+							<ShortName>GD</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:GOOI">
+							<Name>Gooi- en Vechtstreek</Name>
+							<ShortName>GOOI</ShortName>
+							<Description>Gooi en Vechtstreek</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:PNH"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:GOOI">
+							<Name>Gooi- en Vechtstreek</Name>
+							<ShortName>GOOI</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:GVB">
+							<Name>Stadsvervoer Amsterdam</Name>
+							<ShortName>GVB</ShortName>
+							<Description>Stadsvervoer Amsterdam</Description>
+							<TransportMode>all</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:VRA"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:GVB">
+							<Name>Stadsvervoer Amsterdam</Name>
+							<ShortName>GVB</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:HGL-R">
+							<Name>Rail Haaglanden</Name>
+							<ShortName>HGL-R</ShortName>
+							<Description>Rail Haaglanden</Description>
+							<TransportMode>tram</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:MRDH"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:HGL-R">
+							<Name>Rail Haaglanden</Name>
+							<ShortName>HGL-R</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:HGL-STD" status="inactive">
+							<Name>Bus Haaglanden Stad</Name>
+							<ShortName>HGL-STD</ShortName>
+							<Description>Bus Haaglanden Stad</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:MRDH"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:HGL-STD">
+							<Name>Bus Haaglanden Stad</Name>
+							<ShortName>HGL-STD</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:HGL-STR">
+							<Name>Regionaal busvervoer Haaglanden</Name>
+							<ShortName>HGL-STR</ShortName>
+							<Description>Regionaal busvervoer Haaglanden</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:MRDH"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:HGL-STR">
+							<Name>Regionaal busvervoer Haaglanden</Name>
+							<ShortName>HGL-STR</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:HLM-IJM">
+							<Name>Haarlem - IJmond</Name>
+							<ShortName>HLM-IJM</ShortName>
+							<Description>Haarlem/IJmond</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:PNH"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:HLM-IJM">
+							<Name>Haarlem - IJmond</Name>
+							<ShortName>HLM-IJM</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:HOV-GD" status="inactive">
+							<Name>HOV Groningen-Drenthe</Name>
+							<ShortName>HOV-GD</ShortName>
+							<Description>HOV Groningen-Drenthe</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:OVGD"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:HOV-GD">
+							<Name>HOV Groningen-Drenthe</Name>
+							<ShortName>HOV-GD</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:HWGO">
+							<Name>Hoeksche Waard - Goeree Overvlakkee</Name>
+							<ShortName>HWGO</ShortName>
+							<Description>Hoeksche Waard/Goerree Overflakkee</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:PZH"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:HWGO">
+							<Name>Hoeksche Waard - Goeree Overvlakkee</Name>
+							<ShortName>HWGO</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:IJSM">
+							<Name>IJsselmond</Name>
+							<ShortName>IJSM</ShortName>
+							<Description>IJsselmond</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:OVFLV"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:IJSM">
+							<Name>IJsselmond</Name>
+							<ShortName>IJSM</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:IJSV">
+							<Name>IJssel-Vecht</Name>
+							<ShortName>IJSV</ShortName>
+							<Description>IJssel - Vecht</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:OVOOST"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:IJSV">
+							<Name>IJssel-Vecht</Name>
+							<ShortName>IJSV</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:LLS">
+							<Name>Stadsvervoer Lelystad</Name>
+							<ShortName>LLS</ShortName>
+							<Description>Stadsvervoer Lelystad</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:LLS"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:LLS">
+							<Name>Stadsvervoer Lelystad</Name>
+							<ShortName>LLS</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:LMB">
+							<Name>Limburg</Name>
+							<ShortName>LMB</ShortName>
+							<Description>Limburg</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:LMB"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:LMB">
+							<Name>Limburg</Name>
+							<ShortName>LMB</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:MO" status="inactive">
+							<Name>Midden-Overijssel</Name>
+							<ShortName>MO</ShortName>
+							<Description>Midden-Overijssel</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:OVS"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:MO">
+							<Name>Midden-Overijssel</Name>
+							<ShortName>MO</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:NHN">
+							<Name>Noord-Holland Noord</Name>
+							<ShortName>NHN</ShortName>
+							<Description>Noord-Holland Noord</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:PNH"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:HNH">
+							<Name>Noord-Holland Noord</Name>
+							<ShortName>NHN</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:NZWF">
+							<Name>Noord- en Zuidwest Fryslân en Schiermonnikoog</Name>
+							<ShortName>NZWF</ShortName>
+							<Description>Noord- en Zuidwest Fryslân en Schiermonnikoog</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:FR"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:NZWF">
+							<Name>Noord- en Zuidwest Fryslân en Schiermonnikoog</Name>
+							<ShortName>NZWF</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:PARKSHUT">
+							<Name>Parkshuttle Rivium</Name>
+							<ShortName>PARKSHUT</ShortName>
+							<Description>Parkshuttle Rivium</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:MRDH"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:PARKSHUT">
+							<Name>Parkshuttle Rivium</Name>
+							<ShortName>PARKSHUT</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:PUT">
+							<Name>Provincie Utrecht</Name>
+							<ShortName>PUT</ShortName>
+							<Description>Provincie Utrecht</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:PUT"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:PUT">
+							<Name>Provincie Utrecht</Name>
+							<ShortName>PUT</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:RTD-B" status="inactive">
+							<Name>Bus Rotterdam e.o.</Name>
+							<ShortName>RTD-B</ShortName>
+							<Description>Bus Rotterdam e.o.</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:MRDH"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:RTD-B">
+							<Name>Bus Rotterdam e.o.</Name>
+							<ShortName>RTD-B</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:RTD-R">
+							<Name>Rail Rotterdam</Name>
+							<ShortName>RTD-R</ShortName>
+							<Description>Rail Rotterdam</Description>
+							<TransportMode>metro</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:MRDH"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:RTD-R">
+							<Name>Rail Rotterdam</Name>
+							<ShortName>RTD-R</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:RW">
+							<Name>Rijn-Waal</Name>
+							<ShortName>RW</ShortName>
+							<Description>Rijn-Waal</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:GLD"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:RW">
+							<Name>Rijn-Waal</Name>
+							<ShortName>RW</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:SAN">
+							<Name>Concessie Arnhem Nijmegen</Name>
+							<ShortName>SAN</ShortName>
+							<Description>Arnhem - Nijmegen</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:GLD"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:SAN">
+							<Name>Concessie Arnhem Nijmegen</Name>
+							<ShortName>SAN</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:SRE">
+							<Name>Zuidoost-Brabant</Name>
+							<ShortName>SRE</ShortName>
+							<Description>Zuidoost-Brabant</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:PNB"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:SRE">
+							<Name>Zuidoost-Brabant</Name>
+							<ShortName>SRE</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:TW">
+							<Name>Twente</Name>
+							<ShortName>TW</ShortName>
+							<Description>Twente</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:OVS"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:TW">
+							<Name>Twente</Name>
+							<ShortName>TW</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:U-OV">
+							<Name>Tram en Bus Regio Utrecht + Vijfheerenlanden</Name>
+							<ShortName>U-OV</ShortName>
+							<Description>Tram en Bus Regio Utrecht + Vijfheerenlanden</Description>
+							<TransportMode>all</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:PUT"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:U-OV">
+							<Name>Tram en Bus Regio Utrecht + Vijfheerenlanden</Name>
+							<ShortName>U-OV</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:U-OV-tm2018" status="inactive">
+							<Name>Tram en Bus Regio Utrecht</Name>
+							<ShortName>U-OV-tm2018</ShortName>
+							<Description>Tram en Bus Regio Utrecht</Description>
+							<TransportMode>all</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:PUT"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:U-OV-tm2018">
+							<Name>Tram en Bus Regio Utrecht</Name>
+							<ShortName>U-OV-tm2018</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:VE">
+							<Name>Veluwe</Name>
+							<ShortName>VE</ShortName>
+							<Description>Veluwe</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:GLD"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:VE">
+							<Name>Veluwe</Name>
+							<ShortName>VE</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:VPR">
+							<Name>Voorne-Putten en Rozenburg</Name>
+							<ShortName>VPR</ShortName>
+							<Description>Voorne-Putten en Rozenburg</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:MRDH"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:VPR">
+							<Name>Voorne-Putten en Rozenburg</Name>
+							<ShortName>VPR</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:WATERBUS">
+							<Name>Waterbus Rotterdam Drechtsteden</Name>
+							<ShortName>WATERBUS</ShortName>
+							<Description>Waterbus Rotterdam Drechtsteden</Description>
+							<TransportMode>water</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:PZH"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:WATERBUS">
+							<Name>Waterbus Rotterdam Drechtsteden</Name>
+							<ShortName>WATERBUS</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:WTL">
+							<Name>Waterland</Name>
+							<ShortName>WTL</ShortName>
+							<Description>Waterland</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:VRA"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:WTL">
+							<Name>Waterland</Name>
+							<ShortName>WTL</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:ZAAN">
+							<Name>Zaanstreek</Name>
+							<ShortName>ZAAN</ShortName>
+							<Description>Zaanstreek</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:VRA"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:ZAAN">
+							<Name>Zaanstreek</Name>
+							<ShortName>ZAAN</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:ZHN">
+							<Name>Zuid-Holland Noord</Name>
+							<ShortName>ZHN</ShortName>
+							<Description>Zuid-Holland Noord</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:PZH"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:ZHN">
+							<Name>Zuid-Holland Noord</Name>
+							<ShortName>ZHN</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:ZLD">
+							<Name>Zeeland</Name>
+							<ShortName>ZLD</ShortName>
+							<Description>Zeeland</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:ZLD"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:ZLD">
+							<Name>Zeeland</Name>
+							<ShortName>ZLD</ShortName>
+						</TransportAdministrativeZone>
+						<Network id="DOVA:Network:ZOF">
+							<Name>Zuidoost Fryslân, Vlieland, Terschelling, Ameland</Name>
+							<ShortName>ZOF</ShortName>
+							<Description>Zuidoost Fryslân, Vlieland, Terschelling, Ameland</Description>
+							<TransportMode>bus</TransportMode>
+							<GroupOfLinesType>administrative</GroupOfLinesType>
+							<AuthorityRef ref="DOVA:Authority:FR"/>
+						</Network>
+						<TransportAdministrativeZone id="DOVA:TransportAdministrativeZone:ZOF">
+							<Name>Zuidoost Fryslân, Vlieland, Terschelling, Ameland</Name>
+							<ShortName>ZOF</ShortName>
+						</TransportAdministrativeZone>
+					</members>
+				</GeneralFrame>
+			</frames>
+		</CompositeFrame>
+	</dataObjects>
+</PublicationDelivery>

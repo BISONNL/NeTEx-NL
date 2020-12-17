@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Copyright:                                                                      -->
+<!--     Dit document is eigendom van Platform BISON onder Samenwerkingsverband DOVA -->
+<!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl,      -->
+<!--     zie http://creativecommons.org/licences/by-nd/3.0/nl                        -->
+<!-- Dit bestand is onderdeel van het TMI9 Nederlands NeTEx profiel                  -->
+<!-- Historie:                                                                       -->
+<!--   v9.2.0  (nov.2020) initiele versie (afgesplitst van netex-nl.xsd)             -->
+<!--   v9.2.0a (dec.2020) naamgeving hulpstructuren dichter bij NeTEx origineel      -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.0" id="netex-nl-basic">
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- AFHANKELIJKHEDEN                                                                -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="gml-bison.xsd"/>
+	<xsd:include schemaLocation="netex-nl-enums.xsd"/>
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- BASIS TYPEN                                                                     -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<xsd:simpleType name="NameOfClass">
+		<xsd:restriction base="xsd:Name"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="ObjectIdType">
+		<xsd:restriction base="xsd:normalizedString"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="VersionIdType">
+		<xsd:restriction base="xsd:normalizedString"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="SystemOfUnits">
+		<xsd:restriction base="xsd:normalizedString"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="LengthType">
+		<xsd:restriction base="xsd:decimal"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="DistanceType">
+		<xsd:restriction base="xsd:decimal"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="WeightType">
+		<xsd:restriction base="xsd:decimal"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CurrencyType">
+		<xsd:restriction base="xsd:NMTOKEN"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="CurrencyAmountType">
+		<xsd:restriction base="xsd:decimal"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="PhoneType">
+		<xsd:restriction base="xsd:normalizedString"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="EmailAddressType">
+		<xsd:annotation>
+			<xsd:documentation>Email adres van de vorm a@b.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:normalizedString"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="ColourValueType">
+		<xsd:restriction base="xsd:hexBinary">
+			<xsd:maxLength value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="MultilingualString">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:normalizedString">
+				<xsd:attribute name="lang" type="xsd:language"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="LocationStructure">
+		<xsd:sequence>
+			<xsd:element ref="gml:pos"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PrivateCodeStructure">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:normalizedString">
+				<xsd:attribute name="type" type="xsd:normalizedString" use="required" form="unqualified"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="iconURI">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:anyURI">
+				<xsd:attribute name="typeOfInfoLink" type="xsd:string" fixed="icon"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="websiteURI">
+		<xsd:restriction base="xsd:anyURI">
+			<xsd:maxLength value="1024"/>
+			<xsd:pattern value="(http|HTTP|https|HTTPS)://.+">
+				<xsd:annotation>
+					<xsd:documentation>http/https (hoofdletters of kleine letters, geen combinaties)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:pattern>
+			<!--  -->
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="imageURI">
+		<xsd:restriction base="xsd:anyURI">
+			<xsd:maxLength value="1024"/>
+			<xsd:pattern value="(http|HTTP|https|HTTPS|ftp|FTP)://.+\.(jpg|JPG|jpeg|JPEG|gif|GIF|png|PNG|svg|SVG)">
+				<xsd:annotation>
+					<xsd:documentation>ftp/http/https (hoofdletters of kleine letters, geen combinaties);
+bestandtypes jpg, jpeg, gif, png, svg (hoofdletters of kleine letters, geen combinaties)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- ABSTRACTE TYPEN                                                                 -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<xsd:complexType name="SimpleObjectStructure">
+		<xsd:annotation>
+			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
+Het object heeft geen 'version' attribuut.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="DataManagedObjectStructure" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
+Het 'version' attribuut is nodig voor de constraints, maar in het NL NeTEx Profiel wordt dit niet per object gevarieerd.
+De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
+		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="optional" default="any" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="DataManagedObjectStructure-with-version" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
+Bij een Version of xxxFrame is attribuut 'version' wel verplicht.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="id" type="VersionIdType" use="required" form="unqualified"/>
+		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="DataManagedObjectStructure-any-version" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
+Het 'version' attribuut is nodig voor de constraints, maar heeft altijd de vaste waarde 'any'.
+De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
+		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="optional" fixed="any" form="unqualified"/>
+	</xsd:complexType>
+<!--
+	<xsd:complexType name="DataManagedObjectStructure-modified" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het Nederlands NeTEx Profiel document.
+Bij een Version in het versieoverzicht zijn de attributen 'version' en 'modification' verplicht.
+Attribuut 'modification' geeft aan of de versie voor het eerst wordt aangeleverd ('new') of wordt ingetrokken ('delete'), en anders of de tijdsgeldigheid wel ('revise') of niet ('unchanged') is gewijzigd t.o.v. de eerste ('new') versie.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
+		<xsd:attribute name="modification" type="ModificationEnumeration" use="required" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+	</xsd:complexType>
+-->
+	<xsd:complexType name="DataManagedObjectStructure-with-status" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>Een element uit een voorgedefinieerde lijst heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
+Het object heeft geen expliciete 'version'. De waarde 'any' wordt geinterpreteerd als 'de actuele versie'.
+De 'status' geeft aan of het element nog courant is.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
+		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="optional" fixed="any" form="unqualified"/>
+		<xsd:attribute name="status" type="StatusEnumeration" use="optional" default="active" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="OrderedVersionOfObjectStructure" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
+Het 'version' attribuut is nodig voor de constraints, maar in het NL NeTEx Profiel wordt dit niet per object gevarieerd.
+De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.
+Bij een object in een sequence is attribuut 'order' verplicht.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
+		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="optional" default="any" form="unqualified"/>
+		<xsd:attribute name="order" type="xsd:nonNegativeInteger" use="required" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="OrderedVersionOfObjectStructure-fixed" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
+Het 'version' attribuut is nodig voor de constraints, maar in het NL NeTEx Profiel wordt dit niet per object gevarieerd.
+De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.
+Bij een object in een assignment is attribuut 'order' verplicht maar niet (altijd) zinvol.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
+		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="optional" default="any" form="unqualified"/>
+		<xsd:attribute name="order" type="xsd:nonNegativeInteger" use="required" fixed="1" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="VersionFrameVersionStructure">
+		<xsd:annotation>
+			<xsd:documentation>Een frame heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
+Bij een frame is attribuut 'version' verplicht.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
+		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified">
+			<xsd:annotation>
+				<xsd:documentation>De waarde is gelijk aan attribuut 'version' in het CompositeFrame.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="TypeOfValueVersionStructure" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>Een element uit een BISON standaardenumeratie heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
+Het object heeft de vaste waarde 'any' voor attribuut 'version'. Deze waarde wordt geinterpreteerd als 'de actuele versie'.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure-any-version">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TypeOfValueVersionStructure-with-version" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>Een element uit een BISON standaardenumeratie heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
+De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de versie van het NL NeTEx Profiel.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure-with-version">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- REFERENTIES                                                                     -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<xsd:complexType name="SimpleObjectRefStructure">
+		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
+	</xsd:complexType>
+<!--
+	<xsd:complexType name="SimpleObjectRefStructure-with-class">
+		<xsd:attribute name="nameOfRefClass" type="NameOfClass" use="required" form="unqualified"/>
+		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
+	</xsd:complexType>
+-->
+	<xsd:complexType name="VersionOfObjectRefStructure">
+		<xsd:attribute name="version" type="VersionIdType" use="optional" default="any" form="unqualified"/>
+		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="VersionOfObjectRefStructure-with-class">
+		<xsd:attribute name="nameOfRefClass" type="NameOfClass" use="required" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="optional" default="any" form="unqualified"/>
+		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="ExternalObjectRefStructure">
+		<xsd:attribute name="type" type="xsd:normalizedString" use="required" form="unqualified"/>
+		<xsd:attribute name="ref" type="xsd:normalizedString" use="required" form="unqualified"/>
+	</xsd:complexType>
+	<xsd:complexType name="TypeOfFrameRefStructure">
+		<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified">
+			<xsd:annotation>
+				<xsd:documentation>De versie van het NL NeTEx Profiel</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="ref" type="xsd:NMTOKEN" use="required" form="unqualified">
+			<xsd:annotation>
+				<xsd:documentation>Soort frame, behorend tot het NL NeTEx Profiel</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- UITBREIDINGEN VAN DE NETEX STANDAARD                                            -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<xsd:complexType name="extensionPrivateCode">
+		<xsd:sequence>
+			<xsd:element name="PrivateCode" type="PrivateCodeStructure"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="extensionViaOrder">
+		<xsd:sequence>
+			<xsd:element name="ViaOrder" type="xsd:nonNegativeInteger"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="extensionMaxLength">
+		<xsd:sequence>
+			<xsd:element name="MaxLength" type="xsd:NMTOKEN">
+				<xsd:annotation>
+					<xsd:documentation>Bevat een waarde uit de door BISON gedefinieerde enumeratie DisplayTextLength.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- ELEMENTEN (ONDERSTEUNEND)                                                       -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<xsd:complexType name="KeyListStructure">
+		<xsd:sequence>
+			<xsd:element name="KeyValue" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Key" type="xsd:normalizedString"/>
+						<xsd:element name="Value" type="xsd:normalizedString"/>
+					</xsd:sequence>
+					<!-- <xsd:attribute name="typeOfKey" type="xsd:normalizedString"/> -->
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LocaleStructure">
+		<xsd:sequence>
+			<xsd:element name="TimeZoneOffset" type="xsd:decimal" default="+1" minOccurs="0"/>
+			<xsd:element name="TimeZone" type="xsd:normalizedString" fixed="Europe/Amsterdam"/>
+			<xsd:element name="SummerTimeZoneOffset" type="xsd:decimal" default="+2" minOccurs="0"/>
+			<xsd:element name="DefaultLanguage" type="xsd:language" fixed="nl"/>
+			<xsd:element name="languages" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="LanguageUsage" type="languageUsage" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="languageUsage">
+		<xsd:sequence>
+			<xsd:element name="Language" type="xsd:language"/>
+			<xsd:element name="LanguageUse" type="xsd:NMTOKEN" fixed="allUses"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="PresentationStructure">
+		<xsd:sequence>
+			<xsd:element name="Colour" type="ColourValueType" minOccurs="0"/>
+			<xsd:element name="TextColour" type="ColourValueType" minOccurs="0"/>
+			<xsd:element name="infoLinks" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="InfoLink" type="iconURI"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

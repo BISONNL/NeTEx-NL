@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Copyright:                                                                      -->
+<!--     Dit document is eigendom van Platform BISON onder Samenwerkingsverband DOVA -->
+<!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl,      -->
+<!--     zie http://creativecommons.org/licences/by-nd/3.0/nl                        -->
+<!-- Dit bestand is onderdeel van het TMI9 Nederlands NeTEx profiel                  -->
+<!-- Historie:                                                                       -->
+<!--   v9.0.0  (apr.2017) initiele versie                                            -->
+<!--   v9.1.0  (apr.2019)                                                            -->
+<!--   v9.1.0a (jan.2020) copyright aangepast                                        -->
+<!--   v9.1.1  (apr.2020) diverse correcties tbv upstream compatibiliteit            -->
+<!--                      constraints naar apart overkoepelend bestand               -->
+<!--                      Codespace, GroupOfLines toegevoegd                         -->
+<!--   v9.2.0  (nov.2020) correcties/aanscherping (o.a. metagegevens)                -->
+<!--                      gegevens verplaatst naar include-files                     -->
+<!--   v9.2.0a (dec.2020) naamgeving hulpstructuren dichter bij NeTEx origineel      -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.0" id="netex-nl-xsd">
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- AFHANKELIJKHEDEN                                                                -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="gml-bison.xsd"/>
+	<xsd:include schemaLocation="netex-nl-basic.xsd"/>
+	<xsd:include schemaLocation="netex-nl-enums.xsd"/>
+	<xsd:include schemaLocation="netex-nl-data.xsd"/>
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- DEFINITIES VOOR VERSIE 9.2.0 VAN HET NL NETEX PROFIEL                           -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<xsd:complexType name="TypeOfFrameRefStructure-composite">
+		<xsd:complexContent>
+			<xsd:restriction base="TypeOfFrameRefStructure">
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" form="unqualified"/>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TypeOfFrameRefStructure-baseline">
+		<xsd:complexContent>
+			<xsd:restriction base="TypeOfFrameRefStructure">
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_BASELINE" form="unqualified"/>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TypeOfFrameRefStructure-delta">
+		<xsd:complexContent>
+			<xsd:restriction base="TypeOfFrameRefStructure">
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_DELTA" form="unqualified"/>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TypeOfFrameRefStructure-codespace">
+		<xsd:complexContent>
+			<xsd:restriction base="TypeOfFrameRefStructure">
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="BISON:TypeOfFrame:NL_CODESPACES" form="unqualified"/>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TypeOfFrameRefStructure-bison-enums">
+		<xsd:complexContent>
+			<xsd:restriction base="TypeOfFrameRefStructure">
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="BISON:TypeOfFrame:NL_BISON_ENUMS" form="unqualified"/>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TypeOfFrameRefStructure-dova-lists">
+		<xsd:complexContent>
+			<xsd:restriction base="TypeOfFrameRefStructure">
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="BISON:TypeOfFrame:NL_DOVA_LISTS" form="unqualified"/>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TypeOfFrameRefStructure-resource">
+		<xsd:complexContent>
+			<xsd:restriction base="TypeOfFrameRefStructure">
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_RESOURCE" form="unqualified"/>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TypeOfFrameRefStructure-infra">
+		<xsd:complexContent>
+			<xsd:restriction base="TypeOfFrameRefStructure">
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_INFRA" form="unqualified"/>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TypeOfFrameRefStructure-service">
+		<xsd:complexContent>
+			<xsd:restriction base="TypeOfFrameRefStructure">
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_SERVICE" form="unqualified"/>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TypeOfFrameRefStructure-timetable">
+		<xsd:complexContent>
+			<xsd:restriction base="TypeOfFrameRefStructure">
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_TIMETABLE" form="unqualified"/>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TypeOfFrameRefStructure-calendar">
+		<xsd:complexContent>
+			<xsd:restriction base="TypeOfFrameRefStructure">
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_CALENDAR" form="unqualified"/>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TypeOfFrameRefStructure-vehicle">
+		<xsd:complexContent>
+			<xsd:restriction base="TypeOfFrameRefStructure">
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_VEHICLE" form="unqualified"/>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TypeOfFrameRefStructure-general">
+		<xsd:complexContent>
+			<xsd:restriction base="TypeOfFrameRefStructure">
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfGeneralFrame" use="required" form="unqualified"/>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- ELEMENTEN (ONDERSTEUNEND)                                                       -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<xsd:complexType name="VersionFrameDefaultsStructure">
+		<xsd:annotation>
+			<xsd:documentation>FrameDefaults voor een CompositeFrame. In een 'dienstregeling' levering zijn alle defaults verplicht. Een export van 'centrale' gegevens bevat alleen DefaultCodespaceRef.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="DefaultCodespaceRef" type="SimpleObjectRefStructure"/>
+			<xsd:element name="DefaultDataSourceRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+			<xsd:element name="DefaultResponsibilitySetRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+			<xsd:element name="DefaultLocale" type="LocaleStructure" minOccurs="0"/>
+			<xsd:element name="DefaultLocationSystem" type="xsd:normalizedString" fixed="EPSG:28992" minOccurs="0"/>
+			<xsd:element name="DefaultSystemOfUnits" type="SystemOfUnits" fixed="SiMetres" minOccurs="0"/>
+			<xsd:element name="DefaultCurrency" type="CurrencyType" fixed="EUR" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="VersionFrameDefaultsStructure-service">
+		<xsd:annotation>
+			<xsd:documentation>FrameDefaults voor een ServiceFrame.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="DefaultResponsibilitySetRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="versions">
+		<xsd:sequence>
+			<xsd:element name="Version" type="version"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="codespaces">
+		<xsd:sequence>
+			<xsd:element name="Codespace" type="codespace" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="valueSet">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="values">
+						<xsd:complexType>
+							<xsd:choice>
+								<xsd:element name="TypeOfFrame" type="typeOfFrame" maxOccurs="unbounded"/>
+								<xsd:element name="TypeOfActivation" type="typeOfActivation" maxOccurs="unbounded"/>
+								<xsd:element name="TypeOfEquipment" type="typeOfEquipment" maxOccurs="unbounded"/>
+								<xsd:element name="TypeOfService" type="typeOfService" maxOccurs="unbounded"/>
+								<xsd:element name="TypeOfOrganisation" type="typeOfOrganisation" maxOccurs="unbounded"/>
+								<xsd:element name="TypeOfResponsibilityRole" type="typeOfResponsibilityRole" maxOccurs="unbounded"/>
+								<xsd:element name="TypeOfEntity" type="displayTextLength" maxOccurs="unbounded"/>
+							</xsd:choice>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- FRAMES                                                                          -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- RESOURCE FRAME -->
+	<xsd:complexType name="resourceFrame">
+		<xsd:complexContent>
+			<xsd:extension base="VersionFrameVersionStructure">
+				<xsd:sequence>
+					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-resource"/>
+					<xsd:element name="dataSources">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="DataSource" type="dataSource"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="responsibilitySets">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="ResponsibilitySet" type="responsibilitySet" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="typesOfValue" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Branding" type="branding" minOccurs="0" maxOccurs="unbounded"/>
+								<xsd:element name="TypeOfProductCategory" type="typeOfProductCategory" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="organisations">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Operator" type="operator" maxOccurs="unbounded"/>
+								<xsd:element name="Organisation" type="organisation" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="operationalContexts">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="OperationalContext" type="operationalContext" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="vehicleTypes">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="VehicleType" type="vehicleType" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="zones">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="TransportAdministrativeZone" type="transportAdministrativeZone"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- SERVICE FRAME -->
+	<xsd:complexType name="serviceFrame">
+		<xsd:complexContent>
+			<xsd:extension base="VersionFrameVersionStructure">
+				<xsd:sequence>
+					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-service"/>
+					<xsd:element name="FrameDefaults" type="VersionFrameDefaultsStructure-service" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Bevat alleen DefaultResponsibilitySetRef voor de koppeling aan de (hoofd)financier</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="routePoints">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="RoutePoint" type="routePoint" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="routeLinks">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="RouteLink" type="routeLink" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="routes">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Route" type="route" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="lines">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Line" type="line" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="groupsOfLines" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="GroupOfLines" type="groupOfLines" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="destinationDisplays">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="DestinationDisplay" type="destinationDisplay" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="scheduledStopPoints">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="ScheduledStopPoint" type="scheduledStopPoint" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="stopAreas" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="StopArea" type="stopArea" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="stopAssignments">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="PassengerStopAssignment" type="passengerStopAssignment" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="timingPoints" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="TimingPoint" type="timingPoint" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="timingLinks">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="TimingLink" type="timingLink" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="journeyPatterns">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="ServiceJourneyPattern" type="serviceJourneyPattern" maxOccurs="unbounded"/>
+								<xsd:element name="DeadRunJourneyPattern" type="deadRunJourneyPattern" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="timeDemandTypes">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="TimeDemandType" type="timeDemandType" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="notices" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Notice" type="notice" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="noticeAssignments" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="NoticeAssignment" type="noticeAssignment" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- INFRASTRUCTURE FRAME -->
+	<xsd:complexType name="infrastructureFrame">
+		<xsd:complexContent>
+			<xsd:extension base="VersionFrameVersionStructure">
+				<xsd:sequence>
+					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-infra"/>
+					<xsd:element name="activationPoints">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="ActivationPoint" type="activationPoint" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- VEHICLE SCHEDULE FRAME -->
+	<xsd:complexType name="vehicleScheduleFrame">
+		<xsd:complexContent>
+			<xsd:extension base="VersionFrameVersionStructure">
+				<xsd:sequence>
+					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-vehicle"/>
+					<xsd:element name="blocks">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Block" type="block" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- SERVICE CALENDAR FRAME -->
+	<xsd:complexType name="serviceCalendarFrame">
+		<xsd:complexContent>
+			<xsd:extension base="VersionFrameVersionStructure">
+				<xsd:sequence>
+					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-calendar"/>
+					<xsd:element name="dayTypes">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="DayType" type="dayType" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="dayTypeAssignments">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="DayTypeAssignment" type="dayTypeAssignment" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- TIMETABLE FRAME -->
+	<xsd:complexType name="timetableFrame">
+		<xsd:complexContent>
+			<xsd:extension base="VersionFrameVersionStructure">
+				<xsd:sequence>
+					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-timetable"/>
+					<xsd:element name="Monitored" type="xsd:boolean" default="true" minOccurs="0"/>
+					<xsd:element name="contentValidityConditions">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="AvailabilityCondition" type="availabilityCondition" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="OperatorView">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="OperatorRef" type="VersionOfObjectRefStructure"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="vehicleJourneys">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="ServiceJourney" type="serviceJourney" maxOccurs="unbounded"/>
+								<xsd:element name="DeadRun" type="deadRun" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="journeyInterchanges" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="ServiceJourneyInterchange" type="serviceJourneyInterchange" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- GENERAL FRAME -->
+	<xsd:complexType name="generalFrame">
+		<xsd:complexContent>
+			<xsd:extension base="VersionFrameVersionStructure">
+				<xsd:sequence>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-general"/>
+					<xsd:element name="members">
+						<xsd:complexType>
+							<xsd:choice>
+								<xsd:element name="ValueSet" type="valueSet" maxOccurs="unbounded">
+									<xsd:annotation>
+										<xsd:documentation>Export van BISON standaardenumeraties</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="TariffZone" type="tariffZone" maxOccurs="unbounded">
+									<xsd:annotation>
+										<xsd:documentation>Export van voorgedefinieerde DOVA lijst met OV-zones</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="Authority" type="authority" maxOccurs="unbounded">
+									<xsd:annotation>
+										<xsd:documentation>Export van voorgedefinieerde DOVA lijst met concessieverleners</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:sequence maxOccurs="unbounded">
+									<xsd:element name="Network" type="network">
+										<xsd:annotation>
+											<xsd:documentation>Export van voorgedefinieerde DOVA lijst met concessies</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									<xsd:element name="TransportAdministrativeZone" type="transportAdministrativeZone"/>
+								</xsd:sequence>
+							</xsd:choice>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- COMPOSITE FRAME -->
+	<xsd:complexType name="compositeFrame">
+		<xsd:annotation>
+			<xsd:documentation>Overkoepelend frame van een levering. Bevat ofwel de dienstregeling gegevens ofwel (een subset van) de export van 'centrale' gegevens.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="VersionFrameVersionStructure">
+				<xsd:annotation>
+					<xsd:documentation>Attribuut 'version' is de identificatie ("versie") van de levering/export.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:sequence>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-composite"/>
+					<xsd:element name="codespaces" type="codespaces" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Opsomming van de beschikbare domeinen. Wordt alleen gevuld in een export van 'centrale' gegevens</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="FrameDefaults" type="VersionFrameDefaultsStructure">
+						<xsd:annotation>
+							<xsd:documentation>In een 'dienstregeling' levering zijn alle defaults verplicht. Een export van 'centrale' gegevens bevat alleen DefaultCodespaceRef.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="versions" type="versions" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Bevat één Version element dat de levering beschrijft. Wordt alleen gevuld in een 'dienstregeling' levering.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="frames" minOccurs="0">
+						<xsd:complexType>
+							<xsd:choice>
+								<xsd:sequence>
+									<xsd:annotation>
+										<xsd:documentation>Frames in een export van 'centrale' gegevens</xsd:documentation>
+									</xsd:annotation>
+									<xsd:element name="GeneralFrame" type="generalFrame" maxOccurs="unbounded"/>
+								</xsd:sequence>
+								<xsd:sequence>
+									<xsd:annotation>
+										<xsd:documentation>Frames in een 'dienstregeling' levering. De volgorde van de frames is willekeurig.</xsd:documentation>
+									</xsd:annotation>
+									<xsd:choice maxOccurs="unbounded">
+										<xsd:annotation>
+											<xsd:documentation>Het maximale aantal frames van een bepaald type wordt NIET afgedwongen. Verwacht wordt echter: 1x ResourceFrame, 0x/1x InfrastructureFrame, 1x ServiceFrame, minimaal 1x TimetableFrame, 1x ServiceCalendarFrame, 0x/1x VehicleScheduleFrame.</xsd:documentation>
+										</xsd:annotation>
+										<xsd:element name="ResourceFrame" type="resourceFrame"/>
+										<xsd:element name="InfrastructureFrame" type="infrastructureFrame"/>
+										<xsd:element name="ServiceFrame" type="serviceFrame"/>
+										<xsd:element name="TimetableFrame" type="timetableFrame"/>
+										<xsd:element name="ServiceCalendarFrame" type="serviceCalendarFrame"/>
+										<xsd:element name="VehicleScheduleFrame" type="vehicleScheduleFrame"/>
+									</xsd:choice>
+								</xsd:sequence>
+							</xsd:choice>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- GEGEVENSLEVERING                                                                -->
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<xsd:complexType name="publicationDelivery">
+		<xsd:sequence>
+			<xsd:element name="PublicationTimestamp" type="xsd:dateTime"/>
+			<xsd:element name="ParticipantRef" type="xsd:NMTOKEN">
+				<xsd:annotation>
+					<xsd:documentation>De gegevensbron. Gelijk aan de ShortName van de DataSource.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+			<xsd:element name="dataObjects" type="dataObjects"/>
+		</xsd:sequence>
+		<xsd:attribute name="version" type="xsd:NMTOKEN" use="required" fixed="ntx:1.1" form="unqualified">
+			<xsd:annotation>
+				<xsd:documentation>De versie van de NeTEx standaard waarop het NL Profiel is gebaseerd</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:annotation>
+		<xsd:documentation>De daadwerkelijke levering (name="PublicationDelivery" type="publicationDelivery") is gedefinieerd in een overkoepelend xsd (met/zonder constraints)</xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType name="dataObjects">
+		<xsd:sequence>
+			<xsd:element name="CompositeFrame" type="compositeFrame" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>Eén CompositeFrame per partitie, plus evt. CompositeFrame(s) met een kopie van de relevante 'centrale' gegevens</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

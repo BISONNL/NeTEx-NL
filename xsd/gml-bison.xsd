@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<!-- Copyright: -->
-<!--     Dit document is eigendom van Platform BISON onder de Stichting Connekt -->
-<!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl, -->
-<!--     zie http://creativecommons.org/licences/by-nd/3.0/nl -->
-<!-- Dit XSD is onderdeel van het TMI9 NeTEx Nederlands profiel -->
-<!-- Versie:  v9.1.0 -->
-<!-- Historie: -->
-<!--   v9.0.0 (april 2017): initiele versie -->
-<!--   v9.1.0 (oktober 2018) -->
-<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.opengis.net/gml/3.2" elementFormDefault="qualified" version="9.1.0">
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Copyright:                                                                      -->
+<!--     Dit document is eigendom van Platform BISON onder Samenwerkingsverband DOVA -->
+<!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl,      -->
+<!--     zie http://creativecommons.org/licences/by-nd/3.0/nl                        -->
+<!-- Dit bestand is onderdeel van het TMI9 NeTEx Nederlands profiel                  -->
+<!-- Versie:  9.1.0                                                                  -->
+<!-- Historie:                                                                       -->
+<!--   v9.0.0  (april 2017): initiele versie                                         -->
+<!--   v9.1.0  (oktober 2018)                                                        -->
+<!--   v9.1.0a (januari 2020) copyright aangepast                                    -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.opengis.net/gml/3.2" elementFormDefault="qualified" version="9.1.0" id="gml-bison">
 	<attribute name="id" type="ID"/>
 	<element name="pos">
 		<complexType>
@@ -30,9 +31,9 @@
 			</sequence>
 			<attribute ref="gml:id" use="required"/>
 			<!-- default coördinatensysteem gebruiken 
-			<attribute name="srsName" type="anyURI"/>
-			<attribute name="srsDimension" type="positiveInteger"/>
-			-->
+				<attribute name="srsName" type="anyURI"/>
+				<attribute name="srsDimension" type="positiveInteger"/>
+				-->
 		</complexType>
 	</element>
 	<complexType name="posList">
