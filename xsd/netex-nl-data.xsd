@@ -9,6 +9,7 @@
 <!--   v9.2.0  (nov.2020) initiele versie (afgesplitst van netex-nl.xsd)             -->
 <!--   v9.2.0a (dec.2020) naamgeving hulpstructuren dichter bij NeTEx origineel      -->
 <!--                      VehicleType aangepast aan nieuwste NeTEx v2.1              -->
+<!--   v9.2.1a (jan.2020) aanpassen voertuigkenmerken                                -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.0" id="netex-nl-data">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -801,7 +802,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="Name" type="MultilingualString"/>
-<!--
+			<!--
 			<xsd:element name="ViaType" type="ViaTypeEnumeration" minOccurs="0" default="name">
 				<xsd:annotation>
 					<xsd:documentation>Mogelijke waarden: name, stopPoint, other</xsd:documentation>
@@ -853,9 +854,19 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
+					<xsd:element name="ValidBetween">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="FromDate" type="xsd:dateTime" minOccurs="0"/>
+								<xsd:element name="ToDate" type="xsd:dateTime" minOccurs="0"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<!--
 					<xsd:element name="BrandingRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>
+-->
 					<xsd:element name="RegistrationNumber" type="xsd:string" minOccurs="0"/>
 					<xsd:element name="OperationalNumber" type="xsd:string"/>
 					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
@@ -865,6 +876,26 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					</xsd:element>
 					<xsd:element name="OperatorRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 					<xsd:element name="VehicleTypeRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="actualVehicleEquipments" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Equipment" type="equipment" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:attribute name="responsibilitySetRef" type="ObjectIdType"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="equipment">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="TypeOfEquipmentRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="OutOfService" type="xsd:boolean" default="false" minOccurs="0"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -873,26 +904,33 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
+					<xsd:element name="BrandingRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 					<xsd:element name="Name" type="MultilingualString"/>
 					<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>
-					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="Description" type="MultilingualString"/>
 					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
 						<xsd:annotation>
 							<xsd:documentation>Hier altijd type="VoertuigTypeCode" gebruiken</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
 					<xsd:element name="TypeOfFuel" type="TypeOfFuelEnumeration" minOccurs="0"/>
-					<xsd:element name="PassengerCapacity" minOccurs="0">
+					<xsd:element name="EuroClass" type="xsd:normalizedString" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Zie Wikipedia voor de mogelijke waarden</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="capacities" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Capaciteit per tariefklasse</xsd:documentation>
+						</xsd:annotation>
 						<xsd:complexType>
 							<xsd:sequence>
-								<xsd:element name="SeatingCapacity" type="xsd:nonNegativeInteger" minOccurs="0"/>
-								<xsd:element name="StandingCapacity" type="xsd:nonNegativeInteger" minOccurs="0"/>
-								<xsd:element name="SpecialPlaceCapacity" type="xsd:nonNegativeInteger" minOccurs="0"/>
+								<xsd:element name="PassengerCapacity" type="passengerCapacity" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="LowFloor" type="xsd:boolean" minOccurs="0"/>
-					<xsd:element name="HasLiftOrRamp" type="xsd:boolean" minOccurs="0"/>
+					<xsd:element name="LowFloor" type="xsd:boolean"/>
+					<xsd:element name="HasLiftOrRamp" type="xsd:boolean"/>
 					<xsd:element name="HasHoist" type="xsd:boolean" minOccurs="0"/>
 					<xsd:element name="BoardingHeight" type="LengthType" minOccurs="0"/>
 					<xsd:element name="GapToPlatform" type="LengthType" minOccurs="0"/>
@@ -905,6 +943,17 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
+	<xsd:complexType name="passengerCapacity">
+		<xsd:sequence>
+			<xsd:element name="FareClass" type="FareClassEnumeration"/>
+			<xsd:element name="TotalCapacity" type="xsd:nonNegativeInteger"/>
+			<xsd:element name="SeatingCapacity" type="xsd:nonNegativeInteger"/>
+			<xsd:element name="StandingCapacity" type="xsd:nonNegativeInteger"/>
+			<xsd:element name="SpecialPlaceCapacity" type="xsd:nonNegativeInteger"/>
+			<xsd:element name="PushchairCapacity" type="xsd:nonNegativeInteger"/>
+			<xsd:element name="WheelchairPlaceCapacity" type="xsd:nonNegativeInteger"/>
+		</xsd:sequence>
+	</xsd:complexType>
 	<xsd:complexType name="facilities">
 		<xsd:sequence>
 			<xsd:element name="ServiceFacilitySet" type="serviceFacilitySet" maxOccurs="unbounded"/>
@@ -914,12 +963,19 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
+					<!--
 					<xsd:element name="otherFacilities" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="TypeOfEquipmentRef" type="VersionOfObjectRefStructure"/>
 							</xsd:sequence>
 						</xsd:complexType>
+					</xsd:element>
+-->
+					<xsd:element name="MobilityFacilityList" minOccurs="0">
+						<xsd:simpleType>
+							<xsd:list itemType="MobilityFacilityEnumeration"/>
+						</xsd:simpleType>
 					</xsd:element>
 					<xsd:element name="PassengerCommsFacilityList" minOccurs="0">
 						<xsd:simpleType>
@@ -934,6 +990,12 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="TicketingServiceFacilityList" minOccurs="0">
 						<xsd:simpleType>
 							<xsd:list itemType="TicketingServiceFacilityEnumeration"/>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="VehicleAccessFacilityList" minOccurs="0">
+						<xsd:simpleType>
+							<xsd:list itemType="AccessFacilityEnumeration"/>
+							<!--	<xsd:list itemType="VehicleAccessFacilityEnumeration"/>	-->
 						</xsd:simpleType>
 					</xsd:element>
 				</xsd:sequence>
