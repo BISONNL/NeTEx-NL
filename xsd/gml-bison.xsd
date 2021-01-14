@@ -47,4 +47,32 @@
 				-->
 		</simpleContent>
 	</complexType>
+	<element name="Polygon">
+		<complexType>
+			<sequence>
+				<element name="exterior" type="gml:LinearRingType"/>
+	<!--	<element name="interior" type="gml:LinearRingType" minOccurs="0"/>	-->
+			</sequence>
+			<attribute ref="gml:id" use="required"/>
+			<!-- default coördinatensysteem gebruiken 
+				<attribute name="srsName" type="anyURI"/>
+				<attribute name="srsDimension" type="positiveInteger"/>
+				-->
+		</complexType>
+	</element>
+	<complexType name="LinearRingType">
+		<annotation>
+			<documentation>A LinearRing is defined by four or more coordinate tuples, with linear interpolation between them; the first and last coordinates shall be coincident. The number of direct positions in the list shall be at least four.</documentation>
+		</annotation>
+		<sequence>
+			<element name="LinearRing">
+				<complexType>
+					<sequence>
+						<element name="posList" type="gml:posList"/>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+
 </schema>

@@ -8,8 +8,9 @@
 <!-- Historie:                                                                       -->
 <!--   v9.2.0  (nov.2020) initiele versie (afgesplitst van netex-nl.xsd)             -->
 <!--   v9.2.0a (dec.2020) naamgeving hulpstructuren dichter bij NeTEx origineel      -->
+<!--   v9.2.1  (jan.2021) toevoegen flexvervoer                                      -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.0" id="netex-nl-basic">
+<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.1" id="netex-nl-basic">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- AFHANKELIJKHEDEN                                                                -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -46,6 +47,9 @@
 		<xsd:restriction base="xsd:decimal"/>
 	</xsd:simpleType>
 	<xsd:simpleType name="PhoneType">
+		<xsd:annotation>
+			<xsd:documentation>Telefoonnummer, bijvoorbeeld van de vorm (+31)1234567890.</xsd:documentation>
+		</xsd:annotation>
 		<xsd:restriction base="xsd:normalizedString"/>
 	</xsd:simpleType>
 	<xsd:simpleType name="EmailAddressType">
@@ -55,6 +59,9 @@
 		<xsd:restriction base="xsd:normalizedString"/>
 	</xsd:simpleType>
 	<xsd:simpleType name="ColourValueType">
+		<xsd:annotation>
+			<xsd:documentation>Kleurcode van de vorm RRGGBB.</xsd:documentation>
+		</xsd:annotation>
 		<xsd:restriction base="xsd:hexBinary">
 			<xsd:maxLength value="6"/>
 		</xsd:restriction>
@@ -293,6 +300,14 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
+	<xsd:complexType name="extensionFlexParameters">
+		<xsd:sequence>
+			<xsd:element name="MaxDetourFactor" type="xsd:duration"/>
+			<xsd:element name="MaxTraveltimeOffset" type="xsd:duration"/>
+			<xsd:element name="AvgDetourFactor" type="xsd:duration"/>
+			<xsd:element name="AvgTraveltimeOffset" type="xsd:duration"/>
+		</xsd:sequence>
+	</xsd:complexType>
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- ELEMENTEN (ONDERSTEUNEND)                                                       -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -343,4 +358,12 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
-</xsd:schema>
+	<xsd:complexType name="contactStructure">
+		<xsd:sequence>
+			<xsd:element name="ContactPerson" type="MultilingualString" minOccurs="0"/>
+			<xsd:element name="Email" type="EmailAddressType" minOccurs="0"/>
+			<xsd:element name="Phone" type="PhoneType" minOccurs="0"/>
+			<xsd:element name="Url" type="websiteURI" minOccurs="0"/>
+			<xsd:element name="FurtherDetails" type="MultilingualString" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType></xsd:schema>

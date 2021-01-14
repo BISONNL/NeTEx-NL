@@ -8,8 +8,9 @@
 <!-- Historie:                                                                       -->
 <!--   v9.2.0  (nov.2020) initiele versie (afgesplitst van netex-nl.xsd)             -->
 <!--   v9.2.0a (dec.2020) naamgeving hulpstructuren dichter bij NeTEx origineel      -->
+<!--   v9.2.1  (jan.2021) toevoegen flexvervoer                                      -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.0" id="netex-nl-enums">
+<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.1" id="netex-nl-enums">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- AFHANKELIJKHEDEN                                                                -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -378,6 +379,93 @@
 			<xsd:enumeration value="revise"/>
 			<xsd:enumeration value="unchanged"/>
 			<xsd:enumeration value="delta"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="FlexibleLineTypeEnumeration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="corridorService"/>
+			<xsd:enumeration value="mainRouteWithFlexibleEnds"/>
+			<xsd:enumeration value="flexibleAreasOnly"/>
+			<xsd:enumeration value="hailAndRideSections"/>
+			<xsd:enumeration value="fixedStopAreaWide"/>
+			<xsd:enumeration value="freeAreaAreaWide"/>
+			<xsd:enumeration value="mixedFlexible"/>
+			<xsd:enumeration value="mixedFlexibleAndFixed"/>
+			<xsd:enumeration value="fixed"/>
+			<xsd:enumeration value="other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="FlexibleRouteTypeEnumeration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="flexibleAreasOnly"/>
+			<xsd:enumeration value="hailAndRideSections"/>
+			<xsd:enumeration value="mixed"/>
+			<xsd:enumeration value="fixed"/>
+			<xsd:enumeration value="other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BookingMethodEnumeration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="callDriver"/>
+			<xsd:enumeration value="callOffice"/>
+			<xsd:enumeration value="online"/>
+			<xsd:enumeration value="other"/>
+			<xsd:enumeration value="phoneAtStop"/>
+			<xsd:enumeration value="text"/>
+			<xsd:enumeration value="none"/>
+			<xsd:enumeration value="app">
+				<xsd:annotation>
+					<xsd:documentation>De waarde 'app' is extra toegevoegd voor het NL flex Profiel.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BookingMethodListOfEnumerations">
+		<xsd:list itemType="BookingMethodEnumeration"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="BookingAccessEnumeration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="public"/>
+			<xsd:enumeration value="authorisedPublic"/>
+			<xsd:enumeration value="staff"/>
+			<xsd:enumeration value="other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PurchaseWhenEnumeration">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="advanceOnly"/>
+			<xsd:enumeration value="untilPreviousDay"/>
+			<xsd:enumeration value="dayOfTravelOnly"/>
+			<xsd:enumeration value="advanceAndDayOfTravel"/>
+			<xsd:enumeration value="timeOfTravelOnly"/>
+			<xsd:enumeration value="subscriptionChargeMoment"/>
+			<xsd:enumeration value="other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PurchaseMomentEnumeration">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="onReservation"/>
+			<xsd:enumeration value="inAdvance"/>
+			<xsd:enumeration value="inAdvanceOnly"/>
+			<xsd:enumeration value="beforeBoarding"/>
+			<xsd:enumeration value="beforeBoardingOnly"/>
+			<xsd:enumeration value="onBoarding"/>
+			<xsd:enumeration value="onBoardingOnly"/>
+			<xsd:enumeration value="afterBoarding"/>
+			<xsd:enumeration value="onCheckIn"/>
+			<xsd:enumeration value="onCheckOut"/>
+			<xsd:enumeration value="subscriptionOnly"/>
+			<xsd:enumeration value="other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PurchaseMomentListOfEnumerations">
+		<xsd:list itemType="PurchaseMomentEnumeration"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="TemplateVehicleJourneyTypeEnumeration">
+		<xsd:restriction base="xsd:NMTOKEN">
+			<xsd:enumeration value="headway"/>
+			<xsd:enumeration value="rhythmic"/>
+			<xsd:enumeration value="other"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->

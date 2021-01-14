@@ -15,8 +15,9 @@
 <!--   v9.2.0  (nov.2020) correcties/aanscherping (o.a. metagegevens)                -->
 <!--                      gegevens verplaatst naar include-files                     -->
 <!--   v9.2.0a (dec.2020) naamgeving hulpstructuren dichter bij NeTEx origineel      -->
+<!--   v9.2.1  (jan.2021) toevoegen flexvervoer                                      -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.0" id="netex-nl-xsd">
+<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.1" id="netex-nl-xsd">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- AFHANKELIJKHEDEN                                                                -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -280,14 +281,20 @@
 					<xsd:element name="routes">
 						<xsd:complexType>
 							<xsd:sequence>
-								<xsd:element name="Route" type="route" maxOccurs="unbounded"/>
+								<xsd:choice maxOccurs="unbounded">
+									<xsd:element name="Route" type="route"/>
+									<xsd:element name="FlexibleRoute" type="flexibleRoute"/>
+								</xsd:choice>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
 					<xsd:element name="lines">
 						<xsd:complexType>
 							<xsd:sequence>
-								<xsd:element name="Line" type="line" maxOccurs="unbounded"/>
+								<xsd:choice maxOccurs="unbounded">
+									<xsd:element name="Line" type="line"/>
+									<xsd:element name="FlexibleLine" type="flexibleLine"/>
+								</xsd:choice>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
@@ -322,7 +329,10 @@
 					<xsd:element name="stopAssignments">
 						<xsd:complexType>
 							<xsd:sequence>
-								<xsd:element name="PassengerStopAssignment" type="passengerStopAssignment" maxOccurs="unbounded"/>
+								<xsd:choice maxOccurs="unbounded">
+									<xsd:element name="PassengerStopAssignment" type="passengerStopAssignment"/>
+									<xsd:element name="FlexibleStopAssignment" type="flexibleStopAssignment"/>
+								</xsd:choice>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
@@ -454,10 +464,15 @@
 					</xsd:element>
 					<xsd:element name="vehicleJourneys">
 						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="ServiceJourney" type="serviceJourney" maxOccurs="unbounded"/>
-								<xsd:element name="DeadRun" type="deadRun" minOccurs="0" maxOccurs="unbounded"/>
-							</xsd:sequence>
+							<xsd:choice>
+								<xsd:sequence>
+									<xsd:element name="ServiceJourney" type="serviceJourney" maxOccurs="unbounded"/>
+									<xsd:element name="DeadRun" type="deadRun" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+								<xsd:sequence>
+									<xsd:element name="TemplateServiceJourney" type="templateServiceJourney" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:choice>
 						</xsd:complexType>
 					</xsd:element>
 					<xsd:element name="journeyInterchanges" minOccurs="0">
