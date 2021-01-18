@@ -879,7 +879,8 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="actualVehicleEquipments" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
-								<xsd:element name="Equipment" type="equipment" maxOccurs="unbounded"/>
+								<xsd:element name="AccessVehicleEquipment" type="accessVehicleEquipment"/>
+								<xsd:element name="InstalledEquipment" type="installedEquipment" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
@@ -888,14 +889,32 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:complexType name="equipment">
+	<xsd:complexType name="installedEquipment">
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
 					<xsd:element name="Name" type="MultilingualString"/>
-					<xsd:element name="TypeOfEquipmentRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="TypeOfEquipmentRef" type="VersionOfObjectRefStructure" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>BISON standaardenumeratie (automaticRamp, manualRamp, wheelchairLift, slidingStep)</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="OutOfService" type="xsd:boolean" default="false" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="accessVehicleEquipment">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Hoist" type="xsd:boolean"/>
+					<xsd:element name="Ramp" type="xsd:boolean"/>
+					<xsd:element name="NumberOfSteps" type="xsd:nonNegativeInteger"/>
+					<xsd:element name="BoardingHeight" type="LengthType"/>
+					<xsd:element name="GapToPlatform" type="LengthType"/>
+					<xsd:element name="AssistanceNeeded" type="AssistanceNeededEnumeration"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>

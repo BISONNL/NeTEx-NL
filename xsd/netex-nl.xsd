@@ -484,33 +484,61 @@
 		<xsd:complexContent>
 			<xsd:extension base="VersionFrameVersionStructure">
 				<xsd:sequence>
+					<xsd:element name="ValidBetween" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="FromDate" type="xsd:dateTime"/>
+								<xsd:element name="ToDate" type="xsd:dateTime" minOccurs="0"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-general"/>
+					<xsd:element name="dataSources" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="DataSource" type="dataSource"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="responsibilitySets" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="ResponsibilitySet" type="responsibilitySet" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
 					<xsd:element name="members">
 						<xsd:complexType>
 							<xsd:choice>
-								<xsd:element name="ValueSet" type="valueSet" maxOccurs="unbounded">
-									<xsd:annotation>
-										<xsd:documentation>Export van BISON standaardenumeraties</xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-								<xsd:element name="TariffZone" type="tariffZone" maxOccurs="unbounded">
-									<xsd:annotation>
-										<xsd:documentation>Export van voorgedefinieerde DOVA lijst met OV-zones</xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-								<xsd:element name="Authority" type="authority" maxOccurs="unbounded">
-									<xsd:annotation>
-										<xsd:documentation>Export van voorgedefinieerde DOVA lijst met concessieverleners</xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-								<xsd:sequence maxOccurs="unbounded">
-									<xsd:element name="Network" type="network">
+								<xsd:choice>
+									<xsd:element name="ValueSet" type="valueSet" maxOccurs="unbounded">
 										<xsd:annotation>
-											<xsd:documentation>Export van voorgedefinieerde DOVA lijst met concessies</xsd:documentation>
+											<xsd:documentation>Export van BISON standaardenumeraties</xsd:documentation>
 										</xsd:annotation>
 									</xsd:element>
-									<xsd:element name="TransportAdministrativeZone" type="transportAdministrativeZone"/>
+									<xsd:element name="TariffZone" type="tariffZone" maxOccurs="unbounded">
+										<xsd:annotation>
+											<xsd:documentation>Export van voorgedefinieerde DOVA lijst met OV-zones</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									<xsd:element name="Authority" type="authority" maxOccurs="unbounded">
+										<xsd:annotation>
+											<xsd:documentation>Export van voorgedefinieerde DOVA lijst met concessieverleners</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+									<xsd:sequence maxOccurs="unbounded">
+										<xsd:element name="Network" type="network">
+											<xsd:annotation>
+												<xsd:documentation>Export van voorgedefinieerde DOVA lijst met concessies</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="TransportAdministrativeZone" type="transportAdministrativeZone"/>
+									</xsd:sequence>
+								</xsd:choice>
+								<xsd:sequence>
+									<xsd:element name="VehicleTypes" type="vehicleType" maxOccurs="unbounded"/>
+									<xsd:element name="Vehicle" type="vehicle" maxOccurs="unbounded"/>
 								</xsd:sequence>
 							</xsd:choice>
 						</xsd:complexType>

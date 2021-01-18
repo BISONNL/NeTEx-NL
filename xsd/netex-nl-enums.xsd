@@ -33,6 +33,15 @@
 			<xsd:enumeration value="any"/>
 		</xsd:restriction>
 	</xsd:simpleType>
+	<xsd:simpleType name="AssistanceNeededEnumeration">
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="levelAccess"/>
+			<xsd:enumeration value="stepNegotiation"/>
+			<xsd:enumeration value="rampRequired"/>
+			<xsd:enumeration value="hoistRequired"/>
+			<xsd:enumeration value="unknown"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 	<xsd:simpleType name="AccessFacilityEnumeration">
 		<xsd:annotation>
 			<xsd:documentation>Allowed values for SITE Access Facility.</xsd:documentation>
