@@ -37,7 +37,8 @@
 				<xsd:sequence>
 					<xsd:element name="Name" type="MultilingualString"/>
 					<xsd:element name="ShortName" type="MultilingualString"/>
-					<xsd:element name="Description" type="MultilingualString"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+<!--
 					<xsd:element name="PurposeOfGroupingRef" type="VersionOfObjectRefStructure"/>
 					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
 						<xsd:annotation>
@@ -54,16 +55,17 @@
 					<xsd:element name="types" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
-								<xsd:element name="TypeOfZoneRef" type="VersionOfObjectRefStructure" maxOccurs="unbounded"/>
+								<xsd:element name="TypeOfZoneRef" type="VersionOfObjectRefStructure"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
 					<xsd:element name="Centroid" type="simplePointStructure" minOccurs="0"/>
 					<xsd:element ref="gml:Polygon" minOccurs="0"/>
+-->
 					<xsd:element name="placeTypes" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
-								<xsd:element name="TypeOfPlaceRef" type="VersionOfObjectRefStructure" maxOccurs="unbounded"/>
+								<xsd:element name="TypeOfPlaceRef" type="VersionOfObjectRefStructure"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
@@ -88,12 +90,14 @@
 					<xsd:element name="Name" type="MultilingualString"/>
 					<xsd:element name="ShortName" type="MultilingualString"/>
 					<xsd:element name="Description" type="MultilingualString"/>
+<!--
 					<xsd:element name="PurposeOfGroupingRef" type="VersionOfObjectRefStructure"/>
 					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
 						<xsd:annotation>
 							<xsd:documentation>Hier altijd type="InternalName" gebruiken</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
+-->
 					<xsd:element name="members" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
@@ -110,6 +114,7 @@
 					</xsd:element>
 					<xsd:element name="Centroid" type="simplePointStructure" minOccurs="0"/>
 					<xsd:element ref="gml:Polygon" minOccurs="0"/>
+<!--
 					<xsd:element name="placeTypes" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
@@ -118,9 +123,10 @@
 						</xsd:complexType>
 					</xsd:element>
 					<xsd:element name="TransportMode" type="TransportmodeEnum" minOccurs="0"/>
+-->
 					<xsd:element name="BoardingUse" type="xsd:boolean" minOccurs="0"/>
 					<xsd:element name="AlightingUse" type="xsd:boolean" minOccurs="0"/>
-					<xsd:element name="PublicCode" type="MultilingualString" minOccurs="0"/>
+				<!--	<xsd:element name="PublicCode" type="MultilingualString" minOccurs="0"/>	-->
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -132,6 +138,7 @@
 					<xsd:element name="Name" type="MultilingualString"/>
 					<xsd:element name="ShortName" type="MultilingualString"/>
 					<xsd:element name="Description" type="MultilingualString"/>
+<!--
 					<xsd:element name="PurposeOfGroupingRef" type="VersionOfObjectRefStructure"/>
 					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
 						<xsd:annotation>
@@ -145,6 +152,7 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
+-->
 					<xsd:element name="types" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
@@ -152,6 +160,7 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
+<!--
 					<xsd:element name="Centroid" type="simplePointStructure" minOccurs="0"/>
 					<xsd:element ref="gml:Polygon" minOccurs="0"/>
 					<xsd:element name="placeTypes" minOccurs="0">
@@ -162,9 +171,10 @@
 						</xsd:complexType>
 					</xsd:element>
 					<xsd:element name="TransportMode" type="TransportmodeEnum" minOccurs="0"/>
+-->
 					<xsd:element name="BoardingUse" type="xsd:boolean" minOccurs="0"/>
 					<xsd:element name="AlightingUse" type="xsd:boolean" minOccurs="0"/>
-					<xsd:element name="PublicCode" type="MultilingualString" minOccurs="0"/>
+				<!--	<xsd:element name="PublicCode" type="MultilingualString" minOccurs="0"/>	-->
 					<xsd:element name="StartPointRef" type="VersionOfObjectRefStructure"/>
 					<xsd:element name="EndPointRef" type="VersionOfObjectRefStructure"/>
 				</xsd:sequence>

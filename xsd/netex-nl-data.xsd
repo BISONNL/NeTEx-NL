@@ -220,7 +220,10 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
 					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
-					<xsd:element name="LineRef" type="VersionOfObjectRefStructure"/>
+					<xsd:choice>
+						<xsd:element name="LineRef" type="VersionOfObjectRefStructure"/>
+						<xsd:element name="FlexibleLineRef" type="VersionOfObjectRefStructure"/>
+					</xsd:choice>
 					<xsd:element name="DirectionType" type="DirectionTypeEnumeration" minOccurs="0"/>
 					<xsd:element name="pointsInSequence" minOccurs="0">
 						<xsd:complexType>
@@ -512,9 +515,10 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="TemplateVehicleJourneyType" type="TemplateVehicleJourneyTypeEnumeration" fixed="headway"/>
 					<xsd:element name="frequencyGroups">
 						<xsd:complexType>
-							<xsd:sequence>
+							<xsd:choice>
 								<xsd:element name="HeadwayJourneyGroup" type="headwayJourneyGroup"/>
-							</xsd:sequence>
+								<xsd:element name="RhythmicalJourneyGroup" type="rhythmicalJourneyGroup"/>
+							</xsd:choice>
 						</xsd:complexType>
 					</xsd:element>
 				</xsd:sequence>
@@ -525,6 +529,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="FirstDepartureTime" type="xsd:time"/>
 					<xsd:element name="FirstDayOffset" type="xsd:integer" default="0" minOccurs="0"/>
 					<xsd:element name="LastDepartureTime" type="xsd:time"/>
@@ -532,7 +537,37 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="ScheduledHeadwayInterval" type="xsd:duration" minOccurs="0"/>
 					<xsd:element name="MinimumHeadwayInterval" type="xsd:duration" minOccurs="0"/>
 					<xsd:element name="MaximumHeadwayInterval" type="xsd:duration" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="rhythmicalJourneyGroup">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="FirstDepartureTime" type="xsd:time"/>
+					<xsd:element name="FirstDayOffset" type="xsd:integer" default="0" minOccurs="0"/>
+					<xsd:element name="LastDepartureTime" type="xsd:time"/>
+					<xsd:element name="LastDayOffset" type="xsd:integer" default="0" minOccurs="0"/>
+					<xsd:element name="timebands">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="TimebandRef" type="VersionOfObjectRefStructure"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="timeband">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="StartTime" type="xsd:time"/>
+					<xsd:element name="EndTime" type="xsd:time"/>
+					<xsd:element name="DayOffset" type="xsd:integer" default="0" minOccurs="0"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -626,13 +661,13 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="FlexibleLineType" type="FlexibleLineTypeEnumeration"/>
 					<xsd:element name="BookingContact" type="contactStructure"/>
 					<xsd:element name="BookingMethods" type="BookingMethodListOfEnumerations"/>
-					<xsd:element name="BookingAccess" type="BookingAccessEnumeration"/>
-					<xsd:element name="BookWhen" type="PurchaseWhenEnumeration"/>
-					<xsd:element name="BuyWhen" type="PurchaseMomentListOfEnumerations"/>
-					<xsd:element name="LatestBookingTime" type="xsd:time"/>
-					<xsd:element name="MinimumBookingPeriod" type="xsd:duration"/>
-					<xsd:element name="BookingUrl" type="websiteURI"/>
-					<xsd:element name="BookingNote" type="MultilingualString"/>
+					<xsd:element name="BookingAccess" type="BookingAccessEnumeration" minOccurs="0"/>
+					<xsd:element name="BookWhen" type="PurchaseWhenEnumeration" minOccurs="0"/>
+					<xsd:element name="BuyWhen" type="PurchaseMomentListOfEnumerations" minOccurs="0"/>
+					<xsd:element name="LatestBookingTime" type="xsd:time" minOccurs="0"/>
+					<xsd:element name="MinimumBookingPeriod" type="xsd:duration" minOccurs="0"/>
+					<xsd:element name="BookingUrl" type="websiteURI" minOccurs="0"/>
+					<xsd:element name="BookingNote" type="MultilingualString" minOccurs="0"/>
 				</xsd:sequence>
 				<xsd:attribute name="responsibilitySetRef" type="ObjectIdType" use="required" form="unqualified"/>
 			</xsd:extension>
