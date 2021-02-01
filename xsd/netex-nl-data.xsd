@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2015 rel. 3 sp1 (x64) (http://www.altova.com) by InTraffic (Intraffic) -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <!-- Copyright:                                                                      -->
 <!--     Dit document is eigendom van Platform BISON onder Samenwerkingsverband DOVA -->
@@ -9,9 +10,9 @@
 <!--   v9.2.0  (nov.2020) initiele versie (afgesplitst van netex-nl.xsd)             -->
 <!--   v9.2.0a (dec.2020) naamgeving hulpstructuren dichter bij NeTEx origineel      -->
 <!--                      VehicleType aangepast aan nieuwste NeTEx v2.1              -->
-<!--   v9.2.1  (jan.2021) voertuigkenmerken en voertuigen                            -->
+<!--   v9.2.1  (feb.2021) voertuigkenmerken en voertuigen                            -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.0" id="netex-nl-data">
+<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.1" id="netex-nl-data">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- AFHANKELIJKHEDEN                                                                -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -857,16 +858,12 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="ValidBetween">
 						<xsd:complexType>
 							<xsd:sequence>
-								<xsd:element name="FromDate" type="xsd:dateTime" minOccurs="0"/>
+								<xsd:element name="FromDate" type="xsd:dateTime"/>
 								<xsd:element name="ToDate" type="xsd:dateTime" minOccurs="0"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<!--
-					<xsd:element name="BrandingRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
-					<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>
--->
+					<xsd:element name="Extensions" type="extensionTransportMode"/>
 					<xsd:element name="RegistrationNumber" type="xsd:string" minOccurs="0"/>
 					<xsd:element name="OperationalNumber" type="xsd:string"/>
 					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
@@ -876,46 +873,8 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					</xsd:element>
 					<xsd:element name="OperatorRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 					<xsd:element name="VehicleTypeRef" type="VersionOfObjectRefStructure"/>
-					<xsd:element name="actualVehicleEquipments" minOccurs="0">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="AccessVehicleEquipment" type="accessVehicleEquipment"/>
-								<xsd:element name="InstalledEquipment" type="installedEquipment" maxOccurs="unbounded"/>
-							</xsd:sequence>
-						</xsd:complexType>
-					</xsd:element>
 				</xsd:sequence>
 				<xsd:attribute name="responsibilitySetRef" type="ObjectIdType"/>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
-	<xsd:complexType name="installedEquipment">
-		<xsd:complexContent>
-			<xsd:extension base="DataManagedObjectStructure">
-				<xsd:sequence>
-					<xsd:element name="Name" type="MultilingualString"/>
-					<xsd:element name="TypeOfEquipmentRef" type="VersionOfObjectRefStructure" minOccurs="0">
-						<xsd:annotation>
-							<xsd:documentation>BISON standaardenumeratie (automaticRamp, manualRamp, wheelchairLift, slidingStep)</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
-					<xsd:element name="OutOfService" type="xsd:boolean" default="false" minOccurs="0"/>
-				</xsd:sequence>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
-	<xsd:complexType name="accessVehicleEquipment">
-		<xsd:complexContent>
-			<xsd:extension base="DataManagedObjectStructure">
-				<xsd:sequence>
-					<xsd:element name="Hoist" type="xsd:boolean"/>
-					<xsd:element name="Ramp" type="xsd:boolean"/>
-					<xsd:element name="NumberOfSteps" type="xsd:nonNegativeInteger"/>
-					<xsd:element name="BoardingHeight" type="LengthType"/>
-					<xsd:element name="GapToPlatform" type="LengthType"/>
-					<xsd:element name="AssistanceNeeded" type="AssistanceNeededEnumeration"/>
-				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -938,7 +897,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 							<xsd:documentation>Zie Wikipedia voor de mogelijke waarden</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:element name="capacities" minOccurs="0">
+					<xsd:element name="capacities">
 						<xsd:annotation>
 							<xsd:documentation>Capaciteit per tariefklasse</xsd:documentation>
 						</xsd:annotation>
@@ -1011,7 +970,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 							<xsd:list itemType="TicketingServiceFacilityEnumeration"/>
 						</xsd:simpleType>
 					</xsd:element>
-					<xsd:element name="VehicleAccessFacilityList" minOccurs="0">
+					<xsd:element name="VehicleAccessFacilityList">
 						<xsd:simpleType>
 							<xsd:list itemType="AccessFacilityEnumeration"/>
 							<!--	<xsd:list itemType="VehicleAccessFacilityEnumeration"/>	-->

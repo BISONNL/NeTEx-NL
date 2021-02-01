@@ -8,9 +8,9 @@
 <!-- Historie:                                                                       -->
 <!--   v9.2.0  (nov.2020) initiele versie (afgesplitst van netex-nl.xsd)             -->
 <!--   v9.2.0a (dec.2020) naamgeving hulpstructuren dichter bij NeTEx origineel      -->
-<!--   v9.2.1  (jan.2021) voertuigkenmerken en voertuigen                            -->
+<!--   v9.2.1  (feb.2021) voertuigkenmerken en voertuigen                            -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.0" id="netex-nl-enums">
+<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.1" id="netex-nl-enums">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- AFHANKELIJKHEDEN                                                                -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -33,15 +33,6 @@
 			<xsd:enumeration value="any"/>
 		</xsd:restriction>
 	</xsd:simpleType>
-	<xsd:simpleType name="AssistanceNeededEnumeration">
-		<xsd:restriction base="xsd:normalizedString">
-			<xsd:enumeration value="levelAccess"/>
-			<xsd:enumeration value="stepNegotiation"/>
-			<xsd:enumeration value="rampRequired"/>
-			<xsd:enumeration value="hoistRequired"/>
-			<xsd:enumeration value="unknown"/>
-		</xsd:restriction>
-	</xsd:simpleType>
 	<xsd:simpleType name="AccessFacilityEnumeration">
 		<xsd:annotation>
 			<xsd:documentation>Allowed values for SITE Access Facility.</xsd:documentation>
@@ -62,6 +53,11 @@
 			<xsd:enumeration value="barrier"/>
 			<xsd:enumeration value="lowFloorAccess"/>
 			<xsd:enumeration value="validator"/>
+			<xsd:enumeration value="levelFloorAccess">
+				<xsd:annotation>
+					<xsd:documentation>extra toegevoegd t.b.v. NL NeTEx Profiel</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="MobilityFacilityEnumeration">
@@ -467,6 +463,7 @@
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_CODESPACES"/>
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_BISON_ENUMS"/>
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_DOVA_LISTS"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_VEHICLES"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="BisonTypeOfProfileFrame">
@@ -488,6 +485,8 @@
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TypeOfActivationValues"/>
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TypeOfServiceValues"/>
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TechnicalEnumerations"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_VEH_METADATA"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_VEH_DATA"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
