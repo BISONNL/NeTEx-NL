@@ -82,7 +82,7 @@
 	<xsd:complexType name="iconURI">
 		<xsd:simpleContent>
 			<xsd:extension base="xsd:anyURI">
-				<xsd:attribute name="typeOfInfoLink" type="xsd:string" fixed="icon"/>
+				<xsd:attribute name="typeOfInfoLink" type="xsd:string" fixed="icon" form="unqualified"/>
 			</xsd:extension>
 		</xsd:simpleContent>
 	</xsd:complexType>
@@ -278,6 +278,11 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 	<xsd:complexType name="extensionTransportMode">
 		<xsd:sequence>
 			<xsd:element name="TransportMode" type="TransportmodeEnum"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="extensionTypeOfProductCategory">
+		<xsd:sequence>
+			<xsd:element name="TypeOfProductCategoryRef" type="VersionOfObjectRefStructure"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="extensionPrivateCode">

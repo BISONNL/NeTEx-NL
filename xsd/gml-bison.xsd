@@ -10,8 +10,10 @@
 <!--   v9.0.0  (april 2017): initiele versie                                         -->
 <!--   v9.1.0  (oktober 2018)                                                        -->
 <!--   v9.1.0a (januari 2020) copyright aangepast                                    -->
+<!--   v9.2.0  (nov.2020) (ongewijzigd)                                              -->
+<!--   v9.2.1  (feb.2021) (ongewijzigd)                                              -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.opengis.net/gml/3.2" elementFormDefault="qualified" version="9.1.0" id="gml-bison">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.opengis.net/gml/3.2" elementFormDefault="qualified" version="9.2.1" id="gml-bison">
 	<attribute name="id" type="ID"/>
 	<element name="pos">
 		<complexType>

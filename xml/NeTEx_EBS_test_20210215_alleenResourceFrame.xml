@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" version="ntx:1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/netex-nl-geen-constraints.xsd">
+ <PublicationTimestamp>2021-02-15T00:00:00Z</PublicationTimestamp>
+ <ParticipantRef>EBS</ParticipantRef>
+ <Description>EBS dienstregeling export (Haaglanden)</Description>
+ <!-- LET OP: VOORBEELD MET ALLEEN RESOURCEFRAME -->
+ <dataObjects>
+  <CompositeFrame id="EBS:CompositeFrame:" version="20210215">
+   <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TT_BASELINE" version="9.2.1"/>
+   <FrameDefaults>
+    <DefaultCodespaceRef ref="BISON:Codespace:EBS"/>
+    <DefaultDataSourceRef ref="EBS:DataSource:EBS"/>
+    <DefaultResponsibilitySetRef ref="EBS:ResponsibilitySet:HGL"/>
+    <DefaultLocale>
+     <TimeZone>Europe/Amsterdam</TimeZone>
+     <DefaultLanguage>nl</DefaultLanguage>
+    </DefaultLocale>
+    <DefaultLocationSystem>EPSG:28992</DefaultLocationSystem>
+    <DefaultSystemOfUnits>SiMetres</DefaultSystemOfUnits>
+    <DefaultCurrency>EUR</DefaultCurrency>
+   </FrameDefaults>
+   <versions>
+    <Version id="EBS:Version:20210215" version="20210215">
+     <StartDate>2021-02-15T00:00:00Z</StartDate>
+     <EndDate>2021-12-11T00:00:00Z</EndDate>
+     <VersionType>baseline</VersionType>
+    </Version>
+   </versions>
+   <frames>
+    <ResourceFrame id="EBS:ResourceFrame:" version="20210215">
+     <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TT_RESOURCE" version="9.2.1"/>
+     <dataSources>
+      <DataSource id="EBS:DataSource:EBS">
+       <Name>EBS</Name>
+       <ShortName>EBS</ShortName>
+       <Description>EBS</Description>
+      </DataSource>
+     </dataSources>
+     <responsibilitySets>
+      <ResponsibilitySet id="EBS:ResponsibilitySet:HGL">
+       <!-- verwijzing naar de partitie, die in deze levering wordt gedistribueerd -->
+       <Name>Partitie Haaglanden</Name>
+       <roles>
+        <ResponsibilityRoleAssignment id="EBS:ResponsibilityRoleAssignment:HGL">
+         <!--  <TypeOfResponsibilityRoleRef ref="BISON:TypeOfResponsibilityRole:partition"/>  -->
+         <ResponsibleAreaRef ref="EBS:TransportAdministrativeZone:HGL" nameOfRefClass="TransportAdministrativeZone"/>
+        </ResponsibilityRoleAssignment>
+       </roles>
+      </ResponsibilitySet>
+      <ResponsibilitySet id="EBS:ResponsibilitySet:HGL-STR">
+       <!-- verwijzing naar de concessie -->
+       <Name>Streekvervoer Haaglanden (concessie)</Name>
+       <roles>
+        <ResponsibilityRoleAssignment id="EBS:ResponsibilityRoleAssignment:HGL-STR">
+         <!--  <TypeOfResponsibilityRoleRef ref="BISON:TypeOfResponsibilityRole:network"/>  -->
+         <ResponsibleAreaRef ref="DOVA:TransportAdministrativeZone:HGL-STR" nameOfRefClass="TransportAdministrativeZone"/>
+        </ResponsibilityRoleAssignment>
+       </roles>
+      </ResponsibilitySet>
+      <ResponsibilitySet id="EBS:ResponsibilitySet:MRDH">
+       <!-- verwijzing naar de financier (in dit geval gelijk aan de concessieverlener) -->
+       <Name>Metropoolregio Rotterdam Den Haag (financier)</Name>
+       <roles>
+        <ResponsibilityRoleAssignment id="EBS:ResponsibilityRoleAssignment:MRDH">
+         <TypeOfResponsibilityRoleRef ref="BISON:TypeOfResponsibilityRole:financing"/>
+         <ResponsibleOrganisationRef ref="DOVA:Authority:MRDH" nameOfRefClass="Authority"/>
+        </ResponsibilityRoleAssignment>
+       </roles>
+      </ResponsibilitySet>
+     </responsibilitySets>
+     <typesOfValue>
+      <TypeOfProductCategory id="EBS:TypeOfProductCategory:R-net">
+       <Name>R-net</Name>
+       <Presentation>
+        <Colour>FF0000</Colour>
+        <TextColour>55555A</TextColour>
+        <infoLinks>
+         <InfoLink typeOfInfoLink="icon">https://www.rnet.nl/wp-content/themes/Rnet/images/site-logo.png</InfoLink>
+        </infoLinks>
+       </Presentation>
+      </TypeOfProductCategory>
+     </typesOfValue>
+     <organisations>
+      <Operator id="EBS:Operator:EBS">
+       <Name>EBS</Name>
+       <ShortName>EBS</ShortName>
+       <CustomerServiceContactDetails>
+        <Phone>+319005006070</Phone>
+        <Url>https://www.ebs-ov.nl/haaglanden/klantenservice/contact</Url>
+       </CustomerServiceContactDetails>
+      </Operator>
+     </organisations>
+     <operationalContexts>
+      <OperationalContext id="EBS:OperationalContext:bus">
+       <VehicleMode>bus</VehicleMode>
+      </OperationalContext>
+     </operationalContexts>
+     <vehicleTypes>
+      <VehicleType id="EBS:VehicleType:18mR">
+      <Extensions><TypeOfProductCategoryRef ref="EBS:TypeOfProductCategory:R-net"/></Extensions>
+       <Name>18mR</Name>
+       <Description>18 meter bus R-net uitvoering</Description>
+       <TypeOfFuel>naturalGas</TypeOfFuel>
+       <capacities>
+         <PassengerCapacity>
+           <FareClass>any</FareClass>
+           <TotalCapacity>152</TotalCapacity>
+           <SeatingCapacity>48</SeatingCapacity>
+           <StandingCapacity>104</StandingCapacity>
+           <SpecialPlaceCapacity>4</SpecialPlaceCapacity>
+           <PushchairCapacity>0</PushchairCapacity>
+           <WheelchairPlaceCapacity>1</WheelchairPlaceCapacity>
+         </PassengerCapacity>
+       </capacities>
+       <LowFloor>true</LowFloor>
+       <HasLiftOrRamp>true</HasLiftOrRamp>
+       <HasHoist>false</HasHoist>
+       <Length>18.13</Length>
+       <Width>2.55</Width>
+       <facilities>
+         <ServiceFacilitySet id="EBS:ServiceFacilitySet:18mR">
+           <MobilityFacilityList>suitableForWheelchairs</MobilityFacilityList>
+           <PassengerCommsFacilityList>powerSupplySockets freeWifi</PassengerCommsFacilityList>
+            <VehicleAccessFacilityList>ramp</VehicleAccessFacilityList>
+         </ServiceFacilitySet>
+       </facilities>
+       <TransportMode>bus</TransportMode>
+      </VehicleType>
+      <VehicleType id="EBS:VehicleType:18m">
+       <Name>18m</Name>
+       <Description>18 meter bus</Description>
+       <TypeOfFuel>naturalGas</TypeOfFuel>
+       <capacities>
+         <PassengerCapacity>
+           <FareClass>any</FareClass>
+           <TotalCapacity>152</TotalCapacity>
+           <SeatingCapacity>48</SeatingCapacity>
+           <StandingCapacity>104</StandingCapacity>
+           <SpecialPlaceCapacity>4</SpecialPlaceCapacity>
+           <PushchairCapacity>0</PushchairCapacity>
+           <WheelchairPlaceCapacity>1</WheelchairPlaceCapacity>
+         </PassengerCapacity>
+       </capacities>
+       <LowFloor>true</LowFloor>
+       <HasLiftOrRamp>true</HasLiftOrRamp>
+       <HasHoist>false</HasHoist>
+       <Length>18.13</Length>
+       <Width>2.55</Width>
+       <facilities>
+         <ServiceFacilitySet id="EBS:ServiceFacilitySet:18m">
+           <MobilityFacilityList>suitableForWheelchairs</MobilityFacilityList>
+           <PassengerCommsFacilityList>powerSupplySockets freeWifi</PassengerCommsFacilityList>
+           <VehicleAccessFacilityList>ramp</VehicleAccessFacilityList>
+         </ServiceFacilitySet>
+       </facilities>
+       <TransportMode>bus</TransportMode>
+      </VehicleType>
+      <VehicleType id="EBS:VehicleType:12mR">
+      <Extensions><TypeOfProductCategoryRef ref="EBS:TypeOfProductCategory:R-net"/></Extensions>
+       <Name>12mR</Name>
+       <Description>12 meter bus R-net uitvoering</Description>
+      <!-- <PrivateCode type="VoertuigTypeCode">12mR</PrivateCode> -->
+       <TypeOfFuel>naturalGas</TypeOfFuel>
+       <capacities>
+         <PassengerCapacity>
+           <FareClass>any</FareClass>
+           <TotalCapacity>95</TotalCapacity>
+           <SeatingCapacity>36</SeatingCapacity>
+           <StandingCapacity>59</StandingCapacity>
+           <SpecialPlaceCapacity>4</SpecialPlaceCapacity>
+           <PushchairCapacity>0</PushchairCapacity>
+           <WheelchairPlaceCapacity>1</WheelchairPlaceCapacity>
+         </PassengerCapacity>
+       </capacities>
+       <LowFloor>true</LowFloor>
+       <HasLiftOrRamp>true</HasLiftOrRamp>
+       <HasHoist>false</HasHoist>
+       <BoardingHeight>0.32</BoardingHeight>
+       <GapToPlatform>0.20</GapToPlatform>
+       <Length>12.14</Length>
+       <Width>2.55</Width>
+       <Height>3.3</Height>
+       <Weight>19000.0</Weight>
+       <facilities>
+         <ServiceFacilitySet id="EBS:ServiceFacilitySet:12mR">
+           <MobilityFacilityList>suitableForWheelchairs</MobilityFacilityList>
+           <PassengerCommsFacilityList>powerSupplySockets freeWifi</PassengerCommsFacilityList>
+           <VehicleAccessFacilityList>ramp</VehicleAccessFacilityList>
+         </ServiceFacilitySet>
+       </facilities>
+       <TransportMode>bus</TransportMode>
+      </VehicleType>
+      <VehicleType id="EBS:VehicleType:12m">
+       <Name>12m</Name>
+       <Description>12 meter bus</Description>
+      <!-- <PrivateCode type="VoertuigTypeCode">12m</PrivateCode> -->
+       <TypeOfFuel>naturalGas</TypeOfFuel>
+       <capacities>
+         <PassengerCapacity>
+           <FareClass>any</FareClass>
+           <TotalCapacity>95</TotalCapacity>
+           <SeatingCapacity>36</SeatingCapacity>
+           <StandingCapacity>59</StandingCapacity>
+           <SpecialPlaceCapacity>4</SpecialPlaceCapacity>
+           <PushchairCapacity>0</PushchairCapacity>
+           <WheelchairPlaceCapacity>1</WheelchairPlaceCapacity>
+         </PassengerCapacity>
+       </capacities>
+       <LowFloor>true</LowFloor>
+       <HasLiftOrRamp>true</HasLiftOrRamp>
+       <HasHoist>false</HasHoist>
+       <BoardingHeight>0.32</BoardingHeight>
+       <GapToPlatform>0.20</GapToPlatform>
+       <Length>12.14</Length>
+       <Width>2.55</Width>
+       <Height>3.3</Height>
+       <Weight>19000.0</Weight>
+       <facilities>
+         <ServiceFacilitySet id="EBS:ServiceFacilitySet:12m">
+           <MobilityFacilityList>suitableForWheelchairs</MobilityFacilityList>
+           <PassengerCommsFacilityList>powerSupplySockets freeWifi</PassengerCommsFacilityList>
+           <VehicleAccessFacilityList>ramp</VehicleAccessFacilityList>
+         </ServiceFacilitySet>
+       </facilities>
+       <TransportMode>bus</TransportMode>
+      </VehicleType>
+      <VehicleType id="EBS:VehicleType:E10m">
+       <Name>E10m</Name>
+       <Description>Elektrische 10 meter bus</Description>
+       <TypeOfFuel>electricity</TypeOfFuel>
+       <capacities>
+         <PassengerCapacity>
+           <FareClass>any</FareClass>
+           <TotalCapacity>67</TotalCapacity>
+           <SeatingCapacity>29</SeatingCapacity>
+           <StandingCapacity>38</StandingCapacity>
+           <SpecialPlaceCapacity>3</SpecialPlaceCapacity>
+           <PushchairCapacity>0</PushchairCapacity>
+           <WheelchairPlaceCapacity>1</WheelchairPlaceCapacity>
+         </PassengerCapacity>
+       </capacities>
+       <LowFloor>true</LowFloor>
+       <HasLiftOrRamp>true</HasLiftOrRamp>
+       <HasHoist>false</HasHoist>
+       <Length>9.95</Length>
+       <Width>2.5</Width>
+       <facilities>
+         <ServiceFacilitySet id="EBS:ServiceFacilitySet:E10m">
+           <MobilityFacilityList>suitableForWheelchairs</MobilityFacilityList>
+           <VehicleAccessFacilityList>ramp</VehicleAccessFacilityList>
+         </ServiceFacilitySet>
+       </facilities>
+       <TransportMode>bus</TransportMode>
+      </VehicleType>
+      <VehicleType id="EBS:VehicleType:15p">
+       <Name>15p</Name>
+       <Description>Midi bus voor 9 - 15 personen</Description>
+       <TypeOfFuel>diesel</TypeOfFuel>
+       <EuroClass>EURO 6</EuroClass>
+       <capacities>
+         <PassengerCapacity>
+           <FareClass>any</FareClass>
+           <TotalCapacity>15</TotalCapacity>
+           <SeatingCapacity>9</SeatingCapacity>
+           <StandingCapacity>6</StandingCapacity>
+           <SpecialPlaceCapacity>0</SpecialPlaceCapacity>
+           <PushchairCapacity>0</PushchairCapacity>
+           <WheelchairPlaceCapacity>1</WheelchairPlaceCapacity>
+         </PassengerCapacity>
+       </capacities>
+       <LowFloor>true</LowFloor>
+       <HasLiftOrRamp>true</HasLiftOrRamp>
+       <HasHoist>false</HasHoist>
+       <Length>7</Length>
+       <facilities>
+         <ServiceFacilitySet id="EBS:ServiceFacilitySet:15p">
+           <MobilityFacilityList>suitableForWheelchairs</MobilityFacilityList>
+           <VehicleAccessFacilityList>ramp</VehicleAccessFacilityList>
+         </ServiceFacilitySet>
+       </facilities>
+       <TransportMode>bus</TransportMode>
+      </VehicleType>
+     </vehicleTypes>
+     <zones>
+      <TransportAdministrativeZone id="EBS:TransportAdministrativeZone:HGL">
+       <!-- de partitie, die in deze levering wordt gedistribueerd -->
+       <Name>Haaglanden</Name>
+       <ShortName>HGL</ShortName>
+       <Description>Partitie Haaglanden</Description>
+      </TransportAdministrativeZone>
+     </zones>
+    </ResourceFrame>
+   </frames>
+  </CompositeFrame>
+ </dataObjects>
+</PublicationDelivery>
