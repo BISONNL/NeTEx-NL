@@ -153,7 +153,7 @@ De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bo
 		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
 		<xsd:attribute name="version" type="VersionIdType" use="optional" fixed="any" form="unqualified"/>
 	</xsd:complexType>
-<!--
+	<!--
 	<xsd:complexType name="DataManagedObjectStructure-modified" abstract="true">
 		<xsd:annotation>
 			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het Nederlands NeTEx Profiel document.
@@ -247,7 +247,7 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 	<xsd:complexType name="SimpleObjectRefStructure">
 		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
-<!--
+	<!--
 	<xsd:complexType name="SimpleObjectRefStructure-with-class">
 		<xsd:attribute name="nameOfRefClass" type="NameOfClass" use="required" form="unqualified"/>
 		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
@@ -267,7 +267,7 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 		<xsd:attribute name="ref" type="xsd:normalizedString" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="TypeOfFrameRefStructure">
-		<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified">
+		<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.1" form="unqualified">
 			<xsd:annotation>
 				<xsd:documentation>De versie van het NL NeTEx Profiel</xsd:documentation>
 			</xsd:annotation>
@@ -366,4 +366,5 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 			<xsd:element name="Url" type="websiteURI" minOccurs="0"/>
 			<xsd:element name="FurtherDetails" type="MultilingualString" minOccurs="0"/>
 		</xsd:sequence>
-	</xsd:complexType></xsd:schema>
+	</xsd:complexType>
+</xsd:schema>

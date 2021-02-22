@@ -26,13 +26,14 @@
 	<xsd:include schemaLocation="netex-nl-basic.xsd"/>
 	<xsd:include schemaLocation="netex-nl-enums.xsd"/>
 	<xsd:include schemaLocation="netex-nl-data.xsd"/>
+	<xsd:include schemaLocation="netex-nl-chb.xsd"/>
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<!-- DEFINITIES VOOR VERSIE 9.2.0 VAN HET NL NETEX PROFIEL                           -->
+	<!-- DEFINITIES VOOR VERSIE 9.2.1 VAN HET NL NETEX PROFIEL                           -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<xsd:complexType name="TypeOfFrameRefStructure-composite">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.1" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -40,7 +41,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-baseline">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.1" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_BASELINE" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -48,7 +49,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-delta">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.1" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_DELTA" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -56,7 +57,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-codespace">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.1" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="BISON:TypeOfFrame:NL_CODESPACES" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -64,7 +65,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-bison-enums">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.1" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="BISON:TypeOfFrame:NL_BISON_ENUMS" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -72,7 +73,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-dova-lists">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.1" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="BISON:TypeOfFrame:NL_DOVA_LISTS" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -80,7 +81,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-resource">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.1" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_RESOURCE" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -88,7 +89,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-infra">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.1" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_INFRA" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -96,7 +97,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-service">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.1" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_SERVICE" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -104,7 +105,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-timetable">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.1" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_TIMETABLE" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -112,7 +113,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-calendar">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.1" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_CALENDAR" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -120,7 +121,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-vehicle">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.1" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_VEHICLE" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -128,7 +129,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-general">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.1" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfGeneralFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -247,6 +248,11 @@
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="TransportAdministrativeZone" type="transportAdministrativeZone"/>
+								<xsd:sequence minOccurs="0">
+									<xsd:element name="FlexibleStopPlace" type="flexibleStopPlace" maxOccurs="unbounded"/>
+									<xsd:element name="FlexibleArea" type="flexibleArea" minOccurs="0" maxOccurs="unbounded"/>
+									<xsd:element name="HailAndRideArea" type="hailAndRideArea" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
