@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2015 rel. 3 sp1 (x64) (http://www.altova.com) by InTraffic (Intraffic) -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <!-- Copyright:                                                                      -->
 <!--     Dit document is eigendom van Platform BISON onder Samenwerkingsverband DOVA -->
@@ -474,6 +475,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="OperatorRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 					<xsd:element name="Print" type="xsd:boolean" default="true" minOccurs="0"/>
 					<xsd:element name="Dynamic" type="DynamicAdvertisementEnumeration" default="always" minOccurs="0"/>
+					<xsd:element name="FlexibleServiceProperties" type="flexibleServiceProperties" minOccurs="0"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -529,15 +531,29 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					</xsd:choice>
 					<xsd:element name="Print" type="xsd:boolean" default="true" minOccurs="0"/>
 					<xsd:element name="Dynamic" type="DynamicAdvertisementEnumeration" default="always" minOccurs="0"/>
+					<xsd:element name="FlexibleServiceProperties" type="flexibleServiceProperties"/>
 					<xsd:element name="TemplateVehicleJourneyType" type="TemplateVehicleJourneyTypeEnumeration" fixed="headway"/>
 					<xsd:element name="frequencyGroups">
 						<xsd:complexType>
 							<xsd:choice>
 								<xsd:element name="HeadwayJourneyGroup" type="headwayJourneyGroup"/>
+								<xsd:element name="HeadwayJourneyGroupRef" type="VersionOfObjectRefStructure"/>
 								<xsd:element name="RhythmicalJourneyGroup" type="rhythmicalJourneyGroup"/>
+								<xsd:element name="RhythmicalJourneyGroupRef" type="VersionOfObjectRefStructure"/>
 							</xsd:choice>
 						</xsd:complexType>
 					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="flexibleServiceProperties">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="FlexibleServiceType" type="FlexibleServiceTypeEnumeration"/>
+					<!-- <xsd:element name="CancellationPossible" type="xsd:boolean" default="true" minOccurs="0"/>
+					<xsd:element name="ChangeOfTimePossible" type="xsd:boolean" default="true" minOccurs="0"/> -->
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -669,7 +685,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
-					<xsd:element name="Extensions" type="extensionFlexParameters">
+					<xsd:element name="Extensions" type="extensionFlexParameters" minOccurs="0">
 						<xsd:annotation>
 							<xsd:documentation>Parameters om de (gemiddelde) extra rijtijd bij flexvervoer te berekenen.</xsd:documentation>
 						</xsd:annotation>

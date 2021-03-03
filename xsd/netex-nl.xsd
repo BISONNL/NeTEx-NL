@@ -508,6 +508,14 @@
 							</xsd:choice>
 						</xsd:complexType>
 					</xsd:element>
+					<xsd:element name="frequencyGroups" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="HeadwayJourneyGroup" type="headwayJourneyGroup" minOccurs="0" maxOccurs="unbounded"/>
+								<xsd:element name="RhythmicalJourneyGroup" type="rhythmicalJourneyGroup" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
 					<xsd:element name="journeyInterchanges" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>

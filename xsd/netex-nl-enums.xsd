@@ -404,6 +404,15 @@
 			<xsd:enumeration value="other"/>
 		</xsd:restriction>
 	</xsd:simpleType>
+	<xsd:simpleType name="FlexibleServiceTypeEnumeration">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="dynamicPassingTimes"/>
+			<xsd:enumeration value="fixedHeadwayFrequency"/>
+			<xsd:enumeration value="fixedPassingTimes"/>
+			<xsd:enumeration value="notFlexible"/>
+			<xsd:enumeration value="other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 	<xsd:simpleType name="BookingMethodEnumeration">
 		<xsd:restriction base="xsd:string">
 			<xsd:enumeration value="callDriver"/>
