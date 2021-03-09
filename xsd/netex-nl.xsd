@@ -87,7 +87,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-infra">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.0" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.1" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_INFRA" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
