@@ -563,7 +563,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="PrivateCode" type="PrivateCodeStructure">
 						<xsd:annotation>
-							<xsd:documentation>Hier altijd type="Omloopnummer" gebruiken</xsd:documentation>
+							<xsd:documentation>Hier altijd type="BlockCode" gebruiken</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
 					<xsd:element name="PreparationDuration" type="xsd:duration" minOccurs="0"/>
@@ -802,7 +802,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="Name" type="MultilingualString"/>
-<!--
+			<!--
 			<xsd:element name="ViaType" type="ViaTypeEnumeration" minOccurs="0" default="name">
 				<xsd:annotation>
 					<xsd:documentation>Mogelijke waarden: name, stopPoint, other</xsd:documentation>
