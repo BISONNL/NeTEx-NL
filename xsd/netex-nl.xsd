@@ -477,6 +477,7 @@
 		<xsd:complexContent>
 			<xsd:extension base="VersionFrameVersionStructure">
 				<xsd:sequence>
+<!--
 					<xsd:element name="ValidBetween" minOccurs="0">
 						<xsd:annotation>
 							<xsd:documentation>Alleen bij een export van 'centrale' gegevens.</xsd:documentation>
@@ -488,6 +489,7 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
+-->
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-general"/>
 					<xsd:element name="members">
