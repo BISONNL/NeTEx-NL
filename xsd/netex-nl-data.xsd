@@ -9,6 +9,7 @@
 <!--   v9.2.0  (nov.2020) initiele versie (afgesplitst van netex-nl.xsd)             -->
 <!--   v9.2.0a (dec.2020) naamgeving hulpstructuren dichter bij NeTEx origineel      -->
 <!--                      VehicleType aangepast aan nieuwste NeTEx v2.1              -->
+<!--   v9.2.0b (mrt.2020) correctie Route: DirectionType, pointsInSequence verplicht -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.0" id="netex-nl-data">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -220,8 +221,8 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 				<xsd:sequence>
 					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="LineRef" type="VersionOfObjectRefStructure"/>
-					<xsd:element name="DirectionType" type="DirectionTypeEnumeration" minOccurs="0"/>
-					<xsd:element name="pointsInSequence" minOccurs="0">
+					<xsd:element name="DirectionType" type="DirectionTypeEnumeration"/>
+					<xsd:element name="pointsInSequence">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="PointOnRoute" type="pointOnRoute" minOccurs="2" maxOccurs="unbounded"/>
@@ -562,7 +563,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="PrivateCode" type="PrivateCodeStructure">
 						<xsd:annotation>
-							<xsd:documentation>Hier altijd type="Omloopnummer" gebruiken</xsd:documentation>
+							<xsd:documentation>Hier altijd type="BlockCode" gebruiken</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
 					<xsd:element name="PreparationDuration" type="xsd:duration" minOccurs="0"/>
