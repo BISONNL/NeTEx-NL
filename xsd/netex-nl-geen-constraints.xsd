@@ -8,7 +8,7 @@
 <!-- Historie:                                                                       -->
 <!--   v9.1.1  (feb.2020) initiele versie (zonder constraints)                       -->
 <!--   v9.2.0  (nov.2020) correcties/aanscherping (o.a. metagegevens)                -->
-<!--   v9.2.1  (feb.2021) voertuigkenmerken en voertuigen                            -->
+<!--   v9.2.1  (mrt.2021) voertuigkenmerken en voertuigen                            -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.1" id="netex-nl-geen-constraints">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->

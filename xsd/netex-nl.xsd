@@ -15,7 +15,7 @@
 <!--   v9.2.0  (nov.2020) correcties/aanscherping (o.a. metagegevens)                -->
 <!--                      gegevens verplaatst naar include-files                     -->
 <!--   v9.2.0a (dec.2020) naamgeving hulpstructuren dichter bij NeTEx origineel      -->
-<!--   v9.2.1  (feb.2021) voertuigkenmerken en voertuigen                            -->
+<!--   v9.2.1  (mrt.2021) voertuigkenmerken en voertuigen                            -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.1" id="netex-nl-xsd">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
