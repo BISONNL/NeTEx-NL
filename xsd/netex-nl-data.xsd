@@ -610,7 +610,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 				<xsd:sequence>
 					<xsd:element name="TimingPointRef" type="VersionOfObjectRefStructure"/>
 					<xsd:element name="OnwardTimingLinkRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-					<xsd:element name="IsWaitPoint" type="xsd:boolean" minOccurs="0"/>
+					<xsd:element name="IsWaitPoint" type="xsd:boolean" default="false" minOccurs="0"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -801,7 +801,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="Name" type="MultilingualString"/>
-<!--
+			<!--
 			<xsd:element name="ViaType" type="ViaTypeEnumeration" minOccurs="0" default="name">
 				<xsd:annotation>
 					<xsd:documentation>Mogelijke waarden: name, stopPoint, other</xsd:documentation>

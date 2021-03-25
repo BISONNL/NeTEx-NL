@@ -66,6 +66,9 @@
 			<xsd:enumeration value="naturalGas"/>
 			<xsd:enumeration value="biodiesel"/>
 			<xsd:enumeration value="electricity"/>
+			<xsd:enumeration value="hydrogen">
+				<xsd:annotation><xsd:documentation>Toegevoegd in NL NeTEx Profiel, vooruitlopend op aanpassing in de NeTEx standaard.</xsd:documentation></xsd:annotation>
+			</xsd:enumeration>
 			<xsd:enumeration value="other"/>
 		</xsd:restriction>
 	</xsd:simpleType>
