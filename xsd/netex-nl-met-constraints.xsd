@@ -8,7 +8,8 @@
 <!-- Historie:                                                                       -->
 <!--   v9.1.1  (feb.2020) initiele versie (met alle constraints uit NeTEx v1.1)      -->
 <!--   v9.2.0  (nov.2020) correcties/aanscherping (o.a. metagegevens)                -->
-<!--   v9.2.2  (mrt.2021) toevoegen flexvervoer                                      -->
+<!--   v9.2.1  (mrt.2021) voertuigkenmerken en voertuigen                            -->
+<!--   v9.2.2  (apr.2021) toevoegen flexvervoer                                      -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.2" id="netex-nl-met-constraints">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->

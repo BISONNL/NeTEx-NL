@@ -8,7 +8,8 @@
 <!-- Historie:                                                                       -->
 <!--   v9.2.0  (nov.2020) initiele versie (afgesplitst van netex-nl.xsd)             -->
 <!--   v9.2.0a (dec.2020) naamgeving hulpstructuren dichter bij NeTEx origineel      -->
-<!--   v9.2.2  (mrt.2021) toevoegen flexvervoer                                      -->
+<!--   v9.2.1  (mrt.2021) voertuigkenmerken en voertuigen                            -->
+<!--   v9.2.2  (apr.2021) toevoegen flexvervoer                                      -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.2" id="netex-nl-basic">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -88,7 +89,7 @@
 	<xsd:complexType name="iconURI">
 		<xsd:simpleContent>
 			<xsd:extension base="xsd:anyURI">
-				<xsd:attribute name="typeOfInfoLink" type="xsd:string" fixed="icon"/>
+				<xsd:attribute name="typeOfInfoLink" type="xsd:string" fixed="icon" form="unqualified"/>
 			</xsd:extension>
 		</xsd:simpleContent>
 	</xsd:complexType>
@@ -117,6 +118,12 @@ bestandtypes jpg, jpeg, gif, png, svg (hoofdletters of kleine letters, geen comb
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- ABSTRACTE TYPEN                                                                 -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<xsd:complexType name="EmbeddedObjectStructure">
+		<xsd:annotation>
+			<xsd:documentation>Het object hoeft géén 'id' of 'version' attribuut, omdat het altijd embedded is in een ander object.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="id" type="ObjectIdType" use="optional" form="unqualified"/>
+	</xsd:complexType>
 	<xsd:complexType name="SimpleObjectStructure">
 		<xsd:annotation>
 			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
@@ -267,7 +274,7 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 		<xsd:attribute name="ref" type="xsd:normalizedString" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="TypeOfFrameRefStructure">
-		<xsd:attribute name="version" type="VersionIdType" use="required" fixed="9.2.2" form="unqualified">
+		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified">
 			<xsd:annotation>
 				<xsd:documentation>De versie van het NL NeTEx Profiel</xsd:documentation>
 			</xsd:annotation>
@@ -281,6 +288,16 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- UITBREIDINGEN VAN DE NETEX STANDAARD                                            -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<xsd:complexType name="extensionTransportMode">
+		<xsd:sequence>
+			<xsd:element name="TransportMode" type="TransportmodeEnum"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="extensionTypeOfProductCategory">
+		<xsd:sequence>
+			<xsd:element name="TypeOfProductCategoryRef" type="VersionOfObjectRefStructure"/>
+		</xsd:sequence>
+	</xsd:complexType>
 	<xsd:complexType name="extensionPrivateCode">
 		<xsd:sequence>
 			<xsd:element name="PrivateCode" type="PrivateCodeStructure"/>
