@@ -8,7 +8,7 @@ Example-implementation for simple flexible line with unrestricted transport with
   <Description>Hubtaxi</Description>
   <dataObjects>
     <CompositeFrame id="PVGD:CompositeFrame:Hubtaxi" version="20200603">
-      <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TT_BASELINE" version="9.2.2"/>
+      <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TT_BASELINE" version="9.2.3"/>
       <FrameDefaults>
         <DefaultCodespaceRef ref="BISON:Codespace:PVGD"/>
         <DefaultDataSourceRef ref="PVGD:DataSource:PVGD"/>
@@ -30,7 +30,7 @@ Example-implementation for simple flexible line with unrestricted transport with
       </versions>
       <frames>
         <ResourceFrame id="PVGD:ResourceFrame:PVGD" version="20200603">
-          <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TT_RESOURCE" version="9.2.2"/>
+          <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TT_RESOURCE" version="9.2.3"/>
           <dataSources>
             <DataSource id="PVGD:DataSource:PVGD">
               <Name>PVGD</Name>
@@ -130,7 +130,7 @@ Example-implementation for simple flexible line with unrestricted transport with
           </zones>
         </ResourceFrame>
         <SiteFrame id="PVGD:SiteFrame:PVGD" version="20200603">
-         <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TT_SITE" version="9.2.2"/>
+         <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TT_SITE" version="9.2.3"/>
           <flexibleStopPlaces>
             <FlexibleStopPlace id="PVGD:FlexibleStopPlace:Region_11">
               <Name>Oost-Groningen</Name>
@@ -275,7 +275,7 @@ Example-implementation for simple flexible line with unrestricted transport with
           </flexibleStopPlaces>
         </SiteFrame>
         <ServiceFrame id="PVGD:ServiceFrame:Region_11" version="20200603">
-          <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TT_SERVICE" version="9.2.2"/>
+          <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TT_SERVICE" version="9.2.3"/>
           <FrameDefaults>
             <DefaultResponsibilitySetRef ref="PVGD:ResponsibilitySet:financier"/>
           </FrameDefaults>
@@ -689,7 +689,6 @@ Example-implementation for simple flexible line with unrestricted transport with
                 <gml:pos>0 0</gml:pos>
               </Location>
               <projections><PointProjection id="PVGD:PointProjection:Region_11"><ProjectToPointRef nameOfRefClass="RoutePoint" ref="PVGD:RoutePoint:Region_11"/></PointProjection></projections>
-              <PrivateCode type="UserStopCode">dummy</PrivateCode>
               <ForAlighting>true</ForAlighting>
               <ForBoarding>true</ForBoarding>
             </ScheduledStopPoint>
@@ -699,7 +698,6 @@ Example-implementation for simple flexible line with unrestricted transport with
                 <gml:pos>253891 575747</gml:pos>
               </Location>
               <projections><PointProjection id="PVGD:PointProjection:Region_11"><ProjectToPointRef nameOfRefClass="RoutePoint" ref="PVGD:RoutePoint:12650210"/></PointProjection></projections>
-              <PrivateCode type="UserStopCode">dummy</PrivateCode>
               <ForAlighting>true</ForAlighting>
               <ForBoarding>true</ForBoarding>
             </ScheduledStopPoint>
@@ -709,7 +707,6 @@ Example-implementation for simple flexible line with unrestricted transport with
                 <gml:pos>247530 575695</gml:pos>
               </Location>
               <projections><PointProjection id="PVGD:PointProjection:Region_11"><ProjectToPointRef nameOfRefClass="RoutePoint" ref="PVGD:RoutePoint:12601010"/></PointProjection></projections>
-              <PrivateCode type="UserStopCode">dummy</PrivateCode>
               <ForAlighting>true</ForAlighting>
               <ForBoarding>true</ForBoarding>
             </ScheduledStopPoint>
@@ -719,7 +716,6 @@ Example-implementation for simple flexible line with unrestricted transport with
                 <gml:pos>255343 569689</gml:pos>
               </Location>
               <projections><PointProjection id="PVGD:PointProjection:Region_11"><ProjectToPointRef nameOfRefClass="RoutePoint" ref="PVGD:RoutePoint:12631690"/></PointProjection></projections>
-              <PrivateCode type="UserStopCode">dummy</PrivateCode>
               <ForAlighting>true</ForAlighting>
               <ForBoarding>true</ForBoarding>
             </ScheduledStopPoint>
@@ -729,7 +725,6 @@ Example-implementation for simple flexible line with unrestricted transport with
                 <gml:pos>265447 573750</gml:pos>
               </Location>
               <projections><PointProjection id="PVGD:PointProjection:Region_11"><ProjectToPointRef nameOfRefClass="RoutePoint" ref="PVGD:RoutePoint:13000010"/></PointProjection></projections>
-              <PrivateCode type="UserStopCode">dummy</PrivateCode>
               <ForAlighting>true</ForAlighting>
               <ForBoarding>true</ForBoarding>
             </ScheduledStopPoint>
@@ -739,7 +734,6 @@ Example-implementation for simple flexible line with unrestricted transport with
                 <gml:pos>261391 576659</gml:pos>
               </Location>
               <projections><PointProjection id="PVGD:PointProjection:Region_11"><ProjectToPointRef nameOfRefClass="RoutePoint" ref="PVGD:RoutePoint:13020110"/></PointProjection></projections>
-              <PrivateCode type="UserStopCode">dummy</PrivateCode>
               <ForAlighting>true</ForAlighting>
               <ForBoarding>true</ForBoarding>
             </ScheduledStopPoint>
@@ -749,7 +743,6 @@ Example-implementation for simple flexible line with unrestricted transport with
                 <gml:pos>263362 569949</gml:pos>
               </Location>
               <projections><PointProjection id="PVGD:PointProjection:Region_11"><ProjectToPointRef nameOfRefClass="RoutePoint" ref="PVGD:RoutePoint:13501410"/></PointProjection></projections>
-              <PrivateCode type="UserStopCode">dummy</PrivateCode>
               <ForAlighting>true</ForAlighting>
               <ForBoarding>true</ForBoarding>
             </ScheduledStopPoint>
@@ -759,7 +752,6 @@ Example-implementation for simple flexible line with unrestricted transport with
                 <gml:pos>253798 585785</gml:pos>
               </Location>
               <projections><PointProjection id="PVGD:PointProjection:Region_11"><ProjectToPointRef nameOfRefClass="RoutePoint" ref="PVGD:RoutePoint:12582910"/></PointProjection></projections>
-              <PrivateCode type="UserStopCode">dummy</PrivateCode>
               <ForAlighting>true</ForAlighting>
               <ForBoarding>true</ForBoarding>
             </ScheduledStopPoint>
@@ -769,7 +761,6 @@ Example-implementation for simple flexible line with unrestricted transport with
                 <gml:pos>260370 556693</gml:pos>
               </Location>
               <projections><PointProjection id="PVGD:PointProjection:Region_11"><ProjectToPointRef nameOfRefClass="RoutePoint" ref="PVGD:RoutePoint:12700010"/></PointProjection></projections>
-              <PrivateCode type="UserStopCode">dummy</PrivateCode>
               <ForAlighting>true</ForAlighting>
               <ForBoarding>true</ForBoarding>
             </ScheduledStopPoint>
@@ -779,7 +770,6 @@ Example-implementation for simple flexible line with unrestricted transport with
                 <gml:pos>267798 544443</gml:pos>
               </Location>
               <projections><PointProjection id="PVGD:PointProjection:Region_11"><ProjectToPointRef nameOfRefClass="RoutePoint" ref="PVGD:RoutePoint:18730100"/></PointProjection></projections>
-              <PrivateCode type="UserStopCode">dummy</PrivateCode>
               <ForAlighting>true</ForAlighting>
               <ForBoarding>true</ForBoarding>
             </ScheduledStopPoint>
@@ -789,7 +779,6 @@ Example-implementation for simple flexible line with unrestricted transport with
                 <gml:pos>270450 561470</gml:pos>
               </Location>
               <projections><PointProjection id="PVGD:PointProjection:Region_11"><ProjectToPointRef nameOfRefClass="RoutePoint" ref="PVGD:RoutePoint:13382410"/></PointProjection></projections>
-              <PrivateCode type="UserStopCode">dummy</PrivateCode>
               <ForAlighting>true</ForAlighting>
               <ForBoarding>true</ForBoarding>
             </ScheduledStopPoint>
@@ -801,43 +790,43 @@ Example-implementation for simple flexible line with unrestricted transport with
             </FlexibleStopAssignment>
             <PassengerStopAssignment id="PVGD:PassengerStopAssignment:Region_11_12650210" order="1">
               <ScheduledStopPointRef ref="PVGD:ScheduledStopPoint:12650210"/>
-              <StopPlaceRef ref="NL:NDOV:StopPlace:NL:S:12650210" version="CHB20200513"/>
+              <StopPlaceRef ref="CHB:StopPlace:12650210" version="any"/>
             </PassengerStopAssignment>
             <PassengerStopAssignment id="PVGD:PassengerStopAssignment:Region_11_12601010" order="1">
               <ScheduledStopPointRef ref="PVGD:ScheduledStopPoint:12601010"/>
-              <StopPlaceRef ref="NL:NDOV:StopPlace:NL:S:12601010" version="CHB20200513"/>
+              <StopPlaceRef ref="CHB:StopPlace:12601010" version="any"/>
             </PassengerStopAssignment>
             <PassengerStopAssignment id="PVGD:PassengerStopAssignment:Region_11_12631690" order="1">
               <ScheduledStopPointRef ref="PVGD:ScheduledStopPoint:12631690"/>
-              <StopPlaceRef ref="NL:NDOV:StopPlace:NL:S:12631690" version="CHB20200513"/>
+              <StopPlaceRef ref="CHB:StopPlace:12631690" version="any"/>
             </PassengerStopAssignment>
             <PassengerStopAssignment id="PVGD:PassengerStopAssignment:Region_11_13000010" order="1">
               <ScheduledStopPointRef ref="PVGD:ScheduledStopPoint:13000010"/>
-              <StopPlaceRef ref="NL:NDOV:StopPlace:NL:S:13000010" version="CHB20200513"/>
+              <StopPlaceRef ref="CHB:StopPlace:13000010" version="any"/>
             </PassengerStopAssignment>
             <PassengerStopAssignment id="PVGD:PassengerStopAssignment:Region_11_13020110" order="1">
               <ScheduledStopPointRef ref="PVGD:ScheduledStopPoint:13020110"/>
-              <StopPlaceRef ref="NL:NDOV:StopPlace:NL:S:13020110" version="CHB20200513"/>
+              <StopPlaceRef ref="CHB:StopPlace:13020110" version="any"/>
             </PassengerStopAssignment>
             <PassengerStopAssignment id="PVGD:PassengerStopAssignment:Region_11_13501410" order="1">
               <ScheduledStopPointRef ref="PVGD:ScheduledStopPoint:13501410"/>
-              <StopPlaceRef ref="NL:NDOV:StopPlace:NL:S:13501410" version="CHB20200513"/>
+              <StopPlaceRef ref="CHB:StopPlace:13501410" version="any"/>
             </PassengerStopAssignment>
             <PassengerStopAssignment id="PVGD:PassengerStopAssignment:Region_11_12582910" order="1">
               <ScheduledStopPointRef ref="PVGD:ScheduledStopPoint:12582910"/>
-              <StopPlaceRef ref="NL:NDOV:StopPlace:NL:S:12582910" version="CHB20200513"/>
+              <StopPlaceRef ref="CHB:StopPlace:12582910" version="any"/>
             </PassengerStopAssignment>
             <PassengerStopAssignment id="PVGD:PassengerStopAssignment:Region_11_12700010" order="1">
               <ScheduledStopPointRef ref="PVGD:ScheduledStopPoint:12700010"/>
-              <StopPlaceRef ref="NL:NDOV:StopPlace:NL:S:12700010" version="CHB20200513"/>
+              <StopPlaceRef ref="CHB:StopPlace:12700010" version="any"/>
             </PassengerStopAssignment>
             <PassengerStopAssignment id="PVGD:PassengerStopAssignment:Region_11_18730100" order="1">
               <ScheduledStopPointRef ref="PVGD:ScheduledStopPoint:18730100"/>
-              <StopPlaceRef ref="NL:NDOV:StopPlace:NL:S:18730100" version="CHB20200513"/>
+              <StopPlaceRef ref="CHB:StopPlace:18730100" version="any"/>
             </PassengerStopAssignment>
             <PassengerStopAssignment id="PVGD:PassengerStopAssignment:Region_11_13382410" order="1">
               <ScheduledStopPointRef ref="PVGD:ScheduledStopPoint:13382410"/>
-              <StopPlaceRef ref="NL:NDOV:StopPlace:NL:S:13382410" version="CHB20200513"/>
+              <StopPlaceRef ref="CHB:StopPlace:13382410" version="any"/>
             </PassengerStopAssignment>
           </stopAssignments>
           <timingLinks>
@@ -1472,7 +1461,7 @@ Example-implementation for simple flexible line with unrestricted transport with
           </timeDemandTypes>
         </ServiceFrame>
         <TimetableFrame id="PVGD:TimetableFrame:Region_11" version="20200603">
-         <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TT_TIMETABLE" version="9.2.2"/>
+         <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TT_TIMETABLE" version="9.2.3"/>
           <contentValidityConditions>
             <AvailabilityCondition id="PVGD:AvailabilityCondition:AllDays_11">
               <FromDate>2020-06-03T00:00:00</FromDate>
@@ -1883,7 +1872,7 @@ Example-implementation for simple flexible line with unrestricted transport with
           </frequencyGroups>
         </TimetableFrame>
         <ServiceCalendarFrame id="PVGD:ServiceCalendarFrame:PVGD" version="20200603">
-          <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TT_CALENDAR" version="9.2.2"/>
+          <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TT_CALENDAR" version="9.2.3"/>
           <dayTypes>
             <DayType id="PVGD:DayType:EveryDay">
               <properties>

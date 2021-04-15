@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Dit bestand is onderdeel van de XML Schema definitie van het NL NeTEx profiel:  -->
+<!--  * definitie van het hoogste niveau van een export (met constraints)            -->
+<!--                                                                                 -->
 <!-- Copyright:                                                                      -->
 <!--     Dit document is eigendom van Platform BISON onder Samenwerkingsverband DOVA -->
 <!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl,      -->
 <!--     zie http://creativecommons.org/licences/by-nd/3.0/nl                        -->
-<!-- Dit bestand is onderdeel van het TMI9 NeTEx Nederlands profiel                  -->
-<!-- Historie:                                                                       -->
-<!--   v9.1.1  (feb.2020) initiele versie (met alle constraints uit NeTEx v1.1)      -->
-<!--   v9.2.0  (nov.2020) correcties/aanscherping (o.a. metagegevens)                -->
-<!--   v9.2.1  (mrt.2021) voertuigkenmerken en voertuigen                            -->
-<!--   v9.2.2  (apr.2021) toevoegen flexvervoer                                      -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.2" id="netex-nl-met-constraints">
+<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.3" id="netex-nl-met-constraints">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- AFHANKELIJKHEDEN                                                                -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
