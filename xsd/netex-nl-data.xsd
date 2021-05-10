@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Dit bestand is onderdeel van de XML Schema definitie van het NL NeTEx profiel:  -->
+<!--  * type definities van functionele elementen                                    -->
+<!--  * type definities van ondersteunende elementen                                 -->
+<!--                                                                                 -->
 <!-- Copyright:                                                                      -->
 <!--     Dit document is eigendom van Platform BISON onder Samenwerkingsverband DOVA -->
 <!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl,      -->
 <!--     zie http://creativecommons.org/licences/by-nd/3.0/nl                        -->
-<!-- Dit bestand is onderdeel van het TMI9 Nederlands NeTEx profiel                  -->
-<!-- Historie:                                                                       -->
-<!--   v9.2.0  (nov.2020) initiele versie (afgesplitst van netex-nl.xsd)             -->
-<!--   v9.2.0a (dec.2020) naamgeving hulpstructuren dichter bij NeTEx origineel      -->
-<!--                      VehicleType aangepast aan nieuwste NeTEx v2.1              -->
-<!--   v9.2.0b (mrt.2020) correctie Route: DirectionType, pointsInSequence verplicht -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.0" id="netex-nl-data">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -503,7 +501,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
-					<xsd:element name="MobilityImpairedAccess" type="LimitationStatusEnumeration" minOccurs="0"/>
+					<xsd:element name="MobilityImpairedAccess" type="LimitationStatusEnumeration"/>
 					<xsd:element name="Comment" type="MultilingualString" minOccurs="0"/>
 				</xsd:sequence>
 			</xsd:extension>
@@ -515,6 +513,8 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 				<xsd:sequence>
 					<xsd:element name="BrandingRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="TransportMode" type="TransportmodeEnum"/>
 					<xsd:element name="TransportSubmode" type="PtSubmodeChoice" minOccurs="0"/>
 					<xsd:element name="PublicCode" type="xsd:normalizedString"/>

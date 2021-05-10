@@ -10,7 +10,7 @@
 <!-- Historie:                                                                         -->
 <!--   v20201116  (nov.2020)     concept (klad)versie                                  -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex ..\xsd\netex-nl-geen-constraints.xsd" version="ntx:1.1">
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.netex.org.uk/netex ..\xsd\netex-nl-met-constraints.xsd" version="ntx:1.1">
 	<PublicationTimestamp>2020-11-16T18:00:00Z</PublicationTimestamp>
 	<ParticipantRef>BISON</ParticipantRef>
 	<Description>Export van de (door BISON en DOVA) voorgedefinieerde gegevens t.b.v. het NL NeTEx Profiel.</Description>
