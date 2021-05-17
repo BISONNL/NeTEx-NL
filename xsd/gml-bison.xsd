@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Dit bestand is onderdeel van de XML Schema definitie van het NL NeTEx profiel:  -->
+<!--  * type definities van GML elementen                                            -->
+<!--                                                                                 -->
 <!-- Copyright:                                                                      -->
 <!--     Dit document is eigendom van Platform BISON onder Samenwerkingsverband DOVA -->
 <!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl,      -->
 <!--     zie http://creativecommons.org/licences/by-nd/3.0/nl                        -->
-<!-- Dit bestand is onderdeel van het TMI9 NeTEx Nederlands profiel                  -->
-<!-- Versie:  9.1.0                                                                  -->
-<!-- Historie:                                                                       -->
-<!--   v9.0.0  (april 2017): initiele versie                                         -->
-<!--   v9.1.0  (oktober 2018)                                                        -->
-<!--   v9.1.0a (januari 2020) copyright aangepast                                    -->
-<!--   v9.2.0  (nov.2020) (ongewijzigd)                                              -->
-<!--   v9.2.1  (feb.2021) (ongewijzigd)                                              -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.opengis.net/gml/3.2" elementFormDefault="qualified" version="9.2.1" id="gml-bison">
 	<attribute name="id" type="ID"/>
