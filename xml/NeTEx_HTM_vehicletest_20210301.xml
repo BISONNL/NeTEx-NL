@@ -5,7 +5,7 @@
  <Description>HTM vehicles export.</Description>
  <dataObjects>
   <CompositeFrame id="HTM:CompositeFrame:VehicleExport" version="_2021-03-01">
-   <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_VEHICLES" version="9.2.1"/>
+   <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_VEHICLES" version="9.2.2"/>
    <FrameDefaults>
     <DefaultCodespaceRef ref="BISON:Codespace:HTM"/>
     <DefaultDataSourceRef ref="HTM:DataSource:HTM"/>
@@ -13,7 +13,7 @@
    </FrameDefaults>
    <frames>
     <GeneralFrame id="HTM:GeneralFrame:Metadata" version="_2021-03-01">
-     <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_VEH_METADATA" version="9.2.1"/>
+     <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_VEH_METADATA" version="9.2.2"/>
      <members>
       <DataSource id="HTM:DataSource:HTM">
        <Name>HTM</Name>
@@ -44,7 +44,7 @@
     </GeneralFrame>
     <GeneralFrame id="HTM:GeneralFrame:Bussen" version="_2021-03-01">
      <Description>HTM bussen</Description>
-     <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_VEH_DATA" version="9.2.1"/>
+     <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_VEH_DATA" version="9.2.2"/>
      <members>
       <Vehicle id="HTM:Vehicle:B901" responsibilitySetRef="HTM:ResponsibilitySet:HGL-R">
        <ValidBetween>
@@ -84,7 +84,7 @@
     </GeneralFrame>
     <GeneralFrame id="HTM:GeneralFrame:Trams" version="_2021-03-01">
      <Description>HTM trams</Description>
-     <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_VEH_DATA" version="9.2.1"/>
+     <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_VEH_DATA" version="9.2.2"/>
      <members>
       <Vehicle id="HTM:Vehicle:T61" responsibilitySetRef="HTM:ResponsibilitySet:HGL-R">
        <ValidBetween>

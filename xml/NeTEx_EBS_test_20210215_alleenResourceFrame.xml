@@ -6,7 +6,7 @@
  <!-- LET OP: VOORBEELD MET ALLEEN RESOURCEFRAME -->
  <dataObjects>
   <CompositeFrame id="EBS:CompositeFrame:" version="20210215">
-   <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TT_BASELINE" version="9.2.1"/>
+   <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TT_BASELINE" version="9.2.2"/>
    <FrameDefaults>
     <DefaultCodespaceRef ref="BISON:Codespace:EBS"/>
     <DefaultDataSourceRef ref="EBS:DataSource:EBS"/>
@@ -28,7 +28,7 @@
    </versions>
    <frames>
     <ResourceFrame id="EBS:ResourceFrame:" version="20210215">
-     <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TT_RESOURCE" version="9.2.1"/>
+     <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_TT_RESOURCE" version="9.2.2"/>
      <dataSources>
       <DataSource id="EBS:DataSource:EBS">
        <Name>EBS</Name>
