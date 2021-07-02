@@ -12,7 +12,7 @@
 <!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl,      -->
 <!--     zie http://creativecommons.org/licences/by-nd/3.0/nl                        -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.2" id="netex-nl-basic">
+<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.3" id="netex-nl-basic">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- AFHANKELIJKHEDEN                                                                -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -119,6 +119,15 @@ bestandtypes jpg, jpeg, gif, png, svg (hoofdletters of kleine letters, geen comb
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- ABSTRACTE TYPEN                                                                 -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<xsd:complexType name="EmbeddedObjectStructure">
+		<xsd:annotation>
+			<xsd:documentation>Het object hoeft géén 'id' of 'version' attribuut, omdat het altijd embedded is in een ander object.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="id" type="ObjectIdType" use="optional" form="unqualified"/>
+		<!--
+		<xsd:attribute name="version" type="VersionIdType" use="optional" default="any" form="unqualified"/>
+-->
+	</xsd:complexType>
 	<xsd:complexType name="SimpleObjectStructure">
 		<xsd:annotation>
 			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
@@ -312,6 +321,16 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
+	<!--
+	<xsd:complexType name="extensionFlexParameters">
+		<xsd:sequence>
+			<xsd:element name="MaxDetourFactor" type="xsd:duration"/>
+			<xsd:element name="MaxTraveltimeOffset" type="xsd:duration"/>
+			<xsd:element name="AvgDetourFactor" type="xsd:duration"/>
+			<xsd:element name="AvgTraveltimeOffset" type="xsd:duration"/>
+		</xsd:sequence>
+	</xsd:complexType>
+-->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- ELEMENTEN (ONDERSTEUNEND)                                                       -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -360,6 +379,15 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="contactStructure">
+		<xsd:sequence>
+			<xsd:element name="ContactPerson" type="MultilingualString" minOccurs="0"/>
+			<xsd:element name="Email" type="EmailAddressType" minOccurs="0"/>
+			<xsd:element name="Phone" type="PhoneType" minOccurs="0"/>
+			<xsd:element name="Url" type="websiteURI" minOccurs="0"/>
+			<xsd:element name="FurtherDetails" type="MultilingualString" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:complexType>
 </xsd:schema>

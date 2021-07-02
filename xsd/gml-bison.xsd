@@ -8,7 +8,7 @@
 <!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl,      -->
 <!--     zie http://creativecommons.org/licences/by-nd/3.0/nl                        -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.opengis.net/gml/3.2" elementFormDefault="qualified" version="9.2.2" id="gml-bison">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" targetNamespace="http://www.opengis.net/gml/3.2" elementFormDefault="qualified" version="9.2.3" id="gml-bison">
 	<attribute name="id" type="ID"/>
 	<element name="pos">
 		<complexType>
@@ -43,5 +43,32 @@
 				<attribute name="srsDimension" type="positiveInteger"/>
 				-->
 		</simpleContent>
+	</complexType>
+	<element name="Polygon">
+		<complexType>
+			<sequence>
+				<element name="exterior" type="gml:LinearRingType"/>
+				<!--	<element name="interior" type="gml:LinearRingType" minOccurs="0"/>	-->
+			</sequence>
+			<attribute ref="gml:id" use="required"/>
+			<!-- default coördinatensysteem gebruiken 
+				<attribute name="srsName" type="anyURI"/>
+				<attribute name="srsDimension" type="positiveInteger"/>
+				-->
+		</complexType>
+	</element>
+	<complexType name="LinearRingType">
+		<annotation>
+			<documentation>A LinearRing is defined by four or more coordinate tuples, with linear interpolation between them; the first and last coordinates shall be coincident. The number of direct positions in the list shall be at least four.</documentation>
+		</annotation>
+		<sequence>
+			<element name="LinearRing">
+				<complexType>
+					<sequence>
+						<element name="posList" type="gml:posList"/>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
 	</complexType>
 </schema>

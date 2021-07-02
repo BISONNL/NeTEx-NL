@@ -19,14 +19,15 @@
 <!--   v9.2.1a (mei.2021) correctie Route: DirectionType, pointsInSequence verplicht -->
 <!--                      diverse andere bugfixes                                    -->
 <!--                      Line.ShortName toegevoegd t.b.v. 'lijnleveringen'          -->
-<!--   v9.2.2  (jul.2021) versie v9.2.1 hernoemd tot v9.2.2                          -->
+<!--   v9.2.2  (jun.2021) versie v9.2.1 hernoemd tot v9.2.2                          -->
+<!--   v9.2.3  (jul.2021) toevoegen flexvervoer                                      -->
 <!--                                                                                 -->
 <!-- Copyright:                                                                      -->
 <!--     Dit document is eigendom van Platform BISON onder Samenwerkingsverband DOVA -->
 <!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl,      -->
 <!--     zie http://creativecommons.org/licences/by-nd/3.0/nl                        -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.2" id="netex-nl-xsd">
+<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.3" id="netex-nl-xsd">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- AFHANKELIJKHEDEN                                                                -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -35,7 +36,7 @@
 	<xsd:include schemaLocation="netex-nl-enums.xsd"/>
 	<xsd:include schemaLocation="netex-nl-data.xsd"/>
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<!-- DEFINITIES VOOR VERSIE 9.2.2 VAN HET NL NETEX PROFIEL                           -->
+	<!-- DEFINITIES VOOR HET NL NETEX PROFIEL                                            -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<xsd:complexType name="TypeOfFrameRefStructure-composite">
 		<xsd:complexContent>
@@ -130,6 +131,14 @@
 			<xsd:restriction base="TypeOfFrameRefStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_VEHICLE" form="unqualified"/>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TypeOfFrameRefStructure-site">
+		<xsd:complexContent>
+			<xsd:restriction base="TypeOfFrameRefStructure">
+				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_SITE" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -290,14 +299,20 @@
 					<xsd:element name="routes">
 						<xsd:complexType>
 							<xsd:sequence>
-								<xsd:element name="Route" type="route" maxOccurs="unbounded"/>
+								<xsd:choice maxOccurs="unbounded">
+									<xsd:element name="Route" type="route"/>
+									<xsd:element name="FlexibleRoute" type="flexibleRoute"/>
+								</xsd:choice>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
 					<xsd:element name="lines">
 						<xsd:complexType>
 							<xsd:sequence>
-								<xsd:element name="Line" type="line" maxOccurs="unbounded"/>
+								<xsd:choice maxOccurs="unbounded">
+									<xsd:element name="Line" type="line"/>
+									<xsd:element name="FlexibleLine" type="flexibleLine"/>
+								</xsd:choice>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
@@ -332,7 +347,10 @@
 					<xsd:element name="stopAssignments">
 						<xsd:complexType>
 							<xsd:sequence>
-								<xsd:element name="PassengerStopAssignment" type="passengerStopAssignment" maxOccurs="unbounded"/>
+								<xsd:choice maxOccurs="unbounded">
+									<xsd:element name="PassengerStopAssignment" type="passengerStopAssignment"/>
+									<xsd:element name="FlexibleStopAssignment" type="flexibleStopAssignment"/>
+								</xsd:choice>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
@@ -376,6 +394,23 @@
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="NoticeAssignment" type="noticeAssignment" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- SITE FRAME -->
+	<xsd:complexType name="siteFrame">
+		<xsd:complexContent>
+			<xsd:extension base="VersionFrameVersionStructure">
+				<xsd:sequence>
+					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-site"/>
+					<xsd:element name="flexibleStopPlaces">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="FlexibleStopPlace" type="flexibleStopPlace" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
@@ -430,6 +465,13 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
+					<xsd:element name="timebands" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Timeband" type="timeband" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
 					<xsd:element name="dayTypeAssignments">
 						<xsd:complexType>
 							<xsd:sequence>
@@ -464,9 +506,20 @@
 					</xsd:element>
 					<xsd:element name="vehicleJourneys">
 						<xsd:complexType>
+							<xsd:choice>
+								<xsd:sequence>
+									<xsd:element name="ServiceJourney" type="serviceJourney" minOccurs="0" maxOccurs="unbounded"/>
+									<xsd:element name="DeadRun" type="deadRun" minOccurs="0" maxOccurs="unbounded"/>
+									<xsd:element name="TemplateServiceJourney" type="templateServiceJourney" minOccurs="0" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:choice>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="frequencyGroups" minOccurs="0">
+						<xsd:complexType>
 							<xsd:sequence>
-								<xsd:element name="ServiceJourney" type="serviceJourney" maxOccurs="unbounded"/>
-								<xsd:element name="DeadRun" type="deadRun" minOccurs="0" maxOccurs="unbounded"/>
+								<xsd:element name="HeadwayJourneyGroup" type="headwayJourneyGroup" minOccurs="0" maxOccurs="unbounded"/>
+								<xsd:element name="RhythmicalJourneyGroup" type="rhythmicalJourneyGroup" minOccurs="0" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
@@ -600,10 +653,11 @@
 									</xsd:annotation>
 									<xsd:choice maxOccurs="unbounded">
 										<xsd:annotation>
-											<xsd:documentation>Het maximale aantal frames van een bepaald type wordt NIET afgedwongen. Verwacht wordt echter: 1x ResourceFrame, 0x/1x InfrastructureFrame, 1x ServiceFrame, minimaal 1x TimetableFrame, 1x ServiceCalendarFrame, 0x/1x VehicleScheduleFrame.</xsd:documentation>
+											<xsd:documentation>Het maximale aantal frames van een bepaald type wordt NIET afgedwongen. Verwacht wordt echter: 1x ResourceFrame, 0x/1x InfrastructureFrame, 0x/1x SiteFrame, 1x ServiceFrame, minimaal 1x TimetableFrame, 1x ServiceCalendarFrame, 0x/1x VehicleScheduleFrame.</xsd:documentation>
 										</xsd:annotation>
 										<xsd:element name="ResourceFrame" type="resourceFrame"/>
 										<xsd:element name="InfrastructureFrame" type="infrastructureFrame"/>
+										<xsd:element name="SiteFrame" type="siteFrame"/>
 										<xsd:element name="ServiceFrame" type="serviceFrame"/>
 										<xsd:element name="TimetableFrame" type="timetableFrame"/>
 										<xsd:element name="ServiceCalendarFrame" type="serviceCalendarFrame"/>
