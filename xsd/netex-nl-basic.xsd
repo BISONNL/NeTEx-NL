@@ -371,6 +371,7 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 	<xsd:complexType name="PresentationStructure">
 		<xsd:sequence>
 			<xsd:element name="Colour" type="ColourValueType" minOccurs="0"/>
+			<xsd:element name="BackgroundColour" type="ColourValueType" minOccurs="0"/>
 			<xsd:element name="TextColour" type="ColourValueType" minOccurs="0"/>
 			<xsd:element name="infoLinks" minOccurs="0">
 				<xsd:complexType>
