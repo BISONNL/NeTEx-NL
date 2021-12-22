@@ -13,12 +13,13 @@
 	<element name="pos">
 		<complexType>
 			<simpleContent>
-				<extension base="string"/>
-				<!-- default coördinatensysteem gebruiken 
-					<attribute name="srsName" type="anyURI"/>
-					<attribute name="srsDimension" type="positiveInteger"/>
-					-->
+				<extension base="string">
+					<attribute name="srsName" type="anyURI" use="optional" fixed="EPSG:28992" />
+					<attribute name="srsDimension" type="positiveInteger" use="optional" fixed="2" />
+				</extension>
 			</simpleContent>
+
+
 		</complexType>
 	</element>
 	<element name="LineString">
@@ -27,21 +28,17 @@
 				<element name="posList" type="gml:posList"/>
 			</sequence>
 			<attribute ref="gml:id" use="required"/>
-			<!-- default coördinatensysteem gebruiken 
-				<attribute name="srsName" type="anyURI"/>
-				<attribute name="srsDimension" type="positiveInteger"/>
-				-->
+			<attribute name="srsName" type="anyURI" use="optional" fixed="EPSG:28992" />
+			<attribute name="srsDimension" type="positiveInteger" use="optional" fixed="2" />
 		</complexType>
 	</element>
 	<complexType name="posList">
 		<simpleContent>
 			<extension base="string">
 				<attribute name="count" type="positiveInteger"/>
+					<attribute name="srsName" type="anyURI" use="optional" fixed="EPSG:28992" />
+					<attribute name="srsDimension" type="positiveInteger" use="optional" fixed="2" />
 			</extension>
-			<!-- default coördinatensysteem gebruiken
-				<attribute name="srsName" type="anyURI"/>
-				<attribute name="srsDimension" type="positiveInteger"/>
-				-->
 		</simpleContent>
 	</complexType>
 	<element name="Polygon">
@@ -51,10 +48,8 @@
 				<!--	<element name="interior" type="gml:LinearRingType" minOccurs="0"/>	-->
 			</sequence>
 			<attribute ref="gml:id" use="required"/>
-			<!-- default coördinatensysteem gebruiken 
-				<attribute name="srsName" type="anyURI"/>
-				<attribute name="srsDimension" type="positiveInteger"/>
-				-->
+			<attribute name="srsName" type="anyURI" use="optional" fixed="EPSG:28992" />
+			<attribute name="srsDimension" type="positiveInteger" use="optional" fixed="2" />
 		</complexType>
 	</element>
 	<complexType name="LinearRingType">
