@@ -86,7 +86,7 @@
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure-with-version">
 				<xsd:annotation>
-					<xsd:documentation>Identificatie van de levering. 
+					<xsd:documentation>Identificatie van de levering.
 Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attribuut 'version' van het CompositeFrame.</xsd:documentation>
 				</xsd:annotation>
 				<xsd:sequence>
@@ -653,6 +653,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 			<xsd:element name="TransportMode" type="TransportmodeEnum"/>
 			<xsd:element name="TransportSubmode" type="PtSubmodeChoice" minOccurs="0"/>
+			<xsd:element name="Url" type="websiteURI" minOccurs="0"/>
 			<xsd:element name="PublicCode" type="xsd:normalizedString" minOccurs="0">
 				<xsd:annotation>
 					<xsd:documentation>Verplicht voor Line, optioneel voor FlexibleLine.</xsd:documentation>
