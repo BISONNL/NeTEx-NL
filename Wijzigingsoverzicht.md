@@ -1,5 +1,11 @@
 # Nederlands NeTEx Profiel
 
-De documentatie is te vinden op de [BISON website](http://bison.dova.nu/standaarden/netex-nl).
+## Wijzigingsoverzicht
 
-Het XSD en evt. voorbeelden staan hier op github - zoek de juiste [release](http://github.com/BISONNL/NeTEx-NL/releases)!
+- v9.2.3  Aanpassingen t.b.v. 'NL flex Profiel'.
+- v9.2.2  Oorspronkelijke versie 9.2.1 ('NL voertuigen Profiel') hernoemd tot versie 9.2.2.
+- v9.2.1  Aanpassingen t.b.v. lijnleveringen. Tevens nog enkele bugfixes in het XSD.
+- (v9.2.1)  Aanpassingen t.b.v 'NL voertuigen Profiel'. Tevens enkele bugfixes in het XSD. Later hernoemd tot versie 9.2.2!
+- v9.2.0  Aanscherping n.a.v. eerste ervaringen, met name xsd fouten en de structuur van de metagegevens. Definities verplaatst naar extern document en jip-en-janneke-inleiding toegevoegd.
+- v9.1.0  Aanpassingen n.a.v. de pilot-implementatie, NeTEx versie 1.1, het 'EU NeTEx Profile', wijzigingen in KV1, voortschrijdend inzicht.
+- v9.0.0  Initiële versie t.b.v. het validatietraject.
