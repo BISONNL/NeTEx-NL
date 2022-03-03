@@ -350,8 +350,8 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 							<xsd:documentation>Hier altijd type="UserStopCode" gebruiken. Verplicht behalve bij flexhaltes.</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:element name="ForAlighting" type="xsd:boolean" default="true"/>
-					<xsd:element name="ForBoarding" type="xsd:boolean" default="true"/>
+					<xsd:element name="ForAlighting" type="xsd:boolean" default="true" minOccurs="0"/>
+					<xsd:element name="ForBoarding" type="xsd:boolean" default="true" minOccurs="0"/>
 					<xsd:element name="TopographicPlaceView" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
