@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2015 rel. 3 sp1 (x64) (http://www.altova.com) by InTraffic (Intraffic) -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <!-- Dit bestand is onderdeel van de XML Schema definitie van het NL NeTEx profiel:  -->
 <!--  * type definities van functionele elementen                                    -->
@@ -351,6 +352,13 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					</xsd:element>
 					<xsd:element name="ForAlighting" type="xsd:boolean" default="true"/>
 					<xsd:element name="ForBoarding" type="xsd:boolean" default="true"/>
+					<xsd:element name="TopographicPlaceView" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Name" type="MultilingualString"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
