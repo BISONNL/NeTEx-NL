@@ -351,6 +351,13 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					</xsd:element>
 					<xsd:element name="ForAlighting" type="xsd:boolean" default="true" minOccurs="0"/>
 					<xsd:element name="ForBoarding" type="xsd:boolean" default="true" minOccurs="0"/>
+					<xsd:element name="TopographicPlaceView" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Name" type="MultilingualString"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
