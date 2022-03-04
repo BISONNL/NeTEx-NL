@@ -273,6 +273,11 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 		<xsd:attribute name="version" type="VersionIdType" use="optional" default="any" form="unqualified"/>
 		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
+	<xsd:complexType name="VersionOfObjectRefStructure-with-optional-class">
+		<xsd:attribute name="nameOfRefClass" type="NameOfClass" use="optional" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="optional" default="any" form="unqualified"/>
+		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
+	</xsd:complexType>
 	<xsd:complexType name="ExternalObjectRefStructure">
 		<xsd:attribute name="type" type="xsd:normalizedString" use="required" form="unqualified"/>
 		<xsd:attribute name="ref" type="xsd:normalizedString" use="required" form="unqualified"/>

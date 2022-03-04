@@ -847,8 +847,8 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
 					<xsd:element name="Distance" type="xsd:decimal"/>
-					<xsd:element name="FromPointRef" type="VersionOfObjectRefStructure"/>
-					<xsd:element name="ToPointRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="FromPointRef" type="VersionOfObjectRefStructure-with-optional-class"/>
+					<xsd:element name="ToPointRef" type="VersionOfObjectRefStructure-with-optional-class"/>
 					<xsd:element name="OperationalContextRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 				</xsd:sequence>
 			</xsd:extension>
