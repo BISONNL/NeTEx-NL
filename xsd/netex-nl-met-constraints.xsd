@@ -4194,7 +4194,7 @@
 			<xsd:field xpath="@version"/>
 		</xsd:keyref>
 		<xsd:key name="RoutePoint_AnyVersionedKey">
-			<xsd:selector xpath=".//netex:RoutePoint | .//netex:ScheduledStopPoint | .//netex:GaragePoint | .//netex:ParkingPoint | .//netex:ReliefPoint | .//netex:ActivationPoint | .//netex:TimingPoint |.//netex:FareScheduledStopPoint"/>
+			<xsd:selector xpath=".//netex:RoutePoint"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
 		</xsd:key>
