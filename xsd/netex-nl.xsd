@@ -331,8 +331,7 @@
 					<xsd:element name="scheduledStopPoints">
 						<xsd:complexType>
 							<xsd:sequence>
-								<xsd:element name="ScheduledStopPoint" type="scheduledStopPoint"
-									maxOccurs="unbounded"/>
+								<xsd:element name="ScheduledStopPoint" type="scheduledStopPoint" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
@@ -492,8 +491,7 @@
 					<xsd:element name="contentValidityConditions">
 						<xsd:complexType>
 							<xsd:sequence>
-								<xsd:element name="AvailabilityCondition"
-									type="availabilityCondition" maxOccurs="unbounded"/>
+								<xsd:element name="AvailabilityCondition" type="availabilityCondition" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
