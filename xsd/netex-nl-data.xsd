@@ -155,7 +155,6 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	</xsd:complexType>
 	<xsd:complexType name="branding">
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">

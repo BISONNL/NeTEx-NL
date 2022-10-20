@@ -21,8 +21,8 @@
 <!--                      Line.ShortName toegevoegd t.b.v. 'lijnleveringen'          -->
 <!--   v9.2.2  (jun.2021) versie v9.2.1 hernoemd tot v9.2.2                          -->
 <!--   v9.2.3  (jul.2021) toevoegen flexvervoer                                      -->
-<!--   v9.2.x  (okt.2022) Organsitation is ofwel Operator of Authority				 -->
-<!--					  Organisation als zelfstandig elemeent vervalt              -->
+<!--   v9.2.x  (okt.2022) Organsation is ofwel Operator of Authority				 -->
+<!--					  Overeenkomstig EU XSD 						             -->
 <!--                                                                                 -->
 <!-- Copyright:                                                                      -->
 <!--     Dit document is eigendom van Platform BISON onder Samenwerkingsverband DOVA -->
@@ -243,7 +243,13 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					</xsd:element>
+					<xsd:element name="organisations" type="organisationsStructure"/>
+					<xsd:complexType name="organisationsStructure">
+						<xsd:choice maxOccurs="unbounded">
+							<xsd:element ref="Authority" maxOccurs="unbounded"/>
+							<xsd:element ref="Operator" maxOccurs="unbounded"/>
+						</xsd:choice>
+					</xsd:complexType>
 					<xsd:element name="operationalContexts">
 						<xsd:complexType>
 							<xsd:sequence>
@@ -549,7 +555,7 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
--->
+					-->
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-general"/>
 					<xsd:element name="members">
@@ -697,8 +703,8 @@
 			<xsd:element name="CompositeFrame" type="compositeFrame" maxOccurs="unbounded">
 				<xsd:annotation>
 					<xsd:documentation>Bij een 'dienstregeling' levering: één CompositeFrame per partitie, plus evt. CompositeFrame(s) met een kopie van de relevante 'centrale' gegevens.
-Bij een 'centrale' levering: één of meer CompositeFrame(s) met de 'centrale' gegevens.
-Bij een 'voertuigen' levering: één of meer CompositeFrame(s) met de 'voertuig' gegevens.</xsd:documentation>
+                     Bij een 'centrale' levering: één of meer CompositeFrame(s) met de 'centrale' gegevens.
+                     Bij een 'voertuigen' levering: één of meer CompositeFrame(s) met de 'voertuig' gegevens.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
