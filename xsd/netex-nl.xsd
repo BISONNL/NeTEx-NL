@@ -199,7 +199,6 @@
 								<xsd:element name="TypeOfActivation" type="typeOfActivation" maxOccurs="unbounded"/>
 								<xsd:element name="TypeOfEquipment" type="typeOfEquipment" maxOccurs="unbounded"/>
 								<xsd:element name="TypeOfService" type="typeOfService" maxOccurs="unbounded"/>
-								<xsd:element name="TypeOfOrganisation" type="typeOfOrganisation" maxOccurs="unbounded"/>
 								<xsd:element name="TypeOfResponsibilityRole" type="typeOfResponsibilityRole" maxOccurs="unbounded"/>
 								<xsd:element name="TypeOfEntity" type="displayTextLength" maxOccurs="unbounded"/>
 							</xsd:choice>
@@ -243,8 +242,8 @@
 					<xsd:element name="organisations">
 						<xsd:complexType>
 							<xsd:choice maxOccurs="unbounded">
-								<xsd:element ref="Authority"/>
-								<xsd:element ref="Operator"/>
+								<xsd:element name="Authority" type="authority"/>
+								<xsd:element name="Operator" type="operator"/>
 							</xsd:choice>
 						</xsd:complexType>
 					</xsd:element>
