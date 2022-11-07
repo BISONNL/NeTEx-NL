@@ -607,11 +607,6 @@
 			<xsd:extension base="TypeOfValueVersionStructure"/>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:complexType name="typeOfOrganisation">
-		<xsd:complexContent>
-			<xsd:extension base="TypeOfValueVersionStructure"/>
-		</xsd:complexContent>
-	</xsd:complexType>
 	<xsd:complexType name="typeOfResponsibilityRole">
 		<xsd:complexContent>
 			<xsd:extension base="TypeOfValueVersionStructure"/>

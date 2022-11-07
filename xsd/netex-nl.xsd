@@ -21,6 +21,8 @@
 <!--                      Line.ShortName toegevoegd t.b.v. 'lijnleveringen'          -->
 <!--   v9.2.2  (jun.2021) versie v9.2.1 hernoemd tot v9.2.2                          -->
 <!--   v9.2.3  (jul.2021) toevoegen flexvervoer                                      -->
+<!--   v9.2.x  (okt.2022) Organsation is ofwel Operator of Authority				 -->
+<!--					  Overeenkomstig EU XSD 						             -->
 <!--                                                                                 -->
 <!-- Copyright:                                                                      -->
 <!--     Dit document is eigendom van Platform BISON onder Samenwerkingsverband DOVA -->
@@ -240,10 +242,10 @@
 					</xsd:element>
 					<xsd:element name="organisations">
 						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="Operator" type="operator" maxOccurs="unbounded"/>
-								<xsd:element name="Organisation" type="organisation" minOccurs="0" maxOccurs="unbounded"/>
-							</xsd:sequence>
+							<xsd:choice maxOccurs="unbounded">
+								<xsd:element ref="Authority"/>
+								<xsd:element ref="Operator"/>
+							</xsd:choice>
 						</xsd:complexType>
 					</xsd:element>
 					<xsd:element name="operationalContexts">
