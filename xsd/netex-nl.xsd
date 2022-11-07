@@ -240,13 +240,14 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="organisations" type="organisationsStructure"/>
-					<xsd:complexType name="organisationsStructure">
-						<xsd:choice maxOccurs="unbounded">
-							<xsd:element ref="Authority"/>
-							<xsd:element ref="Operator"/>
-						</xsd:choice>
-					</xsd:complexType>
+					<xsd:element name="organisations">
+						<xsd:complexType>
+							<xsd:choice maxOccurs="unbounded">
+								<xsd:element ref="Authority"/>
+								<xsd:element ref="Operator"/>
+							</xsd:choice>
+						</xsd:complexType>
+					</xsd:element>
 					<xsd:element name="operationalContexts">
 						<xsd:complexType>
 							<xsd:sequence>
