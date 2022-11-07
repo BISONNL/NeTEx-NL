@@ -1088,12 +1088,13 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 							<xsd:documentation>Hier altijd type="VoertuigTypeCode" gebruiken</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:element name="TypeOfFuel" type="TypeOfFuelEnumeration"/>
 					<xsd:element name="EuroClass" type="xsd:normalizedString" minOccurs="0">
 						<xsd:annotation>
 							<xsd:documentation>Zie Wikipedia voor de mogelijke waarden</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
+					<xsd:element name="TypeOfFuel" type="TypeOfFuelEnumeration"/>
+					<xsd:element name="TransportMode" type="TransportmodeEnum"/>
 					<xsd:element name="capacities">
 						<xsd:annotation>
 							<xsd:documentation>Capaciteit per tariefklasse</xsd:documentation>
@@ -1114,7 +1115,6 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="Height" type="LengthType" minOccurs="0"/>
 					<xsd:element name="Weight" type="WeightType" minOccurs="0"/>
 					<xsd:element name="facilities" type="facilities"/>
-					<xsd:element name="TransportMode" type="TransportmodeEnum"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
