@@ -2,6 +2,7 @@
 
 ## Wijzigingsoverzicht
 
+- v9.2.4  Aanpassingen om NL XSD afleidbaar te maken uit EU XSD. 
 - v9.2.3  Aanpassingen t.b.v. 'NL flex Profiel'.
 - v9.2.2  Oorspronkelijke versie 9.2.1 ('NL voertuigen Profiel') hernoemd tot versie 9.2.2.
 - v9.2.1  Aanpassingen t.b.v. lijnleveringen. Tevens nog enkele bugfixes in het XSD.
