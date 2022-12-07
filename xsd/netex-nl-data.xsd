@@ -668,7 +668,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 				<xsd:sequence>
 					<xsd:group ref="lineGroup"/>
 				</xsd:sequence>
-				<xsd:attribute name="responsibilitySetRef" type="ObjectIdType" use="required" form="unqualified"/>
+				<xsd:attribute name="responsibilitySetRef" type="ObjectIdType" form="unqualified"/>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -680,7 +680,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="FlexibleLineType" type="FlexibleLineTypeEnumeration"/>
 					<xsd:group ref="bookingArrangementsGroup"/>
 				</xsd:sequence>
-				<xsd:attribute name="responsibilitySetRef" type="ObjectIdType" use="required" form="unqualified"/>
+				<xsd:attribute name="responsibilitySetRef" type="ObjectIdType" form="unqualified"/>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
