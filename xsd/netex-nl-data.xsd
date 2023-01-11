@@ -1103,6 +1103,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 	</xsd:complexType>
 	<xsd:complexType name="passengerCapacity">
 		<xsd:sequence>
+			<xsd:attribute name="id" type="PassengerCapacityIdType" use="optional">
 			<xsd:element name="FareClass" type="FareClassEnumeration"/>
 			<xsd:element name="TotalCapacity" type="xsd:nonNegativeInteger"/>
 			<xsd:element name="SeatingCapacity" type="xsd:nonNegativeInteger"/>
