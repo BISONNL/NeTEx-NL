@@ -1,0 +1,130 @@
+                <!-- In DestinationDisplay worden de bestemmingen en eventuele tussenbestemmingen vastgelegd.  
+        		Om compatible te zijn  met EU NeTEx/EPIP wordt in DestinationDisplay het Via veld alleen gevuld met tussenbestemmingen en niet met een detail eindbestemming.
+                Ten behoeve van de weergave van bestemmingen op DRIS wordt uitsluitend gebruik gemaakt van de DestinationDisplayVariants. De varianten  met een max. lengte van 16, 19, 21, en 24 bestemmingen dienen te worden aangeleverd. 
+				Een DRIS gebruikt, afhankelijk van de ruimte voor de bestemming, de langst mogelijke variant.
+				In onderstaande voorbeelden wordt het gebruik van via en van Desttinationdisplayvariants toegelicht' 
+    			-->
+<DestinationDisplay id="KEOLIS:DestinationDisplay:5026" version="20230305">
+	<Name>Vathorst</Name>
+	<SideText>Vathorst via Meander MC</SideText>
+	<FrontText>Vathorst via Meander MC</FrontText>
+	<PrivateCode
+		type="DestinationCode">5026</PrivateCode>
+	<vias>
+		<Via>
+		  <Name>Meander MC</Name>
+		</Via>
+	</vias>
+	<variants>
+	  <DestinationDisplayVariant id="KEOLIS:DestinationDisplayVariant:5026-16" version="20230305">
+	    <Extensions>
+		  <MaxLength>BISON:DisplayTextLength:16</MaxLength>
+		</Extensions>
+		<DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+			<Name>Vathorst</Name>
+			<vias>
+				<Via>
+				  <Name>Meander MC</Name>
+				</Via>
+			</vias>
+	 </DestinationDisplayVariant>
+	 	  <DestinationDisplayVariant id="KEOLIS:DestinationDisplayVariant:5026-19" version="20230305">
+	    <Extensions>
+		  <MaxLength>BISON:DisplayTextLength:19</MaxLength>
+		</Extensions>
+		<DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+			<Name>Vathorst</Name>
+			<vias>
+				<Via>
+				  <Name>Meander MC</Name>
+				</Via>
+			</vias>
+	 </DestinationDisplayVariant>
+	 	  <DestinationDisplayVariant id="KEOLIS:DestinationDisplayVariant:5026-21" version="20230305">
+	    <Extensions>
+		  <MaxLength>BISON:DisplayTextLength:21</MaxLength>
+		</Extensions>
+		<DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+			<Name>Vathorst</Name>
+			<vias>
+				<Via>
+				  <Name>Meander MC</Name>
+				</Via>
+			</vias>
+	 </DestinationDisplayVariant>
+	 <DestinationDisplayVariant id="KEOLIS:DestinationDisplayVariant:5026-24" version="20230305">
+	    <Extensions>
+		  <MaxLength>BISON:DisplayTextLength:24</MaxLength>
+		</Extensions>
+		<DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+			<Name>Vathorst</Name>
+			<vias>
+				<Via>
+				  <Name>Meander MC</Name>
+				</Via>
+			</vias>
+	 </DestinationDisplayVariant>
+   </variants>
+</DestinationDisplay>
+     
+<DestinationDisplay id="KEOLIS:DestinationDisplay:5014" version="20230305">
+	<Name>Liendert en Rustenburg</Name>
+	<SideText>Liendert en Rustenburg</SideText>
+	<FrontText>Liendert en Rustenburg</FrontText>
+	<PrivateCode 
+		type="DestinationCode">5014</PrivateCode>
+    <!-- Via van DestinationDisplay wordt niet gebruikt, Rustenburg is geen tussen bestemming -->
+ 	<variants>
+   	<DestinationDisplayVariant id="KEOLIS:DestinationDisplayVariant:5014-16" version="20230305">
+    	  <Extensions>
+			   <MaxLength>BISON:DisplayTextLength:16</MaxLength>
+		  </Extensions>
+		  <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+			<Name>Liendert</Name>
+		    	<vias>
+				<!-- De via variant bevat relevante detailbestemming, is geen tussenbestemming, dus zonder het woord 'via' -->
+					<Via>
+						<Name>Rustenburg</Name>
+					</Via>
+				</vias>
+	</DestinationDisplayVariant>
+	<DestinationDisplayVariant id="KEOLIS:DestinationDisplayVariant:5014-19" version="20230305">
+    	  <Extensions>
+			   <MaxLength>BISON:DisplayTextLength:19</MaxLength>
+		  </Extensions>
+		  <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+			<Name>Liendert</Name>
+		    	<vias>
+				<!-- De via variant bevat relevante detailbestemming, is geen tussenbestemming, dus zonder het woord 'via' -->
+					<Via>
+						<Name>Rustenburg</Name>
+					</Via>
+				</vias>
+	</DestinationDisplayVariant>
+  	<DestinationDisplayVariant id="KEOLIS:DestinationDisplayVariant:5014-21" version="20230305">
+    	  <Extensions>
+			   <MaxLength>BISON:DisplayTextLength:21</MaxLength>
+		  </Extensions>
+		  <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+			<Name>Liendert</Name>
+		    	<vias>
+				<!-- De via variant bevat relevante detailbestemming, is geen tussenbestemming, dus zonder het woord 'via' -->
+					<Via>
+						<Name>Rustenburg</Name>
+					</Via>
+				</vias>
+	</DestinationDisplayVariant>
+	<DestinationDisplayVariant id="KEOLIS:DestinationDisplayVariant:5014-24" version="20230305">
+			<Extensions>
+			  <MaxLength>BISON:DisplayTextLength:24</MaxLength>
+			</Extensions>
+			<DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+		    	<Name>Liendert en Rustenburg</Name>
+	<!-- DestinationDisplayvariantvia voor detail besstemmming is niet nodig, volledig bestemming is kleiner dan 24 posities -->
+    </DestinationDisplayVariant>
+    </variants>
+</DestinationDisplay>
+
+
+
+
