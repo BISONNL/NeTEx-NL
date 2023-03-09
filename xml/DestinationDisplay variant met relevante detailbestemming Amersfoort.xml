@@ -12,7 +12,7 @@
 		type="DestinationCode">5026</PrivateCode>
 	<vias>
 		<Via>
-		  <Name>Meander MC</Name>
+		  <Name>via Meander MC</Name>
 		</Via>
 	</vias>
 	<variants>
@@ -24,7 +24,7 @@
 			<Name>Vathorst</Name>
 			<vias>
 				<Via>
-				  <Name>Meander MC</Name>
+				  <Name>via Meander MC</Name>
 				</Via>
 			</vias>
 	 </DestinationDisplayVariant>
@@ -36,7 +36,7 @@
 			<Name>Vathorst</Name>
 			<vias>
 				<Via>
-				  <Name>Meander MC</Name>
+				  <Name>via Meander MC</Name>
 				</Via>
 			</vias>
 	 </DestinationDisplayVariant>
@@ -48,7 +48,7 @@
 			<Name>Vathorst</Name>
 			<vias>
 				<Via>
-				  <Name>Meander MC</Name>
+				  <Name>via Meander MC</Name>
 				</Via>
 			</vias>
 	 </DestinationDisplayVariant>
@@ -60,7 +60,7 @@
 			<Name>Vathorst</Name>
 			<vias>
 				<Via>
-				  <Name>Meander MC</Name>
+				  <Name>via Meander MC</Name>
 				</Via>
 			</vias>
 	 </DestinationDisplayVariant>
