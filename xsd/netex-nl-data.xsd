@@ -1112,7 +1112,10 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		</xsd:annotation>
 		<xsd:complexType>
 		<xsd:complexContent>
-			<xsd:extension base="PassengerCapacityStructure">
+			<xsd:extension base="DataManagedObjectStructure">
+			<xsd:sequence>
+				<xsd:group ref="PassengerCapacityGroup"/>
+			</xsd:sequence>
 			<xsd:attribute name="id" type="PassengerCapacityIdType" use="optional">
 				<xsd:annotation>
 				<xsd:documentation>Identifier of PASSENGER CAPACITY.</xsd:documentation>
@@ -1128,18 +1131,6 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		</xsd:annotation>
 		<xsd:restriction base="ObjectIdType"/>
 	</xsd:simpleType>
-	<xsd:complexType name="PassengerCapacityStructure">
-		<xsd:annotation>
-		<xsd:documentation>Capacity for a VEHICLE TYPE and Class.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:complexContent>
-		<xsd:extension base="DataManagedObjectStructure">
-			<xsd:sequence>
-			<xsd:group ref="PassengerCapacityGroup"/>
-			</xsd:sequence>
-		</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
 	<xsd:group name="PassengerCapacityGroup">
 		<xsd:annotation>
 		<xsd:documentation>Elements for a PASSENGER CAPACITY REQUIREMENT. relevant for passenger systems.</xsd:documentation>
