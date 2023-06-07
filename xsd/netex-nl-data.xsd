@@ -1112,24 +1112,13 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		</xsd:annotation>
 		<xsd:complexType>
 		<xsd:complexContent>
-			<xsd:restriction base="PassengerCapacityStructure">
-			<xsd:sequence>
-				<xsd:sequence>
-				<xsd:group ref="EntityInVersionGroup" minOccurs="0"/>
-				</xsd:sequence>
-				<xsd:sequence>
-				<xsd:group ref="DataManagedObjectGroup"/>
-				</xsd:sequence>
-				<xsd:sequence>
-				<xsd:group ref="PassengerCapacityGroup"/>
-				</xsd:sequence>
-			</xsd:sequence>
+			<xsd:extension base="PassengerCapacityStructure">
 			<xsd:attribute name="id" type="PassengerCapacityIdType" use="optional">
 				<xsd:annotation>
 				<xsd:documentation>Identifier of PASSENGER CAPACITY.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:attribute>
-			</xsd:restriction>
+			</xsd:extension>
 		</xsd:complexContent>
 		</xsd:complexType>
 	</xsd:element>
