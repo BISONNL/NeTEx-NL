@@ -1101,14 +1101,10 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		<xsd:annotation>
 		<xsd:documentation>Type for a list of PASSENGER CAPACITY REQUIREMENTs.</xsd:documentation>
 		</xsd:annotation>
-		<xsd:complexContent>
-		<xsd:extension base="oneToManyRelationshipStructure">
-			<xsd:choice maxOccurs="unbounded">
-			<xsd:element ref="PassengerCapacityRef"/>
+		<xsd:choice maxOccurs="unbounded">
+			<xsd:element name="PassengerCapacityRef" type="VersionOfObjectRefStructure"/>
 			<xsd:element ref="PassengerCapacity" maxOccurs="1"/>
-			</xsd:choice>
-		</xsd:extension>
-		</xsd:complexContent>
+		</xsd:choice>
 	</xsd:complexType>
 	<xsd:element name="PassengerCapacity">
 		<xsd:annotation>
