@@ -124,9 +124,6 @@ bestandtypes jpg, jpeg, gif, png, svg (hoofdletters of kleine letters, geen comb
 			<xsd:documentation>Het object hoeft géén 'id' of 'version' attribuut, omdat het altijd embedded is in een ander object.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="id" type="ObjectIdType" use="optional" form="unqualified"/>
-		<!--
-		<xsd:attribute name="version" type="VersionIdType" use="optional" default="any" form="unqualified"/>
--->
 	</xsd:complexType>
 	<xsd:complexType name="SimpleObjectStructure">
 		<xsd:annotation>
