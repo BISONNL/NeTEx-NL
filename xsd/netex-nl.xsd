@@ -23,6 +23,8 @@
 <!--   v9.2.3  (jul.2021) toevoegen flexvervoer                                      -->
 <!--   v9.2.4  (dec.2022) Organsation is ofwel Operator of Authority				 -->
 <!--					  Overeenkomstig EU XSD 						             -->
+<!--   v9.3.0  (xxx.2023) Attribuut version verplicht gemaakt bij alle elementen     -->
+<!--                      t.b.v. compatibiliteit Europa.				             -->
 <!--                                                                                 -->
 <!-- Copyright:                                                                      -->
 <!--     Dit document is eigendom van Platform BISON onder Samenwerkingsverband DOVA -->
