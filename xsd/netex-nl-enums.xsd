@@ -574,6 +574,7 @@
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_CALENDAR"/>
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_VEHICLE"/>
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_SITE"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_FARE"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="BisonTypeOfGeneralFrame">

@@ -29,7 +29,10 @@
 <!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl,      -->
 <!--     zie http://creativecommons.org/licences/by-nd/3.0/nl                        -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.3" id="netex-nl-xsd">
+<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.netex.org.uk/netex"
+			elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.3" id="netex-nl-xsd">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- AFHANKELIJKHEDEN                                                                -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -144,6 +147,14 @@
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
+	<xsd:complexType name="TypeOfFrameRefStructure-fare">
+		<xsd:complexContent>
+			<xsd:restriction base="TypeOfFrameRefStructure">
+				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_FARE" form="unqualified"/>
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
 	<xsd:complexType name="TypeOfFrameRefStructure-general">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
@@ -175,6 +186,15 @@
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:element name="DefaultResponsibilitySetRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="VersionFrameDefaultsStructure-fare">
+		<!-- TODO:  -->
+		<xsd:annotation>
+			<xsd:documentation>FrameDefaults voor een FareFrame.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="DefaultCurrency" type="CurrencyType" fixed="EUR" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="versions">
@@ -453,6 +473,43 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
+	<!-- FARE FRAME -->
+	<xsd:complexType name="fareFrame">
+		<xsd:complexContent>
+			<xsd:extension base="VersionFrameVersionStructure">
+				<xsd:sequence>
+					<!-- TODO: Hoe wordt de KeyList gebruikt bij de export voor TransLink -->
+					<xsd:element name="keyList" type="KeyListStructure">
+						<xsd:annotation>
+							<xsd:documentation>Gebruik hier Key="EntranceRateWrtCurrency". Gebruik een PUNT als scheidingsteken van de decimalen.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-fare"/>
+					<xsd:element name="FrameDefaults" type="VersionFrameDefaultsStructure-fare" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Bevat alleen DefaultResponsibilitySetRef voor de koppeling aan de (hoofd)financier</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="contentValidityConditions">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="ValidityTrigger" type="validityTrigger" minOccurs="0" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="PricingParameterSet" type="PricingParameterSet" minOccurs="0"/>
+					<xsd:element name="tariffs">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Tariff" type="Tariff" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
 	<!-- SERVICE CALENDAR FRAME -->
 	<xsd:complexType name="serviceCalendarFrame">
 		<xsd:complexContent>
@@ -663,6 +720,7 @@
 										<xsd:element name="TimetableFrame" type="timetableFrame"/>
 										<xsd:element name="ServiceCalendarFrame" type="serviceCalendarFrame"/>
 										<xsd:element name="VehicleScheduleFrame" type="vehicleScheduleFrame"/>
+										<xsd:element name="FareFrame" type="fareFrame"/>
 									</xsd:choice>
 								</xsd:sequence>
 							</xsd:choice>
