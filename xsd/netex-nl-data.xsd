@@ -413,6 +413,11 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="FromDate" type="xsd:dateTime"/>
 					<xsd:element name="ToDate" type="xsd:dateTime"/>
+					<xsd:element name="IsAvailable" type="xsd:boolean" default="true" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Geeft aan of de AvailabilityCondition de rit geldig maakt of niet.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
 					<xsd:element name="ValidDayBits">
 						<xsd:annotation>
 							<xsd:documentation>De ValidDayBits worden van links (FromDate) naar rechts (ToDate, inclusief) gelezen.</xsd:documentation>
