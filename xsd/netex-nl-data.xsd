@@ -1392,6 +1392,16 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
+	<xsd:complexType name="PricingParameterSet">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="pricingRules" type="pricingRules" minOccurs="0"/>
+					<xsd:element name="roundings" type="roundings" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
 	<xsd:complexType name="pricingRules">
 		<xsd:sequence>
 			<xsd:element name="LimitingRule" type="LimitingRule"/>
@@ -1424,16 +1434,6 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 							<xsd:documentation>Gebruik een PUNT als scheidingsteken van de decimalen.</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-				</xsd:sequence>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
-	<xsd:complexType name="PricingParameterSet">
-		<xsd:complexContent>
-			<xsd:extension base="DataManagedObjectStructure">
-				<xsd:sequence>
-					<xsd:element name="pricingRules" type="pricingRules" minOccurs="0"/>
-					<xsd:element name="roundings" type="roundings" minOccurs="0"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
