@@ -610,6 +610,15 @@
 										<xsd:element name="Vehicle" type="vehicle" maxOccurs="unbounded"/>
 									</xsd:sequence>
 								</xsd:choice>
+								<xsd:choice>
+									<xsd:annotation>
+										<xsd:documentation>Variant voor GeneralFrames in een export van 'lijnen per concessie'</xsd:documentation>
+									</xsd:annotation>
+									<xsd:sequence maxOccurs="unbounded">
+										<xsd:element name="Zone" type="zone" maxOccurs="unbounded"/>
+										<xsd:element name="LineNetwork" type="lineNetwork" maxOccurs="unbounded"/>
+									</xsd:sequence>
+								</xsd:choice>
 							</xsd:choice>
 						</xsd:complexType>
 					</xsd:element>
