@@ -1385,6 +1385,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
+					<xsd:element name="ValidBetween" type="validBetween"/>
 					<xsd:element name="Centroid" type="centroid" minOccurs="0"/>
 					<xsd:element ref="gml:Polygon" minOccurs="0"/>
 					<xsd:element name="ParentZoneRef" type="VersionOfObjectRefStructure"/>
