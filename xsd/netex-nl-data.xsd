@@ -463,6 +463,16 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="Dynamic" type="DynamicAdvertisementEnumeration" default="always" minOccurs="0"/>
 					<xsd:element name="FlexibleServiceProperties" type="flexibleServiceProperties" minOccurs="0"/>
 				</xsd:sequence>
+				<xsd:attribute name="derivedFromVersionRef" type="VersionIdType" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>Versie van de rit waarop deze rit is gebaseerd. Kan in het NL-profiel, eventueel in combinatie met derivedFromObjectRef, gebruikt worden om te verwijzen naar de originele versie van een rit in geval van een omleiding.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="derivedFromObjectRef" type="ObjectIdType" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>ID van de rit waarop deze rit is gebaseerd. Kan in het NL-profiel, eventueel in combinatie met derivedFromVersionRef, gebruikt worden om te verwijzen naar de originele versie van een rit in geval van een omleiding.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -528,6 +538,16 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 						</xsd:complexType>
 					</xsd:element>
 				</xsd:sequence>
+				<xsd:attribute name="derivedFromVersionRef" type="VersionIdType" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>Versie van de rit waarop deze rit is gebaseerd. Kan in het NL-profiel, eventueel in combinatie met derivedFromObjectRef, gebruikt worden om te verwijzen naar de originele versie van een rit in geval van een omleiding.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="derivedFromObjectRef" type="ObjectIdType" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>ID van de rit waarop deze rit is gebaseerd. Kan in het NL-profiel, eventueel in combinatie met derivedFromVersionRef, gebruikt worden om te verwijzen naar de originele versie van een rit in geval van een omleiding.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>

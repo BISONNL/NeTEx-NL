@@ -23,6 +23,9 @@
 <!--   v9.2.3  (jul.2021) toevoegen flexvervoer                                      -->
 <!--   v9.2.4  (dec.2022) Organsation is ofwel Operator of Authority				 -->
 <!--					  Overeenkomstig EU XSD 						             -->
+<!--   v9.3.0  (xxx.2023) Attributen derivedFromObjectRef en derivedFromVersionRef   -->
+<!--                      toegevoegd t.b.v. verwijzingen naar originele route bij    -->
+<!--                      omleidingen.                                               -->
 <!--   v9.3.0  (xxx.2023) Element limitations opgenomen in accessibilityAssessment   -->
 <!--                                                                                 -->
 <!-- Copyright:                                                                      -->
