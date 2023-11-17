@@ -25,6 +25,10 @@
 <!--					  Overeenkomstig EU XSD 						             -->
 <!--   v9.3.0  (xxx.2023) Attribuut version verplicht gemaakt bij alle elementen     -->
 <!--                      t.b.v. compatibiliteit Europa.				             -->
+<!--   v9.3.0  (xxx.2023) Attributen derivedFromObjectRef en derivedFromVersionRef   -->
+<!--                      toegevoegd t.b.v. verwijzingen naar originele route bij    -->
+<!--                      omleidingen.                                               -->
+<!--   v9.3.0  (xxx.2023) Element limitations opgenomen in accessibilityAssessment   -->
 <!--                                                                                 -->
 <!-- Copyright:                                                                      -->
 <!--     Dit document is eigendom van Platform BISON onder Samenwerkingsverband DOVA -->

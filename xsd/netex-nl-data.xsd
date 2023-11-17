@@ -463,6 +463,16 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="Dynamic" type="DynamicAdvertisementEnumeration" default="always" minOccurs="0"/>
 					<xsd:element name="FlexibleServiceProperties" type="flexibleServiceProperties" minOccurs="0"/>
 				</xsd:sequence>
+				<xsd:attribute name="derivedFromVersionRef" type="VersionIdType" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>Versie van de rit waarop deze rit is gebaseerd. Kan in het NL-profiel, eventueel in combinatie met derivedFromObjectRef, gebruikt worden om te verwijzen naar de originele versie van een rit in geval van een omleiding.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="derivedFromObjectRef" type="ObjectIdType" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>ID van de rit waarop deze rit is gebaseerd. Kan in het NL-profiel, eventueel in combinatie met derivedFromVersionRef, gebruikt worden om te verwijzen naar de originele versie van een rit in geval van een omleiding.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -528,6 +538,16 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 						</xsd:complexType>
 					</xsd:element>
 				</xsd:sequence>
+				<xsd:attribute name="derivedFromVersionRef" type="VersionIdType" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>Versie van de rit waarop deze rit is gebaseerd. Kan in het NL-profiel, eventueel in combinatie met derivedFromObjectRef, gebruikt worden om te verwijzen naar de originele versie van een rit in geval van een omleiding.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="derivedFromObjectRef" type="ObjectIdType" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>ID van de rit waarop deze rit is gebaseerd. Kan in het NL-profiel, eventueel in combinatie met derivedFromVersionRef, gebruikt worden om te verwijzen naar de originele versie van een rit in geval van een omleiding.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -629,7 +649,25 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
 					<xsd:element name="MobilityImpairedAccess" type="LimitationStatusEnumeration"/>
+					<xsd:element name="limitations" type="limitationsStructure" minOccurs="0"/>
 					<xsd:element name="Comment" type="MultilingualString" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="limitationsStructure">
+		<xsd:sequence>
+			<xsd:element name="AccessibilityLimitation" type="accessibilityLimitationStructure" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="accessibilityLimitationStructure">
+		<xsd:complexContent>
+			<xsd:extension base="EmbeddedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="WheelchairAccess" type="LimitationStatusEnumeration" default="false"/>
+					<xsd:element name="StepFreeAccess" type="LimitationStatusEnumeration" default="unknown" minOccurs="0"/>
+					<xsd:element name="EscalatorFreeAccess" type="LimitationStatusEnumeration" default="unknown" minOccurs="0"/>
+					<xsd:element name="LiftFreeAccess" type="LimitationStatusEnumeration" default="unknown" minOccurs="0"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
