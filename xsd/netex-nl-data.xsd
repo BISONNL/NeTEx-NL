@@ -28,7 +28,16 @@
 					<xsd:element name="ShortName" type="MultilingualString"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="Centroid" type="centroid" minOccurs="0"/>
-					<xsd:element ref="gml:Polygon"/>
+					<xsd:choice minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>
+								Gebruik MultiSurface indien het gebied uit meerdere, niet aan elkaar grenzende, gebieden
+								bestaat; bijvoorbeeld eilanden.
+							</xsd:documentation>
+						</xsd:annotation>
+						<xsd:element ref="gml:Polygon"/>
+						<xsd:element ref="gml:MultiSurface"/>
+					</xsd:choice>
 				</xsd:sequence>
 				<xsd:attributeGroup ref="derivedFrom">
 					<xsd:annotation>

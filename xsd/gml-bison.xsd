@@ -66,4 +66,19 @@
 			</element>
 		</sequence>
 	</complexType>
+	<element name="MultiSurface">
+		<complexType>
+			<sequence>
+				<element name="surfaceMember" type="gml:surfaceMemberType" maxOccurs="unbounded"/>
+			</sequence>
+			<attribute ref="gml:id" use="required"/>
+			<attribute name="srsName" type="anyURI" use="optional" fixed="EPSG:28992" />
+			<attribute name="srsDimension" type="positiveInteger" use="optional" fixed="2" />
+		</complexType>
+	</element>
+	<complexType name="surfaceMemberType">
+		<sequence>
+			<element ref="gml:Polygon"/>
+		</sequence>
+	</complexType>
 </schema>
