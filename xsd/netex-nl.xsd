@@ -584,11 +584,10 @@
 										</xsd:annotation>
 									</xsd:element>
 									<xsd:sequence maxOccurs="unbounded">
-										<xsd:element name="Network" type="network">
-											<xsd:annotation>
-												<xsd:documentation>Export van voorgedefinieerde DOVA lijst met concessies</xsd:documentation>
-											</xsd:annotation>
-										</xsd:element>
+										<xsd:annotation>
+											<xsd:documentation>Export van voorgedefinieerde DOVA lijst met concessies</xsd:documentation>
+										</xsd:annotation>
+										<xsd:element name="Network" type="network"/>
 										<xsd:element name="TransportAdministrativeZone" type="transportAdministrativeZone"/>
 									</xsd:sequence>
 								</xsd:choice>
@@ -608,15 +607,6 @@
 											<xsd:documentation>Het GeneralFrame met de voertuigen.</xsd:documentation>
 										</xsd:annotation>
 										<xsd:element name="Vehicle" type="vehicle" maxOccurs="unbounded"/>
-									</xsd:sequence>
-								</xsd:choice>
-								<xsd:choice>
-									<xsd:annotation>
-										<xsd:documentation>Variant voor GeneralFrames in een export van 'lijnen per concessie'</xsd:documentation>
-									</xsd:annotation>
-									<xsd:sequence maxOccurs="unbounded">
-										<xsd:element name="Zone" type="zone" maxOccurs="unbounded"/>
-										<xsd:element name="LineNetwork" type="lineNetwork" maxOccurs="unbounded"/>
 									</xsd:sequence>
 								</xsd:choice>
 							</xsd:choice>

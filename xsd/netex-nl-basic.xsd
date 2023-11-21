@@ -396,4 +396,19 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 		<xsd:attribute name="derivedFromVersionRef" type="VersionIdType"/>
 		<xsd:attribute name="derivedFromObjectRef" type="ObjectIdType"/>
 	</xsd:attributeGroup>
+	<xsd:complexType name="centroid">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Location" type="LocationStructure" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="validBetween">
+		<xsd:sequence>
+			<xsd:element name="FromDate" type="xsd:dateTime"/>
+			<xsd:element name="ToDate" type="xsd:dateTime" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
 </xsd:schema>
