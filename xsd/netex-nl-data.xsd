@@ -141,7 +141,8 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="ShortName" type="MultilingualString"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="TransportMode" type="TransportmodeEnum" minOccurs="0"/>
-					<xsd:element name="GroupOfLinesType" type="GroupOfLinesTypeEnumeration"/>
+					<xsd:element name="PurposeOfGrouping" type="BisonPurposeOfGroupingEnumeration" minOccurs="0"/>
+					<xsd:element name="GroupOfLinesType" type="GroupOfLinesTypeEnumeration" minOccurs="0"/>
 					<xsd:element name="AuthorityRef" type="VersionOfObjectRefStructure"/>
 					<xsd:element name="groupsOfLines" minOccurs="0">
 						<xsd:complexType>
