@@ -23,32 +23,10 @@
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure-with-status">
 				<xsd:sequence>
-					<xsd:element name="ValidBetween" type="validBetween" minOccurs="0"/>
 					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="ShortName" type="MultilingualString"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
-					<xsd:element name="Centroid" type="centroid" minOccurs="0"/>
-					<xsd:choice minOccurs="0">
-						<xsd:annotation>
-							<xsd:documentation>
-								Gebruik MultiSurface indien het gebied uit meerdere, niet aan elkaar grenzende, gebieden
-								bestaat; bijvoorbeeld eilanden.
-							</xsd:documentation>
-						</xsd:annotation>
-						<xsd:element ref="gml:Polygon"/>
-						<xsd:element ref="gml:MultiSurface"/>
-					</xsd:choice>
 				</xsd:sequence>
-				<xsd:attributeGroup ref="derivedFrom">
-					<xsd:annotation>
-						<xsd:documentation>
-							Verwijzing naar een TransportAdministrativeZone (concessiegebied), waar deze
-							TransportAdministrativeZone op is gebaseerd. Wordt gebruikt in de
-							'concessie-contract-export' waarin de geometrische gegevens worden toegevoegd aan de
-							administratieve concessiegebied-gegevens uit de centrale 'network-export'.
-						</xsd:documentation>
-					</xsd:annotation>
-				</xsd:attributeGroup>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -141,7 +119,8 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="ShortName" type="MultilingualString"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="TransportMode" type="TransportmodeEnum" minOccurs="0"/>
-					<xsd:element name="GroupOfLinesType" type="GroupOfLinesTypeEnumeration"/>
+					<xsd:element name="PurposeOfGrouping" type="BisonPurposeOfGroupingEnumeration" minOccurs="0"/>
+					<xsd:element name="GroupOfLinesType" type="GroupOfLinesTypeEnumeration" minOccurs="0"/>
 					<xsd:element name="AuthorityRef" type="VersionOfObjectRefStructure"/>
 					<xsd:element name="groupsOfLines" minOccurs="0">
 						<xsd:complexType>
@@ -1437,49 +1416,5 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
-	</xsd:complexType>
-
-	<xsd:complexType name="centroid">
-		<xsd:complexContent>
-			<xsd:extension base="DataManagedObjectStructure">
-				<xsd:sequence>
-					<xsd:element name="Location" type="LocationStructure" minOccurs="0"/>
-				</xsd:sequence>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
-	<xsd:complexType name="zone">
-		<xsd:complexContent>
-			<xsd:extension base="DataManagedObjectStructure">
-				<xsd:sequence>
-					<xsd:element name="ValidBetween" type="validBetween"/>
-					<xsd:element name="Centroid" type="centroid" minOccurs="0"/>
-					<xsd:element ref="gml:Polygon" minOccurs="0"/>
-					<xsd:element name="ParentZoneRef" type="VersionOfObjectRefStructure"/>
-				</xsd:sequence>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
-
-	<xsd:complexType name="lineNetwork">
-		<xsd:complexContent>
-			<xsd:extension base="DataManagedObjectStructure">
-				<xsd:sequence>
-					<xsd:sequence>
-						<xsd:element name="ValidBetween" type="validBetween"/>
-						<xsd:element name="NetworkRef" type="VersionOfObjectRefStructure"/>
-						<xsd:element name="LineRef" type="VersionOfObjectRefStructure"/>
-					</xsd:sequence>
-				</xsd:sequence>
-				<xsd:attribute name="responsibilitySetRef" type="ObjectIdType" form="unqualified"/>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
-
-	<xsd:complexType name="validBetween">
-		<xsd:sequence>
-			<xsd:element name="FromDate" type="xsd:dateTime"/>
-			<xsd:element name="ToDate" type="xsd:dateTime" minOccurs="0"/>
-		</xsd:sequence>
 	</xsd:complexType>
 </xsd:schema>
