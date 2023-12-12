@@ -68,6 +68,28 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
+	<xsd:complexType name="alternativeTexts">
+		<xsd:sequence>
+			<xsd:element name="AlternativeText" type="AlternativeText" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AlternativeText">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Text" type="TextType" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TextType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:normalizedString">
+				<xsd:attribute name="lang" type="xsd:normalizedString" use="required" form="unqualified"/>
+				<xsd:attribute name="textIdType" type="xsd:normalizedString" use="required" form="unqualified"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType >
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- ELEMENTEN (INHOUDELIJK)                                                         -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -92,10 +114,15 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 				<xsd:sequence>
 					<xsd:element name="StartDate" type="xsd:dateTime"/>
 					<xsd:element name="EndDate" type="xsd:dateTime"/>
+					<!-- TODO: Status weer verwijderen -->
+					<xsd:element name="Status" type="VersionStatusEnumeration" minOccurs="0"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
-					<xsd:element name="VersionType" type="VersionTypeEnumeration"/>
+					<!-- TODO: VersionType weer minOccurs="1" maken -->
+					<xsd:element name="VersionType" type="VersionTypeEnumeration" minOccurs="0"/>
 					<xsd:element name="DerivedFromVersionRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 				</xsd:sequence>
+				<!-- TODO: nameOfClass attribuut weer verwijderen -->
+				<xsd:attribute name="nameOfClass" type="xsd:token" use="optional" form="unqualified"/>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -406,27 +433,47 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:complexType name="availabilityCondition">
-		<xsd:complexContent>
-			<xsd:extension base="DataManagedObjectStructure">
-				<xsd:sequence>
-					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
-					<xsd:element name="FromDate" type="xsd:dateTime"/>
-					<xsd:element name="ToDate" type="xsd:dateTime"/>
-					<xsd:element name="ValidDayBits">
-						<xsd:annotation>
-							<xsd:documentation>De ValidDayBits worden van links (FromDate) naar rechts (ToDate, inclusief) gelezen.</xsd:documentation>
-						</xsd:annotation>
-						<xsd:simpleType>
-							<xsd:restriction base="xsd:normalizedString">
-								<xsd:pattern value="[0-1]+"/>
-							</xsd:restriction>
-						</xsd:simpleType>
-					</xsd:element>
-				</xsd:sequence>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
+	    <xsd:complexType name="availabilityCondition">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+                    <xsd:choice>
+                        <xsd:sequence>
+                            <xsd:element name="FromDate" type="xsd:dateTime"/>
+                            <xsd:element name="ToDate" type="xsd:dateTime"/>
+                            <xsd:element name="ValidDayBits">
+                                <xsd:annotation>
+                                    <xsd:documentation>De ValidDayBits worden van links (FromDate) naar rechts (ToDate, inclusief) gelezen.</xsd:documentation>
+                                </xsd:annotation>
+                                <xsd:simpleType>
+                                    <xsd:restriction base="xsd:normalizedString">
+                                        <xsd:pattern value="[0-1]+"/>
+                                    </xsd:restriction>
+                                </xsd:simpleType>
+                            </xsd:element>
+                        </xsd:sequence>
+                        <xsd:sequence>
+                            <xsd:element name="dayTypes">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="DayType" type="dayType" maxOccurs="unbounded"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="timebands" minOccurs="0">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="Timeband" type="timeband" maxOccurs="unbounded"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:choice>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
 	<xsd:complexType name="journeyValidityConditions">
 		<xsd:sequence>
 			<xsd:element name="AvailabilityConditionRef" type="VersionOfObjectRefStructure" maxOccurs="unbounded"/>

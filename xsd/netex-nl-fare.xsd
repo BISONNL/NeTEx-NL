@@ -23,6 +23,7 @@
     <xsd:import namespace="http://www.opengis.net/gml/3.2" schemaLocation="gml-bison.xsd"/>
     <xsd:include schemaLocation="netex-nl-basic.xsd"/>
     <xsd:include schemaLocation="netex-nl-enums.xsd"/>
+    <xsd:include schemaLocation="netex-nl-data.xsd"/>
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     <!-- DEFINITIES VOOR HET NL NETEX PROFIEL                                            -->
@@ -31,7 +32,8 @@
         <xsd:complexContent>
             <xsd:restriction base="TypeOfFrameRefStructure">
                 <xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-                <xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_FARE" form="unqualified"/>
+                <xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required"
+                               fixed="BISON:TypeOfFrame:NL_TT_FARE" form="unqualified"/>
             </xsd:restriction>
         </xsd:complexContent>
     </xsd:complexType>
@@ -55,35 +57,23 @@
         <xsd:complexContent>
             <xsd:extension base="VersionFrameVersionStructure">
                 <xsd:sequence>
-                    <!-- TODO: Hoe wordt de KeyList gebruikt bij de export voor TransLink -->
-                    <xsd:element name="keyList" type="KeyListStructure">
-                        <xsd:annotation>
-                            <xsd:documentation>Gebruik hier Key="EntranceRateWrtCurrency". Gebruik een PUNT als scheidingsteken van de decimalen.</xsd:documentation>
-                        </xsd:annotation>
-                    </xsd:element>
                     <xsd:element name="Name" type="xsd:string" minOccurs="0"/>
-                    <xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-fare"/>
-                    <xsd:element name="FrameDefaults" type="VersionFrameDefaultsStructure-fare" minOccurs="0">
-                        <xsd:annotation>
-                            <xsd:documentation>Bevat alleen DefaultResponsibilitySetRef voor de koppeling aan de (hoofd)financier</xsd:documentation>
-                        </xsd:annotation>
-                    </xsd:element>
-                    <xsd:element name="contentValidityConditions">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="ValidityTrigger" type="validityTrigger" minOccurs="0" maxOccurs="unbounded"/>
-                            </xsd:sequence>
-                        </xsd:complexType>
-                    </xsd:element>
+                    <!-- TODO: Alle voorbeelden voorzien van TypeOfFrameRef -->
+                    <xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-fare" minOccurs="0"/>
+                    <xsd:element name="FrameDefaults" type="VersionFrameDefaultsStructure-fare" minOccurs="0"/>
                     <xsd:element name="PricingParameterSet" type="PricingParameterSet" minOccurs="0"/>
-                    <xsd:element name="tariffs">
-                        <xsd:complexType>
-                            <xsd:sequence>
-                                <xsd:element name="Tariff" type="Tariff" maxOccurs="unbounded"/>
-                            </xsd:sequence>
-                        </xsd:complexType>
-                    </xsd:element>
+                    <xsd:element name="timeIntervals" type="timeIntervals" minOccurs="0"/>
+                    <xsd:element name="qualityStructureFactors" type="qualityStructureFactors" minOccurs="0"/>
+                    <xsd:element name="fareStructureElements" type="fareStructureElements" minOccurs="0"/>
+                    <xsd:element name="controllableElements" type="controllableElements" minOccurs="0"/>
+                    <xsd:element name="tariffs" type="tariffs" minOccurs="0"/>
+                    <xsd:element name="validableElements" type="validableElements" minOccurs="0"/>
+                    <xsd:element name="usageParameters" type="usageParameters" minOccurs="0"/>
+                    <xsd:element name="fareProducts" type="fareProducts" minOccurs="0"/>
+                    <xsd:element name="distributionChannels" type="distributionChannels" minOccurs="0"/>
+                    <xsd:element name="salesOfferPackages" type="salesOfferPackages" minOccurs="0"/>
                 </xsd:sequence>
+                <xsd:attribute name="responsibilitySetRef" form="unqualified"/>
             </xsd:extension>
         </xsd:complexContent>
     </xsd:complexType>
@@ -91,43 +81,192 @@
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     <!-- ELEMENTEN                                                                       -->
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-    <xsd:complexType name="validityTrigger">
+
+    <!-- Time Intervals -->
+    <xsd:complexType name="timeIntervals">
+        <xsd:sequence>
+            <xsd:element name="TimeInterval" type="TimeInterval" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TimeInterval">
         <xsd:complexContent>
             <xsd:extension base="DataManagedObjectStructure">
                 <xsd:sequence>
-                    <xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
-                    <xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
-                    <xsd:element name="ConditionedObjectRef" type="VersionOfObjectRefStructure"/>
-                    <xsd:element name="WithConditionRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-                    <xsd:element name="TriggerObjectRef" type="VersionOfObjectRefStructure"/>
+                    <xsd:element name="Name" type="MultilingualString"/>
+                    <xsd:element name="StartTime" type="xsd:time" minOccurs="0"/>
+                    <xsd:element name="Duration" type="xsd:duration"/>
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
     </xsd:complexType>
+
+    <!-- Quality Structure Factors -->
+    <xsd:complexType name="qualityStructureFactors">
+        <xsd:sequence>
+            <xsd:element name="FareDemandFactor" type="FareDemandFactor" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="FareDemandFactor">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="validityConditions">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="AvailabilityCondition" type="availabilityCondition" maxOccurs="unbounded"/>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="alternativeTexts" type="alternativeTexts" minOccurs="0"/>
+                    <xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+                    <xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+                    <xsd:element name="PricingRuleRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                    <xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!-- Fare Structure Elements -->
+    <xsd:complexType name="fareStructureElements">
+        <xsd:sequence>
+            <xsd:element name="FareStructureElementRef" type="VersionOfObjectRefStructure" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="FareStructureElement" type="FareStructureElement" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="FareStructureElement">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="Name" type="MultilingualString"/>
+                    <xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+                    <xsd:element name="PricingRuleRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                    <xsd:element name="validityParameterAssignments" type="validityParameterAssignments" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="validityParameterAssignments">
+        <xsd:sequence>
+            <xsd:element name="GenericParameterAssignment" type="GenericParameterAssignment" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="GenericParameterAssignment">
+        <xsd:complexContent>
+            <!-- TODO: Weer terug naar DataManagedObjectStructure (zonder order attribuut)? -->
+            <xsd:extension base="OrderedVersionOfObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="TypeOfAccessRightAssignmentRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                    <xsd:element name="PreassignedFareProductRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                    <xsd:element name="FareStructureElementRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                    <xsd:element name="limitations" type="limitations" minOccurs="0"/>
+                    <xsd:element name="validityParameters" type="validityParameters" minOccurs="0"/>
+                    <xsd:element name="FareDemandFactorRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                    <xsd:element name="includes" type="includes" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="validityParameters">
+        <xsd:sequence>
+            <xsd:element name="OperatorRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+            <xsd:element name="NetworkRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+            <xsd:element name="GroupOfLinesRef" type="VersionOfObjectRefStructure" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="TypeOfTravelDocumentRef" type="VersionOfObjectRefStructure" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="limitations">
+        <xsd:sequence>
+            <xsd:element name="InterchangingRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+            <xsd:choice>
+                <xsd:element name="UsageValidityPeriod" type="UsageValidityPeriod" minOccurs="0"/>
+                <xsd:element name="UsageValidityPeriodRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+            </xsd:choice>
+            <xsd:element name="PurchaseWindow" type="PurchaseWindow" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="UsageValidityPeriod">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="ValidBetween" type="ValidBetween" minOccurs="0"/>
+                    <xsd:element name="UsageTrigger" type="UsageTriggerEnumeration" minOccurs="0"/>
+                    <xsd:element name="UsageEnd" type="UsageEndEnumeration" minOccurs="0"/>
+                    <xsd:element name="StandardDuration" type="xsd:duration" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="PurchaseWindow">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="ValidBetween" type="ValidBetween"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ValidBetween">
+        <xsd:sequence>
+            <xsd:element name="FromDate" type="xsd:dateTime"/>
+            <xsd:element name="ToDate" type="xsd:dateTime"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="includes">
+        <xsd:sequence>
+            <xsd:element name="GenericParameterAssignment" type="GenericParameterAssignment" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!-- Pricing Parameter Set -->
     <xsd:complexType name="PricingParameterSet">
         <xsd:complexContent>
             <xsd:extension base="DataManagedObjectStructure">
                 <xsd:sequence>
                     <xsd:element name="pricingRules" type="pricingRules" minOccurs="0"/>
                     <xsd:element name="roundings" type="roundings" minOccurs="0"/>
+                    <xsd:element name="pricingServices" type="pricingServices" minOccurs="0"/>
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
     </xsd:complexType>
     <xsd:complexType name="pricingRules">
         <xsd:sequence>
-            <xsd:element name="LimitingRule" type="LimitingRule"/>
+            <xsd:element name="PricingRule" type="PricingRule" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="DiscountingRule" type="DiscountingRule" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="LimitingRule" type="LimitingRule" minOccurs="0" maxOccurs="unbounded"/>
         </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PricingRule">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+                    <xsd:element name="MethodName" type="xsd:NCName" minOccurs="0"/>
+                    <xsd:element name="PricingRuleRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                    <xsd:element name="Factor" type="xsd:decimal" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="DiscountingRule">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="DiscountAsPercentage" type="xsd:decimal" minOccurs="0"/>
+                    <xsd:element name="CanBeCumulative" type="xsd:boolean" minOccurs="0"/>                    
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
     </xsd:complexType>
     <xsd:complexType name="LimitingRule">
         <xsd:complexContent>
             <xsd:extension base="DataManagedObjectStructure">
                 <xsd:sequence>
-                    <xsd:element name="MaximumPrice" type="xsd:decimal">
-                        <xsd:annotation>
-                            <xsd:documentation>Gebruik een PUNT als scheidingsteken van de decimalen.</xsd:documentation>
-                        </xsd:annotation>
-                    </xsd:element>
+                    <xsd:element name="MinimumPrice" type="xsd:decimal" minOccurs="0"/>
+                    <xsd:element name="MaximumPrice" type="xsd:decimal" minOccurs="0"/>
+                    <xsd:element name="MinimumLimitPrice" type="xsd:decimal" minOccurs="0"/>
+                    <xsd:element name="MaximumLimitPrice" type="xsd:decimal" minOccurs="0"/>
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
@@ -141,80 +280,103 @@
         <xsd:complexContent>
             <xsd:extension base="DataManagedObjectStructure">
                 <xsd:sequence>
+                    <xsd:element name="RoundingMethod" type="RoundingMethodEnumeration"/>
                     <xsd:element name="RoundingModulus" type="xsd:decimal">
                         <xsd:annotation>
-                            <xsd:documentation>Gebruik een PUNT als scheidingsteken van de decimalen.</xsd:documentation>
+                            <xsd:documentation>Gebruik een PUNT als scheidingsteken van de decimalen.
+                            </xsd:documentation>
                         </xsd:annotation>
                     </xsd:element>
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="pricingServices">
+        <xsd:sequence>
+            <xsd:element name="PricingService" type="PricingService" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PricingService">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="Name" type="MultilingualString"/>
+                    <xsd:element name="OrganisationRef" type="VersionOfObjectRefStructure"/>
+                    <xsd:element name="Url" type="xsd:anyURI" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!-- Tariffs -->
+    <xsd:complexType name="tariffs">
+        <xsd:sequence>
+            <xsd:element name="Tariff" type="Tariff" maxOccurs="unbounded"/>
+        </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="Tariff">
         <xsd:complexContent>
             <xsd:extension base="DataManagedObjectStructure">
                 <xsd:sequence>
-                    <xsd:element name="keyList" type="KeyListStructure">
-                        <xsd:annotation>
-                            <xsd:documentation>Gebruik hier Key="TariffType".</xsd:documentation>
-                        </xsd:annotation>
+                    <xsd:element name="OperatorRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                    <xsd:element name="LineRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                    <xsd:element name="TypeOfTariffRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                    <xsd:element name="fareStructureElements" type="fareStructureElements" minOccurs="0"/>
+                    <xsd:element name="fareTables" type="fareTables" minOccurs="0"/>
+                    <xsd:element name="distanceMatrixElements" type="distanceMatrixElements" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="fareTables">
+        <xsd:sequence>
+            <xsd:element name="FareTable" type="FareTable" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="FareTable">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="pricesFor" type="pricesFor" minOccurs="0"/>
+                    <xsd:element name="cells" type="cells" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="pricesFor">
+        <xsd:sequence>
+            <xsd:element name="PreassignedFareProductRef" type="VersionOfObjectRefStructure"/>
+            <xsd:element name="ValidableElementRef" type="VersionOfObjectRefStructure"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="cells">
+        <xsd:sequence>
+            <xsd:element name="Cell" type="Cell" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="Cell">
+        <xsd:complexContent>
+            <xsd:extension base="OrderedVersionOfObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="CellPrice">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="Amount" type="xsd:integer" minOccurs="0"/>
+                                <xsd:element name="Currency" minOccurs="0"/>
+                                <xsd:element name="PricingRuleRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                                <xsd:element name="DiscountingRule" type="DiscountingRule" minOccurs="0"/>
+                                <xsd:element name="LimitingRule" type="LimitingRule" minOccurs="0"/>
+                                <xsd:element name="RoundingRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                            </xsd:sequence>
+                        </xsd:complexType>
                     </xsd:element>
-                    <xsd:element name="Name" type="xsd:string" minOccurs="0"/>
-                    <xsd:choice>
-                        <xsd:element name="geographicalIntervals" type="geographicalIntervals"/>
-                        <xsd:element name="distanceMatrixElements" type="distanceMatrixElements"/>
-                    </xsd:choice>
-                </xsd:sequence>
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:complexType name="geographicalIntervals">
-        <xsd:sequence>
-            <xsd:element name="GeographicalInterval" type="GeographicalInterval" maxOccurs="unbounded"/>
-        </xsd:sequence>
-    </xsd:complexType>
-    <xsd:complexType name="GeographicalInterval">
-        <xsd:complexContent>
-            <xsd:extension base="DataManagedObjectStructure">
-                <xsd:sequence>
-                    <xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
-                    <xsd:element name="StartGeographicalValue" type="xsd:integer"/>
-                    <xsd:element name="EndGeographicalValue" type="xsd:integer"/>
-                    <xsd:element name="prices" type="prices"/>
-                </xsd:sequence>
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:complexType name="prices">
-        <xsd:sequence>
-            <xsd:choice>
-                <xsd:element name="GeographicalIntervalPrice" type="GeographicalIntervalPrice"/>
-                <xsd:element name="DistanceMatrixElementPrice" type="DistanceMatrixElementPrice"/>
-            </xsd:choice>
-        </xsd:sequence>
-    </xsd:complexType>
-    <xsd:complexType name="GeographicalIntervalPrice">
-        <xsd:complexContent>
-            <xsd:extension base="DataManagedObjectStructure">
-                <xsd:annotation>
-                    <xsd:documentation>Gebruik een PUNT als scheidingsteken van de decimalen.</xsd:documentation>
-                </xsd:annotation>
-                <xsd:sequence>
-                    <xsd:element name="Amount" type="xsd:decimal"/>
-                    <xsd:element name="Units" type="xsd:decimal"/>
-                </xsd:sequence>
-            </xsd:extension>
-        </xsd:complexContent>
-    </xsd:complexType>
-    <xsd:complexType name="DistanceMatrixElementPrice">
-        <xsd:complexContent>
-            <xsd:extension base="DataManagedObjectStructure">
-                <xsd:annotation>
-                    <xsd:documentation>Gebruik een PUNT als scheidingsteken van de decimalen.</xsd:documentation>
-                </xsd:annotation>
-                <xsd:sequence>
-                    <xsd:element name="Amount" type="xsd:decimal"/>
-                    <xsd:element name="Units" type="xsd:decimal"/>
+                    <xsd:element name="SalesOfferPackageRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                    <xsd:element name="SalesOfferPackageElementRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                    <xsd:element name="SaleDiscountRightRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                    <xsd:element name="DistributionChannelRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                    <xsd:element name="FareStructureElementRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                    <xsd:element name="ControllableElementRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                    <xsd:element name="StepLimitRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
@@ -228,12 +390,246 @@
         <xsd:complexContent>
             <xsd:extension base="DataManagedObjectStructure">
                 <xsd:sequence>
-                    <xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
-                    <xsd:element name="Distance" type="xsd:nonNegativeInteger" minOccurs="0"/>
-                    <xsd:element name="InverseAllowed" type="xsd:boolean"/>
                     <xsd:element name="StartStopPointRef" type="VersionOfObjectRefStructure"/>
                     <xsd:element name="EndStopPointRef" type="VersionOfObjectRefStructure"/>
                     <xsd:element name="prices" type="prices" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="prices">
+        <xsd:sequence>
+            <xsd:element name="DistanceMatrixElementPrice" type="DistanceMatrixElementPrice"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="DistanceMatrixElementPrice">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="Amount" type="xsd:integer"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!-- Validable Elements -->
+    <xsd:complexType name="validableElements">
+        <xsd:sequence>
+            <xsd:element name="ValidableElement" type="ValidableElement" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ValidableElement">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="validityParameterAssignments">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="GenericParameterAssignment" type="GenericParameterAssignment" maxOccurs="unbounded"/>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!-- Controllable Elements -->
+    <xsd:complexType name="controllableElements">
+        <xsd:sequence>
+            <xsd:element name="ControllableElement" type="ControllableElement" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ControllableElement">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+                    <xsd:element name="controllableElementsInSequence" minOccurs="0">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="ControllableElementInSequence" type="ControllableElementInSequence" maxOccurs="unbounded"/>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ControllableElementInSequence">
+        <xsd:complexContent>
+            <xsd:extension base="OrderedVersionOfObjectStructure">
+                <xsd:choice>
+                    <xsd:sequence>
+                        <xsd:element name="Name" type="MultilingualString"/>
+                    </xsd:sequence>
+                    <xsd:sequence>
+                        <xsd:element name="IsFirstInSequence" type="xsd:boolean" default="false" minOccurs="0"/>
+                        <xsd:element name="IsLastInSequence" type="xsd:boolean" default="false" minOccurs="0"/>
+                        <xsd:element name="ControllableElementRef" type="VersionOfObjectRefStructure"/>
+                    </xsd:sequence>
+                </xsd:choice>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!-- Usage Parameters -->
+    <xsd:complexType name="usageParameters">
+        <xsd:sequence>
+            <xsd:element name="StepLimit" type="StepLimit" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="Interchanging" type="Interchanging" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="UsageValidityPeriod" type="UsageValidityPeriod" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="UserProfile" type="UserProfile" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="Routing" type="Routing" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="Refunding" type="Refunding" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="StepLimit">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="AdjustmentUnits" type="StepLimitUnitEnumeration" minOccurs="0"/>
+                    <xsd:element name="MinimumNumberOfSteps" type="xsd:nonNegativeInteger" minOccurs="0"/>
+                    <xsd:element name="MaximumNumberOfSteps" type="xsd:nonNegativeInteger" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="Interchanging">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="CanInterchange" type="xsd:boolean" minOccurs="0"/>
+                    <xsd:element name="MaximumTimeToMakeATransfer" type="xsd:duration" minOccurs="0"/>
+                    <xsd:element name="CanBreakJourney" type="xsd:boolean" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="UserProfile">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+					<xsd:element name="alternativeTexts" type="alternativeTexts" minOccurs="0"/>
+					<xsd:element name="keyList" type="KeyListStructure" minOccurs="0"/>
+					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="Routing">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+					<xsd:element name="PricingServiceRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="TypeOfUsageParameterRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+        <xsd:complexType name="Refunding">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!-- Preassigned Fare Products -->
+    <xsd:complexType name="fareProducts">
+        <xsd:sequence>
+            <xsd:element name="PreassignedFareProduct" type="Product" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="SaleDiscountRight" type="Product" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="Product">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="alternativeTexts" type="alternativeTexts" minOccurs="0"/>
+                    <xsd:element name="BrandingRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                    <xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+                    <xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+                    <xsd:element name="PricingRuleRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                    <xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0"/>
+                    <xsd:element name="TypeOfFareProductRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+                    <xsd:element name="validityParameterAssignments" type="validityParameterAssignments" minOccurs="0"/>
+                </xsd:sequence>
+                <xsd:attribute name="responsibilitySetRef" form="unqualified"/>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!-- Distribution Channels -->
+    <xsd:complexType name="distributionChannels">
+        <xsd:sequence>
+            <xsd:element name="DistributionChannel" type="DistributionChannel" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="DistributionChannel">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="Name" type="MultilingualString"/>
+                    <xsd:element name="PrivateCode" type="PrivateCodeStructure"/>
+                    <xsd:element name="TravelAgentRef" type="VersionOfObjectRefStructure"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <!-- Sales Offer Packages -->
+    <xsd:complexType name="salesOfferPackages">
+        <xsd:sequence>
+            <xsd:element name="SalesOfferPackage" type="SalesOfferPackage" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="SalesOfferPackage">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="alternativeTexts" type="alternativeTexts"/>
+                    <xsd:element name="BrandingRef" type="VersionOfObjectRefStructure"/>
+                    <xsd:element name="Name" type="MultilingualString"/>
+                    <xsd:element name="Description" type="MultilingualString"/>
+                    <xsd:element name="PrivateCode" type="PrivateCodeStructure"/>
+                    <xsd:element name="validityParameterAssignments" type="validityParameterAssignments"/>
+                    <xsd:element name="distributionAssignments" type="distributionAssignments"/>
+                    <xsd:element name="salesOfferPackageElements" type="salesOfferPackageElements"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="distributionAssignments">
+        <xsd:sequence>
+            <xsd:element name="DistributionAssignment" type="DistributionAssignment" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="DistributionAssignment">
+        <xsd:complexContent>
+            <xsd:extension base="OrderedVersionOfObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="DistributionRights" type="xsd:normalizedString"/>
+                    <xsd:element name="DistributionChannelRef" type="VersionOfObjectRefStructure"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="salesOfferPackageElements">
+        <xsd:sequence>
+            <xsd:element name="SalesOfferPackageElement" type="SalesOfferPackageElement" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="SalesOfferPackageElement">
+        <xsd:complexContent>
+            <xsd:extension base="OrderedVersionOfObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="SaleDiscountRightRef" type="VersionOfObjectRefStructure"/>
+                    <xsd:element name="validityParameterAssignments" type="validityParameterAssignments"/>
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>

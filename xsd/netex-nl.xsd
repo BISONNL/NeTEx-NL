@@ -558,10 +558,19 @@
 					</xsd:element>
 -->
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
-					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-general"/>
+					<!-- TODO: TypeOfFrameRef weer minOccurs="1" maken -->
+					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-general" minOccurs="0"/>
 					<xsd:element name="members">
 						<xsd:complexType>
 							<xsd:choice>
+								<xsd:choice>
+									<!-- TODO: Verder uitbreiden van de GGOE en E_E definities -->
+									<xsd:annotation>
+										<xsd:documentation>Variant voor GeneralFrames in een export van 'fare' gegevens.</xsd:documentation>
+									</xsd:annotation>
+									<xsd:element name="GeneralGroupOfEntities"/>
+									<xsd:element name="Entity_Entity" maxOccurs="unbounded"/>
+								</xsd:choice>
 								<xsd:choice>
 									<xsd:annotation>
 										<xsd:documentation>Variant voor GeneralFrames in een export van 'centrale' gegevens.</xsd:documentation>
@@ -626,14 +635,18 @@
 					<xsd:documentation>Attribuut 'version' is de identificatie ("versie") van de levering/export.</xsd:documentation>
 				</xsd:annotation>
 				<xsd:sequence>
+					<!-- TODO: Name toegevoegd, lijkt me geen probleem voor NL-profiel? -->
+					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
-					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-composite"/>
+					<!-- TODO: TypeOfFrameRef weer minOccurs="1" maken -->
+					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-composite" minOccurs="0"/>
 					<xsd:element name="codespaces" type="codespaces" minOccurs="0">
 						<xsd:annotation>
 							<xsd:documentation>Opsomming van de beschikbare domeinen. Wordt alleen gevuld in een export van 'centrale' gegevens</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:element name="FrameDefaults" type="VersionFrameDefaultsStructure">
+					<!-- TODO: FrameDefaults weer minOccurs="1" maken -->
+					<xsd:element name="FrameDefaults" type="VersionFrameDefaultsStructure" minOccurs="0">
 						<xsd:annotation>
 							<xsd:documentation>In een 'dienstregeling' levering zijn alle defaults verplicht. Een export van 'centrale' gegevens bevat alleen DefaultCodespaceRef. Een export van 'voertuigen' bevat DefaultCodespaceRef, DefaultDataSourceRef en DefaultSystemOfUnits.</xsd:documentation>
 						</xsd:annotation>
@@ -645,7 +658,8 @@
 					</xsd:element>
 					<xsd:element name="frames" minOccurs="0">
 						<xsd:complexType>
-							<xsd:choice>
+							<!-- TODO: choice weer maxOccurs="1" maken -->
+							<xsd:choice maxOccurs="unbounded">
 								<xsd:sequence>
 									<xsd:annotation>
 										<xsd:documentation>Frames in een export van 'centrale' gegevens of 'voertuig' gegevens.</xsd:documentation>
