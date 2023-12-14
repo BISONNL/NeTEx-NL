@@ -186,7 +186,8 @@ De 'status' geeft aan of het element nog courant is.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
-		<xsd:attribute name="version" type="VersionIdType" use="optional" fixed="any" form="unqualified"/>
+		<!-- TODO: VersionIdType weer fixed="any" maken -->
+		<xsd:attribute name="version" type="VersionIdType" use="optional"  form="unqualified"/>
 		<xsd:attribute name="status" type="StatusEnumeration" use="optional" default="active" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="OrderedVersionOfObjectStructure" abstract="true">
@@ -268,13 +269,16 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 -->
 	<xsd:complexType name="VersionOfObjectRefStructure">
 		<xsd:attribute name="version" type="VersionIdType" use="optional" default="any" form="unqualified"/>
-		<!-- TODO: versionRef weer verwijderen, indien mogelijk. Indien niet mogelijk, dan kijken of valt af te dwingen dat ófwel version, ófwel versionRef gebruikt mag worden -->
+		<!-- TODO: versionRef weer verwijderen -->
 		<xsd:attribute name="versionRef" type="VersionIdType" use="optional" default="any" form="unqualified"/>
 		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="VersionOfObjectRefStructure-with-class">
-		<xsd:attribute name="nameOfRefClass" type="NameOfClass" use="required" form="unqualified"/>
+        <!-- TODO: nameOfRefClass weer use="required" maken -->
+		<xsd:attribute name="nameOfRefClass" type="NameOfClass" use="optional" form="unqualified"/>
 		<xsd:attribute name="version" type="VersionIdType" use="optional" default="any" form="unqualified"/>
+		<!-- TODO: versionRef weer verwijderen -->
+		<xsd:attribute name="versionRef" type="VersionIdType" use="optional" default="any" form="unqualified"/>
 		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="VersionOfObjectRefStructure-with-optional-class">

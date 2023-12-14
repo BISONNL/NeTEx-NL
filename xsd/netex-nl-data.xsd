@@ -141,12 +141,28 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure-with-status">
 				<xsd:sequence>
+                    <!-- TODO: alternativeTexts weer verwijderen -->
+                    <xsd:element name="alternativeTexts" type="alternativeTexts" minOccurs="0"/>
 					<xsd:element name="Name" type="MultilingualString"/>
-					<xsd:element name="ShortName" type="MultilingualString"/>
+					<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+                    <!-- TODO: PrivateCode weer verwijderen -->
+					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0"/>
 					<xsd:element name="TransportMode" type="TransportmodeEnum" minOccurs="0"/>
-					<xsd:element name="GroupOfLinesType" type="GroupOfLinesTypeEnumeration"/>
-					<xsd:element name="AuthorityRef" type="VersionOfObjectRefStructure"/>
+                    <xsd:element name="GroupOfLinesType" type="GroupOfLinesTypeEnumeration" minOccurs="0"/>
+					<xsd:choice>
+                        <!-- TODO: OperatorRef / choice weer verwijderen -->
+                        <xsd:element name="OperatorRef" type="VersionOfObjectRefStructure"/>
+                        <xsd:element name="AuthorityRef" type="VersionOfObjectRefStructure"/>
+                    </xsd:choice>
+                    <!-- TODO: groupsOfLines weer verwijderen -->
+					<xsd:element name="groupsOfLines" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="GroupOfLines" type="groupOfLines" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -166,8 +182,13 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
+                    <!-- TODO: alternativeTexts weer verwijderen -->
+                    <xsd:element name="alternativeTexts" type="alternativeTexts" minOccurs="0"/>
+                    <!-- TODO: PrivateCode weer verwijderen -->
+                    <xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0"/>
 					<xsd:element name="Name" type="MultilingualString"/>
-					<xsd:element name="ShortName" type="MultilingualString"/>
+					<!-- TODO: ShortName weer minOccurs="1" maken -->
+     				<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="CustomerServiceContactDetails" minOccurs="0">
 						<xsd:complexType>
@@ -182,13 +203,43 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
+	<!-- TODO: managementAgent toegevoegd -->
+	<xsd:complexType name="managementAgent">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+                    <xsd:element name="alternativeTexts" type="alternativeTexts" minOccurs="0"/>
+                    <xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0"/>
+					<xsd:element name="Name" type="MultilingualString"/>
+     				<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- TODO: travelAgent toegevoegd -->
+	<xsd:complexType name="travelAgent">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+                    <xsd:element name="alternativeTexts" type="alternativeTexts" minOccurs="0"/>
+                    <xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0"/>
+					<xsd:element name="Name" type="MultilingualString"/>
+     				<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
 	<xsd:complexType name="branding">
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
-					<xsd:element name="Name" type="MultilingualString"/>
+                    <!-- TODO: Name weer optioneel maken -->
+					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
-					<xsd:element name="Image" type="imageURI" minOccurs="0"/>
+					<!-- TODO: Image weer type="imageURI" maken -->
+					<xsd:element name="Image" type="xsd:normalizedString" minOccurs="0"/>
 					<xsd:element name="Url" type="websiteURI" minOccurs="0"/>
 					<xsd:element name="Presentation" type="PresentationStructure" minOccurs="0"/>
 				</xsd:sequence>
@@ -208,6 +259,87 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
+	<!-- TODO: typeOfFareProduct toegevoegd -->
+	<xsd:complexType name="typeOfFareProduct">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- TODO: typeOfTravelDocument toegevoegd -->
+	<xsd:complexType name="typeOfTravelDocument">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- TODO: typeOfTariff toegevoegd -->
+	<xsd:complexType name="typeOfTariff">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+    <!-- TODO: typeOfAccessRightAssignment toegevoegd -->
+	<xsd:complexType name="typeOfAccessRightAssignment">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+    <!-- TODO: typeOfUsageParameter toegevoegd -->
+	<xsd:complexType name="typeOfUsageParameter">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+    <!-- TODO: typeOfJourneyPattern toegevoegd -->
+	<xsd:complexType name="typeOfJourneyPattern">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- TODO: purposeOfGrouping toegevoegd -->
+	<xsd:complexType name="purposeOfGrouping">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	
+	
 	<xsd:complexType name="projections">
 		<xsd:sequence>
 			<xsd:element name="PointProjection" type="pointProjection"/>
@@ -294,10 +426,14 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 	</xsd:complexType>
 	<xsd:complexType name="pointOnLink">
 		<xsd:complexContent>
-			<xsd:extension base="DataManagedObjectStructure">
+			<xsd:extension base="OrderedVersionOfObjectStructure">
 				<xsd:sequence>
 					<xsd:element name="DistanceFromStart" type="xsd:decimal"/>
-					<xsd:element name="ActivationPointRef" type="VersionOfObjectRefStructure"/>
+					<xsd:choice>
+                        <xsd:element name="ActivationPointRef" type="VersionOfObjectRefStructure"/>
+                        <!-- TODO: FareScheduledStopPointRef ? -->
+                        <xsd:element name="ScheduledStopPointRef" type="VersionOfObjectRefStructure"/>
+					</xsd:choice>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -332,13 +468,20 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
+	<!-- TODO: scheduledStopPoints wordt gebruikt voor fares, waarom daar geen FareScheduledStopPoint gebruiken? -->
 	<xsd:complexType name="scheduledStopPoint">
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
+                    <!-- TODO: alternativeTexts weer minOccurs="1" maken -->
+					<xsd:element name="alternativeTexts" type="alternativeTexts" minOccurs="0"/>
 					<xsd:element name="Name" type="MultilingualString"/>
-					<xsd:element name="Location" type="LocationStructure"/>
-					<xsd:element name="projections" type="projections"/>
+                    <!-- TODO: Description toegevoegd -->
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<!-- TODO: Location weer minOccurs="1" maken -->
+					<xsd:element name="Location" type="LocationStructure" minOccurs="0"/>
+					<!-- TODO: projections weer minOccurs="1" maken -->
+					<xsd:element name="projections" type="projections" minOccurs="0"/>
 					<xsd:element name="stopAreas" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
@@ -367,6 +510,24 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- TODO: serviceLink toegevoegd. Kunnen we dit gelijk trekken met NeTEx-NL door geen serviceLinks, maar timingLinks te gebruiken? -->
+	<xsd:complexType name="serviceLink">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="passingThrough">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="PointOnLink" type="pointOnLink" maxOccurs="unbounded"/>
+                            </xsd:sequence>
+                        </xsd:complexType>
+					</xsd:element>
+					<xsd:element name="FromPointRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="ToPointRef" type="VersionOfObjectRefStructure"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -683,11 +844,14 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 	</xsd:complexType>
 	<xsd:group name="lineGroup">
 		<xsd:sequence>
+            <!-- TODO: alternativeTexts weer verwijderen -->
+            <xsd:element name="alternativeTexts" type="alternativeTexts" minOccurs="0"/>
 			<xsd:element name="BrandingRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 			<xsd:element name="Name" type="MultilingualString"/>
 			<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>
 			<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
-			<xsd:element name="TransportMode" type="TransportmodeEnum"/>
+			<!-- TODO TransportMode weer minOccurs="1" maken -->
+			<xsd:element name="TransportMode" type="TransportmodeEnum" minOccurs="0"/>
 			<xsd:element name="TransportSubmode" type="PtSubmodeChoice" minOccurs="0"/>
 			<xsd:element name="Url" type="websiteURI" minOccurs="0"/>
 			<xsd:element name="PublicCode" type="xsd:normalizedString" minOccurs="0">
@@ -703,10 +867,13 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			<xsd:element name="ExternalLineRef" type="ExternalObjectRefStructure" minOccurs="0"/>
 			<xsd:element name="AuthorityRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 			<xsd:element name="TypeOfProductCategoryRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-			<xsd:element name="TypeOfServiceRef" type="VersionOfObjectRefStructure"/>
-			<xsd:element name="Monitored" type="xsd:boolean"/>
+			<!-- TODO TypeOfServiceRef weer minOccurs="1" maken -->
+			<xsd:element name="TypeOfServiceRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+			<!-- TODO Monitored weer minOccurs="1" maken -->
+			<xsd:element name="Monitored" type="xsd:boolean" minOccurs="0"/>
 			<xsd:element name="Presentation" type="PresentationStructure" minOccurs="0"/>
-			<xsd:element name="AccessibilityAssessment" type="accessibilityAssessment"/>
+			<!-- TODO AccessibilityAssessment weer minOccurs="1" maken -->
+			<xsd:element name="AccessibilityAssessment" type="accessibilityAssessment" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:group>
 	<xsd:complexType name="line">
@@ -748,8 +915,9 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
-					<xsd:element name="Name" type="MultilingualString"/>
-					<xsd:element name="ShortName" type="MultilingualString"/>
+                    <!-- Name en ShortName weer minOccurs="1" maken -->
+					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="members">
 						<xsd:complexType>
@@ -759,7 +927,8 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 						</xsd:complexType>
 					</xsd:element>
 					<xsd:element name="TransportMode" type="TransportmodeEnum" minOccurs="0"/>
-					<xsd:element name="GroupOfLinesType" type="GroupOfLinesTypeEnumeration" fixed="scheduling"/>
+					<!-- GroupOfLinesType weer minOccurs="1" maken -->
+					<xsd:element name="GroupOfLinesType" type="GroupOfLinesTypeEnumeration" fixed="scheduling" minOccurs="0"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -845,22 +1014,50 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 	<xsd:complexType name="serviceJourneyPattern">
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
-				<xsd:sequence>
-					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
-					<xsd:element name="RouteRef" type="VersionOfObjectRefStructure"/>
-					<xsd:element name="DirectionType" type="DirectionTypeEnumeration" minOccurs="0"/>
-					<xsd:element name="DestinationDisplayRef" type="VersionOfObjectRefStructure"/>
-					<xsd:element name="pointsInSequence">
-						<xsd:complexType>
-							<xsd:choice minOccurs="2" maxOccurs="unbounded">
-								<xsd:element name="StopPointInJourneyPattern" type="stopPointInJourneyPattern"/>
-								<xsd:element name="TimingPointInJourneyPattern" type="timingPointInJourneyPattern"/>
-							</xsd:choice>
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:sequence>
+                <xsd:choice>
+                    <xsd:sequence>
+                        <xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+                        <xsd:element name="RouteRef" type="VersionOfObjectRefStructure"/>
+                        <xsd:element name="DirectionType" type="DirectionTypeEnumeration" minOccurs="0"/>
+                        <xsd:element name="DestinationDisplayRef" type="VersionOfObjectRefStructure"/>
+                        <xsd:element name="pointsInSequence">
+                            <xsd:complexType>
+                                <xsd:choice minOccurs="2" maxOccurs="unbounded">
+                                    <xsd:element name="StopPointInJourneyPattern" type="stopPointInJourneyPattern"/>
+                                    <xsd:element name="TimingPointInJourneyPattern" type="timingPointInJourneyPattern"/>
+                                </xsd:choice>
+                            </xsd:complexType>
+                        </xsd:element>
+                    </xsd:sequence>
+                    <xsd:sequence>
+                        <xsd:element name="PrivateCode" type="PrivateCodeStructure"/>
+                        <xsd:element name="RouteView">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element name="LineRef" type="VersionOfObjectRefStructure"/>
+                                </xsd:sequence>
+                            </xsd:complexType>
+                        </xsd:element>
+                        <xsd:element name="linksInSequence">
+                            <xsd:complexType>
+                                <xsd:sequence>
+                                    <xsd:element name="ServiceLinkInJourneyPattern" type="serviceLinkInJourneyPattern" maxOccurs="unbounded"/>
+                                </xsd:sequence>
+                            </xsd:complexType>
+                        </xsd:element>
+                    </xsd:sequence>
+				</xsd:choice>
 			</xsd:extension>
 		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="serviceLinkInJourneyPattern">
+        <xsd:complexContent>
+            <xsd:extension base="OrderedVersionOfObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="ServiceLinkRef" type="VersionOfObjectRefStructure"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
 	</xsd:complexType>
 	<xsd:complexType name="deadRunJourneyPattern">
 		<xsd:complexContent>
@@ -1037,6 +1234,43 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 -->
 		</xsd:sequence>
 	</xsd:complexType>
+	<!-- TODO: serviceCalendar toegevoegd -->
+	<xsd:complexType name="serviceCalendar">
+        <xsd:complexContent>
+            <xsd:extension base="DataManagedObjectStructure">
+                <xsd:sequence>
+                    <xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+                    <xsd:element name="FromDate" type="xsd:date" minOccurs="0"/>
+                    <xsd:element name="ToDate" type="xsd:date" minOccurs="0"/>
+                    <xsd:element name="dayTypes" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+                                <xsd:choice>
+                                    <xsd:element name="DayType" type="dayType" maxOccurs="unbounded"/>
+                                    <xsd:element name="FareDayType" type="fareDayType" maxOccurs="unbounded"/>
+                                </xsd:choice>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="timebands" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Timeband" type="timeband" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<!-- TODO: TypeOfFrameRef weer minOccurs="1" maken -->
+					<xsd:element name="dayTypeAssignments" minOccurs="0" >
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="DayTypeAssignment" type="dayTypeAssignment" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+	</xsd:complexType>
 	<xsd:complexType name="propertyOfDay">
 		<xsd:sequence>
 			<xsd:element name="DaysOfWeek" type="DaysOfWeekListOfEnumerations" default="Everyday" minOccurs="0"/>
@@ -1066,12 +1300,26 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
+	<xsd:complexType name="fareDayType">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+                    <!-- Waarom geen Name en ShortName zoals bij dayType in NL-profiel (en waarom daar geen Description?) -->
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="EarliestTime" type="xsd:time" minOccurs="0"/>
+					<xsd:element name="DayLength" type="xsd:duration" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
 	<xsd:complexType name="dayTypeAssignment">
 		<xsd:complexContent>
 			<xsd:extension base="OrderedVersionOfObjectStructure-fixed">
 				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="Date" type="xsd:date"/>
-					<xsd:element name="DayTypeRef" type="VersionOfObjectRefStructure"/>
+ 					<xsd:element name="DayTypeRef" type="VersionOfObjectRefStructure"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -1139,6 +1387,23 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="Height" type="LengthType" minOccurs="0"/>
 					<xsd:element name="Weight" type="WeightType" minOccurs="0"/>
 					<xsd:element name="facilities" type="facilities"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<!-- TODO: generalGroupOfEntities toegevoegd -->
+	<xsd:complexType name="generalGroupOfEntities">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0"/>
+					<xsd:element name="members" minOccurs="0">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="TypeOfFareProductRef" type="VersionOfObjectRefStructure" minOccurs="0" maxOccurs="unbounded"/>
+                            </xsd:sequence>
+                        </xsd:complexType>
+					</xsd:element>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>

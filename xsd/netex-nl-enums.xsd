@@ -703,7 +703,8 @@
 	</xsd:complexType>
 	<xsd:complexType name="typeOfResponsibilityRole">
 		<xsd:complexContent>
-			<xsd:extension base="TypeOfValueVersionStructure"/>
+            <!-- TODO: version attribuut toegevoegd -->
+			<xsd:extension base="TypeOfValueVersionStructure-with-version"/>
 		</xsd:complexContent>
 	</xsd:complexType>
 	<xsd:complexType name="displayTextLength">
@@ -713,7 +714,12 @@
 	</xsd:complexType>
 	<xsd:complexType name="typeOfFrame">
 		<xsd:complexContent>
-			<xsd:extension base="TypeOfValueVersionStructure-with-version"/>
+			<xsd:extension base="TypeOfValueVersionStructure-with-version">
+                <!-- TODO: uitgebreid met PrivateCode, niet langer strict een BISON-enumeratie -->
+                <xsd:sequence>
+                    <xsd:element name="PrivateCode" type="PrivateCodeStructure"/>
+                </xsd:sequence>
+			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
 </xsd:schema>
