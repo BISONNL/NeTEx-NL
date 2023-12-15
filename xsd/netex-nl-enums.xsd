@@ -717,7 +717,7 @@
 			<xsd:extension base="TypeOfValueVersionStructure-with-version">
                 <!-- TODO: uitgebreid met PrivateCode, niet langer strict een BISON-enumeratie -->
                 <xsd:sequence>
-                    <xsd:element name="PrivateCode" type="PrivateCodeStructure"/>
+                    <xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0"/>
                 </xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>

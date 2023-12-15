@@ -387,7 +387,7 @@
 						</xsd:complexType>
 					</xsd:element>
 					<!-- TODO: serviceLinks toegevoegd, kan dat ook anders? NeTEx-NL kent al TimingLinks -->
-					<xsd:element name="serviceLinks">
+					<xsd:element name="serviceLinks" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="ServiceLink" type="serviceLink" maxOccurs="unbounded"/>
