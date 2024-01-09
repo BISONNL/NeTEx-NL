@@ -1259,7 +1259,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<!-- TODO: TypeOfFrameRef weer minOccurs="1" maken -->
+					<!-- TODO: dayTypeAssignments weer minOccurs="1" maken -->
 					<xsd:element name="dayTypeAssignments" minOccurs="0" >
 						<xsd:complexType>
 							<xsd:sequence>

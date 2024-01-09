@@ -245,6 +245,7 @@
 								<xsd:element name="TypeOfProductCategory" type="typeOfProductCategory" minOccurs="0" maxOccurs="unbounded"/>
 								<!-- TODO: TypeOfFareProducts toegevoegd -->
 								<xsd:element name="TypeOfFareProduct" type="typeOfFareProduct" minOccurs="0" maxOccurs="unbounded"/>
+								<!-- TODO: TypeOfTravelDocument toegevoegd -->
 								<xsd:element name="TypeOfTravelDocument" type="typeOfTravelDocument" minOccurs="0" maxOccurs="unbounded"/>
 								<!-- TODO: TypeOfFrame toegevoegd, NeTEx-NL definieert deze enkel binnen een GeneralFrame -->
 								<xsd:element name="TypeOfFrame" type="typeOfFrame" minOccurs="0" maxOccurs="unbounded"/>
@@ -536,7 +537,7 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<!-- TODO: TypeOfFrameRef weer minOccurs="1" maken -->
+					<!-- TODO: dayTypeAssignments weer minOccurs="1" maken -->
 					<xsd:element name="dayTypeAssignments" minOccurs="0" >
 						<xsd:complexType>
 							<xsd:sequence>
