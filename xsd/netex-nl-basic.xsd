@@ -83,7 +83,8 @@
 	<xsd:complexType name="PrivateCodeStructure">
 		<xsd:simpleContent>
 			<xsd:extension base="xsd:normalizedString">
-				<xsd:attribute name="type" type="xsd:normalizedString" use="required" form="unqualified"/>
+				<!-- TODO type weer use="required" maken -->
+				<xsd:attribute name="type" type="xsd:normalizedString" use="optional" form="unqualified"/>
 			</xsd:extension>
 		</xsd:simpleContent>
 	</xsd:complexType>
@@ -138,7 +139,8 @@ Het object heeft geen 'version' attribuut.</xsd:documentation>
 Het 'version' attribuut is nodig voor de constraints, maar in het NL NeTEx Profiel wordt dit niet per object gevarieerd.
 De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
 		</xsd:annotation>
-		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
+		<!-- TODO: maak id weer required (of maak een nieuw supertype voor AlternativeText, die soms geen id heeft; of stel id daar wel verplicht) -->
+		<xsd:attribute name="id" type="ObjectIdType" use="optional" form="unqualified"/>
 		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
 		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
@@ -181,7 +183,8 @@ De 'status' geeft aan of het element nog courant is.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
-		<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified"/>
+		<!-- TODO: VersionIdType weer fixed="any" maken -->
+		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="status" type="StatusEnumeration" use="optional" default="active" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="OrderedVersionOfObjectStructure" abstract="true">
@@ -263,11 +266,16 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 -->
 	<xsd:complexType name="VersionOfObjectRefStructure">
 		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+		<!-- TODO: versionRef weer verwijderen -->
+		<xsd:attribute name="versionRef" type="VersionIdType" use="optional" default="any" form="unqualified"/>
 		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="VersionOfObjectRefStructure-with-class">
-		<xsd:attribute name="nameOfRefClass" type="NameOfClass" use="required" form="unqualified"/>
+		<!-- TODO: nameOfRefClass weer use="required" maken -->
+		<xsd:attribute name="nameOfRefClass" type="NameOfClass" use="optional" form="unqualified"/>
 		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+		<!-- TODO: versionRef weer verwijderen -->
+		<xsd:attribute name="versionRef" type="VersionIdType" use="optional" default="any" form="unqualified"/>
 		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="VersionOfObjectRefStructure-with-optional-class">

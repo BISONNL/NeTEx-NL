@@ -35,7 +35,10 @@
 <!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl,      -->
 <!--     zie http://creativecommons.org/licences/by-nd/3.0/nl                        -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.3" id="netex-nl-xsd">
+<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2"
+			targetNamespace="http://www.netex.org.uk/netex"
+			elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.3" id="netex-nl-xsd">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- AFHANKELIJKHEDEN                                                                -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -43,6 +46,7 @@
 	<xsd:include schemaLocation="netex-nl-basic.xsd"/>
 	<xsd:include schemaLocation="netex-nl-enums.xsd"/>
 	<xsd:include schemaLocation="netex-nl-data.xsd"/>
+	<xsd:include schemaLocation="netex-nl-fare.xsd"/>
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- DEFINITIES VOOR HET NL NETEX PROFIEL                                            -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -222,15 +226,18 @@
 		<xsd:complexContent>
 			<xsd:extension base="VersionFrameVersionStructure">
 				<xsd:sequence>
-					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-resource"/>
-					<xsd:element name="dataSources">
+                    <!-- TODO TypeOfFrameRef terug naar minOccurs="1" -->
+					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-resource" minOccurs="0"/>
+					<!-- TODO dataSources terug naar minOccurs="1" -->
+					<xsd:element name="dataSources" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="DataSource" type="dataSource"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="responsibilitySets">
+					<!-- TODO responsibilitySets terug naar minOccurs="1" -->
+					<xsd:element name="responsibilitySets" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="ResponsibilitySet" type="responsibilitySet" maxOccurs="unbounded"/>
@@ -242,32 +249,64 @@
 							<xsd:sequence>
 								<xsd:element name="Branding" type="branding" minOccurs="0" maxOccurs="unbounded"/>
 								<xsd:element name="TypeOfProductCategory" type="typeOfProductCategory" minOccurs="0" maxOccurs="unbounded"/>
+								<!-- TODO: TypeOfFareProducts toegevoegd -->
+								<xsd:element name="TypeOfFareProduct" type="typeOfFareProduct" minOccurs="0" maxOccurs="unbounded"/>
+								<!-- TODO: TypeOfTravelDocument toegevoegd -->
+								<xsd:element name="TypeOfTravelDocument" type="typeOfTravelDocument" minOccurs="0" maxOccurs="unbounded"/>
+								<!-- TODO: TypeOfFrame toegevoegd, NeTEx-NL definieert deze enkel binnen een GeneralFrame -->
+								<xsd:element name="TypeOfFrame" type="typeOfFrame" minOccurs="0" maxOccurs="unbounded"/>
+								<!-- TODO: TypeOfTariff toegevoegd -->
+								<xsd:element name="TypeOfTariff" type="typeOfTariff" minOccurs="0" maxOccurs="unbounded"/>
+								<!-- TODO: TypeOfResponsibilityRole toegevoegd, NeTEx-NL definieert deze enkel binnen een GeneralFrame -->
+								<xsd:element name="TypeOfResponsibilityRole" type="typeOfResponsibilityRole" minOccurs="0" maxOccurs="unbounded"/>
+								<!-- TODO: TypeOfAccessRightAssignment toegevoegd -->
+								<xsd:element name="TypeOfAccessRightAssignment" type="typeOfAccessRightAssignment" minOccurs="0" maxOccurs="unbounded"/>
+								<!-- TODO: TypeOfUsageParameter toegevoegd -->
+								<xsd:element name="TypeOfUsageParameter" type="typeOfUsageParameter" minOccurs="0" maxOccurs="unbounded"/>
+								<!-- TODO: TypeOfJourneyPattern toegevoegd -->
+								<xsd:element name="TypeOfJourneyPattern" type="typeOfJourneyPattern" minOccurs="0" maxOccurs="unbounded"/>
+								<!-- TODO: PurposeOfGrouping toegevoegd -->
+								<xsd:element name="PurposeOfGrouping" type="purposeOfGrouping" minOccurs="0" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="organisations">
+					<!-- TODO organisations terug naar minOccurs="1" -->
+					<xsd:element name="organisations" minOccurs="0">
 						<xsd:complexType>
 							<xsd:choice maxOccurs="unbounded">
 								<xsd:element name="Authority" type="authority"/>
 								<xsd:element name="Operator" type="operator"/>
+								<xsd:element name="ManagementAgent" type="managementAgent"/>
+								<xsd:element name="TravelAgent" type="travelAgent"/>
 							</xsd:choice>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="operationalContexts">
+					<!-- TODO operationalContexts terug naar minOccurs="1" -->
+					<xsd:element name="operationalContexts" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="OperationalContext" type="operationalContext" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="vehicleTypes">
+					<!-- TODO vehicleTypes terug naar minOccurs="1" -->
+					<xsd:element name="vehicleTypes" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="VehicleType" type="vehicleType" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="zones">
+					<!-- TODO: groupsOfEntities toegevoegd -->
+					<xsd:element name="groupsOfEntities" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="GeneralGroupOfEntities" type="generalGroupOfEntities" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<!-- TODO zones terug naar minOccurs="1" -->
+					<xsd:element name="zones" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="TransportAdministrativeZone" type="transportAdministrativeZone"/>
@@ -283,27 +322,36 @@
 		<xsd:complexContent>
 			<xsd:extension base="VersionFrameVersionStructure">
 				<xsd:sequence>
-					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-service"/>
+                    <!-- TODO: TypeOfFrameRef weer minOccurs="1" maken -->
+					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-service" minOccurs="0"/>
 					<xsd:element name="FrameDefaults" type="VersionFrameDefaultsStructure-service" minOccurs="0">
 						<xsd:annotation>
 							<xsd:documentation>Bevat alleen DefaultResponsibilitySetRef voor de koppeling aan de (hoofd)financier</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:element name="routePoints">
+					<!-- TODO: Element additionalNetworks toegevoegd -->
+					<xsd:element name="additionalNetworks" minOccurs="0">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="Network" type="network" maxOccurs="unbounded"/>
+                            </xsd:sequence>
+                        </xsd:complexType>
+					</xsd:element>
+					<xsd:element name="routePoints" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="RoutePoint" type="routePoint" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="routeLinks">
+					<xsd:element name="routeLinks" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="RouteLink" type="routeLink" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="routes">
+					<xsd:element name="routes" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:choice maxOccurs="unbounded">
@@ -330,7 +378,8 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="destinationDisplays">
+					<!-- TODO: destinationDisplays weer minOccurs="1" maken -->
+					<xsd:element name="destinationDisplays" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="DestinationDisplay" type="destinationDisplay" maxOccurs="unbounded"/>
@@ -344,6 +393,14 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
+					<!-- TODO: serviceLinks toegevoegd, kan dat ook anders? NeTEx-NL kent al TimingLinks -->
+					<xsd:element name="serviceLinks" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="ServiceLink" type="serviceLink" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
 					<xsd:element name="stopAreas" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
@@ -351,7 +408,8 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="stopAssignments">
+					<!-- TODO: stopAssignments weer minOccurs="1" maken -->
+					<xsd:element name="stopAssignments" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:choice maxOccurs="unbounded">
@@ -368,7 +426,8 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="timingLinks">
+					<!-- TODO: timingLinks weer minOccurs="1" maken -->
+					<xsd:element name="timingLinks" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="TimingLink" type="timingLink" maxOccurs="unbounded"/>
@@ -383,7 +442,7 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="timeDemandTypes">
+					<xsd:element name="timeDemandTypes" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="TimeDemandType" type="timeDemandType" maxOccurs="unbounded"/>
@@ -464,11 +523,16 @@
 		<xsd:complexContent>
 			<xsd:extension base="VersionFrameVersionStructure">
 				<xsd:sequence>
-					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-calendar"/>
-					<xsd:element name="dayTypes">
+                    <!-- TODO: TypeOfFrameRef weer minOccurs="1" maken -->
+					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-calendar" minOccurs="0"/>
+					<xsd:element name="ServiceCalendar" type="serviceCalendar" minOccurs="0"/>
+					<xsd:element name="dayTypes" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
-								<xsd:element name="DayType" type="dayType" maxOccurs="unbounded"/>
+                                <xsd:choice>
+                                    <xsd:element name="DayType" type="dayType" maxOccurs="unbounded"/>
+                                    <xsd:element name="FareDayType" type="fareDayType" maxOccurs="unbounded"/>
+                                </xsd:choice>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
@@ -479,7 +543,8 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="dayTypeAssignments">
+					<!-- TODO: dayTypeAssignments weer minOccurs="1" maken -->
+					<xsd:element name="dayTypeAssignments" minOccurs="0" >
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="DayTypeAssignment" type="dayTypeAssignment" maxOccurs="unbounded"/>
@@ -560,10 +625,19 @@
 					</xsd:element>
 -->
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
-					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-general"/>
+					<!-- TODO: TypeOfFrameRef weer minOccurs="1" maken -->
+					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-general" minOccurs="0"/>
 					<xsd:element name="members">
 						<xsd:complexType>
 							<xsd:choice>
+								<xsd:choice>
+									<!-- TODO: Verder uitbreiden van de GGOE en E_E definities -->
+									<xsd:annotation>
+										<xsd:documentation>Variant voor GeneralFrames in een export van 'fare' gegevens.</xsd:documentation>
+									</xsd:annotation>
+									<xsd:element name="GeneralGroupOfEntities"/>
+									<xsd:element name="Entity_Entity" maxOccurs="unbounded"/>
+								</xsd:choice>
 								<xsd:choice>
 									<xsd:annotation>
 										<xsd:documentation>Variant voor GeneralFrames in een export van 'centrale' gegevens.</xsd:documentation>
@@ -628,14 +702,18 @@
 					<xsd:documentation>Attribuut 'version' is de identificatie ("versie") van de levering/export.</xsd:documentation>
 				</xsd:annotation>
 				<xsd:sequence>
+					<!-- TODO: Name toegevoegd, lijkt me geen probleem voor NL-profiel? -->
+					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
-					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-composite"/>
+					<!-- TODO: TypeOfFrameRef weer minOccurs="1" maken -->
+					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-composite" minOccurs="0"/>
 					<xsd:element name="codespaces" type="codespaces" minOccurs="0">
 						<xsd:annotation>
 							<xsd:documentation>Opsomming van de beschikbare domeinen. Wordt alleen gevuld in een export van 'centrale' gegevens</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:element name="FrameDefaults" type="VersionFrameDefaultsStructure">
+					<!-- TODO: FrameDefaults weer minOccurs="1" maken -->
+					<xsd:element name="FrameDefaults" type="VersionFrameDefaultsStructure" minOccurs="0">
 						<xsd:annotation>
 							<xsd:documentation>In een 'dienstregeling' levering zijn alle defaults verplicht. Een export van 'centrale' gegevens bevat alleen DefaultCodespaceRef. Een export van 'voertuigen' bevat DefaultCodespaceRef, DefaultDataSourceRef en DefaultSystemOfUnits.</xsd:documentation>
 						</xsd:annotation>
@@ -647,7 +725,8 @@
 					</xsd:element>
 					<xsd:element name="frames" minOccurs="0">
 						<xsd:complexType>
-							<xsd:choice>
+							<!-- TODO: choice weer maxOccurs="1" maken -->
+							<xsd:choice maxOccurs="unbounded">
 								<xsd:sequence>
 									<xsd:annotation>
 										<xsd:documentation>Frames in een export van 'centrale' gegevens of 'voertuig' gegevens.</xsd:documentation>
@@ -669,6 +748,7 @@
 										<xsd:element name="TimetableFrame" type="timetableFrame"/>
 										<xsd:element name="ServiceCalendarFrame" type="serviceCalendarFrame"/>
 										<xsd:element name="VehicleScheduleFrame" type="vehicleScheduleFrame"/>
+										<xsd:element name="FareFrame" type="fareFrame"/>
 									</xsd:choice>
 								</xsd:sequence>
 							</xsd:choice>
@@ -689,9 +769,18 @@
 					<xsd:documentation>De gegevensbron. Gelijk aan de ShortName van de DataSource.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			<!-- TODO: PublicationRequest weer verwijderen -->
+			<xsd:element name="PublicationRequest" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="RequestTimestamp" type="xsd:dateTime"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+			</xsd:element>
 			<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 			<xsd:element name="dataObjects" type="dataObjects"/>
 		</xsd:sequence>
+		<!-- TODO de TLS-voorbeelden stellen version="1", NeTEx-NL stelt deze fixed op ntx:1.1 -->
 		<xsd:attribute name="version" type="xsd:NMTOKEN" use="required" fixed="ntx:1.1" form="unqualified">
 			<xsd:annotation>
 				<xsd:documentation>De versie van de NeTEx standaard waarop het NL Profiel is gebaseerd</xsd:documentation>
