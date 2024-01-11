@@ -125,9 +125,6 @@ bestandtypes jpg, jpeg, gif, png, svg (hoofdletters of kleine letters, geen comb
 			<xsd:documentation>Het object hoeft géén 'id' of 'version' attribuut, omdat het altijd embedded is in een ander object.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="id" type="ObjectIdType" use="optional" form="unqualified"/>
-		<!--
-		<xsd:attribute name="version" type="VersionIdType" use="optional" default="any" form="unqualified"/>
--->
 	</xsd:complexType>
 	<xsd:complexType name="SimpleObjectStructure">
 		<xsd:annotation>
@@ -145,7 +142,7 @@ De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bo
 		<!-- TODO: maak id weer required (of maak een nieuw supertype voor AlternativeText, die soms geen id heeft; of stel id daar wel verplicht) -->
 		<xsd:attribute name="id" type="ObjectIdType" use="optional" form="unqualified"/>
 		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
-		<xsd:attribute name="version" type="VersionIdType" use="optional" default="any" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="DataManagedObjectStructure-with-version" abstract="true">
 		<xsd:annotation>
@@ -164,7 +161,7 @@ De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bo
 		</xsd:annotation>
 		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
-		<xsd:attribute name="version" type="VersionIdType" use="optional" fixed="any" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified"/>
 	</xsd:complexType>
 	<!--
 	<xsd:complexType name="DataManagedObjectStructure-modified" abstract="true">
@@ -187,7 +184,7 @@ De 'status' geeft aan of het element nog courant is.</xsd:documentation>
 		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
 		<!-- TODO: VersionIdType weer fixed="any" maken -->
-		<xsd:attribute name="version" type="VersionIdType" use="optional"  form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="status" type="StatusEnumeration" use="optional" default="active" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="OrderedVersionOfObjectStructure" abstract="true">
@@ -199,7 +196,7 @@ Bij een object in een sequence is attribuut 'order' verplicht.</xsd:documentatio
 		</xsd:annotation>
 		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
-		<xsd:attribute name="version" type="VersionIdType" use="optional" default="any" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" default="any" form="unqualified"/>
 		<xsd:attribute name="order" type="xsd:nonNegativeInteger" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="OrderedVersionOfObjectStructure-fixed" abstract="true">
@@ -211,7 +208,7 @@ Bij een object in een assignment is attribuut 'order' verplicht maar niet (altij
 		</xsd:annotation>
 		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
-		<xsd:attribute name="version" type="VersionIdType" use="optional" default="any" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="order" type="xsd:nonNegativeInteger" use="required" fixed="1" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="VersionFrameVersionStructure">
@@ -268,22 +265,22 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 	</xsd:complexType>
 -->
 	<xsd:complexType name="VersionOfObjectRefStructure">
-		<xsd:attribute name="version" type="VersionIdType" use="optional" default="any" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
 		<!-- TODO: versionRef weer verwijderen -->
 		<xsd:attribute name="versionRef" type="VersionIdType" use="optional" default="any" form="unqualified"/>
 		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="VersionOfObjectRefStructure-with-class">
-        <!-- TODO: nameOfRefClass weer use="required" maken -->
+		<!-- TODO: nameOfRefClass weer use="required" maken -->
 		<xsd:attribute name="nameOfRefClass" type="NameOfClass" use="optional" form="unqualified"/>
-		<xsd:attribute name="version" type="VersionIdType" use="optional" default="any" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
 		<!-- TODO: versionRef weer verwijderen -->
 		<xsd:attribute name="versionRef" type="VersionIdType" use="optional" default="any" form="unqualified"/>
 		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="VersionOfObjectRefStructure-with-optional-class">
 		<xsd:attribute name="nameOfRefClass" type="NameOfClass" use="optional" form="unqualified"/>
-		<xsd:attribute name="version" type="VersionIdType" use="optional" default="any" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="ExternalObjectRefStructure">
