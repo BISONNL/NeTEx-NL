@@ -9,7 +9,7 @@
             <FrameDefaults>
                 <DefaultCodespaceRef ref="BISON:Codespace:ARR"/>
                 <DefaultDataSourceRef ref="ARR:DataSource:ARR" version="1"/>
-                <DefaultResponsibilitySetRef ref="ARR:ResponsibilitySet:AM_partitie" version="1"/>
+                <DefaultResponsibilitySetRef ref="ARR:ResponsibilitySet:Holten-Rijssen-partitie" version="1"/>
                 <DefaultLocale>
                     <TimeZone>Europe/Amsterdam</TimeZone>
                     <DefaultLanguage>nl</DefaultLanguage>
@@ -36,8 +36,8 @@
                         </DataSource>
                     </dataSources>
                     <responsibilitySets>
-                        <ResponsibilitySet id="ARR:ResponsibilitySet:FLEX_partitie" version="1">
-                            <Name>FLEX</Name>
+                        <ResponsibilitySet id="ARR:ResponsibilitySet:Holten-Rijssen-partitie" version="1">
+                            <Name>Holten-Rijssen-partitie</Name>
                             <roles>
                             <ResponsibilityRoleAssignment id="ARR:ResponsibilityRoleAssignment:Holten-Rijssen-partitie" version="1">
                                 <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="ARR:TransportAdministrativeZone:Holten-Rijssen-partitie" version="1"/>
