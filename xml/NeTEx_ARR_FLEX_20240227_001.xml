@@ -49,7 +49,7 @@
                             <Name>Twente</Name>
                             <roles>
                             <ResponsibilityRoleAssignment id="ARR:ResponsibilityRoleAssignment:TW" version="1">
-                                <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="DOVA:Network:TW" version="1"/>
+                                <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="DOVA:TransportAdministrativeZone:TW" version="1"/>
                             </ResponsibilityRoleAssignment>
                             </roles>
                         </ResponsibilitySet>
