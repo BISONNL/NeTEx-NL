@@ -289,21 +289,21 @@
 							<xsd:documentation>Bevat alleen DefaultResponsibilitySetRef voor de koppeling aan de (hoofd)financier</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:element name="routePoints">
+					<xsd:element name="routePoints" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="RoutePoint" type="routePoint" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="routeLinks">
+					<xsd:element name="routeLinks" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="RouteLink" type="routeLink" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="routes">
+					<xsd:element name="routes" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:choice maxOccurs="unbounded">
@@ -368,7 +368,7 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="timingLinks">
+					<xsd:element name="timingLinks" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="TimingLink" type="timingLink" maxOccurs="unbounded"/>
@@ -383,7 +383,7 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="timeDemandTypes">
+					<xsd:element name="timeDemandTypes" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="TimeDemandType" type="timeDemandType" maxOccurs="unbounded"/>

@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" version="ntx:1.1">
+    <PublicationTimestamp>2024-01-17T15:13:00Z</PublicationTimestamp>
+    <ParticipantRef>ARR</ParticipantRef>
+    <Description>Voorbeeld-export voor flexRRReis Holten-Rijssen</Description>
+    <dataObjects>
+        <CompositeFrame id="ARR:CompositeFrame:Holten-Rijssen" modification="new" version="1">
+            <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_BASELINE"/>
+            <FrameDefaults>
+                <DefaultCodespaceRef ref="BISON:Codespace:ARR"/>
+                <DefaultDataSourceRef ref="ARR:DataSource:ARR" version="1"/>
+                <DefaultResponsibilitySetRef ref="ARR:ResponsibilitySet:AM_partitie" version="1"/>
+                <DefaultLocale>
+                    <TimeZone>Europe/Amsterdam</TimeZone>
+                    <DefaultLanguage>nl</DefaultLanguage>
+                </DefaultLocale>
+                <DefaultLocationSystem>EPSG:28992</DefaultLocationSystem>
+                <DefaultSystemOfUnits>SiMetres</DefaultSystemOfUnits>
+                <DefaultCurrency>EUR</DefaultCurrency>
+            </FrameDefaults>
+            <versions>
+                <Version id="ARR:Version:1" modification="new" version="1">
+                    <StartDate>2024-01-19T00:00:00Z</StartDate>
+                    <EndDate>2024-12-31T00:00:00Z</EndDate>
+                    <VersionType>baseline</VersionType>
+                </Version>
+            </versions>
+            <frames>
+                <ResourceFrame id="ARR:ResourceFrame:Holten-Rijssen" version="1">
+                    <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_RESOURCE"/>
+                    <dataSources>
+                        <DataSource id="ARR:DataSource:ARR" version="1">
+                            <Name>Arriva</Name>
+                            <ShortName>ARR</ShortName>
+                            <Description>Arriva</Description>
+                        </DataSource>
+                    </dataSources>
+                    <responsibilitySets>
+                        <ResponsibilitySet id="ARR:ResponsibilitySet:FLEX_partitie" version="1">
+                            <Name>FLEX</Name>
+                            <roles>
+                            <ResponsibilityRoleAssignment id="ARR:ResponsibilityRoleAssignment:Holten-Rijssen-partitie" version="1">
+                                <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="ARR:TransportAdministrativeZone:Holten-Rijssen-partitie" version="1"/>
+                            </ResponsibilityRoleAssignment>
+                            </roles>
+                        </ResponsibilitySet>
+                        <!-- Concessie-verwijzing. Ik ga er even vanuit dat we het hier over concessie Twente hebben. -->
+                        <ResponsibilitySet id="ARR:ResponsibilitySet:TW" version="1">
+                            <Name>Twente</Name>
+                            <roles>
+                            <ResponsibilityRoleAssignment id="ARR:ResponsibilityRoleAssignment:TW" version="1">
+                                <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="DOVA:Network:TW" version="1"/>
+                            </ResponsibilityRoleAssignment>
+                            </roles>
+                        </ResponsibilitySet>
+                    </responsibilitySets>
+                    <typesOfValue/>
+                    <organisations>
+                        <Operator id="ARR:Operator:ARR" version="1">
+                            <Name>Arriva</Name>
+                            <ShortName>ARR</ShortName>
+                            <CustomerServiceContactDetails>
+                            <Url>https://arriva.nl/</Url>
+                            </CustomerServiceContactDetails>
+                        </Operator>
+                    </organisations>
+                    <operationalContexts>
+                        <OperationalContext id="ARR:OperationalContext:0" version="1">
+                            <VehicleMode>bus</VehicleMode>
+                        </OperationalContext>
+                    </operationalContexts>
+                    <vehicleTypes>
+                        <VehicleType id="ARR:VehicleType:Elec" version="1">
+                            <Name>Electrische bus</Name>
+                            <ShortName>Elec</ShortName>
+                            <Description>Electrische bus</Description>
+                            <TypeOfFuel>electricity</TypeOfFuel>
+                            <TransportMode>bus</TransportMode>
+                            <capacities>
+                                <PassengerCapacity id="ARR:PassengerCapacity:Elec" version="1">
+                                    <FareClass>any</FareClass>
+                                    <TotalCapacity>80</TotalCapacity>
+                                    <SeatingCapacity>30</SeatingCapacity>
+                                    <StandingCapacity>50</StandingCapacity>
+                                    <SpecialPlaceCapacity>0</SpecialPlaceCapacity>
+                                    <PushchairCapacity>0</PushchairCapacity>
+                                    <WheelchairPlaceCapacity>0</WheelchairPlaceCapacity>
+                                </PassengerCapacity>
+                            </capacities>
+                            <LowFloor>true</LowFloor>
+                            <HasLiftOrRamp>false</HasLiftOrRamp>
+                            <Length>0</Length>
+                            <facilities>
+                            <ServiceFacilitySet id="ARR:ServiceFacilitySet:Elec" version="1">
+                                <MobilityFacilityList>unknown</MobilityFacilityList>
+                                <VehicleAccessFacilityList>unknown</VehicleAccessFacilityList>
+                            </ServiceFacilitySet>
+                            </facilities>
+                        </VehicleType>
+                    </vehicleTypes>
+                    <zones>
+                        <!-- Partitie-definitie -->
+                        <TransportAdministrativeZone id="ARR:TransportAdministrativeZone:Holten-Rijssen-partitie" version="any">
+                            <Name>Holten-Rijssen</Name>
+                            <ShortName>HR</ShortName>
+                            <Description>flexRRReis Holten-Rijssen</Description>
+                        </TransportAdministrativeZone>
+                    </zones>
+                </ResourceFrame>
+                <!-- Neem een SiteFrame op om het flexgebied te beschrijven -->
+                <SiteFrame id="ARR:SiteFrame:Holten-Rijssen" version="1">
+                    <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_SITE"/>
+                    <flexibleStopPlaces>
+                        <!-- FlexibleStopPlace beschrijft het fysieke flexgebied. Dit kan met een polygoon en/of met een set van RoutePoints (die de fysieke locatie van een opstappunt definieren). Gebruik hier wat relevant is voor het type flexvervoer. -->
+                        <FlexibleStopPlace id="ARR:FlexibleStopPlace:Holten-Rijssen" version="1">
+                            <!-- Name: optioneel -->
+                            <ShortName>FR-HR</ShortName>
+                            <!-- Description: optioneel -->
+                            <TransportMode>bus</TransportMode>
+                            <!-- PublicCode: optioneel -->
+                            <areas>
+                                <FlexibleArea>
+                                    <!-- Name: optioneel -->
+                                    <ShortName>FR-HR</ShortName>
+                                    <!-- Description: optioneel -->
+                                    <!-- members: optioneel; verwijzing naar bijbehorende RoutePoints, indien relevant -->
+                                    <gml:Polygon gml:id="ARR_Polygon_Holten-Rijssen">
+                                        <gml:exterior>
+                                            <gml:LinearRing>
+                                                <gml:posList>218870 473550 218870 486410 235810 486410 235810 473550</gml:posList>
+                                            </gml:LinearRing>
+                                        </gml:exterior>
+                                    </gml:Polygon>
+                                    <BoardingUse>true</BoardingUse>
+                                    <AlightingUse>true</AlightingUse>
+                                </FlexibleArea>
+                            </areas>
+                        </FlexibleStopPlace>
+                    </flexibleStopPlaces>
+                </SiteFrame>
+                <ServiceFrame id="ARR:ServiceFrame:Holten-Rijssen" version="1">
+                    <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_SERVICE"/>
+                    <!-- routePoints: voor flexritten zijn routePoints alleen relevant als er volgens een vaste route gereden wordt. -->
+                    <!-- routeLinks: voor flexritten zijn routeLinks alleen relevant als er volgens een vaste route gereden wordt. -->
+                    <!-- routes: voor flexritten zijn routes alleen relevant als er volgens een vaste route gereden wordt. -->
+                    <lines>
+                        <!-- De definitie van de flexlijn. Ik ga er even vanuit dat Holten-Rijssen onder concessie TW valt, en heb daarom deze gekoppeld. -->
+                        <FlexibleLine id="ARR:FlexibleLine:Holten-Rijssen" version="1" responsibilitySetRef="ARR:ResponsibilitySet:TW">
+                            <Name>Holten-Rijssen</Name>
+                            <TransportMode>bus</TransportMode>
+                            <TypeOfServiceRef ref="BISON:TypeOfService:Flex" version="any"></TypeOfServiceRef>
+                            <Monitored>false</Monitored>
+                            <AccessibilityAssessment id="" version="">
+                                <MobilityImpairedAccess>true</MobilityImpairedAccess>
+                            </AccessibilityAssessment>
+                            <FlexibleLineType>flexibleAreasOnly</FlexibleLineType>
+                            <!-- Eventueel kunnen hier boeking-gerelateerde gegevens worden opgenomen, d.m.v. de optionele elementen 
+                                 BookingContact, BookingMethods, BookingAccess, BookWhen, BuyWhen, LatestBookingTime, MinimumBookingPeriod, BookingUrl, BookingNote. -->
+                        </FlexibleLine>
+                    </lines>
+                    <destinationDisplays>
+                        <!-- Een generieke destination die simpelweg het gebied beschrijft. Bij flexvervoer dat een vaste route rijdt kan hier een echte of fictieve destination worden benoemd. -->
+                        <DestinationDisplay id="ARR:DestinationDisplay:Holten-Rijssen" version="1">
+                            <Name>Holten-Rijssen</Name>
+                            <SideText>Holten-Rijssen</SideText>
+                            <FrontText>Holten-Rijssen </FrontText>
+                            <PrivateCode type="DestinationCode">Holten-Rijssen</PrivateCode>
+                            <variants>
+                            <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:Holten-Rijssen-16" version="1">
+                                <Extensions>
+                                    <MaxLength>BISON:DisplayTextLength:16</MaxLength>
+                                </Extensions>
+                                <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+                                <Name>Holten-Rijssen</Name>
+                            </DestinationDisplayVariant>
+                            <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:Holten-Rijssen-19" version="1">
+                                <Extensions>
+                                    <MaxLength>BISON:DisplayTextLength:19</MaxLength>
+                                </Extensions>
+                                <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+                                <Name>Holten-Rijssen</Name>
+                            </DestinationDisplayVariant>
+                            <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:Holten-Rijssen-21" version="1">
+                                <Extensions>
+                                    <MaxLength>BISON:DisplayTextLength:21</MaxLength>
+                                </Extensions>
+                                <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+                                <Name>Holten-Rijssen</Name>
+                            </DestinationDisplayVariant>
+                            <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:Holten-Rijssen-24" version="1">
+                                <Extensions>
+                                    <MaxLength>BISON:DisplayTextLength:24</MaxLength>
+                                </Extensions>
+                                <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+                                <Name>Holten-Rijssen</Name>
+                            </DestinationDisplayVariant>
+                        </variants>
+                    </DestinationDisplay>
+                    </destinationDisplays>
+                    <scheduledStopPoints>
+                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:Holten-Rijssen" version="1">
+                            <Name></Name>
+                            <Location>
+                                <!-- Ik heb hier gekozen voor het centrale punt van alle haltes die vallen onder de flex-zone die deze ScheduledStopPoint representeert.
+                                     Andere opties zijn om hier een vast routepunt op te nemen (bijvoorbeeld een station waar de bus gegarandeerd vertrekt, indien relevant).
+                                     Of we maken dit element optioneel en laten het weg als het een zone betreft (en geen fysiek punt). -->
+                                <gml:pos>227342 479982</gml:pos>
+                            </Location>
+                            <!-- TODO: Eventueel kunnen we ervoor kiezen om hier een 'types' element op te nemen waarin we een (of meer) TypeOfPointRef(s) kunnen maken, zodat we expliciet kunnen maken dat het hier een zone betreft.
+                                       Maar feitelijk is dat ook al wel duidelijk uit de 'projections' hieronder -->
+                            <projections>
+                                <ZoneProjection id="ARR:ZoneProjection:Holten-Rijssen" version="1">
+                                    <points>
+                                        <!-- Hier alle referenties opnemen naar de ScheduledStopPoints die de logische haltes binnen het flexgebied representeren, en die relevant zijn voor de flexdienst.
+                                             Als er in hetzelfde gebied ook reguliere lijnen langs deze haltes rijden zullen deze waarschijnlijk toch al in de export zitten.
+                                             Zo niet, dan moeten ze expliciet worden opgenomen, zodat we vervolgens in PassengerStopAssignments de link naar CHB kunnen leggen.
+
+                                             Als het een hail & ride betreft, en er dus geen link naar CHB-haltes te maken is, kunnen de projects geheel achterwege gelaten worden.
+                                        -->
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:41980010" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:41980050" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43670100" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43680040" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43680070" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43680100" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43680120" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43720010" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43720030" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43780040" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43780060" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43780100" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43780120" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43780180" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43780220" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43780240" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43780260" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43780270" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43780320" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43870130" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880030" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880050" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880073" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880075" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880140" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880160" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880180" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880200" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880220" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880240" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880270" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880310" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880330" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880360" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880380" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880460" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880510" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880540" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880570" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880610" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880630" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43880650" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43910010" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43910030" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43910050" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920010" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920030" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920050" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920070" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920090" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920110" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920130" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920150" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920170" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920190" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920210" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920230" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920250" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920270" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920290" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920310" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920330" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920350" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920370" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920390" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920410" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920430" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43920450" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43929050" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:44270010" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:44290010" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:44290030" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:44380010" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45190010" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300010" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300030" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300050" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300070" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300090" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300110" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300130" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300150" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300170" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300190" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300210" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300230" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300250" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300270" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300290" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300310" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300330" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300350" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300370" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300390" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300410" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300430" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300450" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300470" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300490" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300510" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300530" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300550" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300570" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300590" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300610" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300630" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300650" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300670" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300690" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300710" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300730" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300750" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300770" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300790" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300810" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300830" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300850" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300870" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300890" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300910" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300930" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300950" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300970" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45300990" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45301010" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45301030" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45301050" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45301070" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45301090" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45301110" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45301130" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45301150" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45301170" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45301190" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45320010" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45320030" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45350010" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45350030" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:45400010" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:46910010" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:46910030" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:46910050" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:46920010" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:46920030" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:46920050" version="1"/>
+                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:46950010" version="1"/>
+                                    </points>
+                                </ZoneProjection>
+                            </projections>
+                        </ScheduledStopPoint>
+                        <!-- TODO: Hier nog alle ScheduledStopPoints opnemen waaraan gerefereerd wordt vanuit de voorgaande ZoneProjection van de vorige ScheduledStopPoint -->
+                    </scheduledStopPoints>
+                    <stopAssignments>
+                        <!-- Koppeling van de ScheduledStopPoint die het logische flexgebied representeert aan de FlexibleStopPlace die het fysieke flexgebied beschrijft (middels Polygon) -->
+                        <FlexibleStopAssignment id="ARR:ServiceJourneyPattern:Holten-Rijssen" version="1" order="1">
+                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:Holten-Rijssen" version="1"/>
+                            <FlexibleStopPlaceRef ref="ARR:FlexibleStopPlace:Holten-Rijssen" version="1"/>
+                        </FlexibleStopAssignment>
+                        <!-- TODO: Hier alle PassengerStopAssignments opnemen om de logische haltes in het flexgebied te koppelen aan de bijbehorende Quays uit het CHB -->
+                    </stopAssignments>
+                    <!-- timingLinks: voor flexritten zijn timingLinks alleen relevant als er volgens een vaste route gereden wordt. -->
+                    <journeyPatterns>
+                        <ServiceJourneyPattern id="ARR:ServiceJourneyPattern:Holten-Rijssen" version="1">
+                            <DestinationDisplayRef ref="ARR:DestinationDisplay:Holten-Rijssen" version="1"/>
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:instappen" order="1">
+                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:Holten-Rijssen" version="1"></ScheduledStopPointRef>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:uitstappen" order="2">
+                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:Holten-Rijssen" version="1"></ScheduledStopPointRef>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                    </journeyPatterns>
+                    <!-- timeDemandTypes: voor flexritten zijn timeDemandTypes alleen relevant als er volgens een vaste route gereden wordt. -->
+                </ServiceFrame>
+                <TimetableFrame id="ARR:TimetableFrame:Holten-Rijssen" version="1">
+                    <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_TIMETABLE"/>
+                    <contentValidityConditions>
+                        <AvailabilityCondition id="ARR:AvailabilityCondition:575266" version="1">
+                            <FromDate>2024-01-19T00:00:00Z</FromDate>
+                            <ToDate>2024-12-31T00:00:00Z</ToDate>
+                            <ValidDayBits>100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011</ValidDayBits>
+                        </AvailabilityCondition>
+                    </contentValidityConditions>
+                    <OperatorView>
+                        <OperatorRef ref="ARR:Operator:ARR" version="1"/>
+                    </OperatorView>
+                    <vehicleJourneys>
+                        <TemplateServiceJourney id="ARR:ServiceJourney:Holten-Rijssen" version="1">
+                            <validityConditions>
+                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:575266" version="1"/>
+                            </validityConditions>
+                            <!-- PrivateCode: indien er geen journeyNumbers zijn voor flexritten mag de PrivateCode worden weggelaten. -->
+                            <Monitored>false</Monitored><!-- Geef 'true' op als de rit wel gevolgd wordt. -->
+                            <!-- dayTypes: optioneel -->
+                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Holten-Rijssen" version="1"/>
+                            <!-- TimeDemandTypeRef: optioneel; niet van toepassing bij oppervlakteflex, mogelijk wel bij belbussen die een vaste route rijden. -->
+                            <VehicleTypeRef ref="ARR:VehicleType:Elec" version="1"/>
+                            <!-- OperatorRef: optioneel, alleen nodig indien uitvoerend Operator niet gelijk is aan Operator in OperatorView van dit TimetableFrame -->
+                            <!-- (Flexible)LineRef: Indien er geen Route is gedefinieerd voor een flexlijn, dan kan hier de link naar het (Flexible)Line object gemaakt worden. Anders kan dat achterwege gelaten worden, en wordt de (Flexible)Line via Route gekoppeld. -->
+                            <FlexibleLineRef ref="ARR:FlexibleLine:Holten-Rijssen" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>onlyIfSignedOn</Dynamic><!-- Vraag: heeft deze waarde effect i.c.m. Monited = false? -->
+                            <passingTimes>
+								<!-- Geef aan tussen welke tijden deze rit-template beschikbaar is. M.a.w. tussen welke tijden is deze flexdienst te boeken? -->
+                                <TimetabledPassingTime>
+                                    <LatestArrivalTime>22:00:00</LatestArrivalTime>
+                                    <EarliestDepartureTime>07:00:00</EarliestDepartureTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                            <FlexibleServiceProperties>
+                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
+                            </FlexibleServiceProperties>
+                        </TemplateServiceJourney>
+                    </vehicleJourneys>
+                </TimetableFrame>
+            </frames>
+        </CompositeFrame>
+    </dataObjects>
+</PublicationDelivery>
