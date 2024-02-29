@@ -647,31 +647,33 @@
 					</xsd:element>
 					<xsd:element name="frames" minOccurs="0">
 						<xsd:complexType>
-							<xsd:choice>
-								<xsd:sequence>
-									<xsd:annotation>
-										<xsd:documentation>Frames in een export van 'centrale' gegevens of 'voertuig' gegevens.</xsd:documentation>
-									</xsd:annotation>
-									<xsd:element name="GeneralFrame" type="generalFrame" maxOccurs="unbounded"/>
-								</xsd:sequence>
-								<xsd:sequence>
-									<xsd:annotation>
-										<xsd:documentation>Frames in een 'dienstregeling' levering. De volgorde van de frames is willekeurig.</xsd:documentation>
-									</xsd:annotation>
-									<xsd:choice maxOccurs="unbounded">
+							<xsd:sequence>
+								<xsd:element name="ResourceFrame" type="resourceFrame" minOccurs="0"/>
+								<xsd:choice>
+									<xsd:sequence>
 										<xsd:annotation>
-											<xsd:documentation>Het maximale aantal frames van een bepaald type wordt NIET afgedwongen. Verwacht wordt echter: 1x ResourceFrame, 0x/1x InfrastructureFrame, 0x/1x SiteFrame, 1x ServiceFrame, minimaal 1x TimetableFrame, 1x ServiceCalendarFrame, 0x/1x VehicleScheduleFrame.</xsd:documentation>
+											<xsd:documentation>Frames in een export van 'centrale' gegevens of 'voertuig' gegevens.</xsd:documentation>
 										</xsd:annotation>
-										<xsd:element name="ResourceFrame" type="resourceFrame"/>
-										<xsd:element name="InfrastructureFrame" type="infrastructureFrame"/>
-										<xsd:element name="SiteFrame" type="siteFrame"/>
-										<xsd:element name="ServiceFrame" type="serviceFrame"/>
-										<xsd:element name="TimetableFrame" type="timetableFrame"/>
-										<xsd:element name="ServiceCalendarFrame" type="serviceCalendarFrame"/>
-										<xsd:element name="VehicleScheduleFrame" type="vehicleScheduleFrame"/>
-									</xsd:choice>
-								</xsd:sequence>
-							</xsd:choice>
+										<xsd:element name="GeneralFrame" type="generalFrame" maxOccurs="unbounded"/>
+									</xsd:sequence>
+									<xsd:sequence>
+										<xsd:annotation>
+											<xsd:documentation>Frames in een 'dienstregeling' levering. De volgorde van de frames is willekeurig.</xsd:documentation>
+										</xsd:annotation>
+										<xsd:choice maxOccurs="unbounded">
+											<xsd:annotation>
+												<xsd:documentation>Het maximale aantal frames van een bepaald type wordt NIET afgedwongen. Verwacht wordt echter: 1x ResourceFrame, 0x/1x InfrastructureFrame, 0x/1x SiteFrame, 1x ServiceFrame, minimaal 1x TimetableFrame, 1x ServiceCalendarFrame, 0x/1x VehicleScheduleFrame.</xsd:documentation>
+											</xsd:annotation>
+											<xsd:element name="InfrastructureFrame" type="infrastructureFrame"/>
+											<xsd:element name="SiteFrame" type="siteFrame"/>
+											<xsd:element name="ServiceFrame" type="serviceFrame"/>
+											<xsd:element name="TimetableFrame" type="timetableFrame"/>
+											<xsd:element name="ServiceCalendarFrame" type="serviceCalendarFrame"/>
+											<xsd:element name="VehicleScheduleFrame" type="vehicleScheduleFrame"/>
+										</xsd:choice>
+									</xsd:sequence>
+								</xsd:choice>
+							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
 				</xsd:sequence>
