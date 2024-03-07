@@ -98,7 +98,7 @@
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_RESOURCE" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfResourceFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -106,7 +106,7 @@
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_INFRA" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfInfrastructureFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -114,7 +114,7 @@
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_SERVICE" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfServiceFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -122,7 +122,7 @@
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_TIMETABLE" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfTimetableFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -130,7 +130,7 @@
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_CALENDAR" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfServiceCalendarFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -138,7 +138,7 @@
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_VEHICLE" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfVehicleScheduleFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -146,7 +146,7 @@
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_SITE" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfSiteFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
