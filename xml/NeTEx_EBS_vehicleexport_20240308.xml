@@ -89,7 +89,7 @@
                             <facilities>
                                 <ServiceFacilitySet id="EBS:ServiceFacilitySet:10m" version="20240308">
                                     <MobilityFacilityList>suitableForWheelchairs onboardAssistance</MobilityFacilityList>
-                                    <VehicleAccessFacilityList>ramp</VehicleAccessFacilityList>
+                                    <VehicleAccessFacilityList>manualRamp</VehicleAccessFacilityList>
                                 </ServiceFacilitySet>
                             </facilities>
                         </VehicleType>
@@ -118,7 +118,7 @@
                             <facilities>
                                 <ServiceFacilitySet id="EBS:ServiceFacilitySet:E18mR" version="20240308">
                                     <MobilityFacilityList>suitableForWheelchairs onboardAssistance</MobilityFacilityList>
-                                    <VehicleAccessFacilityList>ramp</VehicleAccessFacilityList>
+                                    <VehicleAccessFacilityList>manualRamp</VehicleAccessFacilityList>
                                 </ServiceFacilitySet>
                             </facilities>
                         </VehicleType>
