@@ -253,7 +253,7 @@
 							</xsd:choice>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="operationalContexts">
+					<xsd:element name="operationalContexts" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="OperationalContext" type="operationalContext" maxOccurs="unbounded"/>
