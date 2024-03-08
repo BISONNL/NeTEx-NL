@@ -294,11 +294,6 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- UITBREIDINGEN VAN DE NETEX STANDAARD                                            -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<xsd:complexType name="extensionTransportMode">
-		<xsd:sequence>
-			<xsd:element name="TransportMode" type="TransportmodeEnum"/>
-		</xsd:sequence>
-	</xsd:complexType>
 	<xsd:complexType name="extensionTypeOfProductCategory">
 		<xsd:sequence>
 			<xsd:element name="TypeOfProductCategoryRef" type="VersionOfObjectRefStructure"/>

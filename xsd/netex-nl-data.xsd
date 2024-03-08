@@ -1079,7 +1079,6 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="Extensions" type="extensionTransportMode"/>
 					<xsd:element name="RegistrationNumber" type="xsd:string" minOccurs="0"/>
 					<xsd:element name="OperationalNumber" type="xsd:string"/>
 					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
