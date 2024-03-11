@@ -92,7 +92,12 @@
 		<xsd:restriction base="xsd:string">
 			<xsd:enumeration value="none"/>
 			<xsd:enumeration value="toilet"/>
-			<xsd:enumeration value="wheelChairAccessToilet"/>
+			<xsd:enumeration value="wheelchairAccessToilet"/>
+			<xsd:enumeration value="wheelChairAccessToilet">
+				<xsd:annotation>
+					<xsd:documentation>DEPRECATION: This token is deprecated in favor of wheelchairAccessToilet. To be removed: 2025-01-09.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
 			<xsd:enumeration value="shower"/>
 			<xsd:enumeration value="washingAndChangeFacilities"/>
 			<xsd:enumeration value="babyChange"/>
