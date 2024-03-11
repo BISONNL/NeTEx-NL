@@ -1118,7 +1118,18 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 							<xsd:documentation>Zie Wikipedia voor de mogelijke waarden</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:element name="TypeOfFuel" type="TypeOfFuelEnumeration"/>
+					<xsd:choice>
+						<xsd:element name="FuelType" type="FuelTypeEnumeration">
+							<xsd:annotation>
+								<xsd:documentation>Het type brandstof dat voor het voertuig in gebruik is voor het voertuig soort.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="TypeOfFuel" type="FuelTypeEnumeration">
+							<xsd:annotation>
+								<xsd:documentation>DEPRECATED NAME: Use FuelType instead. Will be removed: 2025-01-09.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:choice>
 					<xsd:element name="TransportMode" type="TransportmodeEnum"/>
 					<xsd:element name="capacities" type="passengerCapacities_RelStructure" minOccurs="0">
 						<xsd:annotation>

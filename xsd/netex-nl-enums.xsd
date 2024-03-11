@@ -135,7 +135,7 @@
 			<xsd:enumeration value="postBox"/>
 		</xsd:restriction>
 	</xsd:simpleType>
-	<xsd:simpleType name="TypeOfFuelEnumeration">
+	<xsd:simpleType name="FuelTypeEnumeration">
 		<xsd:restriction base="xsd:normalizedString">
 			<xsd:enumeration value="petrol"/>
 			<xsd:enumeration value="diesel"/>
