@@ -1097,7 +1097,11 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
-					<xsd:element name="Extensions" type="extensionTypeOfProductCategory" minOccurs="0"/>
+					<xsd:element name="Extensions" type="extensionTypeOfProductCategory" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Deprecated (sinds v9.3.0): Gebruik in plaats hiervan BrandingRef.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
 					<xsd:element name="BrandingRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 					<xsd:element name="Name" type="MultilingualString"/>
 					<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>

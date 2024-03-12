@@ -52,12 +52,14 @@
                         </ResponsibilitySet>
                     </responsibilitySets>
                     <typesOfValue>
-						<Branding id="EBS:BrandingRef:Delfthopper" version="20240308">
+						<!-- Branding, gelijk aan een Branding uit de dienstregeling -->
+						<Branding id="EBS:Branding:Delfthopper" version="20240308">
 							<Name>Delfthopper</Name>
 						</Branding>
-                        <TypeOfProductCategory id="EBS:TypeOfProductCategory:RNet" version="20240308">
+						<!-- Branding, die in de dienstregeling als TypeOfProductCategory is gedefinieerd. TypeOfProductCategory wordt echter niet gebruikt in de voertuigenexport. -->
+                        <Branding id="EBS:Branding:RNet" version="20240308">
                             <Name>R-Net</Name>
-                        </TypeOfProductCategory>
+                        </Branding>
                     </typesOfValue>
                     <organisations>
                         <Operator id="EBS:Operator:EBS" version="20240308">
@@ -94,9 +96,7 @@
                             </facilities>
                         </VehicleType>
                         <VehicleType id="EBS:VehicleType:E18mR" version="20240308">
-							<Extensions>
-                                <TypeOfProductCategoryRef ref="EBS:TypeOfProductCategory:RNet" version="20240308"/>
-                            </Extensions>
+							<BrandingRef ref="EBS:Branding:RNet" version="20240308"/>
                             <Name>E18mR</Name>
                             <Description>Elektrische gelede bus in R-Net uitvoering</Description>
                             <TypeOfFuel>electricity</TypeOfFuel>
@@ -123,6 +123,7 @@
                             </facilities>
                         </VehicleType>
                         <VehicleType id="EBS:VehicleType:Delfthopper" version="20240308">
+							<BrandingRef ref="EBS:Branding:Delfthopper"/>
                             <Name>Delfthopper</Name>
                             <Description>Delfthopper</Description>
                             <TypeOfFuel>diesel</TypeOfFuel>
