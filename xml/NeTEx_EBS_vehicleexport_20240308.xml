@@ -20,7 +20,7 @@
             </FrameDefaults>
             <frames>
                 <ResourceFrame id="EBS:ResourceFrame:1" version="20240308">
-					<!-- Dit is een voertuigenexport, dus TypeOfFrameRef is NL_VEH_RESOURCE. -->
+                    <!-- Dit is een voertuigenexport, dus TypeOfFrameRef is NL_VEH_RESOURCE. -->
                     <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_VEH_RESOURCE"/>
                     <!-- EBS is de gegevensbron -->
                     <dataSources>
@@ -52,11 +52,11 @@
                         </ResponsibilitySet>
                     </responsibilitySets>
                     <typesOfValue>
-						<!-- Branding, gelijk aan een Branding uit de dienstregeling -->
-						<Branding id="EBS:Branding:Delfthopper" version="20240308">
-							<Name>Delfthopper</Name>
-						</Branding>
-						<!-- Branding, die in de dienstregeling als TypeOfProductCategory is gedefinieerd. TypeOfProductCategory wordt echter niet gebruikt in de voertuigenexport. -->
+                        <!-- Branding, gelijk aan een Branding uit de dienstregeling -->
+                        <Branding id="EBS:Branding:Delfthopper" version="20240308">
+                            <Name>Delfthopper</Name>
+                        </Branding>
+                        <!-- Branding, die in de dienstregeling als TypeOfProductCategory is gedefinieerd. TypeOfProductCategory wordt echter niet gebruikt in de voertuigenexport. -->
                         <Branding id="EBS:Branding:RNet" version="20240308">
                             <Name>R-Net</Name>
                         </Branding>
@@ -96,7 +96,7 @@
                             </facilities>
                         </VehicleType>
                         <VehicleType id="EBS:VehicleType:E18mR" version="20240308">
-							<BrandingRef ref="EBS:Branding:RNet" version="20240308"/>
+                            <BrandingRef ref="EBS:Branding:RNet" version="20240308"/>
                             <Name>E18mR</Name>
                             <Description>Elektrische gelede bus in R-Net uitvoering</Description>
                             <TypeOfFuel>electricity</TypeOfFuel>
@@ -123,7 +123,7 @@
                             </facilities>
                         </VehicleType>
                         <VehicleType id="EBS:VehicleType:Delfthopper" version="20240308">
-							<BrandingRef ref="EBS:Branding:Delfthopper"/>
+                            <BrandingRef ref="EBS:Branding:Delfthopper"/>
                             <Name>Delfthopper</Name>
                             <Description>Delfthopper</Description>
                             <TypeOfFuel>diesel</TypeOfFuel>
