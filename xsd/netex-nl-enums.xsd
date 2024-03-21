@@ -552,6 +552,101 @@
 			<xsd:enumeration value="other"/>
 		</xsd:restriction>
 	</xsd:simpleType>
+	<!-- Enumeraties, toegevoegd t.b.v. TLS fare exports -->
+
+	<xsd:simpleType name="UsageTriggerEnumeration">
+		<xsd:annotation>
+			<xsd:documentation>Allowed values for Usage Trigger.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="enrolment"/>
+			<xsd:enumeration value="reservation"/>
+			<xsd:enumeration value="purchase"/>
+			<xsd:enumeration value="fulfilment"/>
+			<xsd:enumeration value="activation"/>
+			<xsd:enumeration value="specifiedStartDate"/>
+			<xsd:enumeration value="startOutboundRide"/>
+			<xsd:enumeration value="endOutboundRide"/>
+			<xsd:enumeration value="startReturnRide"/>
+			<xsd:enumeration value="startOfPeriod"/>
+			<xsd:enumeration value="dayOffsetBeforeCalendarPeriod"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="UsageEndEnumeration">
+		<xsd:annotation>
+			<xsd:documentation>Allowed values for Usage End.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="standardDuration"/>
+			<xsd:enumeration value="endOfCalendarPeriod"/>
+			<xsd:enumeration value="endOfRide"/>
+			<xsd:enumeration value="endOfTrip"/>
+			<xsd:enumeration value="endOfFareDay"/>
+			<xsd:enumeration value="endOfFarePeriod"/>
+			<xsd:enumeration value="productExpiry"/>
+			<xsd:enumeration value="profileExpiry"/>
+			<xsd:enumeration value="deregistration"/>
+			<xsd:enumeration value="other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="VersionStatusEnumeration">
+		<xsd:annotation>
+			<xsd:documentation>Allowed values for Statuses of VERSION.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="draft">
+				<xsd:annotation>
+					<xsd:documentation>This version is a draft: it is currently under construction and should not be used for operational purposes.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="proposed">
+				<xsd:annotation>
+					<xsd:documentation>This version is comprehensive but not yet validated.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="versioned">
+				<xsd:annotation>
+					<xsd:documentation>This is a finalised version frozen from further modifications.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="deprecated">
+				<xsd:annotation>
+					<xsd:documentation>This is an old version: it should not be used for operational purposes any more.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="other">
+				<xsd:annotation>
+					<xsd:documentation>Like draft, proposed, and deprecated, this version should not be used for operational purposes (for other reasons, however). </xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="RoundingMethodEnumeration">
+		<xsd:annotation>
+			<xsd:documentation>Allowed values for ROUNDING METHOD.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="none"/>
+			<xsd:enumeration value="down"/>
+			<xsd:enumeration value="up"/>
+			<xsd:enumeration value="split"/>
+			<xsd:enumeration value="stepTable"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="StepLimitUnitEnumeration">
+		<xsd:annotation>
+			<xsd:documentation>Allowed values for STEP LIMIT UNIT Type.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="stops"/>
+			<xsd:enumeration value="stopsIncludingPassThroughStops"/>
+			<xsd:enumeration value="sections"/>
+			<xsd:enumeration value="zones"/>
+			<xsd:enumeration value="networks"/>
+			<xsd:enumeration value="operators"/>
+			<xsd:enumeration value="countries"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- ENUMERATIES (DOOR BISON GEDEFINIEERD)                                           -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -559,6 +654,7 @@
 		<xsd:restriction base="xsd:NMTOKEN">
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_BASELINE"/>
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_DELTA"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_PPT"/>
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_CODESPACES"/>
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_BISON_ENUMS"/>
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_DOVA_LISTS"/>
@@ -574,6 +670,7 @@
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_CALENDAR"/>
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_VEHICLE"/>
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_SITE"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_PPT_FARE"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="BisonTypeOfGeneralFrame">
@@ -587,6 +684,7 @@
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TechnicalEnumerations"/>
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_VEH_METADATA"/>
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_VEH_DATA"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_PPT_FRAGMENT"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->

@@ -376,4 +376,27 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 			<xsd:element name="FurtherDetails" type="MultilingualString" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:complexType>
+	<!-- Ondersteunende elementen, toegevoegd t.b.v. de TLS fare exports -->
+	<xsd:complexType name="alternativeTexts">
+		<xsd:sequence>
+			<xsd:element name="AlternativeText" type="AlternativeText" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AlternativeText">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="Text" type="TextType" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TextType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:normalizedString">
+				<xsd:attribute name="lang" type="xsd:normalizedString" use="required" form="unqualified"/>
+				<xsd:attribute name="textIdType" type="xsd:normalizedString" use="required" form="unqualified"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType >
 </xsd:schema>

@@ -33,7 +33,7 @@
             <xsd:restriction base="TypeOfFrameRefStructure">
                 <xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
                 <xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required"
-                               fixed="BISON:TypeOfFrame:NL_TT_FARE" form="unqualified"/>
+                               fixed="BISON:TypeOfFrame:NL_PPT_FARE" form="unqualified"/>
             </xsd:restriction>
         </xsd:complexContent>
     </xsd:complexType>
