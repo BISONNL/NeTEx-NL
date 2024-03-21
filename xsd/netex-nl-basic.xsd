@@ -255,12 +255,6 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 	<xsd:complexType name="SimpleObjectRefStructure">
 		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
-	<!--
-	<xsd:complexType name="SimpleObjectRefStructure-with-class">
-		<xsd:attribute name="nameOfRefClass" type="NameOfClass" use="required" form="unqualified"/>
-		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
-	</xsd:complexType>
--->
 	<xsd:complexType name="VersionOfObjectRefStructure">
 		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
@@ -323,16 +317,6 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
-	<!--
-	<xsd:complexType name="extensionFlexParameters">
-		<xsd:sequence>
-			<xsd:element name="MaxDetourFactor" type="xsd:duration"/>
-			<xsd:element name="MaxTraveltimeOffset" type="xsd:duration"/>
-			<xsd:element name="AvgDetourFactor" type="xsd:duration"/>
-			<xsd:element name="AvgTraveltimeOffset" type="xsd:duration"/>
-		</xsd:sequence>
-	</xsd:complexType>
--->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- ELEMENTEN (ONDERSTEUNEND)                                                       -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->

@@ -386,10 +386,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 				<xsd:sequence>
 					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="ScheduledStopPointRef" type="VersionOfObjectRefStructure"/>
-					<!-- <xsd:choice> -->
 					<xsd:element name="FlexibleStopPlaceRef" type="VersionOfObjectRefStructure"/>
-					<!--	<xsd:element name="FlexibleQuayRef/FlexibleAreaRef/HailAndRideAreaRef" type="VersionOfObjectRefStructure"/> -->
-					<!-- </xsd:choice> -->
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -1240,15 +1237,6 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
-					<!--
-					<xsd:element name="otherFacilities" minOccurs="0">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="TypeOfEquipmentRef" type="VersionOfObjectRefStructure"/>
-							</xsd:sequence>
-						</xsd:complexType>
-					</xsd:element>
--->
 					<xsd:element name="MobilityFacilityList" minOccurs="0">
 						<xsd:simpleType>
 							<xsd:list itemType="MobilityFacilityEnumeration"/>
@@ -1286,18 +1274,6 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="ShortName" type="MultilingualString"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
-					<!--
-					<xsd:element name="PurposeOfGroupingRef" type="VersionOfObjectRefStructure">
-						<xsd:annotation>
-							<xsd:documentation>BISON enumeratie.</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
-						<xsd:annotation>
-							<xsd:documentation>Hier altijd type="InternalName" gebruiken.</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
--->
 					<xsd:element name="TransportMode" type="TransportmodeEnum"/>
 					<xsd:element name="PublicCode" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="areas" minOccurs="0">
@@ -1319,23 +1295,6 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="ShortName" type="MultilingualString"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
-					<!--
-					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
-						<xsd:annotation>
-							<xsd:documentation>Hier altijd type="InternalName" gebruiken.</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:element name="types" minOccurs="0">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="TypeOfZoneRef" type="VersionOfObjectRefStructure">
-									<xsd:annotation>
-										<xsd:documentation>BISON enumeratie.</xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-							</xsd:sequence>
-						</xsd:complexType>
--->
 					<xsd:element name="members" minOccurs="0">
 						<xsd:annotation>
 							<xsd:documentation>Alleen gebruiken als het gebied inliggende haltes heeft. De referenties verwijzen naar de RoutePoints die de haltes representeren.</xsd:documentation>
@@ -1353,15 +1312,6 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					</xsd:element>
 					<xsd:element name="BoardingUse" type="xsd:boolean"/>
 					<xsd:element name="AlightingUse" type="xsd:boolean"/>
-					<!--
-					<xsd:element name="destinations" minOccurs="0">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="DestinationDisplayRef" type="VersionOfObjectRefStructure"/>
-							</xsd:sequence>
-						</xsd:complexType>
-					</xsd:element>
--->
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -1373,35 +1323,8 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="ShortName" type="MultilingualString"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
-					<!--
-					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
-						<xsd:annotation>
-							<xsd:documentation>Hier altijd type="InternalName" gebruiken.</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:element name="types" minOccurs="0">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="TypeOfZoneRef" type="VersionOfObjectRefStructure">
-									<xsd:annotation>
-										<xsd:documentation>BISON enumeratie.</xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-							</xsd:sequence>
-						</xsd:complexType>
-					</xsd:element>
--->
 					<xsd:element name="BoardingUse" type="xsd:boolean"/>
 					<xsd:element name="AlightingUse" type="xsd:boolean"/>
-					<!--
-					<xsd:element name="destinations" minOccurs="0">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="DestinationDisplayRef" type="VersionOfObjectRefStructure"/>
-							</xsd:sequence>
-						</xsd:complexType>
-					</xsd:element>
--->
 					<xsd:element name="StartPointRef" type="VersionOfObjectRefStructure">
 						<xsd:annotation>
 							<xsd:documentation>De referentie verwijst naar het RoutePoint aan het begin van de HailAndRide sectie.</xsd:documentation>
