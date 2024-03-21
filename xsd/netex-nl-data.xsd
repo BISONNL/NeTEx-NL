@@ -92,6 +92,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 				<xsd:sequence>
 					<xsd:element name="StartDate" type="xsd:dateTime"/>
 					<xsd:element name="EndDate" type="xsd:dateTime"/>
+					<xsd:element name="Status" type="VersionStatusEnumeration" minOccurs="0"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="VersionType" type="VersionTypeEnumeration"/>
 					<xsd:element name="DerivedFromVersionRef" type="VersionOfObjectRefStructure" minOccurs="0"/>

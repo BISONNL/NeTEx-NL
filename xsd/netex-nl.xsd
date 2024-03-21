@@ -620,6 +620,7 @@
 					</xsd:documentation>
 				</xsd:annotation>
 				<xsd:sequence>
+					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-composite"/>
 					<xsd:element name="codespaces" type="codespaces" minOccurs="0">
@@ -635,7 +636,7 @@
 							<xsd:documentation>
 								Een export van 'centrale' gegevens bevat alleen DefaultCodespaceRef.
 								Een export van 'voertuigen' bevat DefaultCodespaceRef, DefaultDataSourceRef en DefaultSystemOfUnits.
-								Een export van 'producten en tarieven' bevat minimaal DefaultCurrency.
+								Een export van 'producten en tarieven' bevat minimaal DefaultCodespaceRef, DefaultDataSourceRef en DefaultCurrency.
 								In een 'dienstregeling' levering zijn alle defaults verplicht.
 							</xsd:documentation>
 						</xsd:annotation>
