@@ -107,6 +107,14 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="ShortName" type="MultilingualString"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 				</xsd:sequence>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified">
+					<xsd:annotation>
+						<xsd:documentation>
+							Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'.
+							De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -121,6 +129,14 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="GroupOfLinesType" type="GroupOfLinesTypeEnumeration"/>
 					<xsd:element name="AuthorityRef" type="VersionOfObjectRefStructure"/>
 				</xsd:sequence>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified">
+					<xsd:annotation>
+						<xsd:documentation>
+							Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'.
+							De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -133,7 +149,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 				</xsd:sequence>
 			</xsd:extension>
-		</xsd:complexContent>
+		</xsd:complexContent>	
 	</xsd:complexType>
 	<xsd:complexType name="operator">
 		<xsd:complexContent>
