@@ -100,7 +100,7 @@
                     </vehicleTypes>
                     <zones>
                         <!-- Partitie-definitie -->
-                        <TransportAdministrativeZone id="ARR:TransportAdministrativeZone:Holten-Rijssen-partitie" version="any">
+                        <TransportAdministrativeZone id="ARR:TransportAdministrativeZone:Holten-Rijssen-partitie" version="1">
                             <Name>Holten-Rijssen</Name>
                             <ShortName>HR</ShortName>
                             <Description>flexRRReis Holten-Rijssen</Description>
@@ -119,7 +119,7 @@
                             <TransportMode>bus</TransportMode>
                             <!-- PublicCode: optioneel -->
                             <areas>
-                                <FlexibleArea>
+                                <FlexibleArea id="ARR:FlexibleArea:Holten-Rijssen" version="1">
                                     <!-- Name: optioneel -->
                                     <ShortName>FR-HR</ShortName>
                                     <!-- Description: optioneel -->
@@ -406,7 +406,7 @@
                         <OperatorRef ref="ARR:Operator:ARR" version="1"/>
                     </OperatorView>
                     <vehicleJourneys>
-                        <TemplateServiceJourney id="ARR:ServiceJourney:Holten-Rijssen" version="1">
+                        <ServiceJourney id="ARR:ServiceJourney:Holten-Rijssen" version="1">
                             <validityConditions>
                                 <AvailabilityConditionRef ref="ARR:AvailabilityCondition:575266" version="1"/>
                             </validityConditions>
@@ -422,7 +422,7 @@
                             <Print>false</Print>
                             <Dynamic>onlyIfSignedOn</Dynamic><!-- Vraag: heeft deze waarde effect i.c.m. Monited = false? -->
                             <passingTimes>
-								<!-- Geef aan tussen welke tijden deze rit-template beschikbaar is. M.a.w. tussen welke tijden is deze flexdienst te boeken? -->
+								<!-- Geef aan tussen welke tijden deze flex-rit beschikbaar is. M.a.w. tussen welke tijden is deze flexdienst te boeken? -->
                                 <TimetabledPassingTime>
                                     <LatestArrivalTime>22:00:00</LatestArrivalTime>
                                     <EarliestDepartureTime>07:00:00</EarliestDepartureTime>
@@ -431,7 +431,7 @@
                             <FlexibleServiceProperties>
                                 <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
                             </FlexibleServiceProperties>
-                        </TemplateServiceJourney>
+                        </ServiceJourney>
                     </vehicleJourneys>
                 </TimetableFrame>
             </frames>
