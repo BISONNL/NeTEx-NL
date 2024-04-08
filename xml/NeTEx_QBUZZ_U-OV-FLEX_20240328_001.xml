@@ -1,0 +1,845 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" version="ntx:1.1">
+    <PublicationTimestamp>2024-03-28T11:38:00Z</PublicationTimestamp>
+    <ParticipantRef>QBUZZ</ParticipantRef>
+    <Description>Voorbeeld-export voor U-flex Houten/Schalkwijk</Description>
+    <!-- Dit voorbeeld beschrijft reizen met U-flex in de regio Houten/Schalkwijk -->
+    <!-- Voor dit type flexvervoer zijn 'rode' haltes en 'gele' haltes gedefinieerd -->
+    <!-- Reizen met U-flex is toegestaan tussen 'gele' haltes, van een 'rode' naar een 'gele' halte en vice versa -->
+    <!-- Het is NIET toegestaan gebuik te maken van U-flex voor reizen tussen twee 'rode' haltes, omdat daar ook regulier OV rijdt -->
+    <dataObjects>
+        <CompositeFrame id="QBUZZ:CompositeFrame:U-flex-Houten" modification="new" version="1">
+            <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_BASELINE"/>
+            <FrameDefaults>
+                <DefaultCodespaceRef ref="BISON:Codespace:QBUZZ"/>
+                <DefaultDataSourceRef ref="QBUZZ:DataSource:QBUZZ" version="1"/>
+                <DefaultResponsibilitySetRef ref="QBUZZ:ResponsibilitySet:U-flex-Houten-partitie" version="1"/>
+                <DefaultLocale>
+                    <TimeZone>Europe/Amsterdam</TimeZone>
+                    <DefaultLanguage>nl</DefaultLanguage>
+                </DefaultLocale>
+                <DefaultLocationSystem>EPSG:28992</DefaultLocationSystem>
+                <DefaultSystemOfUnits>SiMetres</DefaultSystemOfUnits>
+                <DefaultCurrency>EUR</DefaultCurrency>
+            </FrameDefaults>
+            <versions>
+                <Version id="QBUZZ:Version:1" modification="new" version="1">
+                    <StartDate>2024-01-19T00:00:00Z</StartDate>
+                    <EndDate>2024-12-31T00:00:00Z</EndDate>
+                    <VersionType>baseline</VersionType>
+                </Version>
+            </versions>
+            <frames>
+                <ResourceFrame id="QBUZZ:ResourceFrame:U-flex-Houten" version="1">
+                    <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_RESOURCE"/>
+                    <dataSources>
+                        <DataSource id="QBUZZ:DataSource:QBUZZ" version="1">
+                            <Name>QBuzz</Name>
+                            <ShortName>QBuzz</ShortName>
+                            <Description>QBuzz</Description>
+                        </DataSource>
+                    </dataSources>
+                    <responsibilitySets>
+                        <ResponsibilitySet id="QBUZZ:ResponsibilitySet:U-flex-Houten-partitie" version="1">
+                            <Name>U-flex-Houten-partitie</Name>
+                            <roles>
+                            <ResponsibilityRoleAssignment id="QBUZZ:ResponsibilityRoleAssignment:U-flex-Houten-partitie" version="1">
+                                <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="QBUZZ:TransportAdministrativeZone:U-flex-Houten-partitie" version="1"/>
+                            </ResponsibilityRoleAssignment>
+                            </roles>
+                        </ResponsibilitySet>
+                        <!-- Concessie- en financiers-verwijzingen -->
+                        <ResponsibilitySet id="QBUZZ:ResponsibilitySet:U-OV" version="204">
+                            <Name>Concessie U-OV</Name>
+                            <roles>
+                                <ResponsibilityRoleAssignment id="QBUZZ:responsibilityRoleAssignment:U-OV" version="204">
+                                    <StakeholderRoleType>EntityLegalOwnership</StakeholderRoleType>
+                                    <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" version="any" ref="DOVA:TransportAdministrativeZone:U-OV"/>
+                                </ResponsibilityRoleAssignment>
+                            </roles>
+                        </ResponsibilitySet>
+                        <ResponsibilitySet id="QBUZZ:ResponsibilitySet:PUT" version="204">
+                            <Name>Financier PUT</Name>
+                            <roles>
+                                <ResponsibilityRoleAssignment id="QBUZZ:responsibilityRoleAssignment:PUT" version="204">
+                                    <StakeholderRoleType>EntityLegalOwnership</StakeholderRoleType>
+                                    <TypeOfResponsibilityRoleRef version="any" ref="BISON:TypeOfResponsibilityRole:financing"/>
+                                    <ResponsibleOrganisationRef nameOfRefClass="Authority" version="any" ref="DOVA:Authority:PUT"/>
+                                    <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" version="any" ref="DOVA:TransportAdministrativeZone:U-OV"/>
+                                </ResponsibilityRoleAssignment>
+                            </roles>
+                        </ResponsibilitySet>
+                    </responsibilitySets>
+                    <typesOfValue>
+                        <Branding id="QBUZZ:Branding:U-OV" version="1">
+                            <Name>U-OV</Name>
+                            <Url>https://www.u-ov.info</Url>
+                        </Branding>
+                        <TypeOfProductCategory id="QBUZZ:TypeOfProductCategory:U-flex" version="1">
+                            <Name>U-flex</Name>
+                            <Url>https://www.u-ov.info/reizen/u-flex</Url>
+                        </TypeOfProductCategory>
+                    </typesOfValue>
+                    <organisations>
+                        <Operator id="QBUZZ:Operator:QBUZZ" version="1">
+                            <Name>QBuzz</Name>
+                            <ShortName>QBUZZ</ShortName>
+                            <CustomerServiceContactDetails>
+                            <Url>https://qbuzz.nl/</Url>
+                            </CustomerServiceContactDetails>
+                        </Operator>
+                    </organisations>
+                    <operationalContexts>
+                        <OperationalContext id="QBUZZ:OperationalContext:BUS" version="1">
+                            <VehicleMode>bus</VehicleMode>
+                        </OperationalContext>
+                    </operationalContexts>
+                    <vehicleTypes>
+                        <VehicleType id="QBUZZ:VehicleType:U-flex" version="1">
+                            <BrandingRef ref="QBUZZ:Branding:U-OV" version="1"/>
+                            <Name>U-flex</Name>
+                            <Description>U-flex</Description>
+                            <TypeOfFuel>diesel</TypeOfFuel>
+                            <TransportMode>bus</TransportMode>
+                            <capacities>
+                                <PassengerCapacity id="QBUZZ:PassengerCapacity:U-flex" version="1">
+                                    <FareClass>any</FareClass>
+                                    <TotalCapacity>5</TotalCapacity>
+                                    <SeatingCapacity>5</SeatingCapacity>
+                                    <StandingCapacity>0</StandingCapacity>
+                                    <SpecialPlaceCapacity>1</SpecialPlaceCapacity>
+                                    <PushchairCapacity>1</PushchairCapacity>
+                                    <WheelchairPlaceCapacity>1</WheelchairPlaceCapacity>
+                                </PassengerCapacity>
+                            </capacities>
+                            <LowFloor>false</LowFloor>
+                            <HasLiftOrRamp>false</HasLiftOrRamp>
+                            <Length>5</Length>
+                            <facilities>
+                                <ServiceFacilitySet id="QBUZZ:ServiceFacilitySet:U-flex" version="1">
+                                    <MobilityFacilityList>unknown</MobilityFacilityList>
+                                    <VehicleAccessFacilityList>narrowEntrance</VehicleAccessFacilityList>
+                                </ServiceFacilitySet>
+                            </facilities>
+                        </VehicleType>
+                    </vehicleTypes>
+                    <zones>
+                        <!-- Partitie-definitie -->
+                        <TransportAdministrativeZone id="QBUZZ:TransportAdministrativeZone:U-flex-Houten-partitie" version="any">
+                            <Name>U-flex Houten</Name>
+                            <ShortName>UFH</ShortName>
+                            <Description>U-flex Houten</Description>
+                        </TransportAdministrativeZone>
+                    </zones>
+                </ResourceFrame>
+                <!-- Neem een SiteFrame op om het flexgebied te beschrijven -->
+                <SiteFrame id="QBUZZ:SiteFrame:U-flex-Houten" version="1">
+                    <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_SITE"/>
+                    <flexibleStopPlaces>
+                        <!-- FlexibleStopPlace beschrijft het fysieke flexgebied. Dit kan met een polygoon en/of met een set van RoutePoints (die de fysieke locatie van een opstappunt definieren). Gebruik hier wat relevant is voor het type flexvervoer. -->
+                        <FlexibleStopPlace id="QBUZZ:FlexibleStopPlace:U-flex-Houten" version="1">
+                            <!-- Name: optioneel -->
+                            <ShortName>UFH</ShortName>
+                            <!-- Description: optioneel -->
+                            <TransportMode>bus</TransportMode>
+                            <!-- PublicCode: optioneel -->
+                            <areas>
+                                <FlexibleArea id="QBUZZ:FlexibleArea:U-flex-Houten" version="1">
+                                    <!-- Name: optioneel -->
+                                    <ShortName>UFH</ShortName>
+                                    <!-- Description: optioneel -->
+                                    <!-- members: optioneel; verwijzing naar bijbehorende RoutePoints, indien relevant -->
+                                    <gml:Polygon gml:id="ARR_Polygon_U-flex-Houten">
+                                        <gml:exterior>
+                                            <gml:LinearRing>
+                                                <gml:posList>144567 439655 148815 446036 138057 453216 135156 445227</gml:posList>
+                                            </gml:LinearRing>
+                                        </gml:exterior>
+                                    </gml:Polygon>
+                                    <BoardingUse>true</BoardingUse>
+                                    <AlightingUse>true</AlightingUse>
+                                </FlexibleArea>
+                            </areas>
+                        </FlexibleStopPlace>
+                    </flexibleStopPlaces>
+                </SiteFrame>
+                <ServiceFrame id="QBUZZ:ServiceFrame:U-flex-Houten" version="1">
+                    <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_SERVICE"/>
+                    <!-- routePoints: voor flexritten zijn routePoints alleen relevant als er volgens een vaste route gereden wordt. -->
+                    <!-- routeLinks: voor flexritten zijn routeLinks alleen relevant als er volgens een vaste route gereden wordt. -->
+                    <!-- routes: voor flexritten zijn routes alleen relevant als er volgens een vaste route gereden wordt. -->
+                    <lines>
+                        <!-- De definitie van de flexlijn. Ik ga er even vanuit dat U-flex-Houten onder concessie U-OV valt, en heb daarom deze gekoppeld. -->
+                        <FlexibleLine id="QBUZZ:FlexibleLine:U-flex-Houten" version="1" responsibilitySetRef="QBUZZ:ResponsibilitySet:U-OV">
+                            <Name>U-flex-Houten</Name>
+                            <TransportMode>bus</TransportMode>
+                            <TypeOfProductCategoryRef ref="QBUZZ:TypeOfProductCategory:U-flex" version="1"/>
+                            <TypeOfServiceRef ref="BISON:TypeOfService:Flex" version="any"/>
+                            <Monitored>false</Monitored>
+                            <AccessibilityAssessment id="" version="">
+                                <MobilityImpairedAccess>true</MobilityImpairedAccess>
+                            </AccessibilityAssessment>
+                            <FlexibleLineType>flexibleAreasOnly</FlexibleLineType>
+                            <BookingContact>
+								<Phone>088-QBUZZ</Phone>
+								<Url>https://www.u-ov.info/reizen/u-flex</Url>
+								<FurtherDetails>9292-app</FurtherDetails>
+                            </BookingContact>
+                            <BookingMethods>app callOffice online</BookingMethods>
+                            <BookingAccess>public</BookingAccess>
+                            <BookWhen>advanceAndDayOfTravel</BookWhen>
+                            <BuyWhen>onReservation</BuyWhen>
+                            <LatestBookingTime>22:00:00</LatestBookingTime>
+                            <MinimumBookingPeriod>PT60M</MinimumBookingPeriod>
+                            <BookingUrl>https://www.u-ov.info/reizen/u-flex</BookingUrl>
+                            <BookingNote>Boeken kan via de 9292-app tot 60 minuten voor vertrek. Telefonisch kan tot 30 minuten voor vertrek worden geboekt.</BookingNote>
+                        </FlexibleLine>
+                    </lines>
+                    <destinationDisplays>
+                        <!-- Een generieke destination die simpelweg het gebied beschrijft. Bij flexvervoer dat een vaste route rijdt kan hier een echte of fictieve destination worden benoemd. -->
+                        <DestinationDisplay id="QBUZZ:DestinationDisplay:U-flex-Houten" version="1">
+                            <Name>U-flex-Houten</Name>
+                            <SideText>U-flex Houten</SideText>
+                            <FrontText>U-flex Houten </FrontText>
+                            <PrivateCode type="DestinationCode">U-flex-Houten</PrivateCode>
+                            <variants>
+								<DestinationDisplayVariant id="QBUZZ:DestinationDisplayVariant:U-flex-Houten-16" version="1">
+									<Extensions>
+										<MaxLength>BISON:DisplayTextLength:16</MaxLength>
+									</Extensions>
+									<DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+									<Name>U-flex Houten</Name>
+								</DestinationDisplayVariant>
+								<DestinationDisplayVariant id="QBUZZ:DestinationDisplayVariant:U-flex-Houten-19" version="1">
+									<Extensions>
+										<MaxLength>BISON:DisplayTextLength:19</MaxLength>
+									</Extensions>
+									<DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+									<Name>U-flex Houten</Name>
+								</DestinationDisplayVariant>
+								<DestinationDisplayVariant id="QBUZZ:DestinationDisplayVariant:U-flex-Houten-21" version="1">
+									<Extensions>
+										<MaxLength>BISON:DisplayTextLength:21</MaxLength>
+									</Extensions>
+									<DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+									<Name>U-flex Houten</Name>
+								</DestinationDisplayVariant>
+								<DestinationDisplayVariant id="QBUZZ:DestinationDisplayVariant:U-flex-Houten-24" version="1">
+									<Extensions>
+										<MaxLength>BISON:DisplayTextLength:24</MaxLength>
+									</Extensions>
+									<DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+									<Name>U-flex Houten</Name>
+								</DestinationDisplayVariant>
+							</variants>
+						</DestinationDisplay>
+                    </destinationDisplays>
+                    <scheduledStopPoints>
+                        <!-- Hieronder volgen eerst alle "RODE" haltes. -->
+                        <!-- Dit zijn de haltes waartussen NIET gereisd worden met U-flex Houten/Schalkwijk. -->
+                        <!-- Wel mag hier in- of uitgestapt worden, als van of naar een "GELE" halte wordt gereisd. -->
+
+                        <!-- Haltes Station Houten (alle perrons) -->
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51285001" version="1">
+                            <Name>Station Houten (Perron A)</Name>
+                            <Location>
+                                <gml:pos>140098 449410</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51285001</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51285010" version="1">
+                            <Name>Station Houten (Perron B)</Name>
+                            <Location>
+                                <gml:pos>140102 449401</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51285010</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51285011" version="1">
+                            <Name>Station Houten (Perron C)</Name>
+                            <Location>
+                                <gml:pos>140106 449392</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51285011</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51285020" version="1">
+                            <Name>Station Houten (Perron D)</Name>
+                            <Location>
+                                <gml:pos>140110 449383</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51285020</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <!-- Haltes De Molen (beide kanten van de weg) -->
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51280430" version="1">
+                            <Name>De Molen</Name>
+                            <Location>
+                                <gml:pos>140309 449052</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51280430</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51280440" version="1">
+                            <Name>De Molen</Name>
+                            <Location>
+                                <gml:pos>140369 449041</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51280440</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <!-- Haltes Molenzoom (beide kanten van de weg) -->
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51280580" version="1">
+                            <Name>Molenzoom</Name>
+                            <Location>
+                                <gml:pos>140110 449383</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51280580</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51280590" version="1">
+                            <Name>Molenzoom</Name>
+                            <Location>
+                                <gml:pos>140110 449383</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51280590</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <!-- Haltes Castellum (alle haltes) -->
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51280120" version="1">
+                            <Name>Station Castellum</Name>
+                            <Location>
+                                <gml:pos>140850 447671</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51280120</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51280150" version="1">
+                            <Name>Station Castellum</Name>
+                            <Location>
+                                <gml:pos>140843 447647</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51280150</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <!-- Haltes De Erven / De Schaft (beide kanten van de weg) -->
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51280810" version="1">
+                            <Name>De Erven / De Schaft</Name>
+                            <Location>
+                                <gml:pos>140110 449383</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51280810</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51280800" version="1">
+                            <Name>De Erven / De Schaft</Name>
+                            <Location>
+                                <gml:pos>140110 449383</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51280800</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        
+                        <!-- Hieronder alle "GELE" haltes -->
+                        <!-- Dit zijn alle haltes waartussen WEL gereisd worden met U-flex, eventueel van/naar een "RODE" halte. -->
+                        <!-- Niet alle gele U-flex haltes in Houten/Schalkwijk zijn opgenomen in dit voorbeeld. Dit is slechts een selectie. -->
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51380190" version="1">
+                            <Name>Schalkwijk, De Heul</Name>
+                            <Location>
+                                <gml:pos>143978 443595</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51380190</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51380240" version="1">
+                            <Name>Schalkwijk, De Heul</Name>
+                            <Location>
+                                <gml:pos>143974 443587</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51380240</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51380150" version="1">
+                            <Name>Schalkwijk, Van Gaalen</Name>
+                            <Location>
+                                <gml:pos>142965 444199</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51380150</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51380180" version="1">
+                            <Name>Schalkwijk, Van Gaalen</Name>
+                            <Location>
+                                <gml:pos>142962 444190</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51380180</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51380160" version="1">
+                            <Name>Schalkwijk, Tessel</Name>
+                            <Location>
+                                <gml:pos>142517 444409</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51380160</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51380130" version="1">
+                            <Name>Schalkwijk, Rozenhoeve</Name>
+                            <Location>
+                                <gml:pos>142361 444497</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51380130</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51380110" version="1">
+                            <Name>Schalkwijk, De Brink</Name>
+                            <Location>
+                                <gml:pos>141660 444838</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51380110</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51380140" version="1">
+                            <Name>Schalkwijk, De Brink</Name>
+                            <Location>
+                                <gml:pos>141657 444834</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51380140</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51380090" version="1">
+                            <Name>Schalkwijk, Spoorlaan</Name>
+                            <Location>
+                                <gml:pos>141437 444956</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51380090</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51380120" version="1">
+                            <Name>Schalkwijk, Spoorlaan</Name>
+                            <Location>
+                                <gml:pos>141388 444971</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51380120</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51380100" version="1">
+                            <Name>Schalkwijk, Wickenburghselaan</Name>
+                            <Location>
+                                <gml:pos>141192 445070</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51380100</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51380070" version="1">
+                            <Name>Schalkwijk, Wickenburghselaan</Name>
+                            <Location>
+                                <gml:pos>141149 445096</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51380070</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51380080" version="1">
+                            <Name>Schalkwijk, Kloostergaarde</Name>
+                            <Location>
+                                <gml:pos>140900 445217</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51380080</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51380030" version="1">
+                            <Name>Schalkwijk, Kloostergaarde</Name>
+                            <Location>
+                                <gml:pos>140876 445231</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51380030</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51380060" version="1">
+                            <Name>Schalkwijk, Jhr. Ramweg</Name>
+                            <Location>
+                                <gml:pos>140644 445337</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51380060</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:51380050" version="1">
+                            <Name>Schalkwijk, Jhr. Ramweg</Name>
+                            <Location>
+                                <gml:pos>140654 445407</gml:pos>
+                            </Location>
+                            <PrivateCode type="UserStopCode">51380050</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+
+                        <!-- Tenslotte twee fictieve halte die het flexgebied voor U-flex definieren -->
+                        <!-- Eén combineert alle RODE haltes, de andere alle GELE haltes. -->
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:ROOD" version="1">
+                            <Name>RODE HALTES</Name>
+                            <Location>
+                                <gml:pos>141991 447445</gml:pos>
+                            </Location>
+                            <projections>
+                                <ZoneProjection id="QBUZZ:ZoneProjection:U-flex-Houten-ROOD" version="1">
+                                    <points>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51285001" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51285010" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51285011" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51285020" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280430" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280440" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280580" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280590" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280120" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280150" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280810" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280800" version="1"/>
+                                    </points>
+                                </ZoneProjection>
+                            </projections>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="QBUZZ:ScheduledStopPoint:GEEL" version="1">
+                            <Name>GELE HALTES</Name>
+                            <Location>
+                                <gml:pos>141991 447445</gml:pos>
+                            </Location>
+                            <projections>
+                                <ZoneProjection id="QBUZZ:ZoneProjection:U-flex-Houten-GEEL" version="1">
+                                    <points>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380190" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380240" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380150" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380180" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380160" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380130" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380110" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380140" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380090" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380120" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380100" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380070" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380080" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380030" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380060" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380050" version="1"/>
+                                    </points>
+                                </ZoneProjection>
+                            </projections>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                    </scheduledStopPoints>
+                    <stopAssignments>
+                        <!-- Koppeling van de ScheduledStopPoints die de (RODE en GELE) logische flexgebied representeren, aan de FlexibleStopPlace die het fysieke flexgebied beschrijft (middels Polygon) -->
+                        <!-- Beide ScheduledStopPoints worden gekoppeld aan dezelfde FlexibleStopPlace! -->
+                        <FlexibleStopAssignment id="QBUZZ:FlexibleStopAssignment:ROOD" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:ROOD" version="1"/>
+                            <FlexibleStopPlaceRef ref="QBUZZ:FlexibleStopPlace:U-flex-Houten" version="1"/>
+                        </FlexibleStopAssignment>
+                        <FlexibleStopAssignment id="QBUZZ:FlexibleStopAssignment:GEEL" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:GEEL" version="1"/>
+                            <FlexibleStopPlaceRef ref="QBUZZ:FlexibleStopPlace:U-flex-Houten" version="1"/>
+                        </FlexibleStopAssignment>
+
+                        <!-- En hieronder alle PassengerStopAssignments opnemen om de logische haltes in het flexgebied te koppelen aan de bijbehorende Quays uit het CHB -->
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51285001" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51285001" version="1"/>
+                            <QuayRef ref="NL:Q:51285001" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51285010" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51285010" version="1"/>
+                            <QuayRef ref="NL:Q:51285010" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51285011" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51285011" version="1"/>
+                            <QuayRef ref="NL:Q:51285011" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51285020" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51285020" version="1"/>
+                            <QuayRef ref="NL:Q:51285020" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51280430" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280430" version="1"/>
+                            <QuayRef ref="NL:Q:51280430" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51280440" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280440" version="1"/>
+                            <QuayRef ref="NL:Q:51280440" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51280580" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280580" version="1"/>
+                            <QuayRef ref="NL:Q:51280580" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51280590" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280590" version="1"/>
+                            <QuayRef ref="NL:Q:51280590" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51280120" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280120" version="1"/>
+                            <QuayRef ref="NL:Q:51280120" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51280150" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280150" version="1"/>
+                            <QuayRef ref="NL:Q:51280150" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51280810" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280810" version="1"/>
+                            <QuayRef ref="NL:Q:51280810" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51280800" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280800" version="1"/>
+                            <QuayRef ref="NL:Q:51280800" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51380190" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380190" version="1"/>
+                            <QuayRef ref="NL:Q:51380190" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51380240" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380240" version="1"/>
+                            <QuayRef ref="NL:Q:51380240" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51380150" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380150" version="1"/>
+                            <QuayRef ref="NL:Q:51380150" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51380180" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380180" version="1"/>
+                            <QuayRef ref="NL:Q:51380180" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51380160" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380160" version="1"/>
+                            <QuayRef ref="NL:Q:51380160" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51380130" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380130" version="1"/>
+                            <QuayRef ref="NL:Q:51380130" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51380110" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380110" version="1"/>
+                            <QuayRef ref="NL:Q:51380110" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51380140" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380140" version="1"/>
+                            <QuayRef ref="NL:Q:51380140" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51380090" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380090" version="1"/>
+                            <QuayRef ref="NL:Q:51380090" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51380120" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380120" version="1"/>
+                            <QuayRef ref="NL:Q:51380120" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51380100" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380100" version="1"/>
+                            <QuayRef ref="NL:Q:51380100" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51380070" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380070" version="1"/>
+                            <QuayRef ref="NL:Q:51380070" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51380080" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380080" version="1"/>
+                            <QuayRef ref="NL:Q:51380080" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51380030" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380030" version="1"/>
+                            <QuayRef ref="NL:Q:51380030" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51380060" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380060" version="1"/>
+                            <QuayRef ref="NL:Q:51380060" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="QBUZZ:PassengerStopAssignment:51380050" version="1" order="1">
+                            <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380050" version="1"/>
+                            <QuayRef ref="NL:Q:51380050" version="any"/>
+                        </PassengerStopAssignment>
+                    </stopAssignments>
+                    <!-- timingLinks: voor U-flex-ritten zijn timingLinks niet relevant, want er wordt niet gereden volgens een vaste route. -->
+                    <journeyPatterns>
+						<!-- Patroon voor reizen van een rode halte naar een gele halte -->
+                        <ServiceJourneyPattern id="QBUZZ:ServiceJourneyPattern:ROOD-naar-GEEL" version="1">
+                            <DestinationDisplayRef ref="QBUZZ:DestinationDisplay:U-flex-Houten" version="1"/>
+                            <pointsInSequence>
+								<!-- Instappen bij een 'rode' halte... -->
+                                <StopPointInJourneyPattern id="QBUZZ:StopPointInJourneyPattern:ROOD-naar-GEEL-instappen" order="1">
+                                    <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:ROOD" version="1"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                    <FlexiblePointProperties>
+										<ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                                <!-- ...en uitstappen bij een 'gele' halte -->
+                                <StopPointInJourneyPattern id="QBUZZ:StopPointInJourneyPattern:ROOD-naar-GEEL-uitstappen" order="2">
+                                    <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:GEEL" version="1"/>
+									<ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                    <FlexiblePointProperties>
+										<ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <!-- Patroon voor reizen van een gele halte naar een rode halte -->
+                        <ServiceJourneyPattern id="QBUZZ:ServiceJourneyPattern:GEEL-naar-ROOD" version="1">
+                            <DestinationDisplayRef ref="QBUZZ:DestinationDisplay:U-flex-Houten" version="1"/>
+                            <pointsInSequence>
+                                <!-- Instappen bij een 'gele' halte... -->
+                                <StopPointInJourneyPattern id="QBUZZ:StopPointInJourneyPattern:GEEL-naar-ROOD-instappen" order="1">
+                                    <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:GEEL" version="1"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                    <FlexiblePointProperties>
+										<ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+								<!-- ...en uitstappen bij een 'rode' halte -->
+								<StopPointInJourneyPattern id="QBUZZ:StopPointInJourneyPattern:GEEL-naar-ROOD-uitstappen" order="2">
+                                    <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:ROOD" version="1"/>
+									<ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                    <FlexiblePointProperties>
+										<ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <!-- Patroon voor reizen tussen twee gele haltes -->
+                        <ServiceJourneyPattern id="QBUZZ:ServiceJourneyPattern:GEEL-naar-GEEL" version="1">
+                            <DestinationDisplayRef ref="QBUZZ:DestinationDisplay:U-flex-Houten" version="1"/>
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="QBUZZ:StopPointInJourneyPattern:GEEL-instappen" order="1">
+                                    <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:GEEL" version="1"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                    <FlexiblePointProperties>
+										<ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="QBUZZ:StopPointInJourneyPattern:GEEL-uitstappen" order="2">
+                                    <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:GEEL" version="1"/>
+									<ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                    <FlexiblePointProperties>
+										<ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>                        
+                    </journeyPatterns>
+                    <!-- timeDemandTypes: voor U-flex-ritten zijn timeDemandTypes niet relevant, want er wordt niet gereden volgens een vaste route. -->
+                </ServiceFrame>
+                <TimetableFrame id="QBUZZ:TimetableFrame:U-flex-Houten" version="1">
+                    <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_TIMETABLE"/>
+                    <contentValidityConditions>
+                        <AvailabilityCondition id="QBUZZ:AvailabilityCondition:575266" version="1">
+                            <FromDate>2024-01-19T00:00:00Z</FromDate>
+                            <ToDate>2024-12-31T00:00:00Z</ToDate>
+                            <ValidDayBits>100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011</ValidDayBits>
+                        </AvailabilityCondition>
+                    </contentValidityConditions>
+                    <OperatorView>
+                        <OperatorRef ref="QBUZZ:Operator:QBUZZ" version="1"/>
+                    </OperatorView>
+                    <vehicleJourneys>
+						<!-- ServiceJourney voor reizen van een rode halte naar een gele halte -->
+                        <ServiceJourney id="QBUZZ:ServiceJourney:ROOD-naar-GEEL" version="1">
+                            <validityConditions>
+                                <AvailabilityConditionRef ref="QBUZZ:AvailabilityCondition:575266" version="1"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef ref="QBUZZ:ServiceJourneyPattern:ROOD-naar-GEEL" version="1"/>
+                            <VehicleTypeRef ref="QBUZZ:VehicleType:U-flex" version="1"/>
+                            <FlexibleLineRef ref="QBUZZ:FlexibleLine:U-flex-Houten" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>never</Dynamic>
+                            <passingTimes>
+                                <TimetabledPassingTime>
+                                    <LatestArrivalTime>22:00:00</LatestArrivalTime>
+                                    <EarliestDepartureTime>07:00:00</EarliestDepartureTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                            <FlexibleServiceProperties>
+                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
+                            </FlexibleServiceProperties>
+                        </ServiceJourney>
+                        <!-- ServiceJourney voor reizen van een gele halte naar een rode halte -->
+                        <ServiceJourney id="QBUZZ:ServiceJourney:GEEL-naar-ROOD" version="1">
+                            <validityConditions>
+                                <AvailabilityConditionRef ref="QBUZZ:AvailabilityCondition:575266" version="1"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef ref="QBUZZ:ServiceJourneyPattern:GEEL-naar-ROOD" version="1"/>
+                            <VehicleTypeRef ref="QBUZZ:VehicleType:U-flex" version="1"/>
+                            <FlexibleLineRef ref="QBUZZ:FlexibleLine:U-flex-Houten" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>never</Dynamic>
+                            <passingTimes>
+                                <TimetabledPassingTime>
+                                    <LatestArrivalTime>22:00:00</LatestArrivalTime>
+                                    <EarliestDepartureTime>07:00:00</EarliestDepartureTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                            <FlexibleServiceProperties>
+                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
+                            </FlexibleServiceProperties>
+                        </ServiceJourney>
+                        <!-- ServiceJourney voor reizen tussen twee gele haltes -->
+                        <ServiceJourney id="QBUZZ:ServiceJourney:GEEL-naar-GEEL" version="1">
+                            <validityConditions>
+                                <AvailabilityConditionRef ref="QBUZZ:AvailabilityCondition:575266" version="1"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef ref="QBUZZ:ServiceJourneyPattern:GEEL-naar-GEEL" version="1"/>
+                            <VehicleTypeRef ref="QBUZZ:VehicleType:U-flex" version="1"/>
+                            <FlexibleLineRef ref="QBUZZ:FlexibleLine:U-flex-Houten" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>never</Dynamic>
+                            <passingTimes>
+                                <TimetabledPassingTime>
+                                    <LatestArrivalTime>22:00:00</LatestArrivalTime>
+                                    <EarliestDepartureTime>07:00:00</EarliestDepartureTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                            <FlexibleServiceProperties>
+                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
+                            </FlexibleServiceProperties>
+                        </ServiceJourney>
+                    </vehicleJourneys>
+                </TimetableFrame>
+            </frames>
+        </CompositeFrame>
+    </dataObjects>
+</PublicationDelivery>
