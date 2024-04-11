@@ -345,8 +345,9 @@
     </xsd:complexType>
     <xsd:complexType name="pricesFor">
         <xsd:sequence>
-            <xsd:element name="PreassignedFareProductRef" type="VersionOfObjectRefStructure"/>
-            <xsd:element name="ValidableElementRef" type="VersionOfObjectRefStructure"/>
+            <xsd:element name="PreassignedFareProductRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+            <xsd:element name="ValidableElementRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+            <xsd:element name="UserProfileRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="cells">

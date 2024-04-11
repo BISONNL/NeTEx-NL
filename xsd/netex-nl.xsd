@@ -215,6 +215,51 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
+	<xsd:complexType name="generalGroupOfEntities">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="PrivateCode" type="PrivateCodeStructure"/>
+					<xsd:element name="members">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="TypeOfFrameRef" type="VersionOfObjectRefStructure"/>
+								<xsd:element name="OperatorRef" type="VersionOfObjectRefStructure"/>
+								<xsd:element name="NetworkRef" type="VersionOfObjectRefStructure"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="entity_entity">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="versions">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="AccessRightInProduct" type="accessRightInProduct" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="accessRightInProduct">
+		<xsd:complexContent>
+			<xsd:extension base="OrderedVersionOfObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="ValidableElementRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="PreassignedFareProductRef" type="VersionOfObjectRefStructure"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- FRAMES                                                                          -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -290,21 +335,28 @@
 							<xsd:documentation>Bevat alleen DefaultResponsibilitySetRef voor de koppeling aan de (hoofd)financier</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:element name="routePoints">
+					<xsd:element name="additionalNetworks" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Network" type="network" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="routePoints" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="RoutePoint" type="routePoint" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="routeLinks">
+					<xsd:element name="routeLinks" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="RouteLink" type="routeLink" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="routes">
+					<xsd:element name="routes" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:choice maxOccurs="unbounded">
@@ -331,7 +383,7 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="destinationDisplays">
+					<xsd:element name="destinationDisplays" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="DestinationDisplay" type="destinationDisplay" maxOccurs="unbounded"/>
@@ -340,9 +392,10 @@
 					</xsd:element>
 					<xsd:element name="scheduledStopPoints">
 						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="ScheduledStopPoint" type="scheduledStopPoint" maxOccurs="unbounded"/>
-							</xsd:sequence>
+							<xsd:choice maxOccurs="unbounded">
+								<xsd:element name="ScheduledStopPoint" type="scheduledStopPoint"/>
+								<xsd:element name="FareScheduledStopPoint" type="fareScheduledStopPoint"/>
+							</xsd:choice>
 						</xsd:complexType>
 					</xsd:element>
 					<xsd:element name="stopAreas" minOccurs="0">
@@ -369,7 +422,7 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="timingLinks">
+					<xsd:element name="timingLinks" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="TimingLink" type="timingLink" maxOccurs="unbounded"/>
@@ -384,7 +437,7 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="timeDemandTypes">
+					<xsd:element name="timeDemandTypes" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="TimeDemandType" type="timeDemandType" maxOccurs="unbounded"/>
@@ -552,6 +605,20 @@
 					<xsd:element name="members">
 						<xsd:complexType>
 							<xsd:choice>
+								<xsd:sequence>
+									<xsd:element name="GeneralGroupOfEntities" type="generalGroupOfEntities">
+										<xsd:annotation>
+											<xsd:documentation>Variant voor GeneralFrames in een export van Fare-fragmenten</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+								</xsd:sequence>
+								<xsd:sequence>
+									<xsd:element name="Entity_Entity" type="entity_entity" maxOccurs="unbounded">
+										<xsd:annotation>
+											<xsd:documentation>Variant voor GeneralFrames in een export van Product Access Right Definitions</xsd:documentation>
+										</xsd:annotation>
+									</xsd:element>
+								</xsd:sequence>
 								<xsd:choice>
 									<xsd:annotation>
 										<xsd:documentation>Variant voor GeneralFrames in een export van 'centrale' gegevens.</xsd:documentation>

@@ -115,12 +115,18 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure-with-status">
 				<xsd:sequence>
+					<xsd:element name="alternativeTexts" type="alternativeTexts"/>
 					<xsd:element name="Name" type="MultilingualString"/>
 					<xsd:element name="ShortName" type="MultilingualString"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0"/>
 					<xsd:element name="TransportMode" type="TransportmodeEnum" minOccurs="0"/>
 					<xsd:element name="GroupOfLinesType" type="GroupOfLinesTypeEnumeration"/>
-					<xsd:element name="AuthorityRef" type="VersionOfObjectRefStructure"/>
+					<xsd:choice>
+						<xsd:element name="AuthorityRef" type="VersionOfObjectRefStructure"/>
+						<xsd:element name="OperatorRef" type="VersionOfObjectRefStructure"/>
+					</xsd:choice>
+					<xsd:element name="groupsOfLines" type="groupsOfLines"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -302,6 +308,22 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="Name" type="MultilingualString"/>
 					<xsd:element name="Location" type="LocationStructure"/>
 					<xsd:element name="projections" type="projections"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="fareScheduledStopPoint">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="alternativeTexts" type="alternativeTexts"/>
+					<xsd:element name="Name" type="MultilingualString"/>
+					<xsd:element name="Description" type="MultilingualString"/>
+					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Hier altijd type="EODCode" gebruiken. Verplicht behalve bij flexhaltes.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -672,6 +694,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 	</xsd:complexType>
 	<xsd:group name="lineGroup">
 		<xsd:sequence>
+			<xsd:element name="alternativeTexts" type="alternativeTexts"/>
 			<xsd:element name="BrandingRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 			<xsd:element name="Name" type="MultilingualString"/>
 			<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>
@@ -692,10 +715,10 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			<xsd:element name="ExternalLineRef" type="ExternalObjectRefStructure" minOccurs="0"/>
 			<xsd:element name="AuthorityRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 			<xsd:element name="TypeOfProductCategoryRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-			<xsd:element name="TypeOfServiceRef" type="VersionOfObjectRefStructure"/>
-			<xsd:element name="Monitored" type="xsd:boolean"/>
+			<xsd:element name="TypeOfServiceRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+			<xsd:element name="Monitored" type="xsd:boolean" minOccurs="0"/>
 			<xsd:element name="Presentation" type="PresentationStructure" minOccurs="0"/>
-			<xsd:element name="AccessibilityAssessment" type="accessibilityAssessment"/>
+			<xsd:element name="AccessibilityAssessment" type="accessibilityAssessment" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:group>
 	<xsd:complexType name="line">
@@ -733,12 +756,17 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			<xsd:element name="BookingNote" type="MultilingualString" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:group>
+	<xsd:complexType name="groupsOfLines">
+		<xsd:sequence>
+			<xsd:element name="GroupOfLines" type="groupOfLines" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
 	<xsd:complexType name="groupOfLines">
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
-					<xsd:element name="Name" type="MultilingualString"/>
-					<xsd:element name="ShortName" type="MultilingualString"/>
+					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="members">
 						<xsd:complexType>
@@ -748,7 +776,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 						</xsd:complexType>
 					</xsd:element>
 					<xsd:element name="TransportMode" type="TransportmodeEnum" minOccurs="0"/>
-					<xsd:element name="GroupOfLinesType" type="GroupOfLinesTypeEnumeration" fixed="scheduling"/>
+					<xsd:element name="GroupOfLinesType" type="GroupOfLinesTypeEnumeration" fixed="scheduling" minOccurs="0"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>

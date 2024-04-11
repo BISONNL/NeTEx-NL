@@ -181,7 +181,7 @@ De 'status' geeft aan of het element nog courant is.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
-		<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="status" type="StatusEnumeration" use="optional" default="active" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="OrderedVersionOfObjectStructure" abstract="true">
@@ -256,17 +256,17 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="VersionOfObjectRefStructure">
-		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+		<xsd:attributeGroup ref="versionOrVersionRef"/>
 		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="VersionOfObjectRefStructure-with-class">
 		<xsd:attribute name="nameOfRefClass" type="NameOfClass" use="required" form="unqualified"/>
-		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+		<xsd:attributeGroup ref="versionOrVersionRef"/>
 		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="VersionOfObjectRefStructure-with-optional-class">
 		<xsd:attribute name="nameOfRefClass" type="NameOfClass" use="optional" form="unqualified"/>
-		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+		<xsd:attributeGroup ref="versionOrVersionRef"/>
 		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="ExternalObjectRefStructure">
@@ -285,6 +285,18 @@ De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de vers
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
+	<xsd:attributeGroup name="versionOrVersionRef">
+		<xsd:attribute name="version" type="VersionIdType" form="unqualified">
+			<xsd:annotation>
+				<xsd:documentation>Voor gebruik van referenties naar elementen die binnen hetzelfde document gedefinieerd zijn. Mutual exclusive met het 'versionRef' attribuut</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="versionRef" type="VersionIdType" form="unqualified">
+			<xsd:annotation>
+				<xsd:documentation>Voor gebruik van referenties naar elementen extern gedefinieerd zijn. Mutual exclusive met het 'version' attribuut</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:attributeGroup>
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- UITBREIDINGEN VAN DE NETEX STANDAARD                                            -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
