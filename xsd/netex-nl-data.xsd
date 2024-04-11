@@ -115,7 +115,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure-with-status">
 				<xsd:sequence>
-					<xsd:element name="alternativeTexts" type="alternativeTexts"/>
+					<xsd:element name="alternativeTexts" type="alternativeTexts" minOccurs="0"/>
 					<xsd:element name="Name" type="MultilingualString"/>
 					<xsd:element name="ShortName" type="MultilingualString"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
@@ -316,7 +316,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
-					<xsd:element name="alternativeTexts" type="alternativeTexts"/>
+					<xsd:element name="alternativeTexts" type="alternativeTexts" minOccurs="0"/>
 					<xsd:element name="Name" type="MultilingualString"/>
 					<xsd:element name="Description" type="MultilingualString"/>
 					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
@@ -694,7 +694,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 	</xsd:complexType>
 	<xsd:group name="lineGroup">
 		<xsd:sequence>
-			<xsd:element name="alternativeTexts" type="alternativeTexts"/>
+			<xsd:element name="alternativeTexts" type="alternativeTexts" minOccurs="0"/>
 			<xsd:element name="BrandingRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 			<xsd:element name="Name" type="MultilingualString"/>
 			<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>
