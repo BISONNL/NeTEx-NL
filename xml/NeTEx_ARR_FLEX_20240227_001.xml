@@ -123,124 +123,8 @@
                                     <!-- Name: optioneel -->
                                     <ShortName>FR-HR</ShortName>
                                     <!-- Description: optioneel -->
-                                    <!-- members: optioneel; verwijzing naar bijbehorende RoutePoints, indien relevant -->
-                                    <gml:Polygon gml:id="ARR_Polygon_Holten-Rijssen">
-                                        <gml:exterior>
-                                            <gml:LinearRing>
-                                                <gml:posList>218870 473550 218870 486410 235810 486410 235810 473550</gml:posList>
-                                            </gml:LinearRing>
-                                        </gml:exterior>
-                                    </gml:Polygon>
-                                    <BoardingUse>true</BoardingUse>
-                                    <AlightingUse>true</AlightingUse>
-                                </FlexibleArea>
-                            </areas>
-                        </FlexibleStopPlace>
-                    </flexibleStopPlaces>
-                </SiteFrame>
-                <ServiceFrame id="ARR:ServiceFrame:Holten-Rijssen" version="1">
-                    <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_SERVICE"/>
-                    <!-- routePoints: voor flexritten zijn routePoints alleen relevant als er volgens een vaste route gereden wordt. -->
-                    <!-- routeLinks: voor flexritten zijn routeLinks alleen relevant als er volgens een vaste route gereden wordt. -->
-                    <!-- routes: voor flexritten zijn routes alleen relevant als er volgens een vaste route gereden wordt. -->
-                    <lines>
-                        <!-- De definitie van de flexlijn. Flex Holten-Rijssen valt onder concessie TW  -->
-                        <FlexibleLine id="ARR:FlexibleLine:Holten-Rijssen" version="1" responsibilitySetRef="ARR:ResponsibilitySet:TW">
-                            <Name>Holten-Rijssen</Name>
-                            <TransportMode>bus</TransportMode>
-                            <TypeOfServiceRef ref="BISON:TypeOfService:Flex" version="any"></TypeOfServiceRef>
-                            <Monitored>false</Monitored>
-                            <AccessibilityAssessment id="8p" version="1">
-                                <MobilityImpairedAccess>true</MobilityImpairedAccess>
-                                <limitations>
-                                    <AccessibilityLimitation>
-                                        <!-- toegankelijk voor rolstoel -->
-                                        <WheelchairAccess>true</WheelchairAccess>
-                                        <!-- niet zelfstandig toegankelijk voor rolstoel -->
-                                        <StepFreeAccess>false</StepFreeAccess>
-                                    </AccessibilityLimitation>
-                                </limitations>
-                            </AccessibilityAssessment>
-                            <FlexibleLineType>flexibleAreasOnly</FlexibleLineType>
-                            <!-- Boeking kenmerken die een reisplanner kan gebruiken
-                                 BookingContact, BookingMethods, BookingAccess, BookWhen, BuyWhen, LatestBookingTime, MinimumBookingPeriod, MaximumBookingPeriod, BookingUrl, BookingNote. -->
-                            <BookingContact>
-                                <Phone>+31 85 20 85 212</Phone>
-                            </BookingContact>
-                            <!-- mobileApp zit nog niet in enum van BookingMethods==> PR voor CEN NeTEx indienen  -->
-                            <BookingMethods>mobileApp</BookingMethods>
-                            <BookingAccess>public</BookingAccess>
-                            <BookWhen>advanceAndDayOfTravel</BookWhen>
-                            <BuyWhen>onCheckIn</BuyWhen>
-                            <MinimumBookingPeriod>PT0S</MinimumBookingPeriod>
-                            <MaximumBookingPeriod>PT360H</MaximumBookingPeriod>
-                            <BookingNote>Reservering verplicht: Telefonisch of via Arriva App.
-                                Telefonisch via de klantenservice 085 - 20 85 212 (kies 1 voor reisinformatie, daarna '7' voor flexRRReis).
-                                Via de Arriva App: download deze app, ga naar het menu, kies hier voor 'Vlinder en flexreizen', registreer je hier eenmalig en daarna kun je je reis eenvoudig plannen en boeken.
-                            </BookingNote>
-                        </FlexibleLine>
-                    </lines>
-                    <destinationDisplays>
-                        <!-- Een generieke destination die het gebied beschrijft. -->
-                        <DestinationDisplay id="ARR:DestinationDisplay:Holten-Rijssen" version="1">
-                            <Name>FlexRRReis Holten-Rijssen</Name>
-                            <SideText>FlexRRReis Holten-Rijssen</SideText>
-                            <FrontText>FlexRRReis Holten-Rijssen </FrontText>
-                            <PrivateCode type="DestinationCode">Holten-Rijssen</PrivateCode>
-                            <variants>
-                                <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:Holten-Rijssen-16" version="1">
-                                    <Extensions>
-                                        <MaxLength>BISON:DisplayTextLength:16</MaxLength>
-                                    </Extensions>
-                                    <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
-                                    <Name>Holten-Rijssen</Name>
-                                </DestinationDisplayVariant>
-                                <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:Holten-Rijssen-19" version="1">
-                                    <Extensions>
-                                        <MaxLength>BISON:DisplayTextLength:19</MaxLength>
-                                    </Extensions>
-                                    <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
-                                    <Name>Holten-Rijssen</Name>
-                                </DestinationDisplayVariant>
-                                <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:Holten-Rijssen-21" version="1">
-                                    <Extensions>
-                                        <MaxLength>BISON:DisplayTextLength:21</MaxLength>
-                                    </Extensions>
-                                    <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
-                                    <Name>Holten-Rijssen</Name>
-                                </DestinationDisplayVariant>
-                                <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:Holten-Rijssen-24" version="1">
-                                    <Extensions>
-                                        <MaxLength>BISON:DisplayTextLength:24</MaxLength>
-                                    </Extensions>
-                                    <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
-                                    <Name>Holten-Rijssen</Name>
-                                </DestinationDisplayVariant>
-                            </variants>
-                        </DestinationDisplay>
-                    </destinationDisplays>
-                    <scheduledStopPoints>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:Holten-Rijssen" version="1">
-                            <Name></Name>
-                            <Location>
-                                <!-- Ik heb hier gekozen voor het centrale punt van alle haltes die vallen onder de flex-zone die deze ScheduledStopPoint representeert.
-                                     Andere opties zijn om hier een vast routepunt op te nemen (bijvoorbeeld een station waar de bus gegarandeerd vertrekt, indien relevant).
-                                     Of we maken dit element optioneel en laten het weg als het een zone betreft (en geen fysiek punt).
-                                     Joost: mijn voorstel is om de ScheduledStopPoints op te nemen als members in de FlexbilleArea (als onderdeel FlexbleStopPlace en wel als QyuaRef, dan behoeven we geen coordinaten op te nemen
-                                -->
-                                <gml:pos>227342 479982</gml:pos>
-                            </Location>
-                            <!-- TODO: Eventueel kunnen we ervoor kiezen om hier een 'types' element op te nemen waarin we een (of meer) TypeOfPointRef(s) kunnen maken, zodat we expliciet kunnen maken dat het hier een zone betreft.
-                                       Maar feitelijk is dat ook al wel duidelijk uit de 'projections' hieronder -->
-                            <projections>
-                                <ZoneProjection id="ARR:ZoneProjection:Holten-Rijssen" version="1">
-                                    <points>
-                                        <!-- Hier alle referenties opnemen naar de ScheduledStopPoints die de logische haltes binnen het flexgebied representeren, en die relevant zijn voor de flexdienst.
-                                             Als er in hetzelfde gebied ook reguliere lijnen langs deze haltes rijden zullen deze waarschijnlijk toch al in de export zitten.
-                                             Zo niet, dan moeten ze expliciet worden opgenomen, zodat we vervolgens in PassengerStopAssignments de link naar CHB kunnen leggen.
-
-                                             Als het een hail & ride betreft, en er dus geen link naar CHB-haltes te maken is, kunnen de projects geheel achterwege gelaten worden.
-                                        -->
+                                    <!-- members: optioneel; verwijzing naar bijbehorende ScheduledStopPoints, indien relevant -->
+                                    <members>
                                         <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:41980010" version="1"/>
                                         <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:41980050" version="1"/>
                                         <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:43670100" version="1"/>
@@ -387,11 +271,115 @@
                                         <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:46920030" version="1"/>
                                         <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:46920050" version="1"/>
                                         <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:46950010" version="1"/>
-                                    </points>
-                                </ZoneProjection>
-                            </projections>
+                                    </members>
+                                    <gml:Polygon gml:id="ARR_Polygon_Holten-Rijssen">
+                                        <gml:exterior>
+                                            <gml:LinearRing>
+                                                <gml:posList>218870 473550 218870 486410 235810 486410 235810 473550</gml:posList>
+                                            </gml:LinearRing>
+                                        </gml:exterior>
+                                    </gml:Polygon>
+                                    <BoardingUse>true</BoardingUse>
+                                    <AlightingUse>true</AlightingUse>
+                                </FlexibleArea>
+                            </areas>
+                        </FlexibleStopPlace>
+                    </flexibleStopPlaces>
+                </SiteFrame>
+                <ServiceFrame id="ARR:ServiceFrame:Holten-Rijssen" version="1">
+                    <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_SERVICE"/>
+                    <!-- routePoints: voor flexritten zijn routePoints alleen relevant als er volgens een vaste route gereden wordt. -->
+                    <!-- routeLinks: voor flexritten zijn routeLinks alleen relevant als er volgens een vaste route gereden wordt. -->
+                    <!-- routes: voor flexritten zijn routes alleen relevant als er volgens een vaste route gereden wordt. -->
+                    <lines>
+                        <!-- De definitie van de flexlijn. Flex Holten-Rijssen valt onder concessie TW  -->
+                        <FlexibleLine id="ARR:FlexibleLine:Holten-Rijssen" version="1" responsibilitySetRef="ARR:ResponsibilitySet:TW">
+                            <Name>Holten-Rijssen</Name>
+                            <TransportMode>bus</TransportMode>
+                            <TypeOfServiceRef ref="BISON:TypeOfService:Flex" version="any"></TypeOfServiceRef>
+                            <Monitored>false</Monitored>
+                            <AccessibilityAssessment id="8p" version="1">
+                                <MobilityImpairedAccess>true</MobilityImpairedAccess>
+                                <limitations>
+                                    <AccessibilityLimitation>
+                                        <!-- toegankelijk voor rolstoel -->
+                                        <WheelchairAccess>true</WheelchairAccess>
+                                        <!-- niet zelfstandig toegankelijk voor rolstoel -->
+                                        <StepFreeAccess>false</StepFreeAccess>
+                                    </AccessibilityLimitation>
+                                </limitations>
+                            </AccessibilityAssessment>
+                            <FlexibleLineType>flexibleAreasOnly</FlexibleLineType>
+                            <!-- Boeking kenmerken die een reisplanner kan gebruiken
+                                 BookingContact, BookingMethods, BookingAccess, BookWhen, BuyWhen, LatestBookingTime, MinimumBookingPeriod, MaximumBookingPeriod, BookingUrl, BookingNote. -->
+                            <BookingContact>
+                                <Phone>+31 85 20 85 212</Phone>
+                            </BookingContact>
+                            <!-- mobileApp zit nog niet in enum van BookingMethods==> PR voor CEN NeTEx indienen  -->
+                            <BookingMethods>mobileApp</BookingMethods>
+                            <BookingAccess>public</BookingAccess>
+                            <BookWhen>advanceAndDayOfTravel</BookWhen>
+                            <BuyWhen>onCheckIn</BuyWhen>
+                            <MinimumBookingPeriod>PT0S</MinimumBookingPeriod>
+                            <MaximumBookingPeriod>PT360H</MaximumBookingPeriod>
+                            <BookingNote>Reservering verplicht: Telefonisch of via Arriva App.
+                                Telefonisch via de klantenservice 085 - 20 85 212 (kies 1 voor reisinformatie, daarna '7' voor flexRRReis).
+                                Via de Arriva App: download deze app, ga naar het menu, kies hier voor 'Vlinder en flexreizen', registreer je hier eenmalig en daarna kun je je reis eenvoudig plannen en boeken.
+                            </BookingNote>
+                        </FlexibleLine>
+                    </lines>
+                    <destinationDisplays>
+                        <!-- Een generieke destination die het gebied beschrijft. -->
+                        <DestinationDisplay id="ARR:DestinationDisplay:Holten-Rijssen" version="1">
+                            <Name>FlexRRReis Holten-Rijssen</Name>
+                            <SideText>FlexRRReis Holten-Rijssen</SideText>
+                            <FrontText>FlexRRReis Holten-Rijssen </FrontText>
+                            <PrivateCode type="DestinationCode">Holten-Rijssen</PrivateCode>
+                            <variants>
+                                <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:Holten-Rijssen-16" version="1">
+                                    <Extensions>
+                                        <MaxLength>BISON:DisplayTextLength:16</MaxLength>
+                                    </Extensions>
+                                    <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+                                    <Name>Holten-Rijssen</Name>
+                                </DestinationDisplayVariant>
+                                <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:Holten-Rijssen-19" version="1">
+                                    <Extensions>
+                                        <MaxLength>BISON:DisplayTextLength:19</MaxLength>
+                                    </Extensions>
+                                    <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+                                    <Name>Holten-Rijssen</Name>
+                                </DestinationDisplayVariant>
+                                <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:Holten-Rijssen-21" version="1">
+                                    <Extensions>
+                                        <MaxLength>BISON:DisplayTextLength:21</MaxLength>
+                                    </Extensions>
+                                    <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+                                    <Name>Holten-Rijssen</Name>
+                                </DestinationDisplayVariant>
+                                <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:Holten-Rijssen-24" version="1">
+                                    <Extensions>
+                                        <MaxLength>BISON:DisplayTextLength:24</MaxLength>
+                                    </Extensions>
+                                    <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+                                    <Name>Holten-Rijssen</Name>
+                                </DestinationDisplayVariant>
+                            </variants>
+                        </DestinationDisplay>
+                    </destinationDisplays>
+                    <scheduledStopPoints>
+                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:Holten-Rijssen" version="1">
+                            <Name></Name>
+                            <Location>
+                                <!-- Hier is gekozen voor het centrale punt van alle haltes die vallen onder de flex-zone die deze ScheduledStopPoint representeert.
+                                     Andere opties zijn om hier een vast routepunt op te nemen (bijvoorbeeld een station waar de bus gegarandeerd vertrekt, indien relevant).
+                                     Of we maken dit element optioneel en laten het weg als het een zone betreft (en geen fysiek punt).
+                                -->
+                                <gml:pos>227342 479982</gml:pos>
+                            </Location>
+                            <!-- PointProjections kunnen worden opgenomen, indien er relevante RoutePoints zijn, analoog aan hoe dat voor reguliere ScheduledStopPoints gebeurt. -->
                         </ScheduledStopPoint>
-                        <!-- TODO: Hier nog alle ScheduledStopPoints opnemen waaraan gerefereerd wordt vanuit de voorgaande ZoneProjection van de vorige ScheduledStopPoint -->
+                        <!-- TODO: Hier nog alle ScheduledStopPoints opnemen waaraan gerefereerd wordt vanuit de FlexibleArea -->
                     </scheduledStopPoints>
                     <stopAssignments>
                         <!-- Koppeling van de ScheduledStopPoint die het logische flexgebied representeert aan de FlexibleStopPlace die het fysieke flexgebied beschrijft (middels Polygon) -->

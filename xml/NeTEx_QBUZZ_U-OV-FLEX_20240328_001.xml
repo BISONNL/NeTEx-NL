@@ -137,19 +137,75 @@
                     <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_SITE"/>
                     <flexibleStopPlaces>
                         <!-- FlexibleStopPlace beschrijft het fysieke flexgebied. Dit kan met een polygoon en/of met een set van RoutePoints (die de fysieke locatie van een opstappunt definieren). Gebruik hier wat relevant is voor het type flexvervoer. -->
-                        <FlexibleStopPlace id="QBUZZ:FlexibleStopPlace:U-flex-Houten" version="1">
+                        <FlexibleStopPlace id="QBUZZ:FlexibleStopPlace:ROOD" version="1">
                             <!-- Name: optioneel -->
                             <ShortName>UFH</ShortName>
                             <!-- Description: optioneel -->
                             <TransportMode>bus</TransportMode>
                             <!-- PublicCode: optioneel -->
                             <areas>
-                                <FlexibleArea id="QBUZZ:FlexibleArea:U-flex-Houten" version="1">
+                                <FlexibleArea id="QBUZZ:FlexibleArea:ROOD" version="1">
                                     <!-- Name: optioneel -->
                                     <ShortName>UFH</ShortName>
                                     <!-- Description: optioneel -->
-                                    <!-- members: optioneel; verwijzing naar bijbehorende RoutePoints, indien relevant -->
-                                    <gml:Polygon gml:id="ARR_Polygon_U-flex-Houten">
+                                    <!-- members: optioneel; verwijzing naar bijbehorende ScheduledStopPoints, indien relevant -->
+                                    <members>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51285001" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51285010" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51285011" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51285020" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280430" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280440" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280580" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280590" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280120" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280150" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280810" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280800" version="1"/>
+									</members>
+                                    <gml:Polygon gml:id="ARR_Polygon_ROOD">
+                                        <gml:exterior>
+                                            <gml:LinearRing>
+                                                <gml:posList>144567 439655 148815 446036 138057 453216 135156 445227</gml:posList>
+                                            </gml:LinearRing>
+                                        </gml:exterior>
+                                    </gml:Polygon>
+                                    <BoardingUse>true</BoardingUse>
+                                    <AlightingUse>true</AlightingUse>
+                                </FlexibleArea>
+                            </areas>
+                        </FlexibleStopPlace>
+                        <FlexibleStopPlace id="QBUZZ:FlexibleStopPlace:GEEL" version="1">
+                            <!-- Name: optioneel -->
+                            <ShortName>UFH</ShortName>
+                            <!-- Description: optioneel -->
+                            <TransportMode>bus</TransportMode>
+                            <!-- PublicCode: optioneel -->
+                            <areas>
+                                <FlexibleArea id="QBUZZ:FlexibleArea:GEEL" version="1">
+                                    <!-- Name: optioneel -->
+                                    <ShortName>UFH</ShortName>
+                                    <!-- Description: optioneel -->
+                                    <!-- members: optioneel; verwijzing naar bijbehorende ScheduledStopPoints, indien relevant -->
+                                    <members>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380190" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380240" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380150" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380180" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380160" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380130" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380110" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380140" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380090" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380120" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380100" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380070" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380080" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380030" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380060" version="1"/>
+                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380050" version="1"/>
+									</members>
+                                    <gml:Polygon gml:id="ARR_Polygon_GEEL">
                                         <gml:exterior>
                                             <gml:LinearRing>
                                                 <gml:posList>144567 439655 148815 446036 138057 453216 135156 445227</gml:posList>
@@ -509,24 +565,6 @@
                             <Location>
                                 <gml:pos>141991 447445</gml:pos>
                             </Location>
-                            <projections>
-                                <ZoneProjection id="QBUZZ:ZoneProjection:U-flex-Houten-ROOD" version="1">
-                                    <points>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51285001" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51285010" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51285011" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51285020" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280430" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280440" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280580" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280590" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280120" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280150" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280810" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51280800" version="1"/>
-                                    </points>
-                                </ZoneProjection>
-                            </projections>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
@@ -535,28 +573,6 @@
                             <Location>
                                 <gml:pos>141991 447445</gml:pos>
                             </Location>
-                            <projections>
-                                <ZoneProjection id="QBUZZ:ZoneProjection:U-flex-Houten-GEEL" version="1">
-                                    <points>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380190" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380240" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380150" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380180" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380160" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380130" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380110" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380140" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380090" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380120" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380100" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380070" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380080" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380030" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380060" version="1"/>
-                                        <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:51380050" version="1"/>
-                                    </points>
-                                </ZoneProjection>
-                            </projections>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
@@ -566,11 +582,11 @@
                         <!-- Beide ScheduledStopPoints worden gekoppeld aan dezelfde FlexibleStopPlace! -->
                         <FlexibleStopAssignment id="QBUZZ:FlexibleStopAssignment:ROOD" version="1" order="1">
                             <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:ROOD" version="1"/>
-                            <FlexibleStopPlaceRef ref="QBUZZ:FlexibleStopPlace:U-flex-Houten" version="1"/>
+                            <FlexibleStopPlaceRef ref="QBUZZ:FlexibleStopPlace:ROOD" version="1"/>
                         </FlexibleStopAssignment>
                         <FlexibleStopAssignment id="QBUZZ:FlexibleStopAssignment:GEEL" version="1" order="1">
                             <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:GEEL" version="1"/>
-                            <FlexibleStopPlaceRef ref="QBUZZ:FlexibleStopPlace:U-flex-Houten" version="1"/>
+                            <FlexibleStopPlaceRef ref="QBUZZ:FlexibleStopPlace:GEEL" version="1"/>
                         </FlexibleStopAssignment>
 
                         <!-- En hieronder alle PassengerStopAssignments opnemen om de logische haltes in het flexgebied te koppelen aan de bijbehorende Quays uit het CHB -->
