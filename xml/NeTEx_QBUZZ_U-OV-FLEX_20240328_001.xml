@@ -185,12 +185,13 @@
 								<Url>https://www.u-ov.info/reizen/u-flex</Url>
 								<FurtherDetails>9292-app</FurtherDetails>
                             </BookingContact>
-                            <BookingMethods>app callOffice online</BookingMethods>
+                            <BookingMethods>mobileApp callOffice online</BookingMethods>
                             <BookingAccess>public</BookingAccess>
                             <BookWhen>advanceAndDayOfTravel</BookWhen>
                             <BuyWhen>onReservation</BuyWhen>
                             <LatestBookingTime>22:00:00</LatestBookingTime>
                             <MinimumBookingPeriod>PT60M</MinimumBookingPeriod>
+                            <MaximumBookingPeriod>PT360H</MaximumBookingPeriod>
                             <BookingUrl>https://www.u-ov.info/reizen/u-flex</BookingUrl>
                             <BookingNote>Boeken kan via de 9292-app tot 60 minuten voor vertrek. Telefonisch kan tot 30 minuten voor vertrek worden geboekt.</BookingNote>
                         </FlexibleLine>
@@ -688,12 +689,12 @@
                     </stopAssignments>
                     <!-- timingLinks: voor U-flex-ritten zijn timingLinks niet relevant, want er wordt niet gereden volgens een vaste route. -->
                     <journeyPatterns>
-						<!-- Patroon voor reizen van een rode halte naar een gele halte -->
-                        <ServiceJourneyPattern id="QBUZZ:ServiceJourneyPattern:ROOD-naar-GEEL" version="1">
+						<!-- Patroon voor reizen naar een 'gele' halte -->
+                        <ServiceJourneyPattern id="QBUZZ:ServiceJourneyPattern:naar-GEEL" version="1">
                             <DestinationDisplayRef ref="QBUZZ:DestinationDisplay:U-flex-Houten" version="1"/>
                             <pointsInSequence>
 								<!-- Instappen bij een 'rode' halte... -->
-                                <StopPointInJourneyPattern id="QBUZZ:StopPointInJourneyPattern:ROOD-naar-GEEL-instappen" order="1">
+                                <StopPointInJourneyPattern id="QBUZZ:StopPointInJourneyPattern:ROOD-instappen" order="1">
                                     <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:ROOD" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
@@ -701,8 +702,17 @@
 										<ZoneContainingStops>true</ZoneContainingStops>
                                     </FlexiblePointProperties>
                                 </StopPointInJourneyPattern>
+                                <!-- ...of instappen bij een 'gele' halte... -->
+                                <StopPointInJourneyPattern id="QBUZZ:StopPointInJourneyPattern:GEEL-instappen" order="2">
+                                    <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:GEEL" version="1"/>
+									<ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                    <FlexiblePointProperties>
+										<ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
                                 <!-- ...en uitstappen bij een 'gele' halte -->
-                                <StopPointInJourneyPattern id="QBUZZ:StopPointInJourneyPattern:ROOD-naar-GEEL-uitstappen" order="2">
+                                <StopPointInJourneyPattern id="QBUZZ:StopPointInJourneyPattern:GEEL-uitstappen" order="3">
                                     <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:GEEL" version="1"/>
 									<ForAlighting>true</ForAlighting>
                                     <ForBoarding>false</ForBoarding>
@@ -712,8 +722,8 @@
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
                         </ServiceJourneyPattern>
-                        <!-- Patroon voor reizen van een gele halte naar een rode halte -->
-                        <ServiceJourneyPattern id="QBUZZ:ServiceJourneyPattern:GEEL-naar-ROOD" version="1">
+                        <!-- Patroon voor reizen naar een 'rode' halte -->
+                        <ServiceJourneyPattern id="QBUZZ:ServiceJourneyPattern:naar-ROOD" version="1">
                             <DestinationDisplayRef ref="QBUZZ:DestinationDisplay:U-flex-Houten" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij een 'gele' halte... -->
@@ -726,7 +736,7 @@
                                     </FlexiblePointProperties>
                                 </StopPointInJourneyPattern>
 								<!-- ...en uitstappen bij een 'rode' halte -->
-								<StopPointInJourneyPattern id="QBUZZ:StopPointInJourneyPattern:GEEL-naar-ROOD-uitstappen" order="2">
+								<StopPointInJourneyPattern id="QBUZZ:StopPointInJourneyPattern:ROOD-uitstappen" order="2">
                                     <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:ROOD" version="1"/>
 									<ForAlighting>true</ForAlighting>
                                     <ForBoarding>false</ForBoarding>
@@ -735,104 +745,55 @@
                                     </FlexiblePointProperties>
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
-                        </ServiceJourneyPattern>
-                        <!-- Patroon voor reizen tussen twee gele haltes -->
-                        <ServiceJourneyPattern id="QBUZZ:ServiceJourneyPattern:GEEL-naar-GEEL" version="1">
-                            <DestinationDisplayRef ref="QBUZZ:DestinationDisplay:U-flex-Houten" version="1"/>
-                            <pointsInSequence>
-                                <StopPointInJourneyPattern id="QBUZZ:StopPointInJourneyPattern:GEEL-instappen" order="1">
-                                    <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:GEEL" version="1"/>
-                                    <ForAlighting>false</ForAlighting>
-                                    <ForBoarding>true</ForBoarding>
-                                    <FlexiblePointProperties>
-										<ZoneContainingStops>true</ZoneContainingStops>
-                                    </FlexiblePointProperties>
-                                </StopPointInJourneyPattern>
-                                <StopPointInJourneyPattern id="QBUZZ:StopPointInJourneyPattern:GEEL-uitstappen" order="2">
-                                    <ScheduledStopPointRef ref="QBUZZ:ScheduledStopPoint:GEEL" version="1"/>
-									<ForAlighting>true</ForAlighting>
-                                    <ForBoarding>false</ForBoarding>
-                                    <FlexiblePointProperties>
-										<ZoneContainingStops>true</ZoneContainingStops>
-                                    </FlexiblePointProperties>
-                                </StopPointInJourneyPattern>
-                            </pointsInSequence>
-                        </ServiceJourneyPattern>                        
+                        </ServiceJourneyPattern>                   
                     </journeyPatterns>
                     <!-- timeDemandTypes: voor U-flex-ritten zijn timeDemandTypes niet relevant, want er wordt niet gereden volgens een vaste route. -->
                 </ServiceFrame>
                 <TimetableFrame id="QBUZZ:TimetableFrame:U-flex-Houten" version="1">
                     <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_TIMETABLE"/>
                     <contentValidityConditions>
-                        <AvailabilityCondition id="QBUZZ:AvailabilityCondition:575266" version="1">
+                        <AvailabilityCondition id="QBUZZ:AvailabilityCondition:U-flex" version="1">
                             <FromDate>2024-01-19T00:00:00Z</FromDate>
                             <ToDate>2024-12-31T00:00:00Z</ToDate>
                             <ValidDayBits>100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011</ValidDayBits>
+                            <timebands>
+								<Timeband id="QBUZZ:Timeband:U-flex" version="1">
+									<StartTime>07:00:00</StartTime>
+									<EndTime>22:00:00</EndTime>
+								</Timeband>
+                            </timebands>
                         </AvailabilityCondition>
                     </contentValidityConditions>
                     <OperatorView>
                         <OperatorRef ref="QBUZZ:Operator:QBUZZ" version="1"/>
                     </OperatorView>
                     <vehicleJourneys>
-						<!-- ServiceJourney voor reizen van een rode halte naar een gele halte -->
-                        <ServiceJourney id="QBUZZ:ServiceJourney:ROOD-naar-GEEL" version="1">
+						<!-- ServiceJourney voor reizen naar een gele halte -->
+                        <ServiceJourney id="QBUZZ:ServiceJourney:naar-GEEL" version="1">
                             <validityConditions>
-                                <AvailabilityConditionRef ref="QBUZZ:AvailabilityCondition:575266" version="1"/>
+                                <AvailabilityConditionRef ref="QBUZZ:AvailabilityCondition:U-flex" version="1"/>
                             </validityConditions>
                             <Monitored>false</Monitored>
-                            <ServiceJourneyPatternRef ref="QBUZZ:ServiceJourneyPattern:ROOD-naar-GEEL" version="1"/>
+                            <ServiceJourneyPatternRef ref="QBUZZ:ServiceJourneyPattern:naar-GEEL" version="1"/>
                             <VehicleTypeRef ref="QBUZZ:VehicleType:U-flex" version="1"/>
                             <FlexibleLineRef ref="QBUZZ:FlexibleLine:U-flex-Houten" version="1"/>
                             <Print>false</Print>
                             <Dynamic>never</Dynamic>
-                            <passingTimes>
-                                <TimetabledPassingTime>
-                                    <LatestArrivalTime>22:00:00</LatestArrivalTime>
-                                    <EarliestDepartureTime>07:00:00</EarliestDepartureTime>
-                                </TimetabledPassingTime>
-                            </passingTimes>
                             <FlexibleServiceProperties>
                                 <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
                             </FlexibleServiceProperties>
                         </ServiceJourney>
-                        <!-- ServiceJourney voor reizen van een gele halte naar een rode halte -->
-                        <ServiceJourney id="QBUZZ:ServiceJourney:GEEL-naar-ROOD" version="1">
+                        <!-- ServiceJourney voor reizen naar een rode halte -->
+                        <ServiceJourney id="QBUZZ:ServiceJourney:naar-ROOD" version="1">
                             <validityConditions>
-                                <AvailabilityConditionRef ref="QBUZZ:AvailabilityCondition:575266" version="1"/>
+                                <AvailabilityConditionRef ref="QBUZZ:AvailabilityCondition:U-flex" version="1"/>
                             </validityConditions>
                             <Monitored>false</Monitored>
-                            <ServiceJourneyPatternRef ref="QBUZZ:ServiceJourneyPattern:GEEL-naar-ROOD" version="1"/>
+                            <ServiceJourneyPatternRef ref="QBUZZ:ServiceJourneyPattern:naar-ROOD" version="1"/>
                             <VehicleTypeRef ref="QBUZZ:VehicleType:U-flex" version="1"/>
                             <FlexibleLineRef ref="QBUZZ:FlexibleLine:U-flex-Houten" version="1"/>
                             <Print>false</Print>
                             <Dynamic>never</Dynamic>
-                            <passingTimes>
-                                <TimetabledPassingTime>
-                                    <LatestArrivalTime>22:00:00</LatestArrivalTime>
-                                    <EarliestDepartureTime>07:00:00</EarliestDepartureTime>
-                                </TimetabledPassingTime>
-                            </passingTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
-                        </ServiceJourney>
-                        <!-- ServiceJourney voor reizen tussen twee gele haltes -->
-                        <ServiceJourney id="QBUZZ:ServiceJourney:GEEL-naar-GEEL" version="1">
-                            <validityConditions>
-                                <AvailabilityConditionRef ref="QBUZZ:AvailabilityCondition:575266" version="1"/>
-                            </validityConditions>
-                            <Monitored>false</Monitored>
-                            <ServiceJourneyPatternRef ref="QBUZZ:ServiceJourneyPattern:GEEL-naar-GEEL" version="1"/>
-                            <VehicleTypeRef ref="QBUZZ:VehicleType:U-flex" version="1"/>
-                            <FlexibleLineRef ref="QBUZZ:FlexibleLine:U-flex-Houten" version="1"/>
-                            <Print>false</Print>
-                            <Dynamic>never</Dynamic>
-                            <passingTimes>
-                                <TimetabledPassingTime>
-                                    <LatestArrivalTime>22:00:00</LatestArrivalTime>
-                                    <EarliestDepartureTime>07:00:00</EarliestDepartureTime>
-                                </TimetabledPassingTime>
-                            </passingTimes>
                             <FlexibleServiceProperties>
                                 <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
                             </FlexibleServiceProperties>

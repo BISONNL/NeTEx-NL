@@ -39,18 +39,18 @@
                         <ResponsibilitySet id="ARR:ResponsibilitySet:Holten-Rijssen-partitie" version="1">
                             <Name>Holten-Rijssen-partitie</Name>
                             <roles>
-                            <ResponsibilityRoleAssignment id="ARR:ResponsibilityRoleAssignment:Holten-Rijssen-partitie" version="1">
-                                <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="ARR:TransportAdministrativeZone:Holten-Rijssen-partitie" version="1"/>
-                            </ResponsibilityRoleAssignment>
+                                <ResponsibilityRoleAssignment id="ARR:ResponsibilityRoleAssignment:Holten-Rijssen-partitie" version="1">
+                                    <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="ARR:TransportAdministrativeZone:Holten-Rijssen-partitie" version="any"/>
+                                </ResponsibilityRoleAssignment>
                             </roles>
                         </ResponsibilitySet>
-                        <!-- Concessie-verwijzing. Ik ga er even vanuit dat we het hier over concessie Twente hebben. -->
+                        <!-- Concessie-verwijzing. concessie Twente -->
                         <ResponsibilitySet id="ARR:ResponsibilitySet:TW" version="1">
                             <Name>Twente</Name>
                             <roles>
-                            <ResponsibilityRoleAssignment id="ARR:ResponsibilityRoleAssignment:TW" version="1">
-                                <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="DOVA:TransportAdministrativeZone:TW" version="1"/>
-                            </ResponsibilityRoleAssignment>
+                                <ResponsibilityRoleAssignment id="ARR:ResponsibilityRoleAssignment:TW" version="1">
+                                    <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="DOVA:TransportAdministrativeZone:TW" version="1"/>
+                                </ResponsibilityRoleAssignment>
                             </roles>
                         </ResponsibilitySet>
                     </responsibilitySets>
@@ -60,7 +60,7 @@
                             <Name>Arriva</Name>
                             <ShortName>ARR</ShortName>
                             <CustomerServiceContactDetails>
-                            <Url>https://arriva.nl/</Url>
+                                <Url>https://arriva.nl/</Url>
                             </CustomerServiceContactDetails>
                         </Operator>
                     </organisations>
@@ -70,48 +70,48 @@
                         </OperationalContext>
                     </operationalContexts>
                     <vehicleTypes>
-                        <VehicleType id="ARR:VehicleType:Elec" version="1">
-                            <Name>Electrische bus</Name>
-                            <ShortName>Elec</ShortName>
-                            <Description>Electrische bus</Description>
-                            <TypeOfFuel>electricity</TypeOfFuel>
+                        <VehicleType id="ARR:VehicleType:FlexRRReis" version="1">
+                            <Name>FlexRRREis</Name>
+                            <ShortName>FlxR</ShortName>
+                            <Description>FlexRRREis</Description>
+                            <TypeOfFuel>diesel</TypeOfFuel>
                             <TransportMode>bus</TransportMode>
                             <capacities>
-                                <PassengerCapacity id="ARR:PassengerCapacity:Elec" version="1">
+                                <PassengerCapacity id="ARR:PassengerCapacity:FlexRRReis" version="1">
                                     <FareClass>any</FareClass>
-                                    <TotalCapacity>80</TotalCapacity>
-                                    <SeatingCapacity>30</SeatingCapacity>
-                                    <StandingCapacity>50</StandingCapacity>
+                                    <TotalCapacity>8</TotalCapacity>
+                                    <SeatingCapacity>8</SeatingCapacity>
+                                    <StandingCapacity>0</StandingCapacity>
                                     <SpecialPlaceCapacity>0</SpecialPlaceCapacity>
                                     <PushchairCapacity>0</PushchairCapacity>
-                                    <WheelchairPlaceCapacity>0</WheelchairPlaceCapacity>
+                                    <WheelchairPlaceCapacity>1</WheelchairPlaceCapacity>
                                 </PassengerCapacity>
                             </capacities>
                             <LowFloor>true</LowFloor>
-                            <HasLiftOrRamp>false</HasLiftOrRamp>
-                            <Length>0</Length>
+                            <HasLiftOrRamp>true</HasLiftOrRamp>
+                            <Length>0.00</Length>
                             <facilities>
-                            <ServiceFacilitySet id="ARR:ServiceFacilitySet:Elec" version="1">
-                                <MobilityFacilityList>unknown</MobilityFacilityList>
-                                <VehicleAccessFacilityList>unknown</VehicleAccessFacilityList>
-                            </ServiceFacilitySet>
+                                <ServiceFacilitySet id="ARR:ServiceFacilitySet:FlexRRReis" version="1">
+                                    <MobilityFacilityList>lowFloor suitableForWheelchairs</MobilityFacilityList>
+                                    <VehicleAccessFacilityList>ramp</VehicleAccessFacilityList>
+                                </ServiceFacilitySet>
                             </facilities>
                         </VehicleType>
                     </vehicleTypes>
                     <zones>
                         <!-- Partitie-definitie -->
-                        <TransportAdministrativeZone id="ARR:TransportAdministrativeZone:Holten-Rijssen-partitie" version="1">
+                        <TransportAdministrativeZone id="ARR:TransportAdministrativeZone:Holten-Rijssen-partitie" version="any">
                             <Name>Holten-Rijssen</Name>
                             <ShortName>HR</ShortName>
                             <Description>flexRRReis Holten-Rijssen</Description>
                         </TransportAdministrativeZone>
                     </zones>
                 </ResourceFrame>
-                <!-- Neem een SiteFrame op om het flexgebied te beschrijven -->
+                <!-- In het SiteFrame wordt het flexgebied beschreven -->
                 <SiteFrame id="ARR:SiteFrame:Holten-Rijssen" version="1">
                     <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_SITE"/>
                     <flexibleStopPlaces>
-                        <!-- FlexibleStopPlace beschrijft het fysieke flexgebied. Dit kan met een polygoon en/of met een set van RoutePoints (die de fysieke locatie van een opstappunt definieren). Gebruik hier wat relevant is voor het type flexvervoer. -->
+                        <!-- FlexibleStopPlace beschrijft het fysieke flexgebied. Dit kan met een polygoon en/of met een set van RoutePoints (RoutePoints definieren de fysieke locaties van pstappunten). Gebruik hier wat relevant is voor het type flexvervoer. -->
                         <FlexibleStopPlace id="ARR:FlexibleStopPlace:Holten-Rijssen" version="1">
                             <!-- Name: optioneel -->
                             <ShortName>FR-HR</ShortName>
@@ -144,58 +144,80 @@
                     <!-- routeLinks: voor flexritten zijn routeLinks alleen relevant als er volgens een vaste route gereden wordt. -->
                     <!-- routes: voor flexritten zijn routes alleen relevant als er volgens een vaste route gereden wordt. -->
                     <lines>
-                        <!-- De definitie van de flexlijn. Ik ga er even vanuit dat Holten-Rijssen onder concessie TW valt, en heb daarom deze gekoppeld. -->
+                        <!-- De definitie van de flexlijn. Flex Holten-Rijssen valt onder concessie TW  -->
                         <FlexibleLine id="ARR:FlexibleLine:Holten-Rijssen" version="1" responsibilitySetRef="ARR:ResponsibilitySet:TW">
                             <Name>Holten-Rijssen</Name>
                             <TransportMode>bus</TransportMode>
                             <TypeOfServiceRef ref="BISON:TypeOfService:Flex" version="any"></TypeOfServiceRef>
                             <Monitored>false</Monitored>
-                            <AccessibilityAssessment id="" version="">
+                            <AccessibilityAssessment id="8p" version="1">
                                 <MobilityImpairedAccess>true</MobilityImpairedAccess>
+                                <limitations>
+                                    <AccessibilityLimitation>
+                                        <!-- toegankelijk voor rolstoel -->
+                                        <WheelchairAccess>true</WheelchairAccess>
+                                        <!-- niet zelfstandig toegankelijk voor rolstoel -->
+                                        <StepFreeAccess>false</StepFreeAccess>
+                                    </AccessibilityLimitation>
+                                </limitations>
                             </AccessibilityAssessment>
                             <FlexibleLineType>flexibleAreasOnly</FlexibleLineType>
-                            <!-- Eventueel kunnen hier boeking-gerelateerde gegevens worden opgenomen, d.m.v. de optionele elementen 
-                                 BookingContact, BookingMethods, BookingAccess, BookWhen, BuyWhen, LatestBookingTime, MinimumBookingPeriod, BookingUrl, BookingNote. -->
+                            <!-- Boeking kenmerken die een reisplanner kan gebruiken
+                                 BookingContact, BookingMethods, BookingAccess, BookWhen, BuyWhen, LatestBookingTime, MinimumBookingPeriod, MaximumBookingPeriod, BookingUrl, BookingNote. -->
+                            <BookingContact>
+                                <Phone>+31 85 20 85 212</Phone>
+                            </BookingContact>
+                            <!-- mobileApp zit nog niet in enum van BookingMethods==> PR voor CEN NeTEx indienen  -->
+                            <BookingMethods>mobileApp</BookingMethods>
+                            <BookingAccess>public</BookingAccess>
+                            <BookWhen>advanceAndDayOfTravel</BookWhen>
+                            <BuyWhen>onCheckIn</BuyWhen>
+                            <MinimumBookingPeriod>PT0S</MinimumBookingPeriod>
+                            <MaximumBookingPeriod>PT360H</MaximumBookingPeriod>
+                            <BookingNote>Reservering verplicht: Telefonisch of via Arriva App.
+                                Telefonisch via de klantenservice 085 - 20 85 212 (kies 1 voor reisinformatie, daarna '7' voor flexRRReis).
+                                Via de Arriva App: download deze app, ga naar het menu, kies hier voor 'Vlinder en flexreizen', registreer je hier eenmalig en daarna kun je je reis eenvoudig plannen en boeken.
+                            </BookingNote>
                         </FlexibleLine>
                     </lines>
                     <destinationDisplays>
-                        <!-- Een generieke destination die simpelweg het gebied beschrijft. Bij flexvervoer dat een vaste route rijdt kan hier een echte of fictieve destination worden benoemd. -->
+                        <!-- Een generieke destination die het gebied beschrijft. -->
                         <DestinationDisplay id="ARR:DestinationDisplay:Holten-Rijssen" version="1">
-                            <Name>Holten-Rijssen</Name>
-                            <SideText>Holten-Rijssen</SideText>
-                            <FrontText>Holten-Rijssen </FrontText>
+                            <Name>FlexRRReis Holten-Rijssen</Name>
+                            <SideText>FlexRRReis Holten-Rijssen</SideText>
+                            <FrontText>FlexRRReis Holten-Rijssen </FrontText>
                             <PrivateCode type="DestinationCode">Holten-Rijssen</PrivateCode>
                             <variants>
-                            <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:Holten-Rijssen-16" version="1">
-                                <Extensions>
-                                    <MaxLength>BISON:DisplayTextLength:16</MaxLength>
-                                </Extensions>
-                                <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
-                                <Name>Holten-Rijssen</Name>
-                            </DestinationDisplayVariant>
-                            <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:Holten-Rijssen-19" version="1">
-                                <Extensions>
-                                    <MaxLength>BISON:DisplayTextLength:19</MaxLength>
-                                </Extensions>
-                                <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
-                                <Name>Holten-Rijssen</Name>
-                            </DestinationDisplayVariant>
-                            <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:Holten-Rijssen-21" version="1">
-                                <Extensions>
-                                    <MaxLength>BISON:DisplayTextLength:21</MaxLength>
-                                </Extensions>
-                                <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
-                                <Name>Holten-Rijssen</Name>
-                            </DestinationDisplayVariant>
-                            <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:Holten-Rijssen-24" version="1">
-                                <Extensions>
-                                    <MaxLength>BISON:DisplayTextLength:24</MaxLength>
-                                </Extensions>
-                                <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
-                                <Name>Holten-Rijssen</Name>
-                            </DestinationDisplayVariant>
-                        </variants>
-                    </DestinationDisplay>
+                                <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:Holten-Rijssen-16" version="1">
+                                    <Extensions>
+                                        <MaxLength>BISON:DisplayTextLength:16</MaxLength>
+                                    </Extensions>
+                                    <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+                                    <Name>Holten-Rijssen</Name>
+                                </DestinationDisplayVariant>
+                                <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:Holten-Rijssen-19" version="1">
+                                    <Extensions>
+                                        <MaxLength>BISON:DisplayTextLength:19</MaxLength>
+                                    </Extensions>
+                                    <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+                                    <Name>Holten-Rijssen</Name>
+                                </DestinationDisplayVariant>
+                                <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:Holten-Rijssen-21" version="1">
+                                    <Extensions>
+                                        <MaxLength>BISON:DisplayTextLength:21</MaxLength>
+                                    </Extensions>
+                                    <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+                                    <Name>Holten-Rijssen</Name>
+                                </DestinationDisplayVariant>
+                                <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:Holten-Rijssen-24" version="1">
+                                    <Extensions>
+                                        <MaxLength>BISON:DisplayTextLength:24</MaxLength>
+                                    </Extensions>
+                                    <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+                                    <Name>Holten-Rijssen</Name>
+                                </DestinationDisplayVariant>
+                            </variants>
+                        </DestinationDisplay>
                     </destinationDisplays>
                     <scheduledStopPoints>
                         <ScheduledStopPoint id="ARR:ScheduledStopPoint:Holten-Rijssen" version="1">
@@ -203,7 +225,9 @@
                             <Location>
                                 <!-- Ik heb hier gekozen voor het centrale punt van alle haltes die vallen onder de flex-zone die deze ScheduledStopPoint representeert.
                                      Andere opties zijn om hier een vast routepunt op te nemen (bijvoorbeeld een station waar de bus gegarandeerd vertrekt, indien relevant).
-                                     Of we maken dit element optioneel en laten het weg als het een zone betreft (en geen fysiek punt). -->
+                                     Of we maken dit element optioneel en laten het weg als het een zone betreft (en geen fysiek punt).
+                                     Joost: mijn voorstel is om de ScheduledStopPoints op te nemen als members in de FlexbilleArea (als onderdeel FlexbleStopPlace en wel als QyuaRef, dan behoeven we geen coordinaten op te nemen
+                                -->
                                 <gml:pos>227342 479982</gml:pos>
                             </Location>
                             <!-- TODO: Eventueel kunnen we ervoor kiezen om hier een 'types' element op te nemen waarin we een (of meer) TypeOfPointRef(s) kunnen maken, zodat we expliciet kunnen maken dat het hier een zone betreft.
@@ -396,10 +420,16 @@
                 <TimetableFrame id="ARR:TimetableFrame:Holten-Rijssen" version="1">
                     <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_TIMETABLE"/>
                     <contentValidityConditions>
-                        <AvailabilityCondition id="ARR:AvailabilityCondition:575266" version="1">
+                        <AvailabilityCondition id="ARR:AvailabilityCondition:Holten-Rijssen" version="1">
                             <FromDate>2024-01-19T00:00:00Z</FromDate>
                             <ToDate>2024-12-31T00:00:00Z</ToDate>
                             <ValidDayBits>100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011</ValidDayBits>
+                            <timebands>
+								<Timeband id="ARR::Timeband:Holten-Rijssen" version="1">
+									<StartTime>07:00:00</StartTime>
+									<EndTime>22:00:00</EndTime>
+								</Timeband>
+                            </timebands>
                         </AvailabilityCondition>
                     </contentValidityConditions>
                     <OperatorView>
@@ -408,7 +438,7 @@
                     <vehicleJourneys>
                         <ServiceJourney id="ARR:ServiceJourney:Holten-Rijssen" version="1">
                             <validityConditions>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:575266" version="1"/>
+                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:Holten-Rijssen" version="1"/>
                             </validityConditions>
                             <!-- PrivateCode: indien er geen journeyNumbers zijn voor flexritten mag de PrivateCode worden weggelaten. -->
                             <Monitored>false</Monitored><!-- Geef 'true' op als de rit wel gevolgd wordt. -->
@@ -421,13 +451,6 @@
                             <FlexibleLineRef ref="ARR:FlexibleLine:Holten-Rijssen" version="1"/>
                             <Print>false</Print>
                             <Dynamic>onlyIfSignedOn</Dynamic><!-- Vraag: heeft deze waarde effect i.c.m. Monited = false? -->
-                            <passingTimes>
-								<!-- Geef aan tussen welke tijden deze flex-rit beschikbaar is. M.a.w. tussen welke tijden is deze flexdienst te boeken? -->
-                                <TimetabledPassingTime>
-                                    <LatestArrivalTime>22:00:00</LatestArrivalTime>
-                                    <EarliestDepartureTime>07:00:00</EarliestDepartureTime>
-                                </TimetabledPassingTime>
-                            </passingTimes>
                             <FlexibleServiceProperties>
                                 <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
                             </FlexibleServiceProperties>

@@ -496,12 +496,9 @@
 			<xsd:enumeration value="other"/>
 			<xsd:enumeration value="phoneAtStop"/>
 			<xsd:enumeration value="text"/>
+			<xsd:enumeration value="mobileApp"/>
+			<xsd:enumeration value="atOffice"/>
 			<xsd:enumeration value="none"/>
-			<xsd:enumeration value="app">
-				<xsd:annotation>
-					<xsd:documentation>De waarde 'app' is extra toegevoegd voor het NL flex Profiel.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:enumeration>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="BookingMethodListOfEnumerations">

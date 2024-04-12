@@ -440,6 +440,13 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 							</xsd:restriction>
 						</xsd:simpleType>
 					</xsd:element>
+					<xsd:element name="timebands" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Timeband" type="timeband" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -481,13 +488,6 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					</xsd:choice>
 					<xsd:element name="Print" type="xsd:boolean" default="true" minOccurs="0"/>
 					<xsd:element name="Dynamic" type="DynamicAdvertisementEnumeration" default="always" minOccurs="0"/>
-					<xsd:element name="passingTimes" minOccurs="0">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="TimetabledPassingTime" type="timetabledPassingTime" maxOccurs="unbounded"/>
-							</xsd:sequence>
-						</xsd:complexType>
-					</xsd:element>
 					<xsd:element name="FlexibleServiceProperties" type="flexibleServiceProperties" minOccurs="0"/>
 				</xsd:sequence>
 				<xsd:attribute name="derivedFromVersionRef" type="VersionIdType" use="optional">
@@ -554,13 +554,6 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					</xsd:choice>
 					<xsd:element name="Print" type="xsd:boolean" default="true" minOccurs="0"/>
 					<xsd:element name="Dynamic" type="DynamicAdvertisementEnumeration" default="always" minOccurs="0"/>
-					<xsd:element name="passingTimes" minOccurs="0">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="TimetabledPassingTime" type="timetabledPassingTime" maxOccurs="unbounded"/>
-							</xsd:sequence>
-						</xsd:complexType>
-					</xsd:element>
 					<xsd:element name="FlexibleServiceProperties" type="flexibleServiceProperties"/>
 				</xsd:sequence>
 				<xsd:attribute name="derivedFromVersionRef" type="VersionIdType" use="optional">
@@ -629,7 +622,6 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 				<xsd:sequence>
 					<xsd:element name="StartTime" type="xsd:time"/>
 					<xsd:element name="EndTime" type="xsd:time"/>
-					<!-- <xsd:element name="DayOffset" type="xsd:integer" default="0" minOccurs="0"/> -->
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -756,6 +748,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			<xsd:element name="BuyWhen" type="PurchaseMomentListOfEnumerations" minOccurs="0"/>
 			<xsd:element name="LatestBookingTime" type="xsd:time" minOccurs="0"/>
 			<xsd:element name="MinimumBookingPeriod" type="xsd:duration" minOccurs="0"/>
+			<xsd:element name="MaximumBookingPeriod" type="xsd:duration" minOccurs="0"/>
 			<xsd:element name="BookingUrl" type="websiteURI" minOccurs="0"/>
 			<xsd:element name="BookingNote" type="MultilingualString" minOccurs="0"/>
 		</xsd:sequence>
