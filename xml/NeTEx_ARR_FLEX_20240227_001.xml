@@ -403,7 +403,17 @@
                             </pointsInSequence>
                         </ServiceJourneyPattern>
                     </journeyPatterns>
-                    <!-- timeDemandTypes: voor flexritten zijn timeDemandTypes alleen relevant als er volgens een vaste route gereden wordt. -->
+                    <timeDemandTypes>
+						<!-- Voor flexRRReis Holten/Rijssen zijn timeDemandTypes alleen relevant voor het opgeven van een (maximale) runtime voor de rit. -->
+						<!-- Aangezien er niet via een vaste route wordt gereden, is er geen referentie naar een TimingLink. -->
+						<TimeDemandType id="ARR:TimeDemandType:Holten-Rijssen" version="1">
+							<runTimes>
+								<JourneyRunTime id="ARR:JourneyRunTime:Holten-Rijssen" version="1">
+									<RunTime>PT30M</RunTime>
+								</JourneyRunTime>
+							</runTimes>
+						</TimeDemandType>
+					</timeDemandTypes>
                 </ServiceFrame>
                 <TimetableFrame id="ARR:TimetableFrame:Holten-Rijssen" version="1">
                     <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_TIMETABLE"/>

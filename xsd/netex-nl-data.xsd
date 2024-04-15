@@ -889,7 +889,8 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
-					<xsd:element name="TimingLinkRef" type="VersionOfObjectRefStructure"/>
+					<!-- TimingLinkRef is optioneel voor flex-ritten, maar verplicht voor reguliere lijn-ritten. -->
+					<xsd:element name="TimingLinkRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 					<xsd:element name="RunTime" type="xsd:duration"/>
 				</xsd:sequence>
 			</xsd:extension>
