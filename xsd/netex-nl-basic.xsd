@@ -110,8 +110,7 @@
 			<xsd:maxLength value="1024"/>
 			<xsd:pattern value="(http|HTTP|https|HTTPS|ftp|FTP)://.+\.(jpg|JPG|jpeg|JPEG|gif|GIF|png|PNG|svg|SVG)">
 				<xsd:annotation>
-					<xsd:documentation>ftp/http/https (hoofdletters of kleine letters, geen combinaties);
-bestandtypes jpg, jpeg, gif, png, svg (hoofdletters of kleine letters, geen combinaties)</xsd:documentation>
+					<xsd:documentation>ftp/http/https (hoofdletters of kleine letters, geen combinaties); bestandtypes jpg, jpeg, gif, png, svg (hoofdletters of kleine letters, geen combinaties)</xsd:documentation>
 				</xsd:annotation>
 			</xsd:pattern>
 		</xsd:restriction>
@@ -127,16 +126,13 @@ bestandtypes jpg, jpeg, gif, png, svg (hoofdletters of kleine letters, geen comb
 	</xsd:complexType>
 	<xsd:complexType name="SimpleObjectStructure">
 		<xsd:annotation>
-			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
-Het object heeft geen 'version' attribuut.</xsd:documentation>
+			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document. Het object heeft geen 'version' attribuut.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="DataManagedObjectStructure" abstract="true">
 		<xsd:annotation>
-			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
-Het 'version' attribuut is nodig voor de constraints, maar in het NL NeTEx Profiel wordt dit niet per object gevarieerd.
-De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
+			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document. Het 'version' attribuut is nodig voor de constraints, maar in het NL NeTEx Profiel wordt dit niet per object gevarieerd. De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
@@ -144,22 +140,11 @@ De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bo
 	</xsd:complexType>
 	<xsd:complexType name="DataManagedObjectStructure-with-version" abstract="true">
 		<xsd:annotation>
-			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
-Bij een Version of xxxFrame is attribuut 'version' wel verplicht.</xsd:documentation>
+			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document. Bij een Version of xxxFrame is attribuut 'version' wel verplicht.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="id" type="VersionIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
 		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-	</xsd:complexType>
-	<xsd:complexType name="DataManagedObjectStructure-any-version" abstract="true">
-		<xsd:annotation>
-			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
-Het 'version' attribuut is nodig voor de constraints, maar heeft altijd de vaste waarde 'any'.
-De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
-		</xsd:annotation>
-		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
-		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
-		<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified"/>
 	</xsd:complexType>
 	<!--
 	<xsd:complexType name="DataManagedObjectStructure-modified" abstract="true">
@@ -175,21 +160,16 @@ Attribuut 'modification' geeft aan of de versie voor het eerst wordt aangeleverd
 -->
 	<xsd:complexType name="DataManagedObjectStructure-with-status" abstract="true">
 		<xsd:annotation>
-			<xsd:documentation>Een element uit een voorgedefinieerde lijst heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
-Het object heeft geen expliciete 'version'. De waarde 'any' wordt geinterpreteerd als 'de actuele versie'.
-De 'status' geeft aan of het element nog courant is.</xsd:documentation>
+			<xsd:documentation>Een element uit een voorgedefinieerde lijst heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document. De 'status' geeft aan of het element nog courant is.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
-		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
-		<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified"/>
-		<xsd:attribute name="status" type="StatusEnumeration" use="optional" default="active" form="unqualified"/>
+		<xsd:attribute name="modification" type="ModificationEnumeration" default="new" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+		<xsd:attribute name="status" type="StatusEnumeration" default="active" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="OrderedVersionOfObjectStructure" abstract="true">
 		<xsd:annotation>
-			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
-Het 'version' attribuut is nodig voor de constraints, maar in het NL NeTEx Profiel wordt dit niet per object gevarieerd.
-De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.
-Bij een object in een sequence is attribuut 'order' verplicht.</xsd:documentation>
+			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document. Het 'version' attribuut is nodig voor de constraints, maar in het NL NeTEx Profiel wordt dit niet per object gevarieerd. De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'. Bij een object in een sequence is attribuut 'order' verplicht.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
@@ -198,10 +178,7 @@ Bij een object in een sequence is attribuut 'order' verplicht.</xsd:documentatio
 	</xsd:complexType>
 	<xsd:complexType name="OrderedVersionOfObjectStructure-fixed" abstract="true">
 		<xsd:annotation>
-			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
-Het 'version' attribuut is nodig voor de constraints, maar in het NL NeTEx Profiel wordt dit niet per object gevarieerd.
-De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.
-Bij een object in een assignment is attribuut 'order' verplicht maar niet (altijd) zinvol.</xsd:documentation>
+			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document. Het 'version' attribuut is nodig voor de constraints, maar in het NL NeTEx Profiel wordt dit niet per object gevarieerd. De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'. Bij een object in een assignment is attribuut 'order' verplicht maar niet (altijd) zinvol.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
@@ -210,8 +187,7 @@ Bij een object in een assignment is attribuut 'order' verplicht maar niet (altij
 	</xsd:complexType>
 	<xsd:complexType name="VersionFrameVersionStructure">
 		<xsd:annotation>
-			<xsd:documentation>Een frame heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
-Bij een frame is attribuut 'version' verplicht.</xsd:documentation>
+			<xsd:documentation>Een frame heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document. Bij een frame is attribuut 'version' verplicht.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
@@ -223,11 +199,10 @@ Bij een frame is attribuut 'version' verplicht.</xsd:documentation>
 	</xsd:complexType>
 	<xsd:complexType name="TypeOfValueVersionStructure" abstract="true">
 		<xsd:annotation>
-			<xsd:documentation>Een element uit een BISON standaardenumeratie heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
-Het object heeft de vaste waarde 'any' voor attribuut 'version'. Deze waarde wordt geinterpreteerd als 'de actuele versie'.</xsd:documentation>
+			<xsd:documentation>Een element uit een BISON standaardenumeratie heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document. Het object heeft de vaste waarde 'any' voor attribuut 'version'. Deze waarde wordt geinterpreteerd als 'de actuele versie'.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
-			<xsd:extension base="DataManagedObjectStructure-any-version">
+			<xsd:extension base="DataManagedObjectStructure-with-version">
 				<xsd:sequence>
 					<xsd:element name="Name" type="MultilingualString"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
@@ -237,8 +212,7 @@ Het object heeft de vaste waarde 'any' voor attribuut 'version'. Deze waarde wor
 	</xsd:complexType>
 	<xsd:complexType name="TypeOfValueVersionStructure-with-version" abstract="true">
 		<xsd:annotation>
-			<xsd:documentation>Een element uit een BISON standaardenumeratie heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
-De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de versie van het NL NeTEx Profiel.</xsd:documentation>
+			<xsd:documentation>Een element uit een BISON standaardenumeratie heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document. De TypeOfFrame standaardenumeraties hebben een expliciete 'version', nl. de versie van het NL NeTEx Profiel.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure-with-version">

@@ -705,9 +705,7 @@
 		<xsd:sequence>
 			<xsd:element name="CompositeFrame" type="compositeFrame" maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Bij een 'dienstregeling' levering: één CompositeFrame per partitie, plus evt. CompositeFrame(s) met een kopie van de relevante 'centrale' gegevens.
-Bij een 'centrale' levering: één of meer CompositeFrame(s) met de 'centrale' gegevens.
-Bij een 'voertuigen' levering: één of meer CompositeFrame(s) met de 'voertuig' gegevens.</xsd:documentation>
+					<xsd:documentation>Bij een 'dienstregeling' levering: één CompositeFrame per partitie, plus evt. CompositeFrame(s) met een kopie van de relevante 'centrale' gegevens. Bij een 'centrale' levering: één of meer CompositeFrame(s) met de 'centrale' gegevens. Bij een 'voertuigen' levering: één of meer CompositeFrame(s) met de 'voertuig' gegevens.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
