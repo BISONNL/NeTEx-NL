@@ -570,14 +570,40 @@
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_VEHICLES"/>
 		</xsd:restriction>
 	</xsd:simpleType>
-	<xsd:simpleType name="BisonTypeOfProfileFrame">
+	<xsd:simpleType name="BisonTypeOfResourceFrame">
 		<xsd:restriction base="xsd:NMTOKEN">
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_RESOURCE"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_VEH_RESOURCE"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BisonTypeOfInfrastructureFrame">
+		<xsd:restriction base="xsd:NMTOKEN">
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_INFRA"/>
+			<xsd:enumeration value="BISON:TypeOfFrame:NL_VEH_INFRA"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BisonTypeOfServiceFrame">
+		<xsd:restriction base="xsd:NMTOKEN">
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_SERVICE"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BisonTypeOfTimetableFrame">
+		<xsd:restriction base="xsd:NMTOKEN">
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_TIMETABLE"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BisonTypeOfServiceCalendarFrame">
+		<xsd:restriction base="xsd:NMTOKEN">
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_CALENDAR"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BisonTypeOfVehicleScheduleFrame">
+		<xsd:restriction base="xsd:NMTOKEN">
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_VEHICLE"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BisonTypeOfSiteFrame">
+		<xsd:restriction base="xsd:NMTOKEN">
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_SITE"/>
 		</xsd:restriction>
 	</xsd:simpleType>
