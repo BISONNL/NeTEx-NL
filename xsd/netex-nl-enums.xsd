@@ -602,10 +602,7 @@
 			<xsd:extension base="TypeOfValueVersionStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified">
 					<xsd:annotation>
-						<xsd:documentation>
-							Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'.
-							De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.
-						</xsd:documentation>
+						<xsd:documentation>Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'. De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
 					</xsd:annotation>
 				</xsd:attribute>
 			</xsd:extension>
@@ -616,10 +613,7 @@
 			<xsd:extension base="TypeOfValueVersionStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified">
 					<xsd:annotation>
-						<xsd:documentation>
-							Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'.
-							De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.
-						</xsd:documentation>
+						<xsd:documentation>Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'. De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
 					</xsd:annotation>
 				</xsd:attribute>
 			</xsd:extension>
@@ -630,10 +624,7 @@
 			<xsd:extension base="TypeOfValueVersionStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified">
 					<xsd:annotation>
-						<xsd:documentation>
-							Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'.
-							De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.
-						</xsd:documentation>
+						<xsd:documentation>Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'. De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
 					</xsd:annotation>
 				</xsd:attribute>
 			</xsd:extension>
@@ -644,10 +635,7 @@
 			<xsd:extension base="TypeOfValueVersionStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified">
 					<xsd:annotation>
-						<xsd:documentation>
-							Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'.
-							De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.
-						</xsd:documentation>
+						<xsd:documentation>Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'. De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
 					</xsd:annotation>
 				</xsd:attribute>
 			</xsd:extension>
@@ -658,10 +646,7 @@
 			<xsd:extension base="TypeOfValueVersionStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified">
 					<xsd:annotation>
-						<xsd:documentation>
-							Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'.
-							De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.
-						</xsd:documentation>
+						<xsd:documentation>Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'. De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
 					</xsd:annotation>
 				</xsd:attribute>
 			</xsd:extension>
@@ -672,10 +657,7 @@
 			<xsd:extension base="TypeOfValueVersionStructure-with-version">
 				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified">
 					<xsd:annotation>
-						<xsd:documentation>
-							Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'.
-							De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.
-						</xsd:documentation>
+						<xsd:documentation>Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'. De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
 					</xsd:annotation>
 				</xsd:attribute>
 			</xsd:extension>
