@@ -1287,8 +1287,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					</xsd:element>
 					<xsd:element name="VehicleAccessFacilityList">
 						<xsd:simpleType>
-							<xsd:list itemType="AccessFacilityEnumeration"/>
-							<!--	<xsd:list itemType="VehicleAccessFacilityEnumeration"/>	-->
+							<xsd:list itemType="VehicleAccessFacilityEnumeration"/>
 						</xsd:simpleType>
 					</xsd:element>
 				</xsd:sequence>
