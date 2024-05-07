@@ -1118,6 +1118,9 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 							<xsd:documentation>Zie Wikipedia voor de mogelijke waarden</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
+					<xsd:element name="ReversingDirection" type="xsd:boolean" default="true" minOccurs="0"/>
+					<xsd:element name="SelfPropelled" type="xsd:boolean" default="true" minOccurs="0"/>
+					<xsd:element name="PropulsionType" type="PropulsionTypeEnumeration" minOccurs="0"/>
 					<xsd:choice>
 						<xsd:element name="FuelType" type="FuelTypeEnumeration">
 							<xsd:annotation>
@@ -1130,6 +1133,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 							</xsd:annotation>
 						</xsd:element>
 					</xsd:choice>
+					<xsd:element name="MaximumRange" type="DistanceType" minOccurs="0"/>
 					<xsd:element name="TransportMode" type="TransportmodeEnum"/>
 					<xsd:element name="capacities" type="passengerCapacities_RelStructure" minOccurs="0">
 						<xsd:annotation>
@@ -1145,6 +1149,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="Width" type="LengthType" minOccurs="0"/>
 					<xsd:element name="Height" type="LengthType" minOccurs="0"/>
 					<xsd:element name="Weight" type="WeightType" minOccurs="0"/>
+					<xsd:element name="FirstAxleHeight" type="LengthType" minOccurs="0"/>
 					<xsd:element name="facilities" type="facilities"/>
 				</xsd:sequence>
 			</xsd:extension>

@@ -116,6 +116,19 @@ bestandtypes jpg, jpeg, gif, png, svg (hoofdletters of kleine letters, geen comb
 			</xsd:pattern>
 		</xsd:restriction>
 	</xsd:simpleType>
+	<xsd:simpleType name="PropulsionTypeEnumeration">
+		<xsd:annotation>
+			<xsd:documentation>Allowed values for type of power  +v1/2/2</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="combustion"/>
+			<xsd:enumeration value="electric"/>
+			<xsd:enumeration value="electricAssist"/>
+			<xsd:enumeration value="hybrid"/>
+			<xsd:enumeration value="human"/>
+			<xsd:enumeration value="other"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- ABSTRACTE TYPEN                                                                 -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
