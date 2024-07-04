@@ -11,7 +11,6 @@
             <FrameDefaults>
                 <DefaultCodespaceRef ref="BISON:Codespace:EBS"/>
                 <DefaultDataSourceRef version="20240308" ref="EBS:DataSource:EBS"/>
-                <DefaultResponsibilitySetRef version="20240308" ref="EBS:ResponsibilitySet:Partition_HGL-STR"/>
                 <DefaultLocale>
                     <TimeZone>Europe/Amsterdam</TimeZone>
                     <DefaultLanguage>nl</DefaultLanguage>
@@ -33,18 +32,8 @@
                         </DataSource>
                     </dataSources>
                     <responsibilitySets>
-                        <!-- De ResponsibilitySet die verwijst naar de partitie -->
-                        <ResponsibilitySet id="EBS:ResponsibilitySet:Partition_HGL-STR" version="20240308">
-                            <Name>Partitie HGL-STR</Name>
-                            <roles>
-                                <ResponsibilityRoleAssignment id="EBS:ResponsibilityRoleAssignment:HGL-STR"
-                                                              version="20240308">
-                                    <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" version="any"
-                                                        ref="EBS:TransportAdministrativeZone:HGL-STR"/>
-                                </ResponsibilityRoleAssignment>
-                            </roles>
-                        </ResponsibilitySet>
-                        <!-- De ResponsibilitySet die verwijst naar de concessie uit de DOVA-lijsten -->
+                        <!-- De ResponsibilitySets verwijzen naar de concessie(s) uit de DOVA-lijsten -->
+                        <!-- Hoewel het voorbeeld slechts één concessie bevat, wordt voor elke concessie die relevant is voor de levering zo'n verwijzing opgenomen. -->
                         <ResponsibilitySet id="EBS:ResponsibilitySet:HGL-STR" version="20240308">
                             <Name>Concessie HGL-STR</Name>
                             <roles>
@@ -159,12 +148,6 @@
                             </facilities>
                         </VehicleType>
                     </vehicleTypes>
-                    <zones>
-                        <TransportAdministrativeZone id="EBS:TransportAdministrativeZone:HGL-STR" version="any">
-                            <Name>Partitie: HGL-STR</Name>
-                            <ShortName>HGL-STR</ShortName>
-                        </TransportAdministrativeZone>
-                    </zones>
                 </ResourceFrame>
                 <InfrastructureFrame id="EBS:InfrastructureFrame:VehicleData" version="20240308">
                     <!-- Dit is een voertuigenexport, dus TypeOfFrameRef is NL_VEH_INFRA. -->
