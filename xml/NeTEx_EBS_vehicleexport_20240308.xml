@@ -11,13 +11,7 @@
             <FrameDefaults>
                 <DefaultCodespaceRef ref="BISON:Codespace:EBS"/>
                 <DefaultDataSourceRef version="20240308" ref="EBS:DataSource:EBS"/>
-                <DefaultLocale>
-                    <TimeZone>Europe/Amsterdam</TimeZone>
-                    <DefaultLanguage>nl</DefaultLanguage>
-                </DefaultLocale>
-                <DefaultLocationSystem>EPSG:28992</DefaultLocationSystem>
                 <DefaultSystemOfUnits>SiMetres</DefaultSystemOfUnits>
-                <DefaultCurrency>EUR</DefaultCurrency>
             </FrameDefaults>
             <frames>
                 <ResourceFrame id="EBS:ResourceFrame:1" version="20240308">
