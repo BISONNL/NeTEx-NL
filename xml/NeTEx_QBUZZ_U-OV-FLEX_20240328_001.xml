@@ -235,7 +235,7 @@
                             <AccessibilityAssessment id="" version="">
                                 <MobilityImpairedAccess>true</MobilityImpairedAccess>
                             </AccessibilityAssessment>
-                            <FlexibleLineType>flexibleAreasOnly</FlexibleLineType>
+                            <FlexibleLineType>fixedStopAreaWide</FlexibleLineType>
                             <BookingContact>
 								<Phone>088-QBUZZ</Phone>
 								<Url>https://www.u-ov.info/reizen/u-flex</Url>
