@@ -994,7 +994,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="variants">
+					<xsd:element name="variants" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="DestinationDisplayVariant" type="destinationDisplayVariant" minOccurs="4" maxOccurs="unbounded"/>

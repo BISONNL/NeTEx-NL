@@ -4,14 +4,15 @@
     <ParticipantRef>ARR</ParticipantRef>
     <Description>Voorbeeld-export voor BravoFlex Brabant-West</Description>
     <!-- Dit voorbeeld beschrijft reizen met BravoFlex in de regio Brabant-West -->
-    <!-- Om het nog enigzins overzichtelijk te houden is alleen vervoer tussen de kernen Chaam, Galder en Ulvenhout uitgewerkt. -->
+    <!-- Om het nog enigzins overzichtelijk te houden is alleen vervoer tussen de kernen Chaam, Galder en Ulvenhout uitgewerkt (als partitie-levering). -->
     <dataObjects>
-        <CompositeFrame id="ARR:CompositeFrame:BravoFlex" modification="new" version="1">
+        <CompositeFrame id="PNB:CompositeFrame:BravoFlex" modification="new" version="1">
             <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_BASELINE"/>
             <FrameDefaults>
-                <DefaultCodespaceRef ref="BISON:Codespace:ARR"/>
-                <DefaultDataSourceRef ref="ARR:DataSource:ARR" version="1"/>
-                <DefaultResponsibilitySetRef ref="ARR:ResponsibilitySet:BravoFlex" version="1"/>
+                <!-- Aangenomen dat de Codespace PNB bestaat (deze zal moeten worden aangemaakt zodra PNB flex-dienstregelingen gaat leveren voor BravoFlex) -->
+                <DefaultCodespaceRef ref="BISON:Codespace:PNB"/>
+                <DefaultDataSourceRef ref="PNB:DataSource:PNB" version="1"/>
+                <DefaultResponsibilitySetRef ref="PNB:ResponsibilitySet:BravoFlex-Chaam-Galder-Ulvenhout" version="1"/>
                 <DefaultLocale>
                     <TimeZone>Europe/Amsterdam</TimeZone>
                     <DefaultLanguage>nl</DefaultLanguage>
@@ -21,87 +22,83 @@
                 <DefaultCurrency>EUR</DefaultCurrency>
             </FrameDefaults>
             <versions>
-                <Version id="ARR:Version:1" modification="new" version="1">
+                <Version id="PNB:Version:1" modification="new" version="1">
                     <StartDate>2024-01-19T00:00:00Z</StartDate>
                     <EndDate>2024-12-31T00:00:00Z</EndDate>
                     <VersionType>baseline</VersionType>
                 </Version>
             </versions>
             <frames>
-                <ResourceFrame id="ARR:ResourceFrame:BravoFlex" version="1">
+                <ResourceFrame id="PNB:ResourceFrame:BravoFlex" version="1">
                     <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_RESOURCE"/>
                     <dataSources>
-                        <DataSource id="ARR:DataSource:ARR" version="1">
-                            <Name>ARR</Name>
-                            <ShortName>ARR</ShortName>
-                            <Description>ARR</Description>
+                        <DataSource id="PNB:DataSource:PNB" version="1">
+                            <Name>Provincie Noord-Brabant</Name>
+                            <ShortName>PNB</ShortName>
+                            <Description>Provincie Noord-Brabant</Description>
                         </DataSource>
                     </dataSources>
+
                     <responsibilitySets>
                         <!-- Partitie van de levering -->
-                        <ResponsibilitySet id="ARR:ResponsibilitySet:BravoFlex" version="1">
-                            <Name>BravoFlex</Name>
+                        <ResponsibilitySet id="PNB:ResponsibilitySet:BravoFlex-Chaam-Galder-Ulvenhout" version="1">
+                            <Name>BravoFlex-Chaam-Galder-Ulvenhout</Name>
                             <roles>
-                            <ResponsibilityRoleAssignment id="ARR:ResponsibilityRoleAssignment:BravoFlex" version="1">
-                                <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="ARR:TransportAdministrativeZone:BravoFlex" version="1"/>
+                            <ResponsibilityRoleAssignment id="PNB:ResponsibilityRoleAssignment:BravoFlex-Chaam-Galder-Ulvenhout" version="1">
+                                <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="PNB:TransportAdministrativeZone:BravoFlex-Chaam-Galder-Ulvenhout" version="1"/>
                             </ResponsibilityRoleAssignment>
                             </roles>
                         </ResponsibilitySet>
-                        <!-- Concessie- en financiers-verwijzingen -->
-                        <ResponsibilitySet id="ARR:ResponsibilitySet:BW" version="204">
-                            <Name>Concessie U-OV</Name>
-                            <roles>
-                                <ResponsibilityRoleAssignment id="ARR:ResponsibilityRoleAssignment:BW" version="204">
-                                    <StakeholderRoleType>EntityLegalOwnership</StakeholderRoleType>
-                                    <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" version="any" ref="DOVA:TransportAdministrativeZone:BW"/>
-                                </ResponsibilityRoleAssignment>
-                            </roles>
-                        </ResponsibilitySet>
-                        <ResponsibilitySet id="ARR:ResponsibilitySet:PNB" version="204">
+                        <!-- Dit betreft niet-concessiegebonden-vervoer, dus hier is geen concessie opgenomen. -->
+                        <!-- Wel een financiers-verwijzing, te weten PNB. -->
+                        <ResponsibilitySet id="PNB:ResponsibilitySet:PNB" version="204">
                             <Name>Financier PNB</Name>
                             <roles>
-                                <ResponsibilityRoleAssignment id="ARR:ResponsibilityRoleAssignment:PNB" version="204">
+                                <ResponsibilityRoleAssignment id="PNB:ResponsibilityRoleAssignment:PNB" version="204">
                                     <StakeholderRoleType>EntityLegalOwnership</StakeholderRoleType>
                                     <TypeOfResponsibilityRoleRef version="any" ref="BISON:TypeOfResponsibilityRole:financing"/>
                                     <ResponsibleOrganisationRef nameOfRefClass="Authority" version="any" ref="DOVA:Authority:PNB"/>
-                                    <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" version="any" ref="DOVA:TransportAdministrativeZone:BW"/>
                                 </ResponsibilityRoleAssignment>
                             </roles>
                         </ResponsibilitySet>
                     </responsibilitySets>
+
                     <typesOfValue>
-                        <Branding id="ARR:Branding:Bravo" version="1">
-                            <Name>U-OV</Name>
+                        <Branding id="PNB:Branding:Bravo" version="1">
+                            <Name>BravoFlex</Name>
                             <Url>https://www.bravo.info</Url>
                         </Branding>
-                        <TypeOfProductCategory id="ARR:TypeOfProductCategory:BravoFlex" version="1">
+                        <TypeOfProductCategory id="PNB:TypeOfProductCategory:BravoFlex" version="1">
                             <Name>BravoFlex</Name>
                             <Url>https://www.bravo.info/reizen/diensten/BravoFlex</Url>
                         </TypeOfProductCategory>
                     </typesOfValue>
+
                     <organisations>
-                        <Operator id="ARR:Operator:ARR" version="1">
-                            <Name>ARR</Name>
-                            <ShortName>ARR</ShortName>
+                        <Operator id="PNB:Operator:WDK" version="1">
+                            <Name>Willemsen-De Koning</Name>
+                            <ShortName>WDK</ShortName>
                             <CustomerServiceContactDetails>
-                            <Url>https://arriva.nl/</Url>
+                                <Url>https://bravoflex.nl/</Url>
                             </CustomerServiceContactDetails>
                         </Operator>
                     </organisations>
+
                     <operationalContexts>
-                        <OperationalContext id="ARR:OperationalContext:BUS" version="1">
+                        <OperationalContext id="PNB:OperationalContext:BUS" version="1">
                             <VehicleMode>bus</VehicleMode>
                         </OperationalContext>
                     </operationalContexts>
+
                     <vehicleTypes>
-                        <VehicleType id="ARR:VehicleType:BravoFlex" version="1">
-                            <BrandingRef ref="ARR:Branding:Bravo" version="1"/>
+                        <VehicleType id="PNB:VehicleType:BravoFlex" version="1">
+                            <BrandingRef ref="PNB:Branding:Bravo" version="1"/>
                             <Name>BravoFlex</Name>
                             <Description>BravoFlex</Description>
                             <TypeOfFuel>diesel</TypeOfFuel>
                             <TransportMode>bus</TransportMode>
                             <capacities>
-                                <PassengerCapacity id="ARR:PassengerCapacity:BravoFlex" version="1">
+                                <PassengerCapacity id="PNB:PassengerCapacity:BravoFlex" version="1">
                                     <FareClass>any</FareClass>
                                     <TotalCapacity>5</TotalCapacity>
                                     <SeatingCapacity>5</SeatingCapacity>
@@ -115,100 +112,100 @@
                             <HasLiftOrRamp>false</HasLiftOrRamp>
                             <Length>5</Length>
                             <facilities>
-                                <ServiceFacilitySet id="ARR:ServiceFacilitySet:BravoFlex" version="1">
+                                <ServiceFacilitySet id="PNB:ServiceFacilitySet:BravoFlex" version="1">
                                     <MobilityFacilityList>unknown</MobilityFacilityList>
                                     <VehicleAccessFacilityList>narrowEntrance</VehicleAccessFacilityList>
                                 </ServiceFacilitySet>
                             </facilities>
                         </VehicleType>
                     </vehicleTypes>
+
                     <zones>
                         <!-- Partitie-definitie -->
-                        <TransportAdministrativeZone id="ARR:TransportAdministrativeZone:BravoFlex" version="any">
-                            <Name>BravoFlex Brabant-West</Name>
-                            <ShortName>BFBW</ShortName>
-                            <Description>BravoFlex Brabant-West</Description>
+                        <TransportAdministrativeZone id="PNB:TransportAdministrativeZone:BravoFlex-Chaam-Galder-Ulvenhout" version="any">
+                            <Name>BravoFlex-Chaam-Galder-Ulvenhout</Name>
+                            <ShortName>CHM-GAL-ULV</ShortName>
+                            <Description>BravoFlex-Chaam-Galder-Ulvenhout</Description>
                         </TransportAdministrativeZone>
                     </zones>
                 </ResourceFrame>
+
                 <!-- Neem een SiteFrame op om de flexgebieden te beschrijven -->
-                <SiteFrame id="ARR:SiteFrame:BravoFlex" version="1">
+                <SiteFrame id="PNB:SiteFrame:BravoFlex" version="1">
                     <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_SITE"/>
                     <flexibleStopPlaces>
-                        <!-- FlexibleStopPlace beschrijft het fysieke flexgebied. -->
-                        <!-- Voor BravoFlex is ervoor gekozen om elke kern als apart flexgebied op te nemen. -->
-                        <!-- Elke kern is geimplementeerd als een flexgebied. -->
-                        <!-- De knooppunten van de kern zijn niet in het flexgebied opgenomen, maar worden apart beschreven als ScheduledStopPoint -->
+                        <!-- FlexibleStopPlace beschrijft het fysieke flexgebied, door haltes te koppelen in een FlexibleArea. -->
+                        <!-- Er is voor gekozen om elke kern in het BravoFlex-gebied als apart flexgebied op te nemen. -->
+                        <!-- De knooppunten worden hierin niet opgenomen, maar apart als ScheduledStopPoint opgenomen in ServiceJourneypatterns. -->
+                        
                         <!-- FlexibleStopPlace voor de kern Chaam: -->
-                        <FlexibleStopPlace id="ARR:FlexibleStopPlace:Chaam" version="1">
+                        <FlexibleStopPlace id="PNB:FlexibleStopPlace:Chaam" version="1">
                             <Name>Chaam</Name>
                             <ShortName>CHM</ShortName>
                             <TransportMode>bus</TransportMode>
                             <areas>
                                 <!-- De FlexibleArea definieert de haltes van de kern Chaam behorende bij dit flexgebied. -->
-                                <!-- Het knooppunt in Chaam, de halte Dorpsstraat (NL:Q:72240080), is hierin niet opgenomen. -->
-                                <FlexibleArea id="ARR:FlexibleArea:Chaam" version="1">
+                                <!-- Omdat reizen binnen de kern niet is toegestaan, maar reizen naar het knooppunt in de kern wel, is het knooppunt (Dorpsstraat; NL:Q:72240080) niet opgenomen in het flexgebied. -->
+                                <!-- De ritpatronen zorgen voor de juiste verbindingen. -->
+                                <FlexibleArea id="PNB:FlexibleArea:Chaam" version="1">
                                     <ShortName>UFH</ShortName>
                                     <members>
-                                        <!-- KNOOPPUNT, GEEN ONDERDEEL FLEXGEBIED: ARR:ScheduledStopPoint:72240080 -->
-                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72240020" version="1"/>
-                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72240040" version="1"/>
-                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72240100" version="1"/>
-                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72240130" version="1"/>
-                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72240170" version="1"/>
-                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72240220" version="1"/>
-                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72340110" version="1"/>
-                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72540400" version="1"/>
+                                        <!-- KNOOPPUNT, GEEN ONDERDEEL FLEXGEBIED: PNB:ScheduledStopPoint:72240080 -->
+                                        <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72240020" version="1"/>
+                                        <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72240040" version="1"/>
+                                        <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72240100" version="1"/>
+                                        <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72240130" version="1"/>
+                                        <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72240170" version="1"/>
+                                        <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72240220" version="1"/>
+                                        <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72340110" version="1"/>
+                                        <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72540400" version="1"/>
                                     </members>
-                                    <!-- Optioneel kan hier een polygoon worden opgenomen om het gebied te beschrijven: -->
-                                    <!-- <gml:Polygon gml:id="ARR_Polygon_Chaam"><gml:exterior><gml:LinearRing><gml:posList>...</gml:posList></gml:LinearRing></gml:exterior></gml:Polygon> -->
                                     <BoardingUse>true</BoardingUse>
                                     <AlightingUse>true</AlightingUse>
                                 </FlexibleArea>
                             </areas>
                         </FlexibleStopPlace>
+
                         <!-- FlexibleStopPlace voor de kern Galder: -->
-                        <FlexibleStopPlace id="ARR:FlexibleStopPlace:Galder" version="1">
+                        <FlexibleStopPlace id="PNB:FlexibleStopPlace:Galder" version="1">
                             <Name>Galder</Name>
                             <ShortName>GAL</ShortName>
                             <TransportMode>bus</TransportMode>
                             <areas>
                                 <!-- De FlexibleArea definieert de haltes van de kern Galder behorende bij dit flexgebied. -->
                                 <!-- De kern Galder kent geen knooppunten, dus alle haltes binnen Galder zijn opgenomen -->
-                                <FlexibleArea id="ARR:FlexibleArea:Galder" version="1">
+                                <FlexibleArea id="PNB:FlexibleArea:Galder" version="1">
                                     <ShortName>GAL</ShortName>
                                     <members>
-                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72120010" version="1"/>
-                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72120050" version="1"/>
-                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72120070" version="1"/>
-                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72120090" version="1"/>
+                                        <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72120010" version="1"/>
+                                        <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72120050" version="1"/>
+                                        <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72120070" version="1"/>
+                                        <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72120090" version="1"/>
                                     </members>
-                                    <!-- Optioneel kan hier een polygoon worden opgenomen om het gebied te beschrijven: -->
-                                    <!-- <gml:Polygon gml:id="ARR_Polygon_Galder"><gml:exterior><gml:LinearRing><gml:posList>...</gml:posList></gml:LinearRing></gml:exterior></gml:Polygon> -->
                                     <BoardingUse>true</BoardingUse>
                                     <AlightingUse>true</AlightingUse>
                                 </FlexibleArea>
                             </areas>
                         </FlexibleStopPlace>
+
                         <!-- FlexibleStopPlace voor de kern Ulvenhout: -->
-                        <FlexibleStopPlace id="ARR:FlexibleStopPlace:Ulvenhout" version="1">
+                        <FlexibleStopPlace id="PNB:FlexibleStopPlace:Ulvenhout" version="1">
                             <Name>Ulvenhout</Name>
                             <ShortName>ULV</ShortName>
                             <TransportMode>bus</TransportMode>
                             <areas>
                                 <!-- De FlexibleArea definieert de haltes van de kern Ulvenhout behorende bij dit flexgebied. -->
-                                <!-- Het knooppunt in Ulvenhout, de halte Molenstraat (NL:Q:72041400) is hierin niet opgenomen. -->
-                                <FlexibleArea id="ARR:FlexibleArea:Ulvenhout" version="1">
+                                <!-- Omdat reizen binnen de kern niet is toegestaan, maar reizen naar het knooppunt in de kern wel, is het knooppunt (Molenstraat; NL:Q:72041400) niet opgenomen in het flexgebied. -->
+                                <!-- De ritpatronen zorgen voor de juiste verbindingen. -->
+                                <FlexibleArea id="PNB:FlexibleArea:Ulvenhout" version="1">
                                     <ShortName>ULV</ShortName>
                                     <members>
-                                        <!-- KNOOPPUNT, GEEN ONDERDEEL FLEXGEBIED: ARR:ScheduledStopPoint:72041400 -->
-                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72041300" version="1"/>
-                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72041500" version="1"/>
-                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72041900" version="1"/>
-                                        <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72140120" version="1"/>
+                                        <!-- KNOOPPUNT, GEEN ONDERDEEL FLEXGEBIED: PNB:ScheduledStopPoint:72041400 -->
+                                        <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72041300" version="1"/>
+                                        <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72041500" version="1"/>
+                                        <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72041900" version="1"/>
+                                        <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72140120" version="1"/>
                                     </members>
-                                    <!-- Optioneel kan hier een polygoon worden opgenomen om het gebied te beschrijven: -->
-                                    <!-- <gml:Polygon gml:id="ARR_Polygon_Ulvenhout"><gml:exterior><gml:LinearRing><gml:posList>...</gml:posList></gml:LinearRing></gml:exterior></gml:Polygon> -->
                                     <BoardingUse>true</BoardingUse>
                                     <AlightingUse>true</AlightingUse>
                                 </FlexibleArea>
@@ -216,20 +213,23 @@
                         </FlexibleStopPlace>
                     </flexibleStopPlaces>
                 </SiteFrame>
-                <ServiceFrame id="ARR:ServiceFrame:BravoFlex" version="1">
+
+                <ServiceFrame id="PNB:ServiceFrame:BravoFlex" version="1">
                     <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_SERVICE"/>
                     <!-- De definitie van de flexlijnen. -->
-                    <!-- Hierbij kan gekozen worden om voor elke combinatie van kern en knooppunt een FlexibleLine element op te nemen. -->
-                    <!-- ??? Idee voor interpretatie: als overstappen van de ene flexrit naar de andere is toegestaan, dan verschillende lijnen definieren; als dat niet mag, dan alle flexritten onder één FlexibleLine scharen ??? -->
-                    <!-- Voortbouwend op dit idee, is hier één FlexibleLine element opgenomen. -->
+                    
+                    <!-- Voorgestelde business rule: -->
+                    <!-- Als overstappen van de ene flexrit naar de andere is toegestaan, gebruik dan verschillende lijnen; mag dit niet, schaar dan alle flexritten onder één FlexibleLine. -->
+                    
+                    <!-- Bij BravoFlex is dit niet toegestaan, dus in dit voorbeeld is er één FlexibleLine opgenomen die gebruikt wordt voor alle BravoFlex-ritten. -->
                     <lines>
-                        <FlexibleLine id="ARR:FlexibleLine:BravoFlex" version="1" responsibilitySetRef="ARR:ResponsibilitySet:BW">
+                        <FlexibleLine id="PNB:FlexibleLine:BravoFlex" version="1" responsibilitySetRef="PNB:ResponsibilitySet:BW">
                             <Name>BravoFlex</Name>
                             <TransportMode>bus</TransportMode>
-                            <TypeOfProductCategoryRef ref="ARR:TypeOfProductCategory:BravoFlex" version="1"/>
+                            <TypeOfProductCategoryRef ref="PNB:TypeOfProductCategory:BravoFlex" version="1"/>
                             <TypeOfServiceRef ref="BISON:TypeOfService:Flex" version="any"/>
                             <Monitored>false</Monitored>
-                            <AccessibilityAssessment id="ARR:AccessiblityAssessment:BravoFlex" version="1">
+                            <AccessibilityAssessment id="PNB:AccessiblityAssessment:BravoFlex" version="1">
                                 <MobilityImpairedAccess>true</MobilityImpairedAccess>
                             </AccessibilityAssessment>
                             <FlexibleLineType>fixedStopAreaWide</FlexibleLineType>
@@ -246,52 +246,27 @@
                             <MinimumBookingPeriod>PT60M</MinimumBookingPeriod>
                             <MaximumBookingPeriod>PT360H</MaximumBookingPeriod>
                             <BookingUrl>https://www.bravo.info/reizen/diensten/BravoFlex</BookingUrl>
-                            <BookingNote>Reis je met méér dan 3 personen, dan kun je het beste telefonisch reserveren.</BookingNote>
+                            <!-- Tariefinformatie wordt vooralsnog opgenomen als BookingNote: -->
+                            <BookingNote>Een rit met Bravoflex kost € 2,-. Alleen als er binnen half uur vóór óf na het gewenste tijdstip tussen de vertrekhalte en bestemmingshalte óók een reguliere lijndienst (bus of buurtbus) rijdt, kost een Bravoflex-rit € 5,-</BookingNote>
                         </FlexibleLine>
                     </lines>
+
                     <destinationDisplays>
                         <!-- Hier is gekozen voor een generieke bestemmingstekst die simpelweg de dienst beschrijft. -->
                         <!-- Een andere optie is om per kern en/of knooppunt een aparte tekst op te nemen. -->
-                        <DestinationDisplay id="ARR:DestinationDisplay:BravoFlex" version="1">
+                        <DestinationDisplay id="PNB:DestinationDisplay:BravoFlex" version="1">
                             <Name>BravoFlex</Name>
                             <SideText>BravoFlex</SideText>
                             <FrontText>BravoFlex </FrontText>
                             <PrivateCode type="DestinationCode">BravoFlex</PrivateCode>
-                            <variants>
-                                <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:BravoFlex-16" version="1">
-                                    <Extensions>
-                                        <MaxLength>BISON:DisplayTextLength:16</MaxLength>
-                                    </Extensions>
-                                    <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
-                                    <Name>BravoFlex</Name>
-                                </DestinationDisplayVariant>
-                                <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:BravoFlex-19" version="1">
-                                    <Extensions>
-                                        <MaxLength>BISON:DisplayTextLength:19</MaxLength>
-                                    </Extensions>
-                                    <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
-                                    <Name>BravoFlex</Name>
-                                </DestinationDisplayVariant>
-                                <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:BravoFlex-21" version="1">
-                                    <Extensions>
-                                        <MaxLength>BISON:DisplayTextLength:21</MaxLength>
-                                    </Extensions>
-                                    <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
-                                    <Name>BravoFlex</Name>
-                                </DestinationDisplayVariant>
-                                <DestinationDisplayVariant id="ARR:DestinationDisplayVariant:BravoFlex-24" version="1">
-                                    <Extensions>
-                                        <MaxLength>BISON:DisplayTextLength:24</MaxLength>
-                                    </Extensions>
-                                    <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
-                                    <Name>BravoFlex</Name>
-                                </DestinationDisplayVariant>
-                            </variants>
+                            <!-- BravoFlex wordt niet getoond op haltedisplays, dus DestinationDisplayVariants met verschillende lengtevarianten zijn niet nodig -->
                         </DestinationDisplay>
                     </destinationDisplays>
+
                     <scheduledStopPoints>
-                        <!-- Voor elke kern is een ScheduledStopPoint opgenomen die de logische flexgebieden representeren, voor gebruik in ritpatronen. -->
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:Chaam" version="1">
+                        <!-- Voor elke flexgebied wordt een fictief ScheduledStopPoint opgenomen voor gebruik in ritpatronen. -->
+                        <!-- Alle ScheduledStopPoints worden ook gebruikt in koppeling aan quays uit CHB. --> 
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:Chaam" version="1">
                             <Name>Chaam</Name>
                             <Location>
                                 <!-- Gemiddelde RD-X en RD-Y coordinaat van alle haltes in Chaam. -->
@@ -300,7 +275,7 @@
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:Galder" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:Galder" version="1">
                             <Name>Galder</Name>
                             <Location>
                                 <!-- Gemiddelde RD-X en RD-Y coordinaat van alle haltes in Galder. -->
@@ -309,7 +284,7 @@
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:Ulvenhout" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:Ulvenhout" version="1">
                             <Name>Ulvenhout</Name>
                             <Location>
                                 <!-- Gemiddelde RD-X en RD-Y coordinaat van alle haltes in Ulvenhout. -->
@@ -320,27 +295,28 @@
                         </ScheduledStopPoint>
 
                         <!-- Ook de knooppunten in de kernen Chaam en Ulvenhout zijn als logische haltes opgenomen, voor gebruik in ritpatronen. -->
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72240080" version="1">
+                        <!-- De haltes uit de door PNB aangeleverde halte-matrix bevat slechts één halte per StopPlace (een zijde van de weg) -->
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:72240080" version="1">
                             <Name>Chaam, Dorpsstraat</Name>
                             <Location>
-                                <gml:pos>118454    390855</gml:pos>
+                                <gml:pos>118454 390855</gml:pos>
                             </Location>
                             <PrivateCode type="UserStopCode">72240080</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72041400" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:72041400" version="1">
                             <Name>Ulvenhout, Molenstraat</Name>
                             <Location>
-                                <gml:pos>114041    395304</gml:pos>
+                                <gml:pos>114041 395304</gml:pos>
                             </Location>
                             <PrivateCode type="UserStopCode">72041400</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-
+                        
                         <!-- Vanuit de kernen Chaam, Galder en Ulvenhout kan ook gereisd worden naar knooppunten in Breda, Baarle-Nassau en Effen. Ook deze zijn opgenomen als ScheduledStopPoint. -->
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72002000" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:72002000" version="1">
                             <Name>Breda, Bijster</Name>
                             <Location>
                                 <gml:pos>114567 399420</gml:pos>
@@ -349,27 +325,27 @@
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72041400" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:73440690" version="1">
                             <Name>Baarle-Nassau, St. Janstraat</Name>
                             <Location>
                                 <gml:pos>109519 396428</gml:pos>
                             </Location>
-                            <PrivateCode type="UserStopCode">72041400</PrivateCode>
+                            <PrivateCode type="UserStopCode">73440690</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72041400" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:72050800" version="1">
                             <Name>Effen, Effen</Name>
                             <Location>
                                 <gml:pos>109519 396428</gml:pos>
                             </Location>
-                            <PrivateCode type="UserStopCode">72041400</PrivateCode>
+                            <PrivateCode type="UserStopCode">72050800</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
 
                         <!-- Tenslotte zijn ook alle overige haltes (die onderdeel zijn van de flexgebieden) opgenomen, maar voor ritpatronen worden deze niet gebruikt. Ze zijn enkel voor gebruik in PassengerStopAssignments. -->
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72240020" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:72240020" version="1">
                             <Name>Chaam, Bredaseweg</Name>
                             <Location>
                                 <gml:pos>116557 392662</gml:pos>
@@ -378,7 +354,7 @@
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72240040" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:72240040" version="1">
                             <Name>Chaam, Meerleseweg</Name>
                             <Location>
                                 <gml:pos>117554 391687</gml:pos>
@@ -387,7 +363,7 @@
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72240100" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:72240100" version="1">
                             <Name>Chaam, Ulicotenseweg</Name>
                             <Location>
                                 <gml:pos>118643 390621</gml:pos>
@@ -396,7 +372,7 @@
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72240130" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:72240130" version="1">
                             <Name>Chaam, Kleistraat</Name>
                             <Location>
                                 <gml:pos>118446 390144</gml:pos>
@@ -405,7 +381,7 @@
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72240170" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:72240170" version="1">
                             <Name>Chaam, Meysberg</Name>
                             <Location>
                                 <gml:pos>119058 390427</gml:pos>
@@ -414,7 +390,7 @@
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72240220" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:72240220" version="1">
                             <Name>Chaam, Boterfabriekweg</Name>
                             <Location>
                                 <gml:pos>118252 391053</gml:pos>
@@ -423,7 +399,7 @@
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72340110" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:72340110" version="1">
                             <Name>Chaam, Legstraat</Name>
                             <Location>
                                 <gml:pos>119445 389492</gml:pos>
@@ -432,25 +408,25 @@
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72540100" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:72540400" version="1">
                             <Name>Chaam, Houtgoorstraat</Name>
                             <Location>
-                                <gml:pos>118550, 389102</gml:pos>
+                                <gml:pos>118550 389102</gml:pos>
                             </Location>
-                            <PrivateCode type="UserStopCode">72540100</PrivateCode>
+                            <PrivateCode type="UserStopCode">72540400</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72120010" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:72120010" version="1">
                             <Name>Galder, Smidshof</Name>
                             <Location>
-                                <gml:pos>112429, 392111</gml:pos>
+                                <gml:pos>112429 392111</gml:pos>
                             </Location>
                             <PrivateCode type="UserStopCode">72120010</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72120050" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:72120050" version="1">
                             <Name>Galder, Ballemanseweg</Name>
                             <Location>
                                 <gml:pos>112525 391642</gml:pos>
@@ -459,7 +435,7 @@
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72120070" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:72120070" version="1">
                             <Name>Galder, Galderse Meren</Name>
                             <Location>
                                 <gml:pos>112157 392963</gml:pos>
@@ -468,7 +444,7 @@
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72120090" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:72120090" version="1">
                             <Name>Galder, Markweg</Name>
                             <Location>
                                 <gml:pos>112757 390892</gml:pos>
@@ -477,7 +453,7 @@
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72041300" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:72041300" version="1">
                             <Name>Ulvenhout, Dorpstraat</Name>
                             <Location>
                                 <gml:pos>114140 395744</gml:pos>
@@ -486,7 +462,7 @@
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72041500" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:72041500" version="1">
                             <Name>Ulvenhout, Vlasaard</Name>
                             <Location>
                                 <gml:pos>113936 395006</gml:pos>
@@ -495,7 +471,7 @@
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72041900" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:72041900" version="1">
                             <Name>Ulvenhout, Dorpsplein</Name>
                             <Location>
                                 <gml:pos>114040 396112</gml:pos>
@@ -504,7 +480,7 @@
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:72140120" version="1">
+                        <ScheduledStopPoint id="PNB:ScheduledStopPoint:72140120" version="1">
                             <Name>Ulvenhout, Geersbroekseweg</Name>
                             <Location>
                                 <gml:pos>115781 393965</gml:pos>
@@ -513,122 +489,123 @@
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-
                     </scheduledStopPoints>
+
                     <stopAssignments>
                         <!-- FlexibleStopAssignment worden gebruikt voor de koppeling van de logische flexgebieden aan de fysieke flexgebieden. -->
-                        <FlexibleStopAssignment id="ARR:FlexibleStopAssignment:Chaam" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:Chaam" version="1"/>
-                            <FlexibleStopPlaceRef ref="ARR:FlexibleStopPlace:Chaam" version="1"/>
+                        <FlexibleStopAssignment id="PNB:FlexibleStopAssignment:Chaam" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:Chaam" version="1"/>
+                            <FlexibleStopPlaceRef ref="PNB:FlexibleStopPlace:Chaam" version="1"/>
                         </FlexibleStopAssignment>
-                        <FlexibleStopAssignment id="ARR:FlexibleStopAssignment:Galder" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:Galder" version="1"/>
-                            <FlexibleStopPlaceRef ref="ARR:FlexibleStopPlace:Galder" version="1"/>
+                        <FlexibleStopAssignment id="PNB:FlexibleStopAssignment:Galder" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:Galder" version="1"/>
+                            <FlexibleStopPlaceRef ref="PNB:FlexibleStopPlace:Galder" version="1"/>
                         </FlexibleStopAssignment>
-                        <FlexibleStopAssignment id="ARR:FlexibleStopAssignment:Ulvenhout" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:Ulvenhout" version="1"/>
-                            <FlexibleStopPlaceRef ref="ARR:FlexibleStopPlace:Ulvenhout" version="1"/>
+                        <FlexibleStopAssignment id="PNB:FlexibleStopAssignment:Ulvenhout" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:Ulvenhout" version="1"/>
+                            <FlexibleStopPlaceRef ref="PNB:FlexibleStopPlace:Ulvenhout" version="1"/>
                         </FlexibleStopAssignment>
 
                         <!-- PassengerStopAssignment worden, net als in reguliere dienstregelingen, gebruikt voor de koppeling van de logische haltes aan de aan de bijbehorende quays uit het CHB. -->
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:73440690" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:73440690" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:73440690" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:73440690" version="1"/>
                             <QuayRef ref="NL:Q:73440690" version="any"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:72002000" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72002000" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:72002000" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72002000" version="1"/>
                             <QuayRef ref="NL:Q:72002000" version="any"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:72240020" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72240020" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:72240020" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72240020" version="1"/>
                             <QuayRef ref="NL:Q:72240020" version="any"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:72240040" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72240040" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:72240040" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72240040" version="1"/>
                             <QuayRef ref="NL:Q:72240040" version="any"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:72240080" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72240080" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:72240080" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72240080" version="1"/>
                             <QuayRef ref="NL:Q:72240080" version="any"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:72240100" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72240100" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:72240100" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72240100" version="1"/>
                             <QuayRef ref="NL:Q:72240100" version="any"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:72240130" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72240130" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:72240130" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72240130" version="1"/>
                             <QuayRef ref="NL:Q:72240130" version="any"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:72240170" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72240170" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:72240170" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72240170" version="1"/>
                             <QuayRef ref="NL:Q:72240170" version="any"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:72240220" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72240220" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:72240220" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72240220" version="1"/>
                             <QuayRef ref="NL:Q:72240220" version="any"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:72340110" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72340110" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:72340110" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72340110" version="1"/>
                             <QuayRef ref="NL:Q:72340110" version="any"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:72540400" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72540400" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:72540400" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72540400" version="1"/>
                             <QuayRef ref="NL:Q:72540400" version="any"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:72050800" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72050800" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:72050800" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72050800" version="1"/>
                             <QuayRef ref="NL:Q:72050800" version="any"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:72120010" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72120010" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:72120010" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72120010" version="1"/>
                             <QuayRef ref="NL:Q:72120010" version="any"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:72120050" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72120050" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:72120050" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72120050" version="1"/>
                             <QuayRef ref="NL:Q:72120050" version="any"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:72120070" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72120070" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:72120070" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72120070" version="1"/>
                             <QuayRef ref="NL:Q:72120070" version="any"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:72120090" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72120090" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:72120090" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72120090" version="1"/>
                             <QuayRef ref="NL:Q:72120090" version="any"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:72041300" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72041300" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:72041300" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72041300" version="1"/>
                             <QuayRef ref="NL:Q:72041300" version="any"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:72041400" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72041400" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:72041400" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72041400" version="1"/>
                             <QuayRef ref="NL:Q:72041400" version="any"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:72041500" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72041500" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:72041500" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72041500" version="1"/>
                             <QuayRef ref="NL:Q:72041500" version="any"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:72041900" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72041900" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:72041900" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72041900" version="1"/>
                             <QuayRef ref="NL:Q:72041900" version="any"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="ARR:PassengerStopAssignment:72140120" version="1" order="1">
-                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72140120" version="1"/>
+                        <PassengerStopAssignment id="PNB:PassengerStopAssignment:72140120" version="1" order="1">
+                            <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72140120" version="1"/>
                             <QuayRef ref="NL:Q:72140120" version="any"/>
                         </PassengerStopAssignment>
                     </stopAssignments>
+
                     <!-- Voor BravoFlex zijn TimingLinks niet relevant, want er wordt niet gereden volgens een vaste route. -->
                     <journeyPatterns>
                         <!-- Er worden ritpatronen gedefinieerd voor elke combinatie van kern naar knooppunt en vice versa. -->
                         <!-- Omdat vanuit een kern zowel naar een knooppunt in de kern als naar een knooppunt buiten de kern gereisd mag worden, ontstaan ritpatronen met drie ScheduledStopPoints:  kern -> knooppunt in kern -> knooppunt buiten kern (v.v.) -->
 
                         <!-- Chaam -> Baarle-Nassau v.v.: -->
-                        <ServiceJourneyPattern id="ARR:ServiceJourneyPattern:Kern-Chaam--Knooppunt-Baarle-Nassau" version="1">
-                            <DestinationDisplayRef ref="ARR:DestinationDisplay:BravoFlex" version="1"/>
+                        <ServiceJourneyPattern id="PNB:ServiceJourneyPattern:Kern-Chaam--Knooppunt-Baarle-Nassau" version="1">
+                            <DestinationDisplayRef ref="PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij een halte in de kern Chaam... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Kern-Chaam--Knooppunt-Baarle-Nassau-1" order="1">
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Kern-Chaam--Knooppunt-Baarle-Nassau-1" order="1">
                                     <!-- Hier wordt verwezen naar de ScheduledStopPoint voor het flexgebied Chaam -->
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:Chaam" version="1"/>
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:Chaam" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                     <FlexiblePointProperties>
@@ -636,38 +613,38 @@
                                     </FlexiblePointProperties>
                                 </StopPointInJourneyPattern>
                                 <!-- In- of uitstappen bij knooppunt-halte Chaam, Dorpsstraat... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Kern-Chaam--Knooppunt-Baarle-Nassau-2" order="2">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72240080" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Kern-Chaam--Knooppunt-Baarle-Nassau-2" order="2">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72240080" version="1"/>
                                     <ForAlighting>true</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                 </StopPointInJourneyPattern>
                                 <!-- Uitstappen bij knooppunt-halte Baarle-Nassau, St. Janstraat... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Kern-Chaam--Knooppunt-Baarle-Nassau-3" order="3">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:73440690" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Kern-Chaam--Knooppunt-Baarle-Nassau-3" order="3">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:73440690" version="1"/>
                                     <ForAlighting>true</ForAlighting>
                                     <ForBoarding>false</ForBoarding>
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
                         </ServiceJourneyPattern>
                         <!-- Omgekeerde richting -->
-                        <ServiceJourneyPattern id="ARR:ServiceJourneyPattern:Knooppunt-Baarle-Nassau--Kern-Chaam" version="1">
-                            <DestinationDisplayRef ref="ARR:DestinationDisplay:BravoFlex" version="1"/>
+                        <ServiceJourneyPattern id="PNB:ServiceJourneyPattern:Knooppunt-Baarle-Nassau--Kern-Chaam" version="1">
+                            <DestinationDisplayRef ref="PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij knooppunt-halte Baarle-Nassau, St. Janstraat... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Knooppunt-Baarle-Nassau--Kern-Chaam-1" order="3">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:73440690" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Knooppunt-Baarle-Nassau--Kern-Chaam-1" order="3">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:73440690" version="1"/>
                                     <ForAlighting>true</ForAlighting>
                                     <ForBoarding>false</ForBoarding>
                                 </StopPointInJourneyPattern>
                                 <!-- In- of uitstappen bij knooppunt-halte Chaam, Dorpsstraat... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Knooppunt-Baarle-Nassau--Kern-Chaam-2" order="2">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72240080" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Knooppunt-Baarle-Nassau--Kern-Chaam-2" order="2">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72240080" version="1"/>
                                     <ForAlighting>true</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                 </StopPointInJourneyPattern>
                                 <!-- Uitstappen bij een halte in de kern Chaam... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Knooppunt-Baarle-Nassau--Kern-Chaam-3" order="1">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:Chaam" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Knooppunt-Baarle-Nassau--Kern-Chaam-3" order="1">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:Chaam" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                     <FlexiblePointProperties>
@@ -676,15 +653,15 @@
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
                         </ServiceJourneyPattern>
-
+                        
                         <!-- Chaam -> Ulvenhout v.v.: -->
-                        <ServiceJourneyPattern id="ARR:ServiceJourneyPattern:Kern-Chaam--Knooppunt-Ulvenhout" version="1">
-                            <DestinationDisplayRef ref="ARR:DestinationDisplay:BravoFlex" version="1"/>
+                        <ServiceJourneyPattern id="PNB:ServiceJourneyPattern:Kern-Chaam--Knooppunt-Ulvenhout" version="1">
+                            <DestinationDisplayRef ref="PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij een halte in de kern Chaam... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Kern-Chaam--Knooppunt-Ulvenhout-1" order="1">
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Kern-Chaam--Knooppunt-Ulvenhout-1" order="1">
                                     <!-- Hier wordt verwezen naar de ScheduledStopPoint voor het flexgebied Chaam -->
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:Chaam" version="1"/>
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:Chaam" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                     <FlexiblePointProperties>
@@ -692,38 +669,38 @@
                                     </FlexiblePointProperties>
                                 </StopPointInJourneyPattern>
                                 <!-- In- of uitstappen bij knooppunt-halte Chaam, Dorpsstraat... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Kern-Chaam--Knooppunt-Ulvenhout-2" order="2">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72240080" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Kern-Chaam--Knooppunt-Ulvenhout-2" order="2">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72240080" version="1"/>
                                     <ForAlighting>true</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                 </StopPointInJourneyPattern>
                                 <!-- Uitstappen bij knooppunt-halte Ulvenhout, St. Janstraat... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Kern-Chaam--Knooppunt-Ulvenhout-3" order="3">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72041400" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Kern-Chaam--Knooppunt-Ulvenhout-3" order="3">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72041400" version="1"/>
                                     <ForAlighting>true</ForAlighting>
                                     <ForBoarding>false</ForBoarding>
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
                         </ServiceJourneyPattern>
                         <!-- Omgekeerde richting -->
-                        <ServiceJourneyPattern id="ARR:ServiceJourneyPattern:Knooppunt-Ulvenhout--Kern-Chaam" version="1">
-                            <DestinationDisplayRef ref="ARR:DestinationDisplay:BravoFlex" version="1"/>
+                        <ServiceJourneyPattern id="PNB:ServiceJourneyPattern:Knooppunt-Ulvenhout--Kern-Chaam" version="1">
+                            <DestinationDisplayRef ref="PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij knooppunt-halte Ulvenhout, St. Janstraat... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Knooppunt-Ulvenhout--Kern-Chaam-1" order="3">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72041400" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Knooppunt-Ulvenhout--Kern-Chaam-1" order="3">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72041400" version="1"/>
                                     <ForAlighting>true</ForAlighting>
                                     <ForBoarding>false</ForBoarding>
                                 </StopPointInJourneyPattern>
                                 <!-- In- of uitstappen bij knooppunt-halte Chaam, Dorpsstraat... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Knooppunt-Ulvenhout--Kern-Chaam-2" order="2">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72240080" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Knooppunt-Ulvenhout--Kern-Chaam-2" order="2">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72240080" version="1"/>
                                     <ForAlighting>true</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                 </StopPointInJourneyPattern>
                                 <!-- Uitstappen bij een halte in de kern Chaam... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Knooppunt-Ulvenhout--Kern-Chaam-3" order="1">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:Chaam" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Knooppunt-Ulvenhout--Kern-Chaam-3" order="1">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:Chaam" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                     <FlexiblePointProperties>
@@ -732,16 +709,16 @@
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
                         </ServiceJourneyPattern>
-
+                        
                         <!-- De ritpatronen van en naar Galder kennen slechts twee StopPointInJourneyPattern, omdat de kern Galder geen eigen knooppunt heeft -->
                         <!-- Galder -> Ulvenhout v.v.: -->
-                        <ServiceJourneyPattern id="ARR:ServiceJourneyPattern:Kern-Galder--Knooppunt-Ulvenhout" version="1">
-                            <DestinationDisplayRef ref="ARR:DestinationDisplay:BravoFlex" version="1"/>
+                        <ServiceJourneyPattern id="PNB:ServiceJourneyPattern:Kern-Galder--Knooppunt-Ulvenhout" version="1">
+                            <DestinationDisplayRef ref="PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij een halte in de kern Galder... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Kern-Galder--Knooppunt-Ulvenhout-1" order="1">
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Kern-Galder--Knooppunt-Ulvenhout-1" order="1">
                                     <!-- Hier wordt verwezen naar de ScheduledStopPoint voor het flexgebied Galder -->
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:Galder" version="1"/>
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:Galder" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                     <FlexiblePointProperties>
@@ -749,26 +726,26 @@
                                     </FlexiblePointProperties>
                                 </StopPointInJourneyPattern>
                                 <!-- Uitstappen bij knooppunt-halte Ulvenhout, Molenstraat... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Kern-Galder--Knooppunt-Ulvenhout-3" order="3">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72041400" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Kern-Galder--Knooppunt-Ulvenhout-3" order="3">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72041400" version="1"/>
                                     <ForAlighting>true</ForAlighting>
                                     <ForBoarding>false</ForBoarding>
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
                         </ServiceJourneyPattern>
                         <!-- Omgekeerde richting -->
-                        <ServiceJourneyPattern id="ARR:ServiceJourneyPattern:Knooppunt-Ulvenhout--Kern-Galder" version="1">
-                            <DestinationDisplayRef ref="ARR:DestinationDisplay:BravoFlex" version="1"/>
+                        <ServiceJourneyPattern id="PNB:ServiceJourneyPattern:Knooppunt-Ulvenhout--Kern-Galder" version="1">
+                            <DestinationDisplayRef ref="PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij knooppunt-halte Ulvenhout, Molenstraat... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Knooppunt-Ulvenhout--Kern-Galder-1" order="3">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72041400" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Knooppunt-Ulvenhout--Kern-Galder-1" order="3">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72041400" version="1"/>
                                     <ForAlighting>true</ForAlighting>
                                     <ForBoarding>false</ForBoarding>
                                 </StopPointInJourneyPattern>
                                 <!-- Uitstappen bij een halte in de kern Galder... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Knooppunt-Ulvenhout--Kern-Galder-3" order="1">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:Galder" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Knooppunt-Ulvenhout--Kern-Galder-3" order="1">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:Galder" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                     <FlexiblePointProperties>
@@ -777,15 +754,15 @@
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
                         </ServiceJourneyPattern>
-
+                        
                         <!-- Galder -> Effen v.v.: -->
-                        <ServiceJourneyPattern id="ARR:ServiceJourneyPattern:Kern-Galder--Knooppunt-Effen" version="1">
-                            <DestinationDisplayRef ref="ARR:DestinationDisplay:BravoFlex" version="1"/>
+                        <ServiceJourneyPattern id="PNB:ServiceJourneyPattern:Kern-Galder--Knooppunt-Effen" version="1">
+                            <DestinationDisplayRef ref="PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij een halte in de kern Galder... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Kern-Galder--Knooppunt-Effen-1" order="1">
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Kern-Galder--Knooppunt-Effen-1" order="1">
                                     <!-- Hier wordt verwezen naar de ScheduledStopPoint voor het flexgebied Galder -->
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:Galder" version="1"/>
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:Galder" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                     <FlexiblePointProperties>
@@ -793,26 +770,26 @@
                                     </FlexiblePointProperties>
                                 </StopPointInJourneyPattern>
                                 <!-- Uitstappen bij knooppunt-halte Effen, Effen... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Kern-Galder--Knooppunt-Effen-2" order="3">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72050800" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Kern-Galder--Knooppunt-Effen-2" order="3">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72050800" version="1"/>
                                     <ForAlighting>true</ForAlighting>
                                     <ForBoarding>false</ForBoarding>
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
                         </ServiceJourneyPattern>
                         <!-- Omgekeerde richting -->
-                        <ServiceJourneyPattern id="ARR:ServiceJourneyPattern:Knooppunt-Effen--Kern-Galder" version="1">
-                            <DestinationDisplayRef ref="ARR:DestinationDisplay:BravoFlex" version="1"/>
+                        <ServiceJourneyPattern id="PNB:ServiceJourneyPattern:Knooppunt-Effen--Kern-Galder" version="1">
+                            <DestinationDisplayRef ref="PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij knooppunt-halte Effen, Effen... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Knooppunt-Effen--Kern-Galder-1" order="3">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72050800" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Knooppunt-Effen--Kern-Galder-1" order="3">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72050800" version="1"/>
                                     <ForAlighting>true</ForAlighting>
                                     <ForBoarding>false</ForBoarding>
                                 </StopPointInJourneyPattern>
                                 <!-- Uitstappen bij een halte in de kern Galder... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Knooppunt-Effen--Kern-Galder-2" order="1">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:Galder" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Knooppunt-Effen--Kern-Galder-2" order="1">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:Galder" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                     <FlexiblePointProperties>
@@ -821,15 +798,15 @@
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
                         </ServiceJourneyPattern>
-
+                        
                         <!-- Ulvenhout -> Breda v.v.: -->
-                        <ServiceJourneyPattern id="ARR:ServiceJourneyPattern:Kern-Ulvenhout--Knooppunt-Breda" version="1">
-                            <DestinationDisplayRef ref="ARR:DestinationDisplay:BravoFlex" version="1"/>
+                        <ServiceJourneyPattern id="PNB:ServiceJourneyPattern:Kern-Ulvenhout--Knooppunt-Breda" version="1">
+                            <DestinationDisplayRef ref="PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij een halte in de kern Ulvenhout... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Kern-Ulvenhout--Knooppunt-Breda-1" order="1">
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Kern-Ulvenhout--Knooppunt-Breda-1" order="1">
                                     <!-- Hier wordt verwezen naar de ScheduledStopPoint voor het flexgebied Ulvenhout -->
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:Ulvenhout" version="1"/>
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:Ulvenhout" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                     <FlexiblePointProperties>
@@ -837,251 +814,279 @@
                                     </FlexiblePointProperties>
                                 </StopPointInJourneyPattern>
                                 <!-- In- of uitstappen bij knooppunt-halte Ulvenhout, Molenstraat... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Kern-Ulvenhout--Knooppunt-Breda-2" order="2">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72041400" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Kern-Ulvenhout--Knooppunt-Breda-2" order="2">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72041400" version="1"/>
                                     <ForAlighting>true</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                 </StopPointInJourneyPattern>
                                 <!-- Uitstappen bij knooppunt-halte Breda, Bijster... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Kern-Ulvenhout--Knooppunt-Breda-3" order="3">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72002000" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Kern-Ulvenhout--Knooppunt-Breda-3" order="3">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72002000" version="1"/>
                                     <ForAlighting>true</ForAlighting>
                                     <ForBoarding>false</ForBoarding>
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
                         </ServiceJourneyPattern>
                         <!-- Omgekeerde richting -->
-                        <ServiceJourneyPattern id="ARR:ServiceJourneyPattern:Knooppunt-Breda--Kern-Ulvenhout" version="1">
-                            <DestinationDisplayRef ref="ARR:DestinationDisplay:BravoFlex" version="1"/>
+                        <ServiceJourneyPattern id="PNB:ServiceJourneyPattern:Knooppunt-Breda--Kern-Ulvenhout" version="1">
+                            <DestinationDisplayRef ref="PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij knooppunt-halte Breda, Bijster... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Knooppunt-Breda--Kern-Ulvenhout-1" order="3">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72002000" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Knooppunt-Breda--Kern-Ulvenhout-1" order="3">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72002000" version="1"/>
                                     <ForAlighting>true</ForAlighting>
                                     <ForBoarding>false</ForBoarding>
                                 </StopPointInJourneyPattern>
                                 <!-- In- of uitstappen bij knooppunt-halte Ulvenhout, Molenstraat... -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Knooppunt-Breda--Kern-Ulvenhout-2" order="2">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:72041400" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Knooppunt-Breda--Kern-Ulvenhout-2" order="2">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:72041400" version="1"/>
                                     <ForAlighting>true</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                 </StopPointInJourneyPattern>
                                 <!-- Uitstappen bij een halte in de kern Ulvenhout -->
-                                <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Knooppunt-Breda--Kern-Ulvenhout-3" order="1">
-                                    <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:Ulvenhout" version="1"/>
+                                <StopPointInJourneyPattern id="PNB:StopPointInJourneyPattern:Knooppunt-Breda--Kern-Ulvenhout-3" order="1">
+                                    <ScheduledStopPointRef ref="PNB:ScheduledStopPoint:Ulvenhout" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                     <FlexiblePointProperties>
                                         <ZoneContainingStops>true</ZoneContainingStops>
                                     </FlexiblePointProperties>
-                                </StopPointInJourneyPattern>
+                                </StopPointInJourneyPattern>                                
                             </pointsInSequence>
                         </ServiceJourneyPattern>
                     </journeyPatterns>
+
                     <timeDemandTypes>
                         <!-- Voor Bravoflex zijn timeDemandTypes alleen relevant voor het opgeven van een (maximale) runtime voor de rit. -->
                         <!-- Aangezien er niet via een vaste route wordt gereden, is er geen referentie naar een TimingLink. -->
-                        <TimeDemandType id="ARR:TimeDemandType:Bravoflex" version="1">
+                        <!-- In dit voorbeeld is gekozen voor verschillende JourneyRunTimes, omdat rijtijden per kern/hub-combinatie verschillen. -->
+                        <TimeDemandType id="PNB:TimeDemandType:8minuten" version="1">
                             <runTimes>
-                                <JourneyRunTime id="ARR:JourneyRunTime:Bravoflex" version="1">
-                                    <RunTime>PT30M</RunTime>
+                                <JourneyRunTime id="PNB:JourneyRunTime:8minuten" version="1">
+                                    <RunTime>PT8M</RunTime>
+                                </JourneyRunTime>
+                            </runTimes>
+                        </TimeDemandType>
+                        <TimeDemandType id="PNB:TimeDemandType:10minuten" version="1">
+                            <runTimes>
+                                <JourneyRunTime id="PNB:JourneyRunTime:10minuten" version="1">
+                                    <RunTime>PT10M</RunTime>
+                                </JourneyRunTime>
+                            </runTimes>
+                        </TimeDemandType>
+                        <TimeDemandType id="PNB:TimeDemandType:12minuten" version="1">
+                            <runTimes>
+                                <JourneyRunTime id="PNB:JourneyRunTime:12minuten" version="1">
+                                    <RunTime>PT12M</RunTime>
                                 </JourneyRunTime>
                             </runTimes>
                         </TimeDemandType>
                     </timeDemandTypes>
                 </ServiceFrame>
-                <TimetableFrame id="ARR:TimetableFrame:BravoFlex" version="1">
+
+                <TimetableFrame id="PNB:TimetableFrame:BravoFlex" version="1">
                     <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_TIMETABLE"/>
                     <contentValidityConditions>
                         <!-- Beschikbaarheid: Maandag t/m zaterdag van 07.00 tot 24.00 uur -->
-                        <AvailabilityCondition id="ARR:AvailabilityCondition:BravoFlex-ma-za" version="1">
+                        <AvailabilityCondition id="PNB:AvailabilityCondition:BravoFlex-ma-za" version="1">
                             <FromDate>2024-01-19T00:00:00Z</FromDate>
                             <ToDate>2024-12-31T00:00:00Z</ToDate>
                             <ValidDayBits>110111111011111101111110111111011111101111110111111011111101111110111111011111101111110111111011111101111110111111011111101111110111111011111101111110111111011111101111110111111011111101111110111111011111101111110111111011111101111110111111011111101111110111111011111101111110111111011111101111110111111011111101111110111111011111101111110111111011</ValidDayBits>
                             <timebands>
-                                <Timeband id="ARR:Timeband:BravoFlex-ma-za" version="1">
-                                    <StartTime>08:00:00</StartTime>
+                                <Timeband id="PNB:Timeband:BravoFlex-ma-za" version="1">
+                                    <StartTime>07:00:00</StartTime>
                                     <EndTime>24:00:00</EndTime>
                                 </Timeband>
                             </timebands>
                         </AvailabilityCondition>
                         <!-- Beschikbaarheid: Zon- en feestdagen van 08.00 tot 24.00 uur -->
-                        <AvailabilityCondition id="ARR:AvailabilityCondition:BravoFlex-zo-feest" version="1">
+                        <AvailabilityCondition id="PNB:AvailabilityCondition:BravoFlex-zo-feest" version="1">
                             <FromDate>2024-01-19T00:00:00Z</FromDate>
                             <ToDate>2024-12-31T00:00:00Z</ToDate>
                             <ValidDayBits>010000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100</ValidDayBits>
                             <timebands>
-                                <Timeband id="ARR:Timeband:BravoFlex-zo-feest" version="1">
+                                <Timeband id="PNB:Timeband:BravoFlex-zo-feest" version="1">
                                     <StartTime>08:00:00</StartTime>
                                     <EndTime>24:00:00</EndTime>
                                 </Timeband>
                             </timebands>
                         </AvailabilityCondition>
                     </contentValidityConditions>
+
                     <OperatorView>
-                        <OperatorRef ref="ARR:Operator:ARR" version="1"/>
+                        <OperatorRef ref="PNB:Operator:WDK" version="1"/>
                     </OperatorView>
+
                     <vehicleJourneys>
                         <!-- Chaam -> Baarle-Nassau v.v.: -->
-                        <ServiceJourney id="ARR:ServiceJourney:Kern-Chaam--Knooppunt-Baarle-Nassau" version="1">
+                        <ServiceJourney id="PNB:ServiceJourney:Kern-Chaam--Knooppunt-Baarle-Nassau" version="1">
                             <validityConditions>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:BravoFlex-ma-za" version="1"/>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:BravoFlex-zo-feest" version="1"/>
+                                <AvailabilityConditionRef ref="PNB:AvailabilityCondition:BravoFlex-ma-za" version="1"/>
+                                <AvailabilityConditionRef ref="PNB:AvailabilityCondition:BravoFlex-zo-feest" version="1"/>
                             </validityConditions>
                             <Monitored>false</Monitored>
-                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Kern-Chaam--Knooppunt-Baarle-Nassau" version="1"/>
-                            <VehicleTypeRef ref="ARR:VehicleType:BravoFlex" version="1"/>
-                            <FlexibleLineRef ref="ARR:FlexibleLine:BravoFlex" version="1"/>
+                            <ServiceJourneyPatternRef ref="PNB:ServiceJourneyPattern:Kern-Chaam--Knooppunt-Baarle-Nassau" version="1"/>
+                            <TimeDemandTypeRef ref="PNB:TimeDemandType:12minuten" version="1"/>
+                            <VehicleTypeRef ref="PNB:VehicleType:BravoFlex" version="1"/>
+                            <FlexibleLineRef ref="PNB:FlexibleLine:BravoFlex" version="1"/>
                             <Print>false</Print>
                             <Dynamic>never</Dynamic>
                             <FlexibleServiceProperties>
                                 <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
                             </FlexibleServiceProperties>
                         </ServiceJourney>
-                        <ServiceJourney id="ARR:ServiceJourney:Knooppunt-Baarle-Nassau--Kern-Chaam" version="1">
+                        <ServiceJourney id="PNB:ServiceJourney:Knooppunt-Baarle-Nassau--Kern-Chaam" version="1">
                             <validityConditions>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:BravoFlex-ma-za" version="1"/>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:BravoFlex-zo-feest" version="1"/>
+                                <AvailabilityConditionRef ref="PNB:AvailabilityCondition:BravoFlex-ma-za" version="1"/>
+                                <AvailabilityConditionRef ref="PNB:AvailabilityCondition:BravoFlex-zo-feest" version="1"/>
                             </validityConditions>
                             <Monitored>false</Monitored>
-                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Knooppunt-Baarle-Nassau--Kern-Chaam" version="1"/>
-                            <VehicleTypeRef ref="ARR:VehicleType:BravoFlex" version="1"/>
-                            <FlexibleLineRef ref="ARR:FlexibleLine:BravoFlex" version="1"/>
+                            <ServiceJourneyPatternRef ref="PNB:ServiceJourneyPattern:Knooppunt-Baarle-Nassau--Kern-Chaam" version="1"/>
+                            <TimeDemandTypeRef ref="PNB:TimeDemandType:12minuten" version="1"/>
+                            <VehicleTypeRef ref="PNB:VehicleType:BravoFlex" version="1"/>
+                            <FlexibleLineRef ref="PNB:FlexibleLine:BravoFlex" version="1"/>
                             <Print>false</Print>
                             <Dynamic>never</Dynamic>
                             <FlexibleServiceProperties>
                                 <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
                             </FlexibleServiceProperties>
                         </ServiceJourney>
-
+                        
                         <!-- Chaam -> Ulvenhout v.v.: -->
-                        <ServiceJourney id="ARR:ServiceJourney:Kern-Chaam--Knooppunt-Ulvenhout" version="1">
+                        <ServiceJourney id="PNB:ServiceJourney:Kern-Chaam--Knooppunt-Ulvenhout" version="1">
                             <validityConditions>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:BravoFlex-ma-za" version="1"/>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:BravoFlex-zo-feest" version="1"/>
+                                <AvailabilityConditionRef ref="PNB:AvailabilityCondition:BravoFlex-ma-za" version="1"/>
+                                <AvailabilityConditionRef ref="PNB:AvailabilityCondition:BravoFlex-zo-feest" version="1"/>
                             </validityConditions>
                             <Monitored>false</Monitored>
-                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Kern-Chaam--Knooppunt-Ulvenhout" version="1"/>
-                            <VehicleTypeRef ref="ARR:VehicleType:BravoFlex" version="1"/>
-                            <FlexibleLineRef ref="ARR:FlexibleLine:BravoFlex" version="1"/>
+                            <ServiceJourneyPatternRef ref="PNB:ServiceJourneyPattern:Kern-Chaam--Knooppunt-Ulvenhout" version="1"/>
+                            <TimeDemandTypeRef ref="PNB:TimeDemandType:12minuten" version="1"/>
+                            <VehicleTypeRef ref="PNB:VehicleType:BravoFlex" version="1"/>
+                            <FlexibleLineRef ref="PNB:FlexibleLine:BravoFlex" version="1"/>
                             <Print>false</Print>
                             <Dynamic>never</Dynamic>
                             <FlexibleServiceProperties>
                                 <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
                             </FlexibleServiceProperties>
                         </ServiceJourney>
-                        <ServiceJourney id="ARR:ServiceJourney:Knooppunt-Ulvenhout--Kern-Chaam" version="1">
+                        <ServiceJourney id="PNB:ServiceJourney:Knooppunt-Ulvenhout--Kern-Chaam" version="1">
                             <validityConditions>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:BravoFlex-ma-za" version="1"/>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:BravoFlex-zo-feest" version="1"/>
+                                <AvailabilityConditionRef ref="PNB:AvailabilityCondition:BravoFlex-ma-za" version="1"/>
+                                <AvailabilityConditionRef ref="PNB:AvailabilityCondition:BravoFlex-zo-feest" version="1"/>
                             </validityConditions>
                             <Monitored>false</Monitored>
-                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Knooppunt-Ulvenhout--Kern-Chaam" version="1"/>
-                            <VehicleTypeRef ref="ARR:VehicleType:BravoFlex" version="1"/>
-                            <FlexibleLineRef ref="ARR:FlexibleLine:BravoFlex" version="1"/>
+                            <ServiceJourneyPatternRef ref="PNB:ServiceJourneyPattern:Knooppunt-Ulvenhout--Kern-Chaam" version="1"/>
+                            <TimeDemandTypeRef ref="PNB:TimeDemandType:12minuten" version="1"/>
+                            <VehicleTypeRef ref="PNB:VehicleType:BravoFlex" version="1"/>
+                            <FlexibleLineRef ref="PNB:FlexibleLine:BravoFlex" version="1"/>
                             <Print>false</Print>
                             <Dynamic>never</Dynamic>
                             <FlexibleServiceProperties>
                                 <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
                             </FlexibleServiceProperties>
                         </ServiceJourney>
-
+                        
                         <!-- Galder -> Ulvenhout v.v.: -->
-                        <ServiceJourney id="ARR:ServiceJourney:Kern-Galder--Knooppunt-Ulvenhout" version="1">
+                        <ServiceJourney id="PNB:ServiceJourney:Kern-Galder--Knooppunt-Ulvenhout" version="1">
                             <validityConditions>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:BravoFlex-ma-za" version="1"/>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:BravoFlex-zo-feest" version="1"/>
+                                <AvailabilityConditionRef ref="PNB:AvailabilityCondition:BravoFlex-ma-za" version="1"/>
+                                <AvailabilityConditionRef ref="PNB:AvailabilityCondition:BravoFlex-zo-feest" version="1"/>
                             </validityConditions>
                             <Monitored>false</Monitored>
-                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Kern-Galder--Knooppunt-Ulvenhout" version="1"/>
-                            <VehicleTypeRef ref="ARR:VehicleType:BravoFlex" version="1"/>
-                            <FlexibleLineRef ref="ARR:FlexibleLine:BravoFlex" version="1"/>
+                            <ServiceJourneyPatternRef ref="PNB:ServiceJourneyPattern:Kern-Galder--Knooppunt-Ulvenhout" version="1"/>
+                            <TimeDemandTypeRef ref="PNB:TimeDemandType:8minuten" version="1"/>
+                            <VehicleTypeRef ref="PNB:VehicleType:BravoFlex" version="1"/>
+                            <FlexibleLineRef ref="PNB:FlexibleLine:BravoFlex" version="1"/>
                             <Print>false</Print>
                             <Dynamic>never</Dynamic>
                             <FlexibleServiceProperties>
                                 <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
                             </FlexibleServiceProperties>
                         </ServiceJourney>
-                        <ServiceJourney id="ARR:ServiceJourney:Knooppunt-Ulvenhout--Kern-Galder" version="1">
+                        <ServiceJourney id="PNB:ServiceJourney:Knooppunt-Ulvenhout--Kern-Galder" version="1">
                             <validityConditions>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:BravoFlex-ma-za" version="1"/>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:BravoFlex-zo-feest" version="1"/>
+                                <AvailabilityConditionRef ref="PNB:AvailabilityCondition:BravoFlex-ma-za" version="1"/>
+                                <AvailabilityConditionRef ref="PNB:AvailabilityCondition:BravoFlex-zo-feest" version="1"/>
                             </validityConditions>
                             <Monitored>false</Monitored>
-                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Knooppunt-Ulvenhout--Kern-Galder" version="1"/>
-                            <VehicleTypeRef ref="ARR:VehicleType:BravoFlex" version="1"/>
-                            <FlexibleLineRef ref="ARR:FlexibleLine:BravoFlex" version="1"/>
+                            <ServiceJourneyPatternRef ref="PNB:ServiceJourneyPattern:Knooppunt-Ulvenhout--Kern-Galder" version="1"/>
+                            <TimeDemandTypeRef ref="PNB:TimeDemandType:8minuten" version="1"/>
+                            <VehicleTypeRef ref="PNB:VehicleType:BravoFlex" version="1"/>
+                            <FlexibleLineRef ref="PNB:FlexibleLine:BravoFlex" version="1"/>
                             <Print>false</Print>
                             <Dynamic>never</Dynamic>
                             <FlexibleServiceProperties>
                                 <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
                             </FlexibleServiceProperties>
                         </ServiceJourney>
-
+                        
                         <!-- Galder -> Effen v.v.: -->
-                        <ServiceJourney id="ARR:ServiceJourney:Kern-Galder--Knooppunt-Effen" version="1">
+                        <ServiceJourney id="PNB:ServiceJourney:Kern-Galder--Knooppunt-Effen" version="1">
                             <validityConditions>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:BravoFlex-ma-za" version="1"/>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:BravoFlex-zo-feest" version="1"/>
+                                <AvailabilityConditionRef ref="PNB:AvailabilityCondition:BravoFlex-ma-za" version="1"/>
+                                <AvailabilityConditionRef ref="PNB:AvailabilityCondition:BravoFlex-zo-feest" version="1"/>
                             </validityConditions>
                             <Monitored>false</Monitored>
-                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Kern-Galder--Knooppunt-Effen" version="1"/>
-                            <VehicleTypeRef ref="ARR:VehicleType:BravoFlex" version="1"/>
-                            <FlexibleLineRef ref="ARR:FlexibleLine:BravoFlex" version="1"/>
+                            <ServiceJourneyPatternRef ref="PNB:ServiceJourneyPattern:Kern-Galder--Knooppunt-Effen" version="1"/>
+                            <TimeDemandTypeRef ref="PNB:TimeDemandType:12minuten" version="1"/>
+                            <VehicleTypeRef ref="PNB:VehicleType:BravoFlex" version="1"/>
+                            <FlexibleLineRef ref="PNB:FlexibleLine:BravoFlex" version="1"/>
                             <Print>false</Print>
                             <Dynamic>never</Dynamic>
                             <FlexibleServiceProperties>
                                 <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
                             </FlexibleServiceProperties>
                         </ServiceJourney>
-                        <ServiceJourney id="ARR:ServiceJourney:Knooppunt-Effen--Kern-Galder" version="1">
+                        <ServiceJourney id="PNB:ServiceJourney:Knooppunt-Effen--Kern-Galder" version="1">
                             <validityConditions>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:BravoFlex-ma-za" version="1"/>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:BravoFlex-zo-feest" version="1"/>
+                                <AvailabilityConditionRef ref="PNB:AvailabilityCondition:BravoFlex-ma-za" version="1"/>
+                                <AvailabilityConditionRef ref="PNB:AvailabilityCondition:BravoFlex-zo-feest" version="1"/>
                             </validityConditions>
                             <Monitored>false</Monitored>
-                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Knooppunt-Effen--Kern-Galder" version="1"/>
-                            <VehicleTypeRef ref="ARR:VehicleType:BravoFlex" version="1"/>
-                            <FlexibleLineRef ref="ARR:FlexibleLine:BravoFlex" version="1"/>
+                            <ServiceJourneyPatternRef ref="PNB:ServiceJourneyPattern:Knooppunt-Effen--Kern-Galder" version="1"/>
+                            <TimeDemandTypeRef ref="PNB:TimeDemandType:12minuten" version="1"/>
+                            <VehicleTypeRef ref="PNB:VehicleType:BravoFlex" version="1"/>
+                            <FlexibleLineRef ref="PNB:FlexibleLine:BravoFlex" version="1"/>
                             <Print>false</Print>
                             <Dynamic>never</Dynamic>
                             <FlexibleServiceProperties>
                                 <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
                             </FlexibleServiceProperties>
                         </ServiceJourney>
-
+                        
                         <!-- Ulvenhout -> Breda v.v.: -->
-                        <ServiceJourney id="ARR:ServiceJourney:Kern-Ulvenhout--Knooppunt-Breda" version="1">
+                        <ServiceJourney id="PNB:ServiceJourney:Kern-Ulvenhout--Knooppunt-Breda" version="1">
                             <validityConditions>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:BravoFlex-ma-za" version="1"/>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:BravoFlex-zo-feest" version="1"/>
+                                <AvailabilityConditionRef ref="PNB:AvailabilityCondition:BravoFlex-ma-za" version="1"/>
+                                <AvailabilityConditionRef ref="PNB:AvailabilityCondition:BravoFlex-zo-feest" version="1"/>
                             </validityConditions>
                             <Monitored>false</Monitored>
-                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Kern-Ulvenhout--Knooppunt-Breda" version="1"/>
-                            <VehicleTypeRef ref="ARR:VehicleType:BravoFlex" version="1"/>
-                            <FlexibleLineRef ref="ARR:FlexibleLine:BravoFlex" version="1"/>
+                            <ServiceJourneyPatternRef ref="PNB:ServiceJourneyPattern:Kern-Ulvenhout--Knooppunt-Breda" version="1"/>
+                            <TimeDemandTypeRef ref="PNB:TimeDemandType:10minuten" version="1"/>
+                            <VehicleTypeRef ref="PNB:VehicleType:BravoFlex" version="1"/>
+                            <FlexibleLineRef ref="PNB:FlexibleLine:BravoFlex" version="1"/>
                             <Print>false</Print>
                             <Dynamic>never</Dynamic>
                             <FlexibleServiceProperties>
                                 <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
                             </FlexibleServiceProperties>
                         </ServiceJourney>
-                        <ServiceJourney id="ARR:ServiceJourney:Knooppunt-Breda--Kern-Ulvenhout" version="1">
+                        <ServiceJourney id="PNB:ServiceJourney:Knooppunt-Breda--Kern-Ulvenhout" version="1">
                             <validityConditions>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:BravoFlex-ma-za" version="1"/>
-                                <AvailabilityConditionRef ref="ARR:AvailabilityCondition:BravoFlex-zo-feest" version="1"/>
+                                <AvailabilityConditionRef ref="PNB:AvailabilityCondition:BravoFlex-ma-za" version="1"/>
+                                <AvailabilityConditionRef ref="PNB:AvailabilityCondition:BravoFlex-zo-feest" version="1"/>
                             </validityConditions>
                             <Monitored>false</Monitored>
-                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Knooppunt-Breda--Kern-Ulvenhout" version="1"/>
-                            <VehicleTypeRef ref="ARR:VehicleType:BravoFlex" version="1"/>
-                            <FlexibleLineRef ref="ARR:FlexibleLine:BravoFlex" version="1"/>
+                            <ServiceJourneyPatternRef ref="PNB:ServiceJourneyPattern:Knooppunt-Breda--Kern-Ulvenhout" version="1"/>
+                            <TimeDemandTypeRef ref="PNB:TimeDemandType:10minuten" version="1"/>
+                            <VehicleTypeRef ref="PNB:VehicleType:BravoFlex" version="1"/>
+                            <FlexibleLineRef ref="PNB:FlexibleLine:BravoFlex" version="1"/>
                             <Print>false</Print>
                             <Dynamic>never</Dynamic>
                             <FlexibleServiceProperties>
                                 <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
                             </FlexibleServiceProperties>
                         </ServiceJourney>
-
                     </vehicleJourneys>
                 </TimetableFrame>
             </frames>
