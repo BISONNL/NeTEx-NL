@@ -818,6 +818,14 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		<xsd:complexContent>
 			<xsd:extension base="EmbeddedObjectStructure">
 				<xsd:sequence>
+					<xsd:element name="Extensions" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="ShowFlexibleTrip" type="xsd:boolean" minOccurs="0" default="false"/>
+								<xsd:element name="BookingRequired" type="xsd:boolean" minOccurs="0" default="true"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
 					<xsd:element name="MayBeSkipped" type="xsd:boolean" minOccurs="0"/>
 					<xsd:element name="PointStandingForAZone" type="xsd:boolean" minOccurs="0"/>
 					<xsd:element name="ZoneContainingStops" type="xsd:boolean" minOccurs="0"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" version="ntx:1.1">
     <PublicationTimestamp>2024-08-29T15:39:00Z</PublicationTimestamp>
-    <ParticipantRef>ARR</ParticipantRef>
+    <ParticipantRef>PNB</ParticipantRef>
     <Description>Voorbeeld-export voor BravoFlex Brabant-West</Description>
     <!-- Dit voorbeeld beschrijft reizen met BravoFlex in de regio Brabant-West -->
     <!-- Om het nog enigzins overzichtelijk te houden is alleen vervoer tussen de kernen Chaam, Galder en Ulvenhout uitgewerkt (als partitie-levering). -->
@@ -235,7 +235,7 @@
                             <FlexibleLineType>fixedStopAreaWide</FlexibleLineType>
                             <BookingContact>
                                 <Phone>088 600 09 87</Phone>
-                                <Url>https://www.bravo.info/reizen/diensten/BravoFlex</Url>
+                                <Url>https://www.bravo.info/reizen/diensten/bravoflex</Url>
                                 <FurtherDetails>BravoFlex-app</FurtherDetails>
                             </BookingContact>
                             <BookingMethods>mobileApp callOffice online</BookingMethods>
@@ -245,7 +245,7 @@
                             <LatestBookingTime>22:00:00</LatestBookingTime>
                             <MinimumBookingPeriod>PT60M</MinimumBookingPeriod>
                             <MaximumBookingPeriod>PT360H</MaximumBookingPeriod>
-                            <BookingUrl>https://www.bravo.info/reizen/diensten/BravoFlex</BookingUrl>
+                            <BookingUrl>https://www.wdkgroep.nl/wpbc-booking/bravoflex/$from$/$to$/$departuretime$/$arrivaltime$</BookingUrl>
                             <!-- Tariefinformatie wordt vooralsnog opgenomen als BookingNote: -->
                             <BookingNote>Een rit met Bravoflex kost € 2,-. Alleen als er binnen half uur vóór óf na het gewenste tijdstip tussen de vertrekhalte en bestemmingshalte óók een reguliere lijndienst (bus of buurtbus) rijdt, kost een Bravoflex-rit € 5,-</BookingNote>
                         </FlexibleLine>

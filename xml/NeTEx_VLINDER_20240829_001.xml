@@ -1,0 +1,1036 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" version="ntx:1.1">
+    <PublicationTimestamp>2024-08-29T15:39:00Z</PublicationTimestamp>
+    <ParticipantRef>ARR</ParticipantRef>
+    <Description>Voorbeeld-export voor Arriva Vlinder Leeuwarden Binnenstad</Description>
+    <dataObjects>
+        <CompositeFrame id="ARR:CompositeFrame:Vlinder" modification="new" version="1">
+            <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_BASELINE"/>
+            <FrameDefaults>
+                <DefaultCodespaceRef ref="BISON:Codespace:ARR"/>
+                <DefaultDataSourceRef ref="ARR:DataSource:ARR" version="1"/>
+                <DefaultResponsibilitySetRef ref="ARR:ResponsibilitySet:FY_partitie" version="1"/>
+                <DefaultLocale>
+                    <TimeZone>Europe/Amsterdam</TimeZone>
+                    <DefaultLanguage>nl</DefaultLanguage>
+                </DefaultLocale>
+                <DefaultLocationSystem>EPSG:28992</DefaultLocationSystem>
+                <DefaultSystemOfUnits>SiMetres</DefaultSystemOfUnits>
+                <DefaultCurrency>EUR</DefaultCurrency>
+            </FrameDefaults>
+            <versions>
+                <Version id="ARR:Version:FY_20240815_20240902_0700" modification="new" version="FY_20240815_20240902_0700">
+                    <StartDate>2024-09-02T00:00:00Z</StartDate>
+                    <EndDate>2024-12-14T00:00:00Z</EndDate>
+                    <VersionType>baseline</VersionType>
+                </Version>
+            </versions>
+            <frames>
+                <ResourceFrame id="ARR:ResourceFrame:Vlinder" version="1">
+                    <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_RESOURCE"/>
+                    <dataSources>
+						<DataSource id="ARR:DataSource:ARR" version="1">
+                            <Name>Arriva</Name>
+                            <ShortName>ARR</ShortName>
+                            <Description>Arriva</Description>
+                        </DataSource>
+                    </dataSources>
+                    <responsibilitySets>
+						<ResponsibilitySet id="ARR:ResponsibilitySet:FY_partitie" version="1">
+                            <Name>FY</Name>
+                            <roles>
+							<ResponsibilityRoleAssignment id="ARR:ResponsibilityRoleAssignment:FY_partitie" version="1">
+								<ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="ARR:TransportAdministrativeZone:FY_partitie" version="1"/>
+							</ResponsibilityRoleAssignment>
+                            </roles>
+                        </ResponsibilitySet>
+                        <ResponsibilitySet id="ARR:ResponsibilitySet:FY" version="1">
+                            <Name>Fryslân</Name>
+                            <roles>
+							<ResponsibilityRoleAssignment id="ARR:ResponsibilityRoleAssignment:FY" version="1">
+								<ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="DOVA:TransportAdministrativeZone:FY" version="1"/>
+							</ResponsibilityRoleAssignment>
+                            </roles>
+                        </ResponsibilitySet>
+                    </responsibilitySets>
+                    <typesOfValue>
+                        <TypeOfProductCategory id="ARR:ProductCategory:VLINDER" version="1">
+                            <Name>Vlinder</Name>
+                            <Description>Vlinder</Description>
+                        </TypeOfProductCategory>
+                    </typesOfValue>
+                    <organisations>
+						<Operator id="ARR:Operator:ARR" version="1">
+                            <Name>Arriva</Name>
+                            <ShortName>ARR</ShortName>
+                            <CustomerServiceContactDetails>
+							<Url>https://arriva.nl/</Url>
+                            </CustomerServiceContactDetails>
+                        </Operator>
+                    </organisations>
+                    <operationalContexts>
+                        <OperationalContext id="ARR:OperationalContext:bus" version="1">
+                            <VehicleMode>bus</VehicleMode>
+                        </OperationalContext>
+                    </operationalContexts>
+                    <vehicleTypes>
+						<VehicleType id="ARR:VehicleType:Vlinder" version="1">
+                            <Name>Vlinder</Name>
+                            <ShortName>Vlin</ShortName>
+                            <Description>Vlinder</Description>
+                            <TypeOfFuel>diesel</TypeOfFuel>
+                            <TransportMode>bus</TransportMode>
+                            <capacities>
+								<PassengerCapacity id="ARR:PassengerCapacity:Vlinder" version="1">
+									<FareClass>any</FareClass>
+									<TotalCapacity>8</TotalCapacity>
+									<SeatingCapacity>8</SeatingCapacity>
+									<StandingCapacity>0</StandingCapacity>
+									<SpecialPlaceCapacity>0</SpecialPlaceCapacity>
+									<PushchairCapacity>0</PushchairCapacity>
+									<WheelchairPlaceCapacity>0</WheelchairPlaceCapacity>
+								</PassengerCapacity>
+							</capacities>
+							<LowFloor>false</LowFloor>
+							<HasLiftOrRamp>false</HasLiftOrRamp>
+							<Length>0</Length>
+							<facilities>
+							<ServiceFacilitySet id="ARR:ServiceFacilitySet:Vlinder" version="1">
+								<MobilityFacilityList>unknown</MobilityFacilityList>
+								<VehicleAccessFacilityList>unknown</VehicleAccessFacilityList>
+							</ServiceFacilitySet>
+							</facilities>
+						</VehicleType>
+                    </vehicleTypes>
+                    <zones>
+                        <TransportAdministrativeZone id="ARR:TransportAdministrativeZone:FY_partitie" version="any">
+                            <Name>Friesland</Name>
+                            <ShortName>FY</ShortName>
+                            <Description>FY</Description>
+                        </TransportAdministrativeZone>
+                    </zones>
+                </ResourceFrame>
+                <ServiceFrame id="ARR:ServiceFrame:Vlinder" version="1">
+                    <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_SERVICE"/>
+                    <routePoints>
+						<RoutePoint id="ARR:RoutePoint:20000010" version="1">
+                            <Location>
+								<gml:pos>182031 578945</gml:pos>
+                            </Location>
+                        </RoutePoint>
+                        <RoutePoint id="ARR:RoutePoint:20002740" version="1">
+                            <Location>
+								<gml:pos>181883 579391</gml:pos>
+                            </Location>
+                        </RoutePoint>
+                        <RoutePoint id="ARR:RoutePoint:20003020" version="1">
+                            <Location>
+								<gml:pos>182029 579476</gml:pos>
+                            </Location>
+                        </RoutePoint>
+                        <RoutePoint id="ARR:RoutePoint:20004670" version="1">
+                            <Location>
+								<gml:pos>182096 579444</gml:pos>
+                            </Location>
+                        </RoutePoint>
+                        <RoutePoint id="ARR:RoutePoint:20001570" version="1">
+                            <Location>
+								<gml:pos>182225 579398</gml:pos>
+                            </Location>
+                        </RoutePoint>
+                        <RoutePoint id="ARR:RoutePoint:20006670" version="1">
+                            <Location>
+								<gml:pos>182363 579417</gml:pos>
+                            </Location>
+                        </RoutePoint>
+                        <RoutePoint id="ARR:RoutePoint:20002440" version="1">
+                            <Location>
+								<gml:pos>182473 579493</gml:pos>
+                            </Location>
+                        </RoutePoint>
+                        <RoutePoint id="ARR:RoutePoint:20002430" version="1">
+                            <Location>
+								<gml:pos>182529 579583</gml:pos>
+                            </Location>
+                        </RoutePoint>
+                        <RoutePoint id="ARR:RoutePoint:20006680" version="1">
+                            <Location>
+								<gml:pos>182585 579643</gml:pos>
+                            </Location>
+                        </RoutePoint>
+                        <RoutePoint id="ARR:RoutePoint:20006320" version="1">
+                            <Location>
+								<gml:pos>182650 579791</gml:pos>
+                            </Location>
+                        </RoutePoint>
+                        <RoutePoint id="ARR:RoutePoint:20000171" version="1">
+                            <Location>
+								<gml:pos>182003 578942</gml:pos>
+                            </Location>
+                        </RoutePoint>
+					</routePoints>
+					<routeLinks>
+						<RouteLink responsibilitySetRef="ARR:ResponsibilitySet:Frl_financier" id="ARR:RouteLink:20000010-20002740" version="1">
+                            <Distance>978</Distance>
+                            <gml:LineString gml:id="ARR_LineString_20000010-20002740">
+								<gml:posList>182031 578946 182036 578942 182037 578949 182037 578955 182036 578960 182034 578963 182030 578966 182018 578968 181982 578972 181968 578972 181950 578969 181928 578964 181916 578962 181910 578962 181906 578961 181901 578963 181893 578966 181887 578971 181882 578977 181880 578986 181882 578989 181882 578992 181881 578995 181879 578999 181876 579001 181874 579007 181874 579012 181875 579015 181879 579065 181879 579067 181879 579072 181880 579076 181883 579078 181886 579081 181887 579085 181887 579089 181897 579090 181899 579090 181909 579091 181919 579091 181951 579088 181965 579087 182028 579082 182065 579080 182071 579080 182074 579080 182078 579082 182080 579084 182082 579087 182083 579090 182083 579094 182079 579117 182075 579147 182074 579151 182072 579161 182070 579179 182070 579183 182070 579193 182070 579200 182071 579214 182077 579272 182078 579281 182078 579286 182082 579323 182085 579349 182069 579350 182025 579355 182009 579356 181996 579358 181983 579359 181963 579361 181946 579363 181918 579371 181904 579376 181896 579378 181890 579381 181881 579388</gml:posList>
+                            </gml:LineString>
+                            <FromPointRef ref="ARR:RoutePoint:20000010" version="1"/>
+                            <ToPointRef ref="ARR:RoutePoint:20002740" version="1"/>
+                            <OperationalContextRef ref="ARR:OperationalContext:bus" version="1"/>
+                        </RouteLink>
+                        <RouteLink responsibilitySetRef="ARR:ResponsibilitySet:Frl_financier" id="ARR:RouteLink:20002740-20003020" version="1">
+                            <Distance>272</Distance>
+                            <gml:LineString gml:id="ARR_LineString_20002740-20003020">
+								<gml:posList>181881 579388 181880 579389 181873 579396 181868 579402 181874 579408 181875 579411 181877 579415 181885 579442 181897 579481 181907 579513 181910 579520 181917 579517 181948 579510 181977 579501 182000 579495 182009 579493 182019 579490 182033 579484</gml:posList>
+                            </gml:LineString>
+                            <FromPointRef ref="ARR:RoutePoint:20002740" version="1"/>
+                            <ToPointRef ref="ARR:RoutePoint:20003020" version="1"/>
+                            <OperationalContextRef ref="ARR:OperationalContext:bus" version="1"/>
+                        </RouteLink>
+                        <RouteLink responsibilitySetRef="ARR:ResponsibilitySet:Frl_financier" id="ARR:RouteLink:20003020-20004670" version="1">
+                            <Distance>74</Distance>
+                            <gml:LineString gml:id="ARR_LineString_20003020-20004670">
+								<gml:posList>182033 579484 182100 579452</gml:posList>
+                            </gml:LineString>
+                            <FromPointRef ref="ARR:RoutePoint:20003020" version="1"/>
+                            <ToPointRef ref="ARR:RoutePoint:20004670" version="1"/>
+                            <OperationalContextRef ref="ARR:OperationalContext:bus" version="1"/>
+                        </RouteLink>
+                        <RouteLink responsibilitySetRef="ARR:ResponsibilitySet:Frl_financier" id="ARR:RouteLink:20004670-20001570" version="1">
+                            <Distance>136</Distance>
+                            <gml:LineString gml:id="ARR_LineString_20004670-20001570">
+								<gml:posList>182100 579452 182106 579449 182116 579444 182125 579441 182172 579421 182195 579413 182227 579405</gml:posList>
+                            </gml:LineString>
+                            <FromPointRef ref="ARR:RoutePoint:20004670" version="1"/>
+                            <ToPointRef ref="ARR:RoutePoint:20001570" version="1"/>
+                            <OperationalContextRef ref="ARR:OperationalContext:bus" version="1"/>
+                        </RouteLink>
+                        <RouteLink responsibilitySetRef="ARR:ResponsibilitySet:Frl_financier" id="ARR:RouteLink:20001570-20006670" version="1">
+                            <Distance>138</Distance>
+                            <gml:LineString gml:id="ARR_LineString_20001570-20006670">
+								<gml:posList>182227 579405 182238 579402 182257 579402 182260 579402 182276 579404 182338 579417 182362 579422</gml:posList>
+                            </gml:LineString>
+                            <FromPointRef ref="ARR:RoutePoint:20001570" version="1"/>
+                            <ToPointRef ref="ARR:RoutePoint:20006670" version="1"/>
+                            <OperationalContextRef ref="ARR:OperationalContext:bus" version="1"/>
+                        </RouteLink>
+                        <RouteLink responsibilitySetRef="ARR:ResponsibilitySet:Frl_financier" id="ARR:RouteLink:20006670-20002440" version="1">
+                            <Distance>168</Distance>
+                            <gml:LineString gml:id="ARR_LineString_20006670-20002440">
+								<gml:posList>182362 579422 182367 579424 182378 579426 182377 579432 182385 579434 182404 579437 182414 579439 182424 579440 182437 579442 182452 579442 182468 579442 182468 579446 182468 579466 182468 579480 182470 579488 182471 579494</gml:posList>
+                            </gml:LineString>
+                            <FromPointRef ref="ARR:RoutePoint:20006670" version="1"/>
+                            <ToPointRef ref="ARR:RoutePoint:20002440" version="1"/>
+                            <OperationalContextRef ref="ARR:OperationalContext:bus" version="1"/>
+                        </RouteLink>
+                        <RouteLink responsibilitySetRef="ARR:ResponsibilitySet:Frl_financier" id="ARR:RouteLink:20002440-20002430" version="1">
+                            <Distance>109</Distance>
+                            <gml:LineString gml:id="ARR_LineString_20002440-20002430">
+								<gml:posList>182471 579494 182472 579494 182474 579502 182479 579510 182506 579546 182509 579552 182510 579559 182513 579567 182519 579577 182522 579583 182527 579586</gml:posList>
+                            </gml:LineString>
+                            <FromPointRef ref="ARR:RoutePoint:20002440" version="1"/>
+                            <ToPointRef ref="ARR:RoutePoint:20002430" version="1"/>
+                            <OperationalContextRef ref="ARR:OperationalContext:bus" version="1"/>
+                        </RouteLink>
+                        <RouteLink responsibilitySetRef="ARR:ResponsibilitySet:Frl_financier" id="ARR:RouteLink:20002430-20006680" version="1">
+                            <Distance>81</Distance>
+                            <gml:LineString gml:id="ARR_LineString_20002430-20006680">
+								<gml:posList>182527 579586 182531 579589 182550 579610 182572 579632 182580 579642 182582 579645</gml:posList>
+                            </gml:LineString>
+                            <FromPointRef ref="ARR:RoutePoint:20002430" version="1"/>
+                            <ToPointRef ref="ARR:RoutePoint:20006680" version="1"/>
+                            <OperationalContextRef ref="ARR:OperationalContext:bus" version="1"/>
+                        </RouteLink>
+                        <RouteLink responsibilitySetRef="ARR:ResponsibilitySet:Frl_financier" id="ARR:RouteLink:20006680-20006320" version="1">
+                            <Distance>163</Distance>
+                            <gml:LineString gml:id="ARR_LineString_20006680-20006320">
+								<gml:posList>182582 579645 182586 579650 182591 579657 182599 579669 182618 579702 182626 579716 182632 579730 182632 579731 182637 579741 182644 579755 182647 579767 182649 579780 182650 579791</gml:posList>
+                            </gml:LineString>
+                            <FromPointRef ref="ARR:RoutePoint:20006680" version="1"/>
+                            <ToPointRef ref="ARR:RoutePoint:20006320" version="1"/>
+                            <OperationalContextRef ref="ARR:OperationalContext:bus" version="1"/>
+                        </RouteLink>
+                        <RouteLink responsibilitySetRef="ARR:ResponsibilitySet:Frl_financier" id="ARR:RouteLink:20006320-20000171" version="1">
+                            <Distance>2206</Distance>
+                            <gml:LineString gml:id="ARR_LineString_20006320-20000171">
+								<gml:posList>182650 579791 182650 579795 182652 579823 182654 579854 182655 579863 182657 579876 182661 579912 182665 579946 182666 579956 182670 579959 182682 579963 182689 579964 182697 579966 182710 579967 182720 579968 182728 579968 182735 579966 182740 579964 182743 579962 182748 579957 182753 579951 182760 579940 182764 579934 182776 579919 182784 579910 182790 579901 182794 579892 182799 579880 182803 579865 182804 579855 182808 579844 182808 579816 182808 579782 182807 579770 182805 579750 182801 579729 182797 579705 182792 579692 182791 579687 182790 579685 182789 579677 182788 579673 182786 579655 182785 579650 182785 579642 182786 579629 182785 579624 182780 579593 182776 579562 182760 579466 182757 579458 182755 579449 182753 579443 182752 579435 182750 579423 182747 579406 182747 579403 182745 579392 182744 579389 182743 579386 182740 579378 182738 579377 182736 579376 182731 579374 182727 579374 182723 579374 182717 579374 182696 579374 182641 579374 182600 579374 182585 579374 182574 579376 182567 579375 182563 579373 182560 579371 182558 579369 182556 579366 182555 579363 182554 579358 182554 579354 182555 579349 182559 579340 182560 579335 182560 579324 182560 579314 182561 579305 182558 579299 182558 579290 182557 579287 182555 579282 182551 579278 182521 579276 182512 579276 182474 579273 182471 579273 182467 579272 182462 579270 182459 579269 182449 579265 182439 579259 182428 579253 182428 579253 182421 579248 182416 579243 182410 579236 182405 579229 182399 579219 182392 579207 182381 579189 182378 579186 182374 579182 182371 579177 182370 579172 182369 579170 182369 579168 182369 579164 182371 579152 182372 579146 182372 579139 182372 579137 182371 579134 182366 579126 182361 579118 182356 579110 182354 579102 182352 579076 182350 579046 182350 579043 182350 579039 182352 579024 182348 579026 182343 579028 182338 579030 182334 579031 182330 579031 182324 579032 182318 579032 182307 579030 182295 579027 182283 579023 182273 579020 182265 579018 182253 579016 182241 579013 182222 579009 182166 578998 182145 578994 182110 578988 182092 578984 182083 578983 182075 578982 182070 578981 182060 578980 182050 578979 182019 578979 181984 578982 181918 578987 181895 578992 181885 578994 181881 578995 181879 578999 181876 579001 181873 579003 181869 579003 181863 579001 181861 578998 181859 578995 181859 578991 181859 578987 181861 578984 181863 578982 181866 578980 181870 578980 181873 578980 181880 578971 181886 578965 181889 578961 181893 578959 181901 578955 181906 578956 181906 578956 181911 578956 181914 578957 181917 578958 181920 578958 181926 578959 181938 578962 181945 578963 181951 578964 181957 578966 181963 578967 181967 578968 181969 578968 181975 578968 181984 578968 181989 578962 182004 578944 182005 578943</gml:posList>
+                            </gml:LineString>
+                            <FromPointRef ref="ARR:RoutePoint:20006320" version="1"/>
+                            <ToPointRef ref="ARR:RoutePoint:20000171" version="1"/>
+                            <OperationalContextRef ref="ARR:OperationalContext:bus" version="1"/>
+                        </RouteLink>
+					</routeLinks>
+					<routes>
+						<Route id="ARR:Route:Vlinder" version="1">
+                            <FlexibleLineRef ref="ARR:FlexibleLine:51809" version="1"/>
+                            <DirectionType>inbound</DirectionType>
+                            <pointsInSequence>
+							<PointOnRoute id="ARR:PointOnRoute:620274-1" order="1">
+								<RoutePointRef ref="ARR:RoutePoint:20000010" version="1"/>
+								<OnwardRouteLinkRef ref="ARR:RouteLink:20000010-20002740" version="1"/>
+							</PointOnRoute>
+							<PointOnRoute id="ARR:PointOnRoute:620274-2" order="2">
+								<RoutePointRef ref="ARR:RoutePoint:20002740" version="1"/>
+								<OnwardRouteLinkRef ref="ARR:RouteLink:20002740-20003020" version="1"/>
+							</PointOnRoute>
+							<PointOnRoute id="ARR:PointOnRoute:620274-3" order="3">
+								<RoutePointRef ref="ARR:RoutePoint:20003020" version="1"/>
+								<OnwardRouteLinkRef ref="ARR:RouteLink:20003020-20004670" version="1"/>
+							</PointOnRoute>
+							<PointOnRoute id="ARR:PointOnRoute:620274-4" order="4">
+								<RoutePointRef ref="ARR:RoutePoint:20004670" version="1"/>
+								<OnwardRouteLinkRef ref="ARR:RouteLink:20004670-20001570" version="1"/>
+							</PointOnRoute>
+							<PointOnRoute id="ARR:PointOnRoute:620274-5" order="5">
+								<RoutePointRef ref="ARR:RoutePoint:20001570" version="1"/>
+								<OnwardRouteLinkRef ref="ARR:RouteLink:20001570-20006670" version="1"/>
+							</PointOnRoute>
+							<PointOnRoute id="ARR:PointOnRoute:620274-6" order="6">
+								<RoutePointRef ref="ARR:RoutePoint:20006670" version="1"/>
+								<OnwardRouteLinkRef ref="ARR:RouteLink:20006670-20002440" version="1"/>
+							</PointOnRoute>
+							<PointOnRoute id="ARR:PointOnRoute:620274-7" order="7">
+								<RoutePointRef ref="ARR:RoutePoint:20002440" version="1"/>
+								<OnwardRouteLinkRef ref="ARR:RouteLink:20002440-20002430" version="1"/>
+							</PointOnRoute>
+							<PointOnRoute id="ARR:PointOnRoute:620274-8" order="8">
+								<RoutePointRef ref="ARR:RoutePoint:20002430" version="1"/>
+								<OnwardRouteLinkRef ref="ARR:RouteLink:20002430-20006680" version="1"/>
+							</PointOnRoute>
+							<PointOnRoute id="ARR:PointOnRoute:620274-9" order="9">
+								<RoutePointRef ref="ARR:RoutePoint:20006680" version="1"/>
+								<OnwardRouteLinkRef ref="ARR:RouteLink:20006680-20006320" version="1"/>
+							</PointOnRoute>
+							<PointOnRoute id="ARR:PointOnRoute:620274-10" order="10">
+								<RoutePointRef ref="ARR:RoutePoint:20006320" version="1"/>
+								<OnwardRouteLinkRef ref="ARR:RouteLink:20006320-20000171" version="1"/>
+							</PointOnRoute>
+							<PointOnRoute id="ARR:PointOnRoute:620274-11" order="11">
+								<RoutePointRef ref="ARR:RoutePoint:20000171" version="1"/>
+							</PointOnRoute>
+                            </pointsInSequence>
+                        </Route>
+					</routes>
+                    <lines>
+                        <FlexibleLine id="ARR:FlexibleLine:51809" version="1" responsibilitySetRef="ARR:ResponsibilitySet:FY" >
+                            <Name>Vlinder Binnenstad</Name>
+                            <TransportMode>bus</TransportMode>
+                            <PublicCode>809</PublicCode>
+                            <PrivateCode type="LinePlanningNumber">51809</PrivateCode>
+                            <ExternalLineRef type="VeTagLineNumber" ref="809"/>
+                            <AuthorityRef ref="DOVA:Authority:FR" version="1"/>
+                            <TypeOfProductCategoryRef ref="ARR:ProductCategory:VLINDER" version="1"/>
+                            <TypeOfServiceRef ref="BISON:TypeOfService:Flex" version="1"/>
+                            <Monitored>true</Monitored>
+                            <Presentation>
+								<Colour>004040</Colour>
+                            </Presentation>
+                            <AccessibilityAssessment id="ARR:AccessibilityAssessment:51809" version="1">
+								<MobilityImpairedAccess>true</MobilityImpairedAccess>
+                            </AccessibilityAssessment>
+                            <FlexibleLineType>mixedFlexibleAndFixed</FlexibleLineType><!-- TODO: wat is het correct FlexibleLineType voor Vlinder? -->
+							<BookingContact>
+                                <Phone>0800 0232545</Phone>
+                                <Url>https://www.arriva.nl/over-je-reis/met-de-bus/met-de-arriva-vlinder/?regio=Frysl%C3%A2n</Url>
+                                <FurtherDetails>Arriva Vlinder-app</FurtherDetails>
+                            </BookingContact>
+                            <BookingMethods>mobileApp callOffice online</BookingMethods>
+                            <BookingAccess>public</BookingAccess>
+                            <BookWhen>advanceAndDayOfTravel</BookWhen>
+                            <BuyWhen>onReservation onBoarding</BuyWhen>
+                            <LatestBookingTime>22:00:00</LatestBookingTime>
+                            <MinimumBookingPeriod>PT60M</MinimumBookingPeriod>
+                            <MaximumBookingPeriod>PT360H</MaximumBookingPeriod>
+                            <BookingUrl>https://www.arriva.nl/api/booking</BookingUrl>
+                            <BookingNote>De Vlinder hoef je niet te reserveren als je vertrekt vanaf Busstation Leeuwarden. De Vlinder stopt 1x per uur om .30 uur op het Busstation.</BookingNote>
+                        </FlexibleLine>
+                    </lines>
+                    <destinationDisplays>
+						<DestinationDisplay id="ARR:DestinationDisplay:1699" version="1">
+                            <Name>Vlinder</Name>
+                            <SideText>Vlinder Binnenstad</SideText>
+                            <FrontText>Vlinder Binnenstad</FrontText>
+                            <PrivateCode type="DestinationCode">1699</PrivateCode>
+                            <vias>
+								<Via>
+									<Name>Binnenstad</Name>
+								</Via>
+                            </vias>
+                            <variants>
+								<DestinationDisplayVariant id="ARR:DestinationDisplayVariant:1699-16" version="1">
+									<Extensions>
+										<MaxLength>BISON:DisplayTextLength:16</MaxLength>
+									</Extensions>
+									<DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+									<Name>Vlinder</Name>
+									<vias>
+										<Via>
+											<Name>Binnenstad</Name>
+										</Via>
+									</vias>
+								</DestinationDisplayVariant>
+								<DestinationDisplayVariant id="ARR:DestinationDisplayVariant:1699-19" version="1">
+									<Extensions>
+										<MaxLength>BISON:DisplayTextLength:19</MaxLength>
+									</Extensions>
+									<DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+									<Name>Vlinder</Name>
+									<vias>
+										<Via>
+											<Name>Binnenstad</Name>
+										</Via>
+									</vias>
+								</DestinationDisplayVariant>
+								<DestinationDisplayVariant id="ARR:DestinationDisplayVariant:1699-21" version="1">
+									<Extensions>
+										<MaxLength>BISON:DisplayTextLength:21</MaxLength>
+									</Extensions>
+									<DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+									<Name>Vlinder</Name>
+									<vias>
+										<Via>
+											<Name>Binnenstad</Name>
+										</Via>
+									</vias>
+								</DestinationDisplayVariant>
+								<DestinationDisplayVariant id="ARR:DestinationDisplayVariant:1699-24" version="1">
+									<Extensions>
+										<MaxLength>BISON:DisplayTextLength:24</MaxLength>
+									</Extensions>
+									<DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
+									<Name>Vlinder</Name>
+									<vias>
+										<Via>
+											<Name>Binnenstad</Name>
+										</Via>
+									</vias>
+								</DestinationDisplayVariant>
+							</variants>
+						</DestinationDisplay>
+                    </destinationDisplays>
+                    <scheduledStopPoints>
+						<ScheduledStopPoint id="ARR:ScheduledStopPoint:20000010" version="1">
+                            <Name>Leeuwarden, Busstation</Name>
+                            <Location>
+								<gml:pos>182031 578945</gml:pos>
+                            </Location>
+                            <projections>
+								<PointProjection id="ARR:PointProjection:20000010" version="1">
+									<ProjectToPointRef nameOfRefClass="RoutePoint" ref="ARR:RoutePoint:20000010" version="1"/>
+								</PointProjection>
+                            </projections>
+                            <PrivateCode type="UserStopCode">20000010</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:20002740" version="1">
+                            <Name>Leeuwarden, Harmonie</Name>
+                            <Location>
+								<gml:pos>181883 579391</gml:pos>
+                            </Location>
+                            <projections>
+								<PointProjection id="ARR:PointProjection:20002740" version="1">
+								    <ProjectToPointRef nameOfRefClass="RoutePoint" ref="ARR:RoutePoint:20002740" version="1"/>
+								</PointProjection>
+                            </projections>
+                            <PrivateCode type="UserStopCode">20002740</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:20003020" version="1">
+                            <Name>Leeuwarden, Ipe Brouwerssteeg</Name>
+                            <Location>
+								<gml:pos>182029 579476</gml:pos>
+                            </Location>
+                            <projections>
+								<PointProjection id="ARR:PointProjection:20003020" version="1">
+									<ProjectToPointRef nameOfRefClass="RoutePoint" ref="ARR:RoutePoint:20003020" version="1"/>
+								</PointProjection>
+                            </projections>
+                            <PrivateCode type="UserStopCode">20003020</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:20004670" version="1">
+                            <Name>Leeuwarden, Oude Doelesteeg</Name>
+                            <Location>
+								<gml:pos>182096 579444</gml:pos>
+                            </Location>
+                            <projections>
+								<PointProjection id="ARR:PointProjection:20004670" version="1">
+									<ProjectToPointRef nameOfRefClass="RoutePoint" ref="ARR:RoutePoint:20004670" version="1"/>
+								</PointProjection>
+                            </projections>
+                            <PrivateCode type="UserStopCode">20004670</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:20001570" version="1">
+                            <Name>Leeuwarden, De Waag</Name>
+                            <Location>
+								<gml:pos>182225 579398</gml:pos>
+                            </Location>
+                            <projections>
+								<PointProjection id="ARR:PointProjection:20001570" version="1">
+									<ProjectToPointRef nameOfRefClass="RoutePoint" ref="ARR:RoutePoint:20001570" version="1"/>
+								</PointProjection>
+                            </projections>
+                            <PrivateCode type="UserStopCode">20001570</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:20006670" version="1">
+                            <Name>Leeuwarden, Wirdumerdijk</Name>
+                            <Location>
+								<gml:pos>182363 579417</gml:pos>
+                            </Location>
+                            <projections>
+								<PointProjection id="ARR:PointProjection:20006670" version="1">
+									<ProjectToPointRef nameOfRefClass="RoutePoint" ref="ARR:RoutePoint:20006670" version="1"/>
+								</PointProjection>
+                            </projections>
+                            <PrivateCode type="UserStopCode">20006670</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:20002440" version="1">
+                            <Name>Leeuwarden, De Brol</Name>
+                            <Location>
+								<gml:pos>182473 579493</gml:pos>
+                            </Location>
+                            <projections>
+								<PointProjection id="ARR:PointProjection:20002440" version="1">
+									<ProjectToPointRef nameOfRefClass="RoutePoint" ref="ARR:RoutePoint:20002440" version="1"/>
+								</PointProjection>
+                            </projections>
+                            <PrivateCode type="UserStopCode">20002440</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:20002430" version="1">
+                            <Name>Leeuwarden, Korfmakersstraat</Name>
+                            <Location>
+								<gml:pos>182529 579583</gml:pos>
+                            </Location>
+                            <projections>
+								<PointProjection id="ARR:PointProjection:20002430" version="1">
+									<ProjectToPointRef nameOfRefClass="RoutePoint" ref="ARR:RoutePoint:20002430" version="1"/>
+								</PointProjection>
+                            </projections>
+                            <PrivateCode type="UserStopCode">20002430</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:20006680" version="1">
+                            <Name>Leeuwarden, Wortelhaven</Name>
+                            <Location>
+								<gml:pos>182585 579643</gml:pos>
+                            </Location>
+                            <projections>
+								<PointProjection id="ARR:PointProjection:20006680" version="1">
+									<ProjectToPointRef nameOfRefClass="RoutePoint" ref="ARR:RoutePoint:20006680" version="1"/>
+								</PointProjection>
+                            </projections>
+                            <PrivateCode type="UserStopCode">20006680</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:20006320" version="1">
+                            <Name>Leeuwarden, Voorstreek</Name>
+                            <Location>
+								<gml:pos>182650 579791</gml:pos>
+                            </Location>
+                            <projections>
+								<PointProjection id="ARR:PointProjection:20006320" version="1">
+									<ProjectToPointRef nameOfRefClass="RoutePoint" ref="ARR:RoutePoint:20006320" version="1"/>
+								</PointProjection>
+                            </projections>
+                            <PrivateCode type="UserStopCode">20006320</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="ARR:ScheduledStopPoint:20000171" version="1">
+                            <Name>Leeuwarden, Busstation</Name>
+                            <Location>
+								<gml:pos>182003 578942</gml:pos>
+                            </Location>
+                            <projections>
+								<PointProjection id="ARR:PointProjection:20000171" version="1">
+									<ProjectToPointRef nameOfRefClass="RoutePoint" ref="ARR:RoutePoint:20000171" version="1"/>
+								</PointProjection>
+                            </projections>
+                            <PrivateCode type="UserStopCode">20000171</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                    </scheduledStopPoints>
+                    <stopAssignments>
+                        <PassengerStopAssignment id="ARR:PassengerStopAssignement:20000010" version="1" order="1">
+                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20000010" version="1"/>
+                            <QuayRef ref="NL:Q:20000010" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="ARR:PassengerStopAssignement:20002740" version="1" order="1">
+                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20002740" version="1"/>
+                            <QuayRef ref="NL:Q:20002740" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="ARR:PassengerStopAssignement:20003020" version="1" order="1">
+                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20003020" version="1"/>
+                            <QuayRef ref="NL:Q:20003020" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="ARR:PassengerStopAssignement:20004670" version="1" order="1">
+                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20004670" version="1"/>
+                            <QuayRef ref="NL:Q:20004670" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="ARR:PassengerStopAssignement:20001570" version="1" order="1">
+                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20001570" version="1"/>
+                            <QuayRef ref="NL:Q:20001570" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="ARR:PassengerStopAssignement:20006670" version="1" order="1">
+                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20006670" version="1"/>
+                            <QuayRef ref="NL:Q:20006670" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="ARR:PassengerStopAssignement:20002440" version="1" order="1">
+                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20002440" version="1"/>
+                            <QuayRef ref="NL:Q:20002440" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="ARR:PassengerStopAssignement:20002430" version="1" order="1">
+                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20002430" version="1"/>
+                            <QuayRef ref="NL:Q:20002430" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="ARR:PassengerStopAssignement:20006680" version="1" order="1">
+                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20006680" version="1"/>
+                            <QuayRef ref="NL:Q:20006680" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="ARR:PassengerStopAssignement:20006320" version="1" order="1">
+                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20006320" version="1"/>
+                            <QuayRef ref="NL:Q:20006320" version="any"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="ARR:PassengerStopAssignement:20000171" version="1" order="1">
+                            <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20000171" version="1"/>
+                            <QuayRef ref="NL:Q:20000171" version="any"/>
+                        </PassengerStopAssignment>
+                    </stopAssignments>
+					<timingLinks>
+						<TimingLink id="ARR:TimingLink:20000010-20002740" version="1">
+                            <Distance>978.1</Distance>
+                            <FromPointRef ref="ARR:ScheduledStopPoint:20000010" version="1"/>
+                            <ToPointRef ref="ARR:ScheduledStopPoint:20002740" version="1"/>
+                            <OperationalContextRef ref="ARR:OperationalContext:bus" version="1"/>
+                        </TimingLink>
+                        <TimingLink id="ARR:TimingLink:20002740-20003020" version="1">
+                            <Distance>272.4</Distance>
+                            <FromPointRef ref="ARR:ScheduledStopPoint:20002740" version="1"/>
+                            <ToPointRef ref="ARR:ScheduledStopPoint:20003020" version="1"/>
+                            <OperationalContextRef ref="ARR:OperationalContext:bus" version="1"/>
+                        </TimingLink>
+                        <TimingLink id="ARR:TimingLink:20003020-20004670" version="1">
+                            <Distance>74.2</Distance>
+                            <FromPointRef ref="ARR:ScheduledStopPoint:20003020" version="1"/>
+                            <ToPointRef ref="ARR:ScheduledStopPoint:20004670" version="1"/>
+                            <OperationalContextRef ref="ARR:OperationalContext:bus" version="1"/>
+                        </TimingLink>
+                        <TimingLink id="ARR:TimingLink:20004670-20001570" version="1">
+                            <Distance>135.7</Distance>
+                            <FromPointRef ref="ARR:ScheduledStopPoint:20004670" version="1"/>
+                            <ToPointRef ref="ARR:ScheduledStopPoint:20001570" version="1"/>
+                            <OperationalContextRef ref="ARR:OperationalContext:bus" version="1"/>
+                        </TimingLink>
+                        <TimingLink id="ARR:TimingLink:20001570-20006670" version="1">
+                            <Distance>137.5</Distance>
+                            <FromPointRef ref="ARR:ScheduledStopPoint:20001570" version="1"/>
+                            <ToPointRef ref="ARR:ScheduledStopPoint:20006670" version="1"/>
+                            <OperationalContextRef ref="ARR:OperationalContext:bus" version="1"/>
+                        </TimingLink>
+                        <TimingLink id="ARR:TimingLink:20006670-20002440" version="1">
+                            <Distance>167.6</Distance>
+                            <FromPointRef ref="ARR:ScheduledStopPoint:20006670" version="1"/>
+                            <ToPointRef ref="ARR:ScheduledStopPoint:20002440" version="1"/>
+                            <OperationalContextRef ref="ARR:OperationalContext:bus" version="1"/>
+                        </TimingLink>
+                        <TimingLink id="ARR:TimingLink:20002440-20002430" version="1">
+                            <Distance>109.4</Distance>
+                            <FromPointRef ref="ARR:ScheduledStopPoint:20002440" version="1"/>
+                            <ToPointRef ref="ARR:ScheduledStopPoint:20002430" version="1"/>
+                            <OperationalContextRef ref="ARR:OperationalContext:bus" version="1"/>
+                        </TimingLink>
+                        <TimingLink id="ARR:TimingLink:20002430-20006680" version="1">
+                            <Distance>81.0</Distance>
+                            <FromPointRef ref="ARR:ScheduledStopPoint:20002430" version="1"/>
+                            <ToPointRef ref="ARR:ScheduledStopPoint:20006680" version="1"/>
+                            <OperationalContextRef ref="ARR:OperationalContext:bus" version="1"/>
+                        </TimingLink>
+                        <TimingLink id="ARR:TimingLink:20006680-20006320" version="1">
+                            <Distance>163.0</Distance>
+                            <FromPointRef ref="ARR:ScheduledStopPoint:20006680" version="1"/>
+                            <ToPointRef ref="ARR:ScheduledStopPoint:20006320" version="1"/>
+                            <OperationalContextRef ref="ARR:OperationalContext:bus" version="1"/>
+                        </TimingLink>
+                        <TimingLink id="ARR:TimingLink:20006320-20000171" version="1">
+                            <Distance>2205.8</Distance>
+                            <FromPointRef ref="ARR:ScheduledStopPoint:20006320" version="1"/>
+                            <ToPointRef ref="ARR:ScheduledStopPoint:20000171" version="1"/>
+                            <OperationalContextRef ref="ARR:OperationalContext:bus" version="1"/>
+                        </TimingLink>
+					</timingLinks>
+					<journeyPatterns>
+						<ServiceJourneyPattern id="ARR:ServiceJourneyPattern:Vlinder" version="1">
+                            <Name>86</Name>
+                            <RouteRef ref="ARR:Route:Vlinder" version="1"/>
+                            <DirectionType>inbound</DirectionType>
+                            <DestinationDisplayRef ref="ARR:DestinationDisplay:1699" version="1"/>
+                            <pointsInSequence>
+								<StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Vlinder-1" order="1" version="1">
+									<ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20000010" version="1"/>
+									<OnwardTimingLinkRef ref="ARR:TimingLink:20000010-20002740" version="1"/>
+									<IsWaitPoint>true</IsWaitPoint>
+                                    <FlexiblePointProperties>
+										<Extensions>
+											<ShowFlexibleTrip>true</ShowFlexibleTrip>
+											<BookingRequired>false</BookingRequired>
+										</Extensions>
+									</FlexiblePointProperties>
+								</StopPointInJourneyPattern>
+								<StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Vlinder-2" order="2" version="1">
+									<ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20002740" version="1"/>
+									<OnwardTimingLinkRef ref="ARR:TimingLink:20002740-20003020" version="1"/>
+								</StopPointInJourneyPattern>
+								<StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Vlinder-3" order="3" version="1">
+									<ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20003020" version="1"/>
+									<OnwardTimingLinkRef ref="ARR:TimingLink:20003020-20004670" version="1"/>
+								</StopPointInJourneyPattern>
+								<StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Vlinder-4" order="4" version="1">
+									<ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20004670" version="1"/>
+									<OnwardTimingLinkRef ref="ARR:TimingLink:20004670-20001570" version="1"/>
+								</StopPointInJourneyPattern>
+								<StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Vlinder-5" order="5" version="1">
+									<ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20001570" version="1"/>
+									<OnwardTimingLinkRef ref="ARR:TimingLink:20001570-20006670" version="1"/>
+								</StopPointInJourneyPattern>
+								<StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Vlinder-6" order="6" version="1">
+									<ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20006670" version="1"/>
+									<OnwardTimingLinkRef ref="ARR:TimingLink:20006670-20002440" version="1"/>
+								</StopPointInJourneyPattern>
+								<StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Vlinder-7" order="7" version="1">
+									<ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20002440" version="1"/>
+									<OnwardTimingLinkRef ref="ARR:TimingLink:20002440-20002430" version="1"/>
+								</StopPointInJourneyPattern>
+								<StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Vlinder-8" order="8" version="1">
+									<ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20002430" version="1"/>
+									<OnwardTimingLinkRef ref="ARR:TimingLink:20002430-20006680" version="1"/>
+								</StopPointInJourneyPattern>
+								<StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Vlinder-9" order="9" version="1">
+									<ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20006680" version="1"/>
+									<OnwardTimingLinkRef ref="ARR:TimingLink:20006680-20006320" version="1"/>
+								</StopPointInJourneyPattern>
+								<StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Vlinder-10" order="10" version="1">
+									<ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20006320" version="1"/>
+									<OnwardTimingLinkRef ref="ARR:TimingLink:20006320-20000171" version="1"/>
+								</StopPointInJourneyPattern>
+								<StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Vlinder-11" order="11" version="1">
+									<ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20000171" version="1"/>
+								</StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                    </journeyPatterns>
+                    <timeDemandTypes>
+						<TimeDemandType id="ARR:TimeDemandType:Vlinder" version="1">
+                            <runTimes>
+								<JourneyRunTime id="ARR:JourneyRunTime:Vlinder-1" version="1">
+									<TimingLinkRef ref="ARR:TimingLink:20000010-20002740" version="1"/>
+									<RunTime>PT180S</RunTime>
+								</JourneyRunTime>
+								<JourneyRunTime id="ARR:JourneyRunTime:Vlinder-2" version="1">
+									<TimingLinkRef ref="ARR:TimingLink:20002740-20003020" version="1"/>
+									<RunTime>PT60S</RunTime>
+								</JourneyRunTime>
+								<JourneyRunTime id="ARR:JourneyRunTime:Vlinder-3" version="1">
+									<TimingLinkRef ref="ARR:TimingLink:20003020-20004670" version="1"/>
+									<RunTime>PT0S</RunTime>
+								</JourneyRunTime>
+								<JourneyRunTime id="ARR:JourneyRunTime:Vlinder-4" version="1">
+									<TimingLinkRef ref="ARR:TimingLink:20004670-20001570" version="1"/>
+									<RunTime>PT60S</RunTime>
+								</JourneyRunTime>
+								<JourneyRunTime id="ARR:JourneyRunTime:Vlinder-5" version="1">
+									<TimingLinkRef ref="ARR:TimingLink:20001570-20006670" version="1"/>
+									<RunTime>PT60S</RunTime>
+								</JourneyRunTime>
+								<JourneyRunTime id="ARR:JourneyRunTime:Vlinder-6" version="1">
+									<TimingLinkRef ref="ARR:TimingLink:20006670-20002440" version="1"/>
+									<RunTime>PT60S</RunTime>
+								</JourneyRunTime>
+								<JourneyRunTime id="ARR:JourneyRunTime:Vlinder-7" version="1">
+									<TimingLinkRef ref="ARR:TimingLink:20002440-20002430" version="1"/>
+									<RunTime>PT60S</RunTime>
+								</JourneyRunTime>
+								<JourneyRunTime id="ARR:JourneyRunTime:Vlinder-8" version="1">
+									<TimingLinkRef ref="ARR:TimingLink:20002430-20006680" version="1"/>
+									<RunTime>PT0S</RunTime>
+								</JourneyRunTime>
+								<JourneyRunTime id="ARR:JourneyRunTime:Vlinder-9" version="1">
+									<TimingLinkRef ref="ARR:TimingLink:20006680-20006320" version="1"/>
+									<RunTime>PT0S</RunTime>
+								</JourneyRunTime>
+								<JourneyRunTime id="ARR:JourneyRunTime:Vlinder-10" version="1">
+									<TimingLinkRef ref="ARR:TimingLink:20006320-20000171" version="1"/>
+									<RunTime>PT300S</RunTime>
+								</JourneyRunTime>
+                            </runTimes>
+                        </TimeDemandType>
+                    </timeDemandTypes>
+                </ServiceFrame>
+                <TimetableFrame id="ARR:TimetableFrame:Vlinder" version="1">
+                    <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_TT_TIMETABLE"/>
+                    <contentValidityConditions>
+						<AvailabilityCondition id="ARR:AvailabilityCondition:Vlinder" version="1">
+                            <FromDate>2024-09-02T00:00:00Z</FromDate>
+                            <ToDate>2024-12-14T00:00:00Z</ToDate>
+                            <ValidDayBits>00100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</ValidDayBits>
+                        </AvailabilityCondition>
+                    </contentValidityConditions>
+                    <OperatorView>
+						<OperatorRef ref="ARR:Operator:ARR" version="1"/>
+                    </OperatorView>
+                    <vehicleJourneys>
+						<!-- De Vlinder één keer per uur van 08:30 tot 19:30 -->
+                        <ServiceJourney id="ARR:ServiceJourney:Vlinder-1" version="1">
+                            <validityConditions>
+								<AvailabilityConditionRef ref="ARR:AvailabilityCondition:Vlinder" version="1"/>
+                            </validityConditions>
+                            <PrivateCode type="JourneyNumber">1</PrivateCode>
+                            <Monitored>false</Monitored>
+                            <DepartureTime>08:30:00</DepartureTime>
+                            <DepartureDayOffset>0</DepartureDayOffset>
+                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Vlinder" version="1"/>
+                            <TimeDemandTypeRef ref="ARR:TimeDemandType:Vlinder" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>onlyIfSignedOn</Dynamic>
+                        </ServiceJourney>
+                        <ServiceJourney id="ARR:ServiceJourney:Vlinder-3" version="1">
+                            <validityConditions>
+								<AvailabilityConditionRef ref="ARR:AvailabilityCondition:Vlinder" version="1"/>
+                            </validityConditions>
+                            <PrivateCode type="JourneyNumber">3</PrivateCode>
+                            <Monitored>false</Monitored>
+                            <DepartureTime>09:30:00</DepartureTime>
+                            <DepartureDayOffset>0</DepartureDayOffset>
+                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Vlinder" version="1"/>
+                            <TimeDemandTypeRef ref="ARR:TimeDemandType:Vlinder" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>onlyIfSignedOn</Dynamic>
+                        </ServiceJourney>
+                        <ServiceJourney id="ARR:ServiceJourney:Vlinder-5" version="1">
+                            <validityConditions>
+								<AvailabilityConditionRef ref="ARR:AvailabilityCondition:Vlinder" version="1"/>
+                            </validityConditions>
+                            <PrivateCode type="JourneyNumber">5</PrivateCode>
+                            <Monitored>false</Monitored>
+                            <DepartureTime>10:30:00</DepartureTime>
+                            <DepartureDayOffset>0</DepartureDayOffset>
+                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Vlinder" version="1"/>
+                            <TimeDemandTypeRef ref="ARR:TimeDemandType:Vlinder" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>onlyIfSignedOn</Dynamic>
+                        </ServiceJourney>
+                        <ServiceJourney id="ARR:ServiceJourney:Vlinder-7" version="1">
+                            <validityConditions>
+								<AvailabilityConditionRef ref="ARR:AvailabilityCondition:Vlinder" version="1"/>
+                            </validityConditions>
+                            <PrivateCode type="JourneyNumber">7</PrivateCode>
+                            <Monitored>false</Monitored>
+                            <DepartureTime>11:30:00</DepartureTime>
+                            <DepartureDayOffset>0</DepartureDayOffset>
+                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Vlinder" version="1"/>
+                            <TimeDemandTypeRef ref="ARR:TimeDemandType:Vlinder" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>onlyIfSignedOn</Dynamic>
+                        </ServiceJourney>
+                        <ServiceJourney id="ARR:ServiceJourney:Vlinder-9" version="1">
+                            <validityConditions>
+								<AvailabilityConditionRef ref="ARR:AvailabilityCondition:Vlinder" version="1"/>
+                            </validityConditions>
+                            <PrivateCode type="JourneyNumber">9</PrivateCode>
+                            <Monitored>false</Monitored>
+                            <DepartureTime>12:30:00</DepartureTime>
+                            <DepartureDayOffset>0</DepartureDayOffset>
+                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Vlinder" version="1"/>
+                            <TimeDemandTypeRef ref="ARR:TimeDemandType:Vlinder" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>onlyIfSignedOn</Dynamic>
+                        </ServiceJourney>
+                        <ServiceJourney id="ARR:ServiceJourney:Vlinder-11" version="1">
+                            <validityConditions>
+								<AvailabilityConditionRef ref="ARR:AvailabilityCondition:Vlinder" version="1"/>
+                            </validityConditions>
+                            <PrivateCode type="JourneyNumber">11</PrivateCode>
+                            <Monitored>false</Monitored>
+                            <DepartureTime>13:30:00</DepartureTime>
+                            <DepartureDayOffset>0</DepartureDayOffset>
+                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Vlinder" version="1"/>
+                            <TimeDemandTypeRef ref="ARR:TimeDemandType:Vlinder" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>onlyIfSignedOn</Dynamic>
+                        </ServiceJourney>
+                        <ServiceJourney id="ARR:ServiceJourney:Vlinder-13" version="1">
+                            <validityConditions>
+								<AvailabilityConditionRef ref="ARR:AvailabilityCondition:Vlinder" version="1"/>
+                            </validityConditions>
+                            <PrivateCode type="JourneyNumber">13</PrivateCode>
+                            <Monitored>false</Monitored>
+                            <DepartureTime>13:30:00</DepartureTime>
+                            <DepartureDayOffset>0</DepartureDayOffset>
+                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Vlinder" version="1"/>
+                            <TimeDemandTypeRef ref="ARR:TimeDemandType:Vlinder" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>onlyIfSignedOn</Dynamic>
+                        </ServiceJourney>
+                        <ServiceJourney id="ARR:ServiceJourney:Vlinder-15" version="1">
+                            <validityConditions>
+								<AvailabilityConditionRef ref="ARR:AvailabilityCondition:Vlinder" version="1"/>
+                            </validityConditions>
+                            <PrivateCode type="JourneyNumber">15</PrivateCode>
+                            <Monitored>false</Monitored>
+                            <DepartureTime>14:30:00</DepartureTime>
+                            <DepartureDayOffset>0</DepartureDayOffset>
+                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Vlinder" version="1"/>
+                            <TimeDemandTypeRef ref="ARR:TimeDemandType:Vlinder" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>onlyIfSignedOn</Dynamic>
+                        </ServiceJourney>
+                        <ServiceJourney id="ARR:ServiceJourney:Vlinder-17" version="1">
+                            <validityConditions>
+								<AvailabilityConditionRef ref="ARR:AvailabilityCondition:Vlinder" version="1"/>
+                            </validityConditions>
+                            <PrivateCode type="JourneyNumber">17</PrivateCode>
+                            <Monitored>false</Monitored>
+                            <DepartureTime>14:30:00</DepartureTime>
+                            <DepartureDayOffset>0</DepartureDayOffset>
+                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Vlinder" version="1"/>
+                            <TimeDemandTypeRef ref="ARR:TimeDemandType:Vlinder" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>onlyIfSignedOn</Dynamic>
+                        </ServiceJourney>
+                        <ServiceJourney id="ARR:ServiceJourney:Vlinder-19" version="1">
+                            <validityConditions>
+								<AvailabilityConditionRef ref="ARR:AvailabilityCondition:Vlinder" version="1"/>
+                            </validityConditions>
+                            <PrivateCode type="JourneyNumber">19</PrivateCode>
+                            <Monitored>false</Monitored>
+                            <DepartureTime>15:30:00</DepartureTime>
+                            <DepartureDayOffset>0</DepartureDayOffset>
+                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Vlinder" version="1"/>
+                            <TimeDemandTypeRef ref="ARR:TimeDemandType:Vlinder" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>onlyIfSignedOn</Dynamic>
+                        </ServiceJourney>
+                        <ServiceJourney id="ARR:ServiceJourney:Vlinder-21" version="1">
+                            <validityConditions>
+								<AvailabilityConditionRef ref="ARR:AvailabilityCondition:Vlinder" version="1"/>
+                            </validityConditions>
+                            <PrivateCode type="JourneyNumber">21</PrivateCode>
+                            <Monitored>false</Monitored>
+                            <DepartureTime>15:30:00</DepartureTime>
+                            <DepartureDayOffset>0</DepartureDayOffset>
+                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Vlinder" version="1"/>
+                            <TimeDemandTypeRef ref="ARR:TimeDemandType:Vlinder" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>onlyIfSignedOn</Dynamic>
+                        </ServiceJourney>
+                        <ServiceJourney id="ARR:ServiceJourney:Vlinder-23" version="1">
+                            <validityConditions>
+								<AvailabilityConditionRef ref="ARR:AvailabilityCondition:Vlinder" version="1"/>
+                            </validityConditions>
+                            <PrivateCode type="JourneyNumber">23</PrivateCode>
+                            <Monitored>false</Monitored>
+                            <DepartureTime>16:30:00</DepartureTime>
+                            <DepartureDayOffset>0</DepartureDayOffset>
+                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Vlinder" version="1"/>
+                            <TimeDemandTypeRef ref="ARR:TimeDemandType:Vlinder" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>onlyIfSignedOn</Dynamic>
+                        </ServiceJourney>
+                        <ServiceJourney id="ARR:ServiceJourney:Vlinder-25" version="1">
+                            <validityConditions>
+								<AvailabilityConditionRef ref="ARR:AvailabilityCondition:Vlinder" version="1"/>
+                            </validityConditions>
+                            <PrivateCode type="JourneyNumber">25</PrivateCode>
+                            <Monitored>false</Monitored>
+                            <DepartureTime>16:30:00</DepartureTime>
+                            <DepartureDayOffset>0</DepartureDayOffset>
+                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Vlinder" version="1"/>
+                            <TimeDemandTypeRef ref="ARR:TimeDemandType:Vlinder" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>onlyIfSignedOn</Dynamic>
+                        </ServiceJourney>
+                        <ServiceJourney id="ARR:ServiceJourney:Vlinder-27" version="1">
+                            <validityConditions>
+								<AvailabilityConditionRef ref="ARR:AvailabilityCondition:Vlinder" version="1"/>
+                            </validityConditions>
+                            <PrivateCode type="JourneyNumber">27</PrivateCode>
+                            <Monitored>false</Monitored>
+                            <DepartureTime>17:30:00</DepartureTime>
+                            <DepartureDayOffset>0</DepartureDayOffset>
+                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Vlinder" version="1"/>
+                            <TimeDemandTypeRef ref="ARR:TimeDemandType:Vlinder" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>onlyIfSignedOn</Dynamic>
+                        </ServiceJourney>
+                        <ServiceJourney id="ARR:ServiceJourney:Vlinder-29" version="1">
+                            <validityConditions>
+								<AvailabilityConditionRef ref="ARR:AvailabilityCondition:Vlinder" version="1"/>
+                            </validityConditions>
+                            <PrivateCode type="JourneyNumber">29</PrivateCode>
+                            <Monitored>false</Monitored>
+                            <DepartureTime>17:30:00</DepartureTime>
+                            <DepartureDayOffset>0</DepartureDayOffset>
+                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Vlinder" version="1"/>
+                            <TimeDemandTypeRef ref="ARR:TimeDemandType:Vlinder" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>onlyIfSignedOn</Dynamic>
+                        </ServiceJourney>
+                        <ServiceJourney id="ARR:ServiceJourney:Vlinder-31" version="1">
+                            <validityConditions>
+								<AvailabilityConditionRef ref="ARR:AvailabilityCondition:Vlinder" version="1"/>
+                            </validityConditions>
+                            <PrivateCode type="JourneyNumber">31</PrivateCode>
+                            <Monitored>false</Monitored>
+                            <DepartureTime>18:30:00</DepartureTime>
+                            <DepartureDayOffset>0</DepartureDayOffset>
+                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Vlinder" version="1"/>
+                            <TimeDemandTypeRef ref="ARR:TimeDemandType:Vlinder" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>onlyIfSignedOn</Dynamic>
+                        </ServiceJourney>
+                        <ServiceJourney id="ARR:ServiceJourney:Vlinder-33" version="1">
+                            <validityConditions>
+								<AvailabilityConditionRef ref="ARR:AvailabilityCondition:Vlinder" version="1"/>
+                            </validityConditions>
+                            <PrivateCode type="JourneyNumber">33</PrivateCode>
+                            <Monitored>false</Monitored>
+                            <DepartureTime>18:30:00</DepartureTime>
+                            <DepartureDayOffset>0</DepartureDayOffset>
+                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Vlinder" version="1"/>
+                            <TimeDemandTypeRef ref="ARR:TimeDemandType:Vlinder" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>onlyIfSignedOn</Dynamic>
+                        </ServiceJourney>
+                        <ServiceJourney id="ARR:ServiceJourney:Vlinder-35" version="1">
+                            <validityConditions>
+								<AvailabilityConditionRef ref="ARR:AvailabilityCondition:Vlinder" version="1"/>
+                            </validityConditions>
+                            <PrivateCode type="JourneyNumber">35</PrivateCode>
+                            <Monitored>true</Monitored>
+                            <DepartureTime>19:30:00</DepartureTime>
+                            <DepartureDayOffset>0</DepartureDayOffset>
+                            <ServiceJourneyPatternRef ref="ARR:ServiceJourneyPattern:Vlinder" version="1"/>
+                            <TimeDemandTypeRef ref="ARR:TimeDemandType:Vlinder" version="1"/>
+                            <Print>false</Print>
+                            <Dynamic>onlyIfSignedOn</Dynamic>
+                        </ServiceJourney>
+                    </vehicleJourneys>
+                </TimetableFrame>
+            </frames>
+        </CompositeFrame>
+    </dataObjects>
+</PublicationDelivery>
