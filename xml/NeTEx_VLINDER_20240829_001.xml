@@ -684,12 +684,10 @@
                                     <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20000010" version="1"/>
                                     <OnwardTimingLinkRef ref="ARR:TimingLink:20000010-20002740" version="1"/>
                                     <IsWaitPoint>true</IsWaitPoint>
-                                    <FlexiblePointProperties>
-                                        <Extensions>
-                                            <ShowFlexibleTrip>true</ShowFlexibleTrip>
-                                            <BookingRequired>false</BookingRequired>
-                                        </Extensions>
-                                    </FlexiblePointProperties>
+                                    <!-- Arriva Vlinder hoeft niet geboekt te worden op de beginhalte -->
+                                    <BookingMethods>none</BookingMethods>
+                                    <!-- Arriva Vlinder moet op display getoond worden op de beginhalte -->
+                                    <Dynamic>always</Dynamic>
                                 </StopPointInJourneyPattern>
                                 <StopPointInJourneyPattern id="ARR:StopPointInJourneyPattern:Vlinder-2" order="2" version="1">
                                     <ScheduledStopPointRef ref="ARR:ScheduledStopPoint:20002740" version="1"/>
