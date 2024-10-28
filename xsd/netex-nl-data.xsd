@@ -1093,7 +1093,6 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="Extensions" type="extensionTransportMode"/>
 					<xsd:element name="RegistrationNumber" type="xsd:string" minOccurs="0"/>
 					<xsd:element name="OperationalNumber" type="xsd:string"/>
 					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
@@ -1112,7 +1111,11 @@
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
-					<xsd:element name="Extensions" type="extensionTypeOfProductCategory" minOccurs="0"/>
+					<xsd:element name="Extensions" type="extensionTypeOfProductCategory" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Deprecated (sinds v9.3.0): Gebruik in plaats hiervan BrandingRef.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
 					<xsd:element name="BrandingRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 					<xsd:element name="Name" type="MultilingualString"/>
 					<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>
@@ -1296,8 +1299,7 @@
 					</xsd:element>
 					<xsd:element name="VehicleAccessFacilityList">
 						<xsd:simpleType>
-							<xsd:list itemType="AccessFacilityEnumeration"/>
-							<!--	<xsd:list itemType="VehicleAccessFacilityEnumeration"/>	-->
+							<xsd:list itemType="VehicleAccessFacilityEnumeration"/>
 						</xsd:simpleType>
 					</xsd:element>
 				</xsd:sequence>

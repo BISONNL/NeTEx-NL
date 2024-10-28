@@ -268,11 +268,6 @@ Attribuut 'modification' geeft aan of de versie voor het eerst wordt aangeleverd
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- UITBREIDINGEN VAN DE NETEX STANDAARD                                            -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-	<xsd:complexType name="extensionTransportMode">
-		<xsd:sequence>
-			<xsd:element name="TransportMode" type="TransportmodeEnum"/>
-		</xsd:sequence>
-	</xsd:complexType>
 	<xsd:complexType name="extensionTypeOfProductCategory">
 		<xsd:sequence>
 			<xsd:element name="TypeOfProductCategoryRef" type="VersionOfObjectRefStructure"/>

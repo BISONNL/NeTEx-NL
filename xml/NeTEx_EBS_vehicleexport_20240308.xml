@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" version="ntx:1.1"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/netex-nl-geen-constraints.xsd">
+    <PublicationTimestamp>2021-02-15T00:00:00Z</PublicationTimestamp>
+    <ParticipantRef>EBS</ParticipantRef>
+    <Description>EBS voertuigen export</Description>
+    <dataObjects>
+        <CompositeFrame id="EBS:CompositeFrame:VehicleExport" version="20240308">
+            <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_VEHICLES" version="9.3.0"/>
+            <FrameDefaults>
+                <DefaultCodespaceRef ref="BISON:Codespace:EBS"/>
+                <DefaultDataSourceRef version="20240308" ref="EBS:DataSource:EBS"/>
+                <DefaultSystemOfUnits>SiMetres</DefaultSystemOfUnits>
+            </FrameDefaults>
+            <frames>
+                <ResourceFrame id="EBS:ResourceFrame:1" version="20240308">
+                    <!-- Dit is een voertuigenexport, dus TypeOfFrameRef is NL_VEH_RESOURCE. -->
+                    <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_VEH_RESOURCE"/>
+                    <!-- EBS is de gegevensbron -->
+                    <dataSources>
+                        <DataSource id="EBS:DataSource:EBS" modification="new" version="20240308">
+                            <Name>EBS</Name>
+                            <ShortName>EBS</ShortName>
+                            <Email/>
+                        </DataSource>
+                    </dataSources>
+                    <responsibilitySets>
+                        <!-- De ResponsibilitySets verwijzen naar de concessie(s) uit de DOVA-lijsten -->
+                        <!-- Hoewel het voorbeeld slechts één concessie bevat, wordt voor elke concessie die relevant is voor de levering zo'n verwijzing opgenomen. -->
+                        <ResponsibilitySet id="EBS:ResponsibilitySet:HGL-STR" version="20240308">
+                            <Name>Concessie HGL-STR</Name>
+                            <roles>
+                                <ResponsibilityRoleAssignment id="EBS:responsibilityRoleAssignment:HGL-STR"
+                                                              version="20240308">
+                                    <StakeholderRoleType>EntityLegalOwnership</StakeholderRoleType>
+                                    <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" version="any"
+                                                        ref="DOVA:TransportAdministrativeZone:HGL-STR"/>
+                                </ResponsibilityRoleAssignment>
+                            </roles>
+                        </ResponsibilitySet>
+                    </responsibilitySets>
+                    <typesOfValue>
+                        <!-- Branding, gelijk aan een Branding uit de dienstregeling -->
+                        <Branding id="EBS:Branding:Delfthopper" version="20240308">
+                            <Name>Delfthopper</Name>
+                        </Branding>
+                        <!-- Branding, die in de dienstregeling als TypeOfProductCategory is gedefinieerd.
+                             TypeOfProductCategory wordt echter niet gebruikt in de voertuigenexport. -->
+                        <Branding id="EBS:Branding:RNet" version="20240308">
+                            <Name>R-Net</Name>
+                        </Branding>
+                    </typesOfValue>
+                    <organisations>
+                        <Operator id="EBS:Operator:EBS" version="20240308">
+                            <Name>EBS</Name>
+                            <ShortName>EBS</ShortName>
+                        </Operator>
+                    </organisations>
+                    <vehicleTypes>
+                        <!-- Dit voorbeeld specificeert drie voertuigtypes -->
+                        <VehicleType id="EBS:VehicleType:10m" version="20240308">
+                            <Name>10m</Name>
+                            <Description>Standaard bus</Description>
+                            <TypeOfFuel>diesel</TypeOfFuel>
+                            <TransportMode>bus</TransportMode>
+                            <capacities>
+                                <PassengerCapacity id="EBS:PassengerCapacity:10m" version="20240308">
+                                    <FareClass>any</FareClass>
+                                    <TotalCapacity>50</TotalCapacity>
+                                    <SeatingCapacity>20</SeatingCapacity>
+                                    <StandingCapacity>30</StandingCapacity>
+                                    <SpecialPlaceCapacity>1</SpecialPlaceCapacity>
+                                    <PushchairCapacity>1</PushchairCapacity>
+                                    <WheelchairPlaceCapacity>1</WheelchairPlaceCapacity>
+                                </PassengerCapacity>
+                            </capacities>
+                            <LowFloor>true</LowFloor>
+                            <HasLiftOrRamp>true</HasLiftOrRamp>
+                            <Length>18</Length>
+                            <facilities>
+                                <ServiceFacilitySet id="EBS:ServiceFacilitySet:10m" version="20240308">
+                                    <MobilityFacilityList>suitableForWheelchairs onboardAssistance
+                                    </MobilityFacilityList>
+                                    <VehicleAccessFacilityList>manualRamp</VehicleAccessFacilityList>
+                                </ServiceFacilitySet>
+                            </facilities>
+                        </VehicleType>
+                        <VehicleType id="EBS:VehicleType:E18mR" version="20240308">
+                            <BrandingRef ref="EBS:Branding:RNet" version="20240308"/>
+                            <Name>E18mR</Name>
+                            <Description>Elektrische gelede bus in R-Net uitvoering</Description>
+                            <TypeOfFuel>electricity</TypeOfFuel>
+                            <TransportMode>bus</TransportMode>
+                            <capacities>
+                                <PassengerCapacity id="EBS:PassengerCapacity:E18mR" version="20240308">
+                                    <FareClass>any</FareClass>
+                                    <TotalCapacity>125</TotalCapacity>
+                                    <SeatingCapacity>45</SeatingCapacity>
+                                    <StandingCapacity>80</StandingCapacity>
+                                    <SpecialPlaceCapacity>2</SpecialPlaceCapacity>
+                                    <PushchairCapacity>2</PushchairCapacity>
+                                    <WheelchairPlaceCapacity>2</WheelchairPlaceCapacity>
+                                </PassengerCapacity>
+                            </capacities>
+                            <LowFloor>true</LowFloor>
+                            <HasLiftOrRamp>true</HasLiftOrRamp>
+                            <Length>18</Length>
+                            <facilities>
+                                <ServiceFacilitySet id="EBS:ServiceFacilitySet:E18mR" version="20240308">
+                                    <MobilityFacilityList>suitableForWheelchairs onboardAssistance
+                                    </MobilityFacilityList>
+                                    <VehicleAccessFacilityList>manualRamp</VehicleAccessFacilityList>
+                                </ServiceFacilitySet>
+                            </facilities>
+                        </VehicleType>
+                        <VehicleType id="EBS:VehicleType:Delfthopper" version="20240308">
+                            <BrandingRef ref="EBS:Branding:Delfthopper" version="20240308"/>
+                            <Name>Delfthopper</Name>
+                            <Description>Delfthopper</Description>
+                            <TypeOfFuel>diesel</TypeOfFuel>
+                            <TransportMode>bus</TransportMode>
+                            <capacities>
+                                <PassengerCapacity id="EBS:PassengerCapacity:Delfthopper" version="20240308">
+                                    <FareClass>any</FareClass>
+                                    <TotalCapacity>7</TotalCapacity>
+                                    <SeatingCapacity>7</SeatingCapacity>
+                                    <StandingCapacity>0</StandingCapacity>
+                                    <SpecialPlaceCapacity>1</SpecialPlaceCapacity>
+                                    <PushchairCapacity>0</PushchairCapacity>
+                                    <WheelchairPlaceCapacity>0</WheelchairPlaceCapacity>
+                                </PassengerCapacity>
+                            </capacities>
+                            <LowFloor>false</LowFloor>
+                            <HasLiftOrRamp>false</HasLiftOrRamp>
+                            <Length>5</Length>
+                            <facilities>
+                                <ServiceFacilitySet id="EBS:ServiceFacilitySet:Delfthopper" version="20240308">
+                                    <MobilityFacilityList>unknown</MobilityFacilityList>
+                                    <VehicleAccessFacilityList>narrowEntrance</VehicleAccessFacilityList>
+                                </ServiceFacilitySet>
+                            </facilities>
+                        </VehicleType>
+                    </vehicleTypes>
+                </ResourceFrame>
+                <InfrastructureFrame id="EBS:InfrastructureFrame:VehicleData" version="20240308">
+                    <!-- Dit is een voertuigenexport, dus TypeOfFrameRef is NL_VEH_INFRA. -->
+                    <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_VEH_INFRA" version="9.3.0"/>
+                    <vehicles>
+                        <!-- Dit voorbeeld specificeert vijf voertuigen, twee standaardbussen, twee R-Net-bussen, en één Delfthopper. -->
+                        <Vehicle id="EBS:Vehicle:10m-1" version="20240308"
+                                 responsibilitySetRef="EBS:ResponsibilitySet:HGL-STR">
+                            <ValidBetween>
+                                <FromDate>2019-08-25T00:00:00.000Z</FromDate>
+                            </ValidBetween>
+                            <RegistrationNumber>79-BNN-6</RegistrationNumber>
+                            <OperationalNumber>1101</OperationalNumber>
+                            <PrivateCode type="VehicleNumber">1101</PrivateCode>
+                            <OperatorRef ref="EBS:Operator:EBS" version="20240308"/>
+                            <VehicleTypeRef ref="EBS:VehicleType:10m" version="20240308"/>
+                        </Vehicle>
+                        <Vehicle id="EBS:Vehicle:10m-2" version="20240308"
+                                 responsibilitySetRef="EBS:ResponsibilitySet:HGL-STR">
+                            <ValidBetween>
+                                <FromDate>2019-08-25T00:00:00.000Z</FromDate>
+                            </ValidBetween>
+                            <RegistrationNumber>61-BNX-4</RegistrationNumber>
+                            <OperationalNumber>1102</OperationalNumber>
+                            <PrivateCode type="VehicleNumber">1102</PrivateCode>
+                            <OperatorRef ref="EBS:Operator:EBS" version="20240308"/>
+                            <VehicleTypeRef ref="EBS:VehicleType:10m" version="20240308"/>
+                        </Vehicle>
+                        <Vehicle id="EBS:Vehicle:E18mR-1" version="20240308"
+                                 responsibilitySetRef="EBS:ResponsibilitySet:HGL-STR">
+                            <ValidBetween>
+                                <FromDate>2019-08-25T00:00:00.000Z</FromDate>
+                            </ValidBetween>
+                            <RegistrationNumber>26-BNS-8</RegistrationNumber>
+                            <OperationalNumber>1103</OperationalNumber>
+                            <PrivateCode type="VehicleNumber">1103</PrivateCode>
+                            <OperatorRef ref="EBS:Operator:EBS" version="20240308"/>
+                            <VehicleTypeRef ref="EBS:VehicleType:E18mR" version="20240308"/>
+                        </Vehicle>
+                        <Vehicle id="EBS:Vehicle:E18mR-2" version="20240308"
+                                 responsibilitySetRef="EBS:ResponsibilitySet:HGL-STR">
+                            <ValidBetween>
+                                <FromDate>2019-08-25T00:00:00.000Z</FromDate>
+                            </ValidBetween>
+                            <RegistrationNumber>54-BNR-4</RegistrationNumber>
+                            <OperationalNumber>1104</OperationalNumber>
+                            <PrivateCode type="VehicleNumber">1104</PrivateCode>
+                            <OperatorRef ref="EBS:Operator:EBS" version="20240308"/>
+                            <VehicleTypeRef ref="EBS:VehicleType:E18mR" version="20240308"/>
+                        </Vehicle>
+                        <Vehicle id="EBS:Vehicle:Delfthopper-1" version="20240308"
+                                 responsibilitySetRef="EBS:ResponsibilitySet:HGL-STR">
+                            <ValidBetween>
+                                <FromDate>2019-08-25T00:00:00.000Z</FromDate>
+                            </ValidBetween>
+                            <RegistrationNumber>ZN-014-T</RegistrationNumber>
+                            <OperationalNumber>1105</OperationalNumber>
+                            <PrivateCode type="VehicleNumber">1105</PrivateCode>
+                            <OperatorRef ref="EBS:Operator:EBS" version="20240308"/>
+                            <VehicleTypeRef ref="EBS:VehicleType:Delfthopper" version="20240308"/>
+                        </Vehicle>
+                    </vehicles>
+                </InfrastructureFrame>
+            </frames>
+        </CompositeFrame>
+    </dataObjects>
+</PublicationDelivery>

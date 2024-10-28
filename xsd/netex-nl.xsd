@@ -98,7 +98,7 @@
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_RESOURCE" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfResourceFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -106,7 +106,7 @@
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_INFRA" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfInfrastructureFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -114,7 +114,7 @@
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_SERVICE" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfServiceFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -122,7 +122,7 @@
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_TIMETABLE" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfTimetableFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -130,7 +130,7 @@
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_CALENDAR" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfServiceCalendarFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -138,7 +138,7 @@
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_VEHICLE" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfVehicleScheduleFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -146,7 +146,7 @@
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-				<xsd:attribute name="ref" type="BisonTypeOfProfileFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_SITE" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfSiteFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -253,7 +253,7 @@
 							</xsd:choice>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="operationalContexts">
+					<xsd:element name="operationalContexts" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="OperationalContext" type="operationalContext" maxOccurs="unbounded"/>
@@ -267,7 +267,7 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="zones">
+					<xsd:element name="zones" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="TransportAdministrativeZone" type="transportAdministrativeZone"/>
@@ -431,10 +431,17 @@
 			<xsd:extension base="VersionFrameVersionStructure">
 				<xsd:sequence>
 					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-infra"/>
-					<xsd:element name="activationPoints">
+					<xsd:element name="activationPoints" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="ActivationPoint" type="activationPoint" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="vehicles" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Vehicle" type="vehicle" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
@@ -541,75 +548,39 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<!-- GENERAL FRAME -->
+	<!-- GENERAL FRAME - Voor gebruik in 'centrale' exports -->
 	<xsd:complexType name="generalFrame">
 		<xsd:complexContent>
 			<xsd:extension base="VersionFrameVersionStructure">
 				<xsd:sequence>
-					<!--
-					<xsd:element name="ValidBetween" minOccurs="0">
-						<xsd:annotation>
-							<xsd:documentation>Alleen bij een export van 'centrale' gegevens.</xsd:documentation>
-						</xsd:annotation>
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="FromDate" type="xsd:dateTime"/>
-								<xsd:element name="ToDate" type="xsd:dateTime" minOccurs="0"/>
-							</xsd:sequence>
-						</xsd:complexType>
-					</xsd:element>
--->
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-general"/>
 					<xsd:element name="members">
 						<xsd:complexType>
 							<xsd:choice>
-								<xsd:choice>
+								<xsd:element name="ValueSet" type="valueSet" maxOccurs="unbounded">
 									<xsd:annotation>
-										<xsd:documentation>Variant voor GeneralFrames in een export van 'centrale' gegevens.</xsd:documentation>
+										<xsd:documentation>Export van BISON standaardenumeraties</xsd:documentation>
 									</xsd:annotation>
-									<xsd:element name="ValueSet" type="valueSet" maxOccurs="unbounded">
-										<xsd:annotation>
-											<xsd:documentation>Export van BISON standaardenumeraties</xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									<xsd:element name="TariffZone" type="tariffZone" maxOccurs="unbounded">
-										<xsd:annotation>
-											<xsd:documentation>Export van voorgedefinieerde DOVA lijst met OV-zones</xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									<xsd:element name="Authority" type="authority" maxOccurs="unbounded">
-										<xsd:annotation>
-											<xsd:documentation>Export van voorgedefinieerde DOVA lijst met concessieverleners</xsd:documentation>
-										</xsd:annotation>
-									</xsd:element>
-									<xsd:sequence maxOccurs="unbounded">
-										<xsd:element name="Network" type="network">
-											<xsd:annotation>
-												<xsd:documentation>Export van voorgedefinieerde DOVA lijst met concessies</xsd:documentation>
-											</xsd:annotation>
-										</xsd:element>
-										<xsd:element name="TransportAdministrativeZone" type="transportAdministrativeZone"/>
-									</xsd:sequence>
-								</xsd:choice>
-								<xsd:choice>
+								</xsd:element>
+								<xsd:element name="TariffZone" type="tariffZone" maxOccurs="unbounded">
 									<xsd:annotation>
-										<xsd:documentation>Variant voor GeneralFrames in een export van 'voertuigen' gegevens</xsd:documentation>
+										<xsd:documentation>Export van voorgedefinieerde DOVA lijst met OV-zones</xsd:documentation>
 									</xsd:annotation>
-									<xsd:sequence>
+								</xsd:element>
+								<xsd:element name="Authority" type="authority" maxOccurs="unbounded">
+									<xsd:annotation>
+										<xsd:documentation>Export van voorgedefinieerde DOVA lijst met concessieverleners</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:sequence maxOccurs="unbounded">
+									<xsd:element name="Network" type="network">
 										<xsd:annotation>
-											<xsd:documentation>Het GeneralFrame met de metadata.</xsd:documentation>
+											<xsd:documentation>Export van voorgedefinieerde DOVA lijst met concessies</xsd:documentation>
 										</xsd:annotation>
-										<xsd:element name="DataSource" type="dataSource"/>
-										<xsd:element name="ResponsibilitySet" type="responsibilitySet" maxOccurs="unbounded"/>
-									</xsd:sequence>
-									<xsd:sequence>
-										<xsd:annotation>
-											<xsd:documentation>Het GeneralFrame met de voertuigen.</xsd:documentation>
-										</xsd:annotation>
-										<xsd:element name="Vehicle" type="vehicle" maxOccurs="unbounded"/>
-									</xsd:sequence>
-								</xsd:choice>
+									</xsd:element>
+									<xsd:element name="TransportAdministrativeZone" type="transportAdministrativeZone"/>
+								</xsd:sequence>
 							</xsd:choice>
 						</xsd:complexType>
 					</xsd:element>
@@ -650,17 +621,21 @@
 							<xsd:choice>
 								<xsd:sequence>
 									<xsd:annotation>
-										<xsd:documentation>Frames in een export van 'centrale' gegevens of 'voertuig' gegevens.</xsd:documentation>
+										<xsd:documentation>Frames in een export van 'centrale' gegevens.</xsd:documentation>
 									</xsd:annotation>
 									<xsd:element name="GeneralFrame" type="generalFrame" maxOccurs="unbounded"/>
 								</xsd:sequence>
 								<xsd:sequence>
 									<xsd:annotation>
-										<xsd:documentation>Frames in een 'dienstregeling' levering. De volgorde van de frames is willekeurig.</xsd:documentation>
+										<xsd:documentation>Frames in een export van 'dienstregeling' of 'voertuigen'. De volgorde van de frames is willekeurig.</xsd:documentation>
 									</xsd:annotation>
 									<xsd:choice maxOccurs="unbounded">
 										<xsd:annotation>
-											<xsd:documentation>Het maximale aantal frames van een bepaald type wordt NIET afgedwongen. Verwacht wordt echter: 1x ResourceFrame, 0x/1x InfrastructureFrame, 0x/1x SiteFrame, 1x ServiceFrame, minimaal 1x TimetableFrame, 1x ServiceCalendarFrame, 0x/1x VehicleScheduleFrame.</xsd:documentation>
+											<xsd:documentation>
+												Het maximale aantal frames van een bepaald type wordt NIET afgedwongen. Er wordt echter het volgende verwacht:
+												  - Dienstregelingexport: 1x ResourceFrame, 0x/1x InfrastructureFrame, 0x/1x SiteFrame, 1x ServiceFrame, minimaal 1x TimetableFrame, 1x ServiceCalendarFrame, 0x/1x VehicleScheduleFrame.
+												  - Voertuigenexport: 1x ResourceFrame, minimaal 1x InfrastructureFrame
+											</xsd:documentation>
 										</xsd:annotation>
 										<xsd:element name="ResourceFrame" type="resourceFrame"/>
 										<xsd:element name="InfrastructureFrame" type="infrastructureFrame"/>
@@ -705,7 +680,11 @@
 		<xsd:sequence>
 			<xsd:element name="CompositeFrame" type="compositeFrame" maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>Bij een 'dienstregeling' levering: één CompositeFrame per partitie, plus evt. CompositeFrame(s) met een kopie van de relevante 'centrale' gegevens. Bij een 'centrale' levering: één of meer CompositeFrame(s) met de 'centrale' gegevens. Bij een 'voertuigen' levering: één of meer CompositeFrame(s) met de 'voertuig' gegevens.</xsd:documentation>
+					<xsd:documentation>
+						Bij een 'centrale' levering: één of meer CompositeFrame(s) met de 'centrale' gegevens.
+						Bij een 'dienstregeling' levering: één CompositeFrame per partitie, plus evt. CompositeFrame(s) met een kopie van de relevante 'centrale' gegevens.
+						Bij een 'voertuigen' levering: één of meer CompositeFrame(s) met de 'voertuig' gegevens.
+					</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
