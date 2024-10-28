@@ -86,8 +86,7 @@
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure-with-version">
 				<xsd:annotation>
-					<xsd:documentation>Identificatie van de levering.
-Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attribuut 'version' van het CompositeFrame.</xsd:documentation>
+					<xsd:documentation>Identificatie van de levering. Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attribuut 'version' van het CompositeFrame.</xsd:documentation>
 				</xsd:annotation>
 				<xsd:sequence>
 					<xsd:element name="StartDate" type="xsd:dateTime"/>
@@ -107,6 +106,11 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="ShortName" type="MultilingualString"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 				</xsd:sequence>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified">
+					<xsd:annotation>
+						<xsd:documentation>Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'. De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -121,6 +125,11 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="GroupOfLinesType" type="GroupOfLinesTypeEnumeration"/>
 					<xsd:element name="AuthorityRef" type="VersionOfObjectRefStructure"/>
 				</xsd:sequence>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified">
+					<xsd:annotation>
+						<xsd:documentation>Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'. De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -413,6 +422,11 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="FromDate" type="xsd:dateTime"/>
 					<xsd:element name="ToDate" type="xsd:dateTime"/>
+					<xsd:element name="IsAvailable" type="xsd:boolean" default="true" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Geeft aan of de AvailabilityCondition de rit geldig maakt of niet.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
 					<xsd:element name="ValidDayBits">
 						<xsd:annotation>
 							<xsd:documentation>De ValidDayBits worden van links (FromDate) naar rechts (ToDate, inclusief) gelezen.</xsd:documentation>
@@ -1116,7 +1130,18 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 							<xsd:documentation>Zie Wikipedia voor de mogelijke waarden</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:element name="TypeOfFuel" type="TypeOfFuelEnumeration"/>
+					<xsd:choice>
+						<xsd:element name="FuelType" type="FuelTypeEnumeration">
+							<xsd:annotation>
+								<xsd:documentation>Het type brandstof dat voor het voertuig in gebruik is voor het voertuig soort.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element name="TypeOfFuel" type="FuelTypeEnumeration">
+							<xsd:annotation>
+								<xsd:documentation>DEPRECATED NAME: Use FuelType instead. Will be removed: 2025-01-09.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:choice>
 					<xsd:element name="TransportMode" type="TransportmodeEnum"/>
 					<xsd:element name="capacities" type="passengerCapacities_RelStructure" minOccurs="0">
 						<xsd:annotation>

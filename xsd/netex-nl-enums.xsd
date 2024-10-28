@@ -92,7 +92,12 @@
 		<xsd:restriction base="xsd:string">
 			<xsd:enumeration value="none"/>
 			<xsd:enumeration value="toilet"/>
-			<xsd:enumeration value="wheelChairAccessToilet"/>
+			<xsd:enumeration value="wheelchairAccessToilet"/>
+			<xsd:enumeration value="wheelChairAccessToilet">
+				<xsd:annotation>
+					<xsd:documentation>DEPRECATION: This token is deprecated in favor of wheelchairAccessToilet. To be removed: 2025-01-09.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
 			<xsd:enumeration value="shower"/>
 			<xsd:enumeration value="washingAndChangeFacilities"/>
 			<xsd:enumeration value="babyChange"/>
@@ -130,7 +135,7 @@
 			<xsd:enumeration value="postBox"/>
 		</xsd:restriction>
 	</xsd:simpleType>
-	<xsd:simpleType name="TypeOfFuelEnumeration">
+	<xsd:simpleType name="FuelTypeEnumeration">
 		<xsd:restriction base="xsd:normalizedString">
 			<xsd:enumeration value="petrol"/>
 			<xsd:enumeration value="diesel"/>
@@ -620,32 +625,68 @@
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<xsd:complexType name="typeOfService">
 		<xsd:complexContent>
-			<xsd:extension base="TypeOfValueVersionStructure"/>
+			<xsd:extension base="TypeOfValueVersionStructure">
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified">
+					<xsd:annotation>
+						<xsd:documentation>Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'. De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
 	<xsd:complexType name="typeOfActivation">
 		<xsd:complexContent>
-			<xsd:extension base="TypeOfValueVersionStructure"/>
+			<xsd:extension base="TypeOfValueVersionStructure">
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified">
+					<xsd:annotation>
+						<xsd:documentation>Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'. De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
 	<xsd:complexType name="typeOfEquipment">
 		<xsd:complexContent>
-			<xsd:extension base="TypeOfValueVersionStructure"/>
+			<xsd:extension base="TypeOfValueVersionStructure">
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified">
+					<xsd:annotation>
+						<xsd:documentation>Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'. De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
 	<xsd:complexType name="typeOfResponsibilityRole">
 		<xsd:complexContent>
-			<xsd:extension base="TypeOfValueVersionStructure"/>
+			<xsd:extension base="TypeOfValueVersionStructure">
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified">
+					<xsd:annotation>
+						<xsd:documentation>Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'. De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
 	<xsd:complexType name="displayTextLength">
 		<xsd:complexContent>
-			<xsd:extension base="TypeOfValueVersionStructure"/>
+			<xsd:extension base="TypeOfValueVersionStructure">
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified">
+					<xsd:annotation>
+						<xsd:documentation>Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'. De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
 	<xsd:complexType name="typeOfFrame">
 		<xsd:complexContent>
-			<xsd:extension base="TypeOfValueVersionStructure-with-version"/>
+			<xsd:extension base="TypeOfValueVersionStructure-with-version">
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified">
+					<xsd:annotation>
+						<xsd:documentation>Het 'version' attribuut is nodig voor de constraints, maar heeft in voorgedefinieerde elementen altijd de vaste waarde 'any'. De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
 </xsd:schema>
