@@ -174,7 +174,7 @@ Attribuut 'modification' geeft aan of de versie voor het eerst wordt aangeleverd
 		</xsd:annotation>
 		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
-		<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="status" type="StatusEnumeration" use="optional" default="active" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="OrderedVersionOfObjectStructure" abstract="true">
