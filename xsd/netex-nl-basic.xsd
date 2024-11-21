@@ -146,6 +146,16 @@
 		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
 		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
+	<xsd:complexType name="DataManagedObjectStructure-any-version" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>Het object heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document.
+Het 'version' attribuut is nodig voor de constraints, maar heeft altijd de vaste waarde 'any'.
+De waarde 'any' van attribuut 'version' wordt geinterpreteerd als 'de van het bovenliggende object geërfde versie'.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
+		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="required" fixed="any" form="unqualified"/>
+	</xsd:complexType>
 	<!--
 	<xsd:complexType name="DataManagedObjectStructure-modified" abstract="true">
 		<xsd:annotation>
@@ -163,9 +173,9 @@ Attribuut 'modification' geeft aan of de versie voor het eerst wordt aangeleverd
 			<xsd:documentation>Een element uit een voorgedefinieerde lijst heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document. De 'status' geeft aan of het element nog courant is.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
-		<xsd:attribute name="modification" type="ModificationEnumeration" default="new" form="unqualified"/>
+		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
 		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-		<xsd:attribute name="status" type="StatusEnumeration" default="active" form="unqualified"/>
+		<xsd:attribute name="status" type="StatusEnumeration" use="optional" default="active" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="OrderedVersionOfObjectStructure" abstract="true">
 		<xsd:annotation>
@@ -202,7 +212,7 @@ Attribuut 'modification' geeft aan of de versie voor het eerst wordt aangeleverd
 			<xsd:documentation>Een element uit een BISON standaardenumeratie heeft een uniek 'id' conform de afspraken in het NL NeTEx Profiel document. Het object heeft de vaste waarde 'any' voor attribuut 'version'. Deze waarde wordt geinterpreteerd als 'de actuele versie'.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexContent>
-			<xsd:extension base="DataManagedObjectStructure-with-version">
+			<xsd:extension base="DataManagedObjectStructure-any-version">
 				<xsd:sequence>
 					<xsd:element name="Name" type="MultilingualString"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
