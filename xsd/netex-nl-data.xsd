@@ -312,7 +312,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
 					<xsd:element name="Name" type="MultilingualString"/>
-					<xsd:element name="Location" type="LocationStructure"/>
+					<xsd:element name="Location" type="LocationStructure" minOccurs="0"/>
 					<xsd:element name="projections" type="projections" minOccurs="0"/>
 					<xsd:element name="stopAreas" minOccurs="0">
 						<xsd:complexType>
