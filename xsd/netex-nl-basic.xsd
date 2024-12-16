@@ -184,7 +184,6 @@ Attribuut 'modification' geeft aan of de versie voor het eerst wordt aangeleverd
 		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
 		<xsd:attribute name="version" type="VersionIdType" default="any" form="unqualified"/>
-		<xsd:attribute name="order" type="xsd:nonNegativeInteger" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="OrderedVersionOfObjectStructure-fixed" abstract="true">
 		<xsd:annotation>
@@ -193,7 +192,6 @@ Attribuut 'modification' geeft aan of de versie voor het eerst wordt aangeleverd
 		<xsd:attribute name="id" type="ObjectIdType" use="required" form="unqualified"/>
 		<xsd:attribute name="modification" type="ModificationEnumeration" use="optional" default="new" form="unqualified"/>
 		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-		<xsd:attribute name="order" type="xsd:nonNegativeInteger" use="required" fixed="1" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="VersionFrameVersionStructure">
 		<xsd:annotation>

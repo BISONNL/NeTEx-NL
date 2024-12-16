@@ -644,7 +644,6 @@
 					<xsd:element name="NoticeRef" type="VersionOfObjectRefStructure"/>
 					<xsd:element name="NoticedObjectRef" type="VersionOfObjectRefStructure-with-class"/>
 				</xsd:sequence>
-				<xsd:attribute name="order" type="xsd:nonNegativeInteger" use="required" form="unqualified"/>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
