@@ -39,6 +39,12 @@
 	<xsd:simpleType name="DistanceType">
 		<xsd:restriction base="xsd:decimal"/>
 	</xsd:simpleType>
+	<xsd:simpleType name="SpeedType">
+		<xsd:annotation>
+			<xsd:documentation>Speed type for velocity. System for units can be specified on frame. Normal default is metres per second as defined by http://www.ordnancesurvey.co.uk/xml/resource/units.xml#metres.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:decimal"/>
+	</xsd:simpleType>
 	<xsd:simpleType name="WeightType">
 		<xsd:restriction base="xsd:decimal"/>
 	</xsd:simpleType>

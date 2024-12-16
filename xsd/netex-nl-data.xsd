@@ -1134,6 +1134,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 						</xsd:element>
 					</xsd:choice>
 					<xsd:element name="MaximumRange" type="DistanceType" minOccurs="0"/>
+					<xsd:element name="MaximumVelocity" type="SpeedType" minOccurs="0"/>
 					<xsd:element name="TransportMode" type="TransportmodeEnum"/>
 					<xsd:element name="capacities" type="passengerCapacities_RelStructure" minOccurs="0">
 						<xsd:annotation>
