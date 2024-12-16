@@ -304,13 +304,30 @@
 	</xsd:simpleType>
 	<xsd:simpleType name="StakeholderRoleTypeEnumeration">
 		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="planning"/>
+			<xsd:enumeration value="operation"/>
+			<xsd:enumeration value="control"/>
+			<xsd:enumeration value="reservation"/>
+			<xsd:enumeration value="entityLegalOwnership"/>
+			<xsd:enumeration value="fareManagement"/>
+			<xsd:enumeration value="financing"/>
+			<xsd:enumeration value="securityManagement"/>
+			<xsd:enumeration value="customerService"/>
+			<xsd:enumeration value="dataRegistrar"/>
+			<xsd:enumeration value="tenant"/>
+			<xsd:enumeration value="facilityManagement"/>
+			<xsd:enumeration value="lessor"/>
+			<xsd:enumeration value="other"/>
+			<!-- DEPRECATED Upper case values kept for the time being. -v.2.0  -->
 			<xsd:enumeration value="Planning"/>
 			<xsd:enumeration value="Operation"/>
 			<xsd:enumeration value="Control"/>
 			<xsd:enumeration value="Reservation"/>
 			<xsd:enumeration value="EntityLegalOwnership"/>
 			<xsd:enumeration value="FareManagement"/>
+			<xsd:enumeration value="Financing"/>
 			<xsd:enumeration value="SecurityManagement"/>
+			<xsd:enumeration value="CustomerService"/>
 			<xsd:enumeration value="DataRegistrar"/>
 			<xsd:enumeration value="Other"/>
 		</xsd:restriction>
