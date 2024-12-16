@@ -644,6 +644,8 @@
 					<xsd:element name="NoticeRef" type="VersionOfObjectRefStructure"/>
 					<xsd:element name="NoticedObjectRef" type="VersionOfObjectRefStructure-with-class"/>
 				</xsd:sequence>
+				<!-- DEPRECATED Attribuut "order" niet langer gebruiken. Volgorder wordt bepaald door positie in sequence. Optioneel gemaakt voor backwards compatibility -->
+				<xsd:attribute name="order" type="xsd:nonNegativeInteger" use="optional" form="unqualified"/>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
