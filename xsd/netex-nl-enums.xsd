@@ -318,18 +318,6 @@
 			<xsd:enumeration value="facilityManagement"/>
 			<xsd:enumeration value="lessor"/>
 			<xsd:enumeration value="other"/>
-			<!-- DEPRECATED Upper case values kept for the time being. -v.2.0  -->
-			<xsd:enumeration value="Planning"/>
-			<xsd:enumeration value="Operation"/>
-			<xsd:enumeration value="Control"/>
-			<xsd:enumeration value="Reservation"/>
-			<xsd:enumeration value="EntityLegalOwnership"/>
-			<xsd:enumeration value="FareManagement"/>
-			<xsd:enumeration value="Financing"/>
-			<xsd:enumeration value="SecurityManagement"/>
-			<xsd:enumeration value="CustomerService"/>
-			<xsd:enumeration value="DataRegistrar"/>
-			<xsd:enumeration value="Other"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="StakeholderRoleTypeListOfEnumerations">
