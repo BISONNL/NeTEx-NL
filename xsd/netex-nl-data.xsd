@@ -698,6 +698,7 @@
 			</xsd:element>
 			<xsd:element name="ExternalLineRef" type="ExternalObjectRefStructure" minOccurs="0"/>
 			<xsd:element name="AuthorityRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+			<xsd:element name="OperatorRef" type="VersionOfObjectRefStructure"/>
 			<xsd:element name="TypeOfProductCategoryRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 			<xsd:element name="TypeOfServiceRef" type="VersionOfObjectRefStructure"/>
 			<xsd:element name="Monitored" type="xsd:boolean"/>

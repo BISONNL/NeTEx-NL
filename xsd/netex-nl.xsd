@@ -29,6 +29,7 @@
 <!--                      toegevoegd t.b.v. verwijzingen naar originele route bij    -->
 <!--                      omleidingen.                                               -->
 <!--   v9.3.0  (xxx.2023) Element limitations opgenomen in accessibilityAssessment   -->
+<!--   v9.3.0  (okt.2024) OperatorView.OperatorRef vervangen door Line.OperatorRef   -->
 <!--                                                                                 -->
 <!-- Copyright:                                                                      -->
 <!--     Dit document is eigendom van Platform BISON onder Samenwerkingsverband DOVA -->
@@ -508,13 +509,6 @@
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="AvailabilityCondition" type="availabilityCondition" maxOccurs="unbounded"/>
-							</xsd:sequence>
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="OperatorView">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="OperatorRef" type="VersionOfObjectRefStructure"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
