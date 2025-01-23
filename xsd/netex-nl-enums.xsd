@@ -562,62 +562,62 @@
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<xsd:simpleType name="BisonTypeOfCompositeFrame">
 		<xsd:restriction base="xsd:NMTOKEN">
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_BASELINE"/>
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_DELTA"/>
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_CODESPACES"/>
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_BISON_ENUMS"/>
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_DOVA_LISTS"/>
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_VEHICLES"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_TT_BASELINE"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_TT_DELTA"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_CODESPACES"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_BISON_ENUMS"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_DOVA_LISTS"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_VEHICLES"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="BisonTypeOfResourceFrame">
 		<xsd:restriction base="xsd:NMTOKEN">
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_RESOURCE"/>
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_VEH_RESOURCE"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_TT_RESOURCE"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_VEH_RESOURCE"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="BisonTypeOfInfrastructureFrame">
 		<xsd:restriction base="xsd:NMTOKEN">
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_INFRA"/>
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_VEH_INFRA"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_TT_INFRA"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_VEH_INFRA"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="BisonTypeOfServiceFrame">
 		<xsd:restriction base="xsd:NMTOKEN">
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_SERVICE"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_TT_SERVICE"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="BisonTypeOfTimetableFrame">
 		<xsd:restriction base="xsd:NMTOKEN">
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_TIMETABLE"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="BisonTypeOfServiceCalendarFrame">
 		<xsd:restriction base="xsd:NMTOKEN">
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_CALENDAR"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_TT_CALENDAR"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="BisonTypeOfVehicleScheduleFrame">
 		<xsd:restriction base="xsd:NMTOKEN">
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_VEHICLE"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_TT_VEHICLE"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="BisonTypeOfSiteFrame">
 		<xsd:restriction base="xsd:NMTOKEN">
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_SITE"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_TT_SITE"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="BisonTypeOfGeneralFrame">
 		<xsd:restriction base="xsd:NMTOKEN">
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_AuthorityList"/>
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_TariffZoneList"/>
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_NetworkList"/>
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_TypeOfEquipmentValues"/>
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_TypeOfActivationValues"/>
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_TypeOfServiceValues"/>
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_TechnicalEnumerations"/>
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_VEH_METADATA"/>
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_VEH_DATA"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_AuthorityList"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_TariffZoneList"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_NetworkList"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_TypeOfEquipmentValues"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_TypeOfActivationValues"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_VEH_METADATA"/>
+			<xsd:enumeration value="NL:BISON:TypeOfFrame:NL_VEH_DATA"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->

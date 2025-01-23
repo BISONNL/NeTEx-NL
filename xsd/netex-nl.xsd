@@ -59,7 +59,7 @@
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_BASELINE" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="NL:BISON:TypeOfFrame:NL_TT_BASELINE" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -67,7 +67,7 @@
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_DELTA" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="NL:BISON:TypeOfFrame:NL_TT_DELTA" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -75,7 +75,7 @@
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="BISON:TypeOfFrame:NL_CODESPACES" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="NL:BISON:TypeOfFrame:NL_CODESPACES" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -83,7 +83,7 @@
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="BISON:TypeOfFrame:NL_BISON_ENUMS" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="NL:BISON:TypeOfFrame:NL_BISON_ENUMS" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -91,7 +91,7 @@
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
 				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
-				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="BISON:TypeOfFrame:NL_DOVA_LISTS" form="unqualified"/>
+				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="NL:BISON:TypeOfFrame:NL_DOVA_LISTS" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
 	</xsd:complexType>
