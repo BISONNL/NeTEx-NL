@@ -579,7 +579,6 @@
 	<xsd:simpleType name="BisonTypeOfInfrastructureFrame">
 		<xsd:restriction base="xsd:NMTOKEN">
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TT_INFRA"/>
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_VEH_INFRA"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="BisonTypeOfServiceFrame">
@@ -616,8 +615,6 @@
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TypeOfActivationValues"/>
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TypeOfServiceValues"/>
 			<xsd:enumeration value="BISON:TypeOfFrame:NL_TechnicalEnumerations"/>
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_VEH_METADATA"/>
-			<xsd:enumeration value="BISON:TypeOfFrame:NL_VEH_DATA"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->

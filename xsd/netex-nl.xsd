@@ -268,6 +268,13 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
+					<xsd:element name="vehicles" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Vehicle" type="vehicle" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
 					<xsd:element name="zones" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
@@ -436,13 +443,6 @@
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="ActivationPoint" type="activationPoint" maxOccurs="unbounded"/>
-							</xsd:sequence>
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="vehicles" minOccurs="0">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="Vehicle" type="vehicle" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
