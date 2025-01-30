@@ -142,10 +142,6 @@
                             </facilities>
                         </VehicleType>
                     </vehicleTypes>
-                </ResourceFrame>
-                <InfrastructureFrame id="EBS:InfrastructureFrame:VehicleData" version="20240308">
-                    <!-- Dit is een voertuigenexport, dus TypeOfFrameRef is NL_VEH_INFRA. -->
-                    <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_VEH_INFRA" version="9.3.0"/>
                     <vehicles>
                         <!-- Dit voorbeeld specificeert vijf voertuigen, twee standaardbussen, twee R-Net-bussen, en één Delfthopper. -->
                         <Vehicle id="EBS:Vehicle:10m-1" version="20240308"
@@ -204,7 +200,7 @@
                             <VehicleTypeRef ref="EBS:VehicleType:Delfthopper" version="20240308"/>
                         </Vehicle>
                     </vehicles>
-                </InfrastructureFrame>
+                </ResourceFrame>
             </frames>
         </CompositeFrame>
     </dataObjects>
