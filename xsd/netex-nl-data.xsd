@@ -1130,18 +1130,12 @@
 							<xsd:documentation>Zie Wikipedia voor de mogelijke waarden</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:choice>
-						<xsd:element name="FuelType" type="FuelTypeEnumeration">
-							<xsd:annotation>
-								<xsd:documentation>Het type brandstof dat voor het voertuig in gebruik is voor het voertuig soort.</xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-						<xsd:element name="TypeOfFuel" type="FuelTypeEnumeration">
-							<xsd:annotation>
-								<xsd:documentation>DEPRECATED NAME: Use FuelType instead. Will be removed: 2025-01-09.</xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-					</xsd:choice>
+					<xsd:element name="ReversingDirection" type="xsd:boolean" default="true" minOccurs="0"/>
+					<xsd:element name="SelfPropelled" type="xsd:boolean" default="true" minOccurs="0"/>
+					<xsd:element name="PropulsionType" type="PropulsionTypeEnumeration" minOccurs="0"/>
+					<xsd:element name="FuelType" type="FuelTypeEnumeration" />
+					<xsd:element name="MaximumRange" type="DistanceType" minOccurs="0"/>
+					<xsd:element name="MaximumVelocity" type="SpeedType" minOccurs="0"/>
 					<xsd:element name="TransportMode" type="TransportmodeEnum"/>
 					<xsd:element name="capacities" type="passengerCapacities_RelStructure" minOccurs="0">
 						<xsd:annotation>
@@ -1157,6 +1151,7 @@
 					<xsd:element name="Width" type="LengthType" minOccurs="0"/>
 					<xsd:element name="Height" type="LengthType" minOccurs="0"/>
 					<xsd:element name="Weight" type="WeightType" minOccurs="0"/>
+					<xsd:element name="FirstAxleHeight" type="LengthType" minOccurs="0"/>
 					<xsd:element name="facilities" type="facilities"/>
 				</xsd:sequence>
 			</xsd:extension>

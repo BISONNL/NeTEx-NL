@@ -47,6 +47,12 @@
 	<xsd:simpleType name="DistanceType">
 		<xsd:restriction base="xsd:decimal"/>
 	</xsd:simpleType>
+	<xsd:simpleType name="SpeedType">
+		<xsd:annotation>
+			<xsd:documentation>Speed type for velocity. System for units can be specified on frame. Normal default is metres per second as defined by http://www.ordnancesurvey.co.uk/xml/resource/units.xml#metres.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:decimal"/>
+	</xsd:simpleType>
 	<xsd:simpleType name="WeightType">
 		<xsd:restriction base="xsd:decimal"/>
 	</xsd:simpleType>
@@ -121,6 +127,19 @@
 					<xsd:documentation>ftp/http/https (hoofdletters of kleine letters, geen combinaties); bestandtypes jpg, jpeg, gif, png, svg (hoofdletters of kleine letters, geen combinaties)</xsd:documentation>
 				</xsd:annotation>
 			</xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PropulsionTypeEnumeration">
+		<xsd:annotation>
+			<xsd:documentation>Allowed values for type of power  +v1/2/2</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:normalizedString">
+			<xsd:enumeration value="combustion"/>
+			<xsd:enumeration value="electric"/>
+			<xsd:enumeration value="electricAssist"/>
+			<xsd:enumeration value="hybrid"/>
+			<xsd:enumeration value="human"/>
+			<xsd:enumeration value="other"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
