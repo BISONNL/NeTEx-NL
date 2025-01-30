@@ -36,7 +36,16 @@
 <!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl,      -->
 <!--     zie http://creativecommons.org/licences/by-nd/3.0/nl                        -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.3" id="netex-nl-xsd">
+<!DOCTYPE xsd:schema[<!ENTITY bisonversion "9.3.0">]>
+<xsd:schema xmlns="http://www.netex.org.uk/netex"
+			xmlns:netex="http://www.netex.org.uk/netex"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:gml="http://www.opengis.net/gml/3.2"
+			targetNamespace="http://www.netex.org.uk/netex"
+			elementFormDefault="qualified"
+			attributeFormDefault="qualified"
+			version="9.3.0"
+			id="netex-nl-xsd">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- AFHANKELIJKHEDEN                                                                -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -50,7 +59,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-composite">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="&bisonversion;" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -58,7 +67,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-baseline">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="&bisonversion;" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_BASELINE" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -66,7 +75,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-delta">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="&bisonversion;" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="BISON:TypeOfFrame:NL_TT_DELTA" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -74,7 +83,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-codespace">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="&bisonversion;" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="BISON:TypeOfFrame:NL_CODESPACES" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -82,7 +91,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-bison-enums">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="&bisonversion;" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="BISON:TypeOfFrame:NL_BISON_ENUMS" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -90,7 +99,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-dova-lists">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="&bisonversion;" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfCompositeFrame" use="required" fixed="BISON:TypeOfFrame:NL_DOVA_LISTS" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -98,7 +107,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-resource">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="&bisonversion;" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfResourceFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -106,7 +115,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-infra">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="&bisonversion;" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfInfrastructureFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -114,7 +123,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-service">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="&bisonversion;" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfServiceFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -122,7 +131,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-timetable">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="&bisonversion;" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfTimetableFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -130,7 +139,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-calendar">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="&bisonversion;" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfServiceCalendarFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -138,7 +147,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-vehicle">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="&bisonversion;" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfVehicleScheduleFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -146,7 +155,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-site">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="&bisonversion;" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfSiteFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
@@ -154,7 +163,7 @@
 	<xsd:complexType name="TypeOfFrameRefStructure-general">
 		<xsd:complexContent>
 			<xsd:restriction base="TypeOfFrameRefStructure">
-				<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+				<xsd:attribute name="version" type="VersionIdType" use="required" fixed="&bisonversion;" form="unqualified"/>
 				<xsd:attribute name="ref" type="BisonTypeOfGeneralFrame" use="required" form="unqualified"/>
 			</xsd:restriction>
 		</xsd:complexContent>
