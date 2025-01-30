@@ -278,14 +278,13 @@
 		</xsd:unique>
 		<!-- =====AlternativeName============================== -->
 		<!-- =====AlternativeName unique========================== -->
-		<xsd:unique name="AlternativeName_UniqueBy_Id_Version_useForLanguage_Order">
+		<xsd:unique name="AlternativeName_UniqueBy_Id_Version_useForLanguage">
 			<xsd:annotation>
-				<xsd:documentation>Every [AlternativeName Id + version + order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [AlternativeName Id + version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:AlternativeName"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:unique>
 		<!-- =====TypeOfValidity============================== -->
 		<!-- =====TypeOfValidity unique========================== -->
@@ -787,62 +786,55 @@
 		</xsd:key>
 		<!-- =====PointOnSection============================== -->
 		<!-- =====PointOnSection unique========================== -->
-		<xsd:unique name="PointOnSection_UniqueBy_Id_Version_Order">
+		<xsd:unique name="PointOnSection_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [PointOnSection Id + Version +order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [PointOnSection Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:PointOnSection"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:unique>
 		<!-- =====PointOnSection Key ========================== -->
-		<xsd:keyref name="PointOnSection_KeyRef" refer="netex:PointOnSection_AnyVersionedKey_ordered">
+		<xsd:keyref name="PointOnSection_KeyRef" refer="netex:PointOnSection_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:PointOnSectionRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:keyref>
-		<xsd:key name="PointOnSection_AnyVersionedKey_ordered">
+		<xsd:key name="PointOnSection_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:PointOnSection"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:key>
 		<!-- =====LinkOnSection============================== -->
 		<!-- =====LinkOnSection unique========================== -->
-		<xsd:unique name="LinkOnSection_UniqueBy_Id_Version_Order">
+		<xsd:unique name="LinkOnSection_UniqueBy_Id_Version">
 			<xsd:annotation>
 				<xsd:documentation>Every [LinkOnSection Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:LinkOnSection"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:unique>
 		<!-- =====LinkOnSection Key ========================== -->
-		<xsd:keyref name="LinkOnSection_KeyRef" refer="netex:LinkOnSection_AnyVersionedKey_ordered">
+		<xsd:keyref name="LinkOnSection_KeyRef" refer="netex:LinkOnSection_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:LinkOnSectionRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:keyref>
-		<xsd:key name="LinkOnSection_AnyVersionedKey_ordered">
+		<xsd:key name="LinkOnSection_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:LinkOnSection"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:key>
 		<!-- =====SectionInSequence ============================== -->
 		<!-- =====SectionInSequence unique========================== -->
-		<xsd:unique name="SectionInSequence_UniqueBy_Id_Version_Order">
+		<xsd:unique name="SectionInSequence_UniqueBy_Id_Version">
 			<xsd:annotation>
 				<xsd:documentation>Every [SectionInSequence Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:SectionInSequence"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:unique>
 		<!-- =====Zone============================== -->
 		<xsd:keyref name="Zone_AnyKeyRef" refer="netex:Zone_AnyVersionedKey">
@@ -2598,27 +2590,24 @@
 		</xsd:key>
 		<!-- =====DayTypeAssignment============================== -->
 		<!-- =====DayTypeAssignment unique========================== -->
-		<xsd:unique name="DayTypeAssignment_UniqueBy_Id_Version_Order">
+		<xsd:unique name="DayTypeAssignment_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [DayTypeAssignment Id + Version +order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [DayTypeAssignment Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:DayTypeAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:unique>
 		<!-- =====DayTypeAssignment Key ========================== -->
-		<xsd:keyref name="DayTypeAssignment_KeyRef" refer="netex:DayTypeAssignment_AnyVersionedKey_ordered">
+		<xsd:keyref name="DayTypeAssignment_KeyRef" refer="netex:DayTypeAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:DayTypeAssignmentRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:keyref>
-		<xsd:key name="DayTypeAssignment_AnyVersionedKey_ordered">
+		<xsd:key name="DayTypeAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:DayTypeAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:key>
 		<!-- =====ValidityCondition============================== -->
 		<!-- =====ValidityCondition unique========================== -->
@@ -2823,27 +2812,24 @@
 		</xsd:key>
 		<!-- =====Train Component============================== -->
 		<!-- =====TrainComponent unique========================== -->
-		<xsd:unique name="TrainComponent_UniqueBy_Id_Version_Order">
+		<xsd:unique name="TrainComponent_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [TrainComponent Id + Version order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [TrainComponent Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:TrainComponent"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:unique>
 		<!-- =====TrainComponent Key ========================== -->
-		<xsd:keyref name="TrainComponent_KeyRef" refer="netex:TrainComponent_AnyVersionedKey_ordered">
+		<xsd:keyref name="TrainComponent_KeyRef" refer="netex:TrainComponent_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:TrainComponentRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:keyref>
-		<xsd:key name="TrainComponent_AnyVersionedKey_ordered">
+		<xsd:key name="TrainComponent_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:TrainComponent"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:key>
 		<!-- =====TrainInCompoundTrain============================== -->
 		<!-- =====TrainInCompoundTrain unique========================== -->
@@ -3590,75 +3576,66 @@
 		</xsd:key>
 		<!-- =====NavigationPathAssignment============================== -->
 		<!-- =====NavigationPathAssignment unique========================== -->
-		<xsd:unique name="NavigationPathAssignment_UniqueBy_Id_Version_Order">
+		<xsd:unique name="NavigationPathAssignment_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [NavigationPathAssignment Id + Version +order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [NavigationPathAssignment Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:NavigationPathAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:unique>
 		<!-- =====NavigationPathAssignment Key ========================== -->
-		<xsd:keyref name="NavigationPathAssignment_KeyRef" refer="netex:NavigationPathAssignment_AnyVersionedKey_ordered">
+		<xsd:keyref name="NavigationPathAssignment_KeyRef" refer="netex:NavigationPathAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:NavigationPathAssignmentRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:keyref>
-		<xsd:key name="NavigationPathAssignment_AnyVersionedKey_ordered">
+		<xsd:key name="NavigationPathAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:NavigationPathAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:key>
 		<!-- =====PathLinkInSequence============================== -->
 		<!-- =====PathLinkInSequence unique========================== -->
-		<xsd:unique name="PathLinkInSequence_UniqueBy_Id_Version_Order">
+		<xsd:unique name="PathLinkInSequence_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [PathLinkInSequence Id + Version + order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [PathLinkInSequence Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:PathLinkInSequence"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:unique>
 		<!-- =====PathLinkInSequence Key ========================== -->
-		<xsd:keyref name="PathLinkInSequence_KeyRef" refer="netex:PathLinkInSequence_AnyVersionedKey_ordered">
+		<xsd:keyref name="PathLinkInSequence_KeyRef" refer="netex:PathLinkInSequence_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:PathLinkInSequenceRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:keyref>
-		<xsd:key name="PathLinkInSequence_AnyVersionedKey_ordered">
+		<xsd:key name="PathLinkInSequence_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:PathLinkInSequence"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:key>
 		<!-- =====PlaceInSequence============================== -->
 		<!-- =====PlaceInSequence unique========================== -->
-		<xsd:unique name="PlaceInSequence_UniqueBy_Id_Version_Order">
+		<xsd:unique name="PlaceInSequence_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [PlaceInSequence Id + Version + order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [PlaceInSequence Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:PlaceInSequence"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:unique>
 		<!-- =====PlaceInSequence Key ========================== -->
-		<xsd:keyref name="PlaceInSequence_KeyRef" refer="netex:PlaceInSequence_AnyVersionedKey_ordered">
+		<xsd:keyref name="PlaceInSequence_KeyRef" refer="netex:PlaceInSequence_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:PlaceInSequenceRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:keyref>
-		<xsd:key name="PlaceInSequence_AnyVersionedKey_ordered">
+		<xsd:key name="PlaceInSequence_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:PlaceInSequence"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:key>
 		<!-- =====AccessSummary============================== -->
 		<!-- =====AccessSummary unique========================== -->
@@ -4003,27 +3980,24 @@
 		</xsd:key>
 		<!-- =====ActivationAssignment============================== -->
 		<!-- =====ActivationAssignment unique========================== -->
-		<xsd:unique name="ActivationAssignment_UniqueBy_Id_Version_Order">
+		<xsd:unique name="ActivationAssignment_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [ActivationAssignment Id + Version + order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [ActivationAssignment Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:ActivationAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:unique>
 		<!-- =====ActivationAssignment Key ========================== -->
-		<xsd:keyref name="ActivationAssignment_KeyRef" refer="netex:ActivationAssignment_AnyVersionedKey_ordered">
+		<xsd:keyref name="ActivationAssignment_KeyRef" refer="netex:ActivationAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:ActivationAssignmentRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:keyref>
-		<xsd:key name="ActivationAssignment_AnyVersionedKey_ordered">
+		<xsd:key name="ActivationAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:ActivationAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
 		</xsd:key>
 		<!-- =====TypeOfActivation============================== -->
 		<!-- =====TypeOfActivation unique========================== -->
@@ -4221,27 +4195,27 @@
 		</xsd:key>
 		<!-- =====PointOnRouteLink============================== -->
 		<!-- =====PointOnRoute unique========================== -->
-		<xsd:unique name="PointOnRoute_UniqueBy_Id_Version_Order">
+		<xsd:unique name="PointOnRoute_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [PointOnRoute Id + Version + order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [PointOnRoute Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:PointOnRoute"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:unique>
 		<!-- =====PointOnRoute Key ========================== -->
-		<xsd:keyref name="PointOnRoute_KeyRef" refer="netex:PointOnRoute_AnyVersionedKey_ordered">
+		<xsd:keyref name="PointOnRoute_KeyRef" refer="netex:PointOnRoute_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:PointOnRouteRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:keyref>
-		<xsd:key name="PointOnRoute_AnyVersionedKey_ordered">
+		<xsd:key name="PointOnRoute_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:PointOnRoute"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:key>
 		<!-- =====VEHICLE & CREW POINT======================== -->
 		<!-- =====CrewBaseLink============================== -->
@@ -4393,51 +4367,51 @@
 		</xsd:key>
 		<!-- =====NoticeAssignment============================== -->
 		<!-- =====NoticeAssignment unique========================== -->
-		<xsd:unique name="NoticeAssignment_UniqueBy_Id_Version_Order">
+		<xsd:unique name="NoticeAssignment_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [NoticeAssignment Id + Version +order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [NoticeAssignment Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:NoticeAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:unique>
 		<!-- =====NoticeAssignment Key ========================== -->
-		<xsd:keyref name="NoticeAssignment_KeyRef" refer="netex:NoticeAssignment_AnyVersionedKey_ordered">
+		<xsd:keyref name="NoticeAssignment_KeyRef" refer="netex:NoticeAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:NoticeAssignmentRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:keyref>
-		<xsd:key name="NoticeAssignment_AnyVersionedKey_ordered">
+		<xsd:key name="NoticeAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:NoticeAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:key>
 		<!-- =====SalesNoticeAssignment============================== -->
 		<!-- =====SalesNoticeAssignment unique========================== -->
-		<xsd:unique name="SalesNoticeAssignment_UniqueBy_Id_Version_Order">
+		<xsd:unique name="SalesNoticeAssignment_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [SalesNoticeAssignment Id + Version + order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [SalesNoticeAssignment Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:SalesNoticeAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:unique>
 		<!-- =====SalesNoticeAssignment Key ========================== -->
-		<xsd:keyref name="SalesNoticeAssignment_KeyRef" refer="netex:SalesNoticeAssignment_AnyVersionedKey_ordered">
+		<xsd:keyref name="SalesNoticeAssignment_KeyRef" refer="netex:SalesNoticeAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:SalesNoticeAssignmentRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:keyref>
-		<xsd:key name="SalesNoticeAssignment_AnyVersionedKey_ordered">
+		<xsd:key name="SalesNoticeAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:SalesNoticeAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:key>
 		<!-- =====LineNetwork============================== -->
 		<!-- =====LineNetwork unique========================== -->
@@ -4786,99 +4760,99 @@
 		<!-- =====STOP ASSIGNMENT Constraints============================== -->
 		<!-- =====PassengerStopAssignment============================== -->
 		<!-- =====PassengerStopAssignment unique========================== -->
-		<xsd:unique name="PassengerStopAssignment_UniqueBy_Id_Version_Order">
+		<xsd:unique name="PassengerStopAssignment_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [PassengerStopAssignment Id + Version + order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [PassengerStopAssignment Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:PassengerStopAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:unique>
 		<!-- =====PassengerStopAssignment Key ========================== -->
-		<xsd:keyref name="PassengerStopAssignment_KeyRef" refer="netex:PassengerStopAssignment_AnyVersionedKey_ordered">
+		<xsd:keyref name="PassengerStopAssignment_KeyRef" refer="netex:PassengerStopAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:PassengerStopAssignmentRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:keyref>
-		<xsd:key name="PassengerStopAssignment_AnyVersionedKey_ordered">
+		<xsd:key name="PassengerStopAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:PassengerStopAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:key>
 		<!-- =====TrainStopAssignment============================== -->
 		<!-- =====TrainStopAssignment unique========================== -->
-		<xsd:unique name="TrainStopAssignment_UniqueBy_Id_Version_Order">
+		<xsd:unique name="TrainStopAssignment_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [TrainStopAssignment Id + Version + order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [TrainStopAssignment Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:TrainStopAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:unique>
 		<!-- =====TrainStopAssignment Key ========================== -->
-		<xsd:keyref name="TrainStopAssignment_KeyRef" refer="netex:TrainStopAssignment_AnyVersionedKey_ordered">
+		<xsd:keyref name="TrainStopAssignment_KeyRef" refer="netex:TrainStopAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:TrainStopAssignmentRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:keyref>
-		<xsd:key name="TrainStopAssignment_AnyVersionedKey_ordered">
+		<xsd:key name="TrainStopAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:TrainStopAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:key>
 		<!-- =====TrainComponentLabelAssignment============================== -->
 		<!-- =====TrainComponentLabelAssignment unique========================== -->
-		<xsd:unique name="TrainComponentLabelAssignment_UniqueBy_Id_Version_Order">
+		<xsd:unique name="TrainComponentLabelAssignment_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [TrainComponentLabelAssignment Id + Version +order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [TrainComponentLabelAssignment Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:TrainComponentLabelAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:unique>
 		<!-- =====TrainComponentLabelAssignment Key ========================== -->
-		<xsd:keyref name="TrainComponentLabelAssignment_KeyRef" refer="netex:TrainComponentLabelAssignment_AnyVersionedKey_ordered">
+		<xsd:keyref name="TrainComponentLabelAssignment_KeyRef" refer="netex:TrainComponentLabelAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:TrainComponentLabelAssignmentRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:keyref>
-		<xsd:key name="TrainComponentLabelAssignment_AnyVersionedKey_ordered">
+		<xsd:key name="TrainComponentLabelAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:TrainComponentLabelAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:key>
 		<!-- =====DynamicStopAssignment=========================== -->
 		<!-- =====DynamicStopAssignment unique========================== -->
-		<xsd:unique name="DynamicStopAssignment_UniqueBy_Id_Version_Order">
+		<xsd:unique name="DynamicStopAssignment_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [DynamicStopAssignment Id + Version + order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [DynamicStopAssignment Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:DynamicStopAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:unique>
 		<!-- =====DynamicStopAssignment Key ========================== -->
-		<xsd:keyref name="DynamicStopAssignment_KeyRef" refer="netex:DynamicStopAssignment_AnyVersionedKey_ordered">
+		<xsd:keyref name="DynamicStopAssignment_KeyRef" refer="netex:DynamicStopAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:DynamicStopAssignmentRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:keyref>
-		<xsd:key name="DynamicStopAssignment_AnyVersionedKey_ordered">
+		<xsd:key name="DynamicStopAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:DynamicStopAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:key>
 		<!-- =====VehicleTypeStopAssignment============================== -->
 		<!-- =====VehicleTypeStopAssignment unique========================== -->
@@ -4924,147 +4898,147 @@
 		</xsd:key>
 		<!-- =====PointInJourneyPattern  ========================== -->
 		<!-- =====PointInJourneyPattern unique========================== -->
-		<xsd:unique name="PointInJourneyPattern_UniqueBy_Id_Version_Order">
+		<xsd:unique name="PointInJourneyPattern_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [PointInJourneyPattern Id + Version + order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [PointInJourneyPattern Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:PointInJourneyPattern"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:unique>
 		<!-- =====PointInJourneyPattern Key ========================== -->
-		<xsd:keyref name="PointInJourneyPattern_KeyRef" refer="netex:PointInJourneyPattern_AnyVersionedKey_ordered">
+		<xsd:keyref name="PointInJourneyPattern_KeyRef" refer="netex:PointInJourneyPattern_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:PointInJourneyPatternRef | .//netex:FromPointInPatternRef | .//netex:ToPointInPatternRef  | .//netex:StartPointInPatternRef  | .//netex:EndPointInPatternRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:keyref>
-		<xsd:key name="PointInJourneyPattern_AnyVersionedKey_ordered">
+		<xsd:key name="PointInJourneyPattern_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:PointInJourneyPattern | .//netex:TimingPointInJourneyPattern| .//netex:StopPointInJourneyPattern"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:key>
 		<!-- =====TimingPointInJourneyPattern  ========================== -->
 		<!-- =====TimingPointInJourneyPattern unique========================== -->
-		<xsd:unique name="TimingPointInJourneyPattern_UniqueBy_Id_Version_Order">
+		<xsd:unique name="TimingPointInJourneyPattern_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [TimingPointInJourneyPattern Id + Version + order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [TimingPointInJourneyPattern Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:TimingPointInJourneyPattern"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:unique>
 		<!-- =====TimingPointInJourneyPattern Key ========================== -->
-		<xsd:keyref name="TimingPointInJourneyPattern_KeyRef" refer="netex:TimingPointInJourneyPattern_AnyVersionedKey_ordered">
+		<xsd:keyref name="TimingPointInJourneyPattern_KeyRef" refer="netex:TimingPointInJourneyPattern_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:TimingPointInJourneyPatternRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:keyref>
-		<xsd:key name="TimingPointInJourneyPattern_AnyVersionedKey_ordered">
+		<xsd:key name="TimingPointInJourneyPattern_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:TimingPointInJourneyPattern"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:key>
 		<!-- =====StopPointInJourneyPattern  ========================== -->
 		<!-- =====StopPointInJourneyPattern unique========================== -->
-		<xsd:unique name="StopPointInJourneyPattern_UniqueBy_Id_Version_Order">
+		<xsd:unique name="StopPointInJourneyPattern_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [StopPointInJourneyPattern Id + Version + order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [StopPointInJourneyPattern Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:StopPointInJourneyPattern"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:unique>
 		<!-- =====StopPointInJourneyPattern Key ========================== -->
-		<xsd:keyref name="StopPointInJourneyPattern_KeyRef" refer="netex:StopPointInJourneyPattern_AnyVersionedKey_ordered">
+		<xsd:keyref name="StopPointInJourneyPattern_KeyRef" refer="netex:StopPointInJourneyPattern_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:StopPointInJourneyPatternRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:keyref>
-		<xsd:key name="StopPointInJourneyPattern_AnyVersionedKey_ordered">
+		<xsd:key name="StopPointInJourneyPattern_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:StopPointInJourneyPattern"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:key>
 		<!-- =====LinkInJourneyPattern  ========================== -->
 		<!-- =====LinkInJourneyPattern unique========================== -->
-		<xsd:unique name="LinkInJourneyPattern_UniqueBy_Id_Version_Order">
+		<xsd:unique name="LinkInJourneyPattern_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [LinkInJourneyPattern Id + Version + order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [LinkInJourneyPattern Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:LinkInJourneyPattern | .//netex:ServiceLinkInJourneyPattern"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:unique>
 		<!-- =====LinkInJourneyPattern Key ========================== -->
-		<xsd:keyref name="LinkInJourneyPattern_KeyRef" refer="netex:LinkInJourneyPattern_AnyVersionedKey_ordered">
+		<xsd:keyref name="LinkInJourneyPattern_KeyRef" refer="netex:LinkInJourneyPattern_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:LinkInJourneyPatternRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:keyref>
-		<xsd:key name="LinkInJourneyPattern_AnyVersionedKey_ordered">
+		<xsd:key name="LinkInJourneyPattern_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:LinkInJourneyPattern | .//netex:TimingLinkInJourneyPattern| .//netex:ServiceLinkInJourneyPattern"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:key>
 		<!-- =====ServiceLinkInJourneyPattern  ========================== -->
 		<!-- =====ServiceLinkInJourneyPattern unique========================== -->
-		<xsd:unique name="ServiceLinkInJourneyPattern_UniqueBy_Id_Version_Order">
+		<xsd:unique name="ServiceLinkInJourneyPattern_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [ServiceLinkInJourneyPattern Id + Version + order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [ServiceLinkInJourneyPattern Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:ServiceLinkInJourneyPattern"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:unique>
 		<!-- =====ServiceLinkInJourneyPattern Key ========================== -->
-		<xsd:keyref name="ServiceLinkInJourneyPattern_KeyRef" refer="netex:ServiceLinkInJourneyPattern_AnyVersionedKey_ordered">
+		<xsd:keyref name="ServiceLinkInJourneyPattern_KeyRef" refer="netex:ServiceLinkInJourneyPattern_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:ServiceLinkInJourneyPatternRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:keyref>
-		<xsd:key name="ServiceLinkInJourneyPattern_AnyVersionedKey_ordered">
+		<xsd:key name="ServiceLinkInJourneyPattern_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:ServiceLinkInJourneyPattern"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:key>
 		<!-- =====TimingLinkInJourneyPattern  ========================== -->
 		<!-- =====TimingLinkInJourneyPattern unique========================== -->
-		<xsd:unique name="TimingLinkInJourneyPattern_UniqueBy_Id_Version_Order">
+		<xsd:unique name="TimingLinkInJourneyPattern_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [TimingLinkInJourneyPattern Id + Version + order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [TimingLinkInJourneyPattern Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
-			<xsd:selector xpath=".//netex:TimingLinkInJourneyPattern_ordered"/>
-			<xsd:field xpath="@id"/>
-			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
-		</xsd:unique>
-		<!-- =====TimingLinkInJourneyPattern Key ========================== -->
-		<xsd:keyref name="TimingLinkInJourneyPattern_KeyRef" refer="netex:TimingLinkInJourneyPattern_AnyVersionedKey_ordered">
-			<xsd:selector xpath=".//netex:TimingLinkInJourneyPatternRef"/>
-			<xsd:field xpath="@ref"/>
-			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
-		</xsd:keyref>
-		<xsd:key name="TimingLinkInJourneyPattern_AnyVersionedKey_ordered">
 			<xsd:selector xpath=".//netex:TimingLinkInJourneyPattern"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
+		</xsd:unique>
+		<!-- =====TimingLinkInJourneyPattern Key ========================== -->
+		<xsd:keyref name="TimingLinkInJourneyPattern_KeyRef" refer="netex:TimingLinkInJourneyPattern_AnyVersionedKey">
+			<xsd:selector xpath=".//netex:TimingLinkInJourneyPatternRef"/>
+			<xsd:field xpath="@ref"/>
+			<xsd:field xpath="@version"/>
+			
+		</xsd:keyref>
+		<xsd:key name="TimingLinkInJourneyPattern_AnyVersionedKey">
+			<xsd:selector xpath=".//netex:TimingLinkInJourneyPattern"/>
+			<xsd:field xpath="@id"/>
+			<xsd:field xpath="@version"/>
+			
 		</xsd:key>
 		<!-- =====TypeOfJourneyPattern============================== -->
 		<!-- =====TypeOfJourneyPattern unique========================== -->
@@ -5233,27 +5207,27 @@
 		</xsd:key>
 		<!-- =====TimeDemandTypeAssignment============================== -->
 		<!-- =====TimeDemandTypeAssignment unique========================== -->
-		<xsd:unique name="TimeDemandTypeAssignment_UniqueBy_Id_Version_Order">
+		<xsd:unique name="TimeDemandTypeAssignment_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [TimeDemandTypeAssignment Id + Version +order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [TimeDemandTypeAssignment Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:TimeDemandTypeAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:unique>
 		<!-- =====TimeDemandTypeAssignment Key ========================== -->
-		<xsd:keyref name="TimeDemandTypeAssignment_KeyRef" refer="netex:TimeDemandTypeAssignment_AnyVersionedKey_ordered">
+		<xsd:keyref name="TimeDemandTypeAssignment_KeyRef" refer="netex:TimeDemandTypeAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:TimeDemandTypeAssignmentRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:keyref>
-		<xsd:key name="TimeDemandTypeAssignment_AnyVersionedKey_ordered">
+		<xsd:key name="TimeDemandTypeAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:TimeDemandTypeAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:key>
 		<!-- =====TimeDemandProfile============================== -->
 		<!-- =====TimeDemandProfile unique========================== -->
@@ -5362,27 +5336,27 @@
 		</xsd:key>
 		<!-- =====DisplayAssignment============================== -->
 		<!-- =====DisplayAssignment unique========================== -->
-		<xsd:unique name="DisplayAssignment_UniqueBy_Id_Version_Order">
+		<xsd:unique name="DisplayAssignment_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [DisplayAssignment Id + Version + order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [DisplayAssignment Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:DisplayAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:unique>
 		<!-- =====DisplayAssignment Key ========================== -->
-		<xsd:keyref name="DisplayAssignment_KeyRef" refer="netex:DisplayAssignment_AnyVersionedKey_ordered">
+		<xsd:keyref name="DisplayAssignment_KeyRef" refer="netex:DisplayAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:DisplayAssignmentRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:keyref>
-		<xsd:key name="DisplayAssignment_AnyVersionedKey_ordered">
+		<xsd:key name="DisplayAssignment_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:DisplayAssignment"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:key>
 		<!-- =====JOURNEY Constraints========================= -->
 		<!-- ===== Journey================== -->
@@ -5504,27 +5478,27 @@
 		</xsd:key>
 		<!-- =====Call============================== -->
 		<!-- =====Call unique========================== -->
-		<xsd:unique name="Call_UniqueBy_Id_Version_Order">
+		<xsd:unique name="Call_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [Call Id + Version + Order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [Call Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:Call"/>
 			<xsd:field xpath="././@id"/>
 			<xsd:field xpath="././@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:unique>
 		<!-- =====Call Key ========================== -->
-		<xsd:keyref name="Call_KeyRef" refer="netex:Call_AnyVersionedKey_ordered">
+		<xsd:keyref name="Call_KeyRef" refer="netex:Call_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:CallRef"/>
 			<xsd:field xpath="././@ref"/>
 			<xsd:field xpath="././@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:keyref>
-		<xsd:key name="Call_AnyVersionedKey_ordered">
+		<xsd:key name="Call_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:Call"/>
 			<xsd:field xpath="././@id"/>
 			<xsd:field xpath="././@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:key>
 		<!-- =====GroupOfServices============================== -->
 		<!-- =====GroupOfServices unique========================== -->
@@ -5549,27 +5523,27 @@
 		</xsd:key>
 		<!-- =====GroupOfServicesMember============================== -->
 		<!-- =====GroupOfServicesMember unique========================== -->
-		<xsd:unique name="GroupOfServicesMember_UniqueBy_Id_Version_Order">
+		<xsd:unique name="GroupOfServicesMember_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [GroupOfServicesMember Id + Version + order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [GroupOfServicesMember Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:GroupOfServicesMember"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:unique>
 		<!-- =====GroupOfServicesMember Key ========================== -->
-		<xsd:keyref name="GroupOfServicesMember_KeyRef" refer="netex:GroupOfServicesMember_AnyVersionedKey_ordered">
+		<xsd:keyref name="GroupOfServicesMember_KeyRef" refer="netex:GroupOfServicesMember_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:GroupOfServicesMemberRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:keyref>
-		<xsd:key name="GroupOfServicesMember_AnyVersionedKey_ordered">
+		<xsd:key name="GroupOfServicesMember_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:GroupOfServicesMember"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:key>
 		<!-- =====JourneyFrequencyGroup============================== -->
 		<!-- =====JourneyFrequencyGroup unique========================== -->
@@ -5657,27 +5631,27 @@
 		</xsd:key>
 		<!-- =====JourneyPartPosition============================== -->
 		<!-- =====JourneyPartPosition unique========================== -->
-		<xsd:unique name="JourneyPartPosition_UniqueBy_Id_Version_Order">
+		<xsd:unique name="JourneyPartPosition_UniqueBy_Id_Version">
 			<xsd:annotation>
-				<xsd:documentation>Every [JourneyPartPosition Id + Version +order] must be unique within document.</xsd:documentation>
+				<xsd:documentation>Every [JourneyPartPosition Id + Version] must be unique within document.</xsd:documentation>
 			</xsd:annotation>
 			<xsd:selector xpath=".//netex:JourneyPartPosition"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:unique>
 		<!-- =====JourneyPartPosition Key ========================== -->
-		<xsd:keyref name="JourneyPartPosition_KeyRef" refer="netex:JourneyPartPosition_AnyVersionedKey_ordered">
+		<xsd:keyref name="JourneyPartPosition_KeyRef" refer="netex:JourneyPartPosition_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:JourneyPartPositionRef"/>
 			<xsd:field xpath="@ref"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:keyref>
-		<xsd:key name="JourneyPartPosition_AnyVersionedKey_ordered">
+		<xsd:key name="JourneyPartPosition_AnyVersionedKey">
 			<xsd:selector xpath=".//netex:JourneyPartPosition"/>
 			<xsd:field xpath="@id"/>
 			<xsd:field xpath="@version"/>
-			<xsd:field xpath="@order"/>
+			
 		</xsd:key>
 		<!-- =====CoupledJourney ============================== -->
 		<!-- =====CoupledJourney unique========================== -->
