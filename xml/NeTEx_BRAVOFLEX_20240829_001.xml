@@ -56,7 +56,7 @@
                             <Name>Financier PNB</Name>
                             <roles>
                                 <ResponsibilityRoleAssignment id="NL:PNB:ResponsibilityRoleAssignment:PNB" version="204">
-                                    <StakeholderRoleType>EntityLegalOwnership</StakeholderRoleType>
+                                    <StakeholderRoleType>entityLegalOwnership</StakeholderRoleType>
                                     <TypeOfResponsibilityRoleRef version="any" ref="NL:BISON:TypeOfResponsibilityRole:financing"/>
                                     <ResponsibleOrganisationRef nameOfRefClass="Authority" version="any" ref="NL:DOVA:Authority:PNB"/>
                                 </ResponsibilityRoleAssignment>
@@ -96,7 +96,7 @@
                             <BrandingRef ref="NL:PNB:Branding:Bravo" version="1"/>
                             <Name>BravoFlex</Name>
                             <Description>BravoFlex</Description>
-                            <TypeOfFuel>diesel</TypeOfFuel>
+                            <FuelType>diesel</FuelType>
                             <TransportMode>bus</TransportMode>
                             <capacities>
                                 <PassengerCapacity id="NL:PNB:PassengerCapacity:BravoFlex" version="1">
@@ -230,6 +230,7 @@
                         <Line id="NL:PNB:FlexibleLine:BravoFlex" version="1" responsibilitySetRef="NL:PNB:ResponsibilitySet:BW">
                             <Name>BravoFlex</Name>
                             <TransportMode>bus</TransportMode>
+                            <OperatorRef ref="NL:PNB:Operator:WDK" version="any"/>
                             <TypeOfProductCategoryRef ref="NL:PNB:TypeOfProductCategory:BravoFlex" version="1"/>
                             <TypeOfServiceRef ref="NL:BISON:TypeOfService:Flex" version="any"/>
                             <Monitored>false</Monitored>
@@ -1016,10 +1017,6 @@
                             </timebands>
                         </AvailabilityCondition>
                     </contentValidityConditions>
-
-                    <OperatorView>
-                        <OperatorRef ref="NL:PNB:Operator:WDK" version="1"/>
-                    </OperatorView>
 
                     <vehicleJourneys>
                         <!-- Chaam -> Baarle-Nassau v.v.: -->

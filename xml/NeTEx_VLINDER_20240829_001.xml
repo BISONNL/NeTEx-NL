@@ -78,7 +78,7 @@
                             <Name>Vlinder</Name>
                             <ShortName>Vlin</ShortName>
                             <Description>Vlinder</Description>
-                            <TypeOfFuel>diesel</TypeOfFuel>
+                            <FuelType>diesel</FuelType>
                             <TransportMode>bus</TransportMode>
                             <capacities>
                                 <PassengerCapacity id="NL:ARR:PassengerCapacity:Vlinder" version="1">
@@ -320,6 +320,7 @@
                             <PrivateCode type="LinePlanningNumber">51809</PrivateCode>
                             <ExternalLineRef type="VeTagLineNumber" ref="809"/>
                             <AuthorityRef ref="NL:DOVA:Authority:FR" version="1"/>
+                            <OperatorRef ref="NL:ARR:Operator:ARR" version="any"/>
                             <TypeOfProductCategoryRef ref="NL:ARR:ProductCategory:VLINDER" version="1"/>
                             <TypeOfServiceRef ref="NL:BISON:TypeOfService:Flex" version="1"/>
                             <Monitored>true</Monitored>
@@ -787,9 +788,6 @@
                             <ValidDayBits>00100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</ValidDayBits>
                         </AvailabilityCondition>
                     </contentValidityConditions>
-                    <OperatorView>
-                        <OperatorRef ref="NL:ARR:Operator:ARR" version="1"/>
-                    </OperatorView>
                     <vehicleJourneys>
                         <!-- De Vlinder één keer per uur van 08:30 tot 19:30 -->
                         <ServiceJourney id="NL:ARR:ServiceJourney:Vlinder-1" version="1">

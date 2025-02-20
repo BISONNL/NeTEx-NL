@@ -74,7 +74,7 @@
                             <Name>FlexRRREis</Name>
                             <ShortName>FlxR</ShortName>
                             <Description>FlexRRREis</Description>
-                            <TypeOfFuel>diesel</TypeOfFuel>
+                            <FuelType>diesel</FuelType>
                             <TransportMode>bus</TransportMode>
                             <capacities>
                                 <PassengerCapacity id="NL:ARR:PassengerCapacity:FlexRRReis" version="1">
@@ -93,7 +93,7 @@
                             <facilities>
                                 <ServiceFacilitySet id="NL:ARR:ServiceFacilitySet:FlexRRReis" version="1">
                                     <MobilityFacilityList>lowFloor suitableForWheelchairs</MobilityFacilityList>
-                                    <VehicleAccessFacilityList>ramp</VehicleAccessFacilityList>
+                                    <VehicleAccessFacilityList>manualRamp</VehicleAccessFacilityList>
                                 </ServiceFacilitySet>
                             </facilities>
                         </VehicleType>
@@ -296,6 +296,7 @@
                         <Line id="NL:ARR:Line:Holten-Rijssen" version="1" responsibilitySetRef="NL:ARR:ResponsibilitySet:TW">
                             <Name>Holten-Rijssen</Name>
                             <TransportMode>bus</TransportMode>
+                            <OperatorRef ref="NL:ARR:Operator:ARR" version="any"/>
                             <TypeOfServiceRef ref="NL:BISON:TypeOfService:Flex" version="any"></TypeOfServiceRef>
                             <Monitored>false</Monitored>
                             <AccessibilityAssessment id="8p" version="1">
@@ -419,9 +420,6 @@
                             </timebands>
                         </AvailabilityCondition>
                     </contentValidityConditions>
-                    <OperatorView>
-                        <OperatorRef ref="NL:ARR:Operator:ARR" version="1"/>
-                    </OperatorView>
                     <vehicleJourneys>
                         <ServiceJourney id="NL:ARR:ServiceJourney:Holten-Rijssen" version="1">
                             <validityConditions>
