@@ -9,7 +9,15 @@
 <!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl,      -->
 <!--     zie http://creativecommons.org/licences/by-nd/3.0/nl                        -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-<xsd:schema xmlns="http://www.netex.org.uk/netex" xmlns:netex="http://www.netex.org.uk/netex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2" targetNamespace="http://www.netex.org.uk/netex" elementFormDefault="qualified" attributeFormDefault="qualified" version="9.2.3" id="netex-nl-data">
+<xsd:schema xmlns="http://www.netex.org.uk/netex"
+			xmlns:netex="http://www.netex.org.uk/netex"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:gml="http://www.opengis.net/gml/3.2"
+			targetNamespace="http://www.netex.org.uk/netex"
+			elementFormDefault="qualified"
+			attributeFormDefault="qualified"
+			version="9.3.0"
+			id="netex-nl-data">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- AFHANKELIJKHEDEN                                                                -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
@@ -86,8 +94,7 @@
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure-with-version">
 				<xsd:annotation>
-					<xsd:documentation>Identificatie van de levering.
-Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attribuut 'version' van het CompositeFrame.</xsd:documentation>
+					<xsd:documentation>Identificatie van de levering. Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attribuut 'version' van het CompositeFrame.</xsd:documentation>
 				</xsd:annotation>
 				<xsd:sequence>
 					<xsd:element name="StartDate" type="xsd:dateTime"/>
@@ -412,6 +419,11 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="FromDate" type="xsd:dateTime"/>
 					<xsd:element name="ToDate" type="xsd:dateTime"/>
+					<xsd:element name="IsAvailable" type="xsd:boolean" default="true" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Geeft aan of de AvailabilityCondition de rit geldig maakt of niet.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
 					<xsd:element name="ValidDayBits">
 						<xsd:annotation>
 							<xsd:documentation>De ValidDayBits worden van links (FromDate) naar rechts (ToDate, inclusief) gelezen.</xsd:documentation>
@@ -606,7 +618,8 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="NoticeRef" type="VersionOfObjectRefStructure"/>
 					<xsd:element name="NoticedObjectRef" type="VersionOfObjectRefStructure-with-class"/>
 				</xsd:sequence>
-				<xsd:attribute name="order" type="xsd:nonNegativeInteger" use="required" form="unqualified"/>
+				<!-- DEPRECATED Attribuut "order" niet langer gebruiken. Volgorder wordt bepaald door positie in sequence. Optioneel gemaakt voor backwards compatibility -->
+				<xsd:attribute name="order" type="xsd:nonNegativeInteger" use="optional" form="unqualified"/>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -659,6 +672,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			</xsd:element>
 			<xsd:element name="ExternalLineRef" type="ExternalObjectRefStructure" minOccurs="0"/>
 			<xsd:element name="AuthorityRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+			<xsd:element name="OperatorRef" type="VersionOfObjectRefStructure"/>
 			<xsd:element name="TypeOfProductCategoryRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 			<xsd:element name="TypeOfServiceRef" type="VersionOfObjectRefStructure"/>
 			<xsd:element name="Monitored" type="xsd:boolean"/>
@@ -1057,7 +1071,6 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="Extensions" type="extensionTransportMode"/>
 					<xsd:element name="RegistrationNumber" type="xsd:string" minOccurs="0"/>
 					<xsd:element name="OperationalNumber" type="xsd:string"/>
 					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
@@ -1076,7 +1089,11 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
-					<xsd:element name="Extensions" type="extensionTypeOfProductCategory" minOccurs="0"/>
+					<xsd:element name="Extensions" type="extensionTypeOfProductCategory" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Deprecated (sinds v9.3.0): Gebruik in plaats hiervan BrandingRef.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
 					<xsd:element name="BrandingRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 					<xsd:element name="Name" type="MultilingualString"/>
 					<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>
@@ -1091,7 +1108,12 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 							<xsd:documentation>Zie Wikipedia voor de mogelijke waarden</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:element name="TypeOfFuel" type="TypeOfFuelEnumeration"/>
+					<xsd:element name="ReversingDirection" type="xsd:boolean" default="true" minOccurs="0"/>
+					<xsd:element name="SelfPropelled" type="xsd:boolean" default="true" minOccurs="0"/>
+					<xsd:element name="PropulsionType" type="PropulsionTypeEnumeration" minOccurs="0"/>
+					<xsd:element name="FuelType" type="FuelTypeEnumeration" />
+					<xsd:element name="MaximumRange" type="DistanceType" minOccurs="0"/>
+					<xsd:element name="MaximumVelocity" type="SpeedType" minOccurs="0"/>
 					<xsd:element name="TransportMode" type="TransportmodeEnum"/>
 					<xsd:element name="capacities" type="passengerCapacities_RelStructure" minOccurs="0">
 						<xsd:annotation>
@@ -1107,6 +1129,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="Width" type="LengthType" minOccurs="0"/>
 					<xsd:element name="Height" type="LengthType" minOccurs="0"/>
 					<xsd:element name="Weight" type="WeightType" minOccurs="0"/>
+					<xsd:element name="FirstAxleHeight" type="LengthType" minOccurs="0"/>
 					<xsd:element name="facilities" type="facilities"/>
 				</xsd:sequence>
 			</xsd:extension>
@@ -1249,8 +1272,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					</xsd:element>
 					<xsd:element name="VehicleAccessFacilityList">
 						<xsd:simpleType>
-							<xsd:list itemType="AccessFacilityEnumeration"/>
-							<!--	<xsd:list itemType="VehicleAccessFacilityEnumeration"/>	-->
+							<xsd:list itemType="VehicleAccessFacilityEnumeration"/>
 						</xsd:simpleType>
 					</xsd:element>
 				</xsd:sequence>
