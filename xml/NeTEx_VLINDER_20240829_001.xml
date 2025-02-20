@@ -569,47 +569,47 @@
                     <stopAssignments>
                         <PassengerStopAssignment id="NL:ARR:PassengerStopAssignement:20000010" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:20000010" version="1"/>
-                            <QuayRef ref="NL:Q:20000010" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:20000010" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:ARR:PassengerStopAssignement:20002740" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:20002740" version="1"/>
-                            <QuayRef ref="NL:Q:20002740" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:20002740" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:ARR:PassengerStopAssignement:20003020" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:20003020" version="1"/>
-                            <QuayRef ref="NL:Q:20003020" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:20003020" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:ARR:PassengerStopAssignement:20004670" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:20004670" version="1"/>
-                            <QuayRef ref="NL:Q:20004670" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:20004670" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:ARR:PassengerStopAssignement:20001570" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:20001570" version="1"/>
-                            <QuayRef ref="NL:Q:20001570" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:20001570" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:ARR:PassengerStopAssignement:20006670" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:20006670" version="1"/>
-                            <QuayRef ref="NL:Q:20006670" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:20006670" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:ARR:PassengerStopAssignement:20002440" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:20002440" version="1"/>
-                            <QuayRef ref="NL:Q:20002440" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:20002440" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:ARR:PassengerStopAssignement:20002430" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:20002430" version="1"/>
-                            <QuayRef ref="NL:Q:20002430" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:20002430" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:ARR:PassengerStopAssignement:20006680" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:20006680" version="1"/>
-                            <QuayRef ref="NL:Q:20006680" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:20006680" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:ARR:PassengerStopAssignement:20006320" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:20006320" version="1"/>
-                            <QuayRef ref="NL:Q:20006320" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:20006320" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:ARR:PassengerStopAssignement:20000171" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:20000171" version="1"/>
-                            <QuayRef ref="NL:Q:20000171" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:20000171" version="any"/>
                         </PassengerStopAssignment>
                     </stopAssignments>
                     <timingLinks>
