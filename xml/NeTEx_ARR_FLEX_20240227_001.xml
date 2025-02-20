@@ -329,45 +329,6 @@
                             </BookingNote>
                         </Line>
                     </lines>
-                    <destinationDisplays>
-                        <!-- Een generieke destination die het gebied beschrijft. -->
-                        <DestinationDisplay id="NL:ARR:DestinationDisplay:Holten-Rijssen" version="1">
-                            <Name>FlexRRReis Holten-Rijssen</Name>
-                            <SideText>FlexRRReis Holten-Rijssen</SideText>
-                            <FrontText>FlexRRReis Holten-Rijssen </FrontText>
-                            <PrivateCode type="DestinationCode">Holten-Rijssen</PrivateCode>
-                            <variants>
-                                <DestinationDisplayVariant id="NL:ARR:DestinationDisplayVariant:Holten-Rijssen-16" version="1">
-                                    <Extensions>
-                                        <MaxLength>BISON:DisplayTextLength:16</MaxLength>
-                                    </Extensions>
-                                    <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
-                                    <Name>Holten-Rijssen</Name>
-                                </DestinationDisplayVariant>
-                                <DestinationDisplayVariant id="NL:ARR:DestinationDisplayVariant:Holten-Rijssen-19" version="1">
-                                    <Extensions>
-                                        <MaxLength>BISON:DisplayTextLength:19</MaxLength>
-                                    </Extensions>
-                                    <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
-                                    <Name>Holten-Rijssen</Name>
-                                </DestinationDisplayVariant>
-                                <DestinationDisplayVariant id="NL:ARR:DestinationDisplayVariant:Holten-Rijssen-21" version="1">
-                                    <Extensions>
-                                        <MaxLength>BISON:DisplayTextLength:21</MaxLength>
-                                    </Extensions>
-                                    <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
-                                    <Name>Holten-Rijssen</Name>
-                                </DestinationDisplayVariant>
-                                <DestinationDisplayVariant id="NL:ARR:DestinationDisplayVariant:Holten-Rijssen-24" version="1">
-                                    <Extensions>
-                                        <MaxLength>BISON:DisplayTextLength:24</MaxLength>
-                                    </Extensions>
-                                    <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
-                                    <Name>Holten-Rijssen</Name>
-                                </DestinationDisplayVariant>
-                            </variants>
-                        </DestinationDisplay>
-                    </destinationDisplays>
                     <scheduledStopPoints>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:Holten-Rijssen" version="1">
                             <Name></Name>
@@ -393,7 +354,6 @@
                     <!-- timingLinks: voor flexritten zijn timingLinks alleen relevant als er volgens een vaste route gereden wordt. -->
                     <journeyPatterns>
                         <ServiceJourneyPattern id="NL:ARR:ServiceJourneyPattern:Holten-Rijssen" version="1">
-                            <DestinationDisplayRef ref="NL:ARR:DestinationDisplay:Holten-Rijssen" version="1"/>
                             <pointsInSequence>
                                 <StopPointInJourneyPattern id="NL:ARR:StopPointInJourneyPattern:instappen" order="1">
                                     <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:Holten-Rijssen" version="1"></ScheduledStopPointRef>
@@ -438,9 +398,6 @@
 									<RunTime>PT30M</RunTime>
 								</VehicleJourneyRunTime>
 							</runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                     </vehicleJourneys>
                 </TimetableFrame>

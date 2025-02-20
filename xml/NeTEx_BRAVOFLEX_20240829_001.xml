@@ -147,7 +147,7 @@
                             <TransportMode>bus</TransportMode>
                             <areas>
                                 <!-- De FlexibleArea definieert de haltes van de kern Chaam behorende bij dit flexgebied. -->
-                                <!-- Omdat reizen binnen de kern niet is toegestaan, maar reizen naar het knooppunt in de kern wel, is het knooppunt (Dorpsstraat; NL:Q:72240080) niet opgenomen in het flexgebied. -->
+                                <!-- Omdat reizen binnen de kern niet is toegestaan, maar reizen naar het knooppunt in de kern wel, is het knooppunt (Dorpsstraat; NL:CHB:Quay:72240080) niet opgenomen in het flexgebied. -->
                                 <!-- De ritpatronen zorgen voor de juiste verbindingen. -->
                                 <FlexibleArea id="NL:PNB:FlexibleArea:Chaam" version="1">
                                     <ShortName>UFH</ShortName>
@@ -197,7 +197,7 @@
                             <TransportMode>bus</TransportMode>
                             <areas>
                                 <!-- De FlexibleArea definieert de haltes van de kern Ulvenhout behorende bij dit flexgebied. -->
-                                <!-- Omdat reizen binnen de kern niet is toegestaan, maar reizen naar het knooppunt in de kern wel, is het knooppunt (Molenstraat; NL:Q:72041400) niet opgenomen in het flexgebied. -->
+                                <!-- Omdat reizen binnen de kern niet is toegestaan, maar reizen naar het knooppunt in de kern wel, is het knooppunt (Molenstraat; NL:CHB:Quay:72041400) niet opgenomen in het flexgebied. -->
                                 <!-- De ritpatronen zorgen voor de juiste verbindingen. -->
                                 <FlexibleArea id="NL:PNB:FlexibleArea:Ulvenhout" version="1">
                                     <ShortName>ULV</ShortName>
@@ -255,18 +255,6 @@
                             <BookingNote>Een rit met Bravoflex kost € 2,-. Alleen als er binnen half uur vóór óf na het gewenste tijdstip tussen de vertrekhalte en bestemmingshalte óók een reguliere lijndienst (bus of buurtbus) rijdt, kost een Bravoflex-rit € 5,-</BookingNote>
                         </Line>
                     </lines>
-
-                    <destinationDisplays>
-                        <!-- Hier is gekozen voor een generieke bestemmingstekst die simpelweg de dienst beschrijft. -->
-                        <!-- Een andere optie is om per kern en/of knooppunt een aparte tekst op te nemen. -->
-                        <DestinationDisplay id="NL:PNB:DestinationDisplay:BravoFlex" version="1">
-                            <Name>BravoFlex</Name>
-                            <SideText>BravoFlex</SideText>
-                            <FrontText>BravoFlex </FrontText>
-                            <PrivateCode type="DestinationCode">BravoFlex</PrivateCode>
-                            <!-- BravoFlex wordt niet getoond op haltedisplays, dus DestinationDisplayVariants met verschillende lengtevarianten zijn niet nodig -->
-                        </DestinationDisplay>
-                    </destinationDisplays>
 
                     <scheduledStopPoints>
                         <!-- Voor elke flexgebied wordt een fictief ScheduledStopPoint opgenomen voor gebruik in ritpatronen. -->
@@ -489,87 +477,87 @@
 						<!-- tenzij bij een overstappunt een specifieke quay is gereserveeerd voor flex-vervoer, in dat geval wordt naast de relatie met de StopPlace ook de QuayRef opgenomen  -->
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:73440690" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:73440690" version="1"/>
-                            <QuayRef ref="NL:Q:73440690" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:73440690" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72002000" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72002000" version="1"/>
-                            <QuayRef ref="NL:Q:72002000" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:72002000" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72240020" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240020" version="1"/>
-                            <QuayRef ref="NL:Q:72240020" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:72240020" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72240040" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240040" version="1"/>
-                            <QuayRef ref="NL:Q:72240040" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:72240040" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72240080" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240080" version="1"/>
-                            <QuayRef ref="NL:Q:72240080" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:72240080" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72240100" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240100" version="1"/>
-                            <QuayRef ref="NL:Q:72240100" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:72240100" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72240130" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240130" version="1"/>
-                            <QuayRef ref="NL:Q:72240130" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:72240130" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72240170" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240170" version="1"/>
-                            <QuayRef ref="NL:Q:72240170" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:72240170" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72240220" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240220" version="1"/>
-                            <QuayRef ref="NL:Q:72240220" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:72240220" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72340110" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72340110" version="1"/>
-                            <QuayRef ref="NL:Q:72340110" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:72340110" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72540400" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72540400" version="1"/>
-                            <QuayRef ref="NL:Q:72540400" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:72540400" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72050800" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72050800" version="1"/>
-                            <QuayRef ref="NL:Q:72050800" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:72050800" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72120010" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72120010" version="1"/>
-                            <QuayRef ref="NL:Q:72120010" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:72120010" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72120050" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72120050" version="1"/>
-                            <QuayRef ref="NL:Q:72120050" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:72120050" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72120070" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72120070" version="1"/>
-                            <QuayRef ref="NL:Q:72120070" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:72120070" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72120090" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72120090" version="1"/>
-                            <QuayRef ref="NL:Q:72120090" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:72120090" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72041300" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72041300" version="1"/>
-                            <QuayRef ref="NL:Q:72041300" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:72041300" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72041400" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72041400" version="1"/>
-                            <QuayRef ref="NL:Q:72041400" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:72041400" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72041500" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72041500" version="1"/>
-                            <QuayRef ref="NL:Q:72041500" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:72041500" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72041900" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72041900" version="1"/>
-                            <QuayRef ref="NL:Q:72041900" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:72041900" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72140120" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72140120" version="1"/>
-                            <QuayRef ref="NL:Q:72140120" version="any"/>
+                            <QuayRef ref="NL:CHB:Quay:72140120" version="any"/>
                         </PassengerStopAssignment>
                     </stopAssignments>
 
@@ -582,7 +570,6 @@
                         <!-- Chaam -> Baarle-Nassau v.v. (opgesplitst in meerdere SJPs van telkens twee punten - origin en destination - voor eenvoudiger verwerking door afnemers) -->
                         <!-- Chaam (kern) -> Chaam (knooppunt): -->
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Kern-Chaam--Knooppunt-Chaam" version="1">
-                            <DestinationDisplayRef ref="NL:PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij een halte in de kern Chaam... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Kern-Chaam--Knooppunt-Chaam-1" order="1">
@@ -604,7 +591,6 @@
                         </ServiceJourneyPattern>
                         <!-- Chaam (knooppunt) -> Baarle-Nassau (knooppunt): -->
 						<ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Knooppunt-Chaam--Knooppunt-Baarle-Nassau" version="1">
-                            <DestinationDisplayRef ref="NL:PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij knooppunt-halte Chaam, Dorpsstraat... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Chaam--Knooppunt-Baarle-Nassau-1" order="2">
@@ -622,7 +608,6 @@
                         </ServiceJourneyPattern>
                         <!-- Chaam (kern) -> Baarle-Nassau (knooppunt) -->
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Kern-Chaam--Knooppunt-Baarle-Nassau" version="1">
-                            <DestinationDisplayRef ref="NL:PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij een halte in de kern Chaam... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Kern-Chaam--Knooppunt-Baarle-Nassau-1" order="1">
@@ -644,7 +629,6 @@
                         </ServiceJourneyPattern>
                         <!-- Omgekeerde richting -->
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Knooppunt-Baarle-Nassau--Knooppunt-Chaam" version="1">
-                            <DestinationDisplayRef ref="NL:PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij knooppunt-halte Baarle-Nassau, St. Janstraat... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Baarle-Nassau--Knooppunt-Chaam-1" order="1">
@@ -661,7 +645,6 @@
                             </pointsInSequence>
                         </ServiceJourneyPattern>
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Knooppunt-Chaam--Kern-Chaam" version="1">
-                            <DestinationDisplayRef ref="NL:PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij knooppunt-halte Chaam, Dorpsstraat... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Chaam--Kern-Chaam-2" order="1">
@@ -681,7 +664,6 @@
                             </pointsInSequence>
                         </ServiceJourneyPattern>
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Knooppunt-Baarle-Nassau--Kern-Chaam" version="1">
-                            <DestinationDisplayRef ref="NL:PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij knooppunt-halte Baarle-Nassau, St. Janstraat... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Baarle-Nassau--Kern-Chaam-1" order="1">
@@ -703,7 +685,6 @@
                         
                         <!-- Chaam -> Ulvenhout v.v.: -->
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Kern-Chaam--Knooppunt-Ulvenhout" version="1">
-                            <DestinationDisplayRef ref="NL:PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij een halte in de kern Chaam... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Kern-Chaam--Knooppunt-Ulvenhout-1" order="1">
@@ -724,7 +705,6 @@
                             </pointsInSequence>
                         </ServiceJourneyPattern>
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Knooppunt-Chaam--Knooppunt-Ulvenhout" version="1">
-                            <DestinationDisplayRef ref="NL:PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij een halte in de kern Chaam... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Chaam--Knooppunt-Ulvenhout-1" order="1">
@@ -742,7 +722,6 @@
                         </ServiceJourneyPattern>
                         <!-- Omgekeerde richting -->
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Knooppunt-Ulvenhout--Knooppunt-Chaam" version="1">
-                            <DestinationDisplayRef ref="NL:PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij knooppunt-halte Ulvenhout, St. Janstraat... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Ulvenhout--Knooppunt-Chaam-1" order="1">
@@ -759,7 +738,6 @@
                             </pointsInSequence>
                         </ServiceJourneyPattern>
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Knooppunt-Ulvenhout--Kern-Chaam" version="1">
-                            <DestinationDisplayRef ref="NL:PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij knooppunt-halte Ulvenhout, St. Janstraat... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Ulvenhout--Kern-Chaam-1" order="1">
@@ -782,7 +760,6 @@
                         <!-- De ritpatronen van en naar Galder kennen slechts twee StopPointInJourneyPattern, omdat de kern Galder geen eigen knooppunt heeft -->
                         <!-- Galder -> Ulvenhout v.v.: -->
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Kern-Galder--Knooppunt-Ulvenhout" version="1">
-                            <DestinationDisplayRef ref="NL:PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij een halte in de kern Galder... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Kern-Galder--Knooppunt-Ulvenhout-1" order="1">
@@ -804,7 +781,6 @@
                         </ServiceJourneyPattern>
                         <!-- Omgekeerde richting -->
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Knooppunt-Ulvenhout--Kern-Galder" version="1">
-                            <DestinationDisplayRef ref="NL:PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij knooppunt-halte Ulvenhout, Molenstraat... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Ulvenhout--Kern-Galder-1" order="3">
@@ -826,7 +802,6 @@
                         
                         <!-- Galder -> Effen v.v.: -->
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Kern-Galder--Knooppunt-Effen" version="1">
-                            <DestinationDisplayRef ref="NL:PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij een halte in de kern Galder... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Kern-Galder--Knooppunt-Effen-1" order="1">
@@ -848,7 +823,6 @@
                         </ServiceJourneyPattern>
                         <!-- Omgekeerde richting -->
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Knooppunt-Effen--Kern-Galder" version="1">
-                            <DestinationDisplayRef ref="NL:PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij knooppunt-halte Effen, Effen... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Effen--Kern-Galder-1" order="3">
@@ -870,7 +844,6 @@
                         
                         <!-- Ulvenhout -> Breda v.v.: -->
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Kern-Ulvenhout--Knooppunt-Breda" version="1">
-                            <DestinationDisplayRef ref="NL:PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij een halte in de kern Ulvenhout... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Kern-Ulvenhout--Knooppunt-Breda-1" order="1">
@@ -891,7 +864,6 @@
                             </pointsInSequence>
                         </ServiceJourneyPattern>
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Kern-Ulvenhout--Knooppunt-Ulvenhout" version="1">
-                            <DestinationDisplayRef ref="NL:PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij een halte in de kern Ulvenhout... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Kern-Ulvenhout--Knooppunt-Ulvenhout-1" order="1">
@@ -912,7 +884,6 @@
                             </pointsInSequence>
                         </ServiceJourneyPattern>
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Knooppunt-Ulvenhout--Knooppunt-Breda" version="1">
-                            <DestinationDisplayRef ref="NL:PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij knooppunt-halte Ulvenhout, Molenstraat... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Ulvenhout--Knooppunt-Breda-1" order="1">
@@ -930,7 +901,6 @@
                         </ServiceJourneyPattern>
                         <!-- Omgekeerde richting -->
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Knooppunt-Breda--Kern-Ulvenhout" version="1">
-                            <DestinationDisplayRef ref="NL:PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij knooppunt-halte Breda, Bijster... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Breda--Kern-Ulvenhout-1" order="1">
@@ -950,7 +920,6 @@
                             </pointsInSequence>
                         </ServiceJourneyPattern>
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Knooppunt-Ulvenhout--Kern-Ulvenhout" version="1">
-                            <DestinationDisplayRef ref="NL:PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij knooppunt-halte Ulvenhout, Molenstraat... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Ulvenhout--Kern-Ulvenhout-1" order="1">
@@ -970,7 +939,6 @@
                             </pointsInSequence>
                         </ServiceJourneyPattern>
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Knooppunt-Breda--Knooppunt-Ulvenhout" version="1">
-                            <DestinationDisplayRef ref="NL:PNB:DestinationDisplay:BravoFlex" version="1"/>
                             <pointsInSequence>
                                 <!-- Instappen bij knooppunt-halte Breda, Bijster... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Breda--Knooppunt-Ulvenhout-1" order="1">
@@ -1034,9 +1002,6 @@
                                     <RunTime>PT12M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                         <ServiceJourney id="NL:PNB:ServiceJourney:Knooppunt-Chaam--Knooppunt-Baarle-Nassau" version="1">
                             <validityConditions>
@@ -1052,9 +1017,6 @@
                                     <RunTime>PT12M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                         <ServiceJourney id="NL:PNB:ServiceJourney:Kern-Chaam--Knooppunt-Chaam" version="1">
                             <validityConditions>
@@ -1070,9 +1032,6 @@
                                     <RunTime>PT8M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                         <ServiceJourney id="NL:PNB:ServiceJourney:Knooppunt-Baarle-Nassau--Kern-Chaam" version="1">
                             <validityConditions>
@@ -1088,9 +1047,6 @@
                                     <RunTime>PT12M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                         <ServiceJourney id="NL:PNB:ServiceJourney:Knooppunt-Baarle-Nassau--Knooppunt-Chaam" version="1">
                             <validityConditions>
@@ -1106,9 +1062,6 @@
                                     <RunTime>PT12M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                         <ServiceJourney id="NL:PNB:ServiceJourney:Knooppunt-Chaam--Kern-Chaam" version="1">
                             <validityConditions>
@@ -1124,9 +1077,6 @@
                                     <RunTime>PT8M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                         
                         <!-- Chaam -> Ulvenhout v.v.: -->
@@ -1144,9 +1094,6 @@
                                     <RunTime>PT12M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                         <ServiceJourney id="NL:PNB:ServiceJourney:Knooppunt-Chaam--Knooppunt-Ulvenhout" version="1">
                             <validityConditions>
@@ -1162,9 +1109,6 @@
                                     <RunTime>PT12M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                         <ServiceJourney id="NL:PNB:ServiceJourney:Knooppunt-Ulvenhout--Kern-Chaam" version="1">
                             <validityConditions>
@@ -1180,9 +1124,6 @@
                                     <RunTime>PT12M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                         <ServiceJourney id="NL:PNB:ServiceJourney:Knooppunt-Ulvenhout--Knooppunt-Chaam" version="1">
                             <validityConditions>
@@ -1198,9 +1139,6 @@
                                     <RunTime>PT12M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                         
                         <!-- Galder -> Ulvenhout v.v.: -->
@@ -1218,9 +1156,6 @@
                                     <RunTime>PT8M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                         <ServiceJourney id="NL:PNB:ServiceJourney:Knooppunt-Ulvenhout--Kern-Galder" version="1">
                             <validityConditions>
@@ -1236,9 +1171,6 @@
                                     <RunTime>PT8M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                         
                         <!-- Galder -> Effen v.v.: -->
@@ -1256,9 +1188,6 @@
                                     <RunTime>PT12M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                         <ServiceJourney id="NL:PNB:ServiceJourney:Knooppunt-Effen--Kern-Galder" version="1">
                             <validityConditions>
@@ -1274,9 +1203,6 @@
                                     <RunTime>PT12M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                         
                         <!-- Ulvenhout -> Breda v.v.: -->
@@ -1294,9 +1220,6 @@
                                     <RunTime>PT10M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                         <ServiceJourney id="NL:PNB:ServiceJourney:Kern-Ulvenhout--Knooppunt-Ulvenhout" version="1">
                             <validityConditions>
@@ -1312,9 +1235,6 @@
                                     <RunTime>PT8M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                         <ServiceJourney id="NL:PNB:ServiceJourney:Knooppunt-Ulvenhout--Knooppunt-Breda" version="1">
                             <validityConditions>
@@ -1330,9 +1250,6 @@
                                     <RunTime>PT10M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                         <ServiceJourney id="NL:PNB:ServiceJourney:Knooppunt-Breda--Knooppunt-Ulvenhout" version="1">
                             <validityConditions>
@@ -1348,9 +1265,6 @@
                                     <RunTime>PT10M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                         <ServiceJourney id="NL:PNB:ServiceJourney:Knooppunt-Ulvenhout--Kern-Ulvenhout" version="1">
                             <validityConditions>
@@ -1366,9 +1280,6 @@
                                     <RunTime>PT8M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                         <ServiceJourney id="NL:PNB:ServiceJourney:Knooppunt-Breda--Kern-Ulvenhout" version="1">
                             <validityConditions>
@@ -1384,9 +1295,6 @@
                                     <RunTime>PT10M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
-                            <FlexibleServiceProperties>
-                                <FlexibleServiceType>dynamicPassingTimes</FlexibleServiceType>
-                            </FlexibleServiceProperties>
                         </ServiceJourney>
                     </vehicleJourneys>
                 </TimetableFrame>

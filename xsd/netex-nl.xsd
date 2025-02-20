@@ -344,7 +344,7 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="destinationDisplays">
+					<xsd:element name="destinationDisplays" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="DestinationDisplay" type="destinationDisplay" maxOccurs="unbounded"/>

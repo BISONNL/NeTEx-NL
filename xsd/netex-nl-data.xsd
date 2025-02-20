@@ -685,7 +685,7 @@
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
 					<xsd:group ref="lineGroup"/>
-					<xsd:element name="FlexibleLineType" type="FlexibleLineTypeEnumeration"/>
+					<xsd:element name="FlexibleLineType" type="FlexibleLineTypeEnumeration" minOccurs="0"/>
 					<xsd:group ref="bookingArrangementsGroup"/>
 				</xsd:sequence>
 				<xsd:attribute name="responsibilitySetRef" type="ObjectIdType" form="unqualified"/>
