@@ -316,10 +316,7 @@
 					<xsd:element name="lines">
 						<xsd:complexType>
 							<xsd:sequence>
-								<xsd:choice maxOccurs="unbounded">
-									<xsd:element name="Line" type="line"/>
-									<xsd:element name="FlexibleLine" type="flexibleLine"/>
-								</xsd:choice>
+								<xsd:element name="Line" type="line" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
@@ -383,7 +380,7 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="timeDemandTypes">
+					<xsd:element name="timeDemandTypes" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="TimeDemandType" type="timeDemandType" maxOccurs="unbounded"/>
@@ -517,7 +514,6 @@
 								<xsd:sequence>
 									<xsd:element name="ServiceJourney" type="serviceJourney" minOccurs="0" maxOccurs="unbounded"/>
 									<xsd:element name="DeadRun" type="deadRun" minOccurs="0" maxOccurs="unbounded"/>
-									<xsd:element name="TemplateServiceJourney" type="templateServiceJourney" minOccurs="0" maxOccurs="unbounded"/>
 								</xsd:sequence>
 							</xsd:choice>
 						</xsd:complexType>

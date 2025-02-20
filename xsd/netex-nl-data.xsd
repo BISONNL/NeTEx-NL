@@ -212,10 +212,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
 					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
-					<xsd:choice>
-						<xsd:element name="LineRef" type="VersionOfObjectRefStructure"/>
-						<xsd:element name="FlexibleLineRef" type="VersionOfObjectRefStructure"/>
-					</xsd:choice>
+					<xsd:element name="LineRef" type="VersionOfObjectRefStructure"/>
 					<xsd:element name="DirectionType" type="DirectionTypeEnumeration"/>
 					<xsd:element name="pointsInSequence">
 						<xsd:complexType>
@@ -464,15 +461,26 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="TimeDemandTypeRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 					<xsd:element name="VehicleTypeRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 					<xsd:element name="OperatorRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-					<xsd:choice minOccurs="0">
+					<xsd:element name="LineRef" type="VersionOfObjectRefStructure" minOccurs="0">
 						<xsd:annotation>
 							<xsd:documentation>Alleen indien er GEEN Route is gedefinieerd om de koppeling met een lijn te maken.</xsd:documentation>
 						</xsd:annotation>
-						<xsd:element name="LineRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-						<xsd:element name="FlexibleLineRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-					</xsd:choice>
+					</xsd:element>
 					<xsd:element name="Print" type="xsd:boolean" default="true" minOccurs="0"/>
 					<xsd:element name="Dynamic" type="DynamicAdvertisementEnumeration" default="always" minOccurs="0"/>
+					<xsd:element name="runTimes" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>
+								Enkel voor gebruik voor flexritten, waarbij de VehicleJourneyRunTime een "gemiddelde" rijtijd van bijvoorbeeld flexgebied naar hub representeert.
+								Voor regulier vervoer dient gebruik te worden gemaakt van TimeDemandTypeRef gebruiken.
+							</xsd:documentation>
+						</xsd:annotation>
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="VehicleJourneyRunTime" type="journeyRunTime" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
 					<xsd:element name="FlexibleServiceProperties" type="flexibleServiceProperties" minOccurs="0"/>
 				</xsd:sequence>
 				<xsd:attribute name="derivedFromVersionRef" type="VersionIdType" use="optional">
@@ -507,50 +515,6 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="VehicleTypeRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 					<xsd:element name="DeadRunType" type="DeadRunTypeEnumeration" minOccurs="0"/>
 				</xsd:sequence>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
-	<xsd:complexType name="templateServiceJourney">
-		<xsd:complexContent>
-			<xsd:extension base="DataManagedObjectStructure">
-				<xsd:annotation>
-					<xsd:documentation>keyList geeft aan of de rit wordt uitgevoerd in hetzelfde domein (DataOwnerIsOperator). Mogelijke waarden: true (default), false.</xsd:documentation>
-				</xsd:annotation>
-				<xsd:sequence>
-					<xsd:element name="validityConditions" type="journeyValidityConditions" minOccurs="0"/>
-					<xsd:element name="keyList" type="KeyListStructure" minOccurs="0"/>
-					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
-						<xsd:annotation>
-							<xsd:documentation>Hier altijd type="JourneyNumber" gebruiken</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:element name="Monitored" type="xsd:boolean" minOccurs="0"/>
-					<xsd:element name="dayTypes" type="journeyDayTypes" minOccurs="0"/>
-					<xsd:element name="ServiceJourneyPatternRef" type="VersionOfObjectRefStructure"/>
-					<xsd:element name="TimeDemandTypeRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-					<xsd:element name="VehicleTypeRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-					<xsd:element name="OperatorRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-					<xsd:choice minOccurs="0">
-						<xsd:annotation>
-							<xsd:documentation>?? Alleen indien er GEEN Route is gedefinieerd om de koppeling met een lijn te maken.</xsd:documentation>
-						</xsd:annotation>
-						<xsd:element name="LineRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-						<xsd:element name="FlexibleLineRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-					</xsd:choice>
-					<xsd:element name="Print" type="xsd:boolean" default="true" minOccurs="0"/>
-					<xsd:element name="Dynamic" type="DynamicAdvertisementEnumeration" default="always" minOccurs="0"/>
-					<xsd:element name="FlexibleServiceProperties" type="flexibleServiceProperties"/>
-				</xsd:sequence>
-				<xsd:attribute name="derivedFromVersionRef" type="VersionIdType" use="optional">
-					<xsd:annotation>
-						<xsd:documentation>Versie van de rit waarop deze rit is gebaseerd. Kan in het NL-profiel, eventueel in combinatie met derivedFromObjectRef, gebruikt worden om te verwijzen naar de originele versie van een rit in geval van een omleiding.</xsd:documentation>
-					</xsd:annotation>
-				</xsd:attribute>
-				<xsd:attribute name="derivedFromObjectRef" type="ObjectIdType" use="optional">
-					<xsd:annotation>
-						<xsd:documentation>ID van de rit waarop deze rit is gebaseerd. Kan in het NL-profiel, eventueel in combinatie met derivedFromVersionRef, gebruikt worden om te verwijzen naar de originele versie van een rit in geval van een omleiding.</xsd:documentation>
-					</xsd:annotation>
-				</xsd:attribute>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -685,12 +649,12 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 			<xsd:element name="Url" type="websiteURI" minOccurs="0"/>
 			<xsd:element name="PublicCode" type="xsd:normalizedString" minOccurs="0">
 				<xsd:annotation>
-					<xsd:documentation>Verplicht voor Line, optioneel voor FlexibleLine.</xsd:documentation>
+					<xsd:documentation>Verplicht voor reguliere lijndiensten, optioneel voor flexdiensten.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
 				<xsd:annotation>
-					<xsd:documentation>Verplicht voor Line, optioneel voor FlexibleLine. Hier altijd type="LinePlanningNumber" gebruiken.</xsd:documentation>
+					<xsd:documentation>Verplicht voor reguliere lijndiensten, optioneel voor flexdiensten. Hier altijd type="LinePlanningNumber" gebruiken.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="ExternalLineRef" type="ExternalObjectRefStructure" minOccurs="0"/>
@@ -703,16 +667,6 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 		</xsd:sequence>
 	</xsd:group>
 	<xsd:complexType name="line">
-		<xsd:complexContent>
-			<xsd:extension base="DataManagedObjectStructure">
-				<xsd:sequence>
-					<xsd:group ref="lineGroup"/>
-				</xsd:sequence>
-				<xsd:attribute name="responsibilitySetRef" type="ObjectIdType" form="unqualified"/>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
-	<xsd:complexType name="flexibleLine">
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
@@ -807,7 +761,7 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="DestinationDisplayRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 					<xsd:element name="FlexiblePointProperties" type="flexiblePointProperties" minOccurs="0">
 						<xsd:annotation>
-							<xsd:documentation>Alleen voor ritpatronen van een FlexibleLine/FlexibleRoute.</xsd:documentation>
+							<xsd:documentation>Alleen voor ritpatronen van een flexdienst.</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
 					<!-- BookingMethods (als onderdeel van BookingArrangments), Print en Dynamic t.b.v. Arriva Vlinder -->
@@ -847,7 +801,11 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="RouteRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 					<xsd:element name="DirectionType" type="DirectionTypeEnumeration" minOccurs="0"/>
-					<xsd:element name="DestinationDisplayRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="DestinationDisplayRef" type="VersionOfObjectRefStructure" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Verplicht voor reguliere lijndiensten, optioneel voor flexdiensten.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
 					<xsd:element name="pointsInSequence">
 						<xsd:complexType>
 							<xsd:choice minOccurs="2" maxOccurs="unbounded">
@@ -1356,15 +1314,6 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					</xsd:element>
 					<xsd:element name="BoardingUse" type="xsd:boolean"/>
 					<xsd:element name="AlightingUse" type="xsd:boolean"/>
-					<!--
-					<xsd:element name="destinations" minOccurs="0">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="DestinationDisplayRef" type="VersionOfObjectRefStructure"/>
-							</xsd:sequence>
-						</xsd:complexType>
-					</xsd:element>
--->
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -1376,35 +1325,8 @@ Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attrib
 					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="ShortName" type="MultilingualString"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
-					<!--
-					<xsd:element name="PrivateCode" type="PrivateCodeStructure" minOccurs="0">
-						<xsd:annotation>
-							<xsd:documentation>Hier altijd type="InternalName" gebruiken.</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:element name="types" minOccurs="0">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="TypeOfZoneRef" type="VersionOfObjectRefStructure">
-									<xsd:annotation>
-										<xsd:documentation>BISON enumeratie.</xsd:documentation>
-									</xsd:annotation>
-								</xsd:element>
-							</xsd:sequence>
-						</xsd:complexType>
-					</xsd:element>
--->
 					<xsd:element name="BoardingUse" type="xsd:boolean"/>
 					<xsd:element name="AlightingUse" type="xsd:boolean"/>
-					<!--
-					<xsd:element name="destinations" minOccurs="0">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="DestinationDisplayRef" type="VersionOfObjectRefStructure"/>
-							</xsd:sequence>
-						</xsd:complexType>
-					</xsd:element>
--->
 					<xsd:element name="StartPointRef" type="VersionOfObjectRefStructure">
 						<xsd:annotation>
 							<xsd:documentation>De referentie verwijst naar het RoutePoint aan het begin van de HailAndRide sectie.</xsd:documentation>
