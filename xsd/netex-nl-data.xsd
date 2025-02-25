@@ -34,6 +34,31 @@
 					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="ShortName" type="MultilingualString"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
+					<xsd:element name="Centroid" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Alleen gebruiken als de TransportAdministrativeZone een concessie beschrijft.</xsd:documentation>
+						</xsd:annotation>
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Location" type="LocationStructure"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:choice minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Alleen gebruiken als de TransportAdministrativeZone een concessie beschrijft.</xsd:documentation>
+						</xsd:annotation>
+						<xsd:element ref="gml:Polygon">
+							<xsd:annotation>
+								<xsd:documentation>Voor een concessie die uit één aaneengesloten gebied bestaat.</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+						<xsd:element ref="gml:MultiSurface">
+							<xsd:annotation>
+								<xsd:documentation>Voor een concessie die uit meerdere aparte gebieden bestaat (bijv. enkele eilanden).</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:choice>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>

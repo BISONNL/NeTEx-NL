@@ -72,4 +72,30 @@
 			</element>
 		</sequence>
 	</complexType>
+	<element name="MultiSurface">
+		<annotation>
+			<documentation>A gml:MultiSurface is defined by one or more gml:AbstractSurfaces.
+				The members of the geometric aggregate may be specified either using the "standard" property (gml:surfaceMember) or the array property (gml:surfaceMembers). It is also valid to use both the "standard" and the array properties in the same collection.</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element ref="gml:surfaceMember" minOccurs="0" maxOccurs="unbounded"/>
+				<element ref="gml:surfaceMembers" minOccurs="0"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="surfaceMember">
+		<complexType>
+			<sequence>
+				<element ref="gml:Polygon"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="surfaceMembers">
+		<complexType>
+			<sequence>
+				<element ref="gml:Polygon" minOccurs="0" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
 </schema>
