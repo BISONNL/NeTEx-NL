@@ -866,7 +866,7 @@
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
 					<!-- TimingLinkRef is optioneel voor flex-ritten, maar verplicht voor reguliere lijn-ritten. -->
-					<xsd:element name="TimingLinkRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="TimingLinkRef" type="VersionOfObjectRefStructure"/>
 					<xsd:element name="RunTime" type="xsd:duration"/>
 				</xsd:sequence>
 			</xsd:extension>
