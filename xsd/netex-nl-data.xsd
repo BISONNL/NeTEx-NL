@@ -853,7 +853,7 @@
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
-					<xsd:element name="Distance" type="xsd:decimal"/>
+					<xsd:element name="Distance" type="xsd:decimal" minOccurs="0"/>
 					<xsd:element name="FromPointRef" type="VersionOfObjectRefStructure-with-optional-class"/>
 					<xsd:element name="ToPointRef" type="VersionOfObjectRefStructure-with-optional-class"/>
 					<xsd:element name="OperationalContextRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
