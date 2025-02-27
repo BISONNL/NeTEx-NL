@@ -351,12 +351,19 @@
                         </FlexibleStopAssignment>
                         <!-- TODO: Hier alle PassengerStopAssignments opnemen om de logische haltes in het flexgebied te koppelen aan de bijbehorende Quays uit het CHB -->
                     </stopAssignments>
-                    <!-- timingLinks: voor flexritten zijn timingLinks alleen relevant als er volgens een vaste route gereden wordt. -->
+                    <timingLinks>
+						<TimingLink id="NL:ARR:TimingLink:Holten-Rijssen" version="1">
+							<Distance>100</Distance>
+							<FromPointRef ref="NL:ARR:ScheduledStopPoint:Holten-Rijssen" version="any"/>
+						    <ToPointRef ref="NL:ARR:ScheduledStopPoint:Holten-Rijssen" version="any"/>
+						</TimingLink>
+                    </timingLinks>
                     <journeyPatterns>
                         <ServiceJourneyPattern id="NL:ARR:ServiceJourneyPattern:Holten-Rijssen" version="1">
                             <pointsInSequence>
                                 <StopPointInJourneyPattern id="NL:ARR:StopPointInJourneyPattern:instappen" order="1">
                                     <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:Holten-Rijssen" version="1"></ScheduledStopPointRef>
+                                    <OnwardTimingLinkRef ref="NL:ARR:TimingLink:Holten-Rijssen" version="1"/>
                                 </StopPointInJourneyPattern>
                                 <StopPointInJourneyPattern id="NL:ARR:StopPointInJourneyPattern:uitstappen" order="2">
                                     <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:Holten-Rijssen" version="1"></ScheduledStopPointRef>
@@ -395,6 +402,7 @@
                             <LineRef ref="NL:ARR:Line:Holten-Rijssen" version="1"/>
                             <runTimes>
 								<VehicleJourneyRunTime id="NL:ARR:JourneyRunTime:Holten-Rijssen" version="1">
+									<TimingLinkRef ref="NL:ARR:TimingLink:Holten-Rijssen" version="1"/>
 									<RunTime>PT30M</RunTime>
 								</VehicleJourneyRunTime>
 							</runTimes>

@@ -561,7 +561,88 @@
                         </PassengerStopAssignment>
                     </stopAssignments>
 
-                    <!-- Voor BravoFlex zijn TimingLinks niet relevant, want er wordt niet gereden volgens een vaste route. -->
+                    <timingLinks>
+						<TimingLink id="NL:PNB:TimingLink:Kern-Chaam--Knooppunt-Chaam" version="1">
+							<FromPointRef ref="NL:PNB:ScheduledStopPoint:Chaam" version="1"/>
+							<ToPointRef ref="NL:PNB:ScheduledStopPoint:72240080" version="1"/>
+						</TimingLink>
+						<TimingLink id="NL:PNB:TimingLink:Knooppunt-Chaam--Knooppunt-Baarle-Nassau" version="1">
+							<FromPointRef ref="NL:PNB:ScheduledStopPoint:72240080" version="1"/>
+							<ToPointRef ref="NL:PNB:ScheduledStopPoint:73440690" version="1"/>
+						</TimingLink>
+						<TimingLink id="NL:PNB:TimingLink:Kern-Chaam--Knooppunt-Baarle-Nassau" version="1">
+							<FromPointRef ref="NL:PNB:ScheduledStopPoint:Chaam" version="1"/>
+							<ToPointRef ref="NL:PNB:ScheduledStopPoint:73440690" version="1"/>
+						</TimingLink>
+						<TimingLink id="NL:PNB:TimingLink:Knooppunt-Baarle-Nassau--Knooppunt-Chaam" version="1">
+							<FromPointRef ref="NL:PNB:ScheduledStopPoint:73440690" version="1"/>
+							<ToPointRef ref="NL:PNB:ScheduledStopPoint:72240080" version="1"/>
+						</TimingLink>
+						<TimingLink id="NL:PNB:TimingLink:Knooppunt-Chaam--Kern-Chaam" version="1">
+							<FromPointRef ref="NL:PNB:ScheduledStopPoint:72240080" version="1"/>
+							<ToPointRef ref="NL:PNB:ScheduledStopPoint:Chaam" version="1"/>
+						</TimingLink>
+						<TimingLink id="NL:PNB:TimingLink:Knooppunt-Baarle-Nassau--Kern-Chaam" version="1">
+							<FromPointRef ref="NL:PNB:ScheduledStopPoint:73440690" version="1"/>
+							<ToPointRef ref="NL:PNB:ScheduledStopPoint:Chaam" version="1"/>
+						</TimingLink>
+						<TimingLink id="NL:PNB:TimingLink:Kern-Chaam--Knooppunt-Ulvenhout" version="1">
+							<FromPointRef ref="NL:PNB:ScheduledStopPoint:Chaam" version="1"/>
+							<ToPointRef ref="NL:PNB:ScheduledStopPoint:72041400" version="1"/>
+						</TimingLink>
+						<TimingLink id="NL:PNB:TimingLink:Knooppunt-Chaam--Knooppunt-Ulvenhout" version="1">
+							<FromPointRef ref="NL:PNB:ScheduledStopPoint:72240080" version="1"/>
+							<ToPointRef ref="NL:PNB:ScheduledStopPoint:72041400" version="1"/>
+						</TimingLink>
+						<TimingLink id="NL:PNB:TimingLink:Knooppunt-Ulvenhout--Knooppunt-Chaam" version="1">
+							<FromPointRef ref="NL:PNB:ScheduledStopPoint:72041400" version="1"/>
+							<ToPointRef ref="NL:PNB:ScheduledStopPoint:72240080" version="1"/>
+						</TimingLink>
+						<TimingLink id="NL:PNB:TimingLink:Knooppunt-Ulvenhout--Kern-Chaam" version="1">
+							<FromPointRef ref="NL:PNB:ScheduledStopPoint:72041400" version="1"/>
+							<ToPointRef ref="NL:PNB:ScheduledStopPoint:Chaam" version="1"/>
+						</TimingLink>
+						<TimingLink id="NL:PNB:TimingLink:Kern-Galder--Knooppunt-Ulvenhout" version="1">
+							<FromPointRef ref="NL:PNB:ScheduledStopPoint:Galder" version="1"/>
+							<ToPointRef ref="NL:PNB:ScheduledStopPoint:72041400" version="1"/>
+						</TimingLink>
+						<TimingLink id="NL:PNB:TimingLink:Knooppunt-Ulvenhout--Kern-Galder" version="1">
+							<FromPointRef ref="NL:PNB:ScheduledStopPoint:72041400" version="1"/>
+							<ToPointRef ref="NL:PNB:ScheduledStopPoint:Galder" version="1"/>
+						</TimingLink>
+						<TimingLink id="NL:PNB:TimingLink:Kern-Galder--Knooppunt-Effen" version="1">
+							<FromPointRef ref="NL:PNB:ScheduledStopPoint:Galder" version="1"/>
+							<ToPointRef ref="NL:PNB:ScheduledStopPoint:72050800" version="1"/>
+						</TimingLink>
+						<TimingLink id="NL:PNB:TimingLink:Knooppunt-Effen--Kern-Galder" version="1">
+							<FromPointRef ref="NL:PNB:ScheduledStopPoint:72050800" version="1"/>
+							<ToPointRef ref="NL:PNB:ScheduledStopPoint:Galder" version="1"/>
+						</TimingLink>
+						<TimingLink id="NL:PNB:TimingLink:Kern-Ulvenhout--Knooppunt-Breda" version="1">
+							<FromPointRef ref="NL:PNB:ScheduledStopPoint:Ulvenhout" version="1"/>
+							<ToPointRef ref="NL:PNB:ScheduledStopPoint:72002000" version="1"/>
+						</TimingLink>
+						<TimingLink id="NL:PNB:TimingLink:Kern-Ulvenhout--Knooppunt-Ulvenhout" version="1">
+							<FromPointRef ref="NL:PNB:ScheduledStopPoint:Ulvenhout" version="1"/>
+							<ToPointRef ref="NL:PNB:ScheduledStopPoint:72041400" version="1"/>
+						</TimingLink>
+						<TimingLink id="NL:PNB:TimingLink:Knooppunt-Breda--Kern-Ulvenhout" version="1">
+							<FromPointRef ref="NL:PNB:ScheduledStopPoint:72002000" version="1"/>
+							<ToPointRef ref="NL:PNB:ScheduledStopPoint:Ulvenhout" version="1"/>
+						</TimingLink>
+						<TimingLink id="NL:PNB:TimingLink:Knooppunt-Ulvenhout--Kern-Ulvenhout" version="1">
+							<FromPointRef ref="NL:PNB:ScheduledStopPoint:72041400" version="1"/>
+							<ToPointRef ref="NL:PNB:ScheduledStopPoint:Ulvenhout" version="1"/>
+						</TimingLink>
+						<TimingLink id="NL:PNB:TimingLink:Knooppunt-Breda--Knooppunt-Ulvenhout" version="1">
+							<FromPointRef ref="NL:PNB:ScheduledStopPoint:72002000" version="1"/>
+							<ToPointRef ref="NL:PNB:ScheduledStopPoint:72041400" version="1"/>
+						</TimingLink>
+						<TimingLink id="NL:PNB:TimingLink:Knooppunt-Ulvenhout--Knooppunt-Breda" version="1">
+							<FromPointRef ref="NL:PNB:ScheduledStopPoint:72041400" version="1"/>
+							<ToPointRef ref="NL:PNB:ScheduledStopPoint:72002000" version="1"/>
+						</TimingLink>
+                    </timingLinks>
  
                     <journeyPatterns>
                         <!-- Er worden ritpatronen gedefinieerd voor elke combinatie van kern naar knooppunt en vice versa. -->
@@ -575,6 +656,7 @@
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Kern-Chaam--Knooppunt-Chaam-1" order="1">
                                     <!-- Hier wordt verwezen naar de ScheduledStopPoint voor het flexgebied Chaam -->
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:Chaam" version="1"/>
+                                    <OnwardTimingLinkRef ref="NL:PNB:TimingLink:Kern-Chaam--Knooppunt-Chaam" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                     <FlexiblePointProperties>
@@ -595,6 +677,7 @@
                                 <!-- Instappen bij knooppunt-halte Chaam, Dorpsstraat... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Chaam--Knooppunt-Baarle-Nassau-1" order="2">
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240080" version="1"/>
+                                    <OnwardTimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Chaam--Knooppunt-Baarle-Nassau" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                 </StopPointInJourneyPattern>
@@ -613,6 +696,7 @@
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Kern-Chaam--Knooppunt-Baarle-Nassau-1" order="1">
                                     <!-- Hier wordt verwezen naar de ScheduledStopPoint voor het flexgebied Chaam -->
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:Chaam" version="1"/>
+                                    <OnwardTimingLinkRef ref="NL:PNB:TimingLink:Kern-Chaam--Knooppunt-Baarle-Nassau" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                     <FlexiblePointProperties>
@@ -633,6 +717,7 @@
                                 <!-- Instappen bij knooppunt-halte Baarle-Nassau, St. Janstraat... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Baarle-Nassau--Knooppunt-Chaam-1" order="1">
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:73440690" version="1"/>
+                                    <OnwardTimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Baarle-Nassau--Knooppunt-Chaam" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                 </StopPointInJourneyPattern>
@@ -649,6 +734,7 @@
                                 <!-- Instappen bij knooppunt-halte Chaam, Dorpsstraat... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Chaam--Kern-Chaam-2" order="1">
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240080" version="1"/>
+                                    <OnwardTimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Chaam--Kern-Chaam" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                 </StopPointInJourneyPattern>
@@ -668,6 +754,7 @@
                                 <!-- Instappen bij knooppunt-halte Baarle-Nassau, St. Janstraat... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Baarle-Nassau--Kern-Chaam-1" order="1">
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:73440690" version="1"/>
+                                    <OnwardTimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Baarle-Nassau--Kern-Chaam" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                 </StopPointInJourneyPattern>
@@ -690,6 +777,7 @@
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Kern-Chaam--Knooppunt-Ulvenhout-1" order="1">
                                     <!-- Hier wordt verwezen naar de ScheduledStopPoint voor het flexgebied Chaam -->
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:Chaam" version="1"/>
+                                    <OnwardTimingLinkRef ref="NL:PNB:TimingLink:Kern-Chaam--Knooppunt-Ulvenhout" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                     <FlexiblePointProperties>
@@ -709,6 +797,7 @@
                                 <!-- Instappen bij een halte in de kern Chaam... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Chaam--Knooppunt-Ulvenhout-1" order="1">
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240080" version="1"/>
+                                    <OnwardTimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Chaam--Knooppunt-Ulvenhout" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                 </StopPointInJourneyPattern>
@@ -726,6 +815,7 @@
                                 <!-- Instappen bij knooppunt-halte Ulvenhout, St. Janstraat... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Ulvenhout--Knooppunt-Chaam-1" order="1">
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72041400" version="1"/>
+                                    <OnwardTimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Ulvenhout--Knooppunt-Chaam" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                 </StopPointInJourneyPattern>
@@ -742,6 +832,7 @@
                                 <!-- Instappen bij knooppunt-halte Ulvenhout, St. Janstraat... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Ulvenhout--Kern-Chaam-1" order="1">
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72041400" version="1"/>
+                                    <OnwardTimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Ulvenhout--Kern-Chaam" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                 </StopPointInJourneyPattern>
@@ -765,6 +856,7 @@
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Kern-Galder--Knooppunt-Ulvenhout-1" order="1">
                                     <!-- Hier wordt verwezen naar de ScheduledStopPoint voor het flexgebied Galder -->
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:Galder" version="1"/>
+                                    <OnwardTimingLinkRef ref="NL:PNB:TimingLink:Kern-Galder--Knooppunt-Ulvenhout" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                     <FlexiblePointProperties>
@@ -785,6 +877,7 @@
                                 <!-- Instappen bij knooppunt-halte Ulvenhout, Molenstraat... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Ulvenhout--Kern-Galder-1" order="3">
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72041400" version="1"/>
+                                    <OnwardTimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Ulvenhout--Kern-Galder" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                 </StopPointInJourneyPattern>
@@ -807,6 +900,7 @@
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Kern-Galder--Knooppunt-Effen-1" order="1">
                                     <!-- Hier wordt verwezen naar de ScheduledStopPoint voor het flexgebied Galder -->
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:Galder" version="1"/>
+                                    <OnwardTimingLinkRef ref="NL:PNB:TimingLink:Kern-Galder--Knooppunt-Effen" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                     <FlexiblePointProperties>
@@ -827,6 +921,7 @@
                                 <!-- Instappen bij knooppunt-halte Effen, Effen... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Effen--Kern-Galder-1" order="3">
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72050800" version="1"/>
+                                    <OnwardTimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Effen--Kern-Galder" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                 </StopPointInJourneyPattern>
@@ -849,6 +944,7 @@
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Kern-Ulvenhout--Knooppunt-Breda-1" order="1">
                                     <!-- Hier wordt verwezen naar de ScheduledStopPoint voor het flexgebied Ulvenhout -->
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:Ulvenhout" version="1"/>
+                                    <OnwardTimingLinkRef ref="NL:PNB:TimingLink:Kern-Ulvenhout--Knooppunt-Breda" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                     <FlexiblePointProperties>
@@ -869,6 +965,7 @@
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Kern-Ulvenhout--Knooppunt-Ulvenhout-1" order="1">
                                     <!-- Hier wordt verwezen naar de ScheduledStopPoint voor het flexgebied Ulvenhout -->
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:Ulvenhout" version="1"/>
+                                    <OnwardTimingLinkRef ref="NL:PNB:TimingLink:Kern-Ulvenhout--Knooppunt-Ulvenhout" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                     <FlexiblePointProperties>
@@ -888,6 +985,7 @@
                                 <!-- Instappen bij knooppunt-halte Ulvenhout, Molenstraat... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Ulvenhout--Knooppunt-Breda-1" order="1">
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72041400" version="1"/>
+                                    <OnwardTimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Ulvenhout--Knooppunt-Breda" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                 </StopPointInJourneyPattern>
@@ -905,6 +1003,7 @@
                                 <!-- Instappen bij knooppunt-halte Breda, Bijster... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Breda--Kern-Ulvenhout-1" order="1">
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72002000" version="1"/>
+                                    <OnwardTimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Breda--Kern-Ulvenhout" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                 </StopPointInJourneyPattern>
@@ -924,6 +1023,7 @@
                                 <!-- Instappen bij knooppunt-halte Ulvenhout, Molenstraat... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Ulvenhout--Kern-Ulvenhout-1" order="1">
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72041400" version="1"/>
+                                    <OnwardTimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Ulvenhout--Kern-Ulvenhout" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                 </StopPointInJourneyPattern>
@@ -943,6 +1043,7 @@
                                 <!-- Instappen bij knooppunt-halte Breda, Bijster... -->
                                 <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Knooppunt-Breda--Knooppunt-Ulvenhout-1" order="1">
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72002000" version="1"/>
+                                    <OnwardTimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Breda--Knooppunt-Ulvenhout" version="1"/>
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                 </StopPointInJourneyPattern>
@@ -999,6 +1100,7 @@
                             <LineRef ref="NL:PNB:FlexibleLine:BravoFlex" version="1"/>
                             <runTimes>
                                 <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:Kern-Chaam--Knooppunt-Baarle-Nassau" version="1">
+                                    <TimingLinkRef ref="NL:PNB:TimingLink:Kern-Chaam--Knooppunt-Baarle-Nassau" version="1"/>
                                     <RunTime>PT12M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
@@ -1014,6 +1116,7 @@
                             <LineRef ref="NL:PNB:FlexibleLine:BravoFlex" version="1"/>
                             <runTimes>
                                 <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:Knooppunt-Chaam--Knooppunt-Baarle-Nassau" version="1">
+                                    <TimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Chaam--Knooppunt-Baarle-Nassau" version="1"/>
                                     <RunTime>PT12M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
@@ -1029,6 +1132,7 @@
                             <LineRef ref="NL:PNB:FlexibleLine:BravoFlex" version="1"/>
                             <runTimes>
                                 <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:Kern-Chaam--Knooppunt-Chaam" version="1">
+                                    <TimingLinkRef ref="NL:PNB:TimingLink:Kern-Chaam--Knooppunt-Chaam" version="1"/>
                                     <RunTime>PT8M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
@@ -1044,6 +1148,7 @@
                             <LineRef ref="NL:PNB:FlexibleLine:BravoFlex" version="1"/>
                             <runTimes>
                                 <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:Knooppunt-Baarle-Nassau--Kern-Chaam" version="1">
+                                    <TimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Baarle-Nassau--Kern-Chaam" version="1"/>
                                     <RunTime>PT12M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
@@ -1059,6 +1164,7 @@
                             <LineRef ref="NL:PNB:FlexibleLine:BravoFlex" version="1"/>
                             <runTimes>
                                 <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:Knooppunt-Baarle-Nassau--Knooppunt-Chaam" version="1">
+                                    <TimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Baarle-Nassau--Knooppunt-Chaam" version="1"/>
                                     <RunTime>PT12M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
@@ -1074,6 +1180,7 @@
                             <LineRef ref="NL:PNB:FlexibleLine:BravoFlex" version="1"/>
                             <runTimes>
                                 <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:Knooppunt-Chaam--Kern-Chaam" version="1">
+                                    <TimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Chaam--Kern-Chaam" version="1"/>
                                     <RunTime>PT8M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
@@ -1091,6 +1198,7 @@
                             <LineRef ref="NL:PNB:FlexibleLine:BravoFlex" version="1"/>
                             <runTimes>
                                 <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:Kern-Chaam--Knooppunt-Ulvenhout" version="1">
+                                    <TimingLinkRef ref="NL:PNB:TimingLink:Kern-Chaam--Knooppunt-Ulvenhout" version="1"/>
                                     <RunTime>PT12M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
@@ -1106,6 +1214,7 @@
                             <LineRef ref="NL:PNB:FlexibleLine:BravoFlex" version="1"/>
                             <runTimes>
                                 <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:Knooppunt-Chaam--Knooppunt-Ulvenhout" version="1">
+                                    <TimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Chaam--Knooppunt-Ulvenhout" version="1"/>
                                     <RunTime>PT12M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
@@ -1121,6 +1230,7 @@
                             <LineRef ref="NL:PNB:FlexibleLine:BravoFlex" version="1"/>
                             <runTimes>
                                 <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:Knooppunt-Ulvenhout--Kern-Chaam" version="1">
+                                    <TimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Ulvenhout--Kern-Chaam" version="1"/>
                                     <RunTime>PT12M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
@@ -1136,6 +1246,7 @@
                             <LineRef ref="NL:PNB:FlexibleLine:BravoFlex" version="1"/>
                             <runTimes>
                                 <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:Knooppunt-Ulvenhout--Knooppunt-Chaam" version="1">
+                                    <TimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Ulvenhout--Knooppunt-Chaam" version="1"/>
                                     <RunTime>PT12M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
@@ -1153,6 +1264,7 @@
                             <LineRef ref="NL:PNB:FlexibleLine:BravoFlex" version="1"/>
                             <runTimes>
                                 <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:Kern-Galder--Knooppunt-Ulvenhout" version="1">
+                                    <TimingLinkRef ref="NL:PNB:TimingLink:Kern-Galder--Knooppunt-Ulvenhout" version="1"/>
                                     <RunTime>PT8M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
@@ -1168,6 +1280,7 @@
                             <LineRef ref="NL:PNB:FlexibleLine:BravoFlex" version="1"/>
                             <runTimes>
                                 <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:Knooppunt-Ulvenhout--Kern-Galder" version="1">
+                                    <TimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Ulvenhout--Kern-Galder" version="1"/>
                                     <RunTime>PT8M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
@@ -1185,6 +1298,7 @@
                             <LineRef ref="NL:PNB:FlexibleLine:BravoFlex" version="1"/>
                             <runTimes>
                                 <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:Kern-Galder--Knooppunt-Effen" version="1">
+                                    <TimingLinkRef ref="NL:PNB:TimingLink:Kern-Galder--Knooppunt-Effen" version="1"/>
                                     <RunTime>PT12M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
@@ -1200,6 +1314,7 @@
                             <LineRef ref="NL:PNB:FlexibleLine:BravoFlex" version="1"/>
                             <runTimes>
                                 <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:Knooppunt-Effen--Kern-Galder" version="1">
+                                    <TimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Effen--Kern-Galder" version="1"/>
                                     <RunTime>PT12M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
@@ -1217,6 +1332,7 @@
                             <LineRef ref="NL:PNB:FlexibleLine:BravoFlex" version="1"/>
                             <runTimes>
                                 <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:Kern-Ulvenhout--Knooppunt-Breda" version="1">
+                                    <TimingLinkRef ref="NL:PNB:TimingLink:Kern-Ulvenhout--Knooppunt-Breda" version="1"/>
                                     <RunTime>PT10M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
@@ -1232,6 +1348,7 @@
                             <LineRef ref="NL:PNB:FlexibleLine:BravoFlex" version="1"/>
                             <runTimes>
                                 <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:Kern-Ulvenhout--Knooppunt-Ulvenhout" version="1">
+                                    <TimingLinkRef ref="NL:PNB:TimingLink:Kern-Ulvenhout--Knooppunt-Ulvenhout" version="1"/>
                                     <RunTime>PT8M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
@@ -1247,6 +1364,7 @@
                             <LineRef ref="NL:PNB:FlexibleLine:BravoFlex" version="1"/>
                             <runTimes>
                                 <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:Knooppunt-Ulvenhout--Knooppunt-Breda" version="1">
+                                    <TimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Ulvenhout--Knooppunt-Breda" version="1"/>
                                     <RunTime>PT10M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
@@ -1262,6 +1380,7 @@
                             <LineRef ref="NL:PNB:FlexibleLine:BravoFlex" version="1"/>
                             <runTimes>
                                 <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:Knooppunt-Breda--Knooppunt-Ulvenhout" version="1">
+                                    <TimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Breda--Knooppunt-Ulvenhout" version="1"/>
                                     <RunTime>PT10M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
@@ -1277,6 +1396,7 @@
                             <LineRef ref="NL:PNB:FlexibleLine:BravoFlex" version="1"/>
                             <runTimes>
                                 <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:Knooppunt-Ulvenhout--Kern-Ulvenhout" version="1">
+                                    <TimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Ulvenhout--Kern-Ulvenhout" version="1"/>
                                     <RunTime>PT8M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
@@ -1292,6 +1412,7 @@
                             <LineRef ref="NL:PNB:FlexibleLine:BravoFlex" version="1"/>
                             <runTimes>
                                 <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:Knooppunt-Breda--Kern-Ulvenhout" version="1">
+                                    <TimingLinkRef ref="NL:PNB:TimingLink:Knooppunt-Breda--Kern-Ulvenhout" version="1"/>
                                     <RunTime>PT10M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
