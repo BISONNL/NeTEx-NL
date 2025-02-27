@@ -146,6 +146,14 @@
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure-with-status">
 				<xsd:sequence>
+					<xsd:element name="ValidBetween" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="FromDate" type="xsd:dateTime" minOccurs="0"/>
+								<xsd:element name="ToDate" type="xsd:dateTime" minOccurs="0"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
 					<xsd:element name="Name" type="MultilingualString"/>
 					<xsd:element name="ShortName" type="MultilingualString"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
