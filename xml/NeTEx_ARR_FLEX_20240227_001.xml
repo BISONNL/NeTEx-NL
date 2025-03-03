@@ -309,23 +309,26 @@
                                     </AccessibilityLimitation>
                                 </limitations>
                             </AccessibilityAssessment>
-                            <FlexibleLineType>flexibleAreasOnly</FlexibleLineType>
-                            <!-- Boeking kenmerken die een reisplanner kan gebruiken
-                                 BookingContact, BookingMethods, BookingAccess, BookWhen, BuyWhen, LatestBookingTime, MinimumBookingPeriod, MaximumBookingPeriod, BookingUrl, BookingNote. -->
-                            <BookingContact>
-                                <Phone>+31 85 20 85 212</Phone>
-                            </BookingContact>
-                            <!-- mobileApp zit nog niet in enum van BookingMethods==> PR voor CEN NeTEx indienen  -->
-                            <BookingMethods>mobileApp</BookingMethods>
-                            <BookingAccess>public</BookingAccess>
-                            <BookWhen>advanceAndDayOfTravel</BookWhen>
-                            <BuyWhen>onCheckIn</BuyWhen>
-                            <MinimumBookingPeriod>PT0S</MinimumBookingPeriod>
-                            <MaximumBookingPeriod>PT360H</MaximumBookingPeriod>
-                            <BookingNote>Reservering verplicht: Telefonisch of via Arriva App.
-                                Telefonisch via de klantenservice 085 - 20 85 212 (kies 1 voor reisinformatie, daarna '7' voor flexRRReis).
-                                Via de Arriva App: download deze app, ga naar het menu, kies hier voor 'Vlinder en flexreizen', registreer je hier eenmalig en daarna kun je je reis eenvoudig plannen en boeken.
-                            </BookingNote>
+                            <bookingArrangements>
+                                <BookingArrangement id="NL:ARR:BookingArrangement:Vlinder" version="1">
+                                    <!-- Boeking kenmerken die een reisplanner kan gebruiken
+                                         BookingContact, BookingMethods, BookingAccess, BookWhen, BuyWhen, LatestBookingTime, MinimumBookingPeriod, MaximumBookingPeriod, BookingUrl, BookingNote. -->
+                                    <BookingContact>
+                                        <Phone>+31 85 20 85 212</Phone>
+                                    </BookingContact>
+                                    <!-- mobileApp zit nog niet in enum van BookingMethods==> PR voor CEN NeTEx indienen  -->
+                                    <BookingMethods>mobileApp</BookingMethods>
+                                    <BookingAccess>public</BookingAccess>
+                                    <BookWhen>advanceAndDayOfTravel</BookWhen>
+                                    <BuyWhen>onCheckIn</BuyWhen>
+                                    <MinimumBookingPeriod>PT0S</MinimumBookingPeriod>
+                                    <MaximumBookingPeriod>PT360H</MaximumBookingPeriod>
+                                    <BookingNote>Reservering verplicht: Telefonisch of via Arriva App.
+                                        Telefonisch via de klantenservice 085 - 20 85 212 (kies 1 voor reisinformatie, daarna '7' voor flexRRReis).
+                                        Via de Arriva App: download deze app, ga naar het menu, kies hier voor 'Vlinder en flexreizen', registreer je hier eenmalig en daarna kun je je reis eenvoudig plannen en boeken.
+                                    </BookingNote>
+                                </BookingArrangement>
+                            </bookingArrangements>
                         </Line>
                     </lines>
                     <scheduledStopPoints>

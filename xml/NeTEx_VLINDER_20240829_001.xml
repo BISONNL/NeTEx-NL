@@ -330,21 +330,24 @@
                             <AccessibilityAssessment id="NL:ARR:AccessibilityAssessment:51809" version="1">
                                 <MobilityImpairedAccess>true</MobilityImpairedAccess>
                             </AccessibilityAssessment>
-                            <FlexibleLineType>mixedFlexibleAndFixed</FlexibleLineType><!-- TODO: wat is het correct LineType voor Vlinder? -->
-                            <BookingContact>
-                                <Phone>0800 0232545</Phone>
-                                <Url>https://www.arriva.nl/over-je-reis/met-de-bus/met-de-arriva-vlinder/?regio=Frysl%C3%A2n</Url>
-                                <FurtherDetails>Arriva Vlinder-app</FurtherDetails>
-                            </BookingContact>
-                            <BookingMethods>mobileApp callOffice online</BookingMethods>
-                            <BookingAccess>public</BookingAccess>
-                            <BookWhen>advanceAndDayOfTravel</BookWhen>
-                            <BuyWhen>onReservation onBoarding</BuyWhen>
-                            <LatestBookingTime>22:00:00</LatestBookingTime>
-                            <MinimumBookingPeriod>PT60M</MinimumBookingPeriod>
-                            <MaximumBookingPeriod>PT360H</MaximumBookingPeriod>
-                            <BookingUrl>https://www.arriva.nl/api/booking</BookingUrl>
-                            <BookingNote>De Vlinder hoef je niet te reserveren als je vertrekt vanaf Busstation Leeuwarden. De Vlinder stopt 1x per uur om .30 uur op het Busstation.</BookingNote>
+                            <bookingArrangements>
+                                <BookingArrangement id="NL:ARR:BookingArrangement:Vlinder" version="1">
+                                    <BookingContact>
+                                    <Phone>0800 0232545</Phone>
+                                    <Url>https://www.arriva.nl/over-je-reis/met-de-bus/met-de-arriva-vlinder/?regio=Frysl%C3%A2n</Url>
+                                    <FurtherDetails>Arriva Vlinder-app</FurtherDetails>
+                                    </BookingContact>
+                                    <BookingMethods>mobileApp callOffice online</BookingMethods>
+                                    <BookingAccess>public</BookingAccess>
+                                    <BookWhen>advanceAndDayOfTravel</BookWhen>
+                                    <BuyWhen>onReservation onBoarding</BuyWhen>
+                                    <LatestBookingTime>22:00:00</LatestBookingTime>
+                                    <MinimumBookingPeriod>PT60M</MinimumBookingPeriod>
+                                    <MaximumBookingPeriod>PT360H</MaximumBookingPeriod>
+                                    <BookingUrl>https://www.arriva.nl/api/booking</BookingUrl>
+                                    <BookingNote>De Vlinder hoef je niet te reserveren als je vertrekt vanaf Busstation Leeuwarden. De Vlinder stopt 1x per uur om .30 uur op het Busstation.</BookingNote>
+                                </BookingArrangement>
+                            </bookingArrangements>
                         </Line>
                     </lines>
                     <destinationDisplays>
@@ -566,6 +569,7 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                     </scheduledStopPoints>
+                    <!--
                     <stopAssignments>
                         <PassengerStopAssignment id="NL:ARR:PassengerStopAssignement:20000010" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:20000010" version="1"/>
@@ -612,6 +616,7 @@
                             <QuayRef ref="NL:CHB:Quay:20000171" version="any"/>
                         </PassengerStopAssignment>
                     </stopAssignments>
+                    -->
                     <timingLinks>
                         <TimingLink id="NL:ARR:TimingLink:20000010-20002740" version="1">
                             <Distance>978.1</Distance>
@@ -688,7 +693,7 @@
                                     <!-- Arriva Vlinder hoeft niet geboekt te worden op de beginhalte -->
                                     <FlexiblePointProperties></FlexiblePointProperties>
                                     <bookingArrangements>
-                                        <BookingArrangement id="NL:ARR:BookingArrangement:Vlinder" version="1">
+                                        <BookingArrangement id="NL:ARR:BookingArrangement:VlinderEersteHalte" version="1">
                                             <BookingMethods>none</BookingMethods>
                                         </BookingArrangement>
                                     </bookingArrangements>

@@ -686,9 +686,24 @@
 				<xsd:sequence>
 					<xsd:group ref="lineGroup"/>
 					<xsd:element name="FlexibleLineType" type="FlexibleLineTypeEnumeration" minOccurs="0"/>
-					<xsd:group ref="bookingArrangementsGroup"/>
+					<xsd:element name="bookingArrangements" type="bookingArrangements" minOccurs="0"/>
 				</xsd:sequence>
 				<xsd:attribute name="responsibilitySetRef" type="ObjectIdType" form="unqualified"/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="bookingArrangements">
+		<xsd:choice maxOccurs="unbounded">
+			<xsd:element name="BookingArrangementRef" type="BookingArrangement"/>
+			<xsd:element name="BookingArrangement" type="BookingArrangement"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="BookingArrangement">
+		<xsd:complexContent>
+			<xsd:extension base="DataManagedObjectStructure">
+				<xsd:sequence>
+					<xsd:group ref="bookingArrangementsGroup"/>
+				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -782,20 +797,6 @@
 					<xsd:element name="bookingArrangements" type="bookingArrangements" minOccurs="0"/>
 					<xsd:element name="Print" type="xsd:boolean" default="true" minOccurs="0"/>
 					<xsd:element name="Dynamic" type="DynamicAdvertisementEnumeration" default="always" minOccurs="0"/>
-				</xsd:sequence>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
-	<xsd:complexType name="bookingArrangements">
-		<xsd:sequence>
-			<xsd:element name="BookingArrangement" type="BookingArrangement"/>
-		</xsd:sequence>
-	</xsd:complexType>
-	<xsd:complexType name="BookingArrangement">
-		<xsd:complexContent>
-			<xsd:extension base="DataManagedObjectStructure">
-				<xsd:sequence>
-					<xsd:group ref="bookingArrangementsGroup"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
