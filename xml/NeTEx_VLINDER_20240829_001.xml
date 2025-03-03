@@ -40,7 +40,7 @@
                             <Name>FY</Name>
                             <roles>
                             <ResponsibilityRoleAssignment id="NL:ARR:ResponsibilityRoleAssignment:FY_partitie" version="1">
-                                <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="NL:ARR:TransportAdministrativeZone:FY_partitie" version="1"/>
+                                <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="NL:ARR:TransportAdministrativeZone:FY_partitie" version="any"/>
                             </ResponsibilityRoleAssignment>
                             </roles>
                         </ResponsibilitySet>
@@ -48,7 +48,7 @@
                             <Name>Fryslân</Name>
                             <roles>
                             <ResponsibilityRoleAssignment id="NL:ARR:ResponsibilityRoleAssignment:FY" version="1">
-                                <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="NL:DOVA:TransportAdministrativeZone:FY" version="1"/>
+                                <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="NL:DOVA:TransportAdministrativeZone:FY" version="any"/>
                             </ResponsibilityRoleAssignment>
                             </roles>
                         </ResponsibilitySet>
@@ -266,47 +266,47 @@
                             <LineRef ref="NL:ARR:Line:51809" version="1"/>
                             <DirectionType>inbound</DirectionType>
                             <pointsInSequence>
-                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-1" order="1">
+                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-1" version="1" order="1">
                                 <RoutePointRef ref="NL:ARR:RoutePoint:20000010" version="1"/>
                                 <OnwardRouteLinkRef ref="NL:ARR:RouteLink:20000010-20002740" version="1"/>
                             </PointOnRoute>
-                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-2" order="2">
+                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-2" version="1" order="2">
                                 <RoutePointRef ref="NL:ARR:RoutePoint:20002740" version="1"/>
                                 <OnwardRouteLinkRef ref="NL:ARR:RouteLink:20002740-20003020" version="1"/>
                             </PointOnRoute>
-                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-3" order="3">
+                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-3" version="1" order="3">
                                 <RoutePointRef ref="NL:ARR:RoutePoint:20003020" version="1"/>
                                 <OnwardRouteLinkRef ref="NL:ARR:RouteLink:20003020-20004670" version="1"/>
                             </PointOnRoute>
-                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-4" order="4">
+                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-4" version="1" order="4">
                                 <RoutePointRef ref="NL:ARR:RoutePoint:20004670" version="1"/>
                                 <OnwardRouteLinkRef ref="NL:ARR:RouteLink:20004670-20001570" version="1"/>
                             </PointOnRoute>
-                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-5" order="5">
+                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-5" version="1" order="5">
                                 <RoutePointRef ref="NL:ARR:RoutePoint:20001570" version="1"/>
                                 <OnwardRouteLinkRef ref="NL:ARR:RouteLink:20001570-20006670" version="1"/>
                             </PointOnRoute>
-                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-6" order="6">
+                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-6" version="1" order="6">
                                 <RoutePointRef ref="NL:ARR:RoutePoint:20006670" version="1"/>
                                 <OnwardRouteLinkRef ref="NL:ARR:RouteLink:20006670-20002440" version="1"/>
                             </PointOnRoute>
-                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-7" order="7">
+                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-7" version="1" order="7">
                                 <RoutePointRef ref="NL:ARR:RoutePoint:20002440" version="1"/>
                                 <OnwardRouteLinkRef ref="NL:ARR:RouteLink:20002440-20002430" version="1"/>
                             </PointOnRoute>
-                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-8" order="8">
+                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-8" version="1" order="8">
                                 <RoutePointRef ref="NL:ARR:RoutePoint:20002430" version="1"/>
                                 <OnwardRouteLinkRef ref="NL:ARR:RouteLink:20002430-20006680" version="1"/>
                             </PointOnRoute>
-                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-9" order="9">
+                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-9" version="1" order="9">
                                 <RoutePointRef ref="NL:ARR:RoutePoint:20006680" version="1"/>
                                 <OnwardRouteLinkRef ref="NL:ARR:RouteLink:20006680-20006320" version="1"/>
                             </PointOnRoute>
-                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-10" order="10">
+                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-10" version="1" order="10">
                                 <RoutePointRef ref="NL:ARR:RoutePoint:20006320" version="1"/>
                                 <OnwardRouteLinkRef ref="NL:ARR:RouteLink:20006320-20000171" version="1"/>
                             </PointOnRoute>
-                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-11" order="11">
+                            <PointOnRoute id="NL:ARR:PointOnRoute:620274-11" version="1" order="11">
                                 <RoutePointRef ref="NL:ARR:RoutePoint:20000171" version="1"/>
                             </PointOnRoute>
                             </pointsInSequence>
@@ -319,10 +319,10 @@
                             <PublicCode>809</PublicCode>
                             <PrivateCode type="LinePlanningNumber">51809</PrivateCode>
                             <ExternalLineRef type="VeTagLineNumber" ref="809"/>
-                            <AuthorityRef ref="NL:DOVA:Authority:FR" version="1"/>
-                            <OperatorRef ref="NL:ARR:Operator:ARR" version="any"/>
+                            <AuthorityRef ref="NL:DOVA:Authority:FR" version="any"/>
+                            <OperatorRef ref="NL:ARR:Operator:ARR" version="1"/>
                             <TypeOfProductCategoryRef ref="NL:ARR:ProductCategory:VLINDER" version="1"/>
-                            <TypeOfServiceRef ref="NL:BISON:TypeOfService:Flex" version="1"/>
+                            <TypeOfServiceRef ref="NL:BISON:TypeOfService:Flex" version="any"/>
                             <Monitored>true</Monitored>
                             <Presentation>
                                 <Colour>004040</Colour>
@@ -686,7 +686,12 @@
                                     <OnwardTimingLinkRef ref="NL:ARR:TimingLink:20000010-20002740" version="1"/>
                                     <IsWaitPoint>true</IsWaitPoint>
                                     <!-- Arriva Vlinder hoeft niet geboekt te worden op de beginhalte -->
-                                    <BookingMethods>none</BookingMethods>
+                                    <FlexiblePointProperties></FlexiblePointProperties>
+                                    <bookingArrangements>
+                                        <BookingArrangement id="NL:ARR:BookingArrangement:Vlinder" version="1">
+                                            <BookingMethods>none</BookingMethods>
+                                        </BookingArrangement>
+                                    </bookingArrangements>
                                     <!-- Arriva Vlinder moet op display getoond worden op de beginhalte -->
                                     <Dynamic>always</Dynamic>
                                 </StopPointInJourneyPattern>
@@ -1027,6 +1032,179 @@
                     </vehicleJourneys>
                 </TimetableFrame>
             </frames>
+        </CompositeFrame>
+        
+        <!-- De volgende CompositeFrames met 'predefined values' worden meegeleverd voor compleetheid. Levering hiervan is in werkelijkheid niet verplicht, maar zorgt er wel voor dat het bestand valideert met de 'met-constraints' xsd. -->
+        
+        <CompositeFrame id="NL:ARR:CompositeFrame:PredefinedAuthorities" version="any">
+            <Description>Kopie uit de centrale DOVA-lijst van relevante concessieverleners</Description>
+            <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_DOVA_LISTS"/>
+            <FrameDefaults>
+                <DefaultCodespaceRef ref="NL:BISON:Codespace:DOVA"/>
+            </FrameDefaults>
+            <frames>
+                <GeneralFrame id="NL:ARR:GeneralFrame:ConcessieVerleners" version="any">
+                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_AuthorityList"/>
+                    <members>
+                        <Authority id="NL:DOVA:Authority:FR" version="any">
+                            <Name>Friesland</Name>
+                            <ShortName>FR</ShortName>
+                            <Description>Provincie Friesland</Description>
+                        </Authority>
+                    </members>
+                </GeneralFrame>
+            </frames>
+        </CompositeFrame>
+        <CompositeFrame id="NL:ARR:CompositeFrame:PredefinedNetworks" version="any">
+            <Description>Kopie uit de centrale DOVA-lijst van relevante concessies</Description>
+            <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_DOVA_LISTS"/>
+            <FrameDefaults>
+                <DefaultCodespaceRef ref="NL:BISON:Codespace:DOVA"/>
+            </FrameDefaults>
+            <frames>
+                <GeneralFrame id="NL:ARR:GeneralFrame:Concessies" version="any">
+                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_NetworkList"/>
+                    <members>
+                       <Network id="NL:DOVA:Network:FY" version="any">
+                            <Name>Fryslân</Name>
+                            <ShortName>FY</ShortName>
+                            <Description>Friesland</Description>
+                            <TransportMode>bus</TransportMode>
+                            <GroupOfLinesType>administrative</GroupOfLinesType>
+                            <AuthorityRef ref="NL:DOVA:Authority:FR" version="any"/>
+                        </Network>
+                        <TransportAdministrativeZone id="NL:DOVA:TransportAdministrativeZone:FY" version="any">
+                            <Name>Fryslân</Name>
+                            <ShortName>FY</ShortName>
+                        </TransportAdministrativeZone>
+                    </members>
+                </GeneralFrame>
+            </frames>
+        </CompositeFrame>
+        <CompositeFrame id="NL:ARR:CompositeFrame:PredefinedEnumerations" version="any">
+            <Description>Kopie van relevante waardes uit de centrale BISON-enumeraties</Description>
+            <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_BISON_ENUMS"/>
+            <FrameDefaults>
+                <DefaultCodespaceRef ref="NL:BISON:Codespace:BISON"/>
+            </FrameDefaults>
+            <frames>
+                <GeneralFrame id="NL:ARR:GeneralFrame:Predefined_TypeOfService" version="any">
+                    <Description>Standaardenumeratie met voorgedefinieerde formules (lijnkenmerken).</Description>
+                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues"/>
+                    <members>
+                        <ValueSet id="NL:ARR:ValueSet:TypeOfService" version="any">
+                            <values>
+                                <TypeOfService id="NL:BISON:TypeOfService:Flex" version="any">
+                                    <Name>Standaard</Name>
+                                    <Description>Regulier (openbaar) vervoer</Description>
+                                </TypeOfService>
+                            </values>
+                        </ValueSet>
+                    </members>
+                </GeneralFrame>
+                <GeneralFrame id="NL:ARR:GeneralFrame:Predefined_Technical" version="any">
+                    <Description>Diverse technische standaardenumeraties t.b.v. het NL NeTEx Profiel.</Description>
+                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations"/>
+                    <members>
+                        <ValueSet id="NL:ARR:ValueSet:TypeOfResponsibilityRole" version="any">
+                            <values>
+                                <TypeOfResponsibilityRole id="NL:BISON:TypeOfResponsibilityRole:financing" version="any">
+                                    <Name>Financing</Name>
+                                    <Description>Financieren van het OV</Description>
+                                </TypeOfResponsibilityRole>
+                            </values>
+                        </ValueSet>
+                        <ValueSet id="NL:ARR:ValueSet:TypeOfFrame_930" version="any">
+                            <values>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_BASELINE" version="9.3.0">
+                                    <Name>Baseline composite frame</Name>
+                                    <Description>Composite frame met een 'baseline' (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_RESOURCE" version="9.3.0">
+                                    <Name>Resource frame</Name>
+                                    <Description>Resource frame (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SERVICE" version="9.3.0">
+                                    <Name>Service frame</Name>
+                                    <Description>Service frame (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE" version="9.3.0">
+                                    <Name>Timetable frame</Name>
+                                    <Description>Timetable frame (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_CALENDAR" version="9.3.0">
+                                    <Name>ServiceCalendar frame</Name>
+                                    <Description>ServiceCalendar frame (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SITE" version="9.3.0">
+                                    <Name>Site frame</Name>
+                                    <Description>Site frame (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_VEHICLE" version="9.3.0">
+                                    <Name>VehicleSchedule frame</Name>
+                                    <Description>VehicleSchedule frame (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_CODESPACES" version="9.3.0">
+                                    <Name>Codespace composite frame</Name>
+                                    <Description>Composite frame met de domeinen (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_BISON_ENUMS" version="9.3.0">
+                                    <Name>BISON composite frame</Name>
+                                    <Description>Composite frame met de BISON standaardenumeraties (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues" version="9.3.0">
+                                    <Name>TypeOfService frame</Name>
+                                    <Description>Frame met de TypeOfService standaardenumeratie (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.3.0">
+                                    <Name>TechnicalValues frame</Name>
+                                    <Description>Frame met de technische standaardenumeraties (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_DOVA_LISTS" version="9.3.0">
+                                    <Name>DOVA composite frame</Name>
+                                    <Description>Composite frame met de DOVA lijsten (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TariffZoneList" version="9.3.0">
+                                    <Name>TariffZones frame</Name>
+                                    <Description>Frame met de DOVA lijst van OV-zones (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_AuthorityList" version="9.3.0">
+                                    <Name>Authorities frame</Name>
+                                    <Description>Frame met de DOVA lijst van concessieverleners (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_NetworkList" version="9.3.0">
+                                    <Name>Networks frame</Name>
+                                    <Description>Frame met de DOVA lijst van concessies (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                            </values>
+                        </ValueSet>
+                    </members>
+                </GeneralFrame>
+            </frames>
+        </CompositeFrame>
+        <CompositeFrame id="NL:ARR:CompositeFrame:PredefinedCodespaces" version="any">
+            <Description>Kopie van relevante Codespaces uit de centrale BISON-lijsten</Description>
+            <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_CODESPACES"/>
+            <codespaces>
+                <Codespace id="NL:BISON:Codespace:BISON">
+                    <Xmlns>BISON</Xmlns>
+                    <XmlnsUrl>http://bison.dova.nu/ns/BISON</XmlnsUrl>
+                    <Description>BISON standaardenumeraties</Description>
+                </Codespace>
+                <Codespace id="NL:BISON:Codespace:DOVA">
+                    <Xmlns>DOVA</Xmlns>
+                    <XmlnsUrl>http://bison.dova.nu/ns/DOVA</XmlnsUrl>
+                    <Description>'Centrale' lijsten bijgehouden door DOVA</Description>
+                </Codespace>
+                <Codespace id="NL:BISON:Codespace:ARR">
+                    <Xmlns>ARR</Xmlns>
+                    <XmlnsUrl>http://bison.dova.nu/ns/ARR</XmlnsUrl>
+                    <Description>Arriva</Description>
+                </Codespace>
+            </codespaces>
+            <FrameDefaults>
+                <DefaultCodespaceRef ref="NL:BISON:Codespace:BISON"/>
+            </FrameDefaults>
         </CompositeFrame>
     </dataObjects>
 </PublicationDelivery>
