@@ -333,7 +333,7 @@
                     </lines>
                     <scheduledStopPoints>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:Holten-Rijssen" version="1">
-                            <Name></Name>
+                            <Name>Flexgebied Holten-Rijssen</Name>
                             <Location>
                                 <!-- Hier is gekozen voor het centrale punt van alle haltes die vallen onder de flex-zone die deze ScheduledStopPoint representeert.
                                      Andere opties zijn om hier een vast routepunt op te nemen (bijvoorbeeld een station waar de bus gegarandeerd vertrekt, indien relevant).
