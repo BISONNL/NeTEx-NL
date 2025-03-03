@@ -2,14 +2,14 @@
 <PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" version="ntx:1.1">
     <PublicationTimestamp>2024-01-17T15:13:00Z</PublicationTimestamp>
     <ParticipantRef>ARR</ParticipantRef>
-    <Description>Voorbeeld-export voor flexRRReis Holten-Rijssen</Description>
+    <Description>Voorbeeld-export voor flexRRReis Rijssen-Holten</Description>
     <dataObjects>
-        <CompositeFrame id="NL:ARR:CompositeFrame:Holten-Rijssen" modification="new" version="1">
+        <CompositeFrame id="NL:ARR:CompositeFrame:Rijssen-Holten" modification="new" version="1">
             <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_BASELINE"/>
             <FrameDefaults>
                 <DefaultCodespaceRef ref="NL:BISON:Codespace:ARR"/>
                 <DefaultDataSourceRef ref="NL:ARR:DataSource:ARR" version="1"/>
-                <DefaultResponsibilitySetRef ref="NL:ARR:ResponsibilitySet:Holten-Rijssen-partitie" version="1"/>
+                <DefaultResponsibilitySetRef ref="NL:ARR:ResponsibilitySet:Rijssen-Holten-partitie" version="1"/>
                 <DefaultLocale>
                     <TimeZone>Europe/Amsterdam</TimeZone>
                     <DefaultLanguage>nl</DefaultLanguage>
@@ -26,7 +26,7 @@
                 </Version>
             </versions>
             <frames>
-                <ResourceFrame id="NL:ARR:ResourceFrame:Holten-Rijssen" version="1">
+                <ResourceFrame id="NL:ARR:ResourceFrame:Rijssen-Holten" version="1">
                     <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_RESOURCE"/>
                     <dataSources>
                         <DataSource id="NL:ARR:DataSource:ARR" version="1">
@@ -36,11 +36,11 @@
                         </DataSource>
                     </dataSources>
                     <responsibilitySets>
-                        <ResponsibilitySet id="NL:ARR:ResponsibilitySet:Holten-Rijssen-partitie" version="1">
-                            <Name>Holten-Rijssen-partitie</Name>
+                        <ResponsibilitySet id="NL:ARR:ResponsibilitySet:Rijssen-Holten-partitie" version="1">
+                            <Name>Rijssen-Holten-partitie</Name>
                             <roles>
-                                <ResponsibilityRoleAssignment id="NL:ARR:ResponsibilityRoleAssignment:Holten-Rijssen-partitie" version="1">
-                                    <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="NL:ARR:TransportAdministrativeZone:Holten-Rijssen-partitie" version="any"/>
+                                <ResponsibilityRoleAssignment id="NL:ARR:ResponsibilityRoleAssignment:Rijssen-Holten-partitie" version="1">
+                                    <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="NL:ARR:TransportAdministrativeZone:Rijssen-Holten-partitie" version="any"/>
                                 </ResponsibilityRoleAssignment>
                             </roles>
                         </ResponsibilitySet>
@@ -99,26 +99,26 @@
                     </vehicleTypes>
                     <zones>
                         <!-- Partitie-definitie -->
-                        <TransportAdministrativeZone id="NL:ARR:TransportAdministrativeZone:Holten-Rijssen-partitie" version="any">
-                            <Name>Holten-Rijssen</Name>
+                        <TransportAdministrativeZone id="NL:ARR:TransportAdministrativeZone:Rijssen-Holten-partitie" version="any">
+                            <Name>Rijssen-Holten</Name>
                             <ShortName>HR</ShortName>
-                            <Description>flexRRReis Holten-Rijssen</Description>
+                            <Description>flexRRReis Rijssen-Holten</Description>
                         </TransportAdministrativeZone>
                     </zones>
                 </ResourceFrame>
                 <!-- In het SiteFrame wordt het flexgebied beschreven -->
-                <SiteFrame id="NL:ARR:SiteFrame:Holten-Rijssen" version="1">
+                <SiteFrame id="NL:ARR:SiteFrame:Rijssen-Holten" version="1">
                     <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_SITE"/>
                     <flexibleStopPlaces>
                         <!-- FlexibleStopPlace beschrijft het fysieke flexgebied. Dit kan met een polygoon en/of met een set van RoutePoints (RoutePoints definieren de fysieke locaties van pstappunten). Gebruik hier wat relevant is voor het type flexvervoer. -->
-                        <FlexibleStopPlace id="NL:ARR:FlexibleStopPlace:Holten-Rijssen" version="1">
+                        <FlexibleStopPlace id="NL:ARR:FlexibleStopPlace:Rijssen-Holten" version="1">
                             <!-- Name: optioneel -->
                             <ShortName>FR-HR</ShortName>
                             <!-- Description: optioneel -->
                             <TransportMode>bus</TransportMode>
                             <!-- PublicCode: optioneel -->
                             <areas>
-                                <FlexibleArea id="NL:ARR:FlexibleArea:Holten-Rijssen" version="1">
+                                <FlexibleArea id="NL:ARR:FlexibleArea:Rijssen-Holten" version="1">
                                     <!-- Name: optioneel -->
                                     <ShortName>FR-HR</ShortName>
                                     <!-- Description: optioneel -->
@@ -271,7 +271,7 @@
                                         <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:46920050" version="1"/>
                                         <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:46950010" version="1"/>
                                     </members>
-                                    <gml:Polygon gml:id="NL_ARR_Polygon_Holten-Rijssen">
+                                    <gml:Polygon gml:id="NL_ARR_Polygon_Rijssen-Holten">
                                         <gml:exterior>
                                             <gml:LinearRing>
                                                 <gml:posList>218870 473550 218870 486410 235810 486410 235810 473550</gml:posList>
@@ -285,15 +285,15 @@
                         </FlexibleStopPlace>
                     </flexibleStopPlaces>
                 </SiteFrame>
-                <ServiceFrame id="NL:ARR:ServiceFrame:Holten-Rijssen" version="1">
+                <ServiceFrame id="NL:ARR:ServiceFrame:Rijssen-Holten" version="1">
                     <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_SERVICE"/>
                     <!-- routePoints: voor flexritten zijn routePoints alleen relevant als er volgens een vaste route gereden wordt. -->
                     <!-- routeLinks: voor flexritten zijn routeLinks alleen relevant als er volgens een vaste route gereden wordt. -->
                     <!-- routes: voor flexritten zijn routes alleen relevant als er volgens een vaste route gereden wordt. -->
                     <lines>
-                        <!-- De definitie van de flexlijn. Flex Holten-Rijssen valt onder concessie TW  -->
-                        <Line id="NL:ARR:Line:Holten-Rijssen" version="1" responsibilitySetRef="NL:ARR:ResponsibilitySet:TW">
-                            <Name>Holten-Rijssen</Name>
+                        <!-- De definitie van de flexlijn. Flex Rijssen-Holten valt onder concessie TW  -->
+                        <Line id="NL:ARR:Line:Rijssen-Holten" version="1" responsibilitySetRef="NL:ARR:ResponsibilitySet:TW">
+                            <Name>Rijssen-Holten</Name>
                             <TransportMode>bus</TransportMode>
                             <OperatorRef ref="NL:ARR:Operator:ARR" version="1"/>
                             <TypeOfServiceRef ref="NL:BISON:TypeOfService:Flex" version="any"></TypeOfServiceRef>
@@ -332,8 +332,8 @@
                         </Line>
                     </lines>
                     <scheduledStopPoints>
-                        <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:Holten-Rijssen" version="1">
-                            <Name>Flexgebied Holten-Rijssen</Name>
+                        <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:Rijssen-Holten" version="1">
+                            <Name>Flexgebied Rijssen-Holten</Name>
                             <Location>
                                 <!-- Hier is gekozen voor het centrale punt van alle haltes die vallen onder de flex-zone die deze ScheduledStopPoint representeert.
                                      Andere opties zijn om hier een vast routepunt op te nemen (bijvoorbeeld een station waar de bus gegarandeerd vertrekt, indien relevant).
@@ -347,41 +347,41 @@
                     </scheduledStopPoints>
                     <stopAssignments>
                         <!-- Koppeling van de ScheduledStopPoint die het logische flexgebied representeert aan de FlexibleStopPlace die het fysieke flexgebied beschrijft (middels Polygon) -->
-                        <FlexibleStopAssignment id="NL:ARR:ServiceJourneyPattern:Holten-Rijssen" version="1" order="1">
-                            <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:Holten-Rijssen" version="1"/>
-                            <FlexibleStopPlaceRef ref="NL:ARR:FlexibleStopPlace:Holten-Rijssen" version="1"/>
+                        <FlexibleStopAssignment id="NL:ARR:ServiceJourneyPattern:Rijssen-Holten" version="1" order="1">
+                            <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:Rijssen-Holten" version="1"/>
+                            <FlexibleStopPlaceRef ref="NL:ARR:FlexibleStopPlace:Rijssen-Holten" version="1"/>
                         </FlexibleStopAssignment>
                         <!-- TODO: Hier alle PassengerStopAssignments opnemen om de logische haltes in het flexgebied te koppelen aan de bijbehorende Quays uit het CHB -->
                     </stopAssignments>
                     <timingLinks>
-                        <TimingLink id="NL:ARR:TimingLink:Holten-Rijssen" version="1">
-                            <FromPointRef ref="NL:ARR:ScheduledStopPoint:Holten-Rijssen" version="1"/>
-                            <ToPointRef ref="NL:ARR:ScheduledStopPoint:Holten-Rijssen" version="1"/>
+                        <TimingLink id="NL:ARR:TimingLink:Rijssen-Holten" version="1">
+                            <FromPointRef ref="NL:ARR:ScheduledStopPoint:Rijssen-Holten" version="1"/>
+                            <ToPointRef ref="NL:ARR:ScheduledStopPoint:Rijssen-Holten" version="1"/>
                         </TimingLink>
                     </timingLinks>
                     <journeyPatterns>
-                        <ServiceJourneyPattern id="NL:ARR:ServiceJourneyPattern:Holten-Rijssen" version="1">
+                        <ServiceJourneyPattern id="NL:ARR:ServiceJourneyPattern:Rijssen-Holten" version="1">
                             <pointsInSequence>
                                 <StopPointInJourneyPattern id="NL:ARR:StopPointInJourneyPattern:instappen" version="1" order="1">
-                                    <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:Holten-Rijssen" version="1"></ScheduledStopPointRef>
-                                    <OnwardTimingLinkRef ref="NL:ARR:TimingLink:Holten-Rijssen" version="1"/>
+                                    <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:Rijssen-Holten" version="1"></ScheduledStopPointRef>
+                                    <OnwardTimingLinkRef ref="NL:ARR:TimingLink:Rijssen-Holten" version="1"/>
                                 </StopPointInJourneyPattern>
                                 <StopPointInJourneyPattern id="NL:ARR:StopPointInJourneyPattern:uitstappen" version="1" order="2">
-                                    <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:Holten-Rijssen" version="1"></ScheduledStopPointRef>
+                                    <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:Rijssen-Holten" version="1"></ScheduledStopPointRef>
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
                         </ServiceJourneyPattern>
                     </journeyPatterns>
                 </ServiceFrame>
-                <TimetableFrame id="NL:ARR:TimetableFrame:Holten-Rijssen" version="1">
+                <TimetableFrame id="NL:ARR:TimetableFrame:Rijssen-Holten" version="1">
                     <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE"/>
                     <contentValidityConditions>
-                        <AvailabilityCondition id="NL:ARR:AvailabilityCondition:Holten-Rijssen" version="1">
+                        <AvailabilityCondition id="NL:ARR:AvailabilityCondition:Rijssen-Holten" version="1">
                             <FromDate>2024-01-19T00:00:00Z</FromDate>
                             <ToDate>2024-12-31T00:00:00Z</ToDate>
                             <ValidDayBits>100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011</ValidDayBits>
                             <timebands>
-                                <Timeband id="NL:ARR:Timeband:Holten-Rijssen" version="1">
+                                <Timeband id="NL:ARR:Timeband:Rijssen-Holten" version="1">
                                     <StartTime>07:00:00</StartTime>
                                     <EndTime>22:00:00</EndTime>
                                 </Timeband>
@@ -389,21 +389,21 @@
                         </AvailabilityCondition>
                     </contentValidityConditions>
                     <vehicleJourneys>
-                        <ServiceJourney id="NL:ARR:ServiceJourney:Holten-Rijssen" version="1">
+                        <ServiceJourney id="NL:ARR:ServiceJourney:Rijssen-Holten" version="1">
                             <validityConditions>
-                                <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Holten-Rijssen" version="1"/>
+                                <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Rijssen-Holten" version="1"/>
                             </validityConditions>
                             <!-- PrivateCode: indien er geen journeyNumbers zijn voor flexritten mag de PrivateCode worden weggelaten. -->
                             <Monitored>false</Monitored><!-- Geef 'true' op als de rit wel gevolgd wordt. -->
                             <!-- dayTypes: optioneel -->
-                            <ServiceJourneyPatternRef ref="NL:ARR:ServiceJourneyPattern:Holten-Rijssen" version="1"/>
+                            <ServiceJourneyPatternRef ref="NL:ARR:ServiceJourneyPattern:Rijssen-Holten" version="1"/>
                             <VehicleTypeRef ref="NL:ARR:VehicleType:FlexRRReis" version="1"/>
                             <!-- OperatorRef: optioneel, alleen nodig indien uitvoerend Operator niet gelijk is aan Operator in OperatorView van dit TimetableFrame -->
                             <!-- (Flexible)LineRef: Indien er geen Route is gedefinieerd voor een flexlijn, dan kan hier de link naar het (Flexible)Line object gemaakt worden. Anders kan dat achterwege gelaten worden, en wordt de (Flexible)Line via Route gekoppeld. -->
-                            <LineRef ref="NL:ARR:Line:Holten-Rijssen" version="1"/>
+                            <LineRef ref="NL:ARR:Line:Rijssen-Holten" version="1"/>
                             <runTimes>
-                                <VehicleJourneyRunTime id="NL:ARR:JourneyRunTime:Holten-Rijssen" version="1">
-                                    <TimingLinkRef ref="NL:ARR:TimingLink:Holten-Rijssen" version="1"/>
+                                <VehicleJourneyRunTime id="NL:ARR:JourneyRunTime:Rijssen-Holten" version="1">
+                                    <TimingLinkRef ref="NL:ARR:TimingLink:Rijssen-Holten" version="1"/>
                                     <RunTime>PT30M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
