@@ -569,7 +569,6 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                     </scheduledStopPoints>
-                    <!--
                     <stopAssignments>
                         <PassengerStopAssignment id="NL:ARR:PassengerStopAssignement:20000010" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:20000010" version="1"/>
@@ -616,7 +615,6 @@
                             <QuayRef ref="NL:CHB:Quay:20000171" version="any"/>
                         </PassengerStopAssignment>
                     </stopAssignments>
-                    -->
                     <timingLinks>
                         <TimingLink id="NL:ARR:TimingLink:20000010-20002740" version="1">
                             <Distance>978.1</Distance>
