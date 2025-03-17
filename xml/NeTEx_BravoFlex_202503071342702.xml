@@ -1,0 +1,2033 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PublicationDelivery version="ntx:1.1" xmlns="http://www.netex.org.uk/netex" xmlns:ns2="http://www.opengis.net/gml/3.2">
+    <PublicationTimestamp>2025-03-07T12:42:43.088Z</PublicationTimestamp>
+    <ParticipantRef>PNB</ParticipantRef>
+    <Description>Export flex-aanbod</Description>
+    <dataObjects>
+        <CompositeFrame id="NL:PNB:CompositeFrame:BravoFlex" modification="new" version="20250307">
+            <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_BASELINE"/>
+            <FrameDefaults>
+                <DefaultCodespaceRef ref="NL:BISON:Codespace:PNB"/>
+                <DefaultDataSourceRef version="20250307" ref="NL:PNB:DataSource:PNB"/>
+                <DefaultLocale>
+                    <TimeZone>Europe/Amsterdam</TimeZone>
+                    <DefaultLanguage>nl</DefaultLanguage>
+                </DefaultLocale>
+                <DefaultLocationSystem>EPSG:28992</DefaultLocationSystem>
+                <DefaultSystemOfUnits>SiMetres</DefaultSystemOfUnits>
+                <DefaultCurrency>EUR</DefaultCurrency>
+            </FrameDefaults>
+            <versions>
+                <Version id="NL:PNB:Version:20250307" modification="new" version="20250307">
+                    <StartDate>2024-12-31T23:00:00.000Z</StartDate>
+                    <EndDate>2025-12-30T23:00:00.000Z</EndDate>
+                    <VersionType>baseline</VersionType>
+                </Version>
+            </versions>
+            <frames>
+                <ResourceFrame id="NL:PNB:ResourceFrame:BravoFlex" version="20250307">
+                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_RESOURCE"/>
+                    <dataSources>
+                        <DataSource id="NL:PNB:DataSource:PNB" version="20250307">
+                            <Name>Provincie Noord-Brabant</Name>
+                            <ShortName>PNB</ShortName>
+                            <Description>Provincie Noord-Brabant</Description>
+                        </DataSource>
+                    </dataSources>
+                    <responsibilitySets>
+                        <ResponsibilitySet id="NL:PNB:ResponsibilitySet:west-brabant" version="20250307">
+                            <Name>Brabant West</Name>
+                            <roles>
+                                <ResponsibilityRoleAssignment id="NL:PNB:ResponsibilityRoleAssignment:west-brabant" version="20250307">
+                                    <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" version="20250307" ref="NL:PNB:TransportAdministrativeZone:west-brabant"/>
+                                </ResponsibilityRoleAssignment>
+                            </roles>
+                        </ResponsibilitySet>
+                        <ResponsibilitySet id="NL:PNB:ResponsibilitySet:PNB" version="20250307">
+                            <Name>Financier Provincie Noord-Brabant</Name>
+                            <roles>
+                                <ResponsibilityRoleAssignment id="NL:PNB:ResponsibilityRoleAssignment:PNB" version="20250307">
+                                    <StakeholderRoleType>entityLegalOwnership</StakeholderRoleType>
+                                    <TypeOfResponsibilityRoleRef version="any" ref="NL:BISON:TypeOfResponsibilityRole:financing"/>
+                                    <ResponsibleOrganisationRef nameOfRefClass="Authority" version="any" ref="NL:DOVA:Authority:PNB"/>
+                                </ResponsibilityRoleAssignment>
+                            </roles>
+                        </ResponsibilitySet>
+                    </responsibilitySets>
+                    <typesOfValue>
+                        <Branding id="NL:PNB:Branding:Bravo" version="20250307">
+                            <Name>BravoFlex</Name>
+                            <Url>https://www.bravo.info</Url>
+                        </Branding>
+                        <TypeOfProductCategory id="NL:PNB:TypeOfProductCategory:BravoFlex" version="20250307">
+                            <Name>BravoFlex</Name>
+                            <Url>https://www.bravo.info/reizen/diensten/BravoFlex</Url>
+                        </TypeOfProductCategory>
+                    </typesOfValue>
+                    <organisations>
+                        <Operator id="NL:PNB:Operator:WDK" version="20250307">
+                            <Name>Willemsen-De Koning</Name>
+                            <ShortName>WDK</ShortName>
+                            <CustomerServiceContactDetails>
+                                <Url>https://bravoflex.nl/</Url>
+                            </CustomerServiceContactDetails>
+                        </Operator>
+                    </organisations>
+                    <operationalContexts>
+                        <OperationalContext id="NL:PNB:OperationalContext:BUS" version="20250307">
+                            <VehicleMode>bus</VehicleMode>
+                        </OperationalContext>
+                    </operationalContexts>
+                    <vehicleTypes>
+                        <VehicleType id="NL:PNB:VehicleType:9" version="20250307">
+                            <BrandingRef version="20250307" ref="NL:PNB:Branding:Bravo"/>
+                            <Name>BravoFlex</Name>
+                            <Description>BravoFlex</Description>
+                            <FuelType>diesel</FuelType>
+                            <TransportMode>bus</TransportMode>
+                            <capacities>
+                                <PassengerCapacity id="NL:PNB:PassengerCapacity:BravoFlex_13" version="20250307">
+                                    <FareClass>any</FareClass>
+                                    <TotalCapacity>5</TotalCapacity>
+                                    <SeatingCapacity>5</SeatingCapacity>
+                                    <SpecialPlaceCapacity>1</SpecialPlaceCapacity>
+                                    <PushchairCapacity>1</PushchairCapacity>
+                                    <WheelchairPlaceCapacity>1</WheelchairPlaceCapacity>
+                                </PassengerCapacity>
+                            </capacities>
+                            <LowFloor>false</LowFloor>
+                            <HasLiftOrRamp>false</HasLiftOrRamp>
+                            <Length>5</Length>
+                            <facilities>
+                                <ServiceFacilitySet id="NL:PNB:ServiceFacilitySet:BravoFlex_13" version="20250307">
+                                    <MobilityFacilityList>unknown</MobilityFacilityList>
+                                    <VehicleAccessFacilityList>narrowEntrance</VehicleAccessFacilityList>
+                                </ServiceFacilitySet>
+                            </facilities>
+                        </VehicleType>
+                    </vehicleTypes>
+                    <zones>
+                        <TransportAdministrativeZone id="NL:PNB:TransportAdministrativeZone:west-brabant" version="20250307">
+                            <Name>Brabant West</Name>
+                            <ShortName>BW</ShortName>
+                            <Description>Gebied vergelijkbaar met concessie Brabant West</Description>
+                        </TransportAdministrativeZone>
+                    </zones>
+                </ResourceFrame>
+                <SiteFrame id="NL:PNB:SiteFrame:BravoFlex" version="20250307">
+                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_SITE"/>
+                    <flexibleStopPlaces>
+                        <FlexibleStopPlace id="NL:PNB:FlexibleStopPlace:alphen_1292" version="20250307">
+                            <Name>Alphen</Name>
+                            <ShortName>alphen</ShortName>
+                            <TransportMode>bus</TransportMode>
+                            <areas>
+                                <FlexibleArea id="NL:PNB:FlexibleArea:alphen_1292" version="20250307">
+                                    <Name>Alphen</Name>
+                                    <ShortName>alphen</ShortName>
+                                    <members>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73340010"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73340020"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73340040"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73340060"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73340080"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73340290"/>
+                                    </members>
+                                    <BoardingUse>true</BoardingUse>
+                                    <AlightingUse>true</AlightingUse>
+                                </FlexibleArea>
+                            </areas>
+                        </FlexibleStopPlace>
+                        <FlexibleStopPlace id="NL:PNB:FlexibleStopPlace:baarle-nassau_1294" version="20250307">
+                            <Name>Baarle-Nassau</Name>
+                            <ShortName>baarle-nassau</ShortName>
+                            <TransportMode>bus</TransportMode>
+                            <areas>
+                                <FlexibleArea id="NL:PNB:FlexibleArea:baarle-nassau_1294" version="20250307">
+                                    <Name>Baarle-Nassau</Name>
+                                    <ShortName>baarle-nassau</ShortName>
+                                    <members>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73440800"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72440050"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72440160"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72440460"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73440200"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73440690"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73440100"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73440300"/>
+                                    </members>
+                                    <BoardingUse>true</BoardingUse>
+                                    <AlightingUse>true</AlightingUse>
+                                </FlexibleArea>
+                            </areas>
+                        </FlexibleStopPlace>
+                        <FlexibleStopPlace id="NL:PNB:FlexibleStopPlace:chaam_1300" version="20250307">
+                            <Name>Chaam</Name>
+                            <ShortName>chaam</ShortName>
+                            <TransportMode>bus</TransportMode>
+                            <areas>
+                                <FlexibleArea id="NL:PNB:FlexibleArea:chaam_1300" version="20250307">
+                                    <Name>Chaam</Name>
+                                    <ShortName>chaam</ShortName>
+                                    <members>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72240040"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72240080"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72240130"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72240170"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72240220"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72340110"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72240100"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72540400"/>
+                                    </members>
+                                    <BoardingUse>true</BoardingUse>
+                                    <AlightingUse>true</AlightingUse>
+                                </FlexibleArea>
+                            </areas>
+                        </FlexibleStopPlace>
+                        <FlexibleStopPlace id="NL:PNB:FlexibleStopPlace:dorst_1304" version="20250307">
+                            <Name>Dorst</Name>
+                            <ShortName>dorst</ShortName>
+                            <TransportMode>bus</TransportMode>
+                            <areas>
+                                <FlexibleArea id="NL:PNB:FlexibleArea:dorst_1304" version="20250307">
+                                    <Name>Dorst</Name>
+                                    <ShortName>dorst</ShortName>
+                                    <members>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72190160"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73150390"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72190090"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72190150"/>
+                                    </members>
+                                    <BoardingUse>true</BoardingUse>
+                                    <AlightingUse>true</AlightingUse>
+                                </FlexibleArea>
+                            </areas>
+                        </FlexibleStopPlace>
+                        <FlexibleStopPlace id="NL:PNB:FlexibleStopPlace:ulicoten_1362" version="20250307">
+                            <Name>Ulicoten</Name>
+                            <ShortName>ulicoten</ShortName>
+                            <TransportMode>bus</TransportMode>
+                            <areas>
+                                <FlexibleArea id="NL:PNB:FlexibleArea:ulicoten_1362" version="20250307">
+                                    <Name>Ulicoten</Name>
+                                    <ShortName>ulicoten</ShortName>
+                                    <members>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72440010"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72540200"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72540500"/>
+                                    </members>
+                                    <BoardingUse>true</BoardingUse>
+                                    <AlightingUse>true</AlightingUse>
+                                </FlexibleArea>
+                            </areas>
+                        </FlexibleStopPlace>
+                        <FlexibleStopPlace id="NL:PNB:FlexibleStopPlace:alphen_-_noord_1379" version="20250307">
+                            <Name>Alphen - Noord</Name>
+                            <ShortName>alphen_-_noord</ShortName>
+                            <TransportMode>bus</TransportMode>
+                            <areas>
+                                <FlexibleArea id="NL:PNB:FlexibleArea:alphen_-_noord_1379" version="20250307">
+                                    <Name>Alphen - Noord</Name>
+                                    <ShortName>alphen_-_noord</ShortName>
+                                    <members>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73240010"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73240020"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73240050"/>
+                                        <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73240150"/>
+                                    </members>
+                                    <BoardingUse>true</BoardingUse>
+                                    <AlightingUse>true</AlightingUse>
+                                </FlexibleArea>
+                            </areas>
+                        </FlexibleStopPlace>
+                    </flexibleStopPlaces>
+                </SiteFrame>
+                <ServiceFrame id="NL:PNB:ServiceFrame:BravoFlex" version="20250307">
+                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_SERVICE"/>
+                    <lines>
+                        <Line id="NL:PNB:Line:BravoFlex_5" version="20250307">
+                            <Name>BravoFlex</Name>
+                            <TransportMode>bus</TransportMode>
+                            <OperatorRef version="20250307" ref="NL:PNB:Operator:WDK"/>
+                            <TypeOfProductCategoryRef version="20250307" ref="NL:PNB:TypeOfProductCategory:BravoFlex"/>
+                            <TypeOfServiceRef version="any" ref="NL:BISON:TypeOfService:Flex"/>
+                            <Monitored>false</Monitored>
+                            <AccessibilityAssessment id="NL:PNB:AccessiblityAssessment:BravoFlex" version="20250307">
+                                <MobilityImpairedAccess>true</MobilityImpairedAccess>
+                                <Comment>TODO: dit dynamisch kunnen invullen</Comment>
+                            </AccessibilityAssessment>
+                            <bookingArrangements>
+                                <BookingArrangement id="NL:PNB:BookingArrangement:BravoFlex" version="20250307">
+                                    <BookingContact>
+                                        <Phone>088 600 09 87</Phone>
+                                        <Url>https://www.wdkgroep.nl/wpbc-booking/bravoflex/$from$/$to$/$departuretime$/$arrivaltime$</Url>
+                                        <FurtherDetails>Een rit met Bravoflex kost € 2,-. Alleen als er binnen half uur vóór óf na het gewenste tijdstip tussen de vertrekhalte en bestemmingshalte óók een reguliere lijndienst (bus of buurtbus) rijdt, kost een Bravoflex-rit € 5,-. Op het moment van boeken wordt de daadwerkelijke prijs bepaald.</FurtherDetails>
+                                    </BookingContact>
+                                    <BookingMethods>callOffice online</BookingMethods>
+                                    <BookingAccess>public</BookingAccess>
+                                    <BookWhen>advanceAndDayOfTravel</BookWhen>
+                                    <LatestBookingTime>22:00:00</LatestBookingTime>
+                                    <MinimumBookingPeriod>PT60M</MinimumBookingPeriod>
+                                    <BookingUrl>https://www.wdkgroep.nl/wpbc-booking/bravoflex/$from$/$to$/$departuretime$/$arrivaltime$</BookingUrl>
+                                    <BookingNote>Een rit met Bravoflex kost € 2,-. Alleen als er binnen half uur vóór óf na het gewenste tijdstip tussen de vertrekhalte en bestemmingshalte óók een reguliere lijndienst (bus of buurtbus) rijdt, kost een Bravoflex-rit € 5,-</BookingNote>
+                                </BookingArrangement>
+                            </bookingArrangements>
+                        </Line>
+                    </lines>
+                    <scheduledStopPoints>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:alphen_1292" version="20250307">
+                            <Name>Alphen</Name>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:baarle-nassau_1294" version="20250307">
+                            <Name>Baarle-Nassau</Name>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:chaam_1300" version="20250307">
+                            <Name>Chaam</Name>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:dorst_1304" version="20250307">
+                            <Name>Dorst</Name>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:ulicoten_1362" version="20250307">
+                            <Name>Ulicoten</Name>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:alphen_-_noord_1379" version="20250307">
+                            <Name>Alphen - Noord</Name>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Hub_425" version="20250307">
+                            <Name>Baarle-Nassau, St. Janstraat</Name>
+                            <Location>
+                                <ns2:pos>548496 6700300</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:73440690</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Hub_429" version="20250307">
+                            <Name>Breda, Stationslaan</Name>
+                            <Location>
+                                <ns2:pos>531906 6727453</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:72000320</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Hub_435" version="20250307">
+                            <Name>Chaam, Dorpsstraat</Name>
+                            <Location>
+                                <ns2:pos>541103 6711206</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:72240080</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Hub_477" version="20250307">
+                            <Name>Rijen, Station</Name>
+                            <Location>
+                                <ns2:pos>548219 6725325</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:73431900</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_73340010" version="20250307">
+                            <Name>Alphen, Boshoven</Name>
+                            <Location>
+                                <ns2:pos>550788 6704104</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:73340010</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_73340020" version="20250307">
+                            <Name>Alphen, Kwaalburg</Name>
+                            <Location>
+                                <ns2:pos>551278 6705527</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:73340020</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_73340040" version="20250307">
+                            <Name>Alphen, Nieuwstraat</Name>
+                            <Location>
+                                <ns2:pos>551563 6706611</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:73340040</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_73340060" version="20250307">
+                            <Name>Alphen, Willibrordplein</Name>
+                            <Location>
+                                <ns2:pos>551605 6707063</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:73340060</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_73340080" version="20250307">
+                            <Name>Alphen, Van Gaverenlaan</Name>
+                            <Location>
+                                <ns2:pos>551802 6707657</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:73340080</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_73340290" version="20250307">
+                            <Name>Alphen, Venweg</Name>
+                            <Location>
+                                <ns2:pos>550470 6702621</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:73340290</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_73440800" version="20250307">
+                            <Name>Baarle-Nassau, Gen. Maczeklaan</Name>
+                            <Location>
+                                <ns2:pos>549325 6700769</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:73440800</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_72440050" version="20250307">
+                            <Name>Baarle-Nassau, Oude Bredasebaan</Name>
+                            <Location>
+                                <ns2:pos>547180 6701700</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:72440050</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_72440160" version="20250307">
+                            <Name>Baarle-Nassau, Huize De Gaarshof</Name>
+                            <Location>
+                                <ns2:pos>545650 6704670</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:72440160</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_72440460" version="20250307">
+                            <Name>Baarle-Nassau, Huisvennen</Name>
+                            <Location>
+                                <ns2:pos>546284 6703777</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:72440460</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_73440200" version="20250307">
+                            <Name>Baarle-Nassau, Hoogbraak</Name>
+                            <Location>
+                                <ns2:pos>548143 6700393</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:73440200</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_73440690" version="20250307">
+                            <Name>Baarle-Nassau, St. Janstraat</Name>
+                            <Location>
+                                <ns2:pos>548496 6700300</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:73440690</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_73440100" version="20250307">
+                            <Name>Baarle-Nassau, Loveren</Name>
+                            <Location>
+                                <ns2:pos>547462 6700247</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:73440100</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_73440300" version="20250307">
+                            <Name>Baarle-Nassau, Willem Alexanderstraat</Name>
+                            <Location>
+                                <ns2:pos>548785 6700560</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:73440300</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_72240040" version="20250307">
+                            <Name>Chaam, Meerleseweg</Name>
+                            <Location>
+                                <ns2:pos>539650 6712533</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:72240040</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_72240080" version="20250307">
+                            <Name>Chaam, Dorpsstraat</Name>
+                            <Location>
+                                <ns2:pos>541103 6711206</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:72240080</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_72240130" version="20250307">
+                            <Name>Chaam, Kleistraat</Name>
+                            <Location>
+                                <ns2:pos>541098 6710063</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:72240130</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_72240170" version="20250307">
+                            <Name>Chaam, Meysberg</Name>
+                            <Location>
+                                <ns2:pos>542071 6710525</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:72240170</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_72240220" version="20250307">
+                            <Name>Chaam, Boterfabriekweg</Name>
+                            <Location>
+                                <ns2:pos>540776 6711522</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:72240220</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_72340110" version="20250307">
+                            <Name>Chaam, Legstraat</Name>
+                            <Location>
+                                <ns2:pos>542707 6709027</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:72340110</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_72240100" version="20250307">
+                            <Name>Chaam, Ulicotenseweg</Name>
+                            <Location>
+                                <ns2:pos>541408 6710832</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:72240100</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_72540400" version="20250307">
+                            <Name>Chaam, Houtgoorstraat</Name>
+                            <Location>
+                                <ns2:pos>541277 6708390</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:72540400</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_72190160" version="20250307">
+                            <Name>Dorst, Hannebroeck</Name>
+                            <Location>
+                                <ns2:pos>541132 6729386</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:72190160</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_73150390" version="20250307">
+                            <Name>Dorst, Rijksweg</Name>
+                            <Location>
+                                <ns2:pos>539391 6726504</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:73150390</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_72190090" version="20250307">
+                            <Name>Dorst, Kapelerf</Name>
+                            <Location>
+                                <ns2:pos>540671 6726298</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:72190090</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_72190150" version="20250307">
+                            <Name>Dorst, Dennenlaan</Name>
+                            <Location>
+                                <ns2:pos>541029 6726524</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:72190150</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_72440010" version="20250307">
+                            <Name>Ulicoten, Baarleseweg</Name>
+                            <Location>
+                                <ns2:pos>544406 6701428</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:72440010</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_72540200" version="20250307">
+                            <Name>Ulicoten, Maaykantsestraat</Name>
+                            <Location>
+                                <ns2:pos>540814 6704556</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:72540200</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_72540500" version="20250307">
+                            <Name>Ulicoten, Kloosterstraat</Name>
+                            <Location>
+                                <ns2:pos>540693 6702656</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:72540500</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_73240010" version="20250307">
+                            <Name>Alphen, 't Zand</Name>
+                            <Location>
+                                <ns2:pos>552785 6710062</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:73240010</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_73240020" version="20250307">
+                            <Name>Alphen, Oosterwijksestraat</Name>
+                            <Location>
+                                <ns2:pos>553751 6710991</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:73240020</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_73240050" version="20250307">
+                            <Name>Alphen, Rielseweg</Name>
+                            <Location>
+                                <ns2:pos>555164 6712090</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:73240050</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Member_73240150" version="20250307">
+                            <Name>Alphen, Goedentijd</Name>
+                            <Location>
+                                <ns2:pos>552156 6708026</ns2:pos>
+                            </Location>
+                            <PrivateCode type="QuayCode">NL:CHB:Quay:73240150</PrivateCode>
+                            <ForAlighting>true</ForAlighting>
+                            <ForBoarding>true</ForBoarding>
+                        </ScheduledStopPoint>
+                    </scheduledStopPoints>
+                    <stopAssignments>
+                        <FlexibleStopAssignment id="NL:PNB:FlexibleStopAssignment:alphen_1292" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_1292"/>
+                            <FlexibleStopPlaceRef version="20250307" ref="NL:PNB:FlexibleStopPlace:alphen_1292"/>
+                        </FlexibleStopAssignment>
+                        <FlexibleStopAssignment id="NL:PNB:FlexibleStopAssignment:baarle-nassau_1294" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:baarle-nassau_1294"/>
+                            <FlexibleStopPlaceRef version="20250307" ref="NL:PNB:FlexibleStopPlace:baarle-nassau_1294"/>
+                        </FlexibleStopAssignment>
+                        <FlexibleStopAssignment id="NL:PNB:FlexibleStopAssignment:chaam_1300" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:chaam_1300"/>
+                            <FlexibleStopPlaceRef version="20250307" ref="NL:PNB:FlexibleStopPlace:chaam_1300"/>
+                        </FlexibleStopAssignment>
+                        <FlexibleStopAssignment id="NL:PNB:FlexibleStopAssignment:dorst_1304" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:dorst_1304"/>
+                            <FlexibleStopPlaceRef version="20250307" ref="NL:PNB:FlexibleStopPlace:dorst_1304"/>
+                        </FlexibleStopAssignment>
+                        <FlexibleStopAssignment id="NL:PNB:FlexibleStopAssignment:ulicoten_1362" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:ulicoten_1362"/>
+                            <FlexibleStopPlaceRef version="20250307" ref="NL:PNB:FlexibleStopPlace:ulicoten_1362"/>
+                        </FlexibleStopAssignment>
+                        <FlexibleStopAssignment id="NL:PNB:FlexibleStopAssignment:alphen_-_noord_1379" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_-_noord_1379"/>
+                            <FlexibleStopPlaceRef version="20250307" ref="NL:PNB:FlexibleStopPlace:alphen_-_noord_1379"/>
+                        </FlexibleStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Hub_425" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:73440690"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Hub_429" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_429"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:72000320"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Hub_435" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:72240080"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Hub_477" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_477"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:73431900"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10411" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73340010"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:73340010"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10407" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73340020"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:73340020"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10409" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73340040"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:73340040"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10413" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73340060"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:73340060"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10406" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73340080"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:73340080"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10415" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73340290"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:73340290"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_11267" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73440800"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:73440800"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10428" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72440050"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:72440050"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10430" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72440160"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:72440160"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10425" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72440460"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:72440460"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10433" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73440200"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:73440200"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10426" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73440690"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:73440690"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10431" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73440100"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:73440100"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10429" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73440300"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:73440300"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10691" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72240040"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:72240040"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10687" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72240080"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:72240080"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10688" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72240130"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:72240130"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10689" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72240170"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:72240170"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10690" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72240220"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:72240220"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10684" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72340110"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:72340110"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10683" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72240100"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:72240100"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10686" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72540400"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:72540400"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10710" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72190160"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:72190160"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10709" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73150390"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:73150390"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10708" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72190090"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:72190090"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_10711" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72190150"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:72190150"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_11180" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72440010"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:72440010"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_11178" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72540200"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:72540200"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_11179" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_72540500"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:72540500"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_11265" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73240010"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:73240010"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_11262" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73240020"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:73240020"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_11263" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73240050"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:73240050"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:Member_11266" version="20250307" order="1">
+                            <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Member_73240150"/>
+                            <QuayRef version="any" ref="NL:NL:CHB:Quay:73240150"/>
+                        </PassengerStopAssignment>
+                    </stopAssignments>
+                    <timingLinks>
+                        <TimingLink id="NL:PNB:TimingLink:alphen_425" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_1292"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:425_alphen" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_1292"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:chaam_425" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:chaam_1300"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:425_chaam" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:chaam_1300"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:baarle-nassau_425" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:baarle-nassau_1294"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:425_baarle-nassau" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:baarle-nassau_1294"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:alphen_-_noord_425" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_-_noord_1379"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:425_alphen_-_noord" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_-_noord_1379"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:ulicoten_425" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:ulicoten_1362"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:425_ulicoten" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:ulicoten_1362"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:alphen_-_noord_429" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_-_noord_1379"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_429"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:429_alphen_-_noord" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_429"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_-_noord_1379"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:alphen_-_noord_435" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_-_noord_1379"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:435_alphen_-_noord" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_-_noord_1379"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:alphen_435" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_1292"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:435_alphen" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_1292"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:baarle-nassau_435" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:baarle-nassau_1294"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:435_baarle-nassau" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:baarle-nassau_1294"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:ulicoten_435" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:ulicoten_1362"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:435_ulicoten" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:ulicoten_1362"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:chaam_435" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:chaam_1300"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:435_chaam" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:chaam_1300"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:alphen_-_noord_477" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_-_noord_1379"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_477"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:477_alphen_-_noord" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_477"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_-_noord_1379"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:dorst_477" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:dorst_1304"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_477"/>
+                        </TimingLink>
+                        <TimingLink id="NL:PNB:TimingLink:477_dorst" version="20250307">
+                            <FromPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_477"/>
+                            <ToPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:dorst_1304"/>
+                        </TimingLink>
+                    </timingLinks>
+                    <journeyPatterns>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:alphen_Hub_425" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:alphen_Hub_425_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_1292"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:alphen_425"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:alphen_Hub_425_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Hub_425_alphen" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_425_alphen_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:425_alphen"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_425_alphen_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_1292"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:chaam_Hub_425" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:chaam_Hub_425_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:chaam_1300"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:chaam_425"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:chaam_Hub_425_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Hub_425_chaam" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_425_chaam_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:425_chaam"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_425_chaam_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:chaam_1300"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:baarle-nassau_Hub_425" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:baarle-nassau_Hub_425_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:baarle-nassau_1294"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:baarle-nassau_425"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:baarle-nassau_Hub_425_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Hub_425_baarle-nassau" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_425_baarle-nassau_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:425_baarle-nassau"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_425_baarle-nassau_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:baarle-nassau_1294"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:alphen_-_noord_Hub_425" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:alphen_-_noord_Hub_425_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_-_noord_1379"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:alphen_-_noord_425"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:alphen_-_noord_Hub_425_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Hub_425_alphen_-_noord" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_425_alphen_-_noord_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:425_alphen_-_noord"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_425_alphen_-_noord_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_-_noord_1379"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:ulicoten_Hub_425" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:ulicoten_Hub_425_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:ulicoten_1362"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:ulicoten_425"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:ulicoten_Hub_425_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Hub_425_ulicoten" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_425_ulicoten_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_425"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:425_ulicoten"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_425_ulicoten_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:ulicoten_1362"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:alphen_-_noord_Hub_429" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:alphen_-_noord_Hub_429_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_-_noord_1379"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:alphen_-_noord_429"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:alphen_-_noord_Hub_429_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_429"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Hub_429_alphen_-_noord" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_429_alphen_-_noord_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_429"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:429_alphen_-_noord"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_429_alphen_-_noord_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_-_noord_1379"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:alphen_-_noord_Hub_435" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:alphen_-_noord_Hub_435_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_-_noord_1379"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:alphen_-_noord_435"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:alphen_-_noord_Hub_435_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Hub_435_alphen_-_noord" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_435_alphen_-_noord_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:435_alphen_-_noord"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_435_alphen_-_noord_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_-_noord_1379"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:alphen_Hub_435" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:alphen_Hub_435_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_1292"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:alphen_435"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:alphen_Hub_435_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Hub_435_alphen" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_435_alphen_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:435_alphen"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_435_alphen_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_1292"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:baarle-nassau_Hub_435" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:baarle-nassau_Hub_435_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:baarle-nassau_1294"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:baarle-nassau_435"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:baarle-nassau_Hub_435_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Hub_435_baarle-nassau" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_435_baarle-nassau_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:435_baarle-nassau"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_435_baarle-nassau_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:baarle-nassau_1294"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:ulicoten_Hub_435" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:ulicoten_Hub_435_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:ulicoten_1362"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:ulicoten_435"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:ulicoten_Hub_435_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Hub_435_ulicoten" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_435_ulicoten_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:435_ulicoten"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_435_ulicoten_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:ulicoten_1362"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:chaam_Hub_435" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:chaam_Hub_435_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:chaam_1300"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:chaam_435"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:chaam_Hub_435_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Hub_435_chaam" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_435_chaam_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_435"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:435_chaam"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_435_chaam_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:chaam_1300"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:alphen_-_noord_Hub_477" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:alphen_-_noord_Hub_477_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_-_noord_1379"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:alphen_-_noord_477"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:alphen_-_noord_Hub_477_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_477"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Hub_477_alphen_-_noord" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_477_alphen_-_noord_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_477"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:477_alphen_-_noord"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_477_alphen_-_noord_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:alphen_-_noord_1379"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:dorst_Hub_477" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:dorst_Hub_477_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:dorst_1304"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:dorst_477"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:dorst_Hub_477_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_477"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                        <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Hub_477_dorst" version="20250307">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_477_dorst_1" version="20250307" order="1">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:Hub_477"/>
+                                    <OnwardTimingLinkRef version="20250307" ref="NL:PNB:TimingLink:477_dorst"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:PNB:StopPointInJourneyPattern:Hub_477_dorst_2" version="20250307" order="2">
+                                    <ScheduledStopPointRef version="20250307" ref="NL:PNB:ScheduledStopPoint:dorst_1304"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                    <FlexiblePointProperties>
+                                        <ZoneContainingStops>true</ZoneContainingStops>
+                                    </FlexiblePointProperties>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                    </journeyPatterns>
+                </ServiceFrame>
+                <TimetableFrame id="NL:PNB:TimetableFrame:BravoFlex" version="20250307">
+                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE"/>
+                    <contentValidityConditions>
+                        <AvailabilityCondition id="NL:PNB:AvailabilityCondition:1" version="20250307">
+                            <FromDate>2025-03-01T11:00:00.000Z</FromDate>
+                            <ToDate>2025-12-31T11:00:00.000Z</ToDate>
+                            <ValidDayBits>001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111</ValidDayBits>
+                            <timebands>
+                                <Timeband id="NL:PNB:Timeband:1" version="20250307">
+                                    <StartTime>07:00:00</StartTime>
+                                    <EndTime>00:00:00</EndTime>
+                                </Timeband>
+                            </timebands>
+                        </AvailabilityCondition>
+                        <AvailabilityCondition id="NL:PNB:AvailabilityCondition:2" version="20250307">
+                            <FromDate>2025-03-01T11:00:00.000Z</FromDate>
+                            <ToDate>2025-12-31T11:00:00.000Z</ToDate>
+                            <ValidDayBits>001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111</ValidDayBits>
+                            <timebands>
+                                <Timeband id="NL:PNB:Timeband:2" version="20250307">
+                                    <StartTime>07:00:00</StartTime>
+                                    <EndTime>20:00:00</EndTime>
+                                </Timeband>
+                            </timebands>
+                        </AvailabilityCondition>
+                        <AvailabilityCondition id="NL:PNB:AvailabilityCondition:3" version="20250307">
+                            <FromDate>2025-03-01T11:00:00.000Z</FromDate>
+                            <ToDate>2025-12-31T11:00:00.000Z</ToDate>
+                            <ValidDayBits>100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000</ValidDayBits>
+                            <timebands>
+                                <Timeband id="NL:PNB:Timeband:3" version="20250307">
+                                    <StartTime>07:00:00</StartTime>
+                                    <EndTime>00:00:00</EndTime>
+                                </Timeband>
+                            </timebands>
+                        </AvailabilityCondition>
+                        <AvailabilityCondition id="NL:PNB:AvailabilityCondition:4" version="20250307">
+                            <FromDate>2025-03-01T11:00:00.000Z</FromDate>
+                            <ToDate>2025-12-31T11:00:00.000Z</ToDate>
+                            <ValidDayBits>100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000</ValidDayBits>
+                            <timebands>
+                                <Timeband id="NL:PNB:Timeband:4" version="20250307">
+                                    <StartTime>07:00:00</StartTime>
+                                    <EndTime>19:00:00</EndTime>
+                                </Timeband>
+                            </timebands>
+                        </AvailabilityCondition>
+                        <AvailabilityCondition id="NL:PNB:AvailabilityCondition:5" version="20250307">
+                            <FromDate>2025-03-01T11:00:00.000Z</FromDate>
+                            <ToDate>2025-12-31T11:00:00.000Z</ToDate>
+                            <ValidDayBits>010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000000100000010000001000</ValidDayBits>
+                            <timebands>
+                                <Timeband id="NL:PNB:Timeband:5" version="20250307">
+                                    <StartTime>08:00:00</StartTime>
+                                    <EndTime>00:00:00</EndTime>
+                                </Timeband>
+                            </timebands>
+                        </AvailabilityCondition>
+                    </contentValidityConditions>
+                    <vehicleJourneys>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:alphen_425" version="20250307">
+                            <validityConditions>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:1"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:3"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:alphen_Hub_425"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:alphen_425" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:alphen_425"/>
+                                    <RunTime>PT5M57S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:425_alphen" version="20250307">
+                            <validityConditions>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:1"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:3"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:Hub_425_alphen"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:425_alphen" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:425_alphen"/>
+                                    <RunTime>PT5M57S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:chaam_425" version="20250307">
+                            <validityConditions>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:1"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:3"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:chaam_Hub_425"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:chaam_425" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:chaam_425"/>
+                                    <RunTime>PT9M14S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:425_chaam" version="20250307">
+                            <validityConditions>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:1"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:3"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:Hub_425_chaam"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:425_chaam" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:425_chaam"/>
+                                    <RunTime>PT9M14S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:baarle-nassau_425" version="20250307">
+                            <validityConditions>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:1"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:3"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:baarle-nassau_Hub_425"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:baarle-nassau_425" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:baarle-nassau_425"/>
+                                    <RunTime>PT1M55S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:425_baarle-nassau" version="20250307">
+                            <validityConditions>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:1"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:3"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:Hub_425_baarle-nassau"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:425_baarle-nassau" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:425_baarle-nassau"/>
+                                    <RunTime>PT1M55S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:alphen_-_noord_425" version="20250307">
+                            <validityConditions>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:1"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:3"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:alphen_-_noord_Hub_425"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:alphen_-_noord_425" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:alphen_-_noord_425"/>
+                                    <RunTime>PT9M28S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:425_alphen_-_noord" version="20250307">
+                            <validityConditions>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:1"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:3"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:Hub_425_alphen_-_noord"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:425_alphen_-_noord" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:425_alphen_-_noord"/>
+                                    <RunTime>PT9M28S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:ulicoten_425" version="20250307">
+                            <validityConditions>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:1"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:3"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:ulicoten_Hub_425"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:ulicoten_425" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:ulicoten_425"/>
+                                    <RunTime>PT7M1S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:425_ulicoten" version="20250307">
+                            <validityConditions>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:1"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:3"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:Hub_425_ulicoten"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:425_ulicoten" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:425_ulicoten"/>
+                                    <RunTime>PT7M1S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:alphen_-_noord_429" version="20250307">
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:alphen_-_noord_Hub_429"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:alphen_-_noord_429" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:alphen_-_noord_429"/>
+                                    <RunTime>PT25M40S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:429_alphen_-_noord" version="20250307">
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:Hub_429_alphen_-_noord"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:429_alphen_-_noord" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:429_alphen_-_noord"/>
+                                    <RunTime>PT25M40S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:alphen_-_noord_435" version="20250307">
+                            <validityConditions>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:1"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:3"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:5"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:alphen_-_noord_Hub_435"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:alphen_-_noord_435" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:alphen_-_noord_435"/>
+                                    <RunTime>PT10M16S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:435_alphen_-_noord" version="20250307">
+                            <validityConditions>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:1"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:3"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:5"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:Hub_435_alphen_-_noord"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:435_alphen_-_noord" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:435_alphen_-_noord"/>
+                                    <RunTime>PT10M16S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:alphen_435" version="20250307">
+                            <validityConditions>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:1"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:3"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:5"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:alphen_Hub_435"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:alphen_435" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:alphen_435"/>
+                                    <RunTime>PT9M16S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:435_alphen" version="20250307">
+                            <validityConditions>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:1"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:3"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:5"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:Hub_435_alphen"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:435_alphen" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:435_alphen"/>
+                                    <RunTime>PT9M16S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:baarle-nassau_435" version="20250307">
+                            <validityConditions>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:1"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:3"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:5"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:baarle-nassau_Hub_435"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:baarle-nassau_435" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:baarle-nassau_435"/>
+                                    <RunTime>PT8M43S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:435_baarle-nassau" version="20250307">
+                            <validityConditions>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:1"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:3"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:5"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:Hub_435_baarle-nassau"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:435_baarle-nassau" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:435_baarle-nassau"/>
+                                    <RunTime>PT8M43S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:ulicoten_435" version="20250307">
+                            <validityConditions>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:1"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:3"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:5"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:ulicoten_Hub_435"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:ulicoten_435" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:ulicoten_435"/>
+                                    <RunTime>PT6M44S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:435_ulicoten" version="20250307">
+                            <validityConditions>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:1"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:3"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:5"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:Hub_435_ulicoten"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:435_ulicoten" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:435_ulicoten"/>
+                                    <RunTime>PT6M44S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:chaam_435" version="20250307">
+                            <validityConditions>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:1"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:3"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:5"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:chaam_Hub_435"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:chaam_435" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:chaam_435"/>
+                                    <RunTime>PT1M30S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:435_chaam" version="20250307">
+                            <validityConditions>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:1"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:3"/>
+                                <AvailabilityConditionRef version="20250307" ref="NL:PNB:AvailabilityCondition:5"/>
+                            </validityConditions>
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:Hub_435_chaam"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:435_chaam" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:435_chaam"/>
+                                    <RunTime>PT1M30S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:alphen_-_noord_477" version="20250307">
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:alphen_-_noord_Hub_477"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:alphen_-_noord_477" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:alphen_-_noord_477"/>
+                                    <RunTime>PT13M23S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:477_alphen_-_noord" version="20250307">
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:Hub_477_alphen_-_noord"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:477_alphen_-_noord" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:477_alphen_-_noord"/>
+                                    <RunTime>PT13M23S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:dorst_477" version="20250307">
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:dorst_Hub_477"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:dorst_477" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:dorst_477"/>
+                                    <RunTime>PT9M35S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                        <ServiceJourney id="NL:PNB:ServiceJourney:477_dorst" version="20250307">
+                            <Monitored>false</Monitored>
+                            <ServiceJourneyPatternRef version="20250307" ref="NL:PNB:ServiceJourneyPattern:Hub_477_dorst"/>
+                            <VehicleTypeRef version="20250307" ref="NL:PNB:VehicleType:9"/>
+                            <LineRef version="20250307" ref="NL:PNB:Line:BravoFlex_5"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:PNB:JourneyRunTime:477_dorst" version="20250307">
+                                    <TimingLinkRef version="20250307" ref="NL:PNB:TimingLink:477_dorst"/>
+                                    <RunTime>PT9M35S</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                    </vehicleJourneys>
+                </TimetableFrame>
+            </frames>
+        </CompositeFrame>
+        
+        <!-- De volgende CompositeFrames met 'predefined values' worden meegeleverd voor compleetheid. Levering hiervan is in werkelijkheid niet verplicht, maar zorgt er wel voor dat het bestand valideert met de 'met-constraints' xsd. -->
+        
+        <CompositeFrame id="NL:PNB:CompositeFrame:PredefinedAuthorities" version="any">
+            <Description>Kopie uit de centrale DOVA-lijst van relevante concessieverleners</Description>
+            <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_DOVA_LISTS"/>
+            <FrameDefaults>
+                <DefaultCodespaceRef ref="NL:BISON:Codespace:DOVA"/>
+            </FrameDefaults>
+            <frames>
+                <GeneralFrame id="NL:PNB:GeneralFrame:ConcessieVerleners" version="any">
+                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_AuthorityList"/>
+                    <members>
+                        <Authority id="NL:DOVA:Authority:PNB" version="any">
+                            <Name>Provincie Noord Brabant</Name>
+                            <ShortName>PNB</ShortName>
+                            <Description>Provincie Noord Brabant</Description>
+                        </Authority>
+                    </members>
+                </GeneralFrame>
+            </frames>
+        </CompositeFrame>
+        <CompositeFrame id="NL:PNB:CompositeFrame:PredefinedNetworks" version="any">
+            <Description>Kopie uit de centrale DOVA-lijst van relevante concessies</Description>
+            <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_DOVA_LISTS"/>
+            <FrameDefaults>
+                <DefaultCodespaceRef ref="NL:BISON:Codespace:DOVA"/>
+            </FrameDefaults>
+            <frames>
+                <GeneralFrame id="NL:PNB:GeneralFrame:Concessies" version="any">
+                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_NetworkList"/>
+                    <members>
+                        <Network id="NL:DOVA:Network:PNB-Flex" version="any">
+                            <Name>Provincie Noord Brabant - Flexvervoer</Name>
+                            <ShortName>PNB-Flex</ShortName>
+                            <Description>Provincie Noord Brabant - Flexvervoer</Description>
+                            <TransportMode>bus</TransportMode>
+                            <GroupOfLinesType>administrative</GroupOfLinesType>
+                            <AuthorityRef ref="NL:DOVA:Authority:PNB" version="any"/>
+                        </Network>
+                        <TransportAdministrativeZone id="NL:DOVA:TransportAdministrativeZone:PNB-Flex" version="any">
+                            <Name>Concessie Rail Haaglanden</Name>
+                            <ShortName>PNB-Flex</ShortName>
+                        </TransportAdministrativeZone>
+                    </members>
+                </GeneralFrame>
+            </frames>
+        </CompositeFrame>
+        <CompositeFrame id="NL:PNB:CompositeFrame:PredefinedEnumerations" version="any">
+            <Description>Kopie van relevante waardes uit de centrale BISON-enumeraties</Description>
+            <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_BISON_ENUMS"/>
+            <FrameDefaults>
+                <DefaultCodespaceRef ref="NL:BISON:Codespace:BISON"/>
+            </FrameDefaults>
+            <frames>
+                <GeneralFrame id="NL:PNB:GeneralFrame:Predefined_TypeOfService" version="any">
+                    <Description>Standaardenumeratie met voorgedefinieerde formules (lijnkenmerken).</Description>
+                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues"/>
+                    <members>
+                        <ValueSet id="NL:PNB:ValueSet:TypeOfService" version="any">
+                            <values>
+                                <TypeOfService id="NL:BISON:TypeOfService:Flex" version="any">
+                                    <Name>Standaard</Name>
+                                    <Description>Regulier (openbaar) vervoer</Description>
+                                </TypeOfService>
+                            </values>
+                        </ValueSet>
+                    </members>
+                </GeneralFrame>
+                <GeneralFrame id="NL:PNB:GeneralFrame:Predefined_Technical" version="any">
+                    <Description>Diverse technische standaardenumeraties t.b.v. het NL NeTEx Profiel.</Description>
+                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations"/>
+                    <members>
+                        <ValueSet id="NL:PNB:ValueSet:TypeOfResponsibilityRole" version="any">
+                            <values>
+                                <TypeOfResponsibilityRole id="NL:BISON:TypeOfResponsibilityRole:financing" version="any">
+                                    <Name>Financing</Name>
+                                    <Description>Financieren van het OV</Description>
+                                </TypeOfResponsibilityRole>
+                            </values>
+                        </ValueSet>
+                        <ValueSet id="NL:PNB:ValueSet:TypeOfFrame_930" version="any">
+                            <values>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_BASELINE" version="9.3.0">
+                                    <Name>Baseline composite frame</Name>
+                                    <Description>Composite frame met een 'baseline' (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_RESOURCE" version="9.3.0">
+                                    <Name>Resource frame</Name>
+                                    <Description>Resource frame (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SERVICE" version="9.3.0">
+                                    <Name>Service frame</Name>
+                                    <Description>Service frame (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE" version="9.3.0">
+                                    <Name>Timetable frame</Name>
+                                    <Description>Timetable frame (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_CALENDAR" version="9.3.0">
+                                    <Name>ServiceCalendar frame</Name>
+                                    <Description>ServiceCalendar frame (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SITE" version="9.3.0">
+                                    <Name>Site frame</Name>
+                                    <Description>Site frame (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_VEHICLE" version="9.3.0">
+                                    <Name>VehicleSchedule frame</Name>
+                                    <Description>VehicleSchedule frame (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_CODESPACES" version="9.3.0">
+                                    <Name>Codespace composite frame</Name>
+                                    <Description>Composite frame met de domeinen (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_BISON_ENUMS" version="9.3.0">
+                                    <Name>BISON composite frame</Name>
+                                    <Description>Composite frame met de BISON standaardenumeraties (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues" version="9.3.0">
+                                    <Name>TypeOfService frame</Name>
+                                    <Description>Frame met de TypeOfService standaardenumeratie (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.3.0">
+                                    <Name>TechnicalValues frame</Name>
+                                    <Description>Frame met de technische standaardenumeraties (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_DOVA_LISTS" version="9.3.0">
+                                    <Name>DOVA composite frame</Name>
+                                    <Description>Composite frame met de DOVA lijsten (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TariffZoneList" version="9.3.0">
+                                    <Name>TariffZones frame</Name>
+                                    <Description>Frame met de DOVA lijst van OV-zones (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_AuthorityList" version="9.3.0">
+                                    <Name>Authorities frame</Name>
+                                    <Description>Frame met de DOVA lijst van concessieverleners (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_NetworkList" version="9.3.0">
+                                    <Name>Networks frame</Name>
+                                    <Description>Frame met de DOVA lijst van concessies (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                            </values>
+                        </ValueSet>
+                    </members>
+                </GeneralFrame>
+            </frames>
+        </CompositeFrame>
+        <CompositeFrame id="NL:PNB:CompositeFrame:PredefinedCodespaces" version="any">
+            <Description>Kopie van relevante Codespaces uit de centrale BISON-lijsten</Description>
+            <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_CODESPACES"/>
+            <codespaces>
+                <Codespace id="NL:BISON:Codespace:BISON">
+                    <Xmlns>BISON</Xmlns>
+                    <XmlnsUrl>http://bison.dova.nu/ns/BISON</XmlnsUrl>
+                    <Description>BISON standaardenumeraties</Description>
+                </Codespace>
+                <Codespace id="NL:BISON:Codespace:DOVA">
+                    <Xmlns>DOVA</Xmlns>
+                    <XmlnsUrl>http://bison.dova.nu/ns/DOVA</XmlnsUrl>
+                    <Description>'Centrale' lijsten bijgehouden door DOVA</Description>
+                </Codespace>
+                <Codespace id="NL:BISON:Codespace:PNB">
+                    <Xmlns>PNB</Xmlns>
+                    <XmlnsUrl>http://bison.dova.nu/ns/PNB</XmlnsUrl>
+                    <Description>GVB Amsterdam</Description>
+                </Codespace>
+            </codespaces>
+            <FrameDefaults>
+                <DefaultCodespaceRef ref="NL:BISON:Codespace:BISON"/>
+            </FrameDefaults>
+        </CompositeFrame>
+    </dataObjects>
+</PublicationDelivery>
