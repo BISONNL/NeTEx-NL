@@ -151,17 +151,13 @@
                                 <!-- De ritpatronen zorgen voor de juiste verbindingen. -->
                                 <FlexibleArea id="NL:PNB:FlexibleArea:Chaam" version="1">
                                     <ShortName>UFH</ShortName>
-                                    <members>
-                                        <!-- KNOOPPUNT, GEEN ONDERDEEL FLEXGEBIED: PNB:ScheduledStopPoint:72240080 -->
-                                        <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240020" version="1"/>
-                                        <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240040" version="1"/>
-                                        <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240100" version="1"/>
-                                        <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240130" version="1"/>
-                                        <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240170" version="1"/>
-                                        <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240220" version="1"/>
-                                        <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72340110" version="1"/>
-                                        <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72540400" version="1"/>
-                                    </members>
+                                    <gml:Polygon gml:id="NL_PNB_FlexibleArea_D2D">
+										<gml:exterior>
+											<gml:LinearRing>
+												<gml:posList>117411 391880 118841 391360 119430 390546 118915 389898 117176 390981</gml:posList>
+											</gml:LinearRing>
+										</gml:exterior>
+									</gml:Polygon>
                                     <BoardingUse>true</BoardingUse>
                                     <AlightingUse>true</AlightingUse>
                                 </FlexibleArea>
