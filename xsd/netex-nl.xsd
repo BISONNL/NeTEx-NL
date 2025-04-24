@@ -602,6 +602,7 @@
 					<xsd:documentation>Attribuut 'version' is de identificatie ("versie") van de levering/export.</xsd:documentation>
 				</xsd:annotation>
 				<xsd:sequence>
+					<xsd:element ref="ValidBetween" minOccurs="0"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-composite"/>
 					<xsd:element name="codespaces" type="codespaces" minOccurs="0">
@@ -612,11 +613,6 @@
 					<xsd:element name="FrameDefaults" type="VersionFrameDefaultsStructure">
 						<xsd:annotation>
 							<xsd:documentation>In een 'dienstregeling' levering zijn alle defaults verplicht. Een export van 'centrale' gegevens bevat alleen DefaultCodespaceRef. Een export van 'voertuigen' bevat DefaultCodespaceRef, DefaultDataSourceRef en DefaultSystemOfUnits.</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:element name="versions" type="versions" minOccurs="0">
-						<xsd:annotation>
-							<xsd:documentation>Bevat één Version element dat de levering beschrijft. Wordt alleen gevuld in een 'dienstregeling' levering.</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
 					<xsd:element name="frames" minOccurs="0">
@@ -656,6 +652,22 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
+	<xsd:element name="ValidBetween">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="FromDate" type="xsd:dateTime" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Startdatum van geldigheid van de levering. FromDate is INCLUSIEF.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="ToDate" type="xsd:dateTime" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Einddatum van geldigheid van de levering. ToDate is INCLUSIEF.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- GEGEVENSLEVERING                                                                -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
