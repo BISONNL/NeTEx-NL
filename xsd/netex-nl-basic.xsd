@@ -94,6 +94,11 @@
 			<xsd:element ref="gml:pos"/>
 		</xsd:sequence>
 	</xsd:complexType>
+	<xsd:complexType name="privateCodes">
+		<xsd:sequence>
+			<xsd:element name="PrivateCode" type="PrivateCodeStructure" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
 	<xsd:complexType name="PrivateCodeStructure">
 		<xsd:simpleContent>
 			<xsd:extension base="xsd:normalizedString">
@@ -310,11 +315,6 @@ Attribuut 'modification' geeft aan of de versie voor het eerst wordt aangeleverd
 	<xsd:complexType name="extensionTypeOfProductCategory">
 		<xsd:sequence>
 			<xsd:element name="TypeOfProductCategoryRef" type="VersionOfObjectRefStructure"/>
-		</xsd:sequence>
-	</xsd:complexType>
-	<xsd:complexType name="extensionPrivateCode">
-		<xsd:sequence>
-			<xsd:element name="PrivateCode" type="PrivateCodeStructure"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="extensionViaOrder">
