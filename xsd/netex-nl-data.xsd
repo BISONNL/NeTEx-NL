@@ -790,8 +790,8 @@
 					<xsd:element name="dayTypes" type="journeyDayTypes" minOccurs="0"/>
 					<!-- <xsd:element name="VehicleServicePartRef" type="VersionOfObjectRefStructure" minOccurs="0"/> -->
 					<xsd:element name="VehicleTypeRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-					<xsd:element name="StartPointRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-					<xsd:element name="EndPointRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="StartPointRef" type="VersionOfObjectRefStructure-with-class" minOccurs="0"/>
+					<xsd:element name="EndPointRef" type="VersionOfObjectRefStructure-with-class" minOccurs="0"/>
 					<xsd:element name="journeys" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence maxOccurs="unbounded">
