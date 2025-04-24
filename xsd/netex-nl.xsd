@@ -655,12 +655,12 @@
 	<xsd:element name="ValidBetween">
 		<xsd:complexType>
 			<xsd:sequence>
-				<xsd:element name="FromDate" type="xsd:dateTime" minOccurs="0">
+				<xsd:element name="FromDate" type="xsd:dateTime">
 					<xsd:annotation>
 						<xsd:documentation>Startdatum van geldigheid van de levering. FromDate is INCLUSIEF.</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
-				<xsd:element name="ToDate" type="xsd:dateTime" minOccurs="0">
+				<xsd:element name="ToDate" type="xsd:dateTime">
 					<xsd:annotation>
 						<xsd:documentation>Einddatum van geldigheid van de levering. ToDate is INCLUSIEF.</xsd:documentation>
 					</xsd:annotation>
