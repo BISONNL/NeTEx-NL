@@ -1206,9 +1206,9 @@
                     <Description>'Centrale' lijsten bijgehouden door DOVA</Description>
                 </Codespace>
                 <Codespace id="NL:BISON:Codespace:HTM">
-                    <Xmlns>GVB</Xmlns>
-                    <XmlnsUrl>http://bison.dova.nu/ns/GVB</XmlnsUrl>
-                    <Description>GVB Amsterdam</Description>
+                    <Xmlns>HTM</Xmlns>
+                    <XmlnsUrl>http://bison.dova.nu/ns/HTM</XmlnsUrl>
+                    <Description>Haagse Tramweg Maatschappij</Description>
                 </Codespace>
             </codespaces>
             <FrameDefaults>
