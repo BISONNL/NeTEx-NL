@@ -6,9 +6,9 @@
     <dataObjects>
         <CompositeFrame id="NL:ARR:CompositeFrame:Rijssen-Holten" modification="new" version="1">
             <ValidBetween>
-				<FromDate>2024-01-19T00:00:00Z</FromDate>
-				<ToDate>2024-12-31T00:00:00Z</ToDate>
-			</ValidBetween>
+                <FromDate>2024-01-19T00:00:00Z</FromDate>
+                <ToDate>2024-12-31T00:00:00Z</ToDate>
+            </ValidBetween>
             <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_BASELINE"/>
             <FrameDefaults>
                 <DefaultCodespaceRef ref="NL:BISON:Codespace:ARR"/>

@@ -762,7 +762,7 @@
                             <QuayRef ref="NL:Q:51380050" version="any"/>
                         </PassengerStopAssignment>
                     </stopAssignments>
-					<timingLinks>
+                    <timingLinks>
                         <TimingLink id="NL:QBUZZ:ScheduledStopPoint:GEEL-naar-GEEL" version="1">
                             <FromPointRef ref="NL:QBUZZ:ScheduledStopPoint:GEEL" version="1"/>
                             <ToPointRef ref="NL:QBUZZ:ScheduledStopPoint:GEEL" version="1"/>

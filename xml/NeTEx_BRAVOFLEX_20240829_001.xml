@@ -8,16 +8,16 @@
     <dataObjects>
         <CompositeFrame id="NL:PNB:CompositeFrame:BravoFlex" modification="new" version="1">
             <ValidBetween>
-				<FromDate>2024-01-19T00:00:00Z</FromDate>
-				<ToDate>2024-12-31T00:00:00Z</ToDate>
+                <FromDate>2024-01-19T00:00:00Z</FromDate>
+                <ToDate>2024-12-31T00:00:00Z</ToDate>
             </ValidBetween>
             <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_BASELINE"/>
             <FrameDefaults>
                 <!-- Aangenomen dat de Codespace PNB bestaat (deze zal moeten worden aangemaakt zodra PNB flex-dienstregelingen gaat leveren voor BravoFlex) -->
                 <DefaultCodespaceRef ref="NL:BISON:Codespace:PNB"/>
                 <DefaultDataSourceRef ref="NL:PNB:DataSource:PNB" version="1"/>
-                <!-- Dit betreft een kleine voorbeeldset, in normale levering worden alle (fictieve) flexlijnen opgenomen die onder 1 contract cq reserveercentrale vallen in de ResponsibilitySet --> 
-                <DefaultResponsibilitySetRef ref="NL:PNB:ResponsibilitySet:BravoFlex-Chaam-Galder-Ulvenhout" version="1"/>  
+                <!-- Dit betreft een kleine voorbeeldset, in normale levering worden alle (fictieve) flexlijnen opgenomen die onder 1 contract cq reserveercentrale vallen in de ResponsibilitySet -->
+                <DefaultResponsibilitySetRef ref="NL:PNB:ResponsibilitySet:BravoFlex-Chaam-Galder-Ulvenhout" version="1"/>
                 <DefaultLocale>
                     <TimeZone>Europe/Amsterdam</TimeZone>
                     <DefaultLanguage>nl</DefaultLanguage>
@@ -42,9 +42,9 @@
                         <ResponsibilitySet id="NL:PNB:ResponsibilitySet:BravoFlex-Chaam-Galder-Ulvenhout" version="1">
                             <Name>BravoFlex-Chaam-Galder-Ulvenhout</Name>
                             <roles>
-                            <ResponsibilityRoleAssignment id="NL:PNB:ResponsibilityRoleAssignment:BravoFlex-Chaam-Galder-Ulvenhout" version="1">
-                                <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="NL:PNB:TransportAdministrativeZone:BravoFlex-Chaam-Galder-Ulvenhout" version="1"/>
-                            </ResponsibilityRoleAssignment>
+                                <ResponsibilityRoleAssignment id="NL:PNB:ResponsibilityRoleAssignment:BravoFlex-Chaam-Galder-Ulvenhout" version="1">
+                                    <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="NL:PNB:TransportAdministrativeZone:BravoFlex-Chaam-Galder-Ulvenhout" version="1"/>
+                                </ResponsibilityRoleAssignment>
                             </roles>
                         </ResponsibilitySet>
                         <!-- Dit betreft niet-concessiegebonden-vervoer, dus hier is geen concessie opgenomen. -->
@@ -104,7 +104,7 @@
                                     <SpecialPlaceCapacity>1</SpecialPlaceCapacity>
                                     <PushchairCapacity>1</PushchairCapacity>
                                     <!--  nader bepalen of alle voertuigen toegankelijk zijn met rolstoel of dat dit alleen het geval is,als dit bij het reserveren is aangegeven? -->
-                                    <WheelchairPlaceCapacity>1</WheelchairPlaceCapacity>     
+                                    <WheelchairPlaceCapacity>1</WheelchairPlaceCapacity>
                                 </PassengerCapacity>
                             </capacities>
                             <LowFloor>false</LowFloor>
@@ -119,7 +119,7 @@
                         </VehicleType>
                     </vehicleTypes>
 
-                    <zones> 
+                    <zones>
                         <!-- Partitie-definitie -->
                         <TransportAdministrativeZone id="NL:PNB:TransportAdministrativeZone:BravoFlex-Chaam-Galder-Ulvenhout" version="1">
                             <Name>BravoFlex-Chaam-Galder-Ulvenhout</Name>
@@ -136,7 +136,7 @@
                         <!-- FlexibleStopPlace beschrijft het fysieke flexgebied, door haltes te koppelen in een FlexibleArea. -->
                         <!-- Er is voor gekozen om elke kern in het BravoFlex-gebied als apart flexgebied op te nemen. -->
                         <!-- De overstappunten/knooppunten worden hierin niet opgenomen, maar apart als ScheduledStopPoint opgenomen in ServiceJourneypatterns. -->
-                        
+
                         <!-- FlexibleStopPlace voor de kern Chaam: -->
                         <FlexibleStopPlace id="NL:PNB:FlexibleStopPlace:Chaam" version="1">
                             <Name>Chaam</Name>
@@ -149,12 +149,12 @@
                                 <FlexibleArea id="NL:PNB:FlexibleArea:Chaam" version="1">
                                     <ShortName>UFH</ShortName>
                                     <gml:Polygon gml:id="NL_PNB_FlexibleArea_D2D">
-										<gml:exterior>
-											<gml:LinearRing>
-												<gml:posList>117411 391880 118841 391360 119430 390546 118915 389898 117176 390981</gml:posList>
-											</gml:LinearRing>
-										</gml:exterior>
-									</gml:Polygon>
+                                        <gml:exterior>
+                                            <gml:LinearRing>
+                                                <gml:posList>117411 391880 118841 391360 119430 390546 118915 389898 117176 390981</gml:posList>
+                                            </gml:LinearRing>
+                                        </gml:exterior>
+                                    </gml:Polygon>
                                     <BoardingUse>true</BoardingUse>
                                     <AlightingUse>true</AlightingUse>
                                 </FlexibleArea>
@@ -212,12 +212,12 @@
                 <ServiceFrame id="NL:PNB:ServiceFrame:BravoFlex" version="1">
                     <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_SERVICE"/>
                     <!-- De definitie van de flexlijnen. -->
-                    
+
                     <!-- Voorgestelde business rule: -->
                     <!-- Als overstappen van de ene flexrit naar de andere is toegestaan, gebruik dan verschillende lijnen; mag dit niet, schaar dan alle flexritten onder één FlexibleLine. -->
-                    
+
                     <!-- Bij BravoFlex is dit niet toegestaan, in dit voorbeeld is er één FlexibleLine opgenomen die gebruikt wordt voor alle BravoFlex-ritten. -->
-                
+
                     <!-- De bedieningstijden van Bravoflex kunnen per knooppunt/overstappunt verschillen, door per overstappunt een of meerdere FlexibleLines te maken, kunnen de bedieningstijden eenvoudig per lijn worden bijgehouden> -->
                     <lines>
                         <Line id="NL:PNB:FlexibleLine:BravoFlex" version="1" responsibilitySetRef="NL:PNB:ResponsibilitySet:BW">
@@ -254,7 +254,7 @@
 
                     <scheduledStopPoints>
                         <!-- Voor elke flexgebied wordt een fictief ScheduledStopPoint opgenomen voor gebruik in ritpatronen. -->
-                        <!-- Alle ScheduledStopPoints worden ook gebruikt in koppeling aan quays uit CHB. --> 
+                        <!-- Alle ScheduledStopPoints worden ook gebruikt in koppeling aan quays uit CHB. -->
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:Chaam" version="1">
                             <Name>Chaam</Name>
                             <ForAlighting>true</ForAlighting>
@@ -275,52 +275,52 @@
                         <!-- De haltes uit de door PNB aangeleverde halte-matrix bevat slechts één halte per StopPlace (een zijde van de weg) -->
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72240080" version="1">
                             <privateCodes>
-								<PrivateCode type="UserStopCode">72240080</PrivateCode>
-							</privateCodes>
+                                <PrivateCode type="UserStopCode">72240080</PrivateCode>
+                            </privateCodes>
                             <Name>Chaam, Dorpsstraat</Name>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72041400" version="1">
                             <privateCodes>
-								<PrivateCode type="UserStopCode">72041400</PrivateCode>
+                                <PrivateCode type="UserStopCode">72041400</PrivateCode>
                             </privateCodes>
-							<Name>Ulvenhout, Molenstraat</Name>
+                            <Name>Ulvenhout, Molenstraat</Name>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
-                        
+
                         <!-- Vanuit de kernen Chaam, Galder en Ulvenhout kan ook gereisd worden naar knooppunten in Breda, Baarle-Nassau en Effen. Ook deze zijn opgenomen als ScheduledStopPoint. -->
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72002000" version="1">
                             <privateCodes>
-								<PrivateCode type="UserStopCode">72002000</PrivateCode>
-							</privateCodes>
+                                <PrivateCode type="UserStopCode">72002000</PrivateCode>
+                            </privateCodes>
                             <Name>Breda, Bijster</Name>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:73440690" version="1">
                             <privateCodes>
-								<PrivateCode type="UserStopCode">73440690</PrivateCode>
-							</privateCodes>
-							<Name>Baarle-Nassau, St. Janstraat</Name>
+                                <PrivateCode type="UserStopCode">73440690</PrivateCode>
+                            </privateCodes>
+                            <Name>Baarle-Nassau, St. Janstraat</Name>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72050800" version="1">
                             <privateCodes>
-								<PrivateCode type="UserStopCode">72050800</PrivateCode>
-							</privateCodes>
-							<Name>Effen, Effen</Name>
+                                <PrivateCode type="UserStopCode">72050800</PrivateCode>
+                            </privateCodes>
+                            <Name>Effen, Effen</Name>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
 
                         <!-- Tenslotte zijn ook alle overige haltes (die onderdeel zijn van de flexgebieden) opgenomen, maar voor ritpatronen worden deze niet gebruikt. Ze zijn enkel voor gebruik in PassengerStopAssignments. -->
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72240020" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">72240020</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">72240020</PrivateCode>
+                            </privateCodes>
                             <Name>Chaam, Bredaseweg</Name>
                             <Location>
                                 <gml:pos>116557 392662</gml:pos>
@@ -329,9 +329,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72240040" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">72240040</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">72240040</PrivateCode>
+                            </privateCodes>
                             <Name>Chaam, Meerleseweg</Name>
                             <Location>
                                 <gml:pos>117554 391687</gml:pos>
@@ -340,9 +340,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72240100" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">72240100</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">72240100</PrivateCode>
+                            </privateCodes>
                             <Name>Chaam, Ulicotenseweg</Name>
                             <Location>
                                 <gml:pos>118643 390621</gml:pos>
@@ -352,9 +352,9 @@
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72240130" version="1">
                             <privateCodes>
-								<PrivateCode type="UserStopCode">72240130</PrivateCode>
-							</privateCodes>
-							<Name>Chaam, Kleistraat</Name>
+                                <PrivateCode type="UserStopCode">72240130</PrivateCode>
+                            </privateCodes>
+                            <Name>Chaam, Kleistraat</Name>
                             <Location>
                                 <gml:pos>118446 390144</gml:pos>
                             </Location>
@@ -362,9 +362,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72240170" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">72240170</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">72240170</PrivateCode>
+                            </privateCodes>
                             <Name>Chaam, Meysberg</Name>
                             <Location>
                                 <gml:pos>119058 390427</gml:pos>
@@ -373,9 +373,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72240220" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">72240220</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">72240220</PrivateCode>
+                            </privateCodes>
                             <Name>Chaam, Boterfabriekweg</Name>
                             <Location>
                                 <gml:pos>118252 391053</gml:pos>
@@ -384,9 +384,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72340110" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">72340110</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">72340110</PrivateCode>
+                            </privateCodes>
                             <Name>Chaam, Legstraat</Name>
                             <Location>
                                 <gml:pos>119445 389492</gml:pos>
@@ -395,9 +395,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72540400" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">72540400</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">72540400</PrivateCode>
+                            </privateCodes>
                             <Name>Chaam, Houtgoorstraat</Name>
                             <Location>
                                 <gml:pos>118550 389102</gml:pos>
@@ -406,9 +406,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72120010" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">72120010</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">72120010</PrivateCode>
+                            </privateCodes>
                             <Name>Galder, Smidshof</Name>
                             <Location>
                                 <gml:pos>112429 392111</gml:pos>
@@ -417,9 +417,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72120050" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">72120050</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">72120050</PrivateCode>
+                            </privateCodes>
                             <Name>Galder, Ballemanseweg</Name>
                             <Location>
                                 <gml:pos>112525 391642</gml:pos>
@@ -428,9 +428,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72120070" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">72120070</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">72120070</PrivateCode>
+                            </privateCodes>
                             <Name>Galder, Galderse Meren</Name>
                             <Location>
                                 <gml:pos>112157 392963</gml:pos>
@@ -439,9 +439,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72120090" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">72120090</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">72120090</PrivateCode>
+                            </privateCodes>
                             <Name>Galder, Markweg</Name>
                             <Location>
                                 <gml:pos>112757 390892</gml:pos>
@@ -450,9 +450,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72041300" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">72041300</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">72041300</PrivateCode>
+                            </privateCodes>
                             <Name>Ulvenhout, Dorpstraat</Name>
                             <Location>
                                 <gml:pos>114140 395744</gml:pos>
@@ -461,9 +461,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72041500" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">72041500</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">72041500</PrivateCode>
+                            </privateCodes>
                             <Name>Ulvenhout, Vlasaard</Name>
                             <Location>
                                 <gml:pos>113936 395006</gml:pos>
@@ -472,9 +472,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72041900" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">72041900</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">72041900</PrivateCode>
+                            </privateCodes>
                             <Name>Ulvenhout, Dorpsplein</Name>
                             <Location>
                                 <gml:pos>114040 396112</gml:pos>
@@ -483,9 +483,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72140120" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">72140120</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">72140120</PrivateCode>
+                            </privateCodes>
                             <Name>Ulvenhout, Geersbroekseweg</Name>
                             <Location>
                                 <gml:pos>115781 393965</gml:pos>
@@ -681,7 +681,7 @@
                             <ToPointRef ref="NL:PNB:ScheduledStopPoint:72002000" version="1"/>
                         </TimingLink>
                     </timingLinks>
- 
+
                     <journeyPatterns>
                         <!-- Er worden ritpatronen gedefinieerd voor elke combinatie van kern naar knooppunt en vice versa. -->
                         <!-- Omdat vanuit een kern zowel naar een knooppunt in de kern als naar een knooppunt buiten de kern gereisd mag worden, ontstaan ritpatronen met drie ScheduledStopPoints:  kern -> knooppunt in kern -> knooppunt buiten kern (v.v.) -->
@@ -807,7 +807,7 @@
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
                         </ServiceJourneyPattern>
-                        
+
                         <!-- Chaam -> Ulvenhout v.v.: -->
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Kern-Chaam--Knooppunt-Ulvenhout" version="1">
                             <pointsInSequence>
@@ -885,7 +885,7 @@
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
                         </ServiceJourneyPattern>
-                        
+
                         <!-- De ritpatronen van en naar Galder kennen slechts twee StopPointInJourneyPattern, omdat de kern Galder geen eigen knooppunt heeft -->
                         <!-- Galder -> Ulvenhout v.v.: -->
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Kern-Galder--Knooppunt-Ulvenhout" version="1">
@@ -930,7 +930,7 @@
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
                         </ServiceJourneyPattern>
-                        
+
                         <!-- Galder -> Effen v.v.: -->
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Kern-Galder--Knooppunt-Effen" version="1">
                             <pointsInSequence>
@@ -974,7 +974,7 @@
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
                         </ServiceJourneyPattern>
-                        
+
                         <!-- Ulvenhout -> Breda v.v.: -->
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Kern-Ulvenhout--Knooppunt-Breda" version="1">
                             <pointsInSequence>
@@ -1053,7 +1053,7 @@
                                     <FlexiblePointProperties>
                                         <ZoneContainingStops>true</ZoneContainingStops>
                                     </FlexiblePointProperties>
-                                </StopPointInJourneyPattern>                                
+                                </StopPointInJourneyPattern>
                             </pointsInSequence>
                         </ServiceJourneyPattern>
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Knooppunt-Ulvenhout--Kern-Ulvenhout" version="1">
@@ -1073,7 +1073,7 @@
                                     <FlexiblePointProperties>
                                         <ZoneContainingStops>true</ZoneContainingStops>
                                     </FlexiblePointProperties>
-                                </StopPointInJourneyPattern>                                
+                                </StopPointInJourneyPattern>
                             </pointsInSequence>
                         </ServiceJourneyPattern>
                         <ServiceJourneyPattern id="NL:PNB:ServiceJourneyPattern:Knooppunt-Breda--Knooppunt-Ulvenhout" version="1">
@@ -1090,7 +1090,7 @@
                                     <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72041400" version="1"/>
                                     <ForAlighting>true</ForAlighting>
                                     <ForBoarding>false</ForBoarding>
-                                </StopPointInJourneyPattern>                          
+                                </StopPointInJourneyPattern>
                             </pointsInSequence>
                         </ServiceJourneyPattern>
                     </journeyPatterns>
@@ -1223,7 +1223,7 @@
                                 </VehicleJourneyRunTime>
                             </runTimes>
                         </ServiceJourney>
-                        
+
                         <!-- Chaam -> Ulvenhout v.v.: -->
                         <ServiceJourney id="NL:PNB:ServiceJourney:Kern-Chaam--Knooppunt-Ulvenhout" version="1">
                             <validityConditions>
@@ -1289,7 +1289,7 @@
                                 </VehicleJourneyRunTime>
                             </runTimes>
                         </ServiceJourney>
-                        
+
                         <!-- Galder -> Ulvenhout v.v.: -->
                         <ServiceJourney id="NL:PNB:ServiceJourney:Kern-Galder--Knooppunt-Ulvenhout" version="1">
                             <validityConditions>
@@ -1323,7 +1323,7 @@
                                 </VehicleJourneyRunTime>
                             </runTimes>
                         </ServiceJourney>
-                        
+
                         <!-- Galder -> Effen v.v.: -->
                         <ServiceJourney id="NL:PNB:ServiceJourney:Kern-Galder--Knooppunt-Effen" version="1">
                             <validityConditions>
@@ -1357,7 +1357,7 @@
                                 </VehicleJourneyRunTime>
                             </runTimes>
                         </ServiceJourney>
-                        
+
                         <!-- Ulvenhout -> Breda v.v.: -->
                         <ServiceJourney id="NL:PNB:ServiceJourney:Kern-Ulvenhout--Knooppunt-Breda" version="1">
                             <validityConditions>
@@ -1459,9 +1459,9 @@
                 </TimetableFrame>
             </frames>
         </CompositeFrame>
-        
+
         <!-- De volgende CompositeFrames met 'predefined values' worden meegeleverd voor compleetheid. Levering hiervan is in werkelijkheid niet verplicht, maar zorgt er wel voor dat het bestand valideert met de 'met-constraints' xsd. -->
-        
+
         <CompositeFrame id="NL:PNB:CompositeFrame:PredefinedAuthorities" version="any">
             <Description>Kopie uit de centrale DOVA-lijst van relevante concessieverleners</Description>
             <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_DOVA_LISTS"/>

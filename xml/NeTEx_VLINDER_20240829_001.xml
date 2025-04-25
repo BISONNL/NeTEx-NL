@@ -6,9 +6,9 @@
     <dataObjects>
         <CompositeFrame id="NL:ARR:CompositeFrame:Vlinder" modification="new" version="1">
             <ValidBetween>
-				<FromDate>2024-09-02T00:00:00Z</FromDate>
-				<ToDate>2024-12-14T00:00:00Z</ToDate>
-			</ValidBetween>
+                <FromDate>2024-09-02T00:00:00Z</FromDate>
+                <ToDate>2024-12-14T00:00:00Z</ToDate>
+            </ValidBetween>
             <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_BASELINE"/>
             <FrameDefaults>
                 <DefaultCodespaceRef ref="NL:BISON:Codespace:ARR"/>
@@ -311,9 +311,9 @@
                     </routes>
                     <lines>
                         <Line id="NL:ARR:Line:51809" version="1" responsibilitySetRef="NL:ARR:ResponsibilitySet:FY" >
-							<privateCodes>
-								<PrivateCode type="LinePlanningNumber">51809</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="LinePlanningNumber">51809</PrivateCode>
+                            </privateCodes>
                             <Name>Vlinder Binnenstad</Name>
                             <TransportMode>bus</TransportMode>
                             <PublicCode>809</PublicCode>
@@ -352,8 +352,8 @@
                     <destinationDisplays>
                         <DestinationDisplay id="NL:ARR:DestinationDisplay:1699" version="1">
                             <privateCodes>
-								<PrivateCode type="DestinationCode">1699</PrivateCode>
-							</privateCodes>
+                                <PrivateCode type="DestinationCode">1699</PrivateCode>
+                            </privateCodes>
                             <Name>Vlinder</Name>
                             <SideText>Vlinder Binnenstad</SideText>
                             <FrontText>Vlinder Binnenstad</FrontText>
@@ -416,9 +416,9 @@
                     </destinationDisplays>
                     <scheduledStopPoints>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20000010" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">20000010</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">20000010</PrivateCode>
+                            </privateCodes>
                             <Name>Leeuwarden, Busstation</Name>
                             <Location>
                                 <gml:pos>182031 578945</gml:pos>
@@ -432,9 +432,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20002740" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">20002740</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">20002740</PrivateCode>
+                            </privateCodes>
                             <Name>Leeuwarden, Harmonie</Name>
                             <Location>
                                 <gml:pos>181883 579391</gml:pos>
@@ -448,9 +448,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20003020" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">20003020</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">20003020</PrivateCode>
+                            </privateCodes>
                             <Name>Leeuwarden, Ipe Brouwerssteeg</Name>
                             <Location>
                                 <gml:pos>182029 579476</gml:pos>
@@ -464,9 +464,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20004670" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">20004670</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">20004670</PrivateCode>
+                            </privateCodes>
                             <Name>Leeuwarden, Oude Doelesteeg</Name>
                             <Location>
                                 <gml:pos>182096 579444</gml:pos>
@@ -480,9 +480,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20001570" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">20001570</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">20001570</PrivateCode>
+                            </privateCodes>
                             <Name>Leeuwarden, De Waag</Name>
                             <Location>
                                 <gml:pos>182225 579398</gml:pos>
@@ -496,9 +496,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20006670" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">20006670</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">20006670</PrivateCode>
+                            </privateCodes>
                             <Name>Leeuwarden, Wirdumerdijk</Name>
                             <Location>
                                 <gml:pos>182363 579417</gml:pos>
@@ -513,8 +513,8 @@
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20002440" version="1">
                             <privateCodes>
-								<PrivateCode type="UserStopCode">20002440</PrivateCode>
-							</privateCodes>
+                                <PrivateCode type="UserStopCode">20002440</PrivateCode>
+                            </privateCodes>
                             <Name>Leeuwarden, De Brol</Name>
                             <Location>
                                 <gml:pos>182473 579493</gml:pos>
@@ -529,9 +529,9 @@
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20002430" version="1">
                             <privateCodes>
-								<PrivateCode type="UserStopCode">20002430</PrivateCode>
-							</privateCodes>
-							<Name>Leeuwarden, Korfmakersstraat</Name>
+                                <PrivateCode type="UserStopCode">20002430</PrivateCode>
+                            </privateCodes>
+                            <Name>Leeuwarden, Korfmakersstraat</Name>
                             <Location>
                                 <gml:pos>182529 579583</gml:pos>
                             </Location>
@@ -544,9 +544,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20006680" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">20006680</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">20006680</PrivateCode>
+                            </privateCodes>
                             <Name>Leeuwarden, Wortelhaven</Name>
                             <Location>
                                 <gml:pos>182585 579643</gml:pos>
@@ -560,9 +560,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20006320" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">20006320</PrivateCode>							
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">20006320</PrivateCode>                            
+                            </privateCodes>
                             <Name>Leeuwarden, Voorstreek</Name>
                             <Location>
                                 <gml:pos>182650 579791</gml:pos>
@@ -576,9 +576,9 @@
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20000171" version="1">
-							<privateCodes>
-								<PrivateCode type="UserStopCode">20000171</PrivateCode>
-							</privateCodes>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">20000171</PrivateCode>
+                            </privateCodes>
                             <Name>Leeuwarden, Busstation</Name>
                             <Location>
                                 <gml:pos>182003 578942</gml:pos>
