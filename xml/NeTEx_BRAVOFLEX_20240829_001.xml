@@ -7,6 +7,10 @@
     <!-- Om het nog enigzins overzichtelijk te houden is alleen vervoer tussen de kernen Chaam, Galder en Ulvenhout uitgewerkt (als partitie-levering). -->
     <dataObjects>
         <CompositeFrame id="NL:PNB:CompositeFrame:BravoFlex" modification="new" version="1">
+            <ValidBetween>
+				<FromDate>2024-01-19T00:00:00Z</FromDate>
+				<ToDate>2024-12-31T00:00:00Z</ToDate>
+            </ValidBetween>
             <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_BASELINE"/>
             <FrameDefaults>
                 <!-- Aangenomen dat de Codespace PNB bestaat (deze zal moeten worden aangemaakt zodra PNB flex-dienstregelingen gaat leveren voor BravoFlex) -->
@@ -22,13 +26,6 @@
                 <DefaultSystemOfUnits>SiMetres</DefaultSystemOfUnits>
                 <DefaultCurrency>EUR</DefaultCurrency>
             </FrameDefaults>
-            <versions>
-                <Version id="NL:PNB:Version:1" modification="new" version="1">
-                    <StartDate>2024-01-19T00:00:00Z</StartDate>
-                    <EndDate>2024-12-31T00:00:00Z</EndDate>
-                    <VersionType>baseline</VersionType>
-                </Version>
-            </versions>
             <frames>
                 <ResourceFrame id="NL:PNB:ResourceFrame:BravoFlex" version="1">
                     <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_RESOURCE"/>
@@ -277,180 +274,222 @@
                         <!-- Ook de knooppunten in de kernen Chaam en Ulvenhout zijn als logische haltes opgenomen, voor gebruik in ritpatronen. -->
                         <!-- De haltes uit de door PNB aangeleverde halte-matrix bevat slechts één halte per StopPlace (een zijde van de weg) -->
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72240080" version="1">
+                            <privateCodes>
+								<PrivateCode type="UserStopCode">72240080</PrivateCode>
+							</privateCodes>
                             <Name>Chaam, Dorpsstraat</Name>
-                            <PrivateCode type="UserStopCode">72240080</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72041400" version="1">
-                            <Name>Ulvenhout, Molenstraat</Name>
-                            <PrivateCode type="UserStopCode">72041400</PrivateCode>
+                            <privateCodes>
+								<PrivateCode type="UserStopCode">72041400</PrivateCode>
+                            </privateCodes>
+							<Name>Ulvenhout, Molenstraat</Name>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         
                         <!-- Vanuit de kernen Chaam, Galder en Ulvenhout kan ook gereisd worden naar knooppunten in Breda, Baarle-Nassau en Effen. Ook deze zijn opgenomen als ScheduledStopPoint. -->
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72002000" version="1">
+                            <privateCodes>
+								<PrivateCode type="UserStopCode">72002000</PrivateCode>
+							</privateCodes>
                             <Name>Breda, Bijster</Name>
-                            <PrivateCode type="UserStopCode">72002000</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:73440690" version="1">
-                            <Name>Baarle-Nassau, St. Janstraat</Name>
-                            <PrivateCode type="UserStopCode">73440690</PrivateCode>
+                            <privateCodes>
+								<PrivateCode type="UserStopCode">73440690</PrivateCode>
+							</privateCodes>
+							<Name>Baarle-Nassau, St. Janstraat</Name>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72050800" version="1">
-                            <Name>Effen, Effen</Name>
-                            <PrivateCode type="UserStopCode">72050800</PrivateCode>
+                            <privateCodes>
+								<PrivateCode type="UserStopCode">72050800</PrivateCode>
+							</privateCodes>
+							<Name>Effen, Effen</Name>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
 
                         <!-- Tenslotte zijn ook alle overige haltes (die onderdeel zijn van de flexgebieden) opgenomen, maar voor ritpatronen worden deze niet gebruikt. Ze zijn enkel voor gebruik in PassengerStopAssignments. -->
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72240020" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">72240020</PrivateCode>
+							</privateCodes>
                             <Name>Chaam, Bredaseweg</Name>
                             <Location>
                                 <gml:pos>116557 392662</gml:pos>
                             </Location>
-                            <PrivateCode type="UserStopCode">72240020</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72240040" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">72240040</PrivateCode>
+							</privateCodes>
                             <Name>Chaam, Meerleseweg</Name>
                             <Location>
                                 <gml:pos>117554 391687</gml:pos>
                             </Location>
-                            <PrivateCode type="UserStopCode">72240040</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72240100" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">72240100</PrivateCode>
+							</privateCodes>
                             <Name>Chaam, Ulicotenseweg</Name>
                             <Location>
                                 <gml:pos>118643 390621</gml:pos>
                             </Location>
-                            <PrivateCode type="UserStopCode">72240100</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72240130" version="1">
-                            <Name>Chaam, Kleistraat</Name>
+                            <privateCodes>
+								<PrivateCode type="UserStopCode">72240130</PrivateCode>
+							</privateCodes>
+							<Name>Chaam, Kleistraat</Name>
                             <Location>
                                 <gml:pos>118446 390144</gml:pos>
                             </Location>
-                            <PrivateCode type="UserStopCode">72240130</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72240170" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">72240170</PrivateCode>
+							</privateCodes>
                             <Name>Chaam, Meysberg</Name>
                             <Location>
                                 <gml:pos>119058 390427</gml:pos>
                             </Location>
-                            <PrivateCode type="UserStopCode">72240170</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72240220" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">72240220</PrivateCode>
+							</privateCodes>
                             <Name>Chaam, Boterfabriekweg</Name>
                             <Location>
                                 <gml:pos>118252 391053</gml:pos>
                             </Location>
-                            <PrivateCode type="UserStopCode">72240220</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72340110" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">72340110</PrivateCode>
+							</privateCodes>
                             <Name>Chaam, Legstraat</Name>
                             <Location>
                                 <gml:pos>119445 389492</gml:pos>
                             </Location>
-                            <PrivateCode type="UserStopCode">72340110</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72540400" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">72540400</PrivateCode>
+							</privateCodes>
                             <Name>Chaam, Houtgoorstraat</Name>
                             <Location>
                                 <gml:pos>118550 389102</gml:pos>
                             </Location>
-                            <PrivateCode type="UserStopCode">72540400</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72120010" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">72120010</PrivateCode>
+							</privateCodes>
                             <Name>Galder, Smidshof</Name>
                             <Location>
                                 <gml:pos>112429 392111</gml:pos>
                             </Location>
-                            <PrivateCode type="UserStopCode">72120010</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72120050" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">72120050</PrivateCode>
+							</privateCodes>
                             <Name>Galder, Ballemanseweg</Name>
                             <Location>
                                 <gml:pos>112525 391642</gml:pos>
                             </Location>
-                            <PrivateCode type="UserStopCode">72120050</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72120070" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">72120070</PrivateCode>
+							</privateCodes>
                             <Name>Galder, Galderse Meren</Name>
                             <Location>
                                 <gml:pos>112157 392963</gml:pos>
                             </Location>
-                            <PrivateCode type="UserStopCode">72120070</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72120090" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">72120090</PrivateCode>
+							</privateCodes>
                             <Name>Galder, Markweg</Name>
                             <Location>
                                 <gml:pos>112757 390892</gml:pos>
                             </Location>
-                            <PrivateCode type="UserStopCode">72120090</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72041300" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">72041300</PrivateCode>
+							</privateCodes>
                             <Name>Ulvenhout, Dorpstraat</Name>
                             <Location>
                                 <gml:pos>114140 395744</gml:pos>
                             </Location>
-                            <PrivateCode type="UserStopCode">72041300</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72041500" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">72041500</PrivateCode>
+							</privateCodes>
                             <Name>Ulvenhout, Vlasaard</Name>
                             <Location>
                                 <gml:pos>113936 395006</gml:pos>
                             </Location>
-                            <PrivateCode type="UserStopCode">72041500</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72041900" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">72041900</PrivateCode>
+							</privateCodes>
                             <Name>Ulvenhout, Dorpsplein</Name>
                             <Location>
                                 <gml:pos>114040 396112</gml:pos>
                             </Location>
-                            <PrivateCode type="UserStopCode">72041900</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:PNB:ScheduledStopPoint:72140120" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">72140120</PrivateCode>
+							</privateCodes>
                             <Name>Ulvenhout, Geersbroekseweg</Name>
                             <Location>
                                 <gml:pos>115781 393965</gml:pos>
                             </Location>
-                            <PrivateCode type="UserStopCode">72140120</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>

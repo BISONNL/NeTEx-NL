@@ -5,6 +5,10 @@
     <Description>Voorbeeld-export voor Arriva Vlinder Leeuwarden Binnenstad</Description>
     <dataObjects>
         <CompositeFrame id="NL:ARR:CompositeFrame:Vlinder" modification="new" version="1">
+            <ValidBetween>
+				<FromDate>2024-09-02T00:00:00Z</FromDate>
+				<ToDate>2024-12-14T00:00:00Z</ToDate>
+			</ValidBetween>
             <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_BASELINE"/>
             <FrameDefaults>
                 <DefaultCodespaceRef ref="NL:BISON:Codespace:ARR"/>
@@ -18,13 +22,6 @@
                 <DefaultSystemOfUnits>SiMetres</DefaultSystemOfUnits>
                 <DefaultCurrency>EUR</DefaultCurrency>
             </FrameDefaults>
-            <versions>
-                <Version id="NL:ARR:Version:FY_20240815_20240902_0700" modification="new" version="FY_20240815_20240902_0700">
-                    <StartDate>2024-09-02T00:00:00Z</StartDate>
-                    <EndDate>2024-12-14T00:00:00Z</EndDate>
-                    <VersionType>baseline</VersionType>
-                </Version>
-            </versions>
             <frames>
                 <ResourceFrame id="NL:ARR:ResourceFrame:Vlinder" version="1">
                     <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_RESOURCE"/>
@@ -314,10 +311,12 @@
                     </routes>
                     <lines>
                         <Line id="NL:ARR:Line:51809" version="1" responsibilitySetRef="NL:ARR:ResponsibilitySet:FY" >
+							<privateCodes>
+								<PrivateCode type="LinePlanningNumber">51809</PrivateCode>
+							</privateCodes>
                             <Name>Vlinder Binnenstad</Name>
                             <TransportMode>bus</TransportMode>
                             <PublicCode>809</PublicCode>
-                            <PrivateCode type="LinePlanningNumber">51809</PrivateCode>
                             <ExternalLineRef type="VeTagLineNumber" ref="809"/>
                             <AuthorityRef ref="NL:DOVA:Authority:FR" version="any"/>
                             <OperatorRef ref="NL:ARR:Operator:ARR" version="1"/>
@@ -352,10 +351,12 @@
                     </lines>
                     <destinationDisplays>
                         <DestinationDisplay id="NL:ARR:DestinationDisplay:1699" version="1">
+                            <privateCodes>
+								<PrivateCode type="DestinationCode">1699</PrivateCode>
+							</privateCodes>
                             <Name>Vlinder</Name>
                             <SideText>Vlinder Binnenstad</SideText>
                             <FrontText>Vlinder Binnenstad</FrontText>
-                            <PrivateCode type="DestinationCode">1699</PrivateCode>
                             <vias>
                                 <Via>
                                     <Name>Binnenstad</Name>
@@ -415,6 +416,9 @@
                     </destinationDisplays>
                     <scheduledStopPoints>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20000010" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">20000010</PrivateCode>
+							</privateCodes>
                             <Name>Leeuwarden, Busstation</Name>
                             <Location>
                                 <gml:pos>182031 578945</gml:pos>
@@ -424,11 +428,13 @@
                                     <ProjectToPointRef nameOfRefClass="RoutePoint" ref="NL:ARR:RoutePoint:20000010" version="1"/>
                                 </PointProjection>
                             </projections>
-                            <PrivateCode type="UserStopCode">20000010</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20002740" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">20002740</PrivateCode>
+							</privateCodes>
                             <Name>Leeuwarden, Harmonie</Name>
                             <Location>
                                 <gml:pos>181883 579391</gml:pos>
@@ -438,11 +444,13 @@
                                     <ProjectToPointRef nameOfRefClass="RoutePoint" ref="NL:ARR:RoutePoint:20002740" version="1"/>
                                 </PointProjection>
                             </projections>
-                            <PrivateCode type="UserStopCode">20002740</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20003020" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">20003020</PrivateCode>
+							</privateCodes>
                             <Name>Leeuwarden, Ipe Brouwerssteeg</Name>
                             <Location>
                                 <gml:pos>182029 579476</gml:pos>
@@ -452,11 +460,13 @@
                                     <ProjectToPointRef nameOfRefClass="RoutePoint" ref="NL:ARR:RoutePoint:20003020" version="1"/>
                                 </PointProjection>
                             </projections>
-                            <PrivateCode type="UserStopCode">20003020</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20004670" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">20004670</PrivateCode>
+							</privateCodes>
                             <Name>Leeuwarden, Oude Doelesteeg</Name>
                             <Location>
                                 <gml:pos>182096 579444</gml:pos>
@@ -466,11 +476,13 @@
                                     <ProjectToPointRef nameOfRefClass="RoutePoint" ref="NL:ARR:RoutePoint:20004670" version="1"/>
                                 </PointProjection>
                             </projections>
-                            <PrivateCode type="UserStopCode">20004670</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20001570" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">20001570</PrivateCode>
+							</privateCodes>
                             <Name>Leeuwarden, De Waag</Name>
                             <Location>
                                 <gml:pos>182225 579398</gml:pos>
@@ -480,11 +492,13 @@
                                     <ProjectToPointRef nameOfRefClass="RoutePoint" ref="NL:ARR:RoutePoint:20001570" version="1"/>
                                 </PointProjection>
                             </projections>
-                            <PrivateCode type="UserStopCode">20001570</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20006670" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">20006670</PrivateCode>
+							</privateCodes>
                             <Name>Leeuwarden, Wirdumerdijk</Name>
                             <Location>
                                 <gml:pos>182363 579417</gml:pos>
@@ -494,11 +508,13 @@
                                     <ProjectToPointRef nameOfRefClass="RoutePoint" ref="NL:ARR:RoutePoint:20006670" version="1"/>
                                 </PointProjection>
                             </projections>
-                            <PrivateCode type="UserStopCode">20006670</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20002440" version="1">
+                            <privateCodes>
+								<PrivateCode type="UserStopCode">20002440</PrivateCode>
+							</privateCodes>
                             <Name>Leeuwarden, De Brol</Name>
                             <Location>
                                 <gml:pos>182473 579493</gml:pos>
@@ -508,12 +524,14 @@
                                     <ProjectToPointRef nameOfRefClass="RoutePoint" ref="NL:ARR:RoutePoint:20002440" version="1"/>
                                 </PointProjection>
                             </projections>
-                            <PrivateCode type="UserStopCode">20002440</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20002430" version="1">
-                            <Name>Leeuwarden, Korfmakersstraat</Name>
+                            <privateCodes>
+								<PrivateCode type="UserStopCode">20002430</PrivateCode>
+							</privateCodes>
+							<Name>Leeuwarden, Korfmakersstraat</Name>
                             <Location>
                                 <gml:pos>182529 579583</gml:pos>
                             </Location>
@@ -522,11 +540,13 @@
                                     <ProjectToPointRef nameOfRefClass="RoutePoint" ref="NL:ARR:RoutePoint:20002430" version="1"/>
                                 </PointProjection>
                             </projections>
-                            <PrivateCode type="UserStopCode">20002430</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20006680" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">20006680</PrivateCode>
+							</privateCodes>
                             <Name>Leeuwarden, Wortelhaven</Name>
                             <Location>
                                 <gml:pos>182585 579643</gml:pos>
@@ -536,11 +556,13 @@
                                     <ProjectToPointRef nameOfRefClass="RoutePoint" ref="NL:ARR:RoutePoint:20006680" version="1"/>
                                 </PointProjection>
                             </projections>
-                            <PrivateCode type="UserStopCode">20006680</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20006320" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">20006320</PrivateCode>							
+							</privateCodes>
                             <Name>Leeuwarden, Voorstreek</Name>
                             <Location>
                                 <gml:pos>182650 579791</gml:pos>
@@ -550,11 +572,13 @@
                                     <ProjectToPointRef nameOfRefClass="RoutePoint" ref="NL:ARR:RoutePoint:20006320" version="1"/>
                                 </PointProjection>
                             </projections>
-                            <PrivateCode type="UserStopCode">20006320</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:20000171" version="1">
+							<privateCodes>
+								<PrivateCode type="UserStopCode">20000171</PrivateCode>
+							</privateCodes>
                             <Name>Leeuwarden, Busstation</Name>
                             <Location>
                                 <gml:pos>182003 578942</gml:pos>
@@ -564,7 +588,6 @@
                                     <ProjectToPointRef nameOfRefClass="RoutePoint" ref="NL:ARR:RoutePoint:20000171" version="1"/>
                                 </PointProjection>
                             </projections>
-                            <PrivateCode type="UserStopCode">20000171</PrivateCode>
                             <ForAlighting>true</ForAlighting>
                             <ForBoarding>true</ForBoarding>
                         </ScheduledStopPoint>
@@ -802,7 +825,9 @@
                             <validityConditions>
                                 <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Vlinder" version="1"/>
                             </validityConditions>
-                            <PrivateCode type="JourneyNumber">1</PrivateCode>
+                            <privateCodes>
+                                <PrivateCode type="JourneyNumber">1</PrivateCode>
+                            </privateCodes>
                             <Monitored>false</Monitored>
                             <DepartureTime>08:30:00</DepartureTime>
                             <DepartureDayOffset>0</DepartureDayOffset>
@@ -815,7 +840,9 @@
                             <validityConditions>
                                 <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Vlinder" version="1"/>
                             </validityConditions>
-                            <PrivateCode type="JourneyNumber">3</PrivateCode>
+                            <privateCodes>
+                                <PrivateCode type="JourneyNumber">3</PrivateCode>
+                            </privateCodes>
                             <Monitored>false</Monitored>
                             <DepartureTime>09:30:00</DepartureTime>
                             <DepartureDayOffset>0</DepartureDayOffset>
@@ -828,7 +855,9 @@
                             <validityConditions>
                                 <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Vlinder" version="1"/>
                             </validityConditions>
-                            <PrivateCode type="JourneyNumber">5</PrivateCode>
+                            <privateCodes>
+                                <PrivateCode type="JourneyNumber">5</PrivateCode>
+                            </privateCodes>
                             <Monitored>false</Monitored>
                             <DepartureTime>10:30:00</DepartureTime>
                             <DepartureDayOffset>0</DepartureDayOffset>
@@ -841,7 +870,9 @@
                             <validityConditions>
                                 <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Vlinder" version="1"/>
                             </validityConditions>
-                            <PrivateCode type="JourneyNumber">7</PrivateCode>
+                            <privateCodes>
+                                <PrivateCode type="JourneyNumber">7</PrivateCode>
+                            </privateCodes>
                             <Monitored>false</Monitored>
                             <DepartureTime>11:30:00</DepartureTime>
                             <DepartureDayOffset>0</DepartureDayOffset>
@@ -854,7 +885,9 @@
                             <validityConditions>
                                 <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Vlinder" version="1"/>
                             </validityConditions>
-                            <PrivateCode type="JourneyNumber">9</PrivateCode>
+                            <privateCodes>
+                                <PrivateCode type="JourneyNumber">9</PrivateCode>
+                            </privateCodes>
                             <Monitored>false</Monitored>
                             <DepartureTime>12:30:00</DepartureTime>
                             <DepartureDayOffset>0</DepartureDayOffset>
@@ -867,7 +900,9 @@
                             <validityConditions>
                                 <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Vlinder" version="1"/>
                             </validityConditions>
-                            <PrivateCode type="JourneyNumber">11</PrivateCode>
+                            <privateCodes>
+                                <PrivateCode type="JourneyNumber">11</PrivateCode>
+                            </privateCodes>
                             <Monitored>false</Monitored>
                             <DepartureTime>13:30:00</DepartureTime>
                             <DepartureDayOffset>0</DepartureDayOffset>
@@ -880,7 +915,9 @@
                             <validityConditions>
                                 <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Vlinder" version="1"/>
                             </validityConditions>
-                            <PrivateCode type="JourneyNumber">13</PrivateCode>
+                            <privateCodes>
+                                <PrivateCode type="JourneyNumber">13</PrivateCode>
+                            </privateCodes>
                             <Monitored>false</Monitored>
                             <DepartureTime>13:30:00</DepartureTime>
                             <DepartureDayOffset>0</DepartureDayOffset>
@@ -893,7 +930,9 @@
                             <validityConditions>
                                 <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Vlinder" version="1"/>
                             </validityConditions>
-                            <PrivateCode type="JourneyNumber">15</PrivateCode>
+                            <privateCodes>
+                                <PrivateCode type="JourneyNumber">15</PrivateCode>
+                            </privateCodes>
                             <Monitored>false</Monitored>
                             <DepartureTime>14:30:00</DepartureTime>
                             <DepartureDayOffset>0</DepartureDayOffset>
@@ -906,7 +945,9 @@
                             <validityConditions>
                                 <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Vlinder" version="1"/>
                             </validityConditions>
-                            <PrivateCode type="JourneyNumber">17</PrivateCode>
+                            <privateCodes>
+                                <PrivateCode type="JourneyNumber">17</PrivateCode>
+                            </privateCodes>
                             <Monitored>false</Monitored>
                             <DepartureTime>14:30:00</DepartureTime>
                             <DepartureDayOffset>0</DepartureDayOffset>
@@ -919,7 +960,9 @@
                             <validityConditions>
                                 <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Vlinder" version="1"/>
                             </validityConditions>
-                            <PrivateCode type="JourneyNumber">19</PrivateCode>
+                            <privateCodes>
+                                <PrivateCode type="JourneyNumber">19</PrivateCode>
+                            </privateCodes>
                             <Monitored>false</Monitored>
                             <DepartureTime>15:30:00</DepartureTime>
                             <DepartureDayOffset>0</DepartureDayOffset>
@@ -932,7 +975,9 @@
                             <validityConditions>
                                 <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Vlinder" version="1"/>
                             </validityConditions>
-                            <PrivateCode type="JourneyNumber">21</PrivateCode>
+                            <privateCodes>
+                                <PrivateCode type="JourneyNumber">21</PrivateCode>
+                            </privateCodes>
                             <Monitored>false</Monitored>
                             <DepartureTime>15:30:00</DepartureTime>
                             <DepartureDayOffset>0</DepartureDayOffset>
@@ -945,7 +990,9 @@
                             <validityConditions>
                                 <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Vlinder" version="1"/>
                             </validityConditions>
-                            <PrivateCode type="JourneyNumber">23</PrivateCode>
+                            <privateCodes>
+                                <PrivateCode type="JourneyNumber">23</PrivateCode>
+                            </privateCodes>
                             <Monitored>false</Monitored>
                             <DepartureTime>16:30:00</DepartureTime>
                             <DepartureDayOffset>0</DepartureDayOffset>
@@ -958,7 +1005,9 @@
                             <validityConditions>
                                 <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Vlinder" version="1"/>
                             </validityConditions>
-                            <PrivateCode type="JourneyNumber">25</PrivateCode>
+                            <privateCodes>
+                                <PrivateCode type="JourneyNumber">25</PrivateCode>
+                            </privateCodes>
                             <Monitored>false</Monitored>
                             <DepartureTime>16:30:00</DepartureTime>
                             <DepartureDayOffset>0</DepartureDayOffset>
@@ -971,7 +1020,9 @@
                             <validityConditions>
                                 <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Vlinder" version="1"/>
                             </validityConditions>
-                            <PrivateCode type="JourneyNumber">27</PrivateCode>
+                            <privateCodes>
+                                <PrivateCode type="JourneyNumber">27</PrivateCode>
+                            </privateCodes>
                             <Monitored>false</Monitored>
                             <DepartureTime>17:30:00</DepartureTime>
                             <DepartureDayOffset>0</DepartureDayOffset>
@@ -984,7 +1035,9 @@
                             <validityConditions>
                                 <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Vlinder" version="1"/>
                             </validityConditions>
-                            <PrivateCode type="JourneyNumber">29</PrivateCode>
+                            <privateCodes>
+                                <PrivateCode type="JourneyNumber">29</PrivateCode>
+                            </privateCodes>
                             <Monitored>false</Monitored>
                             <DepartureTime>17:30:00</DepartureTime>
                             <DepartureDayOffset>0</DepartureDayOffset>
@@ -997,7 +1050,9 @@
                             <validityConditions>
                                 <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Vlinder" version="1"/>
                             </validityConditions>
-                            <PrivateCode type="JourneyNumber">31</PrivateCode>
+                            <privateCodes>
+                                <PrivateCode type="JourneyNumber">31</PrivateCode>
+                            </privateCodes>
                             <Monitored>false</Monitored>
                             <DepartureTime>18:30:00</DepartureTime>
                             <DepartureDayOffset>0</DepartureDayOffset>
@@ -1010,7 +1065,9 @@
                             <validityConditions>
                                 <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Vlinder" version="1"/>
                             </validityConditions>
-                            <PrivateCode type="JourneyNumber">33</PrivateCode>
+                            <privateCodes>
+                                <PrivateCode type="JourneyNumber">33</PrivateCode>
+                            </privateCodes>
                             <Monitored>false</Monitored>
                             <DepartureTime>18:30:00</DepartureTime>
                             <DepartureDayOffset>0</DepartureDayOffset>
@@ -1023,7 +1080,9 @@
                             <validityConditions>
                                 <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Vlinder" version="1"/>
                             </validityConditions>
-                            <PrivateCode type="JourneyNumber">35</PrivateCode>
+                            <privateCodes>
+                                <PrivateCode type="JourneyNumber">35</PrivateCode>
+                            </privateCodes>
                             <Monitored>true</Monitored>
                             <DepartureTime>19:30:00</DepartureTime>
                             <DepartureDayOffset>0</DepartureDayOffset>

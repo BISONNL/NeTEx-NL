@@ -5,6 +5,10 @@
     <Description>Voorbeeld-export voor flexRRReis Rijssen-Holten</Description>
     <dataObjects>
         <CompositeFrame id="NL:ARR:CompositeFrame:Rijssen-Holten" modification="new" version="1">
+            <ValidBetween>
+				<FromDate>2024-01-19T00:00:00Z</FromDate>
+				<ToDate>2024-12-31T00:00:00Z</ToDate>
+			</ValidBetween>
             <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_BASELINE"/>
             <FrameDefaults>
                 <DefaultCodespaceRef ref="NL:BISON:Codespace:ARR"/>
@@ -18,13 +22,6 @@
                 <DefaultSystemOfUnits>SiMetres</DefaultSystemOfUnits>
                 <DefaultCurrency>EUR</DefaultCurrency>
             </FrameDefaults>
-            <versions>
-                <Version id="NL:ARR:Version:1" modification="new" version="1">
-                    <StartDate>2024-01-19T00:00:00Z</StartDate>
-                    <EndDate>2024-12-31T00:00:00Z</EndDate>
-                    <VersionType>baseline</VersionType>
-                </Version>
-            </versions>
             <frames>
                 <ResourceFrame id="NL:ARR:ResourceFrame:Rijssen-Holten" version="1">
                     <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_RESOURCE"/>
