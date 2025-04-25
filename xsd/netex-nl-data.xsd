@@ -90,22 +90,6 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:complexType name="version">
-		<xsd:complexContent>
-			<xsd:extension base="DataManagedObjectStructure-with-version">
-				<xsd:annotation>
-					<xsd:documentation>Identificatie van de levering. Bij een Version is attribuut 'version' verplicht. De waarde is gelijk aan attribuut 'version' van het CompositeFrame.</xsd:documentation>
-				</xsd:annotation>
-				<xsd:sequence>
-					<xsd:element name="StartDate" type="xsd:dateTime"/>
-					<xsd:element name="EndDate" type="xsd:dateTime"/>
-					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
-					<xsd:element name="VersionType" type="VersionTypeEnumeration"/>
-					<xsd:element name="DerivedFromVersionRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-				</xsd:sequence>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
 	<xsd:complexType name="tariffZone">
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure-with-status">
