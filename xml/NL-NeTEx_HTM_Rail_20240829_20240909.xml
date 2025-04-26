@@ -14,9 +14,11 @@
                 <DefaultCodespaceRef ref="NL:BISON:Codespace:HTM"/>
                 <DefaultDataSourceRef ref="NL:HTM:DataSource:HTM" version="1"/>
                 <DefaultResponsibilitySetRef ref="NL:HTM:ResponsibilitySet:Rail" version="1"/>
-                <DefaultLocale>
+                <DefaultLocale>	
+                    <TimeZoneOffset>+1</TimeZoneOffset>
                     <TimeZone>Europe/Amsterdam</TimeZone>
-                    <DefaultLanguage>nl</DefaultLanguage>
+                    <SummerTimeZoneOffset>+2</SummerTimeZoneOffset>
+		    <DefaultLanguage>nl</DefaultLanguage>
                 </DefaultLocale>
                 <DefaultLocationSystem>EPSG:28992</DefaultLocationSystem>
                 <DefaultSystemOfUnits>SiMetres</DefaultSystemOfUnits>
