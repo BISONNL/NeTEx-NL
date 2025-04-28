@@ -288,7 +288,11 @@
 					<xsd:documentation>De keyList bevat de UserStopCode</xsd:documentation>
 				</xsd:annotation>
 				<xsd:sequence>
-					<xsd:element name="keyList" type="KeyListStructure"/>
+					<xsd:element name="privateCodes" type="privateCodes" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Hier altijd type="UserStopCode" gebruiken</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
 					<xsd:element name="Name" type="MultilingualString"/>
 					<xsd:element name="Location" type="LocationStructure"/>
 					<xsd:element name="projections" type="projections"/>
