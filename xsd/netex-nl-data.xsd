@@ -362,10 +362,8 @@
 				<xsd:sequence>
 					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="ScheduledStopPointRef" type="VersionOfObjectRefStructure"/>
-					<xsd:choice>
-						<xsd:element name="StopPlaceRef" type="VersionOfObjectRefStructure"/>
-						<xsd:element name="QuayRef" type="VersionOfObjectRefStructure"/>
-					</xsd:choice>
+					<xsd:element name="StopPlaceRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="QuayRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
