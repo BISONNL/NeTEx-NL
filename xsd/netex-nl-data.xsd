@@ -284,9 +284,6 @@
 	<xsd:complexType name="timingPoint">
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
-				<xsd:annotation>
-					<xsd:documentation>De keyList bevat de UserStopCode</xsd:documentation>
-				</xsd:annotation>
 				<xsd:sequence>
 					<xsd:element name="privateCodes" type="privateCodes" minOccurs="0">
 						<xsd:annotation>
