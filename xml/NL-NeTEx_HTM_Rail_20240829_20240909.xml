@@ -15,9 +15,9 @@
                 <DefaultDataSourceRef ref="NL:HTM:DataSource:HTM" version="1"/>
                 <DefaultResponsibilitySetRef ref="NL:HTM:ResponsibilitySet:Rail" version="1"/>
                 <DefaultLocale>	
-                    <TimeZoneOffset>+01:00</TimeZoneOffset>
+                    <TimeZoneOffset>+1</TimeZoneOffset>
                     <TimeZone>Europe/Amsterdam</TimeZone>
-                    <SummerTimeZoneOffset>+02:00</SummerTimeZoneOffset>
+                    <SummerTimeZoneOffset>+2</SummerTimeZoneOffset>
 		    <DefaultLanguage>nl</DefaultLanguage>
                 </DefaultLocale>
                 <DefaultLocationSystem>EPSG:28992</DefaultLocationSystem>
