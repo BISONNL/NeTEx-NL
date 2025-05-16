@@ -14,9 +14,11 @@
                 <DefaultCodespaceRef ref="NL:BISON:Codespace:HTM"/>
                 <DefaultDataSourceRef ref="NL:HTM:DataSource:HTM" version="1"/>
                 <DefaultResponsibilitySetRef ref="NL:HTM:ResponsibilitySet:Rail" version="1"/>
-                <DefaultLocale>
+                <DefaultLocale>	
+                    <TimeZoneOffset>+1</TimeZoneOffset>
                     <TimeZone>Europe/Amsterdam</TimeZone>
-                    <DefaultLanguage>nl</DefaultLanguage>
+                    <SummerTimeZoneOffset>+2</SummerTimeZoneOffset>
+		    <DefaultLanguage>nl</DefaultLanguage>
                 </DefaultLocale>
                 <DefaultLocationSystem>EPSG:28992</DefaultLocationSystem>
                 <DefaultSystemOfUnits>SiMetres</DefaultSystemOfUnits>
@@ -582,33 +584,30 @@
                         <PassengerStopAssignment id="NL:HTM:PassengerStopAssignement:R8137" order="1" version="1">
                             <Name>Lansingerland-Zoetermeer</Name>
                             <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:R8137" version="1"/>
-                            <QuayRef ref="NL:NL:Q:32008137" version="1"/>
+                            <QuayRef ref="NL:CHB:Quay:32008137" version="1"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:HTM:PassengerStopAssignement:R8136" order="1" version="1">
                             <Name>Van Tuyllpark</Name>
                             <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:R8136" version="1"/>
-                            <QuayRef ref="NL:NL:Q:32008136" version="1"/>
+                            <QuayRef ref="NL:CHB:Quay:32008136" version="1"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:HTM:PassengerStopAssignement:R8135" order="1" version="1">
                             <Name>Van Tuyllpark</Name>
                             <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:R8135" version="1"/>
-                            <QuayRef ref="NL:NL:Q:32008135" version="1"/>
+                            <QuayRef ref="NL:CHB:Quay:32008135" version="1"/>
                         </PassengerStopAssignment>
                         <!-- ... -->
                         <PassengerStopAssignment id="NL:HTM:PassengerStopAssignement:R1428" order="1" version="1">
                             <Name>De Savornin Lohmanplein</Name>
                             <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:R1428" version="1"/>
-                            <QuayRef ref="NL:NL:Q:32001428" version="1"/>
+                            <QuayRef ref="NL:CHB:Quay:32001428" version="1"/>
                         </PassengerStopAssignment>
                     </stopAssignments>
                     <timingPoints>
                         <TimingPoint id="NL:HTM:TimingPoint:DTW" version="1">
-                            <keyList>
-                                <KeyValue>
-                                    <Key>UserStopCode</Key>
-                                    <Value>30009</Value>
-                                </KeyValue>
-                            </keyList>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">30009</PrivateCode>
+                            </privateCodes>
                             <Name>Opstel De Twee Wilgen</Name>
                             <Location>
                                 <gml:pos>95896 451144</gml:pos>
@@ -620,12 +619,6 @@
                             </projections>
                         </TimingPoint>
                         <TimingPoint id="NL:HTM:TimingPoint:R1429" version="1">
-                            <keyList>
-                                <KeyValue>
-                                    <Key/>
-                                    <Value/>
-                                </KeyValue>
-                            </keyList>
                             <Name>De Savornin Lohmanplein (keerlus)</Name>
                             <Location>
                                 <gml:pos>76615 453832</gml:pos>
@@ -637,12 +630,9 @@
                             </projections>
                         </TimingPoint>
                         <TimingPoint id="NL:HTM:TimingPoint:RVZ" version="1">
-                            <keyList>
-                                <KeyValue>
-                                    <Key>UserStopCode</Key>
-                                    <Value>30005</Value>
-                                </KeyValue>
-                            </keyList>
+                            <privateCodes>
+                                <PrivateCode type="UserStopCode">30005</PrivateCode>
+                            </privateCodes>
                             <Name>Remise Zichtenburg</Name>
                             <Location>
                                 <gml:pos>76908 451081</gml:pos>
