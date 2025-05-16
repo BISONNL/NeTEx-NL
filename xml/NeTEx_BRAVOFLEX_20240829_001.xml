@@ -144,7 +144,7 @@
                             <TransportMode>bus</TransportMode>
                             <areas>
                                 <!-- De FlexibleArea definieert de haltes van de kern Chaam behorende bij dit flexgebied. -->
-                                <!-- Omdat reizen binnen de kern niet is toegestaan, maar reizen naar het knooppunt in de kern wel, is het knooppunt (Dorpsstraat; NL:CHB:Quay:72240080) niet opgenomen in het flexgebied. -->
+                                <!-- Omdat reizen binnen de kern niet is toegestaan, maar reizen naar het knooppunt in de kern wel, is het knooppunt (Dorpsstraat; NL:CHB:StopPlace:72240080) niet opgenomen in het flexgebied. -->
                                 <!-- De ritpatronen zorgen voor de juiste verbindingen. -->
                                 <FlexibleArea id="NL:PNB:FlexibleArea:Chaam" version="1">
                                     <ShortName>UFH</ShortName>
@@ -190,7 +190,7 @@
                             <TransportMode>bus</TransportMode>
                             <areas>
                                 <!-- De FlexibleArea definieert de haltes van de kern Ulvenhout behorende bij dit flexgebied. -->
-                                <!-- Omdat reizen binnen de kern niet is toegestaan, maar reizen naar het knooppunt in de kern wel, is het knooppunt (Molenstraat; NL:CHB:Quay:72041400) niet opgenomen in het flexgebied. -->
+                                <!-- Omdat reizen binnen de kern niet is toegestaan, maar reizen naar het knooppunt in de kern wel, is het knooppunt (Molenstraat; NL:CHB:StopPlace:72041400) niet opgenomen in het flexgebied. -->
                                 <!-- De ritpatronen zorgen voor de juiste verbindingen. -->
                                 <FlexibleArea id="NL:PNB:FlexibleArea:Ulvenhout" version="1">
                                     <ShortName>ULV</ShortName>
@@ -231,7 +231,7 @@
                                 <MobilityImpairedAccess>true</MobilityImpairedAccess>
                             </AccessibilityAssessment>
                             <bookingArrangements>
-                                <BookingArrangement id="NL:ARR:BookingArrangement:Vlinder" version="1">
+                                <BookingArrangement id="NL:ARR:BookingArrangement:BravoFlex" version="1">
                                     <BookingContact>
                                         <Phone>088 600 09 87</Phone>
                                         <Url>https://www.bravo.info/reizen/diensten/bravoflex</Url>
@@ -512,90 +512,91 @@
 
                         <!-- PassengerStopAssignment worden, net als in reguliere dienstregelingen, gebruikt voor de koppeling van de logische haltes aan de aan de bijbehorende quays uit het CHB. -->
                         <!-- Aandachtspunten, bij flexvervoer is vaak niet van te voren bekend aan welke kant van de straat het voertuig zal stoppen, daarom wordt geadviseerd een ScheduledStopPoint alleen aan een StopPlace te koppelen-->
-                        <!-- tenzij bij een overstappunt een specifieke quay is gereserveeerd voor flex-vervoer, in dat geval wordt naast de relatie met de StopPlace ook de QuayRef opgenomen  -->
+                        <!-- tenzij bij een overstappunt een specifieke quay is gereserveeerd voor flex-vervoer, in dat geval wordt naast de relatie met de StopPlace ook de StopPlaceRef opgenomen  -->
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:73440690" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:73440690" version="1"/>
-                            <QuayRef ref="NL:CHB:Quay:73440690" version="any"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:73440690" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72002000" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72002000" version="1"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:72002000" version="any"/>
                             <QuayRef ref="NL:CHB:Quay:72002000" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72240020" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240020" version="1"/>
-                            <QuayRef ref="NL:CHB:Quay:72240020" version="any"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:72240020" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72240040" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240040" version="1"/>
-                            <QuayRef ref="NL:CHB:Quay:72240040" version="any"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:72240040" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72240080" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240080" version="1"/>
-                            <QuayRef ref="NL:CHB:Quay:72240080" version="any"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:72240080" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72240100" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240100" version="1"/>
-                            <QuayRef ref="NL:CHB:Quay:72240100" version="any"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:72240100" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72240130" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240130" version="1"/>
-                            <QuayRef ref="NL:CHB:Quay:72240130" version="any"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:72240130" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72240170" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240170" version="1"/>
-                            <QuayRef ref="NL:CHB:Quay:72240170" version="any"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:72240170" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72240220" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72240220" version="1"/>
-                            <QuayRef ref="NL:CHB:Quay:72240220" version="any"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:72240220" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72340110" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72340110" version="1"/>
-                            <QuayRef ref="NL:CHB:Quay:72340110" version="any"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:72340110" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72540400" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72540400" version="1"/>
-                            <QuayRef ref="NL:CHB:Quay:72540400" version="any"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:72540400" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72050800" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72050800" version="1"/>
-                            <QuayRef ref="NL:CHB:Quay:72050800" version="any"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:72050800" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72120010" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72120010" version="1"/>
-                            <QuayRef ref="NL:CHB:Quay:72120010" version="any"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:72120010" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72120050" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72120050" version="1"/>
-                            <QuayRef ref="NL:CHB:Quay:72120050" version="any"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:72120050" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72120070" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72120070" version="1"/>
-                            <QuayRef ref="NL:CHB:Quay:72120070" version="any"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:72120070" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72120090" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72120090" version="1"/>
-                            <QuayRef ref="NL:CHB:Quay:72120090" version="any"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:72120090" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72041300" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72041300" version="1"/>
-                            <QuayRef ref="NL:CHB:Quay:72041300" version="any"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:72041300" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72041400" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72041400" version="1"/>
-                            <QuayRef ref="NL:CHB:Quay:72041400" version="any"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:72041400" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72041500" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72041500" version="1"/>
-                            <QuayRef ref="NL:CHB:Quay:72041500" version="any"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:72041500" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72041900" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72041900" version="1"/>
-                            <QuayRef ref="NL:CHB:Quay:72041900" version="any"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:72041900" version="any"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment id="NL:PNB:PassengerStopAssignment:72140120" version="1" order="1">
                             <ScheduledStopPointRef ref="NL:PNB:ScheduledStopPoint:72140120" version="1"/>
-                            <QuayRef ref="NL:CHB:Quay:72140120" version="any"/>
+                            <StopPlaceRef ref="NL:CHB:StopPlace:72140120" version="any"/>
                         </PassengerStopAssignment>
                     </stopAssignments>
 
