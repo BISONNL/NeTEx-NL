@@ -333,7 +333,7 @@ Attribuut 'modification' geeft aan of de versie voor het eerst wordt aangeleverd
 	</xsd:complexType>
 	<xsd:complexType name="extensionFlexibleLineParameters">
 		<xsd:sequence>
-			<xsd:element name="MaximumTravelDistance" type="xsd:duration"/>
+			<xsd:element name="MaximumTravelDistance" type="DistanceType"/>
 			<!--
 			<xsd:element name="MaximumDetourFactor" type="xsd:duration"/>
 			<xsd:element name="MaximumTravelTimeOffset" type="xsd:duration"/>
