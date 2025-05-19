@@ -331,16 +331,17 @@ Attribuut 'modification' geeft aan of de versie voor het eerst wordt aangeleverd
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
-	<!--
-	<xsd:complexType name="extensionFlexParameters">
+	<xsd:complexType name="extensionFlexibleLineParameters">
 		<xsd:sequence>
-			<xsd:element name="MaxDetourFactor" type="xsd:duration"/>
-			<xsd:element name="MaxTraveltimeOffset" type="xsd:duration"/>
-			<xsd:element name="AvgDetourFactor" type="xsd:duration"/>
-			<xsd:element name="AvgTraveltimeOffset" type="xsd:duration"/>
+			<xsd:element name="MaximumTravelDistance" type="xsd:duration"/>
+			<!--
+			<xsd:element name="MaximumDetourFactor" type="xsd:duration"/>
+			<xsd:element name="MaximumTravelTimeOffset" type="xsd:duration"/>
+			<xsd:element name="AverageDetourFactor" type="xsd:duration"/>
+			<xsd:element name="AverageTravelTimeOffset" type="xsd:duration"/>
+			-->
 		</xsd:sequence>
 	</xsd:complexType>
--->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- ELEMENTEN (ONDERSTEUNEND)                                                       -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
