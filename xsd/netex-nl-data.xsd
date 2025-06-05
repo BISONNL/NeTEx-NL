@@ -645,7 +645,7 @@
 					<xsd:documentation>Verplicht voor Line, optioneel voor FlexibleLine. Hier altijd type="LinePlanningNumber" gebruiken.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
-			<xsd:element name="Extensions" type="extensionFlexibleLineParameters"/>
+			<xsd:element name="Extensions" type="extensionFlexibleLineParameters" minOccurs="0"/>
 			<xsd:element name="BrandingRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 			<xsd:element name="Name" type="MultilingualString"/>
 			<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>
