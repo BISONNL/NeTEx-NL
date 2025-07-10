@@ -13,7 +13,7 @@
                     <FromDate>2024-01-19T00:00:00Z</FromDate>
                     <ToDate>2024-12-31T00:00:00Z</ToDate>
             </ValidBetween>
-            <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_BASELINE"/>
+            <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TT_BASELINE"/>
             <FrameDefaults>
                 <DefaultCodespaceRef ref="NL:BISON:Codespace:QBUZZ"/>
                 <DefaultDataSourceRef ref="NL:QBUZZ:DataSource:QBUZZ" version="1"/>
@@ -28,7 +28,7 @@
             </FrameDefaults>
             <frames>
                 <ResourceFrame id="NL:QBUZZ:ResourceFrame:U-flex-Houten" version="1">
-                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_RESOURCE"/>
+                    <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TT_RESOURCE"/>
                     <dataSources>
                         <DataSource id="NL:QBUZZ:DataSource:QBUZZ" version="1">
                             <Name>QBuzz</Name>
@@ -131,7 +131,7 @@
                 </ResourceFrame>
                 <!-- Neem een SiteFrame op om het flexgebied te beschrijven -->
                 <SiteFrame id="NL:QBUZZ:SiteFrame:U-flex-Houten" version="1">
-                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_SITE"/>
+                    <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TT_SITE"/>
                     <flexibleStopPlaces>
                         <!-- FlexibleStopPlace beschrijft het fysieke flexgebied. Dit kan met een polygoon en/of met een set van RoutePoints (die de fysieke locatie van een opstappunt definieren). Gebruik hier wat relevant is voor het type flexvervoer. -->
                         <FlexibleStopPlace id="NL:QBUZZ:FlexibleStopPlace:ROOD" version="1">
@@ -217,7 +217,7 @@
                     </flexibleStopPlaces>
                 </SiteFrame>
                 <ServiceFrame id="NL:QBUZZ:ServiceFrame:U-flex-Houten" version="1">
-                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_SERVICE"/>
+                    <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TT_SERVICE"/>
                     <!-- routePoints: voor flexritten zijn routePoints alleen relevant als er volgens een vaste route gereden wordt. -->
                     <!-- routeLinks: voor flexritten zijn routeLinks alleen relevant als er volgens een vaste route gereden wordt. -->
                     <!-- routes: voor flexritten zijn routes alleen relevant als er volgens een vaste route gereden wordt. -->
@@ -854,7 +854,7 @@
                     </journeyPatterns>
                 </ServiceFrame>
                 <TimetableFrame id="NL:QBUZZ:TimetableFrame:U-flex-Houten" version="1">
-                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE"/>
+                    <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE"/>
                     <contentValidityConditions>
                         <AvailabilityCondition id="NL:QBUZZ:AvailabilityCondition:U-flex" version="1">
                             <FromDate>2024-01-19T00:00:00Z</FromDate>

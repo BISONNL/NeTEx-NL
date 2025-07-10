@@ -7,7 +7,7 @@
     <Description>EBS voertuigen export</Description>
     <dataObjects>
         <CompositeFrame id="EBS:CompositeFrame:VehicleExport" version="20240308">
-            <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_VEHICLES" version="9.3.0"/>
+            <TypeOfFrameRef ref="BISON:TypeOfFrame:NL_VEHICLES" version="9.4.0"/>
             <FrameDefaults>
                 <DefaultCodespaceRef ref="BISON:Codespace:EBS"/>
                 <DefaultDataSourceRef version="20240308" ref="EBS:DataSource:EBS"/>
@@ -16,7 +16,7 @@
             <frames>
                 <ResourceFrame id="EBS:ResourceFrame:1" version="20240308">
                     <!-- Dit is een voertuigenexport, dus TypeOfFrameRef is NL_VEH_RESOURCE. -->
-                    <TypeOfFrameRef version="9.3.0" ref="BISON:TypeOfFrame:NL_VEH_RESOURCE"/>
+                    <TypeOfFrameRef version="9.4.0" ref="BISON:TypeOfFrame:NL_VEH_RESOURCE"/>
                     <!-- EBS is de gegevensbron -->
                     <dataSources>
                         <DataSource id="EBS:DataSource:EBS" modification="new" version="20240308">

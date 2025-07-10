@@ -9,7 +9,7 @@
                 <FromDate>2024-09-02T00:00:00Z</FromDate>
                 <ToDate>2024-12-14T00:00:00Z</ToDate>
             </ValidBetween>
-            <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_BASELINE"/>
+            <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TT_BASELINE"/>
             <FrameDefaults>
                 <DefaultCodespaceRef ref="NL:BISON:Codespace:ARR"/>
                 <DefaultDataSourceRef ref="NL:ARR:DataSource:ARR" version="1"/>
@@ -24,7 +24,7 @@
             </FrameDefaults>
             <frames>
                 <ResourceFrame id="NL:ARR:ResourceFrame:Vlinder" version="1">
-                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_RESOURCE"/>
+                    <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TT_RESOURCE"/>
                     <dataSources>
                         <DataSource id="NL:ARR:DataSource:ARR" version="1">
                             <Name>Arriva</Name>
@@ -108,7 +108,7 @@
                     </zones>
                 </ResourceFrame>
                 <ServiceFrame id="NL:ARR:ServiceFrame:Vlinder" version="1">
-                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_SERVICE"/>
+                    <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TT_SERVICE"/>
                     <routePoints>
                         <RoutePoint id="NL:ARR:RoutePoint:20000010" version="1">
                             <Location>
@@ -811,7 +811,7 @@
                     </timeDemandTypes>
                 </ServiceFrame>
                 <TimetableFrame id="NL:ARR:TimetableFrame:Vlinder" version="1">
-                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE"/>
+                    <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE"/>
                     <contentValidityConditions>
                         <AvailabilityCondition id="NL:ARR:AvailabilityCondition:Vlinder" version="1">
                             <FromDate>2024-09-02T00:00:00Z</FromDate>
@@ -1100,13 +1100,13 @@
         
         <CompositeFrame id="NL:ARR:CompositeFrame:PredefinedAuthorities" version="any">
             <Description>Kopie uit de centrale DOVA-lijst van relevante concessieverleners</Description>
-            <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_DOVA_LISTS"/>
+            <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_DOVA_LISTS"/>
             <FrameDefaults>
                 <DefaultCodespaceRef ref="NL:BISON:Codespace:DOVA"/>
             </FrameDefaults>
             <frames>
                 <GeneralFrame id="NL:ARR:GeneralFrame:ConcessieVerleners" version="any">
-                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_AuthorityList"/>
+                    <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_AuthorityList"/>
                     <members>
                         <Authority id="NL:DOVA:Authority:FR" version="any">
                             <Name>Friesland</Name>
@@ -1119,13 +1119,13 @@
         </CompositeFrame>
         <CompositeFrame id="NL:ARR:CompositeFrame:PredefinedNetworks" version="any">
             <Description>Kopie uit de centrale DOVA-lijst van relevante concessies</Description>
-            <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_DOVA_LISTS"/>
+            <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_DOVA_LISTS"/>
             <FrameDefaults>
                 <DefaultCodespaceRef ref="NL:BISON:Codespace:DOVA"/>
             </FrameDefaults>
             <frames>
                 <GeneralFrame id="NL:ARR:GeneralFrame:Concessies" version="any">
-                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_NetworkList"/>
+                    <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_NetworkList"/>
                     <members>
                        <Network id="NL:DOVA:Network:FY" version="any">
                             <Name>Fryslân</Name>
@@ -1145,14 +1145,14 @@
         </CompositeFrame>
         <CompositeFrame id="NL:ARR:CompositeFrame:PredefinedEnumerations" version="any">
             <Description>Kopie van relevante waardes uit de centrale BISON-enumeraties</Description>
-            <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_BISON_ENUMS"/>
+            <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_BISON_ENUMS"/>
             <FrameDefaults>
                 <DefaultCodespaceRef ref="NL:BISON:Codespace:BISON"/>
             </FrameDefaults>
             <frames>
                 <GeneralFrame id="NL:ARR:GeneralFrame:Predefined_TypeOfService" version="any">
                     <Description>Standaardenumeratie met voorgedefinieerde formules (lijnkenmerken).</Description>
-                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues"/>
+                    <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues"/>
                     <members>
                         <ValueSet id="NL:ARR:ValueSet:TypeOfService" version="any">
                             <values>
@@ -1166,7 +1166,7 @@
                 </GeneralFrame>
                 <GeneralFrame id="NL:ARR:GeneralFrame:Predefined_Technical" version="any">
                     <Description>Diverse technische standaardenumeraties t.b.v. het NL NeTEx Profiel.</Description>
-                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations"/>
+                    <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations"/>
                     <members>
                         <ValueSet id="NL:ARR:ValueSet:TypeOfResponsibilityRole" version="any">
                             <values>
@@ -1178,63 +1178,63 @@
                         </ValueSet>
                         <ValueSet id="NL:ARR:ValueSet:TypeOfFrame_930" version="any">
                             <values>
-                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_BASELINE" version="9.3.0">
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_BASELINE" version="9.4.0">
                                     <Name>Baseline composite frame</Name>
                                     <Description>Composite frame met een 'baseline' (NL dienstregeling Profiel)</Description>
                                 </TypeOfFrame>
-                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_RESOURCE" version="9.3.0">
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_RESOURCE" version="9.4.0">
                                     <Name>Resource frame</Name>
                                     <Description>Resource frame (NL dienstregeling Profiel)</Description>
                                 </TypeOfFrame>
-                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SERVICE" version="9.3.0">
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SERVICE" version="9.4.0">
                                     <Name>Service frame</Name>
                                     <Description>Service frame (NL dienstregeling Profiel)</Description>
                                 </TypeOfFrame>
-                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE" version="9.3.0">
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE" version="9.4.0">
                                     <Name>Timetable frame</Name>
                                     <Description>Timetable frame (NL dienstregeling Profiel)</Description>
                                 </TypeOfFrame>
-                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_CALENDAR" version="9.3.0">
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_CALENDAR" version="9.4.0">
                                     <Name>ServiceCalendar frame</Name>
                                     <Description>ServiceCalendar frame (NL dienstregeling Profiel)</Description>
                                 </TypeOfFrame>
-                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SITE" version="9.3.0">
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SITE" version="9.4.0">
                                     <Name>Site frame</Name>
                                     <Description>Site frame (NL dienstregeling Profiel)</Description>
                                 </TypeOfFrame>
-                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_VEHICLE" version="9.3.0">
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_VEHICLE" version="9.4.0">
                                     <Name>VehicleSchedule frame</Name>
                                     <Description>VehicleSchedule frame (NL dienstregeling Profiel)</Description>
                                 </TypeOfFrame>
-                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_CODESPACES" version="9.3.0">
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_CODESPACES" version="9.4.0">
                                     <Name>Codespace composite frame</Name>
                                     <Description>Composite frame met de domeinen (NL centraal Profiel)</Description>
                                 </TypeOfFrame>
-                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_BISON_ENUMS" version="9.3.0">
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_BISON_ENUMS" version="9.4.0">
                                     <Name>BISON composite frame</Name>
                                     <Description>Composite frame met de BISON standaardenumeraties (NL centraal Profiel)</Description>
                                 </TypeOfFrame>
-                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues" version="9.3.0">
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues" version="9.4.0">
                                     <Name>TypeOfService frame</Name>
                                     <Description>Frame met de TypeOfService standaardenumeratie (NL centraal Profiel)</Description>
                                 </TypeOfFrame>
-                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.3.0">
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0">
                                     <Name>TechnicalValues frame</Name>
                                     <Description>Frame met de technische standaardenumeraties (NL centraal Profiel)</Description>
                                 </TypeOfFrame>
-                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_DOVA_LISTS" version="9.3.0">
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_DOVA_LISTS" version="9.4.0">
                                     <Name>DOVA composite frame</Name>
                                     <Description>Composite frame met de DOVA lijsten (NL centraal Profiel)</Description>
                                 </TypeOfFrame>
-                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TariffZoneList" version="9.3.0">
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TariffZoneList" version="9.4.0">
                                     <Name>TariffZones frame</Name>
                                     <Description>Frame met de DOVA lijst van OV-zones (NL centraal Profiel)</Description>
                                 </TypeOfFrame>
-                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_AuthorityList" version="9.3.0">
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_AuthorityList" version="9.4.0">
                                     <Name>Authorities frame</Name>
                                     <Description>Frame met de DOVA lijst van concessieverleners (NL centraal Profiel)</Description>
                                 </TypeOfFrame>
-                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_NetworkList" version="9.3.0">
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_NetworkList" version="9.4.0">
                                     <Name>Networks frame</Name>
                                     <Description>Frame met de DOVA lijst van concessies (NL centraal Profiel)</Description>
                                 </TypeOfFrame>
@@ -1246,7 +1246,7 @@
         </CompositeFrame>
         <CompositeFrame id="NL:ARR:CompositeFrame:PredefinedCodespaces" version="any">
             <Description>Kopie van relevante Codespaces uit de centrale BISON-lijsten</Description>
-            <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_CODESPACES"/>
+            <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_CODESPACES"/>
             <codespaces>
                 <Codespace id="NL:BISON:Codespace:BISON">
                     <Xmlns>BISON</Xmlns>
