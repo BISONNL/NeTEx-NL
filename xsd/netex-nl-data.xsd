@@ -570,7 +570,7 @@
 				<xsd:sequence>
 					<xsd:element name="StartTime" type="xsd:time"/>
 					<xsd:element name="EndTime" type="xsd:time"/>
-					<xsd:element name="DayOffset" type="xsd:time" minOccurs="0"/>
+					<xsd:element name="DayOffset" type="xsd:integer" minOccurs="0"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
