@@ -17,9 +17,12 @@
     </pattern>
 
     <!-- Afwezigheid van tijdzones in dateTime elementen -->
-    <pattern id="NoTimezones">
-        <rule context="(ntx:PublicationTimestamp|ntx:FromDate|ntx:ToDate)">
-            <assert test=".[matches(text(), '^20[2-9]\d\-(0[0-9]|1[012])\-([0-2][0-9]|3[01])T00:00:00(\.0+)?$')]">Elementen van het type xs:dateTime mogen geen tijdzone specificeren</assert>
+    <pattern id="NoTimeAndTimezones">
+        <rule context="(ntx:PublicationTimestamp)">
+            <assert test=".[matches(text(), '^20[2-9]\d\-(0[0-9]|1[012])\-([0-2][0-9]|3[01])T[012][0-9]:[0-5][0-9]:[0-5][0-9](\.\d+)?$')]">PublicationTimestamp mag geen tijdzone specificeren</assert>
+        </rule>
+        <rule context="(ntx:FromDate|ntx:ToDate)">
+            <assert test=".[matches(text(), '^20[2-9]\d\-(0[0-9]|1[012])\-([0-2][0-9]|3[01])T00:00:00(\.0+)?$')]">Om verwarring te voorkomen, moet in elementen van het type xs:dateTime (binnen ValidBetween en AvailabilityCondition) de tijd op 00:00:00 worden gesteld, en mag geen tijdzone worden opgegeven. Dit omdat hier enkel een operationele dag wordt aangeven.</assert>
         </rule>
     </pattern>
 
