@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PublicationDelivery version="ntx:1.1" xmlns="http://www.netex.org.uk/netex" xmlns:ns2="http://www.opengis.net/gml/3.2">
+    <PublicationTimestamp>2025-05-19T10:36:16.464</PublicationTimestamp>
+    <ParticipantRef>NL:DOVA</ParticipantRef>
+    <dataObjects>
+        <CompositeFrame id="NL:DOVA:CompositeFrame:ConcessieVerleners" modification="new" version="2">
+            <Description>Export van de door BISON voorgedefinieerde gegevens t.b.v. het NL NeTEx Profiel.</Description>
+            <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_DOVA_LISTS"/>
+            <codespaces>
+                <Codespace id="NL:BISON:Codespace:DOVA">
+                    <Xmlns>DOVA</Xmlns>
+                    <XmlnsUrl>http://bison.dova.nu/ns/DOVA</XmlnsUrl>
+                    <Description>DOVA</Description>
+                </Codespace>
+            </codespaces>
+            <FrameDefaults>
+                <DefaultCodespaceRef ref="NL:BISON:Codespace:DOVA"/>
+            </FrameDefaults>
+            <frames>
+                <GeneralFrame id="NL:DOVA:GeneralFrame:ConcessieVerleners" version="2">
+                    <Description>De door DOVA 'centraal' bijgehouden lijst met concessieverleners. Desgewenst kan men de relevante lijstelementen ongewijzigd(!) overnemen in een gegevenslevering conform het NL dienstregeling Profiel.</Description>
+                    <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_AuthorityList"/>
+                    <members>
+                        <Authority id="NL:DOVA:Authority:PNB" version="any">
+                            <Name>provincie Noord-Brabant</Name>
+                            <ShortName>PNB</ShortName>
+                            <Description>provincie Noord-Brabant</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:MRDH" version="any">
+                            <Name>metropoolregio Rotterdam Den Haag</Name>
+                            <ShortName>MRDH</ShortName>
+                            <Description>metropoolregio Rotterdam Den Haag</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:VRA" version="any">
+                            <Name>vervoerregio Amsterdam</Name>
+                            <ShortName>VRA</ShortName>
+                            <Description>vervoerregio Amsterdam</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:PUT" version="any">
+                            <Name>provincie Utrecht</Name>
+                            <ShortName>PUT</ShortName>
+                            <Description>provincie Utrecht</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:PNH" version="any">
+                            <Name>provincie Noord-Holland</Name>
+                            <ShortName>PNH</ShortName>
+                            <Description>provincie Noord-Holland</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:ZLD" version="any">
+                            <Name>provincie Zeeland</Name>
+                            <ShortName>ZLD</ShortName>
+                            <Description>provincie Zeeland</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:GLD" version="any">
+                            <Name>provincie Gelderland</Name>
+                            <ShortName>GLD</ShortName>
+                            <Description>provincie Gelderland</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:LMB" version="any">
+                            <Name>provincie Limburg</Name>
+                            <ShortName>LMB</ShortName>
+                            <Description>provincie Limburg</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:PZH" version="any">
+                            <Name>provincie Zuid-Holland</Name>
+                            <ShortName>PZH</ShortName>
+                            <Description>provincie Zuid-Holland</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:ALM" version="any">
+                            <Name>gemeente Almere</Name>
+                            <ShortName>ALM</ShortName>
+                            <Description>gemeente Almere</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:SH" version="any">
+                            <Name>Schiphol</Name>
+                            <ShortName>SH</ShortName>
+                            <Description>Schiphol</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:LLS" version="any">
+                            <Name>gemeente Lelystad</Name>
+                            <ShortName>LLS</ShortName>
+                            <Description>gemeente Lelystad</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:DE" version="any">
+                            <Name>Duitsland</Name>
+                            <ShortName>DE</ShortName>
+                            <Description>Duitsland</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:OVGD" version="any">
+                            <Name>OV Bureau Groningen-Drenthe</Name>
+                            <ShortName>OVGD</ShortName>
+                            <Description>OV Bureau Groningen-Drenthe</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:BE" version="any">
+                            <Name>Belgie</Name>
+                            <ShortName>BE</ShortName>
+                            <Description>Belgie</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:FLV" version="any">
+                            <Name>provincie Flevoland</Name>
+                            <ShortName>FLV</ShortName>
+                            <Description>provincie Flevoland</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:OVS" version="any">
+                            <Name>provincie Overijssel</Name>
+                            <ShortName>OVS</ShortName>
+                            <Description>provincie Overijssel</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:OVOOST" version="any">
+                            <Name>OV-Oost</Name>
+                            <ShortName>OVOOST</ShortName>
+                            <Description>OV-Oost</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:OVSFLV" version="any">
+                            <Name>provincies Overijssel en Flevoland</Name>
+                            <ShortName>OVSFLV</ShortName>
+                            <Description>provincies Overijssel en Flevoland</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:NL" version="any">
+                            <Name>Nederland</Name>
+                            <ShortName>NL</ShortName>
+                            <Description>Nederland</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:NC" version="any">
+                            <Name>Niet Concessiegebonden</Name>
+                            <ShortName>NC</ShortName>
+                            <Description>Niet Concessiegebonden</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:OVSDR" version="any">
+                            <Name>provincies Overijssel en Drenthe</Name>
+                            <ShortName>OVSDR</ShortName>
+                            <Description>provincies Overijssel en Drenthe</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:GRFRNS" version="any">
+                            <Name>provincies Groningen, Fryslân en LNVG Niedersachsen</Name>
+                            <ShortName>GRFRNS</ShortName>
+                            <Description>provincies Groningen, Fryslân en LNVG Niedersachsen</Description>
+                        </Authority>
+                        <Authority id="NL:DOVA:Authority:FR" version="any">
+                            <Name>provincie Fryslân</Name>
+                            <ShortName>FR</ShortName>
+                            <Description>provincie Fryslân</Description>
+                        </Authority>
+                    </members>
+                </GeneralFrame>
+            </frames>
+        </CompositeFrame>
+    </dataObjects>
+</PublicationDelivery>
