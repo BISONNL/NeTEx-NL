@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Copyright:                                                                        -->
+<!--     Dit document is eigendom van Platform BISON onder Samenwerkingsverband DOVA   -->
+<!--     en wordt gepubliceerd onder de Creative Commons Licentie by-nd/3.0/nl,        -->
+<!--     zie http://creativecommons.org/licences/by-nd/3.0/nl                          -->
+<!--                                                                                   -->
+<!-- Historie:                                                                         -->
+<!--   v20201218  (dec.2020)  initiële (concept)versie                                 -->
+<!--   v20210128  (jan.2021)  eerste volledige versie                                  -->
+<!--   v20210325  (mrt.2021)  aangepast voor NL NeTEx Profiel v9.2.1                   -->
+<!--   v20210701  (jul.2021)  aangepast voor NL NeTEx Profiel v9.2.2 en v9.2.3         -->
+<!--   v20211123  (nov.2021)  correctie id van TypeOfOrganisation 'Other'              -->
+<!--   v20221202  (dec.2022)  versienummer NL NeTEx Profiel naar v9.2.4                -->
+<!--   v20221202  (jan.2025)  versienummer NL NeTEx Profiel naar v9.3.0                -->
+<!--   v20250710  (jan.2025)  versienummer NL NeTEx Profiel naar v9.4.0                -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="ntx:1.1">
+	<PublicationTimestamp>2021-11-23T14:30:00</PublicationTimestamp>
+	<ParticipantRef>BISON</ParticipantRef>
+	<Description>Export van de door BISON voorgedefinieerde gegevens t.b.v. het NL NeTEx Profiel.</Description>
+	<dataObjects>
+		<CompositeFrame id="NL:BISON:CompositeFrame:PredefinedEnumerations" version="20250710">
+			<Description>De door BISON vastgestelde standaardenumeraties. Deze enumeraties worden bijgehouden door BISON. Desgewenst kan men de relevante ValueSet(s) ongewijzigd(!) overnemen in een gegevenslevering conform het NL dienstregeling Profiel.</Description>
+			<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_BISON_ENUMS" version="9.4.0"/>
+			<codespaces>
+				<Codespace id="NL:BISON:Codespace:BISON">
+                    <Xmlns>NL:BISON</Xmlns>
+                    <XmlnsUrl>http://bison.dova.nu/ns/BISON</XmlnsUrl>
+                    <Description>BISON standaardenumeraties</Description>
+                </Codespace>
+			</codespaces>
+			<FrameDefaults>
+				<DefaultCodespaceRef ref="NL:BISON:Codespace:BISON"/>
+			</FrameDefaults>
+			<frames>
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfEquipment" version="20250710">
+					<Description>Standaardenumeratie met voorgedefinieerde soorten apparatuur m.b.t. toegankelijkheid. </Description>
+					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TypeOfEquipmentValues" version="9.4.0"/>
+					<members>
+						<ValueSet id="NL:BISON:ValueSet:TypeOfEquipment" version="20250710">
+							<values>
+								<TypeOfEquipment id="NL:BISON:TypeOfEquipment:automaticRamp" version="any">
+									<Name>automaticRamp</Name>
+									<Description>Elektrische oprijplaat</Description>
+								</TypeOfEquipment>
+								<TypeOfEquipment id="NL:BISON:TypeOfEquipment:manualRamp" version="any">
+									<Name>manualRamp</Name>
+									<Description>Handbediende oprijplaat</Description>
+								</TypeOfEquipment>
+								<TypeOfEquipment id="NL:BISON:TypeOfEquipment:slidingStep" version="any">
+									<Name>slidingStep</Name>
+									<Description>Opstaptrede</Description>
+								</TypeOfEquipment>
+								<TypeOfEquipment id="NL:BISON:TypeOfEquipment:wheelchairLift" version="any">
+									<Name>wheelchairLift</Name>
+									<Description>Rolstoellift</Description>
+								</TypeOfEquipment>
+								<!-- WELLICHT NOG AANVULLEN -->
+							</values>
+						</ValueSet>
+					</members>
+				</GeneralFrame>
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfActivation" version="20250710">
+					<Description>Standaardenumeratie met voorgedefinieerde KAR-meldpunt typen.</Description>
+					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TypeOfActivationValues" version="9.4.0"/>
+					<members>
+						<ValueSet id="NL:BISON:ValueSet:TypeOfActivation" version="20250710">
+							<values>
+								<TypeOfActivation id="NL:BISON:TypeOfActivation:PreAnnouncement" version="any">
+									<Name>PreAnnouncement</Name>
+									<Description>Vooraanmelding</Description>
+								</TypeOfActivation>
+								<TypeOfActivation id="NL:BISON:TypeOfActivation:Announcement" version="any">
+									<Name>Announcement</Name>
+									<Description>Aanmelding</Description>
+								</TypeOfActivation>
+								<TypeOfActivation id="NL:BISON:TypeOfActivation:HaltLine" version="any">
+									<Name>HaltLine</Name>
+									<Description>Stopstreep</Description>
+								</TypeOfActivation>
+								<TypeOfActivation id="NL:BISON:TypeOfActivation:LeaveMessage" version="any">
+									<Name>LeaveMessage</Name>
+									<Description>Uitmelding</Description>
+								</TypeOfActivation>
+							</values>
+						</ValueSet>
+					</members>
+				</GeneralFrame>
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfService" version="20250710">
+					<Description>Standaardenumeratie met voorgedefinieerde formules (lijnkenmerken).</Description>
+					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues" version="9.4.0"/>
+					<members>
+						<ValueSet id="NL:BISON:ValueSet:TypeOfService" version="20250710">
+							<values>
+								<TypeOfService id="NL:BISON:TypeOfService:Standaard" version="any">
+									<Name>Standaard</Name>
+									<Description>Regulier (openbaar) vervoer</Description>
+								</TypeOfService>
+								<TypeOfService id="NL:BISON:TypeOfService:Flex" version="any">
+									<Name>Flex</Name>
+									<Description>Flexibel (openbaar) vervoer</Description>
+								</TypeOfService>
+								<!-- NOG VERDER AAN TE VULLEN -->
+							</values>
+						</ValueSet>
+					</members>
+				</GeneralFrame>
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_DisplayTextLength" version="20250710">
+					<Description>Standaardenumeratie voor de maximale tekstlengte van een (halte)display.</Description>
+					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0"/>
+					<members>
+						<ValueSet id="NL:BISON:ValueSet:DisplayTextLength" version="20250710">
+							<values>
+								<TypeOfEntity id="NL:BISON:DisplayTextLength:16" version="any">
+									<Name>Tekstlengte 16</Name>
+									<Description>Maximale tekstlengte is 16 karakters</Description>
+								</TypeOfEntity>
+								<TypeOfEntity id="NL:BISON:DisplayTextLength:19" version="any">
+									<Name>Tekstlengte 19</Name>
+									<Description>Maximale tekstlengte is 19 karakters</Description>
+								</TypeOfEntity>
+								<TypeOfEntity id="NL:BISON:DisplayTextLength:21" version="any">
+									<Name>Tekstlengte 21</Name>
+									<Description>Maximale tekstlengte is 21 karakters</Description>
+								</TypeOfEntity>
+								<TypeOfEntity id="NL:BISON:DisplayTextLength:24" version="any">
+									<Name>Tekstlengte 24</Name>
+									<Description>Maximale tekstlengte is 24 karakters</Description>
+								</TypeOfEntity>
+							</values>
+						</ValueSet>
+					</members>
+				</GeneralFrame>
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfResponsibilityRole" version="20250710">
+					<Description>Standaardenumeratie voor de rollen in ResponsibilitySets in het NL NeTEx Profiel.</Description>
+					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0"/>
+					<members>
+						<ValueSet id="NL:BISON:ValueSet:TypeOfResponsibilityRole" version="20250710">
+							<values>
+								<TypeOfResponsibilityRole id="NL:BISON:TypeOfResponsibilityRole:financing" version="any">
+									<Name>Financing</Name>
+									<Description>Financieren van het OV</Description>
+								</TypeOfResponsibilityRole>
+								<TypeOfResponsibilityRole id="NL:BISON:TypeOfResponsibilityRole:other" version="any">
+									<Name>Other</Name>
+									<Description>Een andere rol/verantwoordelijkheid</Description>
+								</TypeOfResponsibilityRole>
+							</values>
+						</ValueSet>
+					</members>
+				</GeneralFrame>
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_940" version="20250710">
+					<Description>Standaardenumeratie voor de soorten frames in het NL NeTEx Profiel, versie 9.4.0.</Description>
+					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0"/>
+					<members>
+						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_930" version="20250710">
+							<values>
+								<!-- Voor het NL dienstregeling Profiel -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_BASELINE" version="9.4.0">
+									<Name>Baseline composite frame</Name>
+									<Description>Composite frame met een 'baseline' (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_DELTA" version="9.4.0">
+									<Name>Delta composite frame</Name>
+									<Description>Composite frame met een 'delta' (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_RESOURCE" version="9.4.0">
+									<Name>Resource frame</Name>
+									<Description>Resource frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_INFRA" version="9.4.0">
+									<Name>Infrastructure frame</Name>
+									<Description>Infrastructure frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SERVICE" version="9.4.0">
+									<Name>Service frame</Name>
+									<Description>Service frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE" version="9.4.0">
+									<Name>Timetable frame</Name>
+									<Description>Timetable frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_CALENDAR" version="9.4.0">
+									<Name>ServiceCalendar frame</Name>
+									<Description>ServiceCalendar frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_VEHICLE" version="9.4.0">
+									<Name>VehicleSchedule frame</Name>
+									<Description>VehicleSchedule frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SITE" version="9.4.0">
+									<Name>Site frame</Name>
+									<Description>Site frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<!-- Voor het NL centraal Profiel       -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_CODESPACES" version="9.4.0">
+									<Name>Codespace composite frame</Name>
+									<Description>Composite frame met de domeinen (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_BISON_ENUMS" version="9.4.0">
+									<Name>BISON composite frame</Name>
+									<Description>Composite frame met de BISON standaardenumeraties (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfEquipmentValues" version="9.4.0">
+									<Name>TypeOfEquipment frame</Name>
+									<Description>Frame met de TypeOfEquipment standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfActivationValues" version="9.4.0">
+									<Name>TypeOfActivation frame</Name>
+									<Description>Frame met de TypeOfActivation standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues" version="9.4.0">
+									<Name>TypeOfService frame</Name>
+									<Description>Frame met de TypeOfService standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0">
+									<Name>TechnicalValues frame</Name>
+									<Description>Frame met de technische standaardenumeraties (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_DOVA_LISTS" version="9.4.0">
+									<Name>DOVA composite frame</Name>
+									<Description>Composite frame met de DOVA lijsten (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TariffZoneList" version="9.4.0">
+									<Name>TariffZones frame</Name>
+									<Description>Frame met de DOVA lijst van OV-zones (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_AuthorityList" version="9.4.0">
+									<Name>Authorities frame</Name>
+									<Description>Frame met de DOVA lijst van concessieverleners (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_NetworkList" version="9.4.0">
+									<Name>Networks frame</Name>
+									<Description>Frame met de DOVA lijst van concessies (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<!-- Voor het NL voertuigen Profiel     -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_VEHICLES" version="9.4.0">
+									<Name>Voertuigen composite frame</Name>
+									<Description>Composite frame met de voertuigen (NL voertuigen Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_VEH_METADATA" version="9.4.0">
+									<Name>Vehicle metadata frame</Name>
+									<Description>Frame met de stamgegevens (NL voertuigen Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_VEH_DATA" version="9.4.0">
+									<Name>Vehicle data frame</Name>
+									<Description>Frame met de voertuiggegevens (NL voertuigen Profiel)</Description>
+								</TypeOfFrame>
+								<!-- Voor het NL halte Profiel          -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:CHB" version="9.4.0">
+									<Name>CHB frame</Name>
+									<Description>Composite frame met de CHB export (NL halte Profiel)</Description>
+								</TypeOfFrame>
+							</values>
+						</ValueSet>
+					</members>
+				</GeneralFrame>
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_930" version="20250710">
+					<Description>Standaardenumeratie voor de soorten frames in het NL NeTEx Profiel, versie 9.3.0.</Description>
+					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0"/>
+					<members>
+						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_930" version="20250710">
+							<values>
+								<!-- Voor het NL dienstregeling Profiel -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_BASELINE" version="9.3.0">
+									<Name>Baseline composite frame</Name>
+									<Description>Composite frame met een 'baseline' (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_DELTA" version="9.3.0">
+									<Name>Delta composite frame</Name>
+									<Description>Composite frame met een 'delta' (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_RESOURCE" version="9.3.0">
+									<Name>Resource frame</Name>
+									<Description>Resource frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_INFRA" version="9.3.0">
+									<Name>Infrastructure frame</Name>
+									<Description>Infrastructure frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SERVICE" version="9.3.0">
+									<Name>Service frame</Name>
+									<Description>Service frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE" version="9.3.0">
+									<Name>Timetable frame</Name>
+									<Description>Timetable frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_CALENDAR" version="9.3.0">
+									<Name>ServiceCalendar frame</Name>
+									<Description>ServiceCalendar frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_VEHICLE" version="9.3.0">
+									<Name>VehicleSchedule frame</Name>
+									<Description>VehicleSchedule frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SITE" version="9.3.0">
+									<Name>Site frame</Name>
+									<Description>Site frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<!-- Voor het NL centraal Profiel       -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_CODESPACES" version="9.3.0">
+									<Name>Codespace composite frame</Name>
+									<Description>Composite frame met de domeinen (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_BISON_ENUMS" version="9.3.0">
+									<Name>BISON composite frame</Name>
+									<Description>Composite frame met de BISON standaardenumeraties (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfEquipmentValues" version="9.3.0">
+									<Name>TypeOfEquipment frame</Name>
+									<Description>Frame met de TypeOfEquipment standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfActivationValues" version="9.3.0">
+									<Name>TypeOfActivation frame</Name>
+									<Description>Frame met de TypeOfActivation standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues" version="9.3.0">
+									<Name>TypeOfService frame</Name>
+									<Description>Frame met de TypeOfService standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.3.0">
+									<Name>TechnicalValues frame</Name>
+									<Description>Frame met de technische standaardenumeraties (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_DOVA_LISTS" version="9.3.0">
+									<Name>DOVA composite frame</Name>
+									<Description>Composite frame met de DOVA lijsten (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TariffZoneList" version="9.3.0">
+									<Name>TariffZones frame</Name>
+									<Description>Frame met de DOVA lijst van OV-zones (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_AuthorityList" version="9.3.0">
+									<Name>Authorities frame</Name>
+									<Description>Frame met de DOVA lijst van concessieverleners (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_NetworkList" version="9.3.0">
+									<Name>Networks frame</Name>
+									<Description>Frame met de DOVA lijst van concessies (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<!-- Voor het NL voertuigen Profiel     -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_VEHICLES" version="9.3.0">
+									<Name>Voertuigen composite frame</Name>
+									<Description>Composite frame met de voertuigen (NL voertuigen Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_VEH_METADATA" version="9.3.0">
+									<Name>Vehicle metadata frame</Name>
+									<Description>Frame met de stamgegevens (NL voertuigen Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_VEH_DATA" version="9.3.0">
+									<Name>Vehicle data frame</Name>
+									<Description>Frame met de voertuiggegevens (NL voertuigen Profiel)</Description>
+								</TypeOfFrame>
+								<!-- Voor het NL halte Profiel          -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:CHB" version="9.3.0">
+									<Name>CHB frame</Name>
+									<Description>Composite frame met de CHB export (NL halte Profiel)</Description>
+								</TypeOfFrame>
+							</values>
+						</ValueSet>
+					</members>
+				</GeneralFrame>
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_924" version="20250710">
+					<Description>Standaardenumeratie voor de soorten frames in het NL NeTEx Profiel, versie 9.2.4.</Description>
+					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0"/>
+					<members>
+						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_924" version="20250710">
+							<values>
+								<!-- Voor het NL dienstregeling Profiel -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_BASELINE" version="9.2.4">
+									<Name>Baseline composite frame</Name>
+									<Description>Composite frame met een 'baseline' (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_DELTA" version="9.2.4">
+									<Name>Delta composite frame</Name>
+									<Description>Composite frame met een 'delta' (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_RESOURCE" version="9.2.4">
+									<Name>Resource frame</Name>
+									<Description>Resource frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_INFRA" version="9.2.4">
+									<Name>Infrastructure frame</Name>
+									<Description>Infrastructure frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SERVICE" version="9.2.4">
+									<Name>Service frame</Name>
+									<Description>Service frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE" version="9.2.4">
+									<Name>Timetable frame</Name>
+									<Description>Timetable frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_CALENDAR" version="9.2.4">
+									<Name>ServiceCalendar frame</Name>
+									<Description>ServiceCalendar frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_VEHICLE" version="9.2.4">
+									<Name>VehicleSchedule frame</Name>
+									<Description>VehicleSchedule frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SITE" version="9.2.4">
+									<Name>Site frame</Name>
+									<Description>Site frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<!-- Voor het NL centraal Profiel       -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_CODESPACES" version="9.2.4">
+									<Name>Codespace composite frame</Name>
+									<Description>Composite frame met de domeinen (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_BISON_ENUMS" version="9.2.4">
+									<Name>BISON composite frame</Name>
+									<Description>Composite frame met de BISON standaardenumeraties (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfEquipmentValues" version="9.2.4">
+									<Name>TypeOfEquipment frame</Name>
+									<Description>Frame met de TypeOfEquipment standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfActivationValues" version="9.2.4">
+									<Name>TypeOfActivation frame</Name>
+									<Description>Frame met de TypeOfActivation standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues" version="9.2.4">
+									<Name>TypeOfService frame</Name>
+									<Description>Frame met de TypeOfService standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.2.4">
+									<Name>TechnicalValues frame</Name>
+									<Description>Frame met de technische standaardenumeraties (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_DOVA_LISTS" version="9.2.4">
+									<Name>DOVA composite frame</Name>
+									<Description>Composite frame met de DOVA lijsten (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TariffZoneList" version="9.2.4">
+									<Name>TariffZones frame</Name>
+									<Description>Frame met de DOVA lijst van OV-zones (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_AuthorityList" version="9.2.4">
+									<Name>Authorities frame</Name>
+									<Description>Frame met de DOVA lijst van concessieverleners (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_NetworkList" version="9.2.4">
+									<Name>Networks frame</Name>
+									<Description>Frame met de DOVA lijst van concessies (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<!-- Voor het NL voertuigen Profiel     -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_VEHICLES" version="9.2.4">
+									<Name>Voertuigen composite frame</Name>
+									<Description>Composite frame met de voertuigen (NL voertuigen Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_VEH_METADATA" version="9.2.4">
+									<Name>Vehicle metadata frame</Name>
+									<Description>Frame met de stamgegevens (NL voertuigen Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_VEH_DATA" version="9.2.4">
+									<Name>Vehicle data frame</Name>
+									<Description>Frame met de voertuiggegevens (NL voertuigen Profiel)</Description>
+								</TypeOfFrame>
+								<!-- Voor het NL halte Profiel          -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:CHB" version="9.2.4">
+									<Name>CHB frame</Name>
+									<Description>Composite frame met de CHB export (NL halte Profiel)</Description>
+								</TypeOfFrame>
+							</values>
+						</ValueSet>
+					</members>
+				</GeneralFrame>
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_923" version="20250710">
+					<Description>Standaardenumeratie voor de soorten frames in het NL NeTEx Profiel, versie 9.2.3.</Description>
+					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0"/>
+					<members>
+						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_923" version="20250710">
+							<values>
+								<!-- Voor het NL dienstregeling Profiel -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_BASELINE" version="9.2.3">
+									<Name>Baseline composite frame</Name>
+									<Description>Composite frame met een 'baseline' (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_DELTA" version="9.2.3">
+									<Name>Delta composite frame</Name>
+									<Description>Composite frame met een 'delta' (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_RESOURCE" version="9.2.3">
+									<Name>Resource frame</Name>
+									<Description>Resource frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_INFRA" version="9.2.3">
+									<Name>Infrastructure frame</Name>
+									<Description>Infrastructure frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SERVICE" version="9.2.3">
+									<Name>Service frame</Name>
+									<Description>Service frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE" version="9.2.3">
+									<Name>Timetable frame</Name>
+									<Description>Timetable frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_CALENDAR" version="9.2.3">
+									<Name>ServiceCalendar frame</Name>
+									<Description>ServiceCalendar frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_VEHICLE" version="9.2.3">
+									<Name>VehicleSchedule frame</Name>
+									<Description>VehicleSchedule frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SITE" version="9.2.3">
+									<Name>Site frame</Name>
+									<Description>Site frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<!-- Voor het NL centraal Profiel       -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_CODESPACES" version="9.2.3">
+									<Name>Codespace composite frame</Name>
+									<Description>Composite frame met de domeinen (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_BISON_ENUMS" version="9.2.3">
+									<Name>BISON composite frame</Name>
+									<Description>Composite frame met de BISON standaardenumeraties (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfEquipmentValues" version="9.2.3">
+									<Name>TypeOfEquipment frame</Name>
+									<Description>Frame met de TypeOfEquipment standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfActivationValues" version="9.2.3">
+									<Name>TypeOfActivation frame</Name>
+									<Description>Frame met de TypeOfActivation standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues" version="9.2.3">
+									<Name>TypeOfService frame</Name>
+									<Description>Frame met de TypeOfService standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.2.3">
+									<Name>TechnicalValues frame</Name>
+									<Description>Frame met de technische standaardenumeraties (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_DOVA_LISTS" version="9.2.3">
+									<Name>DOVA composite frame</Name>
+									<Description>Composite frame met de DOVA lijsten (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TariffZoneList" version="9.2.3">
+									<Name>TariffZones frame</Name>
+									<Description>Frame met de DOVA lijst van OV-zones (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_AuthorityList" version="9.2.3">
+									<Name>Authorities frame</Name>
+									<Description>Frame met de DOVA lijst van concessieverleners (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_NetworkList" version="9.2.3">
+									<Name>Networks frame</Name>
+									<Description>Frame met de DOVA lijst van concessies (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<!-- Voor het NL voertuigen Profiel     -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_VEHICLES" version="9.2.3">
+									<Name>Voertuigen composite frame</Name>
+									<Description>Composite frame met de voertuigen (NL voertuigen Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_VEH_METADATA" version="9.2.3">
+									<Name>Vehicle metadata frame</Name>
+									<Description>Frame met de stamgegevens (NL voertuigen Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_VEH_DATA" version="9.2.3">
+									<Name>Vehicle data frame</Name>
+									<Description>Frame met de voertuiggegevens (NL voertuigen Profiel)</Description>
+								</TypeOfFrame>
+								<!-- Voor het NL halte Profiel          -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:CHB" version="9.2.3">
+									<Name>CHB frame</Name>
+									<Description>Composite frame met de CHB export (NL halte Profiel)</Description>
+								</TypeOfFrame>
+							</values>
+						</ValueSet>
+					</members>
+				</GeneralFrame>
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_922" version="20250710">
+					<Description>Standaardenumeratie voor de soorten frames in het NL NeTEx Profiel, versie 9.2.2.</Description>
+					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0"/>
+					<members>
+						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_922" version="20250710">
+							<values>
+								<!-- Voor het NL dienstregeling Profiel -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_BASELINE" version="9.2.2">
+									<Name>Baseline composite frame</Name>
+									<Description>Composite frame met een 'baseline' (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_DELTA" version="9.2.2">
+									<Name>Delta composite frame</Name>
+									<Description>Composite frame met een 'delta' (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_RESOURCE" version="9.2.2">
+									<Name>Resource frame</Name>
+									<Description>Resource frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_INFRA" version="9.2.2">
+									<Name>Infrastructure frame</Name>
+									<Description>Infrastructure frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SERVICE" version="9.2.2">
+									<Name>Service frame</Name>
+									<Description>Service frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE" version="9.2.2">
+									<Name>Timetable frame</Name>
+									<Description>Timetable frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_CALENDAR" version="9.2.2">
+									<Name>ServiceCalendar frame</Name>
+									<Description>ServiceCalendar frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_VEHICLE" version="9.2.2">
+									<Name>VehicleSchedule frame</Name>
+									<Description>VehicleSchedule frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<!-- Voor het NL centraal Profiel       -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_CODESPACES" version="9.2.2">
+									<Name>Codespace composite frame</Name>
+									<Description>Composite frame met de domeinen (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_BISON_ENUMS" version="9.2.2">
+									<Name>BISON composite frame</Name>
+									<Description>Composite frame met de BISON standaardenumeraties (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfEquipmentValues" version="9.2.2">
+									<Name>TypeOfEquipment frame</Name>
+									<Description>Frame met de TypeOfEquipment standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfActivationValues" version="9.2.2">
+									<Name>TypeOfActivation frame</Name>
+									<Description>Frame met de TypeOfActivation standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues" version="9.2.2">
+									<Name>TypeOfService frame</Name>
+									<Description>Frame met de TypeOfService standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.2.2">
+									<Name>TechnicalValues frame</Name>
+									<Description>Frame met de technische standaardenumeraties (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_DOVA_LISTS" version="9.2.2">
+									<Name>DOVA composite frame</Name>
+									<Description>Composite frame met de DOVA lijsten (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TariffZoneList" version="9.2.2">
+									<Name>TariffZones frame</Name>
+									<Description>Frame met de DOVA lijst van OV-zones (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_AuthorityList" version="9.2.2">
+									<Name>Authorities frame</Name>
+									<Description>Frame met de DOVA lijst van concessieverleners (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_NetworkList" version="9.2.2">
+									<Name>Networks frame</Name>
+									<Description>Frame met de DOVA lijst van concessies (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<!-- Voor het NL voertuigen Profiel     -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_VEHICLES" version="9.2.2">
+									<Name>Voertuigen composite frame</Name>
+									<Description>Composite frame met de voertuigen (NL voertuigen Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_VEH_METADATA" version="9.2.2">
+									<Name>Vehicle metadata frame</Name>
+									<Description>Frame met de stamgegevens (NL voertuigen Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_VEH_DATA" version="9.2.2">
+									<Name>Vehicle data frame</Name>
+									<Description>Frame met de voertuiggegevens (NL voertuigen Profiel)</Description>
+								</TypeOfFrame>
+								<!-- Voor het NL halte Profiel          -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:CHB" version="9.2.2">
+									<Name>CHB frame</Name>
+									<Description>Composite frame met de CHB export (NL halte Profiel)</Description>
+								</TypeOfFrame>
+							</values>
+						</ValueSet>
+					</members>
+				</GeneralFrame>
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_921" version="20250710">
+					<Description>Standaardenumeratie voor de soorten frames in het NL NeTEx Profiel, versie 9.2.1.</Description>
+					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0"/>
+					<members>
+						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_921" version="20250710">
+							<values>
+								<!-- Voor het NL dienstregeling Profiel -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_BASELINE" version="9.2.1">
+									<Name>Baseline composite frame</Name>
+									<Description>Composite frame met een 'baseline' (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_DELTA" version="9.2.1">
+									<Name>Delta composite frame</Name>
+									<Description>Composite frame met een 'delta' (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_RESOURCE" version="9.2.1">
+									<Name>Resource frame</Name>
+									<Description>Resource frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_INFRA" version="9.2.1">
+									<Name>Infrastructure frame</Name>
+									<Description>Infrastructure frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SERVICE" version="9.2.1">
+									<Name>Service frame</Name>
+									<Description>Service frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE" version="9.2.1">
+									<Name>Timetable frame</Name>
+									<Description>Timetable frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_CALENDAR" version="9.2.1">
+									<Name>ServiceCalendar frame</Name>
+									<Description>ServiceCalendar frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_VEHICLE" version="9.2.1">
+									<Name>VehicleSchedule frame</Name>
+									<Description>VehicleSchedule frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<!-- Voor het NL centraal Profiel       -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_CODESPACES" version="9.2.1">
+									<Name>Codespace composite frame</Name>
+									<Description>Composite frame met de domeinen (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_BISON_ENUMS" version="9.2.1">
+									<Name>BISON composite frame</Name>
+									<Description>Composite frame met de BISON standaardenumeraties (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfEquipmentValues" version="9.2.1">
+									<Name>TypeOfEquipment frame</Name>
+									<Description>Frame met de TypeOfEquipment standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfActivationValues" version="9.2.1">
+									<Name>TypeOfActivation frame</Name>
+									<Description>Frame met de TypeOfActivation standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues" version="9.2.1">
+									<Name>TypeOfService frame</Name>
+									<Description>Frame met de TypeOfService standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.2.1">
+									<Name>TechnicalValues frame</Name>
+									<Description>Frame met de technische standaardenumeraties (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_DOVA_LISTS" version="9.2.1">
+									<Name>DOVA composite frame</Name>
+									<Description>Composite frame met de DOVA lijsten (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TariffZoneList" version="9.2.1">
+									<Name>TariffZones frame</Name>
+									<Description>Frame met de DOVA lijst van OV-zones (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_AuthorityList" version="9.2.1">
+									<Name>Authorities frame</Name>
+									<Description>Frame met de DOVA lijst van concessieverleners (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_NetworkList" version="9.2.1">
+									<Name>Networks frame</Name>
+									<Description>Frame met de DOVA lijst van concessies (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<!-- Voor het NL voertuigen Profiel     -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_VEHICLES" version="9.2.1">
+									<Name>Voertuigen composite frame</Name>
+									<Description>Composite frame met de voertuigen (NL voertuigen Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_VEH_METADATA" version="9.2.1">
+									<Name>Vehicle metadata frame</Name>
+									<Description>Frame met de stamgegevens (NL voertuigen Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_VEH_DATA" version="9.2.1">
+									<Name>Vehicle data frame</Name>
+									<Description>Frame met de voertuiggegevens (NL voertuigen Profiel)</Description>
+								</TypeOfFrame>
+								<!-- Voor het NL halte Profiel          -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:CHB" version="9.2.1">
+									<Name>CHB frame</Name>
+									<Description>Composite frame met de CHB export (NL halte Profiel)</Description>
+								</TypeOfFrame>
+							</values>
+						</ValueSet>
+					</members>
+				</GeneralFrame>
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_920" version="20250710">
+					<Description>Standaardenumeratie voor de soorten frames in het NL NeTEx Profiel, versie 9.2.0.</Description>
+					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0"/>
+					<members>
+						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_920" version="20250710">
+							<values>
+								<!-- Voor het NL dienstregeling Profiel -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_BASELINE" version="9.2.0">
+									<Name>Baseline composite frame</Name>
+									<Description>Composite frame met een 'baseline' (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_DELTA" version="9.2.0">
+									<Name>Delta composite frame</Name>
+									<Description>Composite frame met een 'delta' (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_RESOURCE" version="9.2.0">
+									<Name>Resource frame</Name>
+									<Description>Resource frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_INFRA" version="9.2.0">
+									<Name>Infrastructure frame</Name>
+									<Description>Infrastructure frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SERVICE" version="9.2.0">
+									<Name>Service frame</Name>
+									<Description>Service frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE" version="9.2.0">
+									<Name>Timetable frame</Name>
+									<Description>Timetable frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_CALENDAR" version="9.2.0">
+									<Name>ServiceCalendar frame</Name>
+									<Description>ServiceCalendar frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_VEHICLE" version="9.2.0">
+									<Name>VehicleSchedule frame</Name>
+									<Description>VehicleSchedule frame (NL dienstregeling Profiel)</Description>
+								</TypeOfFrame>
+								<!-- Voor het NL centraal Profiel       -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_CODESPACES" version="9.2.0">
+									<Name>Codespace composite frame</Name>
+									<Description>Composite frame met de domeinen (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_BISON_ENUMS" version="9.2.0">
+									<Name>BISON composite frame</Name>
+									<Description>Composite frame met de BISON standaardenumeraties (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfEquipmentValues" version="9.2.0">
+									<Name>TypeOfEquipment frame</Name>
+									<Description>Frame met de TypeOfEquipment standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfActivationValues" version="9.2.0">
+									<Name>TypeOfActivation frame</Name>
+									<Description>Frame met de TypeOfActivation standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues" version="9.2.0">
+									<Name>TypeOfService frame</Name>
+									<Description>Frame met de TypeOfService standaardenumeratie (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.2.0">
+									<Name>TechnicalValues frame</Name>
+									<Description>Frame met de technische standaardenumeraties (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_DOVA_LISTS" version="9.2.0">
+									<Name>DOVA composite frame</Name>
+									<Description>Composite frame met de DOVA lijsten (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TariffZoneList" version="9.2.0">
+									<Name>TariffZones frame</Name>
+									<Description>Frame met de DOVA lijst van OV-zones (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_AuthorityList" version="9.2.0">
+									<Name>Authorities frame</Name>
+									<Description>Frame met de DOVA lijst van concessieverleners (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_NetworkList" version="9.2.0">
+									<Name>Networks frame</Name>
+									<Description>Frame met de DOVA lijst van concessies (NL centraal Profiel)</Description>
+								</TypeOfFrame>
+								<!-- Voor het NL halte Profiel          -->
+								<TypeOfFrame id="NL:BISON:TypeOfFrame:CHB" version="9.2.0">
+									<Name>CHB frame</Name>
+									<Description>Composite frame met de CHB export (NL halte Profiel)</Description>
+								</TypeOfFrame>
+							</values>
+						</ValueSet>
+					</members>
+				</GeneralFrame>
+			</frames>
+		</CompositeFrame>
+	</dataObjects>
+</PublicationDelivery>
