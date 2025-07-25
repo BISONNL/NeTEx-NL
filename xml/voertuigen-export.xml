@@ -62,7 +62,7 @@
                         <VehicleType id="NL:EBS:VehicleType:10m" version="20240308">
                             <Name>10m</Name>
                             <Description>Standaard bus</Description>
-                            <TypeOfFuel>diesel</TypeOfFuel>
+                            <FuelType>diesel</FuelType>
                             <TransportMode>bus</TransportMode>
                             <capacities>
                                 <PassengerCapacity id="NL:EBS:PassengerCapacity:10m" version="20240308">
@@ -90,7 +90,7 @@
                             <BrandingRef ref="NL:EBS:Branding:RNet" version="20240308"/>
                             <Name>E18mR</Name>
                             <Description>Elektrische gelede bus in R-Net uitvoering</Description>
-                            <TypeOfFuel>electricity</TypeOfFuel>
+                            <FuelType>electricity</FuelType>
                             <TransportMode>bus</TransportMode>
                             <capacities>
                                 <PassengerCapacity id="NL:EBS:PassengerCapacity:E18mR" version="20240308">
@@ -118,7 +118,7 @@
                             <BrandingRef ref="NL:EBS:Branding:Delfthopper" version="20240308"/>
                             <Name>Delfthopper</Name>
                             <Description>Delfthopper</Description>
-                            <TypeOfFuel>diesel</TypeOfFuel>
+                            <FuelType>diesel</FuelType>
                             <TransportMode>bus</TransportMode>
                             <capacities>
                                 <PassengerCapacity id="NL:EBS:PassengerCapacity:Delfthopper" version="20240308">
@@ -145,7 +145,7 @@
                     <vehicles>
                         <!-- Dit voorbeeld specificeert vijf voertuigen, twee standaardbussen, twee R-Net-bussen, en één Delfthopper. -->
                         <Vehicle id="NL:EBS:Vehicle:10m-1" version="20240308"
-                                 responsibilitySetref="NL:EBS:ResponsibilitySet:HGL-STR">
+                                 responsibilitySetRef="NL:EBS:ResponsibilitySet:HGL-STR">
                             <ValidBetween>
                                 <FromDate>2019-08-25T00:00:00.000</FromDate>
                             </ValidBetween>
@@ -156,7 +156,7 @@
                             <VehicleTypeRef ref="NL:EBS:VehicleType:10m" version="20240308"/>
                         </Vehicle>
                         <Vehicle id="NL:EBS:Vehicle:10m-2" version="20240308"
-                                 responsibilitySetref="NL:EBS:ResponsibilitySet:HGL-STR">
+                                 responsibilitySetRef="NL:EBS:ResponsibilitySet:HGL-STR">
                             <ValidBetween>
                                 <FromDate>2019-08-25T00:00:00.000</FromDate>
                             </ValidBetween>
@@ -167,7 +167,7 @@
                             <VehicleTypeRef ref="NL:EBS:VehicleType:10m" version="20240308"/>
                         </Vehicle>
                         <Vehicle id="NL:EBS:Vehicle:E18mR-1" version="20240308"
-                                 responsibilitySetref="NL:EBS:ResponsibilitySet:HGL-STR">
+                                 responsibilitySetRef="NL:EBS:ResponsibilitySet:HGL-STR">
                             <ValidBetween>
                                 <FromDate>2019-08-25T00:00:00.000</FromDate>
                             </ValidBetween>
@@ -178,7 +178,7 @@
                             <VehicleTypeRef ref="NL:EBS:VehicleType:E18mR" version="20240308"/>
                         </Vehicle>
                         <Vehicle id="NL:EBS:Vehicle:E18mR-2" version="20240308"
-                                 responsibilitySetref="NL:EBS:ResponsibilitySet:HGL-STR">
+                                 responsibilitySetRef="NL:EBS:ResponsibilitySet:HGL-STR">
                             <ValidBetween>
                                 <FromDate>2019-08-25T00:00:00.000</FromDate>
                             </ValidBetween>
@@ -189,7 +189,7 @@
                             <VehicleTypeRef ref="NL:EBS:VehicleType:E18mR" version="20240308"/>
                         </Vehicle>
                         <Vehicle id="NL:EBS:Vehicle:Delfthopper-1" version="20240308"
-                                 responsibilitySetref="NL:EBS:ResponsibilitySet:HGL-STR">
+                                 responsibilitySetRef="NL:EBS:ResponsibilitySet:HGL-STR">
                             <ValidBetween>
                                 <FromDate>2019-08-25T00:00:00.000</FromDate>
                             </ValidBetween>

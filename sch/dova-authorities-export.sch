@@ -32,7 +32,7 @@
         </sch:rule>
     </sch:pattern>
 
-    <sch:include href="PublicationDelivery/CompositeFrame/ResourceFrame/Authority.sch"/>
+    <sch:include href="PublicationDelivery/CompositeFrame/GeneralFrame/Authority.sch"/>
 
 </sch:schema>
 

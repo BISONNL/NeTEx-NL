@@ -6,7 +6,7 @@
         <sch:assert test=".[matches(@version,'\d+\.\d+\.\d+')]">TypeOfFrame moet een version hebben van de vorm x.y.z, waarbij x, y en z getallen zijn</sch:assert>
     </sch:rule>
     <sch:rule context="ntx:TypeOfFrameRef">
-        <sch:assert test="@version='9.4.0'">TypeOfFrameRef moet verwijzen naar versie 9.4.0</sch:assert>
+        <sch:assert test=".[matches(@version,'\d+\.\d+\.\d+')]">TypeOfFrameRef moet een version hebben van de vorm x.y.z, waarbij x, y en z getallen zijn</sch:assert>
     </sch:rule>
     <sch:rule context="ntx:GeneralFrame//ntx:*">
         <sch:assert test="not(@version) or @version='any'">Het version attribuut moet de waarde 'any' hebben</sch:assert>

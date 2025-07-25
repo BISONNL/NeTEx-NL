@@ -4,6 +4,5 @@
         <sch:assert test="ntx:ShortName">ShortName is verplicht</sch:assert>
         <sch:assert test="ntx:GroupOfLinesType">GroupOfLinesType is verplicht</sch:assert>
         <sch:assert test="ntx:AuthorityRef">AuthorityRef is verplicht</sch:assert>
-        <sch:assert test="@version='any'">Attribuut version moet de waarde 'any' hebben</sch:assert>
     </sch:rule>
 </sch:pattern>
