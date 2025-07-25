@@ -13,14 +13,14 @@
 <!--   v20211123  (nov.2021)  correctie id van TypeOfOrganisation 'Other'              -->
 <!--   v20221202  (dec.2022)  versienummer NL NeTEx Profiel naar v9.2.4                -->
 <!--   v20221202  (jan.2025)  versienummer NL NeTEx Profiel naar v9.3.0                -->
-<!--   v20250710  (jan.2025)  versienummer NL NeTEx Profiel naar v9.4.0                -->
+<!--   v20250725  (jan.2025)  versienummer NL NeTEx Profiel naar v9.4.0                -->
 <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="ntx:1.1">
 	<PublicationTimestamp>2021-11-23T14:30:00</PublicationTimestamp>
 	<ParticipantRef>BISON</ParticipantRef>
 	<Description>Export van de door BISON voorgedefinieerde gegevens t.b.v. het NL NeTEx Profiel.</Description>
 	<dataObjects>
-		<CompositeFrame id="NL:BISON:CompositeFrame:PredefinedEnumerations" version="20250710">
+		<CompositeFrame id="NL:BISON:CompositeFrame:PredefinedEnumerations" version="20250725">
 			<Description>De door BISON vastgestelde standaardenumeraties. Deze enumeraties worden bijgehouden door BISON. Desgewenst kan men de relevante ValueSet(s) ongewijzigd(!) overnemen in een gegevenslevering conform het NL dienstregeling Profiel.</Description>
 			<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_BISON_ENUMS" version="9.4.0"/>
 			<codespaces>
@@ -34,11 +34,11 @@
 				<DefaultCodespaceRef ref="NL:BISON:Codespace:BISON"/>
 			</FrameDefaults>
 			<frames>
-				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfEquipment" version="20250710">
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfEquipment" version="20250725">
 					<Description>Standaardenumeratie met voorgedefinieerde soorten apparatuur m.b.t. toegankelijkheid. </Description>
 					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TypeOfEquipmentValues" version="9.4.0"/>
 					<members>
-						<ValueSet id="NL:BISON:ValueSet:TypeOfEquipment" version="20250710">
+						<ValueSet id="NL:BISON:ValueSet:TypeOfEquipment" version="any">
 							<values>
 								<TypeOfEquipment id="NL:BISON:TypeOfEquipment:automaticRamp" version="any">
 									<Name>automaticRamp</Name>
@@ -61,11 +61,11 @@
 						</ValueSet>
 					</members>
 				</GeneralFrame>
-				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfActivation" version="20250710">
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfActivation" version="20250725">
 					<Description>Standaardenumeratie met voorgedefinieerde KAR-meldpunt typen.</Description>
 					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TypeOfActivationValues" version="9.4.0"/>
 					<members>
-						<ValueSet id="NL:BISON:ValueSet:TypeOfActivation" version="20250710">
+						<ValueSet id="NL:BISON:ValueSet:TypeOfActivation" version="any">
 							<values>
 								<TypeOfActivation id="NL:BISON:TypeOfActivation:PreAnnouncement" version="any">
 									<Name>PreAnnouncement</Name>
@@ -87,11 +87,11 @@
 						</ValueSet>
 					</members>
 				</GeneralFrame>
-				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfService" version="20250710">
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfService" version="20250725">
 					<Description>Standaardenumeratie met voorgedefinieerde formules (lijnkenmerken).</Description>
 					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues" version="9.4.0"/>
 					<members>
-						<ValueSet id="NL:BISON:ValueSet:TypeOfService" version="20250710">
+						<ValueSet id="NL:BISON:ValueSet:TypeOfService" version="any">
 							<values>
 								<TypeOfService id="NL:BISON:TypeOfService:Standaard" version="any">
 									<Name>Standaard</Name>
@@ -106,11 +106,11 @@
 						</ValueSet>
 					</members>
 				</GeneralFrame>
-				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_DisplayTextLength" version="20250710">
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_DisplayTextLength" version="20250725">
 					<Description>Standaardenumeratie voor de maximale tekstlengte van een (halte)display.</Description>
 					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0"/>
 					<members>
-						<ValueSet id="NL:BISON:ValueSet:DisplayTextLength" version="20250710">
+						<ValueSet id="NL:BISON:ValueSet:DisplayTextLength" version="any">
 							<values>
 								<TypeOfEntity id="NL:BISON:DisplayTextLength:16" version="any">
 									<Name>Tekstlengte 16</Name>
@@ -132,11 +132,11 @@
 						</ValueSet>
 					</members>
 				</GeneralFrame>
-				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfResponsibilityRole" version="20250710">
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfResponsibilityRole" version="20250725">
 					<Description>Standaardenumeratie voor de rollen in ResponsibilitySets in het NL NeTEx Profiel.</Description>
 					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0"/>
 					<members>
-						<ValueSet id="NL:BISON:ValueSet:TypeOfResponsibilityRole" version="20250710">
+						<ValueSet id="NL:BISON:ValueSet:TypeOfResponsibilityRole" version="any">
 							<values>
 								<TypeOfResponsibilityRole id="NL:BISON:TypeOfResponsibilityRole:financing" version="any">
 									<Name>Financing</Name>
@@ -150,11 +150,11 @@
 						</ValueSet>
 					</members>
 				</GeneralFrame>
-				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_940" version="20250710">
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_940" version="20250725">
 					<Description>Standaardenumeratie voor de soorten frames in het NL NeTEx Profiel, versie 9.4.0.</Description>
 					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0"/>
 					<members>
-						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_930" version="20250710">
+						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_940" version="any">
 							<values>
 								<!-- Voor het NL dienstregeling Profiel -->
 								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_BASELINE" version="9.4.0">
@@ -256,11 +256,11 @@
 						</ValueSet>
 					</members>
 				</GeneralFrame>
-				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_930" version="20250710">
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_930" version="20250725">
 					<Description>Standaardenumeratie voor de soorten frames in het NL NeTEx Profiel, versie 9.3.0.</Description>
 					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0"/>
 					<members>
-						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_930" version="20250710">
+						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_930" version="any">
 							<values>
 								<!-- Voor het NL dienstregeling Profiel -->
 								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_BASELINE" version="9.3.0">
@@ -362,11 +362,11 @@
 						</ValueSet>
 					</members>
 				</GeneralFrame>
-				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_924" version="20250710">
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_924" version="20250725">
 					<Description>Standaardenumeratie voor de soorten frames in het NL NeTEx Profiel, versie 9.2.4.</Description>
 					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0"/>
 					<members>
-						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_924" version="20250710">
+						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_924" version="any">
 							<values>
 								<!-- Voor het NL dienstregeling Profiel -->
 								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_BASELINE" version="9.2.4">
@@ -468,11 +468,11 @@
 						</ValueSet>
 					</members>
 				</GeneralFrame>
-				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_923" version="20250710">
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_923" version="20250725">
 					<Description>Standaardenumeratie voor de soorten frames in het NL NeTEx Profiel, versie 9.2.3.</Description>
 					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0"/>
 					<members>
-						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_923" version="20250710">
+						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_923" version="any">
 							<values>
 								<!-- Voor het NL dienstregeling Profiel -->
 								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_BASELINE" version="9.2.3">
@@ -574,11 +574,11 @@
 						</ValueSet>
 					</members>
 				</GeneralFrame>
-				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_922" version="20250710">
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_922" version="20250725">
 					<Description>Standaardenumeratie voor de soorten frames in het NL NeTEx Profiel, versie 9.2.2.</Description>
 					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0"/>
 					<members>
-						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_922" version="20250710">
+						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_922" version="any">
 							<values>
 								<!-- Voor het NL dienstregeling Profiel -->
 								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_BASELINE" version="9.2.2">
@@ -676,11 +676,11 @@
 						</ValueSet>
 					</members>
 				</GeneralFrame>
-				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_921" version="20250710">
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_921" version="20250725">
 					<Description>Standaardenumeratie voor de soorten frames in het NL NeTEx Profiel, versie 9.2.1.</Description>
 					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0"/>
 					<members>
-						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_921" version="20250710">
+						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_921" version="any">
 							<values>
 								<!-- Voor het NL dienstregeling Profiel -->
 								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_BASELINE" version="9.2.1">
@@ -778,11 +778,11 @@
 						</ValueSet>
 					</members>
 				</GeneralFrame>
-				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_920" version="20250710">
+				<GeneralFrame id="NL:BISON:GeneralFrame:Predefined_TypeOfFrame_920" version="20250725">
 					<Description>Standaardenumeratie voor de soorten frames in het NL NeTEx Profiel, versie 9.2.0.</Description>
 					<TypeOfFrameRef ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0"/>
 					<members>
-						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_920" version="20250710">
+						<ValueSet id="NL:BISON:ValueSet:TypeOfFrame_920" version="any">
 							<values>
 								<!-- Voor het NL dienstregeling Profiel -->
 								<TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_BASELINE" version="9.2.0">

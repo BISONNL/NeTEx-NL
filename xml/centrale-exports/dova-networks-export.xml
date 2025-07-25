@@ -3,11 +3,10 @@
     <PublicationTimestamp>2025-05-19T10:34:48.911</PublicationTimestamp>
     <ParticipantRef>NL:DOVA</ParticipantRef>
     <dataObjects>
-        <CompositeFrame id="NL:DOVA:CompositeFrame:Concessions" modification="new" version="any">
+        <CompositeFrame id="NL:DOVA:CompositeFrame:Concessions" modification="new" version="20250725">
             <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TT_BASELINE"/>
             <FrameDefaults>
                 <DefaultCodespaceRef ref="NL:BISON:Codespace:DOVA"/>
-                <DefaultDataSourceRef version="any" ref="NL:DOVA:DataSource:DOVA"/>
                 <DefaultLocale>
                     <TimeZone>Europe/Amsterdam</TimeZone>
                     <DefaultLanguage>nl</DefaultLanguage>
@@ -17,7 +16,7 @@
                 <DefaultCurrency>EUR</DefaultCurrency>
             </FrameDefaults>
             <frames>
-                <GeneralFrame id="NL:DOVA:GeneralFrame:Concessions" version="any">
+                <GeneralFrame id="NL:DOVA:GeneralFrame:Concessions" version="20250725">
                     <Description>Voor elke concessie is er een Network en een TransportAdministrativeZone element. Bij een lijnconcessie bevat de TransportAdministrativeZone geen geometrie informatie.</Description>
                     <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_NetworkList"/>
                     <members>
