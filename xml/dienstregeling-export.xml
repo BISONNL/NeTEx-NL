@@ -586,23 +586,23 @@
                         </StopArea>
                     </stopAreas>
                     <stopAssignments>
-                        <PassengerStopAssignment id="NL:HTM:PassengerStopAssignement:R8137" order="1" version="1">
+                        <PassengerStopAssignment id="NL:HTM:PassengerStopAssignment:R8137" order="1" version="1">
                             <Name>Lansingerland-Zoetermeer</Name>
                             <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:R8137" version="1"/>
                             <QuayRef ref="NL:CHB:Quay:32008137" version="1"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="NL:HTM:PassengerStopAssignement:R8136" order="1" version="1">
+                        <PassengerStopAssignment id="NL:HTM:PassengerStopAssignment:R8136" order="1" version="1">
                             <Name>Van Tuyllpark</Name>
                             <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:R8136" version="1"/>
                             <QuayRef ref="NL:CHB:Quay:32008136" version="1"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="NL:HTM:PassengerStopAssignement:R8135" order="1" version="1">
+                        <PassengerStopAssignment id="NL:HTM:PassengerStopAssignment:R8135" order="1" version="1">
                             <Name>Van Tuyllpark</Name>
                             <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:R8135" version="1"/>
                             <QuayRef ref="NL:CHB:Quay:32008135" version="1"/>
                         </PassengerStopAssignment>
                         <!-- ... -->
-                        <PassengerStopAssignment id="NL:HTM:PassengerStopAssignement:R1428" order="1" version="1">
+                        <PassengerStopAssignment id="NL:HTM:PassengerStopAssignment:R1428" order="1" version="1">
                             <Name>De Savornin Lohmanplein</Name>
                             <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:R1428" version="1"/>
                             <QuayRef ref="NL:CHB:Quay:32001428" version="1"/>
