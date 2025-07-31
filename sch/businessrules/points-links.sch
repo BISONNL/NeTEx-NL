@@ -39,32 +39,63 @@
 
     <!-- Elke StopPointInJourneyPattern en TimingLinkInJourneyPattern heeft een OnwardTimingLinkRef, behalve de laatste in de pointsInSequence van een ServiceJourneyPattern. -->
     <sch:pattern>
+        <sch:rule context="//(ntx:ServiceJourneyPattern|ntx:DeadRunJourneyPattern)/ntx:pointsInSequence/*[not(last())]">
+            <sch:assert test="ntx:OnwardTimingLinkRef">OnwardTimingLink is verplicht</sch:assert>
+        </sch:rule>
         <sch:rule context="//(ntx:ServiceJourneyPattern|ntx:DeadRunJourneyPattern)/ntx:pointsInSequence/*[last()]">
             <sch:assert test="not(ntx:OnwardTimingLinkRef)">OnwardTimingLink is niet toegestaan binnen het laatste element (StopPointInJourneyPattern of TimingLinkInJourneyPattern) in de pointInSequence</sch:assert>
         </sch:rule>
-        <sch:rule context="//(ntx:ServiceJourneyPattern|ntx:DeadRunJourneyPattern)/ntx:pointsInSequence/*">
-            <sch:assert test="ntx:OnwardTimingLinkRef">OnwardTimingLink is verplicht</sch:assert>
-        </sch:rule>
     </sch:pattern>
 
-    <!-- De OnwardTimingLinkRef van een ServiceJourneyPatterns en DeadRunJourneyPatterns verwijst altijd van het huidige naar het volgende ScheduledStopPointRef of TimingPointRef uit de pointsInSequence -->
+    <!-- De OnwardTimingLinkRef van een ServiceJourneyPatterns of DeadRunJourneyPatterns verwijst altijd van het *PointRef van de huidige *PointInJourneyPattern naar het *PointRef van de volgende *PointInJourneyPattern -->
     <sch:pattern>
-        <!--        TODO-->
+        <sch:rule context="//ntx:StopPointInJourneyPattern[ntx:OnwardTimingLinkRef]">
+            <!-- FromPoint -->
+            <sch:let name="onwardTimingLinkId" value="ntx:OnwardTimingLinkRef/@ref"/>
+            <sch:let name="onwardTimingLinkVersion" value="ntx:OnwardTimingLinkRef/@version"/>
+            <sch:let name="fromPointRef" value="//ntx:TimingLink[@id=$onwardTimingLinkId and @version=$onwardTimingLinkVersion]/ntx:FromPointRef/@ref"/>
+            <sch:let name="fromPointVersion" value="//ntx:TimingLink[@id=$onwardTimingLinkId and @version=$onwardTimingLinkVersion]/ntx:FromPointRef/@version"/>
+            <sch:let name="toPointRef" value="//ntx:TimingLink[@id=$onwardTimingLinkId and @version=$onwardTimingLinkVersion]/ntx:ToPointRef/@ref"/>
+            <sch:let name="toPointVersion" value="//ntx:TimingLink[@id=$onwardTimingLinkId and @version=$onwardTimingLinkVersion]/ntx:ToPointRef/@version"/>
+            <sch:assert test="ntx:ScheduledStopPointRef[@ref=$fromPointRef and @version=$fromPointVersion]">ScheduledStopPointRef verwijst niet naar dezelfde TimingPoint als de FromPointRef van de OnwardTimingLink</sch:assert>
+            <sch:assert test="following-sibling::*[1]/(ntx:ScheduledStopPointRef|ntx:TimingPointRef)[@ref=$toPointRef and @version=$toPointVersion]">ScheduledStopPointRef (of TimingPointRef) van het volgende PointOnTiming verwijst niet naar dezelfde TimingPoint als de ToPointRef van de OnwardTimingLink</sch:assert>
+        </sch:rule>
+        <sch:rule context="//ntx:TimingPointInJourneyPattern[ntx:OnwardTimingLinkRef]">
+            <!-- FromPoint -->
+            <sch:let name="onwardTimingLinkId" value="ntx:OnwardTimingLinkRef/@ref"/>
+            <sch:let name="onwardTimingLinkVersion" value="ntx:OnwardTimingLinkRef/@version"/>
+            <sch:let name="fromPointRef" value="//ntx:TimingLink[@id=$onwardTimingLinkId and @version=$onwardTimingLinkVersion]/ntx:FromPointRef/@ref"/>
+            <sch:let name="fromPointVersion" value="//ntx:TimingLink[@id=$onwardTimingLinkId and @version=$onwardTimingLinkVersion]/ntx:FromPointRef/@version"/>
+            <sch:let name="toPointRef" value="//ntx:TimingLink[@id=$onwardTimingLinkId and @version=$onwardTimingLinkVersion]/ntx:ToPointRef/@ref"/>
+            <sch:let name="toPointVersion" value="//ntx:TimingLink[@id=$onwardTimingLinkId and @version=$onwardTimingLinkVersion]/ntx:ToPointRef/@version"/>
+            <sch:assert test="ntx:TimingPointRef[@ref=$fromPointRef and @version=$fromPointVersion]">TimingPointRef verwijst niet naar dezelfde TimingPoint als de FromPointRef van de OnwardTimingLink</sch:assert>
+            <sch:assert test="following-sibling::*[1]/(ntx:ScheduledStopPointRef|ntx:TimingPointRef)[@ref=$toPointRef and @version=$toPointVersion]">TimingPointRef van het volgende PointOnTiming verwijst niet naar dezelfde TimingPoint als de ToPointRef van de OnwardTimingLink</sch:assert>
+        </sch:rule>
     </sch:pattern>
 
     <!-- Elke PointOnRoute heeft een OnwardRouteLinkRef, behalve de laatste in de pointsInSequence van een Route. -->
     <sch:pattern>
+        <sch:rule context="//ntx:Route/ntx:pointsInSequence/*[not(last())]">
+            <sch:assert test="ntx:OnwardRouteLinkRef">OnwardRouteLinkRef is verplicht</sch:assert>
+        </sch:rule>
         <sch:rule context="//ntx:Route/ntx:pointsInSequence/*[last()]">
             <sch:assert test="not(ntx:OnwardRouteLinkRef)">OnwardRouteLinkRef is niet toegestaan binnen het laatste PointOnRoute in de pointInSequence</sch:assert>
         </sch:rule>
-        <sch:rule context="//ntx:Route/ntx:pointsInSequence/*">
-            <sch:assert test="ntx:OnwardRouteLinkRef">OnwardRouteLinkRef is verplicht</sch:assert>
-        </sch:rule>
     </sch:pattern>
 
-    <!-- De OnwardRouteLinkRef van een Route verwijst altijd van het huidige naar het volgende RoutePoint uit de pointsInSequence -->
+    <!-- De OnwardRouteLinkRef van een Route verwijst altijd van het RoutePointRef van de huidige PointOnRoute naar het RoutePointRef van het eerstvolgende PointOnRoute -->
     <sch:pattern>
-        <!--        TODO-->
+        <sch:rule context="//ntx:PointOnRoute[ntx:OnwardRouteLinkRef]">
+            <!-- FromPoint -->
+            <sch:let name="onwardRouteLinkId" value="ntx:OnwardRouteLinkRef/@ref"/>
+            <sch:let name="onwardRouteLinkVersion" value="ntx:OnwardRouteLinkRef/@version"/>
+            <sch:let name="fromPointRef" value="//ntx:RouteLink[@id=$onwardRouteLinkId and @version=$onwardRouteLinkVersion]/ntx:FromPointRef/@ref"/>
+            <sch:let name="fromPointVersion" value="//ntx:RouteLink[@id=$onwardRouteLinkId and @version=$onwardRouteLinkVersion]/ntx:FromPointRef/@version"/>
+            <sch:let name="toPointRef" value="//ntx:RouteLink[@id=$onwardRouteLinkId and @version=$onwardRouteLinkVersion]/ntx:ToPointRef/@ref"/>
+            <sch:let name="toPointVersion" value="//ntx:RouteLink[@id=$onwardRouteLinkId and @version=$onwardRouteLinkVersion]/ntx:ToPointRef/@version"/>
+            <sch:assert test="ntx:RoutePointRef[@ref=$fromPointRef and @version=$fromPointVersion]">RoutePointRef verwijst niet naar dezelfde RoutePoint als de FromPointRef van de OnwardTimingLink</sch:assert>
+            <sch:assert test="following-sibling::*[1]/ntx:RoutePointRef[@ref=$toPointRef and @version=$toPointVersion]">RoutePointRef van het volgende PointOnRoute verwijst niet naar dezelfde RoutePoint als de ToPointRef van de OnwardTimingLink</sch:assert>
+        </sch:rule>
     </sch:pattern>
 
     <!-- De ScheduledStopPoints en TimingPoints van een ServiceJourney zijn geprojecteerd op de RoutePoints van de bijbehorende Route (in dezelfde volgorde). -->
