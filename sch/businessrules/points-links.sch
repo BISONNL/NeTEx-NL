@@ -11,11 +11,11 @@
             <!-- FromPoint -->
             <sch:let name="fromPointId" value="ntx:FromPointRef/@ref"/>
             <sch:let name="fromPointVersion" value="ntx:FromPointRef/@version"/>
-            <sch:let name="fromPoint" value="//RoutePoint[@id=$fromPointId and @version=$fromPointVersion]/ntx:Location/gml:pos/text()"/>
+            <sch:let name="fromPoint" value="//ntx:RoutePoint[@id=$fromPointId and @version=$fromPointVersion]/ntx:Location/gml:pos/text()"/>
             <!-- ToPoint -->
             <sch:let name="toPointId" value="ntx:ToPointRef/@id"/>
             <sch:let name="toPointVersion" value="ntx:ToPointRef/@version"/>
-            <sch:let name="toPoint" value="//RoutePoint[@id=toPointId and @version=$toPointVersion]/ntx:Location/gml:pos/text()"/>
+            <sch:let name="toPoint" value="//ntx:RoutePoint[@id=$toPointId and @version=$toPointVersion]/ntx:Location/gml:pos/text()"/>
             <!-- LineString validatie -->
             <sch:assert test="starts-with(gml:LineString/gml:posList/text(),$fromPoint)">Eerste coordinaat in de posList is niet gelijk aan het coordinaat van het FromPointRef</sch:assert>
             <sch:assert test="ends-with(gml:LineString/gml:posList/text(),$toPoint)">Laatste coordinaat in de posList is niet gelijk aan het coordinaat van het ToPointRef</sch:assert>
