@@ -55,16 +55,16 @@
         </sch:rule>
     </sch:pattern>
 
-    <sch:include href="PublicationDelivery/CompositeFrame/resourceframe/DataSource.sch"/>
-    <sch:include href="PublicationDelivery/CompositeFrame/resourceframe/ResponsibilitySet.sch"/>
-    <sch:include href="PublicationDelivery/CompositeFrame/resourceframe/Branding.sch"/>
-    <sch:include href="PublicationDelivery/CompositeFrame/resourceframe/TypeOfProductCategory.sch"/>
-    <sch:include href="PublicationDelivery/CompositeFrame/resourceframe/Operator.sch"/>
-    <sch:include href="PublicationDelivery/CompositeFrame/resourceframe/Authority.sch"/>
-    <sch:include href="PublicationDelivery/CompositeFrame/resourceframe/OperationalContext.sch"/>
-    <sch:include href="PublicationDelivery/CompositeFrame/resourceframe/VehicleType.sch"/>
-    <sch:include href="PublicationDelivery/CompositeFrame/resourceframe/VehicleType-capacities.sch"/>
-    <sch:include href="PublicationDelivery/CompositeFrame/resourceframe/TransportAdministrativeZone.sch"/>
+    <sch:include href="PublicationDelivery/CompositeFrame/ResourceFrame/DataSource.sch"/>
+    <sch:include href="PublicationDelivery/CompositeFrame/ResourceFrame/ResponsibilitySet.sch"/>
+    <sch:include href="PublicationDelivery/CompositeFrame/ResourceFrame/Branding.sch"/>
+    <sch:include href="PublicationDelivery/CompositeFrame/ResourceFrame/TypeOfProductCategory.sch"/>
+    <sch:include href="PublicationDelivery/CompositeFrame/ResourceFrame/Operator.sch"/>
+    <sch:include href="PublicationDelivery/CompositeFrame/ResourceFrame/Authority.sch"/>
+    <sch:include href="PublicationDelivery/CompositeFrame/ResourceFrame/OperationalContext.sch"/>
+    <sch:include href="PublicationDelivery/CompositeFrame/ResourceFrame/VehicleType.sch"/>
+    <sch:include href="PublicationDelivery/CompositeFrame/ResourceFrame/VehicleType-capacities.sch"/>
+    <sch:include href="PublicationDelivery/CompositeFrame/ResourceFrame/TransportAdministrativeZone.sch"/>
 
     <!-- Validatie van de ServiceFrame -->
     <sch:pattern id="ServiceFrame">
