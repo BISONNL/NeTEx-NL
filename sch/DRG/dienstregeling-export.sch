@@ -22,7 +22,6 @@
     <sch:include href="ResourceFrame/OperationalContext.sch"/>
     <sch:include href="ResourceFrame/Operator.sch"/>
     <sch:include href="ResourceFrame/PassengerCapacity.sch"/>
-    <sch:include href="ResourceFrame/Presentation.sch"/>
     <sch:include href="ResourceFrame/ResponsibilitySet.sch"/>
     <sch:include href="ResourceFrame/ServiceFacilitySet.sch"/>
     <sch:include href="ResourceFrame/TransportAdministrativeZone.sch"/>
@@ -84,6 +83,15 @@
     <!-- VehicleScheduleFrame -->
     <sch:include href="VehicleScheduleFrame/TypeOfFrameRef.sch"/>
     <sch:include href="VehicleScheduleFrame/Block.sch"/>
+
+    <!-- Algemeen -->
+    <sch:include href="Algemeen/Presentation.sch"/>
+    <sch:include href="Algemeen/Elementidentificatie.sch"/>
+    <sch:include href="Algemeen/Concessiegebonden-vervoer.sch"/>
+
+    <!-- GML -->
+    <sch:include href="GML/pos.sch"/>
+    <sch:include href="GML/posList.sch"/>
 
     <sch:pattern>
         <sch:rule context="ntx:PublicationDelivery">
