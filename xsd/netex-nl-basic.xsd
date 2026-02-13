@@ -342,6 +342,12 @@ Attribuut 'modification' geeft aan of de versie voor het eerst wordt aangeleverd
 			-->
 		</xsd:sequence>
 	</xsd:complexType>
+	<xsd:complexType name="extensionFlexibleServiceProperties">
+		<xsd:sequence>
+			<xsd:element name="SafeDurationFactor" type="xsd:decimal"/>
+			<xsd:element name="SafeDurationOffset" type="xsd:positiveInteger"/>
+		</xsd:sequence>
+	</xsd:complexType>
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- ELEMENTEN (ONDERSTEUNEND)                                                       -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->

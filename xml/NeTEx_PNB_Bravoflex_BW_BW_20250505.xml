@@ -22760,6 +22760,12 @@
                                     <RunTime>PT15M</RunTime>
                                 </VehicleJourneyRunTime>
                             </runTimes>
+                            <FlexibleServiceProperties>
+                                <Extensions>
+                                    <SafeDurationFactor>1.2</SafeDurationFactor>
+                                    <SafeDurationOffset>300</SafeDurationOffset>
+                                </Extensions>
+                            </FlexibleServiceProperties>
                         </ServiceJourney>
                         <ServiceJourney id="NL:PNB:ServiceJourney:2_de_gaarshof" version="3">
                             <validityConditions>
