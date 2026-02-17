@@ -791,7 +791,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="flexiblePointProperties">
 		<xsd:complexContent>
-			<xsd:extension base="EmbeddedObjectStructure">
+			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
 					<xsd:element name="MayBeSkipped" type="xsd:boolean" minOccurs="0"/>
 					<xsd:element name="PointStandingForAZone" type="xsd:boolean" minOccurs="0"/>
