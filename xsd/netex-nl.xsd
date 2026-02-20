@@ -23,9 +23,9 @@
 <!--   v9.2.3  (jul.2021) toevoegen flexvervoer                                      -->
 <!--   v9.2.4  (dec.2022) Organsation is ofwel Operator of Authority				 -->
 <!--					  Overeenkomstig EU XSD 						             -->
-<!--   v9.3.0  (xxx.2023) Attribuut version verplicht gemaakt bij alle elementen     -->
+<!--   v9.4.0  (xxx.2023) Attribuut version verplicht gemaakt bij alle elementen     -->
 <!--                      t.b.v. compatibiliteit Europa.				             -->
-<!--   v9.3.0  (xxx.2023) Attributen derivedFromObjectRef en derivedFromVersionRef   -->
+<!--   v9.4.0  (xxx.2023) Attributen derivedFromObjectRef en derivedFromVersionRef   -->
 <!--                      toegevoegd t.b.v. verwijzingen naar originele route bij    -->
 <!--                      omleidingen.                                               -->
 <!--   v9.3.0  (xxx.2023) Element limitations opgenomen in accessibilityAssessment   -->
@@ -194,11 +194,6 @@
 			<xsd:element name="DefaultResponsibilitySetRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:complexType name="versions">
-		<xsd:sequence>
-			<xsd:element name="Version" type="version"/>
-		</xsd:sequence>
-	</xsd:complexType>
 	<xsd:complexType name="codespaces">
 		<xsd:sequence>
 			<xsd:element name="Codespace" type="codespace" maxOccurs="unbounded"/>
@@ -307,21 +302,21 @@
 							<xsd:documentation>Bevat alleen DefaultResponsibilitySetRef voor de koppeling aan de (hoofd)financier</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:element name="routePoints">
+					<xsd:element name="routePoints" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="RoutePoint" type="routePoint" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="routeLinks">
+					<xsd:element name="routeLinks" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="RouteLink" type="routeLink" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="routes">
+					<xsd:element name="routes" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:choice maxOccurs="unbounded">
@@ -334,10 +329,7 @@
 					<xsd:element name="lines">
 						<xsd:complexType>
 							<xsd:sequence>
-								<xsd:choice maxOccurs="unbounded">
-									<xsd:element name="Line" type="line"/>
-									<xsd:element name="FlexibleLine" type="flexibleLine"/>
-								</xsd:choice>
+								<xsd:element name="Line" type="line" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
@@ -348,7 +340,7 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="destinationDisplays">
+					<xsd:element name="destinationDisplays" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="DestinationDisplay" type="destinationDisplay" maxOccurs="unbounded"/>
@@ -386,7 +378,7 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="timingLinks">
+					<xsd:element name="timingLinks" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="TimingLink" type="timingLink" maxOccurs="unbounded"/>
@@ -401,7 +393,7 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="timeDemandTypes">
+					<xsd:element name="timeDemandTypes" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="TimeDemandType" type="timeDemandType" maxOccurs="unbounded"/>
@@ -528,7 +520,6 @@
 								<xsd:sequence>
 									<xsd:element name="ServiceJourney" type="serviceJourney" minOccurs="0" maxOccurs="unbounded"/>
 									<xsd:element name="DeadRun" type="deadRun" minOccurs="0" maxOccurs="unbounded"/>
-									<xsd:element name="TemplateServiceJourney" type="templateServiceJourney" minOccurs="0" maxOccurs="unbounded"/>
 								</xsd:sequence>
 							</xsd:choice>
 						</xsd:complexType>
@@ -603,6 +594,7 @@
 					<xsd:documentation>Attribuut 'version' is de identificatie ("versie") van de levering/export.</xsd:documentation>
 				</xsd:annotation>
 				<xsd:sequence>
+					<xsd:element ref="ValidBetween" minOccurs="0"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="TypeOfFrameRef" type="TypeOfFrameRefStructure-composite"/>
 					<xsd:element name="codespaces" type="codespaces" minOccurs="0">
@@ -613,11 +605,6 @@
 					<xsd:element name="FrameDefaults" type="VersionFrameDefaultsStructure">
 						<xsd:annotation>
 							<xsd:documentation>In een 'dienstregeling' levering zijn alle defaults verplicht. Een export van 'centrale' gegevens bevat alleen DefaultCodespaceRef. Een export van 'voertuigen' bevat DefaultCodespaceRef, DefaultDataSourceRef en DefaultSystemOfUnits.</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:element name="versions" type="versions" minOccurs="0">
-						<xsd:annotation>
-							<xsd:documentation>Bevat één Version element dat de levering beschrijft. Wordt alleen gevuld in een 'dienstregeling' levering.</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
 					<xsd:element name="frames" minOccurs="0">
@@ -657,6 +644,22 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
+	<xsd:element name="ValidBetween">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="FromDate" type="xsd:dateTime">
+					<xsd:annotation>
+						<xsd:documentation>Startdatum van geldigheid van de levering. FromDate is INCLUSIEF.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="ToDate" type="xsd:dateTime">
+					<xsd:annotation>
+						<xsd:documentation>Einddatum van geldigheid van de levering. ToDate is INCLUSIEF.</xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- GEGEVENSLEVERING                                                                -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->

@@ -19,7 +19,7 @@
 			targetNamespace="http://www.netex.org.uk/netex"
 			elementFormDefault="qualified"
 			attributeFormDefault="qualified"
-			version="9.3.0"
+			version="9.4.0"
 			id="netex-nl-basic">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- AFHANKELIJKHEDEN                                                                -->
@@ -92,6 +92,11 @@
 	<xsd:complexType name="LocationStructure">
 		<xsd:sequence>
 			<xsd:element ref="gml:pos"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="privateCodes">
+		<xsd:sequence>
+			<xsd:element name="PrivateCode" type="PrivateCodeStructure" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="PrivateCodeStructure">
@@ -312,11 +317,6 @@ Attribuut 'modification' geeft aan of de versie voor het eerst wordt aangeleverd
 			<xsd:element name="TypeOfProductCategoryRef" type="VersionOfObjectRefStructure"/>
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:complexType name="extensionPrivateCode">
-		<xsd:sequence>
-			<xsd:element name="PrivateCode" type="PrivateCodeStructure"/>
-		</xsd:sequence>
-	</xsd:complexType>
 	<xsd:complexType name="extensionViaOrder">
 		<xsd:sequence>
 			<xsd:element name="ViaOrder" type="xsd:nonNegativeInteger"/>
@@ -331,16 +331,23 @@ Attribuut 'modification' geeft aan of de versie voor het eerst wordt aangeleverd
 			</xsd:element>
 		</xsd:sequence>
 	</xsd:complexType>
-	<!--
-	<xsd:complexType name="extensionFlexParameters">
+	<xsd:complexType name="extensionFlexibleLineParameters">
 		<xsd:sequence>
-			<xsd:element name="MaxDetourFactor" type="xsd:duration"/>
-			<xsd:element name="MaxTraveltimeOffset" type="xsd:duration"/>
-			<xsd:element name="AvgDetourFactor" type="xsd:duration"/>
-			<xsd:element name="AvgTraveltimeOffset" type="xsd:duration"/>
+			<xsd:element name="MaximumTravelDistance" type="DistanceType"/>
+			<!--
+			<xsd:element name="MaximumDetourFactor" type="xsd:duration"/>
+			<xsd:element name="MaximumTravelTimeOffset" type="xsd:duration"/>
+			<xsd:element name="AverageDetourFactor" type="xsd:duration"/>
+			<xsd:element name="AverageTravelTimeOffset" type="xsd:duration"/>
+			-->
 		</xsd:sequence>
 	</xsd:complexType>
--->
+	<xsd:complexType name="extensionFlexibleServiceProperties">
+		<xsd:sequence>
+			<xsd:element name="SafeDurationFactor" type="xsd:decimal"/>
+			<xsd:element name="SafeDurationOffset" type="xsd:positiveInteger"/>
+		</xsd:sequence>
+	</xsd:complexType>
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- ELEMENTEN (ONDERSTEUNEND)                                                       -->
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
