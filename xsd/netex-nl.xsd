@@ -539,7 +539,14 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-				</xsd:sequence>
+					<xsd:element name="flexibleServiceProperties" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="FlexibleServiceProperties" type="flexibleServiceProperties" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence> 
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
