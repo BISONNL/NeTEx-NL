@@ -1,10 +1,10 @@
-<sch:pattern id="DRG.TimetableFrame.AvailabilityCondition" xmlns:sch="http://purl.oclc.org/dsdl/schematron">>
+<sch:pattern id="DRG.TimetableFrame.AvailabilityCondition" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <sch:rule context="ntx:TimetableFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_TIMETABLE']/ntx:contentValidityConditions/ntx:AvailabilityCondition">
         <!-- Variables for use in business rule -->
-        <let name="from" value="xs:date(ntx:FromDate)"/>
-        <let name="to" value="xs:date(ntx:ToDate)"/>
-        <let name="bits" value="replace(normalize-space(ntx:ValidDayBits), '\s+', '')"/>
-        <let name="daysInclusive" value="floor(( $to - $from ) div xs:dayTimeDuration('P1D')) + 1"/>
+        <sch:let name="from" value="xs:date(ntx:FromDate)"/>
+        <sch:let name="to" value="xs:date(ntx:ToDate)"/>
+        <sch:let name="bits" value="replace(normalize-space(ntx:ValidDayBits), '\s+', '')"/>
+        <sch:let name="daysInclusive" value="floor(( $to - $from ) div xs:dayTimeDuration('P1D')) + 1"/>
 
         <!-- Cardinality and data-type constraints -->
         <sch:assert test="ntx:FromDate">FromDate is verplicht</sch:assert>
@@ -16,9 +16,9 @@
         <!-- De ToDate van de AvailabilityCondition dient ná de FromDate te liggen óf hieraan gelijk te zijn. -->
 
         <!-- B -->
-        <assert test="string-length($bits)=$daysInclusive">
-            Lengte van ValidDayBits (<value-of select="string-length($bits)"/>) moet gelijk zijn aan het aantal dagen tussen FromDate en ToDate (inclusief) (<value-of select="$daysInclusive"/>).
-        </assert>
+        <sch:assert test="string-length($bits)=$daysInclusive">
+            Lengte van ValidDayBits (<sch:value-of select="string-length($bits)"/>) moet gelijk zijn aan het aantal dagen tussen FromDate en ToDate (inclusief) (<sch:value-of select="$daysInclusive"/>).
+        </sch:assert>
 
     </sch:rule>
 </sch:pattern>

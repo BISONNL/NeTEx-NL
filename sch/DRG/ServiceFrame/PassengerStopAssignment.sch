@@ -7,8 +7,6 @@
         <sch:assert test="ntx:QuayRef">QuayRef is verplicht</sch:assert>
 
         <!-- Other business rules -->
-        <!-- A -->
-        <sch:assert test="ntx:QuayRef">QuayRef is verplicht</sch:assert>
 
         <!-- B -->
         <!-- TODO Elke ScheduledStopPoint dient exact één keer voor te komen in de lijst met PassengerStopAssignments.-->
