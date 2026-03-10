@@ -3,8 +3,6 @@
         <!-- Variables for use in business rule -->
 
         <!-- Cardinality and data-type constraints -->
-        <sch:assert test="ntx:Date">Date is verplicht</sch:assert>
-        <sch:assert test="ntx:DayTypeRef">DayTypeRef is verplicht</sch:assert>
 
         <!-- Other business rules -->
     </sch:rule>
