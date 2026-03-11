@@ -1,5 +1,5 @@
 <sch:pattern id="DRG.ServiceFrame.PassengerStopAssignment" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <sch:rule context="ntx:ServiceFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_SERVICE']/ntx:stopAssignments/ntx:PassengerStopAssignment">
+    <sch:rule context="ntx:ServiceFrame[ntx:Extensions/bpf:ProfileMarker[bpf:ProfileCode='NL-BISON-TIMETABLE']]/ntx:stopAssignments/ntx:PassengerStopAssignment">
         <!-- Variables for use in business rule -->
 
         <!-- Cardinality and data-type constraints -->

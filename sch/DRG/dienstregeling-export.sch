@@ -6,16 +6,22 @@
     <!-- Namespaces used in NeTEx NL -->
     <sch:ns prefix="ntx" uri="http://www.netex.org.uk/netex"/>
     <sch:ns prefix="gml" uri="http://www.opengis.net/gml/3.2"/>
+    <!-- BISON profile marker namespace (Extensions/ProfileMarker) -->
+    <sch:ns prefix="bpf" uri="urn:bison:profile"/>
+
+    <!-- Profile marker validation -->
+    <sch:include href="ProfileMarker.sch"/>
+
+    <!-- Optional TypeOfFrameRef consistency checks (when TypeOfFrameRef is present) -->
+    <sch:include href="TypeOfFrameRefConsistency.sch"/>
 
     <!-- Include all frame-specific schematron schema -->
     <!-- Composite -->
 <!--    <sch:include href="CompositeFrame/FrameDefaults.sch"/>-->
     <sch:include href="CompositeFrame/ValidBetween.sch"/>
-    <sch:include href="CompositeFrame/TypeOfFrameRef.sch"/>
     <sch:include href="CompositeFrame/frames.sch"/>
 
     <!-- ResourceFrame -->
-    <sch:include href="ResourceFrame/TypeOfFrameRef.sch"/>
     <sch:include href="ResourceFrame/Authority.sch"/>
     <sch:include href="ResourceFrame/Branding.sch"/>
     <sch:include href="ResourceFrame/DataSource.sch"/>
@@ -30,11 +36,9 @@
     <sch:include href="ResourceFrame/VehicleType.sch"/>
 
     <!-- InfrastructureFrame -->
-    <sch:include href="InfrastructureFrame/TypeOfFrameRef.sch"/>
     <sch:include href="InfrastructureFrame/ActivationPoint.sch"/>
 
     <!-- ServiceFrame -->
-    <sch:include href="ServiceFrame/TypeOfFrameRef.sch"/>
     <sch:include href="ServiceFrame/AccessibilityAssessment.sch"/>
     <sch:include href="ServiceFrame/AccessibilityAssessment-limitations.sch"/>
     <sch:include href="ServiceFrame/AccessibilityLimitation.sch"/>
@@ -63,11 +67,9 @@
     <sch:include href="ServiceFrame/TimingLink.sch"/>
     <sch:include href="ServiceFrame/TimingPoint.sch"/>
     <sch:include href="ServiceFrame/TimingPointInJourneyPattern.sch"/>
-    <sch:include href="ServiceFrame/TypeOfFrameRef.sch"/>
     <sch:include href="ServiceFrame/Via.sch"/>
 
     <!-- TimetableFrame -->
-    <sch:include href="TimetableFrame/TypeOfFrameRef.sch"/>
     <sch:include href="TimetableFrame/AvailabilityCondition.sch"/>
     <sch:include href="TimetableFrame/DeadRun.sch"/>
     <sch:include href="TimetableFrame/ServiceJourney.sch"/>
@@ -75,13 +77,11 @@
     <sch:include href="TimetableFrame/vehicleJourneys.sch"/>
 
     <!-- ServiceCalendarFrame -->
-    <sch:include href="ServiceCalendarFrame/TypeOfFrameRef.sch"/>
     <sch:include href="ServiceCalendarFrame/DayType.sch"/>
     <sch:include href="ServiceCalendarFrame/DayTypeAssignment.sch"/>
     <sch:include href="ServiceCalendarFrame/Timeband.sch"/>
 
     <!-- VehicleScheduleFrame -->
-    <sch:include href="VehicleScheduleFrame/TypeOfFrameRef.sch"/>
     <sch:include href="VehicleScheduleFrame/Block.sch"/>
 
     <!-- Algemeen -->

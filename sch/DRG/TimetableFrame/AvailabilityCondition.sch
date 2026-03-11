@@ -1,5 +1,5 @@
 <sch:pattern id="DRG.TimetableFrame.AvailabilityCondition" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <sch:rule context="ntx:TimetableFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_TIMETABLE']/ntx:contentValidityConditions/ntx:AvailabilityCondition">
+    <sch:rule context="ntx:TimetableFrame[ntx:Extensions/bpf:ProfileMarker[bpf:ProfileCode='NL-BISON-TIMETABLE']]/ntx:contentValidityConditions/ntx:AvailabilityCondition">
         <!-- Variables for use in business rule -->
         <sch:let name="from" value="xs:dateTime(ntx:FromDate)"/>
         <sch:let name="to" value="xs:dateTime(ntx:ToDate)"/>

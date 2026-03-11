@@ -1,5 +1,5 @@
 <sch:pattern id="DRG.ResourceFrame.ServiceFacilitySet" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <sch:rule context="ntx:ResourceFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_RESOURCE']/ntx:ServiceFacilitySet">
+    <sch:rule context="ntx:ResourceFrame[ntx:Extensions/bpf:ProfileMarker[bpf:ProfileCode='NL-BISON-TIMETABLE']]/ntx:ServiceFacilitySet">
         <!-- Variables for use in business rule -->
 
         <!-- Cardinality and data-type constraints -->

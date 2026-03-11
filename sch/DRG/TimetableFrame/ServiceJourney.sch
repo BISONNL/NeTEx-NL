@@ -1,5 +1,5 @@
 <sch:pattern id="DRG.TimetableFrame.ServiceJourney" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <sch:rule context="ntx:TimetableFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_TIMETABLE']/ntx:vehicleJourneys/ntx:ServiceJourney">
+    <sch:rule context="ntx:TimetableFrame[ntx:Extensions/bpf:ProfileMarker[bpf:ProfileCode='NL-BISON-TIMETABLE']]/ntx:vehicleJourneys/ntx:ServiceJourney">
         <!-- Variables for use in business rule -->
 
         <!-- Cardinality and data-type constraints -->

@@ -1,5 +1,5 @@
 <sch:pattern id="DRG.InfrastructureFrame.ActivationPoint" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <sch:rule context="ntx:InfrastructureFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_INFRA']/ntx:activationPoints/ntx:ActivationPoint">
+    <sch:rule context="ntx:InfrastructureFrame[ntx:Extensions/bpf:ProfileMarker[bpf:ProfileCode='NL-BISON-TIMETABLE']]/ntx:activationPoints/ntx:ActivationPoint">
 
         <!-- Cardinality and data-type constraints -->
         <sch:assert test="ntx:TypeOfActivationRef">TypeOfActivationRef is verplicht</sch:assert>

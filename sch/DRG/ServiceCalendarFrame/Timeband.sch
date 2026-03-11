@@ -1,5 +1,5 @@
 <sch:pattern id="DRG.ServiceCalendarFrame.Timeband" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <sch:rule context="ntx:ServiceCalendarFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_CALENDAR']/ntx:timebands/ntx:Timeband">
+    <sch:rule context="ntx:ServiceCalendarFrame[ntx:Extensions/bpf:ProfileMarker[bpf:ProfileCode='NL-BISON-TIMETABLE']]/ntx:timebands/ntx:Timeband">
         <!-- Variables for use in business rule -->
 
         <!-- Cardinality and data-type constraints -->

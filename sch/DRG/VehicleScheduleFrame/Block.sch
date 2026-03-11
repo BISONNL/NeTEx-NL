@@ -1,5 +1,5 @@
 <sch:pattern id="DRG.VehicleScheduleFrame.Block" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <sch:rule context="ntx:VehicleScheduleFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_VEHICLE']/ntx:blocks/ntx:Block">
+    <sch:rule context="ntx:VehicleScheduleFrame[ntx:Extensions/bpf:ProfileMarker[bpf:ProfileCode='NL-BISON-TIMETABLE']]/ntx:blocks/ntx:Block">
         <!-- Variables for use in business rule -->
 
         <!-- Cardinality and data-type constraints -->

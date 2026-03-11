@@ -1,10 +1,13 @@
+<!-- Profile selection migrated from TypeOfFrameRef to Extensions/ProfileMarker.
+     Frame composition rules now check for the presence of the correct frame element types,
+     not for TypeOfFrameRef values on child frames. -->
 <sch:pattern id="DRG.CompositeFrame.frames" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <sch:rule context="ntx:CompositeFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_BASELINE']/ntx:frames">
-        <sch:assert test="ntx:ResourceFrame/ntx:TypeOfFrameRef[count(@ref='NL:BISON:TypeOfFrame:NL_TT_RESOURCE')=1]">Er moet exact 1 ResourceFrame (van type 'NL:BISON:TypeOfFrame:NL_TT_RESOURCE') worden geleverd als onderdeel van de dienstregeling</sch:assert>
-        <sch:assert test="not(ntx:InfrastructureFrame) or ntx:InfrastructureFrame/ntx:TypeOfFrameRef[count(@ref='NL:BISON:TypeOfFrame:NL_TT_INFRA')&lt;2]">Er moet 0 of 1 InfrastructureFrames (van type 'NL:BISON:TypeOfFrame:NL_TT_INFRA') worden geleverd als onderdeel van de dienstregeling</sch:assert>
-        <sch:assert test="ntx:ServiceFrame/ntx:TypeOfFrameRef[count(@ref='NL:BISON:TypeOfFrame:NL_TT_SERVICE')=1]">Er moet exact 1 ServiceFrame (van type 'NL:BISON:TypeOfFrame:NL_TT_SERVICE') worden geleverd als onderdeel van de dienstregeling</sch:assert>
-        <sch:assert test="ntx:TimetableFrame/ntx:TypeOfFrameRef[count(@ref='NL:BISON:TypeOfFrame:NL_TT_TIMETABLE')&gt;0]">Er moet minimaal 1 TimetableFrame (van type 'NL:BISON:TypeOfFrame:NL_TT_TIMETABLE') worden geleverd als onderdeel van de dienstregeling</sch:assert>
-        <sch:assert test="ntx:ServiceCalendarFrame/ntx:TypeOfFrameRef[count(@ref='NL:BISON:TypeOfFrame:NL_TT_CALENDAR')=1]">Er moet exact 1 ServiceCalendarFrame (van type 'NL:BISON:TypeOfFrame:NL_TT_CALENDAR') worden geleverd als onderdeel van de dienstregeling</sch:assert>
-        <sch:assert test="ntx:VehicleScheduleFrame/ntx:TypeOfFrameRef[count(@ref='NL:BISON:TypeOfFrame:NL_TT_VEHICLE')=1]">Er moet exact 1 VehicleScheduleFrame (van type 'NL:BISON:TypeOfFrame:NL_TT_VEHICLE') worden geleverd als onderdeel van de dienstregeling</sch:assert>
+    <sch:rule context="ntx:CompositeFrame[ntx:Extensions/bpf:ProfileMarker[bpf:ProfileCode='NL-BISON-TIMETABLE']]/ntx:frames">
+        <sch:assert test="count(ntx:ResourceFrame)=1">Er moet exact 1 ResourceFrame worden geleverd als onderdeel van de dienstregeling</sch:assert>
+        <sch:assert test="count(ntx:InfrastructureFrame) &lt; 2">Er moet 0 of 1 InfrastructureFrames worden geleverd als onderdeel van de dienstregeling</sch:assert>
+        <sch:assert test="count(ntx:ServiceFrame)=1">Er moet exact 1 ServiceFrame worden geleverd als onderdeel van de dienstregeling</sch:assert>
+        <sch:assert test="count(ntx:TimetableFrame) &gt; 0">Er moet minimaal 1 TimetableFrame worden geleverd als onderdeel van de dienstregeling</sch:assert>
+        <sch:assert test="count(ntx:ServiceCalendarFrame)=1">Er moet exact 1 ServiceCalendarFrame worden geleverd als onderdeel van de dienstregeling</sch:assert>
+        <sch:assert test="count(ntx:VehicleScheduleFrame)=1">Er moet exact 1 VehicleScheduleFrame worden geleverd als onderdeel van de dienstregeling</sch:assert>
     </sch:rule>
 </sch:pattern>

@@ -1,5 +1,5 @@
 <sch:pattern id="DRG.ServiceFrame.NoticeAssignment" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <sch:rule context="ntx:ServiceFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_SERVICE']/ntx:noticeAssignments/ntx:NoticeAssignment">
+    <sch:rule context="ntx:ServiceFrame[ntx:Extensions/bpf:ProfileMarker[bpf:ProfileCode='NL-BISON-TIMETABLE']]/ntx:noticeAssignments/ntx:NoticeAssignment">
         <!-- Variables for use in business rule -->
 
         <!-- Cardinality and data-type constraints -->

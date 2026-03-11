@@ -1,5 +1,5 @@
 <sch:pattern id="DRG.ServiceFrame.PointProjection" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <sch:rule context="ntx:ServiceFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_SERVICE']//ntx:ScheduledStopPoint/ntx:projections/ntx:PointProjection">
+    <sch:rule context="ntx:ServiceFrame[ntx:Extensions/bpf:ProfileMarker[bpf:ProfileCode='NL-BISON-TIMETABLE']]//ntx:ScheduledStopPoint/ntx:projections/ntx:PointProjection">
         <!-- Variables for use in business rule -->
 
         <!-- Cardinality and data-type constraints -->
