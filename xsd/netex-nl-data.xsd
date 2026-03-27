@@ -521,8 +521,8 @@
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
-					<xsd:element name="FlexibleServiceType" type="FlexibleServiceTypeEnumeration" minOccurs="0"/>
 					<xsd:element name="Extensions" type="extensionFlexibleServiceProperties" minOccurs="0"/>
+					<xsd:element name="FlexibleServiceType" type="FlexibleServiceTypeEnumeration" minOccurs="0"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
