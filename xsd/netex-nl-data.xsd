@@ -16,7 +16,7 @@
 			targetNamespace="http://www.netex.org.uk/netex"
 			elementFormDefault="qualified"
 			attributeFormDefault="qualified"
-			version="9.3.0"
+			version="9.4.0"
 			id="netex-nl-data">
 	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 	<!-- AFHANKELIJKHEDEN                                                                -->
@@ -174,7 +174,9 @@
 	</xsd:complexType>
 	<xsd:complexType name="projections">
 		<xsd:sequence>
-			<xsd:element name="PointProjection" type="pointProjection"/>
+			<xsd:choice>
+				<xsd:element name="PointProjection" type="pointProjection"/>
+			</xsd:choice>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="pointProjection">
@@ -201,10 +203,7 @@
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
 					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
-					<xsd:choice>
-						<xsd:element name="LineRef" type="VersionOfObjectRefStructure"/>
-						<xsd:element name="FlexibleLineRef" type="VersionOfObjectRefStructure"/>
-					</xsd:choice>
+					<xsd:element name="LineRef" type="VersionOfObjectRefStructure"/>
 					<xsd:element name="DirectionType" type="DirectionTypeEnumeration"/>
 					<xsd:element name="pointsInSequence">
 						<xsd:complexType>
@@ -307,8 +306,8 @@
 						</xsd:annotation>
 					</xsd:element>
 					<xsd:element name="Name" type="MultilingualString"/>
-					<xsd:element name="Location" type="LocationStructure"/>
-					<xsd:element name="projections" type="projections"/>
+					<xsd:element name="Location" type="LocationStructure" minOccurs="0"/>
+					<xsd:element name="projections" type="projections" minOccurs="0"/>
 					<xsd:element name="stopAreas" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
@@ -364,10 +363,8 @@
 				<xsd:sequence>
 					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="ScheduledStopPointRef" type="VersionOfObjectRefStructure"/>
-					<xsd:choice>
-						<xsd:element name="StopPlaceRef" type="VersionOfObjectRefStructure"/>
-						<xsd:element name="QuayRef" type="VersionOfObjectRefStructure"/>
-					</xsd:choice>
+					<xsd:element name="StopPlaceRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="QuayRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -420,6 +417,13 @@
 							</xsd:restriction>
 						</xsd:simpleType>
 					</xsd:element>
+					<xsd:element name="timebands" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="Timeband" type="timeband" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -443,22 +447,40 @@
 				<xsd:sequence>
 					<xsd:element name="validityConditions" type="journeyValidityConditions" minOccurs="0"/>
 					<xsd:element name="keyList" type="KeyListStructure" minOccurs="0"/>
-					<xsd:element name="privateCodes" type="privateCodes">
+					<xsd:element name="privateCodes" type="privateCodes" minOccurs="0">
 						<xsd:annotation>
 							<xsd:documentation>Hier altijd type="JourneyNumber" gebruiken</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
 					<xsd:element name="Monitored" type="xsd:boolean" minOccurs="0"/>
-					<xsd:element name="DepartureTime" type="xsd:time"/>
+					<xsd:element name="DepartureTime" type="xsd:time" minOccurs="0"/>
 					<xsd:element name="DepartureDayOffset" type="xsd:integer" default="0" minOccurs="0"/>
 					<xsd:element name="dayTypes" type="journeyDayTypes" minOccurs="0"/>
 					<xsd:element name="ServiceJourneyPatternRef" type="VersionOfObjectRefStructure"/>
-					<xsd:element name="TimeDemandTypeRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="TimeDemandTypeRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 					<xsd:element name="VehicleTypeRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 					<xsd:element name="OperatorRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
+					<xsd:element name="LineRef" type="VersionOfObjectRefStructure" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Alleen indien er GEEN Route is gedefinieerd om de koppeling met een lijn te maken.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
 					<xsd:element name="Print" type="xsd:boolean" default="true" minOccurs="0"/>
 					<xsd:element name="Dynamic" type="DynamicAdvertisementEnumeration" default="always" minOccurs="0"/>
-					<xsd:element name="FlexibleServiceProperties" type="flexibleServiceProperties" minOccurs="0"/>
+					<xsd:element name="runTimes" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>
+								Enkel voor gebruik voor flexritten, waarbij de VehicleJourneyRunTime een "gemiddelde" rijtijd van bijvoorbeeld flexgebied naar hub representeert.
+								Voor regulier vervoer dient gebruik te worden gemaakt van TimeDemandTypeRef gebruiken.
+							</xsd:documentation>
+						</xsd:annotation>
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="VehicleJourneyRunTime" type="journeyRunTime" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="FlexibleServicePropertiesRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 				</xsd:sequence>
 				<xsd:attribute name="derivedFromVersionRef" type="VersionIdType" use="optional">
 					<xsd:annotation>
@@ -495,66 +517,12 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:complexType name="templateServiceJourney">
-		<xsd:complexContent>
-			<xsd:extension base="DataManagedObjectStructure">
-				<xsd:annotation>
-					<xsd:documentation>keyList geeft aan of de rit wordt uitgevoerd in hetzelfde domein (DataOwnerIsOperator). Mogelijke waarden: true (default), false.</xsd:documentation>
-				</xsd:annotation>
-				<xsd:sequence>
-					<xsd:element name="validityConditions" type="journeyValidityConditions" minOccurs="0"/>
-					<xsd:element name="keyList" type="KeyListStructure" minOccurs="0"/>
-					<xsd:element name="privateCodes" type="privateCodes" minOccurs="0">
-						<xsd:annotation>
-							<xsd:documentation>Hier altijd type="JourneyNumber" gebruiken</xsd:documentation>
-						</xsd:annotation>
-					</xsd:element>
-					<xsd:element name="Monitored" type="xsd:boolean" minOccurs="0"/>
-					<xsd:element name="dayTypes" type="journeyDayTypes" minOccurs="0"/>
-					<xsd:element name="ServiceJourneyPatternRef" type="VersionOfObjectRefStructure"/>
-					<xsd:element name="TimeDemandTypeRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-					<xsd:element name="VehicleTypeRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-					<xsd:element name="OperatorRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-					<xsd:choice minOccurs="0">
-						<xsd:annotation>
-							<xsd:documentation>?? Alleen indien er GEEN Route is gedefinieerd om de koppeling met een lijn te maken.</xsd:documentation>
-						</xsd:annotation>
-						<xsd:element name="LineRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-						<xsd:element name="FlexibleLineRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
-					</xsd:choice>
-					<xsd:element name="Print" type="xsd:boolean" default="true" minOccurs="0"/>
-					<xsd:element name="Dynamic" type="DynamicAdvertisementEnumeration" default="always" minOccurs="0"/>
-					<xsd:element name="FlexibleServiceProperties" type="flexibleServiceProperties"/>
-					<xsd:element name="TemplateVehicleJourneyType" type="TemplateVehicleJourneyTypeEnumeration" fixed="headway"/>
-					<xsd:element name="frequencyGroups">
-						<xsd:complexType>
-							<xsd:choice>
-								<xsd:element name="HeadwayJourneyGroupRef" type="VersionOfObjectRefStructure"/>
-								<xsd:element name="RhythmicalJourneyGroupRef" type="VersionOfObjectRefStructure"/>
-							</xsd:choice>
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:sequence>
-				<xsd:attribute name="derivedFromVersionRef" type="VersionIdType" use="optional">
-					<xsd:annotation>
-						<xsd:documentation>Versie van de rit waarop deze rit is gebaseerd. Kan in het NL-profiel, eventueel in combinatie met derivedFromObjectRef, gebruikt worden om te verwijzen naar de originele versie van een rit in geval van een omleiding.</xsd:documentation>
-					</xsd:annotation>
-				</xsd:attribute>
-				<xsd:attribute name="derivedFromObjectRef" type="ObjectIdType" use="optional">
-					<xsd:annotation>
-						<xsd:documentation>ID van de rit waarop deze rit is gebaseerd. Kan in het NL-profiel, eventueel in combinatie met derivedFromVersionRef, gebruikt worden om te verwijzen naar de originele versie van een rit in geval van een omleiding.</xsd:documentation>
-					</xsd:annotation>
-				</xsd:attribute>
-			</xsd:extension>
-		</xsd:complexContent>
-	</xsd:complexType>
 	<xsd:complexType name="flexibleServiceProperties">
 		<xsd:complexContent>
-			<xsd:extension base="EmbeddedObjectStructure">
+			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
-					<xsd:element name="FlexibleServiceType" type="FlexibleServiceTypeEnumeration"/>
-					<!-- <xsd:element name="CancellationPossible" type="xsd:boolean" default="true" minOccurs="0"/>
-					<xsd:element name="ChangeOfTimePossible" type="xsd:boolean" default="true" minOccurs="0"/> -->
+					<xsd:element name="Extensions" type="extensionFlexibleServiceProperties" minOccurs="0"/>
+					<xsd:element name="FlexibleServiceType" type="FlexibleServiceTypeEnumeration" minOccurs="0"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -601,7 +569,7 @@
 				<xsd:sequence>
 					<xsd:element name="StartTime" type="xsd:time"/>
 					<xsd:element name="EndTime" type="xsd:time"/>
-					<!-- <xsd:element name="DayOffset" type="xsd:integer" default="0" minOccurs="0"/> -->
+					<xsd:element name="DayOffset" type="xsd:integer" minOccurs="0"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -677,6 +645,7 @@
 					<xsd:documentation>Verplicht voor Line, optioneel voor FlexibleLine. Hier altijd type="LinePlanningNumber" gebruiken.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
+			<xsd:element name="Extensions" type="extensionFlexibleLineParameters" minOccurs="0"/>
 			<xsd:element name="BrandingRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 			<xsd:element name="Name" type="MultilingualString"/>
 			<xsd:element name="ShortName" type="MultilingualString" minOccurs="0"/>
@@ -686,7 +655,7 @@
 			<xsd:element name="Url" type="websiteURI" minOccurs="0"/>
 			<xsd:element name="PublicCode" type="xsd:normalizedString" minOccurs="0">
 				<xsd:annotation>
-					<xsd:documentation>Verplicht voor Line, optioneel voor FlexibleLine.</xsd:documentation>
+					<xsd:documentation>Verplicht voor reguliere lijndiensten, optioneel voor flexdiensten. Hier altijd type="LinePlanningNumber" gebruiken.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 			<xsd:element name="ExternalLineRef" type="ExternalObjectRefStructure" minOccurs="0"/>
@@ -704,20 +673,25 @@
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
 					<xsd:group ref="lineGroup"/>
+					<xsd:element name="FlexibleLineType" type="FlexibleLineTypeEnumeration" minOccurs="0"/>
+					<xsd:element name="bookingArrangements" type="bookingArrangements" minOccurs="0"/>
 				</xsd:sequence>
 				<xsd:attribute name="responsibilitySetRef" type="ObjectIdType" form="unqualified"/>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-	<xsd:complexType name="flexibleLine">
+	<xsd:complexType name="bookingArrangements">
+		<xsd:choice maxOccurs="unbounded">
+			<xsd:element name="BookingArrangementRef" type="BookingArrangement"/>
+			<xsd:element name="BookingArrangement" type="BookingArrangement"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="BookingArrangement">
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
-					<xsd:group ref="lineGroup"/>
-					<xsd:element name="FlexibleLineType" type="FlexibleLineTypeEnumeration"/>
 					<xsd:group ref="bookingArrangementsGroup"/>
 				</xsd:sequence>
-				<xsd:attribute name="responsibilitySetRef" type="ObjectIdType" form="unqualified"/>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
@@ -730,6 +704,7 @@
 			<xsd:element name="BuyWhen" type="PurchaseMomentListOfEnumerations" minOccurs="0"/>
 			<xsd:element name="LatestBookingTime" type="xsd:time" minOccurs="0"/>
 			<xsd:element name="MinimumBookingPeriod" type="xsd:duration" minOccurs="0"/>
+			<xsd:element name="MaximumBookingPeriod" type="xsd:duration" minOccurs="0"/>
 			<xsd:element name="BookingUrl" type="websiteURI" minOccurs="0"/>
 			<xsd:element name="BookingNote" type="MultilingualString" minOccurs="0"/>
 		</xsd:sequence>
@@ -803,16 +778,20 @@
 					<xsd:element name="DestinationDisplayRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 					<xsd:element name="FlexiblePointProperties" type="flexiblePointProperties" minOccurs="0">
 						<xsd:annotation>
-							<xsd:documentation>Alleen voor ritpatronen van een FlexibleLine/FlexibleRoute.</xsd:documentation>
+							<xsd:documentation>Alleen voor ritpatronen van een flexdienst.</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
+					<!-- BookingMethods (als onderdeel van BookingArrangments), Print en Dynamic t.b.v. Arriva Vlinder -->
+					<xsd:element name="bookingArrangements" type="bookingArrangements" minOccurs="0"/>
+					<xsd:element name="Print" type="xsd:boolean" default="true" minOccurs="0"/>
+					<xsd:element name="Dynamic" type="DynamicAdvertisementEnumeration" default="always" minOccurs="0"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
 	<xsd:complexType name="flexiblePointProperties">
 		<xsd:complexContent>
-			<xsd:extension base="EmbeddedObjectStructure">
+			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
 					<xsd:element name="MayBeSkipped" type="xsd:boolean" minOccurs="0"/>
 					<xsd:element name="PointStandingForAZone" type="xsd:boolean" minOccurs="0"/>
@@ -837,9 +816,13 @@
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
 					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
-					<xsd:element name="RouteRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="RouteRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 					<xsd:element name="DirectionType" type="DirectionTypeEnumeration" minOccurs="0"/>
-					<xsd:element name="DestinationDisplayRef" type="VersionOfObjectRefStructure"/>
+					<xsd:element name="DestinationDisplayRef" type="VersionOfObjectRefStructure" minOccurs="0">
+						<xsd:annotation>
+							<xsd:documentation>Verplicht voor reguliere lijndiensten, optioneel voor flexdiensten.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
 					<xsd:element name="pointsInSequence">
 						<xsd:complexType>
 							<xsd:choice minOccurs="2" maxOccurs="unbounded">
@@ -873,7 +856,7 @@
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
-					<xsd:element name="Distance" type="xsd:decimal"/>
+					<xsd:element name="Distance" type="xsd:decimal" minOccurs="0"/>
 					<xsd:element name="FromPointRef" type="VersionOfObjectRefStructure-with-optional-class"/>
 					<xsd:element name="ToPointRef" type="VersionOfObjectRefStructure-with-optional-class"/>
 					<xsd:element name="OperationalContextRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
@@ -885,6 +868,7 @@
 		<xsd:complexContent>
 			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
+					<!-- TimingLinkRef is optioneel voor flex-ritten, maar verplicht voor reguliere lijn-ritten. -->
 					<xsd:element name="TimingLinkRef" type="VersionOfObjectRefStructure"/>
 					<xsd:element name="RunTime" type="xsd:duration"/>
 				</xsd:sequence>
@@ -913,6 +897,18 @@
 						<xsd:element name="ScheduledStopPointRef" type="VersionOfObjectRefStructure"/>
 						<xsd:element name="TimingPointRef" type="VersionOfObjectRefStructure"/>
 					</xsd:choice>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="timetabledPassingTime">
+		<xsd:complexContent>
+			<xsd:extension base="EmbeddedObjectStructure">
+				<xsd:sequence>
+					<xsd:element name="LatestArrivalTime" type="xsd:time" minOccurs="0"/>
+					<xsd:element name="LatestArrivalDayOffset" type="xsd:integer" default="0" minOccurs="0"/>
+					<xsd:element name="EarliestDepartureTime" type="xsd:time" minOccurs="0"/>
+					<xsd:element name="EarliestDepartureDayOffset" type="xsd:integer" default="0" minOccurs="0"/>
 				</xsd:sequence>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -977,7 +973,7 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="variants">
+					<xsd:element name="variants" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="DestinationDisplayVariant" type="destinationDisplayVariant" minOccurs="4" maxOccurs="unbounded"/>
@@ -1118,7 +1114,7 @@
 					<xsd:element name="ReversingDirection" type="xsd:boolean" default="true" minOccurs="0"/>
 					<xsd:element name="SelfPropelled" type="xsd:boolean" default="true" minOccurs="0"/>
 					<xsd:element name="PropulsionType" type="PropulsionTypeEnumeration" minOccurs="0"/>
-					<xsd:element name="FuelType" type="FuelTypeEnumeration" />
+					<xsd:element name="FuelType" type="FuelTypeEnumeration"/>
 					<xsd:element name="MaximumRange" type="DistanceType" minOccurs="0"/>
 					<xsd:element name="MaximumVelocity" type="SpeedType" minOccurs="0"/>
 					<xsd:element name="TransportMode" type="TransportmodeEnum"/>
@@ -1142,10 +1138,9 @@
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
-
 	<xsd:complexType name="passengerCapacities_RelStructure">
 		<xsd:annotation>
-		<xsd:documentation>Type for a list of PASSENGER CAPACITY REQUIREMENTs.</xsd:documentation>
+			<xsd:documentation>Type for a list of PASSENGER CAPACITY REQUIREMENTs.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:choice maxOccurs="unbounded">
 			<xsd:element name="PassengerCapacityRef" type="VersionOfObjectRefStructure"/>
@@ -1154,21 +1149,21 @@
 	</xsd:complexType>
 	<xsd:element name="PassengerCapacity">
 		<xsd:annotation>
-		<xsd:documentation>Capacity for a VEHICLE TYPE and Class.</xsd:documentation>
+			<xsd:documentation>Capacity for a VEHICLE TYPE and Class.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:complexType>
-		<xsd:complexContent>
-			<xsd:restriction base="PassengerCapacityStructure">
-			<xsd:sequence>
-				<xsd:group ref="PassengerCapacityGroup"/>
-			</xsd:sequence>
-			<xsd:attribute name="id" type="PassengerCapacityIdType" use="required" form="unqualified">
-				<xsd:annotation>
-				<xsd:documentation>Identifier of PASSENGER CAPACITY.</xsd:documentation>
-				</xsd:annotation>
-			</xsd:attribute>
-			</xsd:restriction>
-		</xsd:complexContent>
+			<xsd:complexContent>
+				<xsd:restriction base="PassengerCapacityStructure">
+					<xsd:sequence>
+						<xsd:group ref="PassengerCapacityGroup"/>
+					</xsd:sequence>
+					<xsd:attribute name="id" type="PassengerCapacityIdType" use="required" form="unqualified">
+						<xsd:annotation>
+							<xsd:documentation>Identifier of PASSENGER CAPACITY.</xsd:documentation>
+						</xsd:annotation>
+					</xsd:attribute>
+				</xsd:restriction>
+			</xsd:complexContent>
 		</xsd:complexType>
 	</xsd:element>
 	<xsd:complexType name="PassengerCapacityStructure">
@@ -1191,52 +1186,52 @@
 	</xsd:simpleType>
 	<xsd:group name="PassengerCapacityGroup">
 		<xsd:annotation>
-		<xsd:documentation>Elements for a PASSENGER CAPACITY REQUIREMENT. relevant for passenger systems.</xsd:documentation>
+			<xsd:documentation>Elements for a PASSENGER CAPACITY REQUIREMENT. relevant for passenger systems.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-		<xsd:element name="FareClass" type="FareClassEnumeration" default="any" minOccurs="0">
-			<xsd:annotation>
-			<xsd:documentation>Edit fare class for which capacity is specifyed. Default is any, i.e. capacity is for all classes.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		<xsd:group ref="CapacityGroup"/>
+			<xsd:element name="FareClass" type="FareClassEnumeration" default="any" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Edit fare class for which capacity is specifyed. Default is any, i.e. capacity is for all classes.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:group ref="CapacityGroup"/>
 		</xsd:sequence>
 	</xsd:group>
 	<xsd:group name="CapacityGroup">
 		<xsd:annotation>
-		<xsd:documentation>Elements for a PASSENGER CAPACITY REQUIREMENT. relevant for passenger systems.</xsd:documentation>
+			<xsd:documentation>Elements for a PASSENGER CAPACITY REQUIREMENT. relevant for passenger systems.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
-		<xsd:element name="TotalCapacity" type="xsd:nonNegativeInteger" minOccurs="0">
-			<xsd:annotation>
-			<xsd:documentation>The total capacity of vehicles of the type. For a requirement this is the minimum needed.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		<xsd:element name="SeatingCapacity" type="xsd:nonNegativeInteger" minOccurs="0">
-			<xsd:annotation>
-			<xsd:documentation>The seating capacity of vehicles of the type. For a requirement this is the minimum needed.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		<xsd:element name="StandingCapacity" type="xsd:nonNegativeInteger" minOccurs="0">
-			<xsd:annotation>
-			<xsd:documentation>The standing capacity of vehicles of the type. For a requirement this is the minimum needed.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		<xsd:element name="SpecialPlaceCapacity" type="xsd:nonNegativeInteger" minOccurs="0">
-			<xsd:annotation>
-			<xsd:documentation>The number of special places on vehicles of the type, e.g. seats for the disabled. For a requirement this is the minimum needed.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		<xsd:element name="PushchairCapacity" type="xsd:nonNegativeInteger" minOccurs="0">
-			<xsd:annotation>
-			<xsd:documentation>The number of push chair places on vehicles of the type. For a requirement this is the minimum needed.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
-		<xsd:element name="WheelchairPlaceCapacity" type="xsd:nonNegativeInteger" minOccurs="0">
-			<xsd:annotation>
-			<xsd:documentation>The number of wheelchairs places on vehicles of the type. For a requirement this is the minimum needed.</xsd:documentation>
-			</xsd:annotation>
-		</xsd:element>
+			<xsd:element name="TotalCapacity" type="xsd:nonNegativeInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The total capacity of vehicles of the type. For a requirement this is the minimum needed.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SeatingCapacity" type="xsd:nonNegativeInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The seating capacity of vehicles of the type. For a requirement this is the minimum needed.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="StandingCapacity" type="xsd:nonNegativeInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The standing capacity of vehicles of the type. For a requirement this is the minimum needed.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="SpecialPlaceCapacity" type="xsd:nonNegativeInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The number of special places on vehicles of the type, e.g. seats for the disabled. For a requirement this is the minimum needed.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="PushchairCapacity" type="xsd:nonNegativeInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The number of push chair places on vehicles of the type. For a requirement this is the minimum needed.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="WheelchairPlaceCapacity" type="xsd:nonNegativeInteger" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The number of wheelchairs places on vehicles of the type. For a requirement this is the minimum needed.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
 		</xsd:sequence>
 	</xsd:group>
 	<xsd:complexType name="facilities">
@@ -1300,18 +1295,18 @@
 	</xsd:complexType>
 	<xsd:complexType name="flexibleArea">
 		<xsd:complexContent>
-			<xsd:extension base="EmbeddedObjectStructure">
+			<xsd:extension base="DataManagedObjectStructure">
 				<xsd:sequence>
 					<xsd:element name="Name" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="ShortName" type="MultilingualString"/>
 					<xsd:element name="Description" type="MultilingualString" minOccurs="0"/>
 					<xsd:element name="members" minOccurs="0">
 						<xsd:annotation>
-							<xsd:documentation>Alleen gebruiken als het gebied inliggende haltes heeft. De referenties verwijzen naar de RoutePoints die de haltes representeren.</xsd:documentation>
+							<xsd:documentation>Alleen gebruiken als het gebied inliggende haltes heeft. De referenties verwijzen naar de ScheduledStopPoints die de haltes representeren.</xsd:documentation>
 						</xsd:annotation>
 						<xsd:complexType>
 							<xsd:sequence>
-								<xsd:element name="RoutePointRef" type="VersionOfObjectRefStructure" maxOccurs="unbounded"/>
+								<xsd:element name="ScheduledStopPointRef" type="VersionOfObjectRefStructure" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>

@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PublicationDelivery xmlns="http://www.netex.org.uk/netex" xmlns:gml="http://www.opengis.net/gml/3.2" version="ntx:1.1">
+    <PublicationTimestamp>2024-01-17T15:13:00Z</PublicationTimestamp>
+    <ParticipantRef>ARR</ParticipantRef>
+    <Description>Voorbeeld-export voor flexRRReis Rijssen-Holten</Description>
+    <dataObjects>
+        <CompositeFrame id="NL:ARR:CompositeFrame:Rijssen-Holten" modification="new" version="1">
+            <ValidBetween>
+                <FromDate>2024-01-19T00:00:00Z</FromDate>
+                <ToDate>2024-12-31T00:00:00Z</ToDate>
+            </ValidBetween>
+            <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TT_BASELINE"/>
+            <FrameDefaults>
+                <DefaultCodespaceRef ref="NL:BISON:Codespace:ARR"/>
+                <DefaultDataSourceRef ref="NL:ARR:DataSource:ARR" version="1"/>
+                <DefaultResponsibilitySetRef ref="NL:ARR:ResponsibilitySet:Rijssen-Holten-partitie" version="1"/>
+                <DefaultLocale>
+                    <TimeZone>Europe/Amsterdam</TimeZone>
+                    <DefaultLanguage>nl</DefaultLanguage>
+                </DefaultLocale>
+                <DefaultLocationSystem>EPSG:28992</DefaultLocationSystem>
+                <DefaultSystemOfUnits>SiMetres</DefaultSystemOfUnits>
+                <DefaultCurrency>EUR</DefaultCurrency>
+            </FrameDefaults>
+            <frames>
+                <ResourceFrame id="NL:ARR:ResourceFrame:Rijssen-Holten" version="1">
+                    <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TT_RESOURCE"/>
+                    <dataSources>
+                        <DataSource id="NL:ARR:DataSource:ARR" version="1">
+                            <Name>Arriva</Name>
+                            <ShortName>ARR</ShortName>
+                            <Description>Arriva</Description>
+                        </DataSource>
+                    </dataSources>
+                    <responsibilitySets>
+                        <ResponsibilitySet id="NL:ARR:ResponsibilitySet:Rijssen-Holten-partitie" version="1">
+                            <Name>Rijssen-Holten-partitie</Name>
+                            <roles>
+                                <ResponsibilityRoleAssignment id="NL:ARR:ResponsibilityRoleAssignment:Rijssen-Holten-partitie" version="1">
+                                    <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="NL:ARR:TransportAdministrativeZone:Rijssen-Holten-partitie" version="any"/>
+                                </ResponsibilityRoleAssignment>
+                            </roles>
+                        </ResponsibilitySet>
+                        <!-- Concessie-verwijzing. concessie Twente -->
+                        <ResponsibilitySet id="NL:ARR:ResponsibilitySet:TW" version="1">
+                            <Name>Twente</Name>
+                            <roles>
+                                <ResponsibilityRoleAssignment id="NL:ARR:ResponsibilityRoleAssignment:TW" version="1">
+                                    <ResponsibleAreaRef nameOfRefClass="TransportAdministrativeZone" ref="NL:DOVA:TransportAdministrativeZone:TW" version="any"/>
+                                </ResponsibilityRoleAssignment>
+                            </roles>
+                        </ResponsibilitySet>
+                    </responsibilitySets>
+                    <organisations>
+                        <Operator id="NL:ARR:Operator:ARR" version="1">
+                            <Name>Arriva</Name>
+                            <ShortName>ARR</ShortName>
+                            <CustomerServiceContactDetails>
+                                <Url>https://arriva.nl/</Url>
+                            </CustomerServiceContactDetails>
+                        </Operator>
+                    </organisations>
+                    <operationalContexts>
+                        <OperationalContext id="NL:ARR:OperationalContext:0" version="1">
+                            <VehicleMode>bus</VehicleMode>
+                        </OperationalContext>
+                    </operationalContexts>
+                    <vehicleTypes>
+                        <VehicleType id="NL:ARR:VehicleType:FlexRRReis" version="1">
+                            <Name>FlexRRREis</Name>
+                            <ShortName>FlxR</ShortName>
+                            <Description>FlexRRREis</Description>
+                            <FuelType>diesel</FuelType>
+                            <TransportMode>bus</TransportMode>
+                            <capacities>
+                                <PassengerCapacity id="NL:ARR:PassengerCapacity:FlexRRReis" version="1">
+                                    <FareClass>any</FareClass>
+                                    <TotalCapacity>8</TotalCapacity>
+                                    <SeatingCapacity>8</SeatingCapacity>
+                                    <StandingCapacity>0</StandingCapacity>
+                                    <SpecialPlaceCapacity>0</SpecialPlaceCapacity>
+                                    <PushchairCapacity>0</PushchairCapacity>
+                                    <WheelchairPlaceCapacity>1</WheelchairPlaceCapacity>
+                                </PassengerCapacity>
+                            </capacities>
+                            <LowFloor>true</LowFloor>
+                            <HasLiftOrRamp>true</HasLiftOrRamp>
+                            <Length>0.00</Length>
+                            <facilities>
+                                <ServiceFacilitySet id="NL:ARR:ServiceFacilitySet:FlexRRReis" version="1">
+                                    <MobilityFacilityList>lowFloor suitableForWheelchairs</MobilityFacilityList>
+                                    <VehicleAccessFacilityList>manualRamp</VehicleAccessFacilityList>
+                                </ServiceFacilitySet>
+                            </facilities>
+                        </VehicleType>
+                    </vehicleTypes>
+                    <zones>
+                        <!-- Partitie-definitie -->
+                        <TransportAdministrativeZone id="NL:ARR:TransportAdministrativeZone:Rijssen-Holten-partitie" version="any">
+                            <Name>Rijssen-Holten</Name>
+                            <ShortName>HR</ShortName>
+                            <Description>flexRRReis Rijssen-Holten</Description>
+                        </TransportAdministrativeZone>
+                    </zones>
+                </ResourceFrame>
+                <!-- In het SiteFrame wordt het flexgebied beschreven -->
+                <SiteFrame id="NL:ARR:SiteFrame:Rijssen-Holten" version="1">
+                    <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TT_SITE"/>
+                    <flexibleStopPlaces>
+                        <!-- FlexibleStopPlace beschrijft het fysieke flexgebied. Dit kan met een polygoon en/of met een set van RoutePoints (RoutePoints definieren de fysieke locaties van pstappunten). Gebruik hier wat relevant is voor het type flexvervoer. -->
+                        <FlexibleStopPlace id="NL:ARR:FlexibleStopPlace:Rijssen-Holten" version="1">
+                            <!-- Name: optioneel -->
+                            <ShortName>FR-HR</ShortName>
+                            <!-- Description: optioneel -->
+                            <TransportMode>bus</TransportMode>
+                            <!-- PublicCode: optioneel -->
+                            <areas>
+                                <FlexibleArea id="NL:ARR:FlexibleArea:Rijssen-Holten" version="1">
+                                    <!-- Name: optioneel -->
+                                    <ShortName>FR-HR</ShortName>
+                                    <!-- Description: optioneel -->
+                                    <!-- members: De flexgebieden worden gedefinieerd door de haltes (niet door een polygoon-gebiedsbeschrijving), dus hier de ScheduledStopPointRefs opnemen -->
+                                    <members>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:41980010" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:41980050" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43670100" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43680040" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43680070" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43680100" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43680120" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43720010" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43720030" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43780040" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43780060" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43780100" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43780120" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43780180" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43780220" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43780240" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43780260" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43780270" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43780320" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43870130" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880030" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880050" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880073" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880075" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880140" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880160" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880180" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880200" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880220" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880240" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880270" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880310" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880330" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880360" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880380" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880460" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880510" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880540" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880570" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880610" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880630" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43880650" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43910010" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43910030" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43910050" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920010" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920030" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920050" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920070" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920090" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920110" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920130" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920150" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920170" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920190" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920210" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920230" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920250" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920270" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920290" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920310" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920330" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920350" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920370" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920390" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920410" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920430" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43920450" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:43929050" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:44270010" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:44290010" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:44290030" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:44380010" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45190010" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300010" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300030" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300050" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300070" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300090" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300110" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300130" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300150" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300170" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300190" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300210" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300230" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300250" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300270" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300290" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300310" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300330" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300350" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300370" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300390" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300410" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300430" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300450" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300470" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300490" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300510" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300530" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300550" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300570" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300590" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300610" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300630" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300650" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300670" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300690" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300710" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300730" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300750" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300770" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300790" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300810" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300830" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300850" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300870" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300890" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300910" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300930" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300950" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300970" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45300990" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45301010" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45301030" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45301050" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45301070" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45301090" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45301110" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45301130" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45301150" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45301170" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45301190" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45320010" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45320030" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45350010" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45350030" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:45400010" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:46910010" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:46910030" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:46910050" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:46920010" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:46920030" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:46920050" version="1"/>
+                                        <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:46950010" version="1"/>
+                                    </members>
+                                    <gml:Polygon gml:id="NL_ARR_Polygon_Rijssen-Holten">
+                                        <gml:exterior>
+                                            <gml:LinearRing>
+                                                <gml:posList>218870 473550 218870 486410 235810 486410 235810 473550</gml:posList>
+                                            </gml:LinearRing>
+                                        </gml:exterior>
+                                    </gml:Polygon>
+                                    <BoardingUse>true</BoardingUse>
+                                    <AlightingUse>true</AlightingUse>
+                                </FlexibleArea>
+                            </areas>
+                        </FlexibleStopPlace>
+                    </flexibleStopPlaces>
+                </SiteFrame>
+                <ServiceFrame id="NL:ARR:ServiceFrame:Rijssen-Holten" version="1">
+                    <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TT_SERVICE"/>
+                    <!-- routePoints: voor flexritten zijn routePoints alleen relevant als er volgens een vaste route gereden wordt. -->
+                    <!-- routeLinks: voor flexritten zijn routeLinks alleen relevant als er volgens een vaste route gereden wordt. -->
+                    <!-- routes: voor flexritten zijn routes alleen relevant als er volgens een vaste route gereden wordt. -->
+                    <lines>
+                        <!-- De definitie van de flexlijn. Flex Rijssen-Holten valt onder concessie TW  -->
+                        <Line id="NL:ARR:Line:Rijssen-Holten" version="1" responsibilitySetRef="NL:ARR:ResponsibilitySet:TW">
+                            <Name>Rijssen-Holten</Name>
+                            <TransportMode>bus</TransportMode>
+                            <OperatorRef ref="NL:ARR:Operator:ARR" version="1"/>
+                            <TypeOfServiceRef ref="NL:BISON:TypeOfService:Flex" version="any"></TypeOfServiceRef>
+                            <Monitored>false</Monitored>
+                            <AccessibilityAssessment id="8p" version="1">
+                                <MobilityImpairedAccess>true</MobilityImpairedAccess>
+                                <limitations>
+                                    <AccessibilityLimitation>
+                                        <!-- toegankelijk voor rolstoel -->
+                                        <WheelchairAccess>true</WheelchairAccess>
+                                        <!-- niet zelfstandig toegankelijk voor rolstoel -->
+                                        <StepFreeAccess>false</StepFreeAccess>
+                                    </AccessibilityLimitation>
+                                </limitations>
+                            </AccessibilityAssessment>
+                            <bookingArrangements>
+                                <BookingArrangement id="NL:ARR:BookingArrangement:Vlinder" version="1">
+                                    <!-- Boeking kenmerken die een reisplanner kan gebruiken
+                                         BookingContact, BookingMethods, BookingAccess, BookWhen, BuyWhen, LatestBookingTime, MinimumBookingPeriod, MaximumBookingPeriod, BookingUrl, BookingNote. -->
+                                    <BookingContact>
+                                        <Phone>+31 85 20 85 212</Phone>
+                                    </BookingContact>
+                                    <!-- mobileApp zit nog niet in enum van BookingMethods==> PR voor CEN NeTEx indienen  -->
+                                    <BookingMethods>mobileApp</BookingMethods>
+                                    <BookingAccess>public</BookingAccess>
+                                    <BookWhen>advanceAndDayOfTravel</BookWhen>
+                                    <BuyWhen>onCheckIn</BuyWhen>
+                                    <MinimumBookingPeriod>PT0S</MinimumBookingPeriod>
+                                    <MaximumBookingPeriod>PT360H</MaximumBookingPeriod>
+                                    <BookingNote>Reservering verplicht: Telefonisch of via Arriva App.
+                                        Telefonisch via de klantenservice 085 - 20 85 212 (kies 1 voor reisinformatie, daarna '7' voor flexRRReis).
+                                        Via de Arriva App: download deze app, ga naar het menu, kies hier voor 'Vlinder en flexreizen', registreer je hier eenmalig en daarna kun je je reis eenvoudig plannen en boeken.
+                                    </BookingNote>
+                                </BookingArrangement>
+                            </bookingArrangements>
+                        </Line>
+                    </lines>
+                    <scheduledStopPoints>
+                        <ScheduledStopPoint id="NL:ARR:ScheduledStopPoint:Rijssen-Holten" version="1">
+                            <Name>Flexgebied Rijssen-Holten</Name>
+                            <Location>
+                                <!-- Hier is gekozen voor het centrale punt van alle haltes die vallen onder de flex-zone die deze ScheduledStopPoint representeert.
+                                     Andere opties zijn om hier een vast routepunt op te nemen (bijvoorbeeld een station waar de bus gegarandeerd vertrekt, indien relevant).
+                                     Of we maken dit element optioneel en laten het weg als het een zone betreft (en geen fysiek punt).
+                                -->
+                                <gml:pos>227342 479982</gml:pos>
+                            </Location>
+                            <!-- PointProjections kunnen worden opgenomen, indien er relevante RoutePoints zijn, analoog aan hoe dat voor reguliere ScheduledStopPoints gebeurt. -->
+                        </ScheduledStopPoint>
+                        <!-- TODO: Hier nog alle ScheduledStopPoints opnemen waaraan gerefereerd wordt vanuit de FlexibleArea -->
+                    </scheduledStopPoints>
+                    <stopAssignments>
+                        <!-- Koppeling van de ScheduledStopPoint die het logische flexgebied representeert aan de FlexibleStopPlace die het fysieke flexgebied beschrijft (middels Polygon) -->
+                        <FlexibleStopAssignment id="NL:ARR:ServiceJourneyPattern:Rijssen-Holten" version="1" order="1">
+                            <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:Rijssen-Holten" version="1"/>
+                            <FlexibleStopPlaceRef ref="NL:ARR:FlexibleStopPlace:Rijssen-Holten" version="1"/>
+                        </FlexibleStopAssignment>
+                        <!-- TODO: Hier alle PassengerStopAssignments opnemen om de logische haltes in het flexgebied te koppelen aan de bijbehorende Quays uit het CHB -->
+                    </stopAssignments>
+                    <timingLinks>
+                        <TimingLink id="NL:ARR:TimingLink:Rijssen-Holten" version="1">
+                            <FromPointRef ref="NL:ARR:ScheduledStopPoint:Rijssen-Holten" version="1"/>
+                            <ToPointRef ref="NL:ARR:ScheduledStopPoint:Rijssen-Holten" version="1"/>
+                        </TimingLink>
+                    </timingLinks>
+                    <journeyPatterns>
+                        <ServiceJourneyPattern id="NL:ARR:ServiceJourneyPattern:Rijssen-Holten" version="1">
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="NL:ARR:StopPointInJourneyPattern:instappen" version="1" order="1">
+                                    <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:Rijssen-Holten" version="1"></ScheduledStopPointRef>
+                                    <OnwardTimingLinkRef ref="NL:ARR:TimingLink:Rijssen-Holten" version="1"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="NL:ARR:StopPointInJourneyPattern:uitstappen" version="1" order="2">
+                                    <ScheduledStopPointRef ref="NL:ARR:ScheduledStopPoint:Rijssen-Holten" version="1"></ScheduledStopPointRef>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServiceJourneyPattern>
+                    </journeyPatterns>
+                </ServiceFrame>
+                <TimetableFrame id="NL:ARR:TimetableFrame:Rijssen-Holten" version="1">
+                    <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE"/>
+                    <contentValidityConditions>
+                        <AvailabilityCondition id="NL:ARR:AvailabilityCondition:Rijssen-Holten" version="1">
+                            <FromDate>2024-01-19T00:00:00Z</FromDate>
+                            <ToDate>2024-12-31T00:00:00Z</ToDate>
+                            <ValidDayBits>100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011111001111100111110011</ValidDayBits>
+                            <timebands>
+                                <Timeband id="NL:ARR:Timeband:Rijssen-Holten" version="1">
+                                    <StartTime>07:00:00</StartTime>
+                                    <EndTime>22:00:00</EndTime>
+                                </Timeband>
+                            </timebands>
+                        </AvailabilityCondition>
+                    </contentValidityConditions>
+                    <vehicleJourneys>
+                        <ServiceJourney id="NL:ARR:ServiceJourney:Rijssen-Holten" version="1">
+                            <validityConditions>
+                                <AvailabilityConditionRef ref="NL:ARR:AvailabilityCondition:Rijssen-Holten" version="1"/>
+                            </validityConditions>
+                            <!-- PrivateCode: indien er geen journeyNumbers zijn voor flexritten mag de PrivateCode worden weggelaten. -->
+                            <Monitored>false</Monitored><!-- Geef 'true' op als de rit wel gevolgd wordt. -->
+                            <!-- dayTypes: optioneel -->
+                            <ServiceJourneyPatternRef ref="NL:ARR:ServiceJourneyPattern:Rijssen-Holten" version="1"/>
+                            <VehicleTypeRef ref="NL:ARR:VehicleType:FlexRRReis" version="1"/>
+                            <!-- OperatorRef: optioneel, alleen nodig indien uitvoerend Operator niet gelijk is aan Operator in OperatorView van dit TimetableFrame -->
+                            <!-- (Flexible)LineRef: Indien er geen Route is gedefinieerd voor een flexlijn, dan kan hier de link naar het (Flexible)Line object gemaakt worden. Anders kan dat achterwege gelaten worden, en wordt de (Flexible)Line via Route gekoppeld. -->
+                            <LineRef ref="NL:ARR:Line:Rijssen-Holten" version="1"/>
+                            <runTimes>
+                                <VehicleJourneyRunTime id="NL:ARR:JourneyRunTime:Rijssen-Holten" version="1">
+                                    <TimingLinkRef ref="NL:ARR:TimingLink:Rijssen-Holten" version="1"/>
+                                    <RunTime>PT30M</RunTime>
+                                </VehicleJourneyRunTime>
+                            </runTimes>
+                        </ServiceJourney>
+                    </vehicleJourneys>
+                </TimetableFrame>
+            </frames>
+        </CompositeFrame>
+
+        <!-- De volgende CompositeFrames met 'predefined values' worden meegeleverd voor compleetheid. Levering hiervan is in werkelijkheid niet verplicht, maar zorgt er wel voor dat het bestand valideert met de 'met-constraints' xsd. -->
+        
+        <CompositeFrame id="NL:ARR:CompositeFrame:PredefinedAuthorities" version="any">
+            <Description>Kopie uit de centrale DOVA-lijst van relevante concessieverleners</Description>
+            <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_DOVA_LISTS"/>
+            <FrameDefaults>
+                <DefaultCodespaceRef ref="NL:BISON:Codespace:DOVA"/>
+            </FrameDefaults>
+            <frames>
+                <GeneralFrame id="NL:ARR:GeneralFrame:ConcessieVerleners" version="any">
+                    <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_AuthorityList"/>
+                    <members>
+                        <Authority id="NL:DOVA:Authority:OVS" version="any">
+                            <Name>Overijssel</Name>
+                            <ShortName>OVS</ShortName>
+                            <Description>Provincie Overijssel</Description>
+                        </Authority>
+                    </members>
+                </GeneralFrame>
+            </frames>
+        </CompositeFrame>
+        <CompositeFrame id="NL:ARR:CompositeFrame:PredefinedNetworks" version="any">
+            <Description>Kopie uit de centrale DOVA-lijst van relevante concessies</Description>
+            <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_DOVA_LISTS"/>
+            <FrameDefaults>
+                <DefaultCodespaceRef ref="NL:BISON:Codespace:DOVA"/>
+            </FrameDefaults>
+            <frames>
+                <GeneralFrame id="NL:ARR:GeneralFrame:Concessies" version="any">
+                    <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_NetworkList"/>
+                    <members>
+                       <Network id="NL:DOVA:Network:TW" version="any">
+                            <Name>Twente</Name>
+                            <ShortName>TW</ShortName>
+                            <Description>Twente</Description>
+                            <TransportMode>bus</TransportMode>
+                            <GroupOfLinesType>administrative</GroupOfLinesType>
+                            <AuthorityRef ref="NL:DOVA:Authority:OVS" version="any"/>
+                        </Network>
+                        <TransportAdministrativeZone id="NL:DOVA:TransportAdministrativeZone:TW" version="any">
+                            <Name>Twente</Name>
+                            <ShortName>TW</ShortName>
+                        </TransportAdministrativeZone>
+                    </members>
+                </GeneralFrame>
+            </frames>
+        </CompositeFrame>
+        <CompositeFrame id="NL:ARR:CompositeFrame:PredefinedEnumerations" version="any">
+            <Description>Kopie van relevante waardes uit de centrale BISON-enumeraties</Description>
+            <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_BISON_ENUMS"/>
+            <FrameDefaults>
+                <DefaultCodespaceRef ref="NL:BISON:Codespace:BISON"/>
+            </FrameDefaults>
+            <frames>
+                <GeneralFrame id="NL:ARR:GeneralFrame:Predefined_TypeOfService" version="any">
+                    <Description>Standaardenumeratie met voorgedefinieerde formules (lijnkenmerken).</Description>
+                    <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues"/>
+                    <members>
+                        <ValueSet id="NL:ARR:ValueSet:TypeOfService" version="any">
+                            <values>
+                                <TypeOfService id="NL:BISON:TypeOfService:Flex" version="any">
+                                    <Name>Standaard</Name>
+                                    <Description>Regulier (openbaar) vervoer</Description>
+                                </TypeOfService>
+                            </values>
+                        </ValueSet>
+                    </members>
+                </GeneralFrame>
+                <GeneralFrame id="NL:ARR:GeneralFrame:Predefined_Technical" version="any">
+                    <Description>Diverse technische standaardenumeraties t.b.v. het NL NeTEx Profiel.</Description>
+                    <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations"/>
+                    <members>
+                        <ValueSet id="NL:ARR:ValueSet:TypeOfResponsibilityRole" version="any">
+                            <values>
+                                <TypeOfResponsibilityRole id="NL:BISON:TypeOfResponsibilityRole:financing" version="any">
+                                    <Name>Financing</Name>
+                                    <Description>Financieren van het OV</Description>
+                                </TypeOfResponsibilityRole>
+                            </values>
+                        </ValueSet>
+                        <ValueSet id="NL:ARR:ValueSet:TypeOfFrame_930" version="any">
+                            <values>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_BASELINE" version="9.4.0">
+                                    <Name>Baseline composite frame</Name>
+                                    <Description>Composite frame met een 'baseline' (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_RESOURCE" version="9.4.0">
+                                    <Name>Resource frame</Name>
+                                    <Description>Resource frame (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SERVICE" version="9.4.0">
+                                    <Name>Service frame</Name>
+                                    <Description>Service frame (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE" version="9.4.0">
+                                    <Name>Timetable frame</Name>
+                                    <Description>Timetable frame (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_CALENDAR" version="9.4.0">
+                                    <Name>ServiceCalendar frame</Name>
+                                    <Description>ServiceCalendar frame (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_SITE" version="9.4.0">
+                                    <Name>Site frame</Name>
+                                    <Description>Site frame (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TT_VEHICLE" version="9.4.0">
+                                    <Name>VehicleSchedule frame</Name>
+                                    <Description>VehicleSchedule frame (NL dienstregeling Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_CODESPACES" version="9.4.0">
+                                    <Name>Codespace composite frame</Name>
+                                    <Description>Composite frame met de domeinen (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_BISON_ENUMS" version="9.4.0">
+                                    <Name>BISON composite frame</Name>
+                                    <Description>Composite frame met de BISON standaardenumeraties (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues" version="9.4.0">
+                                    <Name>TypeOfService frame</Name>
+                                    <Description>Frame met de TypeOfService standaardenumeratie (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations" version="9.4.0">
+                                    <Name>TechnicalValues frame</Name>
+                                    <Description>Frame met de technische standaardenumeraties (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_DOVA_LISTS" version="9.4.0">
+                                    <Name>DOVA composite frame</Name>
+                                    <Description>Composite frame met de DOVA lijsten (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_TariffZoneList" version="9.4.0">
+                                    <Name>TariffZones frame</Name>
+                                    <Description>Frame met de DOVA lijst van OV-zones (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_AuthorityList" version="9.4.0">
+                                    <Name>Authorities frame</Name>
+                                    <Description>Frame met de DOVA lijst van concessieverleners (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                                <TypeOfFrame id="NL:BISON:TypeOfFrame:NL_NetworkList" version="9.4.0">
+                                    <Name>Networks frame</Name>
+                                    <Description>Frame met de DOVA lijst van concessies (NL centraal Profiel)</Description>
+                                </TypeOfFrame>
+                            </values>
+                        </ValueSet>
+                    </members>
+                </GeneralFrame>
+            </frames>
+        </CompositeFrame>
+        <CompositeFrame id="NL:ARR:CompositeFrame:PredefinedCodespaces" version="any">
+            <Description>Kopie van relevante Codespaces uit de centrale BISON-lijsten</Description>
+            <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_CODESPACES"/>
+            <codespaces>
+                <Codespace id="NL:BISON:Codespace:BISON">
+                    <Xmlns>BISON</Xmlns>
+                    <XmlnsUrl>http://bison.dova.nu/ns/BISON</XmlnsUrl>
+                    <Description>BISON standaardenumeraties</Description>
+                </Codespace>
+                <Codespace id="NL:BISON:Codespace:DOVA">
+                    <Xmlns>DOVA</Xmlns>
+                    <XmlnsUrl>http://bison.dova.nu/ns/DOVA</XmlnsUrl>
+                    <Description>'Centrale' lijsten bijgehouden door DOVA</Description>
+                </Codespace>
+                <Codespace id="NL:BISON:Codespace:ARR">
+                    <Xmlns>ARR</Xmlns>
+                    <XmlnsUrl>http://bison.dova.nu/ns/ARR</XmlnsUrl>
+                    <Description>Arriva</Description>
+                </Codespace>
+            </codespaces>
+            <FrameDefaults>
+                <DefaultCodespaceRef ref="NL:BISON:Codespace:BISON"/>
+            </FrameDefaults>
+        </CompositeFrame>
+    </dataObjects>
+</PublicationDelivery>

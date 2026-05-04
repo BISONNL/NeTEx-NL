@@ -18,7 +18,7 @@
                     <TimeZoneOffset>+1</TimeZoneOffset>
                     <TimeZone>Europe/Amsterdam</TimeZone>
                     <SummerTimeZoneOffset>+2</SummerTimeZoneOffset>
-		    <DefaultLanguage>nl</DefaultLanguage>
+		            <DefaultLanguage>nl</DefaultLanguage>
                 </DefaultLocale>
                 <DefaultLocationSystem>EPSG:28992</DefaultLocationSystem>
                 <DefaultSystemOfUnits>SiMetres</DefaultSystemOfUnits>
@@ -166,15 +166,6 @@
                         </RoutePoint>
                     </routePoints>
                     <routeLinks>
-                        <RouteLink id="NL:HTM:RouteLink:R8137-R8135" version="1">
-                            <Distance>954</Distance>
-                            <gml:LineString gml:id="NL_HTM_LineString_R8137-R8135">
-                                <gml:posList>95448 450702 95507 450772 95548 450815 95565 450831 95605 450868 95627 450889 95663 450922 95692 450949 95748 451000 95757 451009 95792 451041 95901 451143 95925 451165 95942 451180 95956 451192 95971 451205 95985 451216 96001 451228 96020 451241 96076 451281 96091 451291 96129 451318 96149 451331 96150 451332</gml:posList>
-                            </gml:LineString>
-                            <FromPointRef ref="NL:HTM:RoutePoint:R8137" version="1"/>
-                            <ToPointRef ref="NL:HTM:RoutePoint:R8135" version="1"/>
-                            <OperationalContextRef ref="NL:HTM:OperationalContext:tram" version="1"/>
-                        </RouteLink>
                         <RouteLink id="NL:HTM:RouteLink:R8135-R8132" version="1">
                             <Distance>974</Distance>
                             <gml:LineString gml:id="NL_HTM_LineString_R8135-R8132">
@@ -185,44 +176,6 @@
                             <OperationalContextRef ref="NL:HTM:OperationalContext:tram" version="1"/>
                         </RouteLink>
                         <!-- ... -->
-                        <RouteLink id="NL:HTM:RouteLink:R1428-R1429" version="1">
-                            <Distance>185</Distance>
-                            <gml:LineString gml:id="NL_HTM_LineString_R1428-R1429">
-                                <gml:posList>76734 453902 76725 453908 76714 453913 76701 453916 76688 453917 76674 453915 76664 453911 76657 453908 76650 453903 76639 453894 76631 453886 76623 453873 76617 453860 76615 453847 76615 453833 76615 453832</gml:posList>
-                            </gml:LineString>
-                            <FromPointRef ref="NL:HTM:RoutePoint:R1428" version="1"/>
-                            <ToPointRef ref="NL:HTM:RoutePoint:R1429" version="1"/>
-                            <OperationalContextRef ref="NL:HTM:OperationalContext:tram" version="1"/>
-                        </RouteLink>
-                        <!-- ... -->
-                        <RouteLink id="NL:HTM:RouteLink:R1429-R1419" version="1">
-                          <Distance>171</Distance>
-                          <gml:LineString gml:id="NL_HTM_LineString_R1429-R1419">
-                            <gml:posList>76615 453832 76619 453817 76622 453807 76624 453801 76627 453797 76631 453794 76634 453792 76638 453790 76641 453789 76647 453788 76652 453787 76657 453787 76663 453789 76706 453812 76759 453840</gml:posList>
-                          </gml:LineString>
-                          <FromPointRef ref="NL:HTM:RoutePoint:R1429" version="1"/>
-                          <ToPointRef ref="NL:HTM:RoutePoint:R1419" version="1"/>
-                          <OperationalContextRef ref="NL:HTM:OperationalContext:tram" version="1"/>
-                        </RouteLink>
-                        <RouteLink id="NL:HTM:RouteLink:R1419-R1903" version="1">
-                          <Distance>452</Distance>
-                          <gml:LineString gml:id="NL_HTM_LineString_R1419-R1903">
-                            <gml:posList>76759 453840 76766 453843 76770 453845 76798 453860 76806 453865 76888 453912 77073 454023 77078 454026 77104 454042 77108 454044 77112 454046 77150 454069</gml:posList>
-                          </gml:LineString>
-                          <FromPointRef ref="NL:HTM:RoutePoint:R1419" version="1"/>
-                          <ToPointRef ref="NL:HTM:RoutePoint:R1903" version="1"/>
-                          <OperationalContextRef ref="NL:HTM:OperationalContext:tram" version="1"/>
-                        </RouteLink>
-                        <!-- ... -->
-                        <RouteLink id="NL:HTM:RouteLink:R8136-R8137" version="1">
-                          <Distance>932</Distance>
-                          <gml:LineString gml:id="NL_HTM_LineString_R8136-R8137">
-                            <gml:posList>96086 451293 96074 451284 96017 451245 95998 451231 95983 451219 95969 451208 95953 451195 95939 451183 95923 451168 95899 451146 95726 450986 95697 450959 95689 450952 95660 450925 95650 450915 95634 450899 95621 450884 95605 450868 95565 450831 95548 450815 95507 450772 95448 450702</gml:posList>
-                          </gml:LineString>
-                          <FromPointRef ref="NL:HTM:RoutePoint:R8136" version="1"/>
-                          <ToPointRef ref="NL:HTM:RoutePoint:R8137" version="1"/>
-                          <OperationalContextRef ref="NL:HTM:OperationalContext:tram" version="1"/>
-                        </RouteLink>
                     </routeLinks>
                     <routes>
                         <Route id="NL:HTM:Route:34-Inbound" version="1">
@@ -236,38 +189,6 @@
                                 </PointOnRoute>
                                 <PointOnRoute id="NL:HTM:PointOnRoute:34-96-2" version="1">
                                     <RoutePointRef ref="NL:HTM:RoutePoint:R8135" version="1"/>
-                                    <OnwardRouteLinkRef ref="NL:HTM:RouteLink:R8135-R8132" version="1"/>
-                                </PointOnRoute>
-                                <!-- ... -->
-                                <PointOnRoute id="NL:HTM:PointOnRoute:34-96-31" version="1">
-                                    <RoutePointRef ref="NL:HTM:RoutePoint:R1428" version="1"/>
-                                    <OnwardRouteLinkRef ref="NL:HTM:RouteLink:R1428-R1429" version="1"/>
-                                </PointOnRoute>
-                                <PointOnRoute id="NL:HTM:PointOnRoute:34-96-32" version="1">
-                                    <RoutePointRef ref="NL:HTM:RoutePoint:R1429" version="1"/>
-                                </PointOnRoute>
-                            </pointsInSequence>
-                        </Route>
-                        <Route id="NL:HTM:Route:34-Outbound" version="1">
-                            <Name>Routepatroon 97 van Lijn 34</Name>
-                            <LineRef ref="NL:HTM:Line:34" version="1"/>
-                            <DirectionType>outbound</DirectionType>
-                            <pointsInSequence>
-                                <PointOnRoute id="NL:HTM:PointOnRoute:34-97-1" version="1">
-                                    <RoutePointRef ref="NL:HTM:RoutePoint:R1429" version="1"/>
-                                    <OnwardRouteLinkRef ref="NL:HTM:RouteLink:R1429-R1419" version="1"/>
-                                </PointOnRoute>
-                                <PointOnRoute id="NL:HTM:PointOnRoute:34-97-2" version="1">
-                                    <RoutePointRef ref="NL:HTM:RoutePoint:R1419" version="1"/>
-                                    <OnwardRouteLinkRef ref="NL:HTM:RouteLink:R1419-R1903" version="1"/>
-                                </PointOnRoute>
-                                <!-- ... -->
-                                <PointOnRoute id="NL:HTM:PointOnRoute:34-97-31" version="1">
-                                    <RoutePointRef ref="NL:HTM:RoutePoint:R8136" version="1"/>
-                                    <OnwardRouteLinkRef ref="NL:HTM:RouteLink:R8136-R8137" version="1"/>
-                                </PointOnRoute>
-                                <PointOnRoute id="NL:HTM:PointOnRoute:34-97-32" version="1">
-                                    <RoutePointRef ref="NL:HTM:RoutePoint:R8137" version="1"/>
                                 </PointOnRoute>
                             </pointsInSequence>
                         </Route>
@@ -288,6 +209,33 @@
                             <Monitored>true</Monitored>
                             <AccessibilityAssessment id="NL:HTM:AccessibilityAssessment:34" version="1">
                                 <MobilityImpairedAccess>true</MobilityImpairedAccess>
+                                <limitations>
+                                    <AccessibilityLimitation>
+                                        <WheelchairAccess>true</WheelchairAccess>
+                                    </AccessibilityLimitation>
+                                </limitations>
+                            </AccessibilityAssessment>
+                        </Line>
+                        <Line id="NL:HTM:Line:34" responsibilitySetRef="HTM:ResponsibilitySet:HGL-R" version="1">
+                            <privateCodes>
+                                <PrivateCode type="LinePlanningNumber">34</PrivateCode>
+                            </privateCodes>
+                            <Name>Lijn 34</Name>
+                            <TransportMode>tram</TransportMode>
+                            <PublicCode>34</PublicCode>
+                            <ExternalLineRef type="VetagLineNumber" ref="NL:34"/>
+                            <AuthorityRef ref="NL:DOVA:Authority:MRDH" version="any"/>
+                            <OperatorRef ref="NL:HTM:Operator:HTM" version="1"/>
+                            <TypeOfProductCategoryRef ref="NL:HTM:TypeOfProductCategory:RandstadRail" version="1"/>
+                            <TypeOfServiceRef ref="NL:BISON:TypeOfService:Standaard" version="any"/>
+                            <Monitored>true</Monitored>
+                            <AccessibilityAssessment id="NL:HTM:AccessibilityAssessment:34" version="1">
+                                <MobilityImpairedAccess>true</MobilityImpairedAccess>
+                                <limitations>
+                                    <AccessibilityLimitation>
+                                        <WheelchairAccess>true</WheelchairAccess>
+                                    </AccessibilityLimitation>
+                                </limitations>
                             </AccessibilityAssessment>
                         </Line>
                     </lines>
@@ -305,7 +253,7 @@
                                         <MaxLength>BISON:DisplayTextLength:24</MaxLength>
                                     </Extensions>
                                     <DestinationDisplayVariantMediaType>any</DestinationDisplayVariantMediaType>
-                                    <Name>Lansingerlnd-Zoetermeer</Name>
+                                    <Name>Lansingerland-Zoetermeer</Name>
                                 </DestinationDisplayVariant>
                                 <DestinationDisplayVariant id="NL:HTM:DestinationDisplayVariant:23-21" version="1">
                                     <Extensions>
@@ -581,23 +529,23 @@
                         </StopArea>
                     </stopAreas>
                     <stopAssignments>
-                        <PassengerStopAssignment id="NL:HTM:PassengerStopAssignement:R8137" order="1" version="1">
+                        <PassengerStopAssignment id="NL:HTM:PassengerStopAssignment:R8137" order="1" version="1">
                             <Name>Lansingerland-Zoetermeer</Name>
                             <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:R8137" version="1"/>
                             <QuayRef ref="NL:CHB:Quay:32008137" version="1"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="NL:HTM:PassengerStopAssignement:R8136" order="1" version="1">
+                        <PassengerStopAssignment id="NL:HTM:PassengerStopAssignment:R8136" order="1" version="1">
                             <Name>Van Tuyllpark</Name>
                             <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:R8136" version="1"/>
                             <QuayRef ref="NL:CHB:Quay:32008136" version="1"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment id="NL:HTM:PassengerStopAssignement:R8135" order="1" version="1">
+                        <PassengerStopAssignment id="NL:HTM:PassengerStopAssignment:R8135" order="1" version="1">
                             <Name>Van Tuyllpark</Name>
                             <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:R8135" version="1"/>
                             <QuayRef ref="NL:CHB:Quay:32008135" version="1"/>
                         </PassengerStopAssignment>
                         <!-- ... -->
-                        <PassengerStopAssignment id="NL:HTM:PassengerStopAssignement:R1428" order="1" version="1">
+                        <PassengerStopAssignment id="NL:HTM:PassengerStopAssignment:R1428" order="1" version="1">
                             <Name>De Savornin Lohmanplein</Name>
                             <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:R1428" version="1"/>
                             <QuayRef ref="NL:CHB:Quay:32001428" version="1"/>
@@ -693,7 +641,7 @@
                                 </StopPointInJourneyPattern>
                                 <StopPointInJourneyPattern id="NL:HTM:StopPointInJourneyPattern:34-Inbound-2" version="1">
                                     <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:R8135" version="1"/>
-                                    <!-- <OnwardTimingLinkRef ref="NL:HTM:TimingLink:R8135-R8132" version="1"/> -->
+                                    <OnwardTimingLinkRef ref="NL:HTM:TimingLink:R8135-R8132" version="1"/>
                                     <ForAlighting>true</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                     <DestinationDisplayRef ref="NL:HTM:DestinationDisplay:DD-via-CS" version="1"/>
@@ -709,55 +657,6 @@
                                 </TimingPointInJourneyPattern>
                             </pointsInSequence>
                         </ServiceJourneyPattern>
-                        <ServiceJourneyPattern id="NL:HTM:ServiceJourneyPattern:34-Outbound" version="1">
-                            <RouteRef ref="NL:HTM:Route:34-Outbound" version="1"/>
-                            <DirectionType>outbound</DirectionType>
-                            <DestinationDisplayRef ref="NL:HTM:DestinationDisplay:LZ" version="1"/>
-                            <pointsInSequence>
-                                <TimingPointInJourneyPattern id="NL:HTM:TimingPointInJourneyPattern:34-Outbound-1" version="1">
-                                    <TimingPointRef ref="NL:HTM:TimingPoint:R1429" version="1"/>
-                                    <OnwardTimingLinkRef ref="NL:HTM:TimingLink:R1429-R1419" version="1"/>
-                                    <IsWaitPoint>true</IsWaitPoint>
-                                </TimingPointInJourneyPattern>
-                                <StopPointInJourneyPattern id="NL:HTM:StopPointInJourneyPattern:34-Outbound-2" version="1">
-                                    <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:R1419" version="1"/>
-                                    <!-- <OnwardTimingLinkRef ref="NL:HTM:TimingLink:R1419-R1903" version="1"/> -->
-                                </StopPointInJourneyPattern>
-                                <!-- ... -->
-                                <StopPointInJourneyPattern id="NL:HTM:StopPointInJourneyPattern:34-Outbound-31" version="1">
-                                    <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:R8136" version="1"/>
-                                    <OnwardTimingLinkRef ref="NL:HTM:TimingLink:R8136-R8137" version="1"/>
-                                </StopPointInJourneyPattern>
-                                <StopPointInJourneyPattern id="NL:HTM:StopPointInJourneyPattern:34-Outbound-32" version="1">
-                                    <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:R8137" version="1"/>
-                                </StopPointInJourneyPattern>
-                            </pointsInSequence>
-                        </ServiceJourneyPattern>
-                        <!-- Het eindpunt van de start-DeadRun is het beginpunt van de rit die daarna start -->
-                        <DeadRunJourneyPattern id="NL:HTM:DeadRunJourneyPattern:34-Start" version="1">
-                            <pointsInSequence>
-                                <TimingPointInJourneyPattern id="NL:HTM:TimingPointInJourneyPattern:34-Start-1" version="1">
-                                    <TimingPointRef ref="NL:HTM:TimingPoint:DTW" version="1"/>
-                                    <OnwardTimingLinkRef ref="NL:HTM:TimingLink:DTW-R8137" version="1"/>
-                                </TimingPointInJourneyPattern>
-                                <StopPointInJourneyPattern id="NL:HTM:StopPointInJourneyPattern:34-Start-2" version="1">
-                                    <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:R8137" version="1"/>
-                                </StopPointInJourneyPattern>
-                            </pointsInSequence>
-                        </DeadRunJourneyPattern>
-                        <!-- Het beginpunt van de end-DeadRun is het eindpunt van de rit die hiervoor is geeindigd -->
-                        <DeadRunJourneyPattern id="NL:HTM:DeadRunJourneyPattern:34-End" version="1">
-                            <pointsInSequence>
-                                <StopPointInJourneyPattern id="NL:HTM:StopPointInJourneyPattern:34-End-1" version="1">
-                                    <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:R8137" version="1"/>
-                                    <OnwardTimingLinkRef ref="NL:HTM:TimingLink:R8137-R8135" version="1"/>
-                                </StopPointInJourneyPattern>
-                                <!-- ... -->
-                                <TimingPointInJourneyPattern id="NL:HTM:TimingPointInJourneyPattern:34-End-22" version="1">
-                                    <TimingPointRef ref="NL:HTM:TimingPoint:RVZ" version="1"/>
-                                </TimingPointInJourneyPattern>
-                            </pointsInSequence>
-                        </DeadRunJourneyPattern>
                     </journeyPatterns>
                     <timeDemandTypes>
                         <!-- Twee TDTs op dezelfde SJP, met verschillende runtimes -->
@@ -787,29 +686,41 @@
                                 </JourneyRunTime>
                             </runTimes>
                             <waitTimes>
-                                <JourneyWaitTime id="NL:HTM:JourneyWaitTime:34-351-2" version="A">
+                                <JourneyWaitTime id="NL:HTM:JourneyWaitTime:34-351-2" version="2">
                                     <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:R1419" version="1"/>
                                     <WaitTime>PT15S</WaitTime>
                                 </JourneyWaitTime>
                             </waitTimes>
                             <layovers>
-                                <JourneyLayover id="NL:HTM:JourneyLayover:34-351-31" version="">
+                                <JourneyLayover id="NL:HTM:JourneyLayover:34-351-31" version="3">
                                     <Layover>PT20S</Layover>
                                     <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:R8137" version="1"/>
                                 </JourneyLayover>
                             </layovers>
                         </TimeDemandType>
-                        <TimeDemandType id="NL:HTM:TimeDemandType:34:398" version="1">
-                          <runTimes>
-                            <JourneyRunTime id="NL:HTM:JourneyRunTime:34:398:1" version="1">
-                              <TimingLinkRef ref="NL:HTM:TimingLink:DTW-R8137" version="1"/>
-                              <RunTime>PT315S</RunTime>
-                            </JourneyRunTime>
-                          </runTimes>
+                        <TimeDemandType id="NL:HTM:TimeDemandType:34-398" version="1">
+                            <runTimes>
+                                <JourneyRunTime id="NL:HTM:JourneyRunTime:34-398-1" version="1">
+                                    <TimingLinkRef ref="NL:HTM:TimingLink:DTW-R8137" version="1"/>
+                                    <RunTime>PT315S</RunTime>
+                                </JourneyRunTime>
+                            </runTimes>
+                            <waitTimes>
+                                <JourneyWaitTime id="NL:HTM:JourneyWaitTime:34-398">
+                                    <ScheduledStopPointRef ref="NL:HTM:ScheduledStopPoint:21704804"/>
+                                    <WaitTime>PT60S</WaitTime>
+                                </JourneyWaitTime>
+                            </waitTimes>
+                            <layovers>
+                                <JourneyLayover id="NL:HTM:JourneyLayover:34-398" modification="new" version="174">
+                                    <Layover>PT90S</Layover>
+                                    <ScheduledStopPointRef version="174" ref="NL:HTM:ScheduledStopPoint:53360741"/>
+                                </JourneyLayover>
+                            </layovers>
                         </TimeDemandType>
-                        <TimeDemandType id="NL:HTM:TimeDemandType:34:292" version="1">
+                        <TimeDemandType id="NL:HTM:TimeDemandType:34-292" version="1">
                           <runTimes>
-                            <JourneyRunTime id="NL:HTM:JourneyRunTime:34:292:1" version="1">
+                            <JourneyRunTime id="NL:HTM:JourneyRunTime:34-292-1" version="1">
                               <TimingLinkRef ref="NL:HTM:TimingLink:R1429-R1419" version="1"/>
                               <RunTime>PT59S</RunTime>
                             </JourneyRunTime>
@@ -833,8 +744,8 @@
                     <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TT_TIMETABLE"/>
                     <contentValidityConditions>
                         <AvailabilityCondition id="NL:HTM:AvailabilityCondition:Weekdays" version="1">
-                            <FromDate>2024-09-09T00:00:00Z</FromDate>
-                            <ToDate>2024-10-02T00:00:00Z</ToDate>
+                            <FromDate>2024-09-09T00:00:00</FromDate>
+                            <ToDate>2024-10-02T00:00:00</ToDate>
                             <ValidDayBits>101110010111001111100000</ValidDayBits>
                         </AvailabilityCondition>
                     </contentValidityConditions>
@@ -995,14 +906,14 @@
                 </VehicleScheduleFrame>
             </frames>
         </CompositeFrame>
-        <CompositeFrame id="NL:HTM:CompositeFrame:PredefinedTariffZones" version="any">
+        <CompositeFrame id="NL:HTM:CompositeFrame:PredefinedTariffZones" version="1">
             <Description>Kopie uit de centrale DOVA-lijst van relevante OV-zones</Description>
             <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_DOVA_LISTS"/>
             <FrameDefaults>
                 <DefaultCodespaceRef ref="NL:BISON:Codespace:DOVA"/>
             </FrameDefaults>
             <frames>
-                <GeneralFrame id="NL:HTM:GeneralFrame:OvZones" version="any">
+                <GeneralFrame id="NL:HTM:GeneralFrame:OvZones" version="1">
                     <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TariffZoneList"/>
                     <members>
                         <TariffZone id="NL:DOVA:TariffZone:5441" version="any">
@@ -1019,14 +930,14 @@
                 </GeneralFrame>
             </frames>
         </CompositeFrame>
-        <CompositeFrame id="NL:HTM:CompositeFrame:PredefinedAuthorities" version="any">
+        <CompositeFrame id="NL:HTM:CompositeFrame:PredefinedAuthorities" version="1">
             <Description>Kopie uit de centrale DOVA-lijst van relevante concessieverleners</Description>
             <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_DOVA_LISTS"/>
             <FrameDefaults>
                 <DefaultCodespaceRef ref="NL:BISON:Codespace:DOVA"/>
             </FrameDefaults>
             <frames>
-                <GeneralFrame id="NL:HTM:GeneralFrame:ConcessieVerleners" version="any">
+                <GeneralFrame id="NL:HTM:GeneralFrame:ConcessieVerleners" version="1">
                     <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_AuthorityList"/>
                     <members>
                         <Authority id="NL:DOVA:Authority:MRDH" version="any">
@@ -1038,14 +949,14 @@
                 </GeneralFrame>
             </frames>
         </CompositeFrame>
-        <CompositeFrame id="NL:HTM:CompositeFrame:PredefinedNetworks" version="any">
+        <CompositeFrame id="NL:HTM:CompositeFrame:PredefinedNetworks" version="1">
             <Description>Kopie uit de centrale DOVA-lijst van relevante concessies</Description>
             <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_DOVA_LISTS"/>
             <FrameDefaults>
                 <DefaultCodespaceRef ref="NL:BISON:Codespace:DOVA"/>
             </FrameDefaults>
             <frames>
-                <GeneralFrame id="NL:HTM:GeneralFrame:Concessies" version="any">
+                <GeneralFrame id="NL:HTM:GeneralFrame:Concessies" version="1">
                     <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_NetworkList"/>
                     <members>
                         <Network id="NL:DOVA:Network:HGL-R" version="any">
@@ -1064,14 +975,14 @@
                 </GeneralFrame>
             </frames>
         </CompositeFrame>
-        <CompositeFrame id="NL:HTM:CompositeFrame:PredefinedEnumerations" version="any">
+        <CompositeFrame id="NL:HTM:CompositeFrame:PredefinedEnumerations" version="1">
             <Description>Kopie van relevante waardes uit de centrale BISON-enumeraties</Description>
             <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_BISON_ENUMS"/>
             <FrameDefaults>
                 <DefaultCodespaceRef ref="NL:BISON:Codespace:BISON"/>
             </FrameDefaults>
             <frames>
-                <GeneralFrame id="NL:HTM:GeneralFrame:Predefined_TypeOfService" version="any">
+                <GeneralFrame id="NL:HTM:GeneralFrame:Predefined_TypeOfService" version="1">
                     <Description>Standaardenumeratie met voorgedefinieerde formules (lijnkenmerken).</Description>
                     <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TypeOfServiceValues"/>
                     <members>
@@ -1085,7 +996,7 @@
                         </ValueSet>
                     </members>
                 </GeneralFrame>
-                <GeneralFrame id="NL:HTM:GeneralFrame:Predefined_Technical" version="any">
+                <GeneralFrame id="NL:HTM:GeneralFrame:Predefined_Technical" version="1">
                     <Description>Diverse technische standaardenumeraties t.b.v. het NL NeTEx Profiel.</Description>
                     <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_TechnicalEnumerations"/>
                     <members>
@@ -1181,7 +1092,7 @@
                 </GeneralFrame>
             </frames>
         </CompositeFrame>
-        <CompositeFrame id="NL:HTM:CompositeFrame:PredefinedCodespaces" version="any">
+        <CompositeFrame id="NL:HTM:CompositeFrame:PredefinedCodespaces" version="1">
             <Description>Kopie van relevante Codespaces uit de centrale BISON-lijsten</Description>
             <TypeOfFrameRef version="9.4.0" ref="NL:BISON:TypeOfFrame:NL_CODESPACES"/>
             <codespaces>

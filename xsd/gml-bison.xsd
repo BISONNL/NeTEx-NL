@@ -13,7 +13,7 @@
 		xmlns:xlink="http://www.w3.org/1999/xlink"
 		targetNamespace="http://www.opengis.net/gml/3.2"
 		elementFormDefault="qualified"
-		version="9.3.0"
+		version="9.4.0"
 		id="gml-bison">
 	<attribute name="id" type="ID"/>
 	<element name="pos">
