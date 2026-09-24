@@ -181,7 +181,7 @@
 			<xsd:element name="DefaultDataSourceRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 			<xsd:element name="DefaultResponsibilitySetRef" type="VersionOfObjectRefStructure" minOccurs="0"/>
 			<xsd:element name="DefaultLocale" type="LocaleStructure" minOccurs="0"/>
-			<xsd:element name="DefaultLocationSystem" type="xsd:normalizedString" fixed="EPSG:28992" minOccurs="0"/>
+			<xsd:element name="DefaultLocationSystem" type="xsd:normalizedString" fixed="EPSG:4326" minOccurs="0"/>
 			<xsd:element name="DefaultSystemOfUnits" type="SystemOfUnits" fixed="SiMetres" minOccurs="0"/>
 			<xsd:element name="DefaultCurrency" type="CurrencyType" fixed="EUR" minOccurs="0"/>
 		</xsd:sequence>
@@ -532,17 +532,17 @@
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
-					<xsd:element name="journeyInterchanges" minOccurs="0">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="ServiceJourneyInterchange" type="serviceJourneyInterchange" maxOccurs="unbounded"/>
-							</xsd:sequence>
-						</xsd:complexType>
-					</xsd:element>
 					<xsd:element name="flexibleServiceProperties" minOccurs="0">
 						<xsd:complexType>
 							<xsd:sequence>
 								<xsd:element name="FlexibleServiceProperties" type="flexibleServiceProperties" maxOccurs="unbounded"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="journeyInterchanges" minOccurs="0">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="ServiceJourneyInterchange" type="serviceJourneyInterchange" maxOccurs="unbounded"/>
 							</xsd:sequence>
 						</xsd:complexType>
 					</xsd:element>
