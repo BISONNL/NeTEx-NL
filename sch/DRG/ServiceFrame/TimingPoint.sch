@@ -1,4 +1,4 @@
-<sch:pattern id="DRG.ServiceFrame.TimingPoint" xmlns:sch="http://purl.oclc.org/dsdl/schematron">>
+<sch:pattern id="DRG.ServiceFrame.TimingPoint" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <sch:rule context="ntx:ServiceFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_SERVICE']/ntx:timingPoints/ntx:TimingPoint">
         <!-- Variables for use in business rule -->
 
@@ -9,7 +9,7 @@
 
         <!-- Other business rules -->
         <!-- A -->
-        <sch:assert test="ntx:privateCodes/ntx:PrivateCode[@type='UserStopCode']/text()=''">De waarde van de PrivateCode van type 'UserStopCode' mag niet leeg zijn</sch:assert>
+        <sch:assert test="ntx:privateCodes/ntx:PrivateCode[@type='UserStopCode']/text()!=''">De waarde van de PrivateCode van type 'UserStopCode' mag niet leeg zijn</sch:assert>
 
     </sch:rule>
 </sch:pattern>

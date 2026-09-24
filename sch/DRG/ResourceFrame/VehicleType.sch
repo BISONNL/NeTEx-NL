@@ -14,9 +14,9 @@
 
         <!-- Other business rules -->
         <!-- A -->
-        <sch:assert xmlns:sch="http://purl.oclc.org/dsdl/schematron" test="matches(normalize-space(/ntx:FuelType), '[petrol|diesel|naturalGas|biodiesel|electricity|hydrogen|other]')">Het NL-profiel ondersteunt alleen de volgende waardes voor FuelType: petrol | diesel | naturalGas | biodiesel | electricity | hydrogen | other</sch:assert>
+        <sch:assert test="matches(normalize-space(ntx:FuelType), '^(petrol|diesel|naturalGas|biodiesel|electricity|hydrogen|other)$')">Het NL-profiel ondersteunt alleen de volgende waardes voor FuelType: petrol | diesel | naturalGas | biodiesel | electricity | hydrogen | other</sch:assert>
 
         <!-- B -->
-        <sch:assert test="/ntx:capacities[count(ntx:PassengerCapacity)=1] or /ntx:capacities[count(ntx:PassengerCapacityRef)=1]">Altijd 1 embedded PassengerCapacity element OF 1 PassengerCapacityRef verwijzing opnemen</sch:assert>
+        <sch:assert test="ntx:capacities[count(ntx:PassengerCapacity)=1] or ntx:capacities[count(ntx:PassengerCapacityRef)=1]">Altijd 1 embedded PassengerCapacity element OF 1 PassengerCapacityRef verwijzing opnemen</sch:assert>
     </sch:rule>
 </sch:pattern>

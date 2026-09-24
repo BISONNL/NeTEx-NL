@@ -9,7 +9,7 @@
 
         <!-- Other business rules -->
         <!-- A -->
-        <sch:assert test="count(ntx:PointOnRoute)>1">Er wordt een minimum van twee PointOnRoute elementen verwacht</sch:assert>
+        <sch:assert test="count(ntx:pointsInSequence/ntx:PointOnRoute)>1">Er wordt een minimum van twee PointOnRoute elementen verwacht</sch:assert>
 
     </sch:rule>
 </sch:pattern>

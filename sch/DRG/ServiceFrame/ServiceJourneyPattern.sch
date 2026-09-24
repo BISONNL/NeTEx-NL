@@ -8,7 +8,5 @@
         <sch:assert test="ntx:pointsInSequence[count(*)>1]">Er moeten minimaal twee punten opgenomen zijn in de pointsInSequence (StopPointInJourneyPattern en/of TimingPointInJourneyPattern)</sch:assert>
 
         <!-- Other business rules -->
-        <!-- A -->
-        <sch:assert test="ntx:pointsInSequence[count(*)>1]">Er moeten minimaal twee punten opgenomen zijn in de pointsInSequence (StopPointInJourneyPattern en/of TimingPointInJourneyPattern)</sch:assert>
     </sch:rule>
 </sch:pattern>

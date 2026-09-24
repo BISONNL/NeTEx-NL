@@ -95,7 +95,7 @@
 
     <sch:pattern>
         <sch:rule context="ntx:PublicationDelivery">
-            <sch:assert test="PublicationTimestamp">PublicationTimestamp is verplicht</sch:assert>
+            <sch:assert test="ntx:PublicationTimestamp">PublicationTimestamp is verplicht</sch:assert>
         </sch:rule>
     </sch:pattern>
 </sch:schema>
