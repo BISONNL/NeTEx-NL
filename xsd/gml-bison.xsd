@@ -51,7 +51,7 @@
 		<complexType>
 			<sequence>
 				<element name="exterior" type="gml:LinearRingType"/>
-				<!--	<element name="interior" type="gml:LinearRingType" minOccurs="0"/>	-->
+				<element name="interior" type="gml:LinearRingType" minOccurs="0"/>
 			</sequence>
 			<attribute ref="gml:id" use="required"/>
 			<attribute name="srsName" type="anyURI" use="optional" fixed="EPSG:28992" />
