@@ -333,13 +333,13 @@ Attribuut 'modification' geeft aan of de versie voor het eerst wordt aangeleverd
 	</xsd:complexType>
 	<xsd:complexType name="extensionFlexibleLineParameters">
 		<xsd:sequence>
-			<xsd:element name="MaximumTravelDistance" type="DistanceType"/>
-			<!--
-			<xsd:element name="MaximumDetourFactor" type="xsd:duration"/>
-			<xsd:element name="MaximumTravelTimeOffset" type="xsd:duration"/>
-			<xsd:element name="AverageDetourFactor" type="xsd:duration"/>
-			<xsd:element name="AverageTravelTimeOffset" type="xsd:duration"/>
-			-->
+			<xsd:element name="MinimumTravelDistance" type="DistanceType" minOccurs="0"/>
+			<xsd:element name="MaximumTravelDistance" type="DistanceType" minOccurs="0"/>
+			<xsd:choice minOccurs="0">
+				<xsd:element name="MinimumPublicTransportTravelTimeDifferenceAbsolute" type="xsd:duration"/>
+				<xsd:element name="MinimumPublicTransportTravelTimeDifferenceFactor" type="xsd:decimal"/>
+			</xsd:choice>
+			<xsd:element name="NoPublicTransportWindow" type="xsd:duration" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="extensionFlexibleServiceProperties">
