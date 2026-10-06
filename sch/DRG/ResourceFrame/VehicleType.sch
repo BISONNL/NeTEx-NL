@@ -10,7 +10,7 @@
         <sch:assert test="ntx:LowFloor/text()!=''">LowFloor is verplicht</sch:assert>
         <sch:assert test="ntx:HasLiftOrRamp/text()!=''">HasLiftOrRamp is verplicht</sch:assert>
         <sch:assert test="ntx:Length/text()!=''">Length is verplicht</sch:assert>
-        <sch:assert test="ntx:facilities/text()!=''">facilities is verplicht</sch:assert>
+        <sch:assert test="ntx:facilities/ntx:ServiceFacilitySet">facilities met minimaal één ServiceFacilitySet is verplicht</sch:assert>
 
         <!-- Other business rules -->
         <!-- A -->

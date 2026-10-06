@@ -40,8 +40,8 @@ Elke regel hieronder is voorzien van:
 | Categorie | Aantal |
 |-----------|-------:|
 | Eisen totaal (84 `q`-regels + `ServiceJourney.H`) | 85 |
-| ✅ Volledig geïmplementeerd | 79 |
-| ✅* Met kanttekening | 3 |
+| ✅ Volledig geïmplementeerd | 78 |
+| ✅* Met kanttekening | 4 |
 | ❌ Niet implementeerbaar | 3 |
 
 De drie niet-implementeerbare eisen (`RouteLink.A`, `ServiceJourney.C`,
@@ -85,10 +85,10 @@ bereik van XPath 2.0 vallen. Zie de noten onderaan.
 | `ResourceFrame.VehicleType.A` | §14.7.1 · p.68 | — | `FuelType` uit toegestane lijst | [VehicleType.sch](../sch/DRG/ResourceFrame/VehicleType.sch) | `matches(FuelType, '^(petrol\|diesel\|naturalGas\|biodiesel\|electricity\|hydrogen\|other)$')` | ✅ |
 | `ResourceFrame.PassengerCapacity.A` | §14.7.3 · p.69 | — | `FareClass` uit toegestane lijst | [PassengerCapacity.sch](../sch/DRG/ResourceFrame/PassengerCapacity.sch) | `matches(FareClass, '^(businessClass\|economyClass\|firstClass\|any)$')` | ✅ |
 | `ResourceFrame.PassengerCapacity.B` | §14.7.3 · p.69 | — | `TotalCapacity` = `SeatingCapacity` + `StandingCapacity` | [PassengerCapacity.sch](../sch/DRG/ResourceFrame/PassengerCapacity.sch) | `number(TotalCapacity) = number(SeatingCapacity) + number(StandingCapacity)` | ✅ |
-| `ResourceFrame.ServiceFacilitySet.A` | §14.7.5 · p.71 | — | `PassengerCommsFacilityList` waardes | [ServiceFacilitySet.sch](../sch/DRG/ResourceFrame/ServiceFacilitySet.sch) | `matches(..., '^(powerSupplySockets\|freeWifi)$')` | ✅ |
-| `ResourceFrame.ServiceFacilitySet.B` | §14.7.5 · p.71 | — | `SanitaryFacilityList` waardes | [ServiceFacilitySet.sch](../sch/DRG/ResourceFrame/ServiceFacilitySet.sch) | `matches(..., '^(toilet\|wheelchairAccessToilet)$')` | ✅ |
-| `ResourceFrame.ServiceFacilitySet.C` | §14.7.5 · p.71 | — | `TicketingServiceFacilityList` waardes | [ServiceFacilitySet.sch](../sch/DRG/ResourceFrame/ServiceFacilitySet.sch) | `matches(..., '^(collection)$')` | ✅ |
-| `ResourceFrame.ServiceFacilitySet.D` | §14.7.5 · p.71 | — | `VehicleAccessFacilityList` waardes | [ServiceFacilitySet.sch](../sch/DRG/ResourceFrame/ServiceFacilitySet.sch) | `matches(..., '^(wheelchairLift\|manualRamp\|automaticRamp\|steps\|slidingStep\|narrowEntrance\|validator)$')` | ✅ |
+| `ResourceFrame.ServiceFacilitySet.A` | §14.7.5 · p.71 | — | `PassengerCommsFacilityList` waardes | [ServiceFacilitySet.sch](../sch/DRG/ResourceFrame/ServiceFacilitySet.sch) | `not(...)` of `every $waarde in tokenize(..., ' ') satisfies $waarde = ('powerSupplySockets','freeWifi')` | ✅ |
+| `ResourceFrame.ServiceFacilitySet.B` | §14.7.5 · p.71 | — | `SanitaryFacilityList` waardes | [ServiceFacilitySet.sch](../sch/DRG/ResourceFrame/ServiceFacilitySet.sch) | `not(...)` of `every $waarde in tokenize(..., ' ') satisfies $waarde = ('toilet','wheelchairAccessToilet')` | ✅ |
+| `ResourceFrame.ServiceFacilitySet.C` | §14.7.5 · p.71 | — | `TicketingServiceFacilityList` waardes | [ServiceFacilitySet.sch](../sch/DRG/ResourceFrame/ServiceFacilitySet.sch) | `not(...)` of `every $waarde in tokenize(..., ' ') satisfies $waarde = 'collection'` | ✅ |
+| `ResourceFrame.ServiceFacilitySet.D` | §14.7.5 · p.71 | — | `VehicleAccessFacilityList` waardes | [ServiceFacilitySet.sch](../sch/DRG/ResourceFrame/ServiceFacilitySet.sch) | `every $waarde in tokenize(..., ' ') satisfies $waarde = ('unknown','wheelchairLift','manualRamp','automaticRamp','steps','slidingStep','narrowEntrance','validator')` | ✅* (noot 7) |
 
 ## InfrastructureFrame
 
@@ -214,6 +214,16 @@ geldige documenten die aan de PDF-eis voldoen, maar is mogelijk strenger dan bed
 De PDF stelt dat de `BlockCode` numeriek moet zijn. De Schematron controleert nu alleen
 op aanwezigheid en niet-leeg. Een numerieke check (`matches(..., '^\d+$')`) zou de eis
 volledig dekken.
+
+**Noot 7 — `ServiceFacilitySet.D` (afwijking).**
+De opsomming bij regel D noemt `unknown` niet, maar `VehicleAccessFacilityEnumeration`
+in `xsd/netex-nl-enums.xsd` kent de waarde wél, en het profielvoorbeeld bij §14.7.5
+gebruikt haar zelf (`<VehicleAccessFacilityList>unknown</VehicleAccessFacilityList>`).
+De Schematron laat `unknown` daarom toe. Zonder die toevoeging verwerpt de regel het
+eigen voorbeeld uit de PDF, en heeft een producer die de voertuigconfiguratie nog niet
+kent geen geldige waarde voor dit verplichte veld. Dezelfde spanning bestaat bij regel B
+voor `none`; daar is `SanitaryFacilityList` optioneel, dus weglaten volstaat en is de
+regel ongewijzigd gelaten.
 
 ---
 
