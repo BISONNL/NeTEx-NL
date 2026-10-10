@@ -7,6 +7,6 @@
 
         <!-- Other business rules -->
         <!-- A -->
-        <sch:assert test="ntx:privateCodes/ntx:PrivateCode[@type='UserStopAreaCode']/text()=''">De waarde van de PrivateCode van type 'UserStopAreaCode' mag niet leeg zijn</sch:assert>
+        <sch:assert test="ntx:privateCodes/ntx:PrivateCode[@type='UserStopAreaCode']/text()!=''">De waarde van de PrivateCode van type 'UserStopAreaCode' mag niet leeg zijn</sch:assert>
     </sch:rule>
 </sch:pattern>
