@@ -24,7 +24,7 @@
 
         <!-- D -->
         <!-- Als er voor een Line een ExternalObjectRefStructure met type “LineVeTagNummer” is geleverd, mag de waarde (lees: ref) niet leeg zijn. -->
-        <sch:assert test="ntx:ExternalLineRef[@type='VetagLineNumber' and @ref!='']">ExternalLineRef met type="VetagLineNumber" is verplicht</sch:assert>
+        <sch:assert test="ntx:ExternalLineRef[@type='VeTagLineNumber' and @ref!='']">ExternalLineRef met type="VeTagLineNumber" is verplicht</sch:assert>
 
         <!-- E -->
         <!-- Alle in een GroupOfLines genoemde Line-elementen moeten gedefinieerd zijn binnen de levering.
