@@ -1,5 +1,6 @@
 <sch:pattern id="DRG.CompositeFrame.ValidBetween" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <sch:rule context="ntx:CompositeFrame/ntx:ValidBetween">
+    <!-- Meegeleverde centrale CompositeFrames (BISON, DOVA) vallen onder hun eigen export-schema -->
+    <sch:rule context="ntx:CompositeFrame[not(ntx:TypeOfFrameRef/@ref = ('NL:BISON:TypeOfFrame:NL_BISON_ENUMS', 'NL:BISON:TypeOfFrame:NL_DOVA_LISTS', 'NL:BISON:TypeOfFrame:NL_CODESPACES'))]/ntx:ValidBetween">
         <!-- Variables for use in business rule -->
         <sch:let name="from" value="normalize-space(ntx:FromDate)"/>
         <sch:let name="to" value="normalize-space(ntx:ToDate)"/>
