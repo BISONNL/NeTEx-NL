@@ -2,9 +2,9 @@
     <!-- Meegeleverde centrale CompositeFrames (BISON, DOVA) vallen onder hun eigen export-schema -->
     <sch:rule context="ntx:CompositeFrame[not(ntx:TypeOfFrameRef/@ref = ('NL:BISON:TypeOfFrame:NL_BISON_ENUMS', 'NL:BISON:TypeOfFrame:NL_DOVA_LISTS', 'NL:BISON:TypeOfFrame:NL_CODESPACES'))]/ntx:FrameDefaults">
         <!-- Cardinality and data-type constraints -->
-        <sch:assert test="ntx:DefaultCodespaceRef/text()!=''">DefaultCodespaceRef is verplicht</sch:assert>
-        <sch:assert test="ntx:DefaultDataSourceRef/text()!=''">DefaultDataSourceRef is verplicht</sch:assert>
-        <sch:assert test="ntx:DefaultResponsibilitySetRef/text()!=''">DefaultResponsibilitySetRef is verplicht</sch:assert>
+        <sch:assert test="normalize-space(ntx:DefaultCodespaceRef/@ref)!=''">DefaultCodespaceRef is verplicht</sch:assert>
+        <sch:assert test="normalize-space(ntx:DefaultDataSourceRef/@ref)!=''">DefaultDataSourceRef is verplicht</sch:assert>
+        <sch:assert test="normalize-space(ntx:DefaultResponsibilitySetRef/@ref)!=''">DefaultResponsibilitySetRef is verplicht</sch:assert>
         <sch:assert test="ntx:DefaultLocale/ntx:TimeZone/text()!=''">DefaultLocale/TimeZone is verplicht</sch:assert>
         <sch:assert test="ntx:DefaultLocationSystem/text()!=''">DefaultLocationSystem is verplicht</sch:assert>
         <sch:assert test="ntx:DefaultSystemOfUnits/text()!=''">DefaultSystemOfUnits is verplicht</sch:assert>
