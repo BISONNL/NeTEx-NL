@@ -1,5 +1,5 @@
 <sch:pattern id="DRG.ServiceFrame.JourneyRunTime" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <sch:rule context="ntx:ServiceFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_SERVICE']/ntx:timeDemandTypes/ntx:TimeDemandType/ntx:runtimes/ntx:JourneyRunTime">
+    <sch:rule context="ntx:ServiceFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_SERVICE']/ntx:timeDemandTypes/ntx:TimeDemandType/ntx:runTimes/ntx:JourneyRunTime">
         <!-- Variables for use in business rule -->
 
         <!-- Cardinality and data-type constraints -->
