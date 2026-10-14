@@ -1,6 +1,8 @@
 <sch:pattern id="DRG.TimetableFrame.ServiceJourney" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <sch:rule context="ntx:TimetableFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_TIMETABLE']/ntx:vehicleJourneys/ntx:ServiceJourney">
         <!-- Variables for use in business rule -->
+        <sch:let name="availability-conditions" value="ntx:validityConditions/ntx:AvailabilityCondition | //ntx:AvailabilityCondition[@id = current()/ntx:validityConditions/ntx:AvailabilityConditionRef/@ref]"/>
+        <sch:let name="available-conditions" value="$availability-conditions[not(normalize-space(ntx:IsAvailable) = ('false', '0'))]"/>
 
         <!-- Cardinality and data-type constraints -->
         <sch:assert test="ntx:validityConditions">validityConditions is verplicht</sch:assert>
@@ -23,11 +25,10 @@
         <!-- Niet implementeerbaar: vereist cross-frame combinatie van alle TimetableFrames en datum-interpretatie -->
 
         <!-- F: AvailabilityConditions (IsAvailable=true) mogen niet overlappen qua periodes -->
-        <sch:assert test="not(ntx:validityConditions/ntx:AvailabilityCondition[not(@isAvailable='false')][
-            preceding-sibling::ntx:AvailabilityCondition[not(@isAvailable='false')][
-                ntx:FromDate &lt;= current()/ntx:ToDate and ntx:ToDate &gt;= current()/ntx:FromDate
-            ]
-        ])">
+        <sch:assert test="every $a in $available-conditions, $b in $available-conditions satisfies
+            $a is $b
+            or xs:dateTime($a/ntx:FromDate) gt xs:dateTime($b/ntx:ToDate)
+            or xs:dateTime($a/ntx:ToDate) lt xs:dateTime($b/ntx:FromDate)">
             AvailabilityConditions (met IsAvailable=true) van dezelfde ServiceJourney mogen niet overlappen in periode
         </sch:assert>
 
