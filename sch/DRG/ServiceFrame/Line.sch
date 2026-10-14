@@ -22,7 +22,7 @@
         <sch:assert test="ntx:privateCodes/ntx:PrivateCode[@type='LinePlanningNumber']/text()!=''">De waarde van PrivateCode van type 'LinePlanningNumber' mag niet leeg zijn</sch:assert>
 
         <!-- D -->
-        <sch:assert test="not(ntx:ExternalLineRef[@type='VetagLineNumber']) or ntx:ExternalLineRef[@type='VetagLineNumber' and @ref!='']">Als ExternalLineRef met type 'VetagLineNumber' is geleverd, mag de waarde (ref) niet leeg zijn</sch:assert>
+        <sch:assert test="not(ntx:ExternalLineRef[@type='VeTagLineNumber']) or ntx:ExternalLineRef[@type='VeTagLineNumber' and @ref!='']">Als ExternalLineRef met type 'VeTagLineNumber' is geleverd, mag de waarde (ref) niet leeg zijn</sch:assert>
 
         <!-- E: GroupOfLines volledigheid (alleen als er tenminste één GroupOfLines is geleverd) -->
         <sch:assert test="not(ancestor::ntx:ServiceFrame/ntx:groupsOfLines/ntx:GroupOfLines) or ancestor::ntx:ServiceFrame/ntx:groupsOfLines/ntx:GroupOfLines/ntx:members/ntx:LineRef[@ref=current()/@id]">
