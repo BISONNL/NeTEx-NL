@@ -1,4 +1,4 @@
-<sch:pattern id="TimetableFrame-ServiceJourneyInterchange" xmlns:sch="http://purl.oclc.org/dsdl/schematron">>
+<sch:pattern id="TimetableFrame-ServiceJourneyInterchange" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <sch:rule context="ntx:TimetableFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_TIMETABLE']/ntx:journeyInterchanges/ntx:ServiceJourneyInterchange">
         <!-- Variables for use in business rule -->
 

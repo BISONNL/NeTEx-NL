@@ -16,8 +16,7 @@
                           (normalize-space(ntx:VehicleMode)='metro' and normalize-space(/ntx:TransportSubMode)=('metro','urbanRailway','unknown','undefined')) or
                           (normalize-space(ntx:VehicleMode)='tram' and normalize-space(/ntx:TransportSubMode)=('cityTram','localTram','regionalTram','trainTram','unknown','undefined')) or
                           (normalize-space(ntx:VehicleMode)='rail' and normalize-space(/ntx:TransportSubMode)=('local','highSpeedRail','suburbanRailway','regionalRail','longDistance','international','specialTrain','unknown','undefined')) or
-                          (normalize-space(ntx:VehicleMode)='water' and normalize-space(/ntx:TransportSubMode)=('localCarFerry','localPassengerFerry','riverBus','unknown','undefined'))
-">De TransportSubMode matcht niet bij de opgegeven VehicleMode</sch:assert>
+                          (normalize-space(ntx:VehicleMode)='water' and normalize-space(/ntx:TransportSubMode)=('localCarFerry','localPassengerFerry','riverBus','unknown','undefined'))">De TransportSubMode matcht niet bij de opgegeven VehicleMode</sch:assert>
 
     </sch:rule>
 </sch:pattern>
