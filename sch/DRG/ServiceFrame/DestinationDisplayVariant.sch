@@ -1,10 +1,10 @@
 <sch:pattern id="DRG.ServiceFrame.DestinationDisplayVariant" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <!-- A: Compleetheid - alle 4 lengtevarianten moeten aanwezig zijn (op DestinationDisplay niveau) -->
-    <sch:rule context="ntx:ServiceFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_SERVICE']/ntx:destinationDisplays/ntx:DestinationDisplay/ntx:variants">
-        <sch:assert test="ntx:DestinationDisplayVariant[ntx:Extensions/ntx:MaxLength='NL:BISON:DisplayTextLength:16']">DestinationDisplayVariant voor lengtevariant 'NL:BISON:DisplayTextLength:16' is verplicht</sch:assert>
-        <sch:assert test="ntx:DestinationDisplayVariant[ntx:Extensions/ntx:MaxLength='NL:BISON:DisplayTextLength:19']">DestinationDisplayVariant voor lengtevariant 'NL:BISON:DisplayTextLength:19' is verplicht</sch:assert>
-        <sch:assert test="ntx:DestinationDisplayVariant[ntx:Extensions/ntx:MaxLength='NL:BISON:DisplayTextLength:21']">DestinationDisplayVariant voor lengtevariant 'NL:BISON:DisplayTextLength:21' is verplicht</sch:assert>
-        <sch:assert test="ntx:DestinationDisplayVariant[ntx:Extensions/ntx:MaxLength='NL:BISON:DisplayTextLength:24']">DestinationDisplayVariant voor lengtevariant 'NL:BISON:DisplayTextLength:24' is verplicht</sch:assert>
+    <sch:rule context="ntx:ServiceFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_SERVICE']/ntx:destinationDisplays/ntx:DestinationDisplay">
+        <sch:assert test="ntx:variants/ntx:DestinationDisplayVariant[ntx:Extensions/ntx:MaxLength='NL:BISON:DisplayTextLength:16']">DestinationDisplayVariant voor lengtevariant 'NL:BISON:DisplayTextLength:16' is verplicht</sch:assert>
+        <sch:assert test="ntx:variants/ntx:DestinationDisplayVariant[ntx:Extensions/ntx:MaxLength='NL:BISON:DisplayTextLength:19']">DestinationDisplayVariant voor lengtevariant 'NL:BISON:DisplayTextLength:19' is verplicht</sch:assert>
+        <sch:assert test="ntx:variants/ntx:DestinationDisplayVariant[ntx:Extensions/ntx:MaxLength='NL:BISON:DisplayTextLength:21']">DestinationDisplayVariant voor lengtevariant 'NL:BISON:DisplayTextLength:21' is verplicht</sch:assert>
+        <sch:assert test="ntx:variants/ntx:DestinationDisplayVariant[ntx:Extensions/ntx:MaxLength='NL:BISON:DisplayTextLength:24']">DestinationDisplayVariant voor lengtevariant 'NL:BISON:DisplayTextLength:24' is verplicht</sch:assert>
     </sch:rule>
 
     <!-- B: Correctheid + Extensions.A - op variant niveau -->
