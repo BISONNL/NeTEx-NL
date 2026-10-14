@@ -3,6 +3,8 @@
         <!-- Variables for use in business rule -->
         <sch:let name="availability-conditions" value="ntx:validityConditions/ntx:AvailabilityCondition | //ntx:AvailabilityCondition[@id = current()/ntx:validityConditions/ntx:AvailabilityConditionRef/@ref]"/>
         <sch:let name="available-conditions" value="$availability-conditions[not(normalize-space(ntx:IsAvailable) = ('false', '0'))]"/>
+        <sch:let name="pattern-timing-links" value="distinct-values(//ntx:ServiceJourneyPattern[@id = current()/ntx:ServiceJourneyPatternRef/@ref]/ntx:pointsInSequence/*/ntx:OnwardTimingLinkRef/@ref)"/>
+        <sch:let name="time-demand-timing-links" value="distinct-values(//ntx:TimeDemandType[@id = current()/ntx:TimeDemandTypeRef/@ref]/ntx:runTimes/ntx:JourneyRunTime/ntx:TimingLinkRef/@ref)"/>
 
         <!-- Cardinality and data-type constraints -->
         <sch:assert test="ntx:validityConditions">validityConditions is verplicht</sch:assert>
@@ -33,13 +35,8 @@
         </sch:assert>
 
         <!-- G: TimingLinks via JourneyPattern-pad moeten gelijk zijn aan TimingLinks via TimeDemandType-pad -->
-        <sch:let name="pattern-timing-links" value="string-join(
-            for $ref in //ntx:ServiceJourneyPattern[@id=current()/ntx:ServiceJourneyPatternRef/@ref]/ntx:pointsInSequence/*/ntx:OnwardTimingLinkRef/@ref
-            return string($ref), ' ')"/>
-        <sch:let name="tdt-timing-links" value="string-join(
-            for $ref in //ntx:TimeDemandType[@id=current()/ntx:TimeDemandTypeRef/@ref]/ntx:runTimes/ntx:JourneyRunTime/ntx:TimingLinkRef/@ref
-            return string($ref), ' ')"/>
-        <sch:assert test="$pattern-timing-links = $tdt-timing-links">
+        <sch:assert test="(every $link in $pattern-timing-links satisfies $link = $time-demand-timing-links)
+            and (every $link in $time-demand-timing-links satisfies $link = $pattern-timing-links)">
             De set TimingLinks via het ServiceJourneyPattern (pad 1) moet gelijk zijn aan de set via het TimeDemandType (pad 2)
         </sch:assert>
         <!-- H: Geen nesting bij derivedFromObjectRef -->
