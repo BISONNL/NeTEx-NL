@@ -11,20 +11,20 @@
         </sch:assert>
 
         <!-- B: Er moeten meer dan 0 punten zijn met ForBoarding=true en meer dan 0 met ForAlighting=true -->
-        <sch:assert test="../ntx:StopPointInJourneyPattern[ntx:ForBoarding='true' or not(ntx:ForBoarding)]">
+        <sch:assert test="../ntx:StopPointInJourneyPattern[not(normalize-space(ntx:ForBoarding) = ('false', '0'))]">
             Er moet minimaal één StopPointInJourneyPattern met ForBoarding=true zijn
         </sch:assert>
-        <sch:assert test="../ntx:StopPointInJourneyPattern[ntx:ForAlighting='true']">
+        <sch:assert test="../ntx:StopPointInJourneyPattern[not(normalize-space(ntx:ForAlighting) = ('false', '0'))]">
             Er moet minimaal één StopPointInJourneyPattern met ForAlighting=true zijn
         </sch:assert>
 
         <!-- C: Vóór de eerste halte met ForAlighting=true moet er tenminste één halte met ForBoarding=true zijn -->
-        <sch:assert test="not(ntx:ForAlighting='true') or preceding-sibling::ntx:StopPointInJourneyPattern[ntx:ForBoarding='true' or not(ntx:ForBoarding)] or (ntx:ForBoarding='true' or not(ntx:ForBoarding))">
+        <sch:assert test="normalize-space(ntx:ForAlighting) = ('false', '0') or preceding-sibling::ntx:StopPointInJourneyPattern[not(normalize-space(ntx:ForBoarding) = ('false', '0'))] or not(normalize-space(ntx:ForBoarding) = ('false', '0'))">
             Vóór de eerste halte met ForAlighting=true moet er tenminste één halte met ForBoarding=true zijn
         </sch:assert>
 
         <!-- D: Ná de laatste halte met ForBoarding=true moet er tenminste één halte met ForAlighting=true zijn -->
-        <sch:assert test="not(ntx:ForBoarding='true' or not(ntx:ForBoarding)) or following-sibling::ntx:StopPointInJourneyPattern[ntx:ForAlighting='true'] or ntx:ForAlighting='true'">
+        <sch:assert test="normalize-space(ntx:ForBoarding) = ('false', '0') or following-sibling::ntx:StopPointInJourneyPattern[not(normalize-space(ntx:ForAlighting) = ('false', '0'))] or not(normalize-space(ntx:ForAlighting) = ('false', '0'))">
             Ná de laatste halte met ForBoarding=true moet er tenminste één halte met ForAlighting=true zijn
         </sch:assert>
 
