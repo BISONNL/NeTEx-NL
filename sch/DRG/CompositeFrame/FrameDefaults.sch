@@ -1,5 +1,6 @@
 <sch:pattern id="DRG.CompositeFrame.FrameDefaults" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <sch:rule context="ntx:CompositeFrame/ntx:FrameDefaults">
+    <!-- Meegeleverde centrale CompositeFrames (BISON, DOVA) vallen onder hun eigen export-schema -->
+    <sch:rule context="ntx:CompositeFrame[not(ntx:TypeOfFrameRef/@ref = ('NL:BISON:TypeOfFrame:NL_BISON_ENUMS', 'NL:BISON:TypeOfFrame:NL_DOVA_LISTS', 'NL:BISON:TypeOfFrame:NL_CODESPACES'))]/ntx:FrameDefaults">
         <!-- Cardinality and data-type constraints -->
         <sch:assert test="ntx:DefaultCodespaceRef/text()!=''">DefaultCodespaceRef is verplicht</sch:assert>
         <sch:assert test="ntx:DefaultDataSourceRef/text()!=''">DefaultDataSourceRef is verplicht</sch:assert>
