@@ -11,8 +11,8 @@
 
         <!-- B: LineString begint op FromPointRef coördinaat en eindigt op ToPointRef coördinaat -->
         <sch:let name="posList" value="normalize-space(gml:LineString/gml:posList)"/>
-        <sch:let name="fromPointCoord" value="normalize-space(//ntx:RoutePoint[@id=current()/ntx:FromPointRef/@ref]/ntx:Location/gml:pos)"/>
-        <sch:let name="toPointCoord" value="normalize-space(//ntx:RoutePoint[@id=current()/ntx:ToPointRef/@ref]/ntx:Location/gml:pos)"/>
+        <sch:let name="fromPointCoord" value="normalize-space(key('route-point', ntx:FromPointRef/@ref)/ntx:Location/gml:pos)"/>
+        <sch:let name="toPointCoord" value="normalize-space(key('route-point', ntx:ToPointRef/@ref)/ntx:Location/gml:pos)"/>
         <sch:assert test="$fromPointCoord='' or starts-with($posList, $fromPointCoord)">
             Het geografisch pad (LineString) moet beginnen op de coördinaat van de FromPointRef
         </sch:assert>

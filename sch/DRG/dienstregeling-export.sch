@@ -8,6 +8,8 @@
     <sch:ns prefix="ntx" uri="http://www.netex.org.uk/netex"/>
     <sch:ns prefix="gml" uri="http://www.opengis.net/gml/3.2"/>
 
+    <!-- Indexen op id, zodat een verwijzing niet per regel het hele document doorzoekt -->
+    <xsl:key name="route-point" match="ntx:RoutePoint" use="@id"/>
     <!-- Uniciteit binnen één lijst: de sleutel bevat de lijst én de verwijzing -->
     <xsl:key name="stop-assignment-by-stop" match="ntx:stopAssignments/ntx:PassengerStopAssignment" use="concat(generate-id(..), '|', ntx:ScheduledStopPointRef/@ref)"/>
     <xsl:key name="block-journey" match="ntx:blocks/ntx:Block/ntx:journeys/*[@ref]" use="concat(generate-id(../../..), '|', @ref)"/>
