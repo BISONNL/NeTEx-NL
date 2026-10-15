@@ -18,7 +18,7 @@
 
         <!-- B: DefaultResponsibilitySetRef verwijst naar een ResponsibilitySet met een ResponsibilityRoleAssignment
              die verwijst naar het enige TransportAdministrativeZone binnen dit CompositeFrame -->
-        <sch:assert test="//ntx:ResponsibilitySet[@id=current()/ntx:DefaultResponsibilitySetRef/@ref]/ntx:roles/ntx:ResponsibilityRoleAssignment/ntx:ResponsibleAreaRef/@ref = //ntx:TransportAdministrativeZone/@id">
+        <sch:assert test="key('responsibility-set', ntx:DefaultResponsibilitySetRef/@ref)/ntx:roles/ntx:ResponsibilityRoleAssignment/ntx:ResponsibleAreaRef/@ref = //ntx:TransportAdministrativeZone/@id">
             DefaultResponsibilitySetRef moet verwijzen naar een ResponsibilitySet met een ResponsibilityRoleAssignment die verwijst naar de TransportAdministrativeZone
         </sch:assert>
 
