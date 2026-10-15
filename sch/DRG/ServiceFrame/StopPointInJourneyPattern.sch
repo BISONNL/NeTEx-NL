@@ -35,7 +35,7 @@
 
         <!-- F: ScheduledStopPointRef moet verwijzen naar hetzelfde punt als FromPointRef van de OnwardTimingLink -->
         <sch:assert test="not(ntx:OnwardTimingLinkRef) or
-            ntx:ScheduledStopPointRef/@ref = //ntx:TimingLink[@id=current()/ntx:OnwardTimingLinkRef/@ref]/ntx:FromPointRef/@ref">
+            ntx:ScheduledStopPointRef/@ref = key('timing-link', ntx:OnwardTimingLinkRef/@ref)/ntx:FromPointRef/@ref">
             Het ScheduledStopPointRef moet verwijzen naar hetzelfde punt als het FromPointRef van de OnwardTimingLink
         </sch:assert>
     </sch:rule>
