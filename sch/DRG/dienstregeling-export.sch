@@ -12,6 +12,7 @@
     <xsl:key name="route-point" match="ntx:RoutePoint" use="@id"/>
     <xsl:key name="route-link" match="ntx:RouteLink" use="@id"/>
     <xsl:key name="timing-link" match="ntx:TimingLink" use="@id"/>
+    <xsl:key name="responsibility-set" match="ntx:ResponsibilitySet" use="@id"/>
     <xsl:key name="availability-condition" match="ntx:AvailabilityCondition" use="@id"/>
     <xsl:key name="service-journey-pattern" match="ntx:ServiceJourneyPattern" use="@id"/>
     <xsl:key name="time-demand-type" match="ntx:TimeDemandType" use="@id"/>
