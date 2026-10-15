@@ -10,6 +10,7 @@
 
     <!-- Uniciteit binnen één lijst: de sleutel bevat de lijst én de verwijzing -->
     <xsl:key name="stop-assignment-by-stop" match="ntx:stopAssignments/ntx:PassengerStopAssignment" use="concat(generate-id(..), '|', ntx:ScheduledStopPointRef/@ref)"/>
+    <xsl:key name="block-journey" match="ntx:blocks/ntx:Block/ntx:journeys/*[@ref]" use="concat(generate-id(../../..), '|', @ref)"/>
 
     <!-- Include all frame-specific schematron schema -->
     <!-- Composite -->
