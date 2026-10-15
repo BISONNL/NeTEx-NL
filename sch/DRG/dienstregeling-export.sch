@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2"
+        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://purl.oclc.org/dsdl/schematron">
 
     <!-- Namespaces used in NeTEx NL -->
     <sch:ns prefix="ntx" uri="http://www.netex.org.uk/netex"/>
     <sch:ns prefix="gml" uri="http://www.opengis.net/gml/3.2"/>
+
+    <!-- Uniciteit binnen één lijst: de sleutel bevat de lijst én de verwijzing -->
+    <xsl:key name="stop-assignment-by-stop" match="ntx:stopAssignments/ntx:PassengerStopAssignment" use="concat(generate-id(..), '|', ntx:ScheduledStopPointRef/@ref)"/>
 
     <!-- Include all frame-specific schematron schema -->
     <!-- Composite -->
