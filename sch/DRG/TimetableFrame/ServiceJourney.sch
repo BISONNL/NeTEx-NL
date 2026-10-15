@@ -1,10 +1,10 @@
 <sch:pattern id="DRG.TimetableFrame.ServiceJourney" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <sch:rule context="ntx:TimetableFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_TIMETABLE']/ntx:vehicleJourneys/ntx:ServiceJourney">
         <!-- Variables for use in business rule -->
-        <sch:let name="availability-conditions" value="ntx:validityConditions/ntx:AvailabilityCondition | //ntx:AvailabilityCondition[@id = current()/ntx:validityConditions/ntx:AvailabilityConditionRef/@ref]"/>
+        <sch:let name="availability-conditions" value="ntx:validityConditions/ntx:AvailabilityCondition | key('availability-condition', ntx:validityConditions/ntx:AvailabilityConditionRef/@ref)"/>
         <sch:let name="available-conditions" value="$availability-conditions[not(normalize-space(ntx:IsAvailable) = ('false', '0'))]"/>
-        <sch:let name="pattern-timing-links" value="distinct-values(//ntx:ServiceJourneyPattern[@id = current()/ntx:ServiceJourneyPatternRef/@ref]/ntx:pointsInSequence/*/ntx:OnwardTimingLinkRef/@ref)"/>
-        <sch:let name="time-demand-timing-links" value="distinct-values(//ntx:TimeDemandType[@id = current()/ntx:TimeDemandTypeRef/@ref]/ntx:runTimes/ntx:JourneyRunTime/ntx:TimingLinkRef/@ref)"/>
+        <sch:let name="pattern-timing-links" value="distinct-values(key('service-journey-pattern', ntx:ServiceJourneyPatternRef/@ref)/ntx:pointsInSequence/*/ntx:OnwardTimingLinkRef/@ref)"/>
+        <sch:let name="time-demand-timing-links" value="distinct-values(key('time-demand-type', ntx:TimeDemandTypeRef/@ref)/ntx:runTimes/ntx:JourneyRunTime/ntx:TimingLinkRef/@ref)"/>
 
         <!-- Cardinality and data-type constraints -->
         <sch:assert test="ntx:validityConditions">validityConditions is verplicht</sch:assert>
@@ -40,7 +40,7 @@
             De set TimingLinks via het ServiceJourneyPattern (pad 1) moet gelijk zijn aan de set via het TimeDemandType (pad 2)
         </sch:assert>
         <!-- H: Geen nesting bij derivedFromObjectRef -->
-        <sch:assert test="not(@derivedFromObjectRef) or not(//ntx:ServiceJourney[@id=current()/@derivedFromObjectRef]/@derivedFromObjectRef)">
+        <sch:assert test="not(@derivedFromObjectRef) or not(key('service-journey', @derivedFromObjectRef)/@derivedFromObjectRef)">
             Als van rit A naar rit B verwezen wordt via derivedFromObjectRef, dan mag rit B niet op zijn beurt ook weer naar een rit verwijzen
         </sch:assert>
     </sch:rule>
