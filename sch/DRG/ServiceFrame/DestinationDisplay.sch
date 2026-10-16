@@ -8,9 +8,6 @@
 
         <!-- Other business rules -->
         <!-- A -->
-
-        <!-- B -->
-
-        <!-- C -->
+        <sch:assert test="ntx:privateCodes/ntx:PrivateCode[@type='DestinationCode']/text()!=''">PrivateCode van type 'DestinationCode' is verplicht en mag niet leeg zijn</sch:assert>
     </sch:rule>
 </sch:pattern>

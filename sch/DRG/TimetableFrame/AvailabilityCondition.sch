@@ -13,7 +13,7 @@
 
         <!-- Other business rules -->
         <!-- A -->
-        <!-- De ToDate van de AvailabilityCondition dient ná de FromDate te liggen óf hieraan gelijk te zijn. -->
+        <sch:assert test="xs:dateTime($to) ge xs:dateTime($from)">De ToDate van de AvailabilityCondition dient na de FromDate te liggen of hieraan gelijk te zijn.</sch:assert>
 
         <!-- B -->
         <sch:assert test="string-length($bits)=$daysInclusive">

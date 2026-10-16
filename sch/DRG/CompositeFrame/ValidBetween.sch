@@ -1,5 +1,6 @@
 <sch:pattern id="DRG.CompositeFrame.ValidBetween" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <sch:rule context="ntx:CompositeFrame/ntx:ValidBetween">
+    <!-- Meegeleverde centrale CompositeFrames (BISON, DOVA) vallen onder hun eigen export-schema -->
+    <sch:rule context="ntx:CompositeFrame[not(ntx:TypeOfFrameRef/@ref = ('NL:BISON:TypeOfFrame:NL_BISON_ENUMS', 'NL:BISON:TypeOfFrame:NL_DOVA_LISTS', 'NL:BISON:TypeOfFrame:NL_CODESPACES'))]/ntx:ValidBetween">
         <!-- Variables for use in business rule -->
         <sch:let name="from" value="normalize-space(ntx:FromDate)"/>
         <sch:let name="to" value="normalize-space(ntx:ToDate)"/>
@@ -11,10 +12,10 @@
 
         <!-- Other business rules -->
         <!-- A -->
-        <sch:assert test="xs:dateTime($from) gt $now">FromDate must be in the future. Current system time: '<value-of select="$now"/>'.</sch:assert>
+        <sch:assert test="xs:dateTime($from) gt $now">FromDate must be in the future. Current system time: '<sch:value-of select="$now"/>'.</sch:assert>
 
         <!-- B -->
-        <sch:assert test="xs:dateTime($to) gt xs:dateTime($from)">ToDate must be later than FromDate.</sch:assert>
+        <sch:assert test="xs:dateTime($to) ge xs:dateTime($from)">ToDate must be later than or equal to FromDate.</sch:assert>
 
         <!-- C -->
         <sch:assert test="matches($from, 'T00:00:00')">The time part of FromDate must be set to T00:00:00.</sch:assert>

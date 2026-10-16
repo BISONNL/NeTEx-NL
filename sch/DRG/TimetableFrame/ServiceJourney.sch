@@ -1,6 +1,10 @@
 <sch:pattern id="DRG.TimetableFrame.ServiceJourney" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
     <sch:rule context="ntx:TimetableFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_TIMETABLE']/ntx:vehicleJourneys/ntx:ServiceJourney">
         <!-- Variables for use in business rule -->
+        <sch:let name="availability-conditions" value="ntx:validityConditions/ntx:AvailabilityCondition | key('availability-condition', ntx:validityConditions/ntx:AvailabilityConditionRef/@ref)"/>
+        <sch:let name="available-conditions" value="$availability-conditions[not(normalize-space(ntx:IsAvailable) = ('false', '0'))]"/>
+        <sch:let name="pattern-timing-links" value="distinct-values(key('service-journey-pattern', ntx:ServiceJourneyPatternRef/@ref)/ntx:pointsInSequence/*/ntx:OnwardTimingLinkRef/@ref)"/>
+        <sch:let name="time-demand-timing-links" value="distinct-values(key('time-demand-type', ntx:TimeDemandTypeRef/@ref)/ntx:runTimes/ntx:JourneyRunTime/ntx:TimingLinkRef/@ref)"/>
 
         <!-- Cardinality and data-type constraints -->
         <sch:assert test="ntx:validityConditions">validityConditions is verplicht</sch:assert>
@@ -9,31 +13,35 @@
         <sch:assert test="ntx:TimeDemandTypeRef">TimeDemandTypeRef is verplicht</sch:assert>
 
         <!-- Other business rules -->
-        <!-- A -->
-        <!-- Als Print=true, dan is validityConditions verplicht. -->
+        <!-- B: Als Print=true, dan is validityConditions verplicht.
+             NB: validityConditions is al onvoorwaardelijk verplicht (strenger dan de PDF-regel). -->
 
-        <!-- B -->
-        <!-- Indien dayTypes zijn meegegeven, dan dient de hieruit af te leiden geldigheid gelijk te zijn aan de geldigheid die volgt uit validityConditions. -->
+        <!-- C: Geldigheid in dayTypes consistent met validityConditions -->
+        <!-- Niet implementeerbaar: vereist datum-interpretatie van ValidDayBits en vergelijking met DayType-geldigheden -->
 
-        <!-- C -->
+        <!-- D -->
         <!-- Elke ServiceJourney moet een PrivateCode met type “JourneyNumber” hebben, en de waarde hiervan mag niet leeg zijn. -->
         <sch:assert test="ntx:privateCodes/ntx:PrivateCode[@type='JourneyNumber']!=''">PrivateCode van type 'JourneyNumber' is verplicht en mag niet leeg zijn</sch:assert>
 
-        <!-- D -->
-        <!-- Alle ServiceJourneys binnen een CompositeFrame een dienen een uniek LinePlanningNumber, JourneyNumber en DataOwnerCode te hebben voor alle operationele dagen die zijn gespecificeerd binnen het CompositeFrame. Voor deze controle dienen de ritten uit alle Timetable-frames te worden gecombineerd. -->
+        <!-- E: Dubbele ritten - uniek LinePlanningNumber+JourneyNumber+DataOwnerCode per operationele dag -->
+        <!-- Niet implementeerbaar: vereist cross-frame combinatie van alle TimetableFrames en datum-interpretatie -->
 
-        <!-- E -->
-        <!-- Elke AvailabilityCondition van een ServiceJourney (met IsAvailable = ‘true’) definieert de geldigheid voor een periode die niet geheel of gedeeltelijk overlapt met een andere AvailabilityCondition (met IsAvailable = ‘true’) voor diezelfde ServiceJourney.  -->
+        <!-- F: AvailabilityConditions (IsAvailable=true) mogen niet overlappen qua periodes -->
+        <sch:assert test="every $a in $available-conditions, $b in $available-conditions satisfies
+            $a is $b
+            or xs:dateTime($a/ntx:FromDate) gt xs:dateTime($b/ntx:ToDate)
+            or xs:dateTime($a/ntx:ToDate) lt xs:dateTime($b/ntx:FromDate)">
+            AvailabilityConditions (met IsAvailable=true) van dezelfde ServiceJourney mogen niet overlappen in periode
+        </sch:assert>
 
-        <!-- F -->
-        <!-- Voor elke rit kunnen op twee manieren TimingLinks worden bepaald:
-                1. ServiceJourney -> ServiceJourneyPattern -> PointsInJourneyPattern -> TimingLink
-                2. ServiceJourneyPattern -> TimeDemandGroup -> RunTimes -> JourneyRunTime -> TimingLink
-             De set van TimingLinks die via pad 1 kan worden bepaald, dient exact gelijk te zijn aan de set die via pad 2 kan worden bepaald. -->
-
-        <!-- G -->
-        <!-- Voor omleidingsritten mag verwezen worden naar de ‘originele rit’ middels de attributen derivedFromObjectRef
-             en derivedFromVersionRef. Het is echter niet toegestaan om op deze manier te nesten. Met andere woorden:
-             als van rit A naar rit B verwezen wordt, dan mag niet rit B niet op zijn beurt ook weer naar een rit verwijzen. -->
+        <!-- G: TimingLinks via JourneyPattern-pad moeten gelijk zijn aan TimingLinks via TimeDemandType-pad -->
+        <sch:assert test="(every $link in $pattern-timing-links satisfies $link = $time-demand-timing-links)
+            and (every $link in $time-demand-timing-links satisfies $link = $pattern-timing-links)">
+            De set TimingLinks via het ServiceJourneyPattern (pad 1) moet gelijk zijn aan de set via het TimeDemandType (pad 2)
+        </sch:assert>
+        <!-- H: Geen nesting bij derivedFromObjectRef -->
+        <sch:assert test="not(@derivedFromObjectRef) or not(key('service-journey', @derivedFromObjectRef)/@derivedFromObjectRef)">
+            Als van rit A naar rit B verwezen wordt via derivedFromObjectRef, dan mag rit B niet op zijn beurt ook weer naar een rit verwijzen
+        </sch:assert>
     </sch:rule>
 </sch:pattern>
