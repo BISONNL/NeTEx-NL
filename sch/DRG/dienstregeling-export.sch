@@ -94,7 +94,7 @@
 
     <sch:pattern>
         <sch:rule context="ntx:PublicationDelivery">
-            <sch:assert test="@version='ntx:1.1'">version moet gelijk zijn aan 'ntx:1.1'</sch:assert>
+            <sch:assert test="@version='ntx:2.0'">version moet gelijk zijn aan 'ntx:2.0'</sch:assert>
             <sch:assert test="ntx:PublicationTimestamp">PublicationTimestamp is verplicht</sch:assert>
             <sch:assert test="ntx:ParticipantRef">ParticipantRef is verplicht</sch:assert>
             <sch:assert test="ntx:dataObjects">dataObjects is verplicht</sch:assert>
