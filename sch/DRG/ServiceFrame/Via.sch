@@ -6,5 +6,7 @@
         <sch:assert test="ntx:Name">Name is verplicht</sch:assert>
 
         <!-- Other business rules -->
+        <!-- A -->
+        <sch:assert test="not(starts-with(lower-case(normalize-space(ntx:Name)), 'via '))">De waarde van Name mag niet beginnen met 'via '</sch:assert>
     </sch:rule>
 </sch:pattern>

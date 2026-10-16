@@ -4,7 +4,8 @@
 
         <!-- Cardinality and data-type constraints -->
         <sch:assert test="ntx:ProjectToPointRef">ProjectToPointRef is verplicht</sch:assert>
-        <sch:assert test="ntx:ProjectToPointRef/@nameOfRefClass">Attribuut nameOfRefClass moet altijd de waarde 'RoutePoint' hebben</sch:assert>
+        <sch:assert test="ntx:ProjectToPointRef/@nameOfRefClass">Attribuut nameOfRefClass is verplicht op ProjectToPointRef</sch:assert>
+        <sch:assert test="ntx:ProjectToPointRef/@nameOfRefClass='RoutePoint'">Attribuut nameOfRefClass moet altijd de waarde 'RoutePoint' hebben</sch:assert>
 
         <!-- Other business rules -->
         <!-- A -->

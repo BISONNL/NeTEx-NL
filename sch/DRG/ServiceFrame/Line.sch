@@ -19,16 +19,21 @@
         <!-- De TransportSubMode van een OperationalContext moet passen bij de VehicleMode, conform de beschrijving in §19.13. -->
 
         <!-- C -->
-        <!-- Elke Line moet een PrivateCode met type “LinePlanningNumber” hebben, en de waarde hiervan mag niet leeg zijn. -->
-        <sch:assert test="ntx:privateCodes/ntx:PrivateCode[@type='LinePlanningNumber']">PrivateCode van type 'LinePlanningNumber' is verplicht</sch:assert>
+        <sch:assert test="ntx:privateCodes/ntx:PrivateCode[@type='LinePlanningNumber']/text()!=''">De waarde van PrivateCode van type 'LinePlanningNumber' mag niet leeg zijn</sch:assert>
 
         <!-- D -->
-        <!-- Als er voor een Line een ExternalObjectRefStructure met type “LineVeTagNummer” is geleverd, mag de waarde (lees: ref) niet leeg zijn. -->
-        <sch:assert test="ntx:ExternalLineRef[@type='VetagLineNumber' and @ref!='']">ExternalLineRef met type="VetagLineNumber" is verplicht</sch:assert>
+        <sch:assert test="not(ntx:ExternalLineRef[@type='VeTagLineNumber']) or ntx:ExternalLineRef[@type='VeTagLineNumber' and @ref!='']">Als ExternalLineRef met type 'VeTagLineNumber' is geleverd, mag de waarde (ref) niet leeg zijn</sch:assert>
 
-        <!-- E -->
-        <!-- Alle in een GroupOfLines genoemde Line-elementen moeten gedefinieerd zijn binnen de levering.
-             Alle gedefinieerde Line-elementen dienen te zijn opgenomen in één van de GroupOfLines.
-             Deze regel is alleen van toepassing als de vervoerder ervoor heeft gekozen om tenminste één GroupOfLines aan te leveren. -->
+        <!-- E: GroupOfLines volledigheid (alleen als er tenminste één GroupOfLines is geleverd) -->
+        <sch:assert test="not(ancestor::ntx:ServiceFrame/ntx:groupsOfLines/ntx:GroupOfLines) or ancestor::ntx:ServiceFrame/ntx:groupsOfLines/ntx:GroupOfLines/ntx:members/ntx:LineRef[@ref=current()/@id]">
+            Elke Line moet opgenomen zijn in een GroupOfLines (indien GroupOfLines geleverd worden)
+        </sch:assert>
+    </sch:rule>
+
+    <!-- E (omgekeerde richting): Alle LineRefs in GroupOfLines moeten verwijzen naar bestaande Lines -->
+    <sch:rule context="ntx:ServiceFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_SERVICE']/ntx:groupsOfLines/ntx:GroupOfLines/ntx:members/ntx:LineRef">
+        <sch:assert test="ancestor::ntx:ServiceFrame/ntx:lines/ntx:Line[@id=current()/@ref]">
+            Elke LineRef in een GroupOfLines moet verwijzen naar een Line die is gedefinieerd binnen de levering
+        </sch:assert>
     </sch:rule>
 </sch:pattern>

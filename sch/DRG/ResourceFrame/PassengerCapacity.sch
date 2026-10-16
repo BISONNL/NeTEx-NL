@@ -6,7 +6,9 @@
 
         <!-- Other business rules -->
         <!-- A -->
-        <!-- TODO: Original rule incorrectly validated VehicleMode against FuelType values - needs review -->
+        <sch:assert test="matches(normalize-space(ntx:FareClass), '^(businessClass|economyClass|firstClass|any)$')">
+            Het NL-profiel ondersteunt alleen de volgende waardes voor FareClass: businessClass | economyClass | firstClass | any
+        </sch:assert>
 
         <!-- B -->
         <sch:assert test="number(normalize-space(ntx:TotalCapacity)) = number(normalize-space(ntx:SeatingCapacity)) + number(normalize-space(ntx:StandingCapacity))">

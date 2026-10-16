@@ -9,7 +9,7 @@
 
     <!-- Include all frame-specific schematron schema -->
     <!-- Composite -->
-<!--    <sch:include href="CompositeFrame/FrameDefaults.sch"/>-->
+    <sch:include href="CompositeFrame/FrameDefaults.sch"/>
     <sch:include href="CompositeFrame/ValidBetween.sch"/>
     <sch:include href="CompositeFrame/TypeOfFrameRef.sch"/>
     <sch:include href="CompositeFrame/frames.sch"/>
@@ -63,7 +63,6 @@
     <sch:include href="ServiceFrame/TimingLink.sch"/>
     <sch:include href="ServiceFrame/TimingPoint.sch"/>
     <sch:include href="ServiceFrame/TimingPointInJourneyPattern.sch"/>
-    <sch:include href="ServiceFrame/TypeOfFrameRef.sch"/>
     <sch:include href="ServiceFrame/Via.sch"/>
 
     <!-- TimetableFrame -->
@@ -95,7 +94,10 @@
 
     <sch:pattern>
         <sch:rule context="ntx:PublicationDelivery">
+            <sch:assert test="@version='ntx:2.0'">version moet gelijk zijn aan 'ntx:2.0'</sch:assert>
             <sch:assert test="ntx:PublicationTimestamp">PublicationTimestamp is verplicht</sch:assert>
+            <sch:assert test="ntx:ParticipantRef">ParticipantRef is verplicht</sch:assert>
+            <sch:assert test="ntx:dataObjects">dataObjects is verplicht</sch:assert>
         </sch:rule>
     </sch:pattern>
 </sch:schema>

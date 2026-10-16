@@ -1,5 +1,5 @@
 <sch:pattern id="DRG.ServiceFrame.JourneyRunTime" xmlns:sch="http://purl.oclc.org/dsdl/schematron">
-    <sch:rule context="ntx:ServiceFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_SERVICE']/ntx:timeDemandTypes/ntx:TimeDemandType/ntx:runtimes/ntx:JourneyRunTime">
+    <sch:rule context="ntx:ServiceFrame[ntx:TypeOfFrameRef/@ref='NL:BISON:TypeOfFrame:NL_TT_SERVICE']/ntx:timeDemandTypes/ntx:TimeDemandType/ntx:runTimes/ntx:JourneyRunTime">
         <!-- Variables for use in business rule -->
 
         <!-- Cardinality and data-type constraints -->
@@ -8,9 +8,13 @@
 
         <!-- Other business rules -->
         <!-- A -->
-        <!-- TODO Alle TimingLinkRefs in de JourneyRunTimes van een TimeDemandType dienen uniek te zijn binnen de rit. -->
+        <sch:assert test="not(preceding-sibling::ntx:JourneyRunTime[ntx:TimingLinkRef/@ref = current()/ntx:TimingLinkRef/@ref])">
+            Alle TimingLinkRefs in de JourneyRunTimes van een TimeDemandType dienen uniek te zijn
+        </sch:assert>
 
         <!-- B -->
-        <!-- TODO De RunTime moet groter zijn dan 0 seconden en kleiner dan 24 uur. -->
+        <sch:assert test="xs:dayTimeDuration(ntx:RunTime) gt xs:dayTimeDuration('PT0S') and xs:dayTimeDuration(ntx:RunTime) lt xs:dayTimeDuration('PT24H')">
+            RunTime moet groter zijn dan 0 seconden en kleiner dan 24 uur
+        </sch:assert>
     </sch:rule>
 </sch:pattern>
