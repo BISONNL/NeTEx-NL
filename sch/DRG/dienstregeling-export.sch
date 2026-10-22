@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sch:schema xmlns:sch="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2"
+        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://purl.oclc.org/dsdl/schematron">
 
     <!-- Namespaces used in NeTEx NL -->
     <sch:ns prefix="ntx" uri="http://www.netex.org.uk/netex"/>
     <sch:ns prefix="gml" uri="http://www.opengis.net/gml/3.2"/>
+
+    <!-- Indexen op id, zodat een verwijzing niet per regel het hele document doorzoekt -->
+    <xsl:key name="route-point" match="ntx:RoutePoint" use="@id"/>
+    <xsl:key name="route-link" match="ntx:RouteLink" use="@id"/>
+    <xsl:key name="timing-link" match="ntx:TimingLink" use="@id"/>
+    <xsl:key name="responsibility-set" match="ntx:ResponsibilitySet" use="@id"/>
+    <xsl:key name="availability-condition" match="ntx:AvailabilityCondition" use="@id"/>
+    <xsl:key name="service-journey-pattern" match="ntx:ServiceJourneyPattern" use="@id"/>
+    <xsl:key name="time-demand-type" match="ntx:TimeDemandType" use="@id"/>
+    <xsl:key name="service-journey" match="ntx:ServiceJourney" use="@id"/>
+    <!-- Uniciteit binnen één lijst: de sleutel bevat de lijst én de verwijzing -->
+    <xsl:key name="stop-assignment-by-stop" match="ntx:stopAssignments/ntx:PassengerStopAssignment" use="concat(generate-id(..), '|', ntx:ScheduledStopPointRef/@ref)"/>
+    <xsl:key name="block-journey" match="ntx:blocks/ntx:Block/ntx:journeys/*[@ref]" use="concat(generate-id(../../..), '|', @ref)"/>
 
     <!-- Include all frame-specific schematron schema -->
     <!-- Composite -->

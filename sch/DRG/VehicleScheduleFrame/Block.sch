@@ -17,7 +17,7 @@
         </sch:assert>
 
         <!-- C: Ritten komen in maximaal één Block voor -->
-        <sch:assert test="not(ntx:journeys/*/@ref[. = current()/preceding-sibling::ntx:Block/ntx:journeys/*/@ref])">
+        <sch:assert test="not(ntx:journeys/*[@ref][key('block-journey', concat(generate-id(current()/..), '|', @ref))[../.. &lt;&lt; current()]])">
             Een rit mag in maximaal één Block voorkomen
         </sch:assert>
 
