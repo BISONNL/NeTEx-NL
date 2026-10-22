@@ -9,7 +9,9 @@
         <sch:assert test="ntx:TimeDemandTypeRef">TimeDemandTypeRef is verplicht</sch:assert>
 
         <!-- Other business rules -->
-        <!-- A -->
-        <sch:assert test="ntx:privateCodes/ntx:PrivateCode[@type='JourneyNumber']">PrivateCode van type 'JourneyNumber' is verplicht</sch:assert>
+        <!-- A: Als JourneyNumber geleverd is, moet het een positieve integer zijn -->
+        <sch:assert test="not(ntx:privateCodes/ntx:PrivateCode[@type='JourneyNumber']) or matches(normalize-space(ntx:privateCodes/ntx:PrivateCode[@type='JourneyNumber']), '^[1-9][0-9]*$')">
+            Als een PrivateCode van type 'JourneyNumber' is geleverd, moet dit een positieve integer-waarde zijn
+        </sch:assert>
     </sch:rule>
 </sch:pattern>

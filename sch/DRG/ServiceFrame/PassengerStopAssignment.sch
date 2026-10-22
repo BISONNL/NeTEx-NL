@@ -8,11 +8,14 @@
 
         <!-- Other business rules -->
 
-        <!-- B -->
-        <!-- TODO Elke ScheduledStopPoint dient exact één keer voor te komen in de lijst met PassengerStopAssignments.-->
-
-        <!-- C -->
-        <!-- De coördinaten van elk PointOnLink in passingThrough is vermeld in de LineString van de RouteLink. -->
+        <!-- B: Uniciteit -->
+        <sch:assert test="not(preceding-sibling::ntx:PassengerStopAssignment[ntx:ScheduledStopPointRef/@ref = current()/ntx:ScheduledStopPointRef/@ref])">
+            Elke ScheduledStopPoint dient exact één keer voor te komen in de lijst met PassengerStopAssignments
+        </sch:assert>
+        <!-- B: Volledigheid - elke ScheduledStopPoint moet een PassengerStopAssignment hebben -->
+        <sch:assert test="not(ancestor::ntx:ServiceFrame/ntx:scheduledStopPoints/ntx:ScheduledStopPoint[not(@id = current()/ancestor::ntx:stopAssignments/ntx:PassengerStopAssignment/ntx:ScheduledStopPointRef/@ref)])">
+            Elke ScheduledStopPoint moet voorkomen in de lijst met PassengerStopAssignments
+        </sch:assert>
 
     </sch:rule>
 </sch:pattern>

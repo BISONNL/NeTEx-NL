@@ -6,10 +6,18 @@
         <sch:assert test="gml:LineString">LineString is verplicht</sch:assert>
 
         <!-- Other business rules -->
-        <!-- A -->
-        <!-- De DistanceFromStart van een PointOnLink is kleiner dan de Distance van de bijbehorende RouteLink. -->
+        <!-- A: De Distance is minimaal de hemelsbrede afstand tussen FromPointRef en ToPointRef -->
+        <!-- Niet implementeerbaar in Schematron: vereist haversine-berekening (sin/cos/atan2 niet beschikbaar in XPath 2.0) -->
 
-        <!-- B -->
-        <!-- Het geografisch pad dat gegeven is in de LineString begint op de coördinaat van de FromPointRef en eindigt op de coördinaat van de ToPointRef. -->
+        <!-- B: LineString begint op FromPointRef coördinaat en eindigt op ToPointRef coördinaat -->
+        <sch:let name="posList" value="normalize-space(gml:LineString/gml:posList)"/>
+        <sch:let name="fromPointCoord" value="normalize-space(//ntx:RoutePoint[@id=current()/ntx:FromPointRef/@ref]/ntx:Location/gml:pos)"/>
+        <sch:let name="toPointCoord" value="normalize-space(//ntx:RoutePoint[@id=current()/ntx:ToPointRef/@ref]/ntx:Location/gml:pos)"/>
+        <sch:assert test="$fromPointCoord='' or starts-with($posList, $fromPointCoord)">
+            Het geografisch pad (LineString) moet beginnen op de coördinaat van de FromPointRef
+        </sch:assert>
+        <sch:assert test="$toPointCoord='' or (substring($posList, string-length($posList) - string-length($toPointCoord) + 1) = $toPointCoord)">
+            Het geografisch pad (LineString) moet eindigen op de coördinaat van de ToPointRef
+        </sch:assert>
     </sch:rule>
 </sch:pattern>

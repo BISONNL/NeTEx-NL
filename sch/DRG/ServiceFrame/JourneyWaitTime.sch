@@ -8,6 +8,8 @@
 
         <!-- Other business rules -->
         <!-- A -->
-        <!-- TODO De WaitTime moet groter zijn dan 0 seconden en kleiner dan 24 uur. -->
+        <sch:assert test="xs:dayTimeDuration(ntx:WaitTime) gt xs:dayTimeDuration('PT0S') and xs:dayTimeDuration(ntx:WaitTime) lt xs:dayTimeDuration('PT24H')">
+            WaitTime moet groter zijn dan 0 seconden en kleiner dan 24 uur
+        </sch:assert>
     </sch:rule>
 </sch:pattern>
