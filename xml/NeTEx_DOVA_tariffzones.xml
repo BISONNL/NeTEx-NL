@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PublicationDelivery version="ntx:1.1" xmlns="http://www.netex.org.uk/netex" xmlns:ns2="http://www.opengis.net/gml/3.2">
+    <PublicationTimestamp>2025-03-06T07:25:41.586Z</PublicationTimestamp>
+    <ParticipantRef>DOVA</ParticipantRef>
+    <dataObjects>
+        <CompositeFrame id="NL:DOVA:CompositeFrame:PredefinedTariffZones" modification="new" version="20250306">
+            <Description>De door DOVA 'centraal' bijgehouden lijst met OV-zones. Desgewenst kan men de relevante lijstelementen ongewijzigd(!) overnemen in een gegevenslevering conform het NL dienstregeling Profiel.</Description>
+            <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_DOVA_LISTS"/>
+            <FrameDefaults>
+                <DefaultCodespaceRef ref="NL:BISON:Codespace:DOVA"/>
+                <DefaultLocationSystem>EPSG:28992</DefaultLocationSystem>
+            </FrameDefaults>
+            <frames>
+                <GeneralFrame id="NL:DOVA:GeneralFrame:OvZones" version="20250306">
+                    <Description>Lijst met voorgedefinieerde identificaties van OV-zones.</Description>
+                    <TypeOfFrameRef version="9.3.0" ref="NL:BISON:TypeOfFrame:NL_TariffZoneList"/>
+                    <members>
+                        <TariffZone id="NL:DOVA:TariffZone:9006" version="20250306">
+                            <Name>Hengelo Centrum</Name>
+                            <ShortName>9006</ShortName>
+                            <Centroid>
+                                <Location>
+                                    <ns2:pos>251131 476107</ns2:pos>
+                                </Location>
+                            </Centroid>
+                            <ns2:Polygon ns2:id="NL_DOVA_Polygon_9006">
+                                <ns2:exterior>
+                                    <ns2:LinearRing>
+                                        <ns2:posList>251322 475751 251256 475521 251045 475620 250911 475752 250924 475878 250885 475969 250737 476037 250683 476137 250587 476306 250645 476329 250704 476296 250768 476303 250874 476382 251416 476585 251520 476431 251524 476245 251471 476149 251456 476093 251416 475946 251312 475800 251322 475751</ns2:posList>
+                                    </ns2:LinearRing>
+                                </ns2:exterior>
+                            </ns2:Polygon>
+                        </TariffZone>
+                        <TariffZone id="NL:DOVA:TariffZone:9011" version="20250306">
+                            <Name>Rotterdam Schiemond</Name>
+                            <ShortName>9011</ShortName>
+                            <Centroid>
+                                <Location>
+                                    <ns2:pos>90154 435530</ns2:pos>
+                                </Location>
+                            </Centroid>
+                            <ns2:Polygon ns2:id="NL_DOVA_Polygon_9011">
+                                <ns2:exterior>
+                                    <ns2:LinearRing>
+                                        <ns2:posList>90377 435336 89857 435494 89937 435727 90451 435566 90377 435336</ns2:posList>
+                                    </ns2:LinearRing>
+                                </ns2:exterior>
+                            </ns2:Polygon>
+                        </TariffZone>
+                        <!-- . -->
+                    </members>
+                </GeneralFrame>
+            </frames>
+        </CompositeFrame>
+    </dataObjects>
+</PublicationDelivery>
