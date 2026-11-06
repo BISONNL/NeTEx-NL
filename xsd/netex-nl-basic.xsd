@@ -280,17 +280,20 @@ Attribuut 'modification' geeft aan of de versie voor het eerst wordt aangeleverd
 	</xsd:complexType>
 -->
 	<xsd:complexType name="VersionOfObjectRefStructure">
-		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="optional" form="unqualified"/>
+		<xsd:attribute name="versionRef" type="VersionIdType" use="optional" form="unqualified"/>
 		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="VersionOfObjectRefStructure-with-class">
 		<xsd:attribute name="nameOfRefClass" type="NameOfClass" use="required" form="unqualified"/>
-		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="optional" form="unqualified"/>
+		<xsd:attribute name="versionRef" type="VersionIdType" use="optional" form="unqualified"/>
 		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="VersionOfObjectRefStructure-with-optional-class">
 		<xsd:attribute name="nameOfRefClass" type="NameOfClass" use="optional" form="unqualified"/>
-		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified"/>
+		<xsd:attribute name="version" type="VersionIdType" use="optional" form="unqualified"/>
+		<xsd:attribute name="versionRef" type="VersionIdType" use="optional" form="unqualified"/>
 		<xsd:attribute name="ref" type="ObjectIdType" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="ExternalObjectRefStructure">
@@ -298,7 +301,7 @@ Attribuut 'modification' geeft aan of de versie voor het eerst wordt aangeleverd
 		<xsd:attribute name="ref" type="xsd:normalizedString" use="required" form="unqualified"/>
 	</xsd:complexType>
 	<xsd:complexType name="TypeOfFrameRefStructure">
-		<xsd:attribute name="version" type="VersionIdType" use="required" form="unqualified">
+		<xsd:attribute name="versionRef" type="VersionIdType" use="required" form="unqualified">
 			<xsd:annotation>
 				<xsd:documentation>De versie van het NL NeTEx Profiel</xsd:documentation>
 			</xsd:annotation>
